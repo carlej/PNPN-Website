@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
 		<title>Untitled Document</title>
-		<?php include("Views\Partialsheader.php");?>
+		<?php include("Views\Partials/header.php");?>
 	</head>
 
 </html>
