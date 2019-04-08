@@ -6,7 +6,7 @@
 
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
-		<title>main</title>
+		<title>Home</title>
 		<?php include("Views\Partials/header.php");?>
 	</head>
 

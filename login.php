@@ -6,7 +6,7 @@
 
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
-		<title>Untitled Document</title>
+		<title>Login</title>
 		<?php include("Views\Partials/header.php");?>
 	</head>
 	<body>This</body>
