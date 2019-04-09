@@ -32,7 +32,9 @@
             $msg = "<h2>Can't Add to Table</h2> There is already a user with that name $username<p>";
         }
         else{
-            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Email, Password) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$email', '$Password')";
+            $salt = md5(time());
+            $passhold = md5($salt.$Password);
+            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Email, Password, salt) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$email', '$passhold', '$salt')";
             if (mysqli_query($con,$query)) {
                 $msg = "Record added.<p>";
                 echo "Thank you for makeing an account please log in now";

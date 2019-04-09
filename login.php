@@ -25,13 +25,15 @@
 		$queryIn = "SELECT * FROM users where Username='$Username' ";
 		$resultIn = mysqli_query($con, $queryIn);
 		if (mysqli_num_rows($resultIn)!=0) {
-			//$querysalt = "SELECT salt FROM Users WHERE username LIKE '$username'";
-			//$salt = mysqli_query($con, $quirysalt);
-//			$passwordhold = MD5($salt.$password);
 			$quirypass = "SELECT Password FROM users WHERE Username LIKE '$Username'";
 			$ackpass = mysqli_query($con, $quirypass);
 			$row=mysqli_fetch_row($ackpass);
-			if ($Password==$row[0]) {
+			$querysalt = "SELECT salt FROM Users WHERE username LIKE '$Username'";
+			$acksalt = mysqli_query($con, $querysalt);
+			$salt = mysqli_fetch_row($acksalt);
+			$passwordhold = MD5($salt[0].$Password);
+			echo $passwordhold;
+			if ($row[0]==$passwordhold) {
 				$msg = "Log in successfull";
 				$_SESSION['loggedin'] = true;
 				$_SESSION['username'] = $Username;

@@ -26,7 +26,6 @@
 		$queryIn = "SELECT Accounts FROM users WHERE Username = '$username'";
 		$resultIn = mysqli_query($con, $queryIn);
 		$row=mysqli_fetch_row($resultIn);
-		//$json_string = file_get_contents($row[0]);
 		$parsed_json = json_decode($row[0], true);
 		$parsed_json = $parsed_json['id'];
 		foreach($parsed_json as $value)
@@ -34,8 +33,8 @@
 			$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
 			$result = mysqli_query($con, $accountQuery);
 			$row2=mysqli_fetch_row($result);
-			echo $value . "\r\n";
-   			echo $row2[0] . "\r\n";
+			//echo $value . "\r\n";		//$value displays that account number of the account
+   			//echo $row2[0] . "\r\n";	//$row2[0] displayes the ballance of the account
 		}
 		?>
 		<?php include("Javascript/bankscript.php"); ?>
