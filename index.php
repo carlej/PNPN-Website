@@ -1,4 +1,3 @@
-<?php require 'Connections/connections.php'; ?>
 <!doctype html>
 <html>
 	<head>
