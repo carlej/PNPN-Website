@@ -28,15 +28,29 @@
 		$row=mysqli_fetch_row($resultIn);
 		$parsed_json = json_decode($row[0], true);
 		$parsed_json = $parsed_json['id'];
-		foreach($parsed_json as $value)
-		{
-			$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
-			$result = mysqli_query($con, $accountQuery);
-			$row2=mysqli_fetch_row($result);
-			//echo $value . "\r\n";		//$value displays that account number of the account
-   			//echo $row2[0] . "\r\n";	//$row2[0] displayes the ballance of the account
-		}
+//		foreach($parsed_json as $value)
+//		{
+//			$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
+//			$result = mysqli_query($con, $accountQuery);
+//			$row2=mysqli_fetch_row($result);
+//			//echo $value . "\r\n";		//$value displays that account number of the account
+//   			//echo $row2[0] . "\r\n";	//$row2[0] displayes the ballance of the account
+//		}
 		?>
+		<?php foreach ($parsed_json as $value): ?>
+			<div class="container">
+				<div id="cssmenu" class="align-center">
+					<ul>
+						<li><a><?php echo $value; ?></a></li>
+						<li><a><?php 
+						$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
+						$result = mysqli_query($con, $accountQuery);
+						$row2=mysqli_fetch_row($result);
+						echo $row2[0]; ?></a></li>
+					</ul>
+				</div>
+			</div>
+		<?php endforeach; ?>
 		<?php include("Javascript/bankscript.php"); ?>
 	</body>
 

@@ -1,11 +1,12 @@
-<?php
+<?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//	echo $_POST['add'];
 	$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
 	}
+	$a=true;
 	do{
-		$a=true;
 		srand(time());
 		$id=rand(100000000,999999999);
 		//echo $id;
@@ -13,31 +14,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$resultIn = mysqli_query($con, $queryIn);
 		$row=mysqli_fetch_row($resultIn);
 		if (mysqli_num_rows($resultIn)==0) {
-			$a=true;
+			$a=false;
 			$queryIn = "SELECT Accounts FROM users WHERE Username = '$username'";
 			$resultIn = mysqli_query($con, $queryIn);
 			$row=mysqli_fetch_row($resultIn);
 			$parsed_json = json_decode($row[0], true);
 			$parsed_json = $parsed_json['id'];
-			$nums=0;
-			$accs=NULL;
+			$accs="{\"id\": [";
 			foreach($parsed_json as $value)
 			{
 				$accs.=$value . ", ";
-				$nums++;
 			}
-			echo $accs;
-			//INSERT INTO `accounts` (`ID`, `Ballance`) VALUES ('5', '3');
-			//UPDATE `users` SET `Accounts` = '{\"id\": [1, 2, 5]}' WHERE `users`.`Username` = 'user';
-			$a=false;
+			$accs=$accs.$id."]}";
+			$insert = "INSERT INTO accounts (ID) VALUES ('$id')";
+			//$inResult = mysqli_query($con, $insert); //Updates the DB with the new account
+			$update = "UPDATE users SET Accounts = '$accs' WHERE users.Username = '$username'";
+			//$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
+			//header("Location: /SDN-Website/bank.php"); //refresh the page to disply the new account
 		}
 		else
-			$a=false;
+			$a=true;
 	}while($a);
 }
 ?>
 <form method="post" id= addaccount>
 	<p>
-		<input type = "submit" value = "Add Account"?>
+		<input type = "submit" name= "add" value = "Add Account"?>
+	</p>
+	<p>
+		<input type = "submit" name= "tran" value = "Transfer"?>
 	</p>
 </form>
