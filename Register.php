@@ -32,6 +32,24 @@
             $msg = "<h2>Can't Add to Table</h2> There is already a user with that name $username<p>";
         }
         else{
+            do{
+                srand(time());
+                $id=rand(100000000,999999999);
+                $queryIn = "SELECT ID FROM accounts WHERE ID = '$id'";
+                $resultIn = mysqli_query($con, $queryIn);
+                $row=mysqli_fetch_row($resultIn);
+                if (mysqli_num_rows($resultIn)==0) {
+                    $a=false;
+                    $accs="{\"id\": [";
+                    $accs.=$id.", 0]}";
+                    $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
+                    //$inResult = mysqli_query($con, $insert); //Updates the DB with the new account
+                    $update = "UPDATE users SET Accounts = '$accs' WHERE users.Username = '$username'";
+                    //$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
+        }
+        else
+            $a=true;
+    }while($a);
             $salt = md5(time());
             $passhold = md5($salt.$Password);
             $query = "INSERT INTO users (Username, Fname, Lname, Pname, Email, Password, salt) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$email', '$passhold', '$salt')";

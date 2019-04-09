@@ -6,10 +6,8 @@
 			echo "Welcome " . $_SESSION['username'];
 			$username = $_SESSION['username'];
 		}
-		else{
-			echo "Please login to view this page.";
-			$username=NULL;
-		}
+		else
+			echo "Please login to view this page.";//<script type="text/javascript" src="Javascript/bankscript.js"></script>
 		?>
 		
 
@@ -39,14 +37,12 @@
 //   			//echo $row2[0] . "\r\n";	//$row2[0] displayes the ballance of the account
 //		}
 		?>
-		<?php if ($username!=NULL): ?>
 		<?php foreach ($parsed_json as $value): ?>
-			<?php if($value): ?>
 			<div class="container">
 				<div id="cssmenu" class="align-center">
 					<ul>
 						<li><a><?php echo $value; ?></a></li>
-						<li><a><?php
+						<li><a><?php 
 						$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
 						$result = mysqli_query($con, $accountQuery);
 						$row2=mysqli_fetch_row($result);
@@ -54,10 +50,8 @@
 					</ul>
 				</div>
 			</div>
-		<?php endif; ?>
 		<?php endforeach; ?>
-		<?php include("Javascript/bankscript.php"); ?>
-	<?php endif; ?>
+		<?php include("Javascript/transcript.php"); ?>
 	</body>
 
 </html>
