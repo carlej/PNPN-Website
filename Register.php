@@ -25,7 +25,6 @@
         $pirateName = mysqli_real_escape_string($con, $_POST['pirateName']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $Password = mysqli_real_escape_string($con, $_POST['Password']);
-
         $queryIn = "SELECT * FROM users where Username='$Username' ";
         $resultIn = mysqli_query($con, $queryIn);
         if (mysqli_num_rows($resultIn)>0) {
@@ -38,13 +37,13 @@
                 $queryIn = "SELECT ID FROM accounts WHERE ID = '$id'";
                 $resultIn = mysqli_query($con, $queryIn);
                 $row=mysqli_fetch_row($resultIn);
-                if (mysqli_num_rows($resultIn)==0) {
+                if (mysqli_num_rows($resultIn)==0) {echo $id;
                     $a=false;
                     $accs="{\"id\": [";
                     $accs.=$id.", 0]}";
                     $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
-                    //$inResult = mysqli_query($con, $insert); //Updates the DB with the new account
-                    $update = "UPDATE users SET Accounts = '$accs' WHERE users.Username = '$username'";
+                    $inResult = mysqli_query($con, $insert); //Updates the DB with the new account
+                    $update = "UPDATE users SET Accounts = '$accs' WHERE users.Username = '$Username'";
                     //$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
         }
         else
@@ -54,8 +53,11 @@
             $passhold = md5($salt.$Password);
             $query = "INSERT INTO users (Username, Fname, Lname, Pname, Email, Password, salt) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$email', '$passhold', '$salt')";
             if (mysqli_query($con,$query)) {
+            $inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
                 $msg = "Record added.<p>";
-                echo "Thank you for makeing an account please log in now";
+                $_SESSION['loggedin'] = true;
+                $_SESSION['username'] = $Username;
+                header("Location: /SDN-Website");
             }
             else
                 echo "ERROR";//.mysql_error($con);

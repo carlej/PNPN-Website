@@ -68,7 +68,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Cancel"){
 	</fieldset>
 	<p>
 		<input type="submit" name="button" value="Submit" />
-		gar
 		<input type="reset" value="Clear" />
 		<input type="submit" name="button" value="Cancel" />
 	</p>
