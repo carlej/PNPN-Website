@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<?php include("Connections/req.php");
-		include("Javascript/bankscript.php");
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			echo "Welcome " . $_SESSION['username'];
 			$username = $_SESSION['username'];
@@ -39,7 +38,7 @@
    			echo $row2[0] . "\r\n";
 		}
 		?>
-		<button id="addAcount">Create Account</button>
+		<?php include("Javascript/bankscript.php"); ?>
 	</body>
 
 </html>
