@@ -32,22 +32,20 @@
 			$acksalt = mysqli_query($con, $querysalt);
 			$salt = mysqli_fetch_row($acksalt);
 			$passwordhold = MD5($salt[0].$Password);
-			echo $passwordhold;
+			$queryperm = "SELECT `Account Permissions` FROM Users WHERE username LIKE '$Username'";
+			$ackperm = mysqli_query($con, $queryperm);
+			$perm = mysqli_fetch_row($ackperm);
 			if ($row[0]==$passwordhold) {
 				$msg = "Log in successfull";
 				$_SESSION['loggedin'] = true;
 				$_SESSION['username'] = $Username;
+				$_SESSION['perm'] = $perm[0];
+				echo $perm[0];
 				header("Location: /SDN-Website");
 			}
 			else{
 				echo "error";
 			}
-//			if($ackpass==$passwordhold){
-//				$msg = "Log in successfull";
-//			}
-//			else{
-//				echo "ERROR: salt $salt password $passwordhold ackpass $ackpass. " . mysqli_error($conn);
-//			}
 		}
 	}
 	mysqli_close($con);

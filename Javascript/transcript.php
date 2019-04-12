@@ -13,69 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Submit"){
 			$goodtran = true;
 		}
 	}
-	if ($goodtran) {
-			$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
-			$result = mysqli_query($con, $accountQuery);
-			$row=mysqli_fetch_row($result);
-			echo $row[0];
-			if ($trans <= $row[0]) {
-				$queryIn = "SELECT ID FROM accounts WHERE ID = '$Accto'";
-				$resultIn = mysqli_query($con, $queryIn);
-				$row2=mysqli_fetch_row($resultIn);
-				if (mysqli_num_rows($resultIn)!=0) {
-					$timeStamp=date("Y/m/d H:m:s");
-					$rema = $row[0]-$trans;
-					$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
-					$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
-					$queryTo = "SELECT Ballance FROM accounts WHERE ID = '$Accto'";
-					$resultTo = mysqli_query($con, $queryTo);
-					$row3=mysqli_fetch_row($resultTo);
-					$addat = $row3[0] + $trans;
-					$updateto = "UPDATE accounts SET Ballance = '$addat' WHERE accounts.ID = '$Accto'";
-					$deduct = mysqli_query($con, $updateto); //sets the new ballance of the account being transftered into.
-					$queryHistTo="SELECT history FROM accounts WHERE ID = '$Accto'";
-					$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
-
-					$resultHistTo= mysqli_query($con, $queryHistTo);
-					$resultHistFrom= mysqli_query($con, $queryHistFrom);
-					
-					$rowHistTo=mysqli_fetch_row($resultHistTo);
-					$rowHistFrom=mysqli_fetch_row($resultHistFrom);
-					
-					$parsed_jsonHistTo=json_decode($rowHistTo[0],true);
-					$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-					
-					$dep=["deposite",$Accfrom,$Accto,$trans];
-					$tran=["Transfer",$Accfrom,$Accto,$trans];
-
-					$parsed_jsonHistTo[$timeStamp]=$dep;
-					$parsed_jsonHistFrom[$timeStamp]=$tran;
-
-					$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
-					$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-
-					$queryHistTo="UPDATE accounts SET history = '$enco_jsonHistTo' WHERE accounts.ID = '$Accto'";
-					$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
-
-					$resultHistTo=mysqli_query($con,$queryHistTo);
-					$resultHistFrom=mysqli_query($con,$queryHistFrom);
-
-					header("Location: /SDN-Website/transfer.php");
-				}
-				else
-					echo "error that account doesn't exist";
-			}
-			else
-				echo "error you don't have enough money";
-		}
-		else
-			echo "error you don't have access to that account";
+	if ($goodtran)
+		include "Javascript/maketran.php";
+	else
+		echo "error you don't have access to that account";
 	
 }
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Cancel"){
-
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Cancel")
 	header("Location: /SDN-Website/bank.php");
-}
 ?>
 
 <form method="post" id="addForm">

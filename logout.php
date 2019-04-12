@@ -9,8 +9,7 @@
 		<?php include("Views\Partials/header.php");?>
 	</head>
 	<?php
-		$_SESSION['loggenin'] = false;
-		$_SESSION['username'] = NULL;
+		session_unset();
 		session_destroy();
 		header("Location: /SDN-Website");
 		echo "LOGGED OUT";
