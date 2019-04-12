@@ -7,6 +7,7 @@
 					<p>
 						<option value=<?php $value ?>><<?php $value ?></option>
 					</p>
+				<?php endforeach; ?>
 			</select>
 		</p>
 	</fieldset>
