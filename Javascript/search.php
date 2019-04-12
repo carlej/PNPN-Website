@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit") {
 			}
 			else if (mysqli_num_rows($resultIn)==1) {
 				$row = mysqli_fetch_row($resultIn);
+				echo '<p><input type="submit" name="selection" value="'.$row[0].'" /></p>';
 			}
 			else{
 				echo "There are no accounts that match that search. Search is case sensitive";
