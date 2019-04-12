@@ -20,13 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit") {
 			if (mysqli_num_rows($resultIn)>0) {
 				$option=NULL;
 				$array = $resultIn->fetch_all(MYSQLI_NUM);
-				echo '<form method="POST" id="select"><fieldset><label>Results:</label><p><select name="result">';
 				foreach ($array as $key => $value) {
-					echo '<option value=' . $value[0] . '>' . $value[0] . '</option>';
-					//echo $value[0];
-					//echo '<input type="submit" name=' . $value[0] . 'value=' . $value[0] . '>';
+					echo '<p><input type="submit" name="'.$value[0].'" value="'.$value[0].'" /></p>';
 				}
-				echo '</select></p></fieldset></form>';
 
 				//include "Javascript/multResult.php";
 			}
