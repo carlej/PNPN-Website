@@ -36,16 +36,10 @@
 			if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
 				header("Location: /SDN-Website/transfer.php");
 			}
+			include "Views/Partials/bankButtons.php";
 		}
+
 		?>
-		<form method="post" id= accountActions>
-			<p>
-				<input type = "submit" name= "button" value = "Add Account"?>
-			</p>
-			<p>
-				<input type = "submit" name= "button" value = "Transfer"?>
-			</p>
-		</form>
 	</body>
 
 </html>

@@ -41,7 +41,7 @@
 				$_SESSION['username'] = $Username;
 				$_SESSION['perm'] = $perm[0];
 				echo $perm[0];
-				//header("Location: /SDN-Website");
+				header("Location: /SDN-Website");
 			}
 			else{
 				echo "error";
