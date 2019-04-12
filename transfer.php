@@ -18,21 +18,21 @@
 	</head>
 	<body>
 		<?php
-		include 'Connections/convar.php';
-		$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-		if (!$con) {
-			die('Could not connect: ' . mysql_error());
+		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+			include 'Connections/convar.php';
+			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+			if (!$con) {
+				die('Could not connect: ' . mysql_error());
+			}
+			$queryIn = "SELECT Accounts FROM users WHERE Username = '$username'";
+			$resultIn = mysqli_query($con, $queryIn);
+			$row=mysqli_fetch_row($resultIn);
+			$parsed_json = json_decode($row[0], true);
+			$parsed_json = $parsed_json['id'];
+			include "Views/Partials/showAccs.php";
+			include("Javascript/transcript.php");
 		}
-		$queryIn = "SELECT Accounts FROM users WHERE Username = '$username'";
-		$resultIn = mysqli_query($con, $queryIn);
-		$row=mysqli_fetch_row($resultIn);
-		$parsed_json = json_decode($row[0], true);
-		$parsed_json = $parsed_json['id'];
 		?>
-		<?php if ($username!=NULL): ?>
-		<?php include "Views/Partials/showAccs.php" ?>
-		<?php include("Javascript/transcript.php"); ?>
-	<?php endif; ?>
 	</body>
 
 </html>

@@ -1,5 +1,4 @@
-<?php 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Add Account") {
+<?php
 	$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
@@ -34,20 +33,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Add Account") {
 		else
 			$a=true;
 	}while($a);
-}
-//elseif ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer") {
-//	echo $_POST['button'];
-//}
-?>
-<?php if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
-	header("Location: /SDN-Website/transfer.php");
-} ?>
-
-<form method="post" id= addaccount>
-	<p>
-		<input type = "submit" name= "button" value = "Add Account"?>
-	</p>
-	<p>
-		<input type = "submit" name= "button" value = "Transfer"?>
-	</p>
-</form>
+	?>

@@ -6,15 +6,15 @@
 			echo "Welcome " . $_SESSION['username'];
 			$username = $_SESSION['username'];
 		}
-		else{
-			echo "Please login to view this page.";
-			$username=NULL;
-		}
+		else
+			echo "Please login to view this page.";//<script type="text/javascript" src="Javascript/bankscript.js"></script>
 		?>
+		
+
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
 		<title>Bank</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php //include("Views\Partials/header.php");?>
 	</head>
 	<body>
 		<?php
@@ -30,22 +30,9 @@
 			$parsed_json = json_decode($row[0], true);
 			$parsed_json = $parsed_json['id'];
 			include "Views/Partials/showAccs.php";
-			if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Add Account") {
-				include "Javascript/makeacc.php";
-			}
-			if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
-				header("Location: /SDN-Website/transfer.php");
-			}
+			include("Javascript/transcript.php");
 		}
 		?>
-		<form method="post" id= accountActions>
-			<p>
-				<input type = "submit" name= "button" value = "Add Account"?>
-			</p>
-			<p>
-				<input type = "submit" name= "button" value = "Transfer"?>
-			</p>
-		</form>
 	</body>
 
 </html>
