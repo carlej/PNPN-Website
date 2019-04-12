@@ -7,16 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Submit"){
 	$Accfrom = mysqli_real_escape_string($con, $_POST['Accfrom']);
 	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
 	$trans = mysqli_real_escape_string($con, $_POST['trans']);
-	$goodtran = false;
-	foreach ($parsed_json as $value) {
-		if ($value == $Accfrom) {
-			$goodtran = true;
-		}
-	}
-	if ($goodtran)
-		include "Javascript/maketran.php";
-	else
-		echo "error you don't have access to that account";
+	include "Javascript/maketran.php";
 	mysqli_close($con);
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Cancel")
@@ -27,8 +18,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Cancel")
 	<fieldset>
 		<legend>Transfer:</legend>
 		<p>
-			<label for= "Accfrom">Account from:</label>
-			<input type="number" name="Accfrom" id="Accfrom" min="100000000" max="999999999">
+			<select name="Accfrom">
+				<?php
+				foreach ($parsed_json as $value) {
+					if ($value) {
+						echo '<option value="'.$value.'">'.$value.'</option>';
+					}
+				}
+				?>
+			</select>
+			
 		</p>
 		<p>
 			<label for="Accto">Account to:</label>

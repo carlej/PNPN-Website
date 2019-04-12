@@ -2,8 +2,8 @@
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
 	$row=mysqli_fetch_row($result);
-	echo $row[0];
-	if ($trans <= $row[0]) {
+	//echo $row[0];
+	if ($trans <= $row[0] && $trans>0) {
 		$queryIn = "SELECT ID FROM accounts WHERE ID = '$Accto'";
 		$resultIn = mysqli_query($con, $queryIn);
 		$row2=mysqli_fetch_row($resultIn);
@@ -44,6 +44,6 @@
 		else
 			echo "error that account doesn't exist";
 	}
-	else
+	elseif($trans>0)
 		echo "error you don't have enough money";
 ?>

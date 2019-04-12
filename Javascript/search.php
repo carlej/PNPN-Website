@@ -19,18 +19,23 @@
 			if (mysqli_num_rows($resultIn)>1) {
 				$option=NULL;
 				$array = $resultIn->fetch_all(MYSQLI_NUM);
-				echo '<form method="post" id = "select">';
+				echo '<form method="POST" id="search"><fieldset><label>Search by:</label><select name="input">';
+				//echo '<form method="post" id = "select">';
 				foreach ($array as $key => $value) {
-					echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+					//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+					echo '<option value="'.$value[0].'">'.$value[0].'</option>';
 				}
-				echo '</form>';
-				if ($_SERVER["REQUEST_METHOD"] == "post") {
-					foreach ($array as $key => $value) {
-						if($value[0] == $_POST['submit']){
-							$resultIn=$value;
-						}
-					}
-				}
+				//echo '</form>';
+				$input2 = mysqli_real_escape_string($con, $_POST['input']);
+				echo '</select><label for="input">:</label><input type="submit" name= "submit" value="Submit"><input type="hidden" name="type" value="Username"></fieldset></form>';
+				
+//				if ($_SERVER["REQUEST_METHOD"] == "post") {
+//					foreach ($array as $key => $value) {
+//						if($value[0] == $_POST['submit']){
+//							$resultIn=$value;
+//						}
+//					}
+//				}
 			}
 			else if (mysqli_num_rows($resultIn)==1) {
 				$row = mysqli_fetch_row($resultIn);
@@ -50,17 +55,17 @@
 	else{
 		//code
 	}
-	if ($_SERVER["REQUEST_METHOD"] == "post") {
-		echo "here";
-		foreach ($array as $key => $value) {
-			if($value[0] == $_POST['submit']){
-				$resultIn=$value;
-			}
-		}
-	$row = mysqli_fetch_row($resultIn);
-	echo $row[0];
-	echo "here";
-	}
+//	if ($_SERVER["REQUEST_METHOD"] == "post") {
+//		echo "here";
+//		foreach ($array as $key => $value) {
+//			if($value[0] == $_POST['submit']){
+//				$resultIn=$value;
+//			}
+//		}
+//	$row = mysqli_fetch_row($resultIn);
+//	echo $row[0];
+//	echo "here";
+//	}
 
 	mysqli_close($con);
 ?>
