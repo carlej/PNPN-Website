@@ -1,5 +1,4 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit") {
  	$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
@@ -20,20 +19,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit") {
 			if (mysqli_num_rows($resultIn)>1) {
 				$option=NULL;
 				$array = $resultIn->fetch_all(MYSQLI_NUM);
+				echo '<form method="post" id = "select">';
 				foreach ($array as $key => $value) {
-					echo '<p><input type="submit" name="selection" value="'.$value[0].'" /></p>';
+					echo '<p><input type="button" name="selection" value="'.$value[0].'" /></p>';
 				}
-
-				//include "Javascript/multResult.php";
+				echo '</form>';
+				if ($_SERVER["REQUEST_METHOD"] == "post") {
+					echo "here";
+					foreach ($array as $key => $value) {
+						if($value[0] == $_POST['selection']){
+							$resultIn=$value;
+						}
+					}
+				}
 			}
 			else if (mysqli_num_rows($resultIn)==1) {
 				$row = mysqli_fetch_row($resultIn);
 				$queryIn = "SELECT Accounts FROM users WHERE Username = '$row[0]'";
 				$resultIn = mysqli_query($con, $queryIn);
-				$row=mysqli_fetch_row($resultIn);
-				$parsed_json = json_decode($row[0], true);
+				$row1=mysqli_fetch_row($resultIn);
+				$parsed_json = json_decode($row1[0], true);
 				$parsed_json = $parsed_json['id'];
 				include "Views/Partials/showAccs.php";
+
 			}
 			else{
 				echo "There are no accounts that match that search. Search is case sensitive";
@@ -42,5 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit") {
 	}
 	else{
 		//code
-	} mysqli_close($con);
- } ?>
+	}
+	mysqli_close($con);
+?>

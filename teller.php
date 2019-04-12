@@ -54,7 +54,9 @@
 				<input type="submit" name= "submit" value="Submit">
 			</fieldset>
 		</form>
-		<?php include "Javascript/search.php"; ?>
+		<?php 
+		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit") {
+		include "Javascript/search.php"; }?>
 	</body>
 
 </html>
