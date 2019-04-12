@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Cancel")
 	<fieldset>
 		<legend>Transfer:</legend>
 		<p>
+			<label>Account from:</label>
 			<select name="Accfrom">
 				<?php
 				foreach ($parsed_json as $value) {
