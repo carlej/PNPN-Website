@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit") {
 				$option=NULL;
 				$array = $resultIn->fetch_all(MYSQLI_NUM);
 				foreach ($array as $key => $value) {
-					echo '<p><input type="submit" name="'.$value[0].'" value="'.$value[0].'" /></p>';
+					echo '<p><input type="submit" name="selection" value="'.$value[0].'" /></p>';
 				}
 
 				//include "Javascript/multResult.php";
