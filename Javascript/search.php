@@ -21,13 +21,12 @@
 				$array = $resultIn->fetch_all(MYSQLI_NUM);
 				echo '<form method="post" id = "select">';
 				foreach ($array as $key => $value) {
-					echo '<p><input type="button" name="selection" value="'.$value[0].'" /></p>';
+					echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
 				}
 				echo '</form>';
 				if ($_SERVER["REQUEST_METHOD"] == "post") {
-					echo "here";
 					foreach ($array as $key => $value) {
-						if($value[0] == $_POST['selection']){
+						if($value[0] == $_POST['submit']){
 							$resultIn=$value;
 						}
 					}
@@ -51,5 +50,17 @@
 	else{
 		//code
 	}
+	if ($_SERVER["REQUEST_METHOD"] == "post") {
+		echo "here";
+		foreach ($array as $key => $value) {
+			if($value[0] == $_POST['submit']){
+				$resultIn=$value;
+			}
+		}
+	$row = mysqli_fetch_row($resultIn);
+	echo $row[0];
+	echo "here";
+	}
+
 	mysqli_close($con);
 ?>
