@@ -18,9 +18,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit") {
 			$resultIn = mysqli_query($con, $queryIn);
 			$array = NULL;
 			if (mysqli_num_rows($resultIn)>0) {
+				$option=NULL;
 				$array = $resultIn->fetch_all(MYSQLI_NUM);
-				echo $array[0][0];
-				include "Javascript/multResult.php";
+				echo '<form method="POST" id="select"><fieldset><label>Results:</label><p><select name="result">';
+				foreach ($array as $key => $value) {
+					echo '<option value=' . $value[0] . '>' . $value[0] . '</option>';
+					//echo $value[0];
+					//echo '<input type="submit" name=' . $value[0] . 'value=' . $value[0] . '>';
+				}
+				echo '</select></p></fieldset></form>';
+
+				//include "Javascript/multResult.php";
 			}
 			else if (mysqli_num_rows($resultIn)==1) {
 				$row = mysqli_fetch_row($resultIn);

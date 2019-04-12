@@ -3,11 +3,11 @@
 		<label>Results:</label>
 		<p>
 			<select name="result">
-				<?php foreach ($array as $value): ?>
-					<p>
-						<option value=<?php $value ?>><<?php $value ?></option>
-					</p>
-				<?php endforeach; ?>
+				<?php
+				foreach ($array as $key => $value) {
+					echo '<option value=' . $value[0] . '>' . $value[0] . '</option>';
+				} 
+				?>
 			</select>
 		</p>
 	</fieldset>
