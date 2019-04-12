@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Submit"){
 		include "Javascript/maketran.php";
 	else
 		echo "error you don't have access to that account";
-	
+	mysqli_close($con);
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Cancel")
 	header("Location: /SDN-Website/bank.php");

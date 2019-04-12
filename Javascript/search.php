@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit") {
 			$queryIn = "SELECT * FROM users WHERE `$method` = '$input'";
 			$resultIn = mysqli_query($con, $queryIn);
 			$array = NULL;
-			if (mysqli_num_rows($resultIn)>0) {
+			if (mysqli_num_rows($resultIn)>1) {
 				$option=NULL;
 				$array = $resultIn->fetch_all(MYSQLI_NUM);
 				foreach ($array as $key => $value) {
@@ -42,5 +42,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit") {
 	}
 	else{
 		//code
-	}
+	} mysqli_close($con);
  } ?>

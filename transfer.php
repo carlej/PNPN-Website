@@ -7,7 +7,7 @@
 			$username = $_SESSION['username'];
 		}
 		else
-			echo "Please login to view this page.";//<script type="text/javascript" src="Javascript/bankscript.js"></script>
+			echo "Please login to view this page.";
 		?>
 		
 
@@ -30,8 +30,9 @@
 			$parsed_json = json_decode($row[0], true);
 			$parsed_json = $parsed_json['id'];
 			include "Views/Partials/showAccs.php";
+			mysqli_close($con);
 			include("Javascript/transcript.php");
-		}
+		} 
 		?>
 	</body>
 

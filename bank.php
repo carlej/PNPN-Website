@@ -37,7 +37,7 @@
 				header("Location: /SDN-Website/transfer.php");
 			}
 			include "Views/Partials/bankButtons.php";
-		}
+		} mysqli_close($con);
 
 		?>
 	</body>

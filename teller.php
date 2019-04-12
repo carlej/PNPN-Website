@@ -29,13 +29,10 @@
 			$row=mysqli_fetch_row($resultIn);
 			$parsed_json = json_decode($row[0], true);
 			$parsed_json = $parsed_json['id'];
-			//include "Views/Partials/showAccs.php";
-			//include("Javascript/transcript.php");
-//					<label for="Username">Username:</label>
-//					<input type="text" name="Username" id="Username">
-//					<input type = "submit" name= "button" value = "Search"
 
-		}?>
+		}
+		mysqli_close($con);
+		?>
 		<form method="POST" id="search">
 			<fieldset>
 				<label>Search by:</label>
