@@ -26,10 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Add Account") {
 			}
 			$accs=$accs.$id."]}";
 			$insert = "INSERT INTO accounts (ID) VALUES ('$id')";
-			//$inResult = mysqli_query($con, $insert); //Updates the DB with the new account
+			$inResult = mysqli_query($con, $insert); //Updates the DB with the new account
 			$update = "UPDATE users SET Accounts = '$accs' WHERE users.Username = '$username'";
-			//$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
-			//header("Location: /SDN-Website/bank.php"); //refresh the page to disply the new account
+			$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
+			header("Location: /SDN-Website/bank.php"); //refresh the page to disply the new account
 		}
 		else
 			$a=true;

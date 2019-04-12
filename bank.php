@@ -30,6 +30,7 @@
 		$row=mysqli_fetch_row($resultIn);
 		$parsed_json = json_decode($row[0], true);
 		$parsed_json = $parsed_json['id'];
+
 //		foreach($parsed_json as $value)
 //		{
 //			$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";

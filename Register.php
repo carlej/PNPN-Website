@@ -28,7 +28,8 @@
         $queryIn = "SELECT * FROM users where Username='$Username' ";
         $resultIn = mysqli_query($con, $queryIn);
         if (mysqli_num_rows($resultIn)>0) {
-            $msg = "<h2>Can't Add to Table</h2> There is already a user with that name $username<p>";
+            echo "There is already a user with that user name";
+            $msg = "<h2>Can't Add to Table</h2> There is already a user with that name $Username<p>";
         }
         else{
             do{
