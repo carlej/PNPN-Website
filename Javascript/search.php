@@ -28,14 +28,7 @@
 				//echo '</form>';
 				$input2 = mysqli_real_escape_string($con, $_POST['input']);
 				echo '</select><label for="input">:</label><input type="submit" name= "submit" value="Submit"><input type="hidden" name="type" value="Username"></fieldset></form>';
-				
-//				if ($_SERVER["REQUEST_METHOD"] == "post") {
-//					foreach ($array as $key => $value) {
-//						if($value[0] == $_POST['submit']){
-//							$resultIn=$value;
-//						}
-//					}
-//				}
+			
 			}
 			else if (mysqli_num_rows($resultIn)==1) {
 				$row = mysqli_fetch_row($resultIn);
@@ -53,7 +46,7 @@
 		}
 	}
 	else{
-		//code
+		//for finding an account by account number
 	}
 //	if ($_SERVER["REQUEST_METHOD"] == "post") {
 //		echo "here";
