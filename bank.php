@@ -1,10 +1,14 @@
 <!doctype html>
 <html>
 	<head>
-		<?php include("Connections/req.php");
+		<?php include("Javascript/Connections/req.php");
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			echo "Welcome " . $_SESSION['username'];
 			$username = $_SESSION['username'];
+			$perm = $_SESSION['perm'];
+			if ($perm=="b") {
+				header("Location: /SDN-Website/teller.php");
+			}
 		}
 		else{
 			echo "Please login to view this page.";
@@ -19,7 +23,7 @@
 	<body>
 		<?php
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-			include 'Connections/convar.php';
+			include 'Javascript/Connections/convar.php';
 			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			if (!$con) {
 				die('Could not connect: ' . mysql_error());

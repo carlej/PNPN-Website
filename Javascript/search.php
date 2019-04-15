@@ -37,8 +37,13 @@
 				$row1=mysqli_fetch_row($resultIn);
 				$parsed_json = json_decode($row1[0], true);
 				$parsed_json = $parsed_json['id'];
+				$searchUserName=$row[0];
+				$_SESSION['hold']=$searchUserName;
 				include "Views/Partials/showAccs.php";
-
+				mysqli_close($con);
+				$perm = $_SESSION['perm'];
+				$_SERVER["REQUEST_METHOD"]=NULL;
+				include("Javascript/transcript.php");
 			}
 			else{
 				echo "There are no accounts that match that search. Search is case sensitive";
@@ -60,5 +65,5 @@
 //	echo "here";
 //	}
 
-	mysqli_close($con);
+//	mysqli_close($con);
 ?>

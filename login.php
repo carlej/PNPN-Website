@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php include("Connections/req.php"); ?>
+		<?php include("Javascript/Connections/req.php"); ?>
 
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<?php 
-		include 'Connections/convar.php'; 
+		include 'Javascript/Connections/convar.php'; 
 	
 		$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		if (!$con) {
@@ -40,6 +40,7 @@
 				$_SESSION['loggedin'] = true;
 				$_SESSION['username'] = $Username;
 				$_SESSION['perm'] = $perm[0];
+				$_SESSION['hold']="hold";
 				echo $perm[0];
 				header("Location: /SDN-Website");
 			}
@@ -59,7 +60,7 @@
     <p>
 	<p>
         <label for="Password">Password:</label>
-        <input type="text" class="required" name="Password" id="Password">
+        <input type="password" class="required" name="Password" id="Password">
     </p>
 </fieldset>
 

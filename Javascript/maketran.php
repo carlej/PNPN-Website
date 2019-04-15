@@ -1,8 +1,24 @@
 <?php
+include("Connections/req.php");
+include 'Connections/convar.php';
+if ($_POST['submit'] == "Cancel"){
+	echo $_SESSION['hold'];
+	$_SESSION['hold']="hold";
+	header("Location: /SDN-Website/bank.php");
+}
+$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+	if (!$con) {
+		die('Could not connect: ' . mysql_error());
+	}
+	$Accfrom = mysqli_real_escape_string($con, $_POST['Accfrom']);
+	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
+	$trans = mysqli_real_escape_string($con, $_POST['trans']);
+	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
+		header("Location: /SDN-Website/transfer.php");
+	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
 	$row=mysqli_fetch_row($result);
-	//echo $row[0];
 	if ($trans <= $row[0] && $trans>0) {
 		$queryIn = "SELECT ID FROM accounts WHERE ID = '$Accto'";
 		$resultIn = mysqli_query($con, $queryIn);
@@ -38,12 +54,17 @@
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-
 			header("Location: /SDN-Website/transfer.php");//refreshes page to reflect new ballance
+			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 		}
-		else
-			echo "error that account doesn't exist";
+		else{
+			//error = "Error that account doesn't exist";
+			//echo "<script type='text/javascript'>alert('".$error."');</script>";
+			header("Location: /SDN-Website/transfer.php");
+		}
 	}
-	elseif($trans>0)
-		echo "error you don't have enough money";
+	elseif($trans>0){
+		//echo "error you don't have enough money";
+		header("Location: /SDN-Website/transfer.php");
+	}
 ?>

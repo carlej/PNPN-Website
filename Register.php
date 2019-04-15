@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<?php include("Connections/req.php"); ?>
+		<?php include("Javascript/Connections/req.php"); ?>
 
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
@@ -10,7 +10,7 @@
 	</head>
 	<body>
         <?php 
-        include 'Connections/convar.php'; 
+        include 'Javascript/Connections/convar.php'; 
     
         $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         if (!$con) {
