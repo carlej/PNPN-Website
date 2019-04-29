@@ -49,6 +49,12 @@
 				<input type="search" class="required" name="input" id="input">
 				<input type="submit" name= "submit" value="Search">
 				<input type="hidden" name="new" value="new">
+				<p>
+					<input type = "submit" name= "submit" value = "Add Ship/Houshold"?>
+				</p>
+				<p>
+					<input type = "submit" name= "submit" value = "Add Fleet/Alliance"?>
+				</p>
 			</fieldset>
 		</form>
 		<?php 
