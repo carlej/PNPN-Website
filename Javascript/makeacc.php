@@ -43,9 +43,18 @@ include 'Connections/convar.php';
 			$add=json_encode($parsed_json);
 			$insert = "INSERT INTO accounts (ID) VALUES ('$id')";
 			$inResult = mysqli_query($con, $insert); //Updates the DB with the new account
-			$update = "UPDATE users SET Accounts = '$add' WHERE users.Username = '$user'";
+			if ($type=="norm") {
+				$update = "UPDATE users SET Accounts = '$add' WHERE users.Username = '$user'";
+			}
+			elseif ($type=="Ship") {
+				$update = "UPDATE ship SET Accounts = '$add' WHERE ID = '$user'";
+			}
+			elseif ($type=="Fleet") {
+				$update = "UPDATE fleet SET Accounts = '$add' WHERE ID = '$user'";
+			}
+			echo $update;
 			$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
-			header("Location: /SDN-Website/teller.php"); //refresh the page to disply the new account
+			//header("Location: /SDN-Website/teller.php"); //refresh the page to disply the new account
 		}
 		else
 			$a=true;
