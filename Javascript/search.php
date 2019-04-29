@@ -5,9 +5,31 @@
 	}
 	$method = $_POST['type'];
 	$input = mysqli_real_escape_string($con, $_POST['input']);
-	if ($method=="shipID")
-		$method="Ship";
-	if ($method == "Ship") {
+	if ($method=="shipID"){
+		$queryIn = "SELECT * FROM ship WHERE ID = '$input'";
+		$resultIn = mysqli_query($con, $queryIn);
+		$row = mysqli_fetch_row($resultIn);
+		$queryIn = "SELECT Accounts FROM ship WHERE ID = '$row[0]'";
+		$resultIn = mysqli_query($con, $queryIn);
+		$row1=mysqli_fetch_row($resultIn);
+		$parsed_json = json_decode($row1[0], true);
+//				$parsed_jsonid=$parsed_json;
+		$parsed_json = $parsed_json['id'];
+		$searchUserName=$row[0];
+		$parsed_ship_json=NULL;
+		$parsed_fleet_json=NULL;
+		$_SESSION['hold']=$searchUserName;
+		$_SESSION['stype']="shipID";
+		//$user=$_SESSION['hold'];
+		include "Views/Partials/showAccs.php";
+		include "Views/Partials/showhist.php";
+		mysqli_close($con);
+		$perm = $_SESSION['perm'];
+		$_SERVER["REQUEST_METHOD"]=NULL;
+		include("Javascript/telltranscript.php");
+		echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
+	}
+	elseif ($method == "Ship") {
 		$queryIn = "SELECT * FROM ship WHERE Name = '$input'";
 		$resultIn = mysqli_query($con, $queryIn);
 		if (mysqli_num_rows($resultIn)>1) {
@@ -21,7 +43,8 @@
 			}
 			//echo '</form>';
 			$input2 = mysqli_real_escape_string($con, $_POST['input']);
-			echo '</select><label for="input">:</label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Ship"><input type="hidden" name="new" value="new"></fieldset></form>';
+			$_SESSION['stype']="shipID";
+			echo '</select><label for="input">:</label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="new"></fieldset></form>';
 		}
 		elseif (mysqli_num_rows($resultIn)==1) {
 			$row = mysqli_fetch_row($resultIn);
@@ -35,7 +58,7 @@
 			$parsed_ship_json=NULL;
 			$parsed_fleet_json=NULL;
 			$_SESSION['hold']=$searchUserName;
-			$_SESSION['stype']="Ship";
+			$_SESSION['stype']="shipID";
 			//$user=$_SESSION['hold'];
 			include "Views/Partials/showAccs.php";
 			include "Views/Partials/showhist.php";
@@ -46,7 +69,7 @@
 			echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
 		}
 	}
-	else if ($method == "Fleet") {
+	elseif ($method == "Fleet") {
 		# code...
 	}
 	else{
