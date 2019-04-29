@@ -10,6 +10,20 @@
 						echo '<option value="'.$value.'">'.$value.'</option>';
 					}
 				}
+				if($parsed_ship_json!=NULL){
+					foreach ($parsed_ship_json as $value) {
+						if ($value) {
+							echo '<option value="'.$value.'">'.$value.'</option>';
+						}
+					}
+				}
+				if($parsed_fleet_json!=NULL){
+					foreach ($parsed_fleet_json as $value) {
+						if ($value) {
+							echo '<option value="'.$value.'">'.$value.'</option>';
+						}
+					}
+				}
 				?>
 			</select>
 			
