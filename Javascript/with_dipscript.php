@@ -1,9 +1,9 @@
-<form name="transfer"method="POST" action="Javascript/maketran.php" onsubmit="return valadatetran();" id="addForm">
+<form name="transfer"method="POST" action="Javascript/makewith_dip.php" onsubmit="return valadatewithdip();" id="addForm">
 	<fieldset>
 		<legend>Transfer:</legend>
 		<p>
 			<label>Account from:</label>
-			<select name="Accfrom">
+			<select name="Acc">
 				<?php
 				foreach ($parsed_json as $value) {
 					if ($value) {
@@ -24,7 +24,8 @@
 		</p>
 	</fieldset>
 	<p>
-		<input type="submit" name="submit" value="Transfer" />
+		<input type="submit" name="submit" value="Withdraw" />
+		<input type="submit" name="submit" value="Deposit">
 		<input type="reset" value="Clear" />
 		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
 	</p>
@@ -33,9 +34,8 @@
 	function Cancel(){
 		$.ajax({url:'http://localhost/SDN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/SDN-Website/bank.php")}});
 	}
-function valadatetran(){
-	var to = document.forms["transfer"]["Accto"].value;
-	var from = document.forms["transfer"]["Accfrom"].value;
+function valadatewithdip(){
+	var acc = document.forms["transfer"]["Accto"].value;
 	var tra = document.forms["transfer"]["trans"].value;
 	var re=false;
 	if (to==""||from=="") {
@@ -44,7 +44,7 @@ function valadatetran(){
 	$.ajax({
 		async: false,
 		type: "POST",
-		url: 'http://localhost/SDN-Website/Javascript/valTran.php',
+		url: 'http://localhost/SDN-Website/Javascript/valwithdip.php',
 		data:{to,from,tra},
 		dataType: 'JSON',
 		success: function(output){
@@ -55,4 +55,3 @@ function valadatetran(){
 });
 	return re;
 }</script>
-

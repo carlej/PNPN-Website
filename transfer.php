@@ -5,10 +5,6 @@
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			echo "Welcome " . $_SESSION['username'];
 			$username = $_SESSION['username'];
-			$perm = $_SESSION['perm'];
-			if ($perm=="b") {
-				header("Location: /SDN-Website/teller.php");
-			}
 		}
 		else
 			echo "Please login to view this page.";

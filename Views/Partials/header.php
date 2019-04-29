@@ -3,6 +3,9 @@
 	<div id="cssmenu" class="align-center">
  		<ul>
      		<li><a href="/SDN-Website">Home</a></li>
+     		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm'] == 'b'): ?>
+     			<li><a href="/SDN-Website/teller.php">Teller</a></li>
+     		<?php endif; ?>
 			<li><a href="/SDN-Website/bank.php">Bank of the SDN</a></li>
 			<li><a href="/SDN-Website/landgrant.php">Land Grants</a></li>
 			<li><a href="/SDN-Website/volunteer.php">Volunteering</a></li>

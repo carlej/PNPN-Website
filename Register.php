@@ -9,64 +9,8 @@
 		<?php include("Views\Partials/header.php");?>
 	</head>
 	<body>
-        <?php 
-        include 'Javascript/Connections/convar.php'; 
-    
-        $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-        if (!$con) {
-            die('Could not connect: ' . mysql_error());
-        }
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-// Escape user inputs for security
-        $Username = mysqli_real_escape_string($con, $_POST['Username']);
-        $firstName = mysqli_real_escape_string($con, $_POST['firstName']);
-        $lastName = mysqli_real_escape_string($con, $_POST['lastName']);
-        $pirateName = mysqli_real_escape_string($con, $_POST['pirateName']);
-        $email = mysqli_real_escape_string($con, $_POST['email']);
-        $Password = mysqli_real_escape_string($con, $_POST['Password']);
-        $queryIn = "SELECT * FROM users where Username='$Username' ";
-        $resultIn = mysqli_query($con, $queryIn);
-        if (mysqli_num_rows($resultIn)>0) {
-            echo "There is already a user with that user name";
-            $msg = "<h2>Can't Add to Table</h2> There is already a user with that name $Username<p>";
-        }
-        else{
-            do{
-                srand(time());
-                $id=rand(100000000,999999999);
-                $queryIn = "SELECT ID FROM accounts WHERE ID = '$id'";
-                $resultIn = mysqli_query($con, $queryIn);
-                $row=mysqli_fetch_row($resultIn);
-                if (mysqli_num_rows($resultIn)==0) {echo $id;
-                    $a=false;
-                    $accs="{\"id\": [";
-                    $accs.=$id.", 0]}";
-                    $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
-                    $inResult = mysqli_query($con, $insert); //Updates the DB with the new account
-                    $update = "UPDATE users SET Accounts = '$accs' WHERE users.Username = '$Username'";
-                    //$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
-        }
-        else
-            $a=true;
-    }while($a);
-            $salt = md5(time());
-            $passhold = md5($salt.$Password);
-            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Email, Password, salt) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$email', '$passhold', '$salt')";
-            if (mysqli_query($con,$query)) {
-            $inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
-                $msg = "Record added.<p>";
-                $_SESSION['loggedin'] = true;
-                $_SESSION['username'] = $Username;
-                header("Location: /SDN-Website");
-            }
-            else
-                echo "ERROR";//.mysql_error($con);
-        }
-    }
-    mysqli_close($con);
-    ?>
-		<form method="post" id="addForm">											
+		<form method="post" action="Javascript/makeuser.php" name="Register" onsubmit="return valadate();" id="addForm" >											
 <fieldset>
 	<legend>User Info:</legend>
     <p>
@@ -103,3 +47,21 @@
 	</body>
 
 </html>
+<script type="text/javascript">
+    function valadate(){
+        var Username = document.forms["Register"]["Username"].value;
+        var re=false;
+        $.ajax({
+            async: false,
+            type: "POST",
+            url: 'http://localhost/SDN-Website/Javascript/valuse.php',
+            data:{Username},
+            dataType: 'JSON',
+            success: function(output){
+                if(output[1])
+                    alert(output[1]);
+                re=output[0];
+            }
+        });return re;
+    }
+</script>

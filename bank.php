@@ -5,14 +5,9 @@
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			echo "Welcome " . $_SESSION['username'];
 			$username = $_SESSION['username'];
-			$perm = $_SESSION['perm'];
-			if ($perm=="b") {
-				header("Location: /SDN-Website/teller.php");
-			}
 		}
 		else{
 			echo "Please login to view this page.";
-			$username=NULL;
 		}
 		?>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
@@ -34,9 +29,7 @@
 			$parsed_json = json_decode($row[0], true);
 			$parsed_json = $parsed_json['id'];
 			include "Views/Partials/showAccs.php";
-			if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Add Account") {
-				include "Javascript/makeacc.php";
-			}
+			include "Views/Partials/showhist.php";
 			if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
 				header("Location: /SDN-Website/transfer.php");
 			}

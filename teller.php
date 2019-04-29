@@ -2,12 +2,14 @@
 <html>
 	<head>
 		<?php include("Javascript/Connections/req.php");
-		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b") {
 			echo "Welcome " . $_SESSION['username'];
 			$username = $_SESSION['username'];
 		}
-		else
-			echo "Please login to view this page.";//<script type="text/javascript" src="Javascript/bankscript.js"></script>
+		else{
+			echo "Please login to view this page.";
+			header("Location: /SDN-Website/bank.php");
+		}
 		?>
 		
 
@@ -46,9 +48,14 @@
 				<label for="input">:</label>
 				<input type="search" class="required" name="input" id="input">
 				<input type="submit" name= "submit" value="Search">
+				<input type="hidden" name="new" value="new">
 			</fieldset>
 		</form>
 		<?php 
+		error_reporting(E_ERROR);
+		if ($_POST['new']) {
+			$_SESSION['hold']="hold";
+		}
 		if ($_SESSION['hold']!="hold") {
 			$_SERVER["REQUEST_METHOD"] = "POST";
 			$_POST['submit'] = "Search";
@@ -57,7 +64,7 @@
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
 		include "Javascript/search.php";
-	}
+		}
 //		if ($searchUserName) {
 //			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 //			if (!$con) {

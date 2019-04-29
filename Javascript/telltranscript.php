@@ -1,4 +1,4 @@
-<form name="transfer"method="POST" action="Javascript/maketran.php" onsubmit="return valadatetran();" id="addForm">
+<form name="transfer"method="POST" action="Javascript/tellmaketran.php" onsubmit="return valadatetran();" id="addForm">
 	<fieldset>
 		<legend>Transfer:</legend>
 		<p>
@@ -31,7 +31,7 @@
 </form>
 <script type="text/javascript">
 	function Cancel(){
-		$.ajax({url:'http://localhost/SDN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/SDN-Website/bank.php")}});
+		$.ajax({url:'http://localhost/SDN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/SDN-Website/teller.php")}});
 	}
 function valadatetran(){
 	var to = document.forms["transfer"]["Accto"].value;
