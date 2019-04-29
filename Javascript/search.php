@@ -68,9 +68,76 @@
 			include("Javascript/telltranscript.php");
 			echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
 		}
+		else{
+			echo "There are no accounts that match that search. Search is case sensitive";
+		}
+	}
+	elseif ($method == "fleetID") {
+		$queryIn = "SELECT * FROM fleet WHERE ID = '$input'";
+		$resultIn = mysqli_query($con, $queryIn);
+		$row = mysqli_fetch_row($resultIn);
+		$queryIn = "SELECT Accounts FROM fleet WHERE ID = '$row[0]'";
+		$resultIn = mysqli_query($con, $queryIn);
+		$row1=mysqli_fetch_row($resultIn);
+		$parsed_json = json_decode($row1[0], true);
+//				$parsed_jsonid=$parsed_json;
+		$parsed_json = $parsed_json['id'];
+		$searchUserName=$row[0];
+		$parsed_ship_json=NULL;
+		$parsed_fleet_json=NULL;
+		$_SESSION['hold']=$searchUserName;
+		$_SESSION['stype']="fleetID";
+		//$user=$_SESSION['hold'];
+		include "Views/Partials/showAccs.php";
+		include "Views/Partials/showhist.php";
+		mysqli_close($con);
+		$perm = $_SESSION['perm'];
+		$_SERVER["REQUEST_METHOD"]=NULL;
+		include("Javascript/telltranscript.php");
+		echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
 	}
 	elseif ($method == "Fleet") {
-		# code...
+		$queryIn = "SELECT * FROM fleet WHERE Name = '$input'";
+		$resultIn = mysqli_query($con, $queryIn);
+		if (mysqli_num_rows($resultIn)>1) {
+			$array=NULL;
+			$array = $resultIn->fetch_all(MYSQLI_NUM);
+			echo '<form method="POST" id="search"><fieldset><label>Search by:</label><select name="input">';
+			//echo '<form method="post" id = "select">';
+			foreach ($array as $key => $value) {
+				//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+				echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
+			}
+			//echo '</form>';
+			$input2 = mysqli_real_escape_string($con, $_POST['input']);
+			$_SESSION['stype']="fleetID";
+			echo '</select><label for="input">:</label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="new"></fieldset></form>';
+		}
+		elseif (mysqli_num_rows($resultIn)==1) {
+			$row = mysqli_fetch_row($resultIn);
+			$queryIn = "SELECT Accounts FROM fleet WHERE ID = '$row[0]'";
+			$resultIn = mysqli_query($con, $queryIn);
+			$row1=mysqli_fetch_row($resultIn);
+			$parsed_json = json_decode($row1[0], true);
+//				$parsed_jsonid=$parsed_json;
+			$parsed_json = $parsed_json['id'];
+			$searchUserName=$row[0];
+			$parsed_ship_json=NULL;
+			$parsed_fleet_json=NULL;
+			$_SESSION['hold']=$searchUserName;
+			$_SESSION['stype']="fleetID";
+			//$user=$_SESSION['hold'];
+			include "Views/Partials/showAccs.php";
+			include "Views/Partials/showhist.php";
+			mysqli_close($con);
+			$perm = $_SESSION['perm'];
+			$_SERVER["REQUEST_METHOD"]=NULL;
+			include("Javascript/telltranscript.php");
+			echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
+		}
+		else{
+			echo "There are no accounts that match that search. Search is case sensitive";
+		}
 	}
 	else{
 		$queryIn = "SELECT * FROM users WHERE `$method` = '$input'";
