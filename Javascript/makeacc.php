@@ -7,6 +7,7 @@ include 'Connections/convar.php';
 	}
 	$a=true;
 	$user = mysqli_real_escape_string($con, $_POST['user']);
+	$type = mysqli_real_escape_string($con, $_POST['type']);
 	do{
 		srand(time());
 		$id=rand(100000000,999999999);
@@ -16,7 +17,15 @@ include 'Connections/convar.php';
 		$row=mysqli_fetch_row($resultIn);
 		if (mysqli_num_rows($resultIn)==0) {
 			$a=false;
-			$queryIn = "SELECT Accounts FROM users WHERE Username = '$user'";
+			if ($type=="norm") {
+				$queryIn = "SELECT Accounts FROM users WHERE Username = '$user'";
+			}
+			elseif ($type=="Ship") {
+				$queryIn = "SELECT Accounts FROM ship WHERE ID = '$user'";
+			}
+			elseif ($type=="Fleet") {
+				$queryIn = "SELECT Accounts FROM fleet WHERE ID = '$user'";
+			}
 			$resultIn = mysqli_query($con, $queryIn);
 			$row=mysqli_fetch_row($resultIn);
 			$parsed_json = json_decode($row[0], true);

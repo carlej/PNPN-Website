@@ -34,8 +34,9 @@
 				<label>Search by:</label>
 				<select name="type">
 					<option value="Username">Username</option>
-					<option value="ID">Account Number</option>
+					<option value="shipID" style="display:none;">shipID</option>
 					<option value="Ship">Ship/House</option>
+					<option value="fleetID" style="display:none;">fleetID</option>
 					<option value="Fleet">Fleet/Alliance</option>
 					<option value="Pname">Pirate Name</option>
 					<option value="Fname">First Name</option>
@@ -58,6 +59,7 @@
 			</fieldset>
 		</form>
 		<?php 
+		echo $_SESSION['stype'];
 		error_reporting(E_ERROR);
 		if ($_POST['new']) {
 			$_SESSION['hold']="hold";
@@ -65,7 +67,7 @@
 		if ($_SESSION['hold']!="hold") {
 			$_SERVER["REQUEST_METHOD"] = "POST";
 			$_POST['submit'] = "Search";
-			$_POST['type']="Username";
+			$_POST['type']=$_SESSION['stype'];//"Username";
 			$_POST['input']=$_SESSION['hold'];
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
