@@ -59,7 +59,6 @@
 			</fieldset>
 		</form>
 		<?php 
-		echo $_SESSION['hold'];
 		error_reporting(E_ERROR);
 		if ($_POST['new']) {
 			$_SESSION['hold']="hold";
