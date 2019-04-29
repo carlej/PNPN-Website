@@ -39,6 +39,22 @@
 //				$parsed_jsonid=$parsed_json;
 				$parsed_json = $parsed_json['id'];
 				$searchUserName=$row[0];
+				$parsed_ship_json=NULL;
+				$parsed_fleet_json=NULL;
+				if ($row[7]!=NULL) {
+					$queryShip= "SELECT Accounts FROM ship WHERE ID = '$row[7]'";
+					$resultShip = mysqli_query($con, $queryShip);
+					$rowShip=mysqli_fetch_row($resultShip);
+					$parsed_ship_json=json_decode($rowShip[0],true);
+					$parsed_ship_json=$parsed_ship_json['id'];
+				}
+				if ($row[6]!=NULL){
+					$queryFleet= "SELECT Accounts FROM fleet WHERE ID = '$row[6]'";
+					$resultFleet = mysqli_query($con, $queryFleet);
+					$rowFleet=mysqli_fetch_row($resultFleet);
+					$parsed_fleet_json=json_decode($rowFleet[0],true);
+					$parsed_fleet_json=$parsed_fleet_json['id'];
+				}
 				$_SESSION['hold']=$searchUserName;
 				//$user=$_SESSION['hold'];
 				include "Views/Partials/showAccs.php";

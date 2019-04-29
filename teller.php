@@ -71,6 +71,12 @@
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
 		include "Javascript/search.php";
 		}
+		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Ship/Houshold") {
+		include "Javascript/addShip.php";
+		}
+		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Fleet/Alliance") {
+		include "Javascript/addFleet.php";
+		}
 //		if ($searchUserName) {
 //			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 //			if (!$con) {
