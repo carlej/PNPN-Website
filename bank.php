@@ -30,6 +30,9 @@
 			$parsed_json = $parsed_json['id'];
 			$parsed_ship_json=NULL;
 			$parsed_fleet_json=NULL;
+			$queryIn = "SELECT * FROM users WHERE Username = '$username'";
+			$resultIn = mysqli_query($con, $queryIn);
+			$row=mysqli_fetch_row($resultIn);
 			if ($row[7]!=NULL) {
 				$queryShip= "SELECT Accounts FROM ship WHERE ID = '$row[7]'";
 				$resultShip = mysqli_query($con, $queryShip);
