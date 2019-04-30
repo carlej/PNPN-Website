@@ -70,7 +70,7 @@
 			$_POST['input']=$_SESSION['hold'];
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
-		include "Javascript/search.php";
+			include "Javascript/search.php";
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Ship/Household") {
 		header("Location: /SDN-Website/addShip.php");
