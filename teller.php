@@ -51,7 +51,10 @@
 				<input type="submit" name= "submit" value="Search">
 				<input type="hidden" name="new" value="new">
 				<p>
-					<input type = "submit" name= "submit" value = "Add Group"?>
+					<input type = "submit" name= "submit" value = "Add Ship/Household"?>
+				</p>
+				<p>
+					<input type = "submit" name= "submit" value = "Add Fleet/Alliance"?>
 				</p>
 			</fieldset>
 		</form>
@@ -67,14 +70,14 @@
 			$_POST['input']=$_SESSION['hold'];
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
-		header("Location: /SDN-Website/addGroup.php");
+		include "Javascript/search.php";
 		}
-		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Group") {
-		include "Javascript/addShip.php";
+		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Ship/Household") {
+		header("Location: /SDN-Website/addShip.php");
 		}
-		//if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Fleet/Alliance") {
-		//include "Javascript/addFleet.php";
-		//}
+		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Fleet/Alliance") {
+		header("Location: /SDN-Website/addFleet.php");
+		}
 //		if ($searchUserName) {
 //			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 //			if (!$con) {
