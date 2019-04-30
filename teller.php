@@ -34,8 +34,9 @@
 				<label>Search by:</label>
 				<select name="type">
 					<option value="Username">Username</option>
-					<option value="ID">Account Number</option>
+					<option value="shipID" style="display:none;">shipID</option>
 					<option value="Ship">Ship/House</option>
+					<option value="fleetID" style="display:none;">fleetID</option>
 					<option value="Fleet">Fleet/Alliance</option>
 					<option value="Pname">Pirate Name</option>
 					<option value="Fname">First Name</option>
@@ -49,6 +50,12 @@
 				<input type="search" class="required" name="input" id="input">
 				<input type="submit" name= "submit" value="Search">
 				<input type="hidden" name="new" value="new">
+				<p>
+					<input type = "submit" name= "submit" value = "Add Ship/Household"?>
+				</p>
+				<p>
+					<input type = "submit" name= "submit" value = "Add Fleet/Alliance"?>
+				</p>
 			</fieldset>
 		</form>
 		<?php 
@@ -59,11 +66,17 @@
 		if ($_SESSION['hold']!="hold") {
 			$_SERVER["REQUEST_METHOD"] = "POST";
 			$_POST['submit'] = "Search";
-			$_POST['type']="Username";
+			$_POST['type']=$_SESSION['stype'];//"Username";
 			$_POST['input']=$_SESSION['hold'];
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
-		include "Javascript/search.php";
+			include "Javascript/search.php";
+		}
+		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Ship/Household") {
+		header("Location: /SDN-Website/addShip.php");
+		}
+		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Fleet/Alliance") {
+		header("Location: /SDN-Website/addFleet.php");
 		}
 //		if ($searchUserName) {
 //			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
