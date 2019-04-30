@@ -1,13 +1,15 @@
 <!doctype html>
 <html>
 	<head>
-		<?php include("Connections/req.php");
-		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+		<?php include("Javascript/Connections/req.php");
+		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b") {
 			echo "Welcome " . $_SESSION['username'];
 			$username = $_SESSION['username'];
 		}
-		else
-			echo "Please login to view this page.";//<script type="text/javascript" src="Javascript/bankscript.js"></script>
+		else{
+			echo "Please login to view this page.";
+			header("Location: /SDN-Website/bank.php");
+		}
 		?>
 		
 
@@ -19,23 +21,14 @@
 	<body>
 		<?php
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-			include 'Connections/convar.php';
+			include 'Javascript/Connections/convar.php';
 			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			if (!$con) {
 				die('Could not connect: ' . mysql_error());
 			}
-			$queryIn = "SELECT Accounts FROM users WHERE Username = '$username'";
-			$resultIn = mysqli_query($con, $queryIn);
-			$row=mysqli_fetch_row($resultIn);
-			$parsed_json = json_decode($row[0], true);
-			$parsed_json = $parsed_json['id'];
-			//include "Views/Partials/showAccs.php";
-			//include("Javascript/transcript.php");
-//					<label for="Username">Username:</label>
-//					<input type="text" name="Username" id="Username">
-//					<input type = "submit" name= "button" value = "Search"
-
-		}?>
+		}
+		mysqli_close($con);
+		?>
 		<form method="POST" id="search">
 			<fieldset>
 				<label>Search by:</label>
@@ -53,11 +46,43 @@
 					<option value="Rposition">Royalty Position</option>
 				</select>
 				<label for="input">:</label>
-				<input type="text" class="required" name="input" id="input">
-				<input type="submit" name= "submit" value="Submit">
+				<input type="search" class="required" name="input" id="input">
+				<input type="submit" name= "submit" value="Search">
+				<input type="hidden" name="new" value="new">
 			</fieldset>
 		</form>
-		<?php include "Javascript/search.php"; ?>
+		<?php 
+		error_reporting(E_ERROR);
+		if ($_POST['new']) {
+			$_SESSION['hold']="hold";
+		}
+		if ($_SESSION['hold']!="hold") {
+			$_SERVER["REQUEST_METHOD"] = "POST";
+			$_POST['submit'] = "Search";
+			$_POST['type']="Username";
+			$_POST['input']=$_SESSION['hold'];
+		}
+		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
+		include "Javascript/search.php";
+		}
+//		if ($searchUserName) {
+//			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+//			if (!$con) {
+//				die('Could not connect: ' . mysql_error());
+//			}
+//			$queryIn = "SELECT Accounts FROM users WHERE Username = '$searchUserName'";
+//			$resultIn = mysqli_query($con, $queryIn);
+//			$row1=mysqli_fetch_row($resultIn);
+//			$parsed_json = json_decode($row1[0], true);
+//			$parsed_json = $parsed_json['id'];
+//			include "Views/Partials/showAccs.php";
+//			mysqli_close($con);
+//			$perm = $_SESSION['perm'];
+//			include("Javascript/transcript.php");
+//			$_SESSION['hold']=$searchUserName;
+//		}
+//		$searchUserName=NULL;
+		?>
 	</body>
 
 </html>

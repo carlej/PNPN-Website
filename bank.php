@@ -1,14 +1,13 @@
 <!doctype html>
 <html>
 	<head>
-		<?php include("Connections/req.php");
+		<?php include("Javascript/Connections/req.php");
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			echo "Welcome " . $_SESSION['username'];
 			$username = $_SESSION['username'];
 		}
 		else{
 			echo "Please login to view this page.";
-			$username=NULL;
 		}
 		?>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
@@ -19,7 +18,7 @@
 	<body>
 		<?php
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-			include 'Connections/convar.php';
+			include 'Javascript/Connections/convar.php';
 			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			if (!$con) {
 				die('Could not connect: ' . mysql_error());
@@ -30,14 +29,12 @@
 			$parsed_json = json_decode($row[0], true);
 			$parsed_json = $parsed_json['id'];
 			include "Views/Partials/showAccs.php";
-			if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Add Account") {
-				include "Javascript/makeacc.php";
-			}
+			include "Views/Partials/showhist.php";
 			if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
 				header("Location: /SDN-Website/transfer.php");
 			}
 			include "Views/Partials/bankButtons.php";
-		}
+		} mysqli_close($con);
 
 		?>
 	</body>

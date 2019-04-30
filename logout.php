@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<?php include("Connections/req.php"); ?>
+		<?php include("Javascript/Connections/req.php"); ?>
 
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 

@@ -10,7 +10,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$trans = mysqli_real_escape_string($con, $_POST['trans']);
 	$user=$_SESSION['username'];
 	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
-		header("Location: /SDN-Website/transfer.php");
+		header("Location: /SDN-Website/teller.php");
 	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
@@ -20,7 +20,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		$resultIn = mysqli_query($con, $queryIn);
 		$row2=mysqli_fetch_row($resultIn);
 		if (mysqli_num_rows($resultIn)!=0) {
-			$timeStamp=date("Y/m/d H:i:s");
+			$timeStamp=date("Y/m/d H:m:s");
 			$rema = $row[0]-$trans;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
@@ -50,7 +50,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			header("Location: /SDN-Website/transfer.php");//refreshes page to reflect new ballance
+			header("Location: /SDN-Website/teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 		}
 		else{
@@ -61,6 +61,6 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	}
 	elseif($trans>0){
 		//echo "error you don't have enough money";
-		header("Location: /SDN-Website/transfer.php");
+		header("Location: /SDN-Website/teller.php");
 	}
 ?>
