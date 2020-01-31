@@ -6,54 +6,52 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		die('Could not connect: ' . mysql_error());
 	}
 	$Accfrom = mysqli_real_escape_string($con, $_POST['Accfrom']);
-	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
 	$trans = mysqli_real_escape_string($con, $_POST['trans']);
 	$user=$_SESSION['username'];
-	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
+	if (($trans=="") && $_POST['submit']!="Cancel") {
 		header("Location: /PNPN-Website/transfer.php");
 	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
 	$row=mysqli_fetch_row($result);
 	if ($trans <= $row[0] && $trans>0) {
-		$queryIn = "SELECT ID FROM accounts WHERE ID = '$Accto'";
-		$resultIn = mysqli_query($con, $queryIn);
-		$row2=mysqli_fetch_row($resultIn);
-		if (mysqli_num_rows($resultIn)!=0) {
-			date_default_timezone_set('Etc/GMT+8');
-			$timeStamp=date('Y/m/d h:i:s A');
+//		$queryIn = "SELECT ID FROM accounts WHERE ID = '$Accto'";
+//		$resultIn = mysqli_query($con, $queryIn);
+//		$row2=mysqli_fetch_row($resultIn);
+//		if (mysqli_num_rows($resultIn)!=0) {
+			$timeStamp=date("Y/m/d H:i:s");
 			$rema = $row[0]-$trans;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
-			$queryTo = "SELECT Ballance FROM accounts WHERE ID = '$Accto'";
-			$resultTo = mysqli_query($con, $queryTo);
-			$row3=mysqli_fetch_row($resultTo);
-			$addat = $row3[0] + $trans;
-			$updateto = "UPDATE accounts SET Ballance = '$addat' WHERE accounts.ID = '$Accto'";
-			$deduct = mysqli_query($con, $updateto); //sets the new ballance of the account being transftered into.
+//			$queryTo = "SELECT Ballance FROM accounts WHERE ID = '$Accto'";
+//			$resultTo = mysqli_query($con, $queryTo);
+//			$row3=mysqli_fetch_row($resultTo);
+//			$addat = $row3[0] + $trans;
+//			$updateto = "UPDATE accounts SET Ballance = '$addat' WHERE accounts.ID = '$Accto'";
+//			$deduct = mysqli_query($con, $updateto); //sets the new ballance of the account being transftered into.
 			//creates a history of the transaction in the account to
-			$queryHistTo="SELECT history FROM accounts WHERE ID = '$Accto'";
-			$resultHistTo= mysqli_query($con, $queryHistTo);
-			$rowHistTo=mysqli_fetch_row($resultHistTo);
-			$parsed_jsonHistTo=json_decode($rowHistTo[0],true);
-			$dep=["Transfer",$Accfrom,$Accto,$trans,$user];
-			$parsed_jsonHistTo[$timeStamp]=$dep;
-			$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
-			$queryHistTo="UPDATE accounts SET history = '$enco_jsonHistTo' WHERE accounts.ID = '$Accto'";
-			$resultHistTo=mysqli_query($con,$queryHistTo);
+//			$queryHistTo="SELECT history FROM accounts WHERE ID = '$Accto'";
+//			$resultHistTo= mysqli_query($con, $queryHistTo);
+//			$rowHistTo=mysqli_fetch_row($resultHistTo);
+//			$parsed_jsonHistTo=json_decode($rowHistTo[0],true);
+//			$dep=["Transfer",$Accfrom,$Accto,$trans,$user];
+//			$parsed_jsonHistTo[$timeStamp]=$dep;
+//			$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
+//			$queryHistTo="UPDATE accounts SET history = '$enco_jsonHistTo' WHERE accounts.ID = '$Accto'";
+//			$resultHistTo=mysqli_query($con,$queryHistTo);
 			//creates history in the account making the transfer
 			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Transfer",$Accfrom,$Accto,$trans,$user];
+			$tran=["Withdraw",$Accfrom,$trans,$user];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			header("Location: /PNPN-Website/transfer.php");//refreshes page to reflect new ballance
+			header("Location: /PNPN-Website/teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
-		}
+//		}
 		else{
 			//error = "Error that account doesn't exist";
 			//echo "<script type='text/javascript'>alert('".$error."');</script>";

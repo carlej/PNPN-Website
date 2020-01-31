@@ -1,26 +1,37 @@
 <form name="transfer"method="POST" action="Javascript/makewith_dip.php" onsubmit="return valadatewithdip();" id="addForm">
-	<fieldset>
-		<legend>Transfer:</legend>
+	<fieldset><legend>Deposite and Withdraw:</legend>
+		<p><?php echo $usename[3]; 
+		echo " ";
+		echo $usename[4]; ?></p>
 		<p>
-			<label>Account from:</label>
-			<select name="Acc">
+
+			<label>Account to:</label>
+			<select name="Accdeptto">
 				<?php
 				foreach ($parsed_json as $value) {
 					if ($value) {
-						echo '<option value="'.$value.'">'.$value.'</option>';
+						echo '<option value="'.$value.'">Personal Account</option>';
+					}
+				}
+				if($parsed_ship_json!=NULL){
+					foreach ($parsed_ship_json as $value) {
+						if ($value) {
+							echo '<option value="'.$value.'">Ship Account</option>';
+						}
+					}
+				}
+				if($parsed_fleet_json!=NULL){
+					foreach ($parsed_fleet_json as $value) {
+						if ($value) {
+							echo '<option value="'.$value.'">Fleet Account</option>';
+						}
 					}
 				}
 				?>
 			</select>
-			
-		</p>
 		<p>
-			<label for="Accto">Account to:</label>
-			<input type="number" name="Accto" id="Accto" min="100000000" max="999999999">
-		</p>
-		<p>
-			<label for="trans">Ammount to Transfer:</label>
-			<input type="number" name="trans" id="trans" min="1">
+			<label for="trans">Ammount:</label>
+			<input type="number" name="dept" id="dept" min="1">
 		</p>
 	</fieldset>
 	<p>

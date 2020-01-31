@@ -20,7 +20,8 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		$resultIn = mysqli_query($con, $queryIn);
 		$row2=mysqli_fetch_row($resultIn);
 		if (mysqli_num_rows($resultIn)!=0) {
-			$timeStamp=date("Y/m/d H:m:s");
+			date_default_timezone_set('Etc/GMT+8');
+			$timeStamp=date('Y/m/d h:i:s A');
 			$rema = $row[0]-$trans;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
