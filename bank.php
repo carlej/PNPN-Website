@@ -7,6 +7,7 @@
 			$username = $_SESSION['username'];
 		}
 		else{
+			header ("location:/SDN-Website/login.php");
 			echo "Please login to view this page.";
 		}
 		?>
@@ -17,8 +18,9 @@
 	</head>
 	<body>
 		<?php
+		include 'Javascript/Connections/convar.php';
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-			include 'Javascript/Connections/convar.php';
+			
 			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			if (!$con) {
 				die('Could not connect: ' . mysql_error());
@@ -53,7 +55,8 @@
 				header("Location: /SDN-Website/transfer.php");
 			}
 			include "Views/Partials/bankButtons.php";
-		} mysqli_close($con);
+		}
+		mysqli_close($con);
 
 		?>
 	</body>
