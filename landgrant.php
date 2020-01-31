@@ -8,6 +8,6 @@
 		<title>Land Grants</title>
 		<?php include("Views\Partials/header.php");?>
 	</head>
-	<body>This</body>
+	<body>Place Holder</body>
 
 </html>
