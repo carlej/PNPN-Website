@@ -1,26 +1,30 @@
 <form name="transfer"method="POST" action="Javascript/tellmaketran.php" onsubmit="return valadatetran();" id="addForm">
 	<fieldset>
 		<legend>Transfer:</legend>
+		<p><?php echo $usename[3]; 
+		echo " ";
+		echo $usename[4]; ?></p>
 		<p>
+
 			<label>Account from:</label>
 			<select name="Accfrom">
 				<?php
 				foreach ($parsed_json as $value) {
 					if ($value) {
-						echo '<option value="'.$value.'">'.$value.'</option>';
+						echo '<option value="'.$value.'">Personal Account</option>';
 					}
 				}
 				if($parsed_ship_json!=NULL){
 					foreach ($parsed_ship_json as $value) {
 						if ($value) {
-							echo '<option value="'.$value.'">'.$value.'</option>';
+							echo '<option value="'.$value.'">Ship Account</option>';
 						}
 					}
 				}
 				if($parsed_fleet_json!=NULL){
 					foreach ($parsed_fleet_json as $value) {
 						if ($value) {
-							echo '<option value="'.$value.'">'.$value.'</option>';
+							echo '<option value="'.$value.'">Fleet Account</option>';
 						}
 					}
 				}
