@@ -42,7 +42,7 @@
 				$_SESSION['perm'] = $perm[0];
 				$_SESSION['hold']="hold";
 				echo $perm[0];
-				header("Location: /SDN-Website");
+				header("Location: /PNPN-Website");
 			}
 			else{
 				echo "error";
@@ -71,7 +71,7 @@
 </form>
 		<div id="buttons" class="align-center">
  			<ul>
-     			<li><a href="/SDN-Website/register.php">Register</a></li>
+     			<li><a href="/PNPN-Website/register.php">Register</a></li>
 			</ul>
 		</div>
 	</body>

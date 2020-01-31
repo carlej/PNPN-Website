@@ -51,7 +51,7 @@
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $Username;
                 $_SESSION['perm'] = $perm[0];
-                header("Location: /SDN-Website");
+                header("Location: /PNPN-Website");
             }
             else
                 echo "ERROR";//.mysql_error($con);

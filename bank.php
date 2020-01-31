@@ -7,7 +7,7 @@
 			$username = $_SESSION['username'];
 		}
 		else{
-			header ("location:/SDN-Website/login.php");
+			header ("location:/PNPN-Website/login.php");
 			echo "Please login to view this page.";
 		}
 		?>
@@ -52,7 +52,7 @@
 			include "Views/Partials/showAccs.php";
 			include "Views/Partials/showhist.php";
 			if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
-				header("Location: /SDN-Website/transfer.php");
+				header("Location: /PNPN-Website/transfer.php");
 			}
 			include "Views/Partials/bankButtons.php";
 		}

@@ -45,7 +45,7 @@
 </form>
 <script type="text/javascript">
 	function Cancel(){
-		$.ajax({url:'http://localhost/SDN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/SDN-Website/teller.php")}});
+		$.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/teller.php")}});
 	}
 function valadatetran(){
 	var to = document.forms["transfer"]["Accto"].value;
@@ -58,7 +58,7 @@ function valadatetran(){
 	$.ajax({
 		async: false,
 		type: "POST",
-		url: 'http://localhost/SDN-Website/Javascript/valTran.php',
+		url: 'http://localhost/PNPN-Website/Javascript/valTran.php',
 		data:{to,from,tra},
 		dataType: 'JSON',
 		success: function(output){

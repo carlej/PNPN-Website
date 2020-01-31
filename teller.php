@@ -8,7 +8,7 @@
 		}
 		else{
 			echo "Please login to view this page.";
-			header("Location: /SDN-Website/bank.php");
+			header("Location: /PNPN-Website/bank.php");
 		}
 		?>
 		
@@ -73,10 +73,10 @@
 			include "Javascript/search.php";
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Ship/Household") {
-		header("Location: /SDN-Website/addShip.php");
+		header("Location: /PNPN-Website/addShip.php");
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Fleet/Alliance") {
-		header("Location: /SDN-Website/addFleet.php");
+		header("Location: /PNPN-Website/addFleet.php");
 		}
 //		if ($searchUserName) {
 //			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);

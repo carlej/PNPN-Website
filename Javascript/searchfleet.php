@@ -27,7 +27,7 @@
 		mysqli_close($con);
 		$perm = $_SESSION['perm'];
 		$_SERVER["REQUEST_METHOD"]=NULL;
-		header("Location: /SDN-Website/addFleet.php");
+		header("Location: /PNPN-Website/addFleet.php");
 	}
 	else{
 		echo "There are no accounts that match that search. Search is case sensitive";

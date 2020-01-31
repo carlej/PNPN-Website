@@ -32,7 +32,7 @@
 </form>
 <script type="text/javascript">
 	function Cancel(){
-		$.ajax({url:'http://localhost/SDN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/SDN-Website/bank.php")}});
+		$.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/bank.php")}});
 	}
 function valadatewithdip(){
 	var acc = document.forms["transfer"]["Accto"].value;
@@ -44,7 +44,7 @@ function valadatewithdip(){
 	$.ajax({
 		async: false,
 		type: "POST",
-		url: 'http://localhost/SDN-Website/Javascript/valwithdip.php',
+		url: 'http://localhost/PNPN-Website/Javascript/valwithdip.php',
 		data:{to,from,tra},
 		dataType: 'JSON',
 		success: function(output){

@@ -54,7 +54,7 @@
         $.ajax({
             async: false,
             type: "POST",
-            url: 'http://localhost/SDN-Website/Javascript/valuse.php',
+            url: 'http://localhost/PNPN-Website/Javascript/valuse.php',
             data:{Username},
             dataType: 'JSON',
             success: function(output){

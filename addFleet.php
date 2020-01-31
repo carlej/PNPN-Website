@@ -42,7 +42,7 @@
 </html>
 <script type="text/javascript">
     function Cancel(){
-        $.ajax({url:'http://localhost/SDN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/SDN-Website/teller.php")}});
+        $.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/teller.php")}});
     }
     function valadate(){
         var name = document.forms["Register"]["name"].value;
