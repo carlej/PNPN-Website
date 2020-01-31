@@ -43,5 +43,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Transfer"){
 	mysqli_close($con);
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Cancel")
-	header("Location: /SDN-Website/bank.php");
+	header("Location: /PNPN-Website/bank.php");
 ?>

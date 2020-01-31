@@ -31,7 +31,7 @@ include 'Connections/convar.php';
 //		$error = "error you don't have enough money";
 //		echo '<script type="text/javascript">alert("text");</script>';
 //		echo "false";
-		//header("Location: /SDN-Website/transfer.php");
+		//header("Location: /PNPN-Website/transfer.php");
 		echo json_encode(array("0"=>false,"1"=>"Error you don't have enough money"));
 	}
 }

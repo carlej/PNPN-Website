@@ -40,7 +40,7 @@ if (mysqli_num_rows($resultIn)==0) {
     	$inup= mysqli_query($con, $updateacc); //Updates the users DB section to show ownership of the new account.
     	$_SESSION['hold']=$shipid;
 		$_SESSION['stype']="shipID";
-        header("Location: /SDN-Website/teller.php");
+        header("Location: /PNPN-Website/teller.php");
     }
     else
         echo "ERROR";//.mysql_error($con);

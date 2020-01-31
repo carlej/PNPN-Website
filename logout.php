@@ -11,7 +11,7 @@
 	<?php
 		session_unset();
 		session_destroy();
-		header("Location: /SDN-Website");
+		header("Location: /PNPN-Website");
 		echo "LOGGED OUT";
 	?>
 	<body>This</body>
