@@ -94,7 +94,7 @@
 		$perm = $_SESSION['perm'];
 		$_SERVER["REQUEST_METHOD"]=NULL;
 		include("Javascript/telltranscript.php");
-		echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
+		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
 	}
 	elseif ($method == "Fleet") {
 		$queryIn = "SELECT * FROM fleet WHERE Name = '$input'";
