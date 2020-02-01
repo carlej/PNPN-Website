@@ -1,4 +1,4 @@
-<?php
+<?php //this file is a little complex as it is the search ability that a bank teller would have to find an account. They can search by a lot of different options and each needs a slightly different code to run it.
  	$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
@@ -32,7 +32,7 @@
 	elseif ($method == "Ship") {
 		$queryIn = "SELECT * FROM ship WHERE Name = '$input'";
 		$resultIn = mysqli_query($con, $queryIn);
-		if (mysqli_num_rows($resultIn)>1) {
+		if (mysqli_num_rows($resultIn)>1) { //if there are multiple results this makes a drop down list so that you can pick what one you want
 			$array=NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
 			echo '<form method="POST" id="search"><fieldset><label>Search by:</label><select name="input">';
@@ -46,7 +46,7 @@
 			$_SESSION['stype']="shipID";
 			echo '</select><label for="input">:</label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="new"></fieldset></form>';
 		}
-		elseif (mysqli_num_rows($resultIn)==1) {
+		elseif (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
 			$row = mysqli_fetch_row($resultIn);
 			$queryIn = "SELECT Accounts FROM ship WHERE ID = '$row[0]'";
 			$resultIn = mysqli_query($con, $queryIn);
@@ -99,7 +99,7 @@
 	elseif ($method == "Fleet") {
 		$queryIn = "SELECT * FROM fleet WHERE Name = '$input'";
 		$resultIn = mysqli_query($con, $queryIn);
-		if (mysqli_num_rows($resultIn)>1) {
+		if (mysqli_num_rows($resultIn)>1) {//if there are multiple results this makes a drop down list so that you can pick what one you want
 			$array=NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
 			echo '<form method="POST" id="search"><fieldset><label>Search by:</label><select name="input">';
@@ -113,7 +113,7 @@
 			$_SESSION['stype']="fleetID";
 			echo '</select><label for="input">:</label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="new"></fieldset></form>';
 		}
-		elseif (mysqli_num_rows($resultIn)==1) {
+		elseif (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
 			$row = mysqli_fetch_row($resultIn);
 			$queryIn = "SELECT Accounts FROM fleet WHERE ID = '$row[0]'";
 			$resultIn = mysqli_query($con, $queryIn);
@@ -142,7 +142,7 @@
 	else{
 		$queryIn = "SELECT * FROM users WHERE `$method` = '$input'";
 		$resultIn = mysqli_query($con, $queryIn);
-		if (mysqli_num_rows($resultIn)>1) {
+		if (mysqli_num_rows($resultIn)>1) {//if there are multiple results this makes a drop down list so that you can pick what one you want
 			$array = NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
 			echo '<form method="POST" id="search"><fieldset><label>Search by:</label><select name="input">';
@@ -156,7 +156,7 @@
 			echo '</select><label for="input">:</label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="new"></fieldset></form>';
 		
 		}
-		else if (mysqli_num_rows($resultIn)==1) {
+		else if (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
 			$row = mysqli_fetch_row($resultIn);
 			$usename=$row;
 			$queryIn = "SELECT Accounts FROM users WHERE Username = '$row[0]'";

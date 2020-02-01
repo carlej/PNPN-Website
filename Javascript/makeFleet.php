@@ -1,4 +1,4 @@
-<?php
+<?php //this file makes a new fleet it is mostly the same as accounts
     
 $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 if (!$con) {
@@ -7,15 +7,21 @@ if (!$con) {
 $name = mysqli_real_escape_string($con, $_POST['name']);
 $leaderName = mysqli_real_escape_string($con, $_SESSION['hold']);
 srand(time());
-$fleetid=rand(1000,9999);
-$queryIn = "SELECT ID FROM fleet WHERE ID = '$fleetid'";
-$resultIn = mysqli_query($con, $queryIn);
+do{ //to create an id number for the fleet that is new
+    $b=false;
+    $fleetid=rand(1000,9999);
+    $queryIn = "SELECT ID FROM fleet WHERE ID = '$fleetid'";
+    $resultIn = mysqli_query($con, $queryIn);
+    if (mysqli_fetch_row($resultIn)==0) {
+        $b=true;
+    }
+}while($b);
 $row=mysqli_fetch_row($resultIn);
 do{
 if (mysqli_num_rows($resultIn)==0) {
 	//echo $fleetid;
 	$b=false;
-	do{
+	do{ //same loop to create a new account as each fleet has an account made with it
 		srand(time());
         $id=rand(100000000,999999999);
         $queryIn = "SELECT ID FROM accounts WHERE ID = '$id'";
@@ -24,7 +30,7 @@ if (mysqli_num_rows($resultIn)==0) {
         //echo $queryIn;
         if (mysqli_num_rows($resultIn)==0) {
         	//echo $id;
-        	$a=false;
+        	$a=true;
             $accs="{\"id\": [";
             $accs.=$id.", 0]}";
             $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
@@ -47,10 +53,6 @@ if (mysqli_num_rows($resultIn)==0) {
 }
 else{
 	$b=true;
-	$fleetid=rand(1000,9999);
-	$queryIn = "SELECT ID FROM fleet WHERE ID = '$fleetid'";
-	$resultIn = mysqli_query($con, $queryIn);
-	$row=mysqli_fetch_row($resultIn);
 }
 }while($b);
 ?>
