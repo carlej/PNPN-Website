@@ -158,6 +158,7 @@
 		}
 		else if (mysqli_num_rows($resultIn)==1) {
 			$row = mysqli_fetch_row($resultIn);
+			$usename=$row;
 			$queryIn = "SELECT Accounts FROM users WHERE Username = '$row[0]'";
 			$resultIn = mysqli_query($con, $queryIn);
 			$row1=mysqli_fetch_row($resultIn);
@@ -190,6 +191,7 @@
 			$perm = $_SESSION['perm'];
 			$_SERVER["REQUEST_METHOD"]=NULL;
 			include("Javascript/telltranscript.php");
+
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."norm".'" /></p></form></html>';
 		}
 		else{

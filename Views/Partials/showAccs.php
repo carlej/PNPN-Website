@@ -3,7 +3,7 @@
 			<div class="container">
 				<div id="cssmenu" class="align-center">
 					<ul>
-						<li><a><?php echo $value; ?></a></li>
+						<li><a><?php echo "Personal Account:"; ?></a></li>
 						<li><a><?php
 						$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
 						$result = mysqli_query($con, $accountQuery);
@@ -20,7 +20,7 @@
 			<div class="container">
 				<div id="cssmenu" class="align-center">
 					<ul>
-						<li><a><?php echo "Ship Account: "; echo $value; ?></a></li>
+						<li><a><?php echo "Ship Account: "; ?></a></li>
 						<li><a><?php
 						$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
 						$result = mysqli_query($con, $accountQuery);
@@ -38,7 +38,7 @@
 			<div class="container">
 				<div id="cssmenu" class="align-center">
 					<ul>
-						<li><a><?php echo "Fleet Account: "; echo $value; ?></a></li>
+						<li><a><?php echo "Fleet Account: "; ?></a></li>
 						<li><a><?php
 						$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
 						$result = mysqli_query($con, $accountQuery);

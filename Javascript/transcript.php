@@ -33,7 +33,7 @@
 			<input type="number" name="Accto" id="Accto" min="100000000" max="999999999">
 		</p>
 		<p>
-			<label for="trans">Ammount to Transfer:</label>
+			<label for="trans">Amount to Transfer:</label>
 			<input type="number" name="trans" id="trans" min="1">
 		</p>
 	</fieldset>

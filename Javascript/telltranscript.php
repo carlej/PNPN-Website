@@ -1,26 +1,30 @@
 <form name="transfer"method="POST" action="Javascript/tellmaketran.php" onsubmit="return valadatetran();" id="addForm">
 	<fieldset>
 		<legend>Transfer:</legend>
+		<p><?php echo $usename[3]; 
+		echo " ";
+		echo $usename[4]; ?></p>
 		<p>
+
 			<label>Account from:</label>
 			<select name="Accfrom">
 				<?php
 				foreach ($parsed_json as $value) {
 					if ($value) {
-						echo '<option value="'.$value.'">'.$value.'</option>';
+						echo '<option value="'.$value.'">Personal Account</option>';
 					}
 				}
 				if($parsed_ship_json!=NULL){
 					foreach ($parsed_ship_json as $value) {
 						if ($value) {
-							echo '<option value="'.$value.'">'.$value.'</option>';
+							echo '<option value="'.$value.'">Ship Account</option>';
 						}
 					}
 				}
 				if($parsed_fleet_json!=NULL){
 					foreach ($parsed_fleet_json as $value) {
 						if ($value) {
-							echo '<option value="'.$value.'">'.$value.'</option>';
+							echo '<option value="'.$value.'">Fleet Account</option>';
 						}
 					}
 				}
@@ -33,16 +37,20 @@
 			<input type="number" name="Accto" id="Accto" min="100000000" max="999999999">
 		</p>
 		<p>
-			<label for="trans">Ammount to Transfer:</label>
+			<label for="trans">Amount to Transfer:</label>
 			<input type="number" name="trans" id="trans" min="1">
 		</p>
 	</fieldset>
+
 	<p>
-		<input type="submit" name="submit" value="Transfer" />
+		<input type="submit" name="tran" value="Transfer" />
 		<input type="reset" value="Clear" />
 		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
 	</p>
 </form>
+
+<form name="transfer"method="POST" action="Javascript/tellmaketran.php" onsubmit="return valadatetran();" id="addForm">
+
 <script type="text/javascript">
 	function Cancel(){
 		$.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/teller.php")}});
@@ -68,5 +76,6 @@ function valadatetran(){
 		}
 });
 	return re;
+
 }</script>
 
