@@ -1,4 +1,5 @@
-<?php
+<?php //this file is so that a teller can make a transaction
+//It is mostly the same as the other transaction file but changed slightly to make it function for a teller
 include("Connections/req.php");
 include 'Connections/convar.php';
 $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -15,13 +16,13 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
 	$row=mysqli_fetch_row($result);
-	if ($trans <= $row[0] && $trans>0) {
+	if ($trans <= $row[0] && $trans>0) { //basic error handling
 		$queryIn = "SELECT ID FROM accounts WHERE ID = '$Accto'";
 		$resultIn = mysqli_query($con, $queryIn);
 		$row2=mysqli_fetch_row($resultIn);
 		if (mysqli_num_rows($resultIn)!=0) {
-			date_default_timezone_set('Etc/GMT+8');
-			$timeStamp=date('Y/m/d h:i:s A');
+			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
+			$timeStamp=date('Y/m/d h:i:s A'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
 			$rema = $row[0]-$trans;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
@@ -32,6 +33,13 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$updateto = "UPDATE accounts SET Ballance = '$addat' WHERE accounts.ID = '$Accto'";
 			$deduct = mysqli_query($con, $updateto); //sets the new ballance of the account being transftered into.
 			//creates a history of the transaction in the account to
+
+
+			//I want to add a part into this that says what teller did the transaction but am not sure if this is something that we would want going forward and so have not implumented this yet
+
+			//This adds a new entry into the JSON file that is used to store the history of each account
+
+			//currently it uses the account numbers for this info. I was trying to phase out account numbers and have this display the name of the account holder but this is a work in progress.
 			$queryHistTo="SELECT history FROM accounts WHERE ID = '$Accto'";
 			$resultHistTo= mysqli_query($con, $queryHistTo);
 			$rowHistTo=mysqli_fetch_row($resultHistTo);

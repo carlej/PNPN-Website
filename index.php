@@ -6,7 +6,7 @@
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			echo "Welcome " . $_SESSION['username'];
 			$Username = $_SESSION['username'];
-		}
+		} //This is jus the blank base page
 		?>
 
 

@@ -1,3 +1,5 @@
+<?php //This is the volinteer page this is the next step after the bank functions are finished. It is not known at this time what this will look like but the base functions are that it will display all the shifts, allow users to sign up for a shift, it will allow checkin and check out of shifts, and it will auto pay on completion of shift ?>
+
 <!doctype html>
 <html>
 	<head>

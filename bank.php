@@ -1,3 +1,5 @@
+<?php //This displays the bank that a normal user will see when they click on bank?>
+
 <!doctype html>
 <html>
 	<head>
@@ -35,26 +37,27 @@
 			$queryIn = "SELECT * FROM users WHERE Username = '$username'";
 			$resultIn = mysqli_query($con, $queryIn);
 			$row=mysqli_fetch_row($resultIn);
-			if ($row[7]!=NULL) {
+			if ($row[7]!=NULL) { //This pulls up any accounts they may have access to that are from a ship
+				//Note right now it is only allowed that each user can only access one ship it is a work in progress to add access to multiple
 				$queryShip= "SELECT Accounts FROM ship WHERE ID = '$row[7]'";
 				$resultShip = mysqli_query($con, $queryShip);
 				$rowShip=mysqli_fetch_row($resultShip);
 				$parsed_ship_json=json_decode($rowShip[0],true);
 				$parsed_ship_json=$parsed_ship_json['id'];
 			}
-			if ($row[6]!=NULL){
+			if ($row[6]!=NULL){ //This pulls up any accounts they may have access to that are from a fleet
 				$queryFleet= "SELECT Accounts FROM fleet WHERE ID = '$row[6]'";
 				$resultFleet = mysqli_query($con, $queryFleet);
 				$rowFleet=mysqli_fetch_row($resultFleet);
 				$parsed_fleet_json=json_decode($rowFleet[0],true);
 				$parsed_fleet_json=$parsed_fleet_json['id'];
 			}
-			include "Views/Partials/showAccs.php";
-			include "Views/Partials/showhist.php";
+			include "Views/Partials/showAccs.php";//This desplays the accounts that the user has access to.
+			include "Views/Partials/showhist.php"; //Right now all history for all accounts is displayed here this is a work in progress to make it only display one at a time and only when asked
 			if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
 				header("Location: /PNPN-Website/transfer.php");
 			}
-			include "Views/Partials/bankButtons.php";
+			include "Views/Partials/bankButtons.php"; //Its just a button
 		}
 		mysqli_close($con);
 

@@ -1,3 +1,5 @@
+<?php //This displays the accounts of the user selected and allows the teller to select how much money to put in or take out this is a work in progress and not final?>
+
 <form name="transfer"method="POST" action="Javascript/makewith_dip.php" onsubmit="return valadatewithdip();" id="addForm">
 	<fieldset><legend>Deposite and Withdraw:</legend>
 		<p><?php echo $usename[3]; 

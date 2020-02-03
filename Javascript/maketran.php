@@ -1,4 +1,4 @@
-<?php
+<?php //this file is to make a transaction for more comments see tellmaketran.php these files are fundimentally the same but with small changes as eventually the teller may add who the teller was to each transaction so as to track who does what action.
 include("Connections/req.php");
 include 'Connections/convar.php';
 $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -15,13 +15,13 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
 	$row=mysqli_fetch_row($result);
-	if ($trans <= $row[0] && $trans>0) {
+	if ($trans <= $row[0] && $trans>0) { //makes it so that it doesnt do a transaction thats 0
 		$queryIn = "SELECT ID FROM accounts WHERE ID = '$Accto'";
 		$resultIn = mysqli_query($con, $queryIn);
 		$row2=mysqli_fetch_row($resultIn);
 		if (mysqli_num_rows($resultIn)!=0) {
 			date_default_timezone_set('Etc/GMT+8');
-			$timeStamp=date('Y/m/d h:i:s A');
+			$timeStamp=date('Y/m/d h:i:s A'); //this is a time stamp that is placed on the transaction in the history so that we know when it happened.
 			$rema = $row[0]-$trans;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account

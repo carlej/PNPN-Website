@@ -10,6 +10,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Escape user inputs for security
+        //the username is the key in the database so it needs to be unique. I may be changing what the key is at some point to something different maybe email.
         $Username = mysqli_real_escape_string($con, $_POST['Username']);
         $firstName = mysqli_real_escape_string($con, $_POST['firstName']);
         $lastName = mysqli_real_escape_string($con, $_POST['lastName']);
@@ -24,15 +25,15 @@
             $msg = "<h2>Can't Add to Table</h2> There is already a user with that name $Username<p>";
         }
         else{
-            do{
+            do{ //same loop to create a new account and tie it to the new user.
                 srand(time());
                 $id=rand(100000000,999999999);
                 $queryIn = "SELECT ID FROM accounts WHERE ID = '$id'";
                 $resultIn = mysqli_query($con, $queryIn);
                 $row=mysqli_fetch_row($resultIn);
                 if (mysqli_num_rows($resultIn)==0) {echo $id;
-                    $a=false;
-                    $accs="{\"id\": [";
+                    $a=true;
+                    $accs="{\"id\": ["; //this is legacy code becasue I originally was going to let someone have more then one account but that changed and I never took it out.
                     $accs.=$id.", 0]}";
                     $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
                     $inResult = mysqli_query($con, $insert); //Updates the DB with the new account
@@ -40,7 +41,7 @@
                     //$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
         }
         else
-            $a=true;
+            $a=false;
     }while($a);
             $salt = md5(time());
             $passhold = md5($salt.$Password);

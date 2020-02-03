@@ -1,3 +1,5 @@
+<?php //This is the same as for fleet but for a new ship there is no differnece between the two at this time?>
+
 <!doctype html>
 <html>
     <head>

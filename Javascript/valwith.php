@@ -1,6 +1,5 @@
-<?php
+<?php //this is the file to check if you have enough money for the withdraw. It wont allow a teller to say they gave more money then they have.
 if ($_POST['to']) {
-$Accto=$_POST['to'];
 $Accfrom=$_POST['from'];
 $trans=$_POST['tra'];
 
@@ -13,21 +12,7 @@ include 'Connections/convar.php';
 	$result = mysqli_query($con, $accountQuery);
 	$row=mysqli_fetch_row($result);
 	if ($trans <= $row[0] && $trans>0){
-		$queryIn = "SELECT ID FROM accounts WHERE ID = '$Accto'";
-		$resultIn = mysqli_query($con, $queryIn);
-		$row2=mysqli_fetch_row($resultIn);
-		if (mysqli_num_rows($resultIn)!=0){
-			echo json_encode(array("0"=>true,"1"=>""));
-//			echo "true";
-		}
-		else{
-//			$error = "Error that account doesn't exist";
-//			echo '<script type="text/javascript">alert("text");</script>';
-//			echo "false";
-			echo json_encode(array("0"=>false,"1"=>"Error that account doesn't exist"));
-		}
-	}
-	elseif($trans>0){
+	if($trans>0){
 //		$error = "error you don't have enough money";
 //		echo '<script type="text/javascript">alert("text");</script>';
 //		echo "false";
