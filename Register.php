@@ -1,3 +1,4 @@
+<?php //This is the register file this can have as much or as little info collected as we want?>
 <!doctype html>
 <html>
 	<head>

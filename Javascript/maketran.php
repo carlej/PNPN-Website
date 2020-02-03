@@ -1,4 +1,4 @@
-<?php //this file is to make a transaction
+<?php //this file is to make a transaction for more comments see tellmaketran.php these files are fundimentally the same but with small changes as eventually the teller may add who the teller was to each transaction so as to track who does what action.
 include("Connections/req.php");
 include 'Connections/convar.php';
 $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);

@@ -1,4 +1,4 @@
-<?php
+<?php //this validates that the transaction that was subbmitted is a valid transaction.
 if ($_POST['to']) {
 $Accto=$_POST['to'];
 $Accfrom=$_POST['from'];
@@ -12,11 +12,11 @@ include 'Connections/convar.php';
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
 	$row=mysqli_fetch_row($result);
-	if ($trans <= $row[0] && $trans>0){
+	if ($trans <= $row[0] && $trans>0){ //checks to see that you have enough money for the transfer and that the transaction is not 0
 		$queryIn = "SELECT ID FROM accounts WHERE ID = '$Accto'";
 		$resultIn = mysqli_query($con, $queryIn);
 		$row2=mysqli_fetch_row($resultIn);
-		if (mysqli_num_rows($resultIn)!=0){
+		if (mysqli_num_rows($resultIn)!=0){ //checks that the account your tranfering to exists
 			echo json_encode(array("0"=>true,"1"=>""));
 //			echo "true";
 		}

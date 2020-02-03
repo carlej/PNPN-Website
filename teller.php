@@ -1,3 +1,5 @@
+<?php //This displays what the teller will see when they go to the teller section of their screen. A teller is determined by a simple letter in their user on the database allowing us to track who does what instead of havign just one teller account.?>
+
 <!doctype html>
 <html>
 	<head>
@@ -28,7 +30,7 @@
 			}
 		}
 		mysqli_close($con);
-		?>
+		//creates the basic inputs for the search file to find an user/account?>
 		<form method="POST" id="search">
 			<fieldset>
 				<label>Search by:</label>
@@ -78,23 +80,6 @@
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Fleet/Alliance") {
 		header("Location: /PNPN-Website/addFleet.php");
 		}
-//		if ($searchUserName) {
-//			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-//			if (!$con) {
-//				die('Could not connect: ' . mysql_error());
-//			}
-//			$queryIn = "SELECT Accounts FROM users WHERE Username = '$searchUserName'";
-//			$resultIn = mysqli_query($con, $queryIn);
-//			$row1=mysqli_fetch_row($resultIn);
-//			$parsed_json = json_decode($row1[0], true);
-//			$parsed_json = $parsed_json['id'];
-//			include "Views/Partials/showAccs.php";
-//			mysqli_close($con);
-//			$perm = $_SESSION['perm'];
-//			include("Javascript/transcript.php");
-//			$_SESSION['hold']=$searchUserName;
-//		}
-//		$searchUserName=NULL;
 		?>
 	</body>
 

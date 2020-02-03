@@ -1,3 +1,5 @@
+<?php //This file is to display the accounts and the transfer window that anyone can see so that they can make account to account transfers without going to the bank?>
+
 <form name="transfer"method="POST" action="Javascript/tellmaketran.php" onsubmit="return valadatetran();" id="addForm">
 	<fieldset>
 		<legend>Transfer:</legend>
@@ -32,7 +34,7 @@
 			</select>
 			
 		</p>
-		<p>
+		<p><?php //This may end up having a search function attached to it to search for an account vs having to type in an account number?>
 			<label for="Accto">Account to:</label>
 			<input type="number" name="Accto" id="Accto" min="100000000" max="999999999">
 		</p>

@@ -33,17 +33,8 @@ include 'Connections/convar.php';
 			$resultIn = mysqli_query($con, $queryIn);
 			$row=mysqli_fetch_row($resultIn);
 			$parsed_json = json_decode($row[0], true);
-//			$parsed_json = $parsed_json['id'];
-//			$accs="{\"id\": [";
-//			foreach($parsed_json as $value)
-//			{
-//				$accs.=$value . ", ";
-//			}
-//			$accs=$accs.$id."]}";
 			$num=sizeof($parsed_json['id']);
 			$parsed_json['id'][$num]=$id;
-//			echo $parsed_json[$num];
-//			$temp="{\"id\":".$parsed_json."]}";
 			$add=json_encode($parsed_json);
 			$insert = "INSERT INTO accounts (ID) VALUES ('$id')";
 			$inResult = mysqli_query($con, $insert); //Updates the DB with the new account
