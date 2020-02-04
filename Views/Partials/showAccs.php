@@ -3,7 +3,7 @@
 			<div class="container">
 				<div id="cssmenu" class="align-center">
 					<ul>
-						<li><a><?php echo "Personal Account:"; ?></a></li>
+						<li><a><?php echo $_SESSION['hold']; ?></a></li>
 						<li><a><?php
 						$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
 						$result = mysqli_query($con, $accountQuery);
