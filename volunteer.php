@@ -15,7 +15,8 @@
 		<title>Volunteering</title>
 		<?php include("Views\Partials/header.php");?>
 	</head>
-	<body><?php
+	<body>
+		<?php
 		include 'Javascript/Connections/convar.php';
 		$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		if (!$con) {

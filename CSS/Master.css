@@ -3,16 +3,13 @@ body{
 	
 margin:0px;
 padding:0px;
-background-color: rgba(225,201,172,1.00);
-	
+
+	background: 
+	linear-gradient(
+		rgba(194,181,155,0.65),
+		rgba(194,181,155,0.65)),
+	url(styles/Texture_Bkgd_1.jpg);	
 }
 
-.Container {
-	width:800px; 
-	height:auto; 
-	clear:both;
-	overflow: auto;
-	margin:60px auto;
-}
 .Header {height:100px;}
 .Menu {height:50px;}

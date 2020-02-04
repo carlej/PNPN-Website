@@ -58,6 +58,7 @@
 			$searchUserName=$row[0];
 			$parsed_ship_json=NULL;
 			$parsed_fleet_json=NULL;
+			$_SESSION['shipName']=$input;
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']="shipID";
 			//$user=$_SESSION['hold'];
