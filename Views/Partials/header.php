@@ -32,6 +32,7 @@ $url=NULL;
 			<?php else: ?>
 				<div class="volunteerButton"><a href="/PNPN-Website/volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
+			<div class="full"><img alt="~" src="CSS/styles/Full.png"></div>
 		</ul>
 	</div>
 </div>

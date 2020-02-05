@@ -27,13 +27,13 @@ padding:0px;
 
 .bankButton img{
 	display: block;
-	max-height: 3em;
-	max-width: 3em;
+	max-height: 1.9em;
+	max-width: 1.9em;
 	width: auto;
 	height: auto;
 	position: absolute;
-	top: 8em;
-	right: 18.5em;
+	top: 8.9em;
+	right: 18.1em;
 }
 
 .logoutButton img{
@@ -49,22 +49,33 @@ padding:0px;
 
 .tilda1 img{
 	display: block;
-	max-height: 1em;
-	max-width: 1em;
+	max-height: 0.6em;
+	max-width: 0.6em;
 	width: auto;
 	height: auto;
 	position: absolute;
-	top: 10.8em;
-	right: 18.45em;
+	top: 11.3em;
+	right: 17.8em;
 }
 
 .volunteerButton img{
 	display: block;
-	max-height: 6em;
-	max-width: 6em;
+	max-height: 3.7em;
+	max-width: 3.7em;
 	width: auto;
 	height: auto;
 	position: absolute;
-	top: 10.8em;
-	right: 18.45em;
+	top: 12.4em;
+	right: 15em;
+}
+
+.full img{
+	display: block;
+	max-height: 10em;
+	max-width: 10em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 8.8em;
+	right: 9.1em;
 }
