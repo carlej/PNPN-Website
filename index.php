@@ -15,6 +15,7 @@
 		<title>Home</title>
 		<?php 
 		include("Views/Partials/header.php");?>
+		
 	</head>
 
 </html>
