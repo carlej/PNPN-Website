@@ -15,12 +15,45 @@ padding:0px;
 .Menu {height:50px;}
 .compRose img{
 	display: block;
-	max-width: 10em;
-	max-height: 10em;
+	max-width: 25em;
+	max-height: 25em;
 	width: auto;
 	height: auto;
 	position: absolute;
 	overflow: hidden;
-	top: 0em;
-	right: 0em;
+	top: -5em;
+	right: -5em;
+}
+
+.bankButton img{
+	display: block;
+	max-height: 3em;
+	max-width: 3em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 8em;
+	right: 18.5em;
+}
+
+.logoutButton img{
+	display: block;
+	max-height: 3em;
+	max-width: 3em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 6em;
+	right: 6.3em;
+}
+
+.tilda1 img{
+	display: block;
+	max-height: 1em;
+	max-width: 1em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 10.8em;
+	right: 18.45em;
 }
