@@ -38,6 +38,7 @@ $url=NULL;
 			<?php else: ?>
 				<div class="landgrantButton"><a href="/PNPN-Website/landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
+			<?php //<div class="full"><img alt="~" src="CSS/styles/Full.png"></div> ?>
 		</ul>
 	</div>
 </div>
