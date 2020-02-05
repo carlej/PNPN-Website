@@ -53,7 +53,6 @@
 				$fleetName=$rowFleet[1];
 				$parsed_fleet_json=json_decode($rowFleet[4],true);
 				$parsed_fleet_json=$parsed_fleet_json['id'];
-				echo $parsed_ship_json[0];
 			}
 			$name=NULL;
 			if ($row[5]!=NULL) {

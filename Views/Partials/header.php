@@ -1,4 +1,10 @@
-<div class="container">
+<?php  
+$url=NULL;  
+    $url.= $_SERVER['REQUEST_URI'];    
+      
+    echo $url;  
+  ?>
+  <div class="container">
 	<div class="header"></div>
 	<div id="cssmenu" class="align-center">
  		<ul>
@@ -16,6 +22,11 @@
 				<li><a href="/PNPN-Website/login.php">Login</a></li>
 			<?php endif; ?>
 			<div class="compRose"><img src="CSS\styles\Compass_Rose.png" alt="Compass_Rose"></div>
+			<?php if ($url!="/PNPN-Website/bank.php"):?>
+				<div class="bankButton"><a href="/PNPN-Website/bank.php"><img alt="Bank" src="CSS/styles/Bank_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php else: ?>
+				<div class="bankButton"><a href="/PNPN-Website/bank.php"><img alt="Bank" src="CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php endif;?>
 		</ul>
 	</div>
 </div>
