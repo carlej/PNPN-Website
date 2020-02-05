@@ -57,3 +57,14 @@ padding:0px;
 	top: 10.8em;
 	right: 18.45em;
 }
+
+.volunteerButton img{
+	display: block;
+	max-height: 6em;
+	max-width: 6em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 10.8em;
+	right: 18.45em;
+}

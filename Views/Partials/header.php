@@ -1,8 +1,6 @@
 <?php  
 $url=NULL;  
-    $url.= $_SERVER['REQUEST_URI'];    
-      
-    echo $url;  
+    $url.= $_SERVER['REQUEST_URI'];
   ?>
   <div class="container">
 	<div class="header"></div>
@@ -29,6 +27,11 @@ $url=NULL;
 				<li><a href="/PNPN-Website/login.php">Login</a></li>
 			<?php endif; ?>
 			<div class="tilda1"><img alt="~" src="CSS/styles/Scwig_1.png"></div>
+			<?php if ($url!="/PNPN-Website/volunteer.php"):?>
+				<div class="volunteerButton"><a href="/PNPN-Website/volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php else: ?>
+				<div class="volunteerButton"><a href="/PNPN-Website/volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php endif;?>
 		</ul>
 	</div>
 </div>
