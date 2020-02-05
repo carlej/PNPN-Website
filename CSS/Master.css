@@ -13,3 +13,14 @@ padding:0px;
 
 .Header {height:100px;}
 .Menu {height:50px;}
+.compRose img{
+	display: block;
+	max-width: 10em;
+	max-height: 10em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	overflow: hidden;
+	top: 0em;
+	right: 0em;
+}

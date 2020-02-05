@@ -15,6 +15,7 @@
 			<?php else: ?>
 				<li><a href="/PNPN-Website/login.php">Login</a></li>
 			<?php endif; ?>
+			<div class="compRose"><img src="CSS\styles\Compass_Rose.png" alt="Compass_Rose"></div>
 		</ul>
 	</div>
 </div>
