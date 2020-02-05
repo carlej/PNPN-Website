@@ -7,20 +7,20 @@
 				<?php
 				foreach ($parsed_json as $value) {
 					if ($value) {
-						echo '<option value="'.$value.'">'.$value.'</option>';
+						echo '<option value="'.$value.'">'.$name.'</option>';
 					}
 				}
 				if($parsed_ship_json!=NULL){
 					foreach ($parsed_ship_json as $value) {
 						if ($value) {
-							echo '<option value="'.$value.'">'.$value.'</option>';
+							echo '<option value="'.$value.'">'.$shipName.'</option>';
 						}
 					}
 				}
 				if($parsed_fleet_json!=NULL){
 					foreach ($parsed_fleet_json as $value) {
 						if ($value) {
-							echo '<option value="'.$value.'">'.$value.'</option>';
+							echo '<option value="'.$value.'">'.$fleetName.'</option>';
 						}
 					}
 				}
