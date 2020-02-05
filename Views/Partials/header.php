@@ -28,6 +28,7 @@ $url=NULL;
 			<?php else: ?>
 				<li><a href="/PNPN-Website/login.php">Login</a></li>
 			<?php endif; ?>
+			<div class="tilda1"><img alt="~" src="CSS/styles/Scwig_1.png"></div>
 		</ul>
 	</div>
 </div>

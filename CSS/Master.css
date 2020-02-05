@@ -46,3 +46,14 @@ padding:0px;
 	top: 6em;
 	right: 6.3em;
 }
+
+.tilda1 img{
+	display: block;
+	max-height: 1em;
+	max-width: 1em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 10.8em;
+	right: 18.45em;
+}
