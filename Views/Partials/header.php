@@ -33,7 +33,11 @@ $url=NULL;
 				<div class="volunteerButton"><a href="/PNPN-Website/volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
 			<div class="tilda2"><img alt="~" src="CSS/styles/Scwig_2.png"></div>
-			<div class="full"><img alt="~" src="CSS/styles/Full.png"></div>
+			<?php if ($url!="/PNPN-Website/landgrant.php"):?>
+				<div class="landgrantButton"><a href="/PNPN-Website/volunteer.php"><img alt="landgrant" src="CSS/styles/Land_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php else: ?>
+				<div class="landgrantButton"><a href="/PNPN-Website/landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php endif;?>
 		</ul>
 	</div>
 </div>

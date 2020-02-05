@@ -90,3 +90,14 @@ padding:0px;
 	top: 8.8em;
 	right: 9.1em;
 }
+
+.landgrantButton img{
+	display: block;
+	max-height: 4.4em;
+	max-width: 4.4em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 16.9em;
+	right: 9.1em;
+}
