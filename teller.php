@@ -6,7 +6,7 @@
 		<?php include("Javascript/Connections/req.php");
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b") {
 			//echo "Welcome " . $_SESSION['username'];
-			$username = $_SESSION['username'];
+			$usename = $_SESSION['username'];
 		}
 		else{
 			echo "Please login to view this page.";

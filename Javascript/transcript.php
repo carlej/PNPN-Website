@@ -1,26 +1,30 @@
 <form name="transfer"method="POST" action="Javascript/maketran.php" onsubmit="return valadatetran();" id="addForm">
 	<fieldset>
 		<legend>Transfer:</legend>
+		<p><?php
+		$split="-!split!-";
+		//echo $split;
+		?></p>
 		<p>
 			<label>Account from:</label>
 			<select name="Accfrom">
 				<?php
 				foreach ($parsed_json as $value) {
 					if ($value) {
-						echo '<option value="'.$value.'">'.$name.'</option>';
+						echo '<option value="'."{$value}{$split}{$name}".'">'.$name.'</option>';
 					}
 				}
 				if($parsed_ship_json!=NULL){
 					foreach ($parsed_ship_json as $value) {
 						if ($value) {
-							echo '<option value="'.$value.'">'.$shipName.'</option>';
+							echo '<option value="'."{$value}{$split}{$shipName}".'">'.$shipName.'</option>';
 						}
 					}
 				}
 				if($parsed_fleet_json!=NULL){
 					foreach ($parsed_fleet_json as $value) {
 						if ($value) {
-							echo '<option value="'.$value.'">'.$fleetName.'</option>';
+							echo '<option value="'."{$value}{$split}{$fleetName}".'">'.$fleetName.'</option>';
 						}
 					}
 				}

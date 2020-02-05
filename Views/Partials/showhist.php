@@ -44,16 +44,35 @@
 				<div class="cssmenu" class="align-center">
 					<ul>
 						<li><a><?php
-						echo "date/time: ";
-						echo $key; //tiem and date that it happened
-						echo "Type: ";
-						echo $value[0]; //what type of history is it ex transfer, deposite, withdraw 
-						echo "Account from: ";
-						echo $value[1]; //account from
-						echo "Account to: ";
-						echo $value[2]; //account to
-						echo "Ammount: ";
-						echo $value[3]; //amount
+						//echo count($value);
+						if (count($value)==5) {
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo " Teller: ";
+							echo $value[4];
+							echo " ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[3]; //amount 
+							echo " Sterlings from: ";
+							echo $value[1]; //account from
+							echo " to: ";
+							echo $value[2]; //account to							
+							
+						}
+						else {
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[3]; //amount 
+							echo " Sterlings from: ";
+							echo $value[1]; //account from
+							echo " to: ";
+							echo $value[2]; //account to
+						}
 						?></a></li>
 					</ul>
 				</div>
@@ -76,16 +95,34 @@
 					<div class="cssmenu" class="align-center">
 						<ul>
 							<li><a><?php
-							echo "date/time: ";
-							echo $key; //tiem and date that it happened
-							echo "Type: ";
-							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw 
-							echo "Account from: ";
+							if (count($value)==5) {
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo " Teller: ";
+							echo $value[4];
+							echo " ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[3]; //amount 
+							echo " Sterlings from: ";
 							echo $value[1]; //account from
-							echo "Account to: ";
+							echo " to: ";
+							echo $value[2]; //account to							
+							
+						}
+						else {
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[3]; //amount 
+							echo " Sterlings from: ";
+							echo $value[1]; //account from
+							echo " to: ";
 							echo $value[2]; //account to
-							echo "Ammount: ";
-							echo $value[3]; //amount
+						}
 							?></a></li>
 						</ul>
 					</div>
@@ -109,16 +146,34 @@
 					<div class="cssmenu" class="align-center">
 						<ul>
 							<li><a><?php
-							echo "date/time: ";
-							echo $key; //tiem and date that it happened
-							echo "Type: ";
-							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw 
-							echo "Account from: ";
+							if (count($value)==5) {
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo " Teller: ";
+							echo $value[4];
+							echo " ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[3]; //amount 
+							echo " Sterlings from: ";
 							echo $value[1]; //account from
-							echo "Account to: ";
+							echo " to: ";
+							echo $value[2]; //account to							
+							
+						}
+						else {
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[3]; //amount 
+							echo " Sterlings from: ";
+							echo $value[1]; //account from
+							echo " to: ";
 							echo $value[2]; //account to
-							echo "Ammount: ";
-							echo $value[3]; //amount
+						}
 							?></a></li>
 						</ul>
 					</div>
