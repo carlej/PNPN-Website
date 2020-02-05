@@ -25,7 +25,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			date_default_timezone_set('Etc/GMT+8');
 			$timeStamp=date('Y/m/d h:i:s A'); //this is a time stamp that is placed on the transaction in the history so that we know when it happened.
 			$rema = $row[0]-$trans;
-			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
+			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$temp[0]'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
 			$queryTo = "SELECT Ballance FROM accounts WHERE ID = '$Accto'";
 			$resultTo = mysqli_query($con, $queryTo);
@@ -44,14 +44,14 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$queryHistTo="UPDATE accounts SET history = '$enco_jsonHistTo' WHERE accounts.ID = '$Accto'";
 			$resultHistTo=mysqli_query($con,$queryHistTo);
 			//creates history in the account making the transfer
-			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
+			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$temp[0]'";
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Transfered",$Accfrom,$Accto,$trans];
+			$tran=["Transfered",$temp[1],$Accto,$trans];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
+			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$temp[0]'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			header("Location: /PNPN-Website/transfer.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);

@@ -40,9 +40,6 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$deduct = mysqli_query($con, $updateto); //sets the new ballance of the account being transftered into.
 			//creates a history of the transaction in the account to
 
-
-			//I want to add a part into this that says what teller did the transaction but am not sure if this is something that we would want going forward and so have not implumented this yet
-
 			//This adds a new entry into the JSON file that is used to store the history of each account
 
 			//currently it uses the account numbers for this info. I was trying to phase out account numbers and have this display the name of the account holder but this is a work in progress.
