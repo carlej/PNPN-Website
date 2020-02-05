@@ -6,7 +6,8 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
 	}
-	$Accfrom = mysqli_real_escape_string($con, $_POST['Accfrom']);
+	$temp=explode("-!split!-", $_POST['Accfrom']);
+	$Accfrom = mysqli_real_escape_string($con, $temp[0]);
 	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
 	$trans = mysqli_real_escape_string($con, $_POST['trans']);
 	$tellerTemp=$_SESSION['username'];
@@ -49,7 +50,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$resultHistTo= mysqli_query($con, $queryHistTo);
 			$rowHistTo=mysqli_fetch_row($resultHistTo);
 			$parsed_jsonHistTo=json_decode($rowHistTo[0],true);
-			$dep=["Transfered",$Accfrom,$Accto,$trans,$teller];
+			$dep=["Transfered",$temp[1],$Accto,$trans,$teller];
 			$parsed_jsonHistTo[$timeStamp]=$dep;
 			$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
 			$queryHistTo="UPDATE accounts SET history = '$enco_jsonHistTo' WHERE accounts.ID = '$Accto'";
@@ -59,7 +60,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Transfered",$Accfrom,$Accto,$trans,$teller];
+			$tran=["Transfered",$temp[1],$Accto,$trans,$teller];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";

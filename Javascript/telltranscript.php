@@ -5,6 +5,7 @@
 		<legend>Transfer:</legend>
 		<p><?php
 		echo $name;
+		$split="-!split!-";
 		?></p>
 		<p>
 
@@ -13,20 +14,20 @@
 				<?php
 				foreach ($parsed_json as $value) {
 					if ($value) {
-						echo '<option value="'.$value.'">'.$name.'</option>';
+						echo '<option value="'."{$value}{$split}{$name}".'">'.$name.'</option>';
 					}
 				}
 				if($parsed_ship_json!=NULL){
 					foreach ($parsed_ship_json as $value) {
 						if ($value) {
-							echo '<option value="'.$value.'">'.$shipName.'</option>';
+							echo '<option value="'."{$value}{$split}{$shipName}".'">'.$shipName.'</option>';
 						}
 					}
 				}
 				if($parsed_fleet_json!=NULL){
 					foreach ($parsed_fleet_json as $value) {
 						if ($value) {
-							echo '<option value="'.$value.'">'.$fleetName.'</option>';
+							echo '<option value="'."{$value}{$split}{$fleetName}".'">'.$fleetName.'</option>';
 						}
 					}
 				}
