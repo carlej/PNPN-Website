@@ -24,6 +24,7 @@ padding:0px;
 	top: -5em;
 	right: -5em;
 }
+
 .bankButton img{
 	display: block;
 	max-height: 3em;
@@ -33,4 +34,15 @@ padding:0px;
 	position: absolute;
 	top: 8em;
 	right: 18.5em;
+}
+
+.logoutButton img{
+	display: block;
+	max-height: 3em;
+	max-width: 3em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 6em;
+	right: 6.3em;
 }
