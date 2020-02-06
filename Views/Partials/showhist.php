@@ -40,7 +40,8 @@
 		$parsed_hist = json_decode($row[0],true);
 	 } ?>
 	<?php if($parsed_hist!=NULL): ?>
-		<?php foreach ($parsed_hist as $key => $value): ?>
+		<?php $revPers=array_reverse($parsed_hist); ?>
+		<?php foreach ($revPers as $key => $value): ?>
 			<div class="container">
 				<div class="cssmenu" class="align-center">
 					<ul>
@@ -91,7 +92,8 @@
 			$parsed_ship_hist = json_decode($row[0],true);
 		 } ?>
 		<?php if($parsed_ship_hist!=NULL): ?>
-			<?php foreach ($parsed_ship_hist as $key => $value): ?>
+			<?php $revShip=array_reverse($parsed_ship_hist); ?>
+			<?php foreach ($revShip as $key => $value): ?>
 				<div class="container">
 					<div class="cssmenu" class="align-center">
 						<ul>
@@ -142,7 +144,8 @@
 			$parsed_fleet_hist = json_decode($row[0],true);
 		 } ?>
 		<?php if($parsed_fleet_hist!=NULL): ?>
-			<?php foreach ($parsed_fleet_hist as $key => $value): ?>
+			<?php $revFleet=array_reverse($parsed_fleet_hist); ?>
+			<?php foreach ($revFleet as $key => $value): ?>
 				<div class="container">
 					<div class="cssmenu" class="align-center">
 						<ul>

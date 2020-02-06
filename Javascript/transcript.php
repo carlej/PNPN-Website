@@ -1,4 +1,4 @@
-<form name="transfer"method="POST" action="Javascript/maketran.php" onsubmit="return valadatetran();" id="addForm">
+<form name="transfer"method="POST" action="Javascript/maketran.php" onsubmit="return valadatetran();" id="transferForm">
 	<fieldset>
 		<legend>Transfer:</legend>
 		<p><?php

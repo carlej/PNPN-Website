@@ -255,9 +255,23 @@ li{
 	width: 60em;
 }
 
+#telltransferForm {
+	position: relative;
+	top: 21em;
+	left: 12em;
+	width: 20em;
+}
+
 #transferForm {
 	position: relative;
-	top: 14em;
+	top: 21em;
 	left: 12em;
-	width: 60em;
+	width: 20em;
+}
+
+#tellDepositeForm {
+	position: relative;
+	top: 5.5em;
+	left: 35em;
+	width: 20em;
 }
