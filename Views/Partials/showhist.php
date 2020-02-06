@@ -63,7 +63,7 @@
 							echo $value[2]; //account to							
 							
 						}
-						else {
+						else if (count($value)==4){
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -74,6 +74,19 @@
 							echo $value[1]; //account from
 							echo " to ";
 							echo $value[2]; //account to
+						}
+						if (count($value)==6) {
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo " Teller ";
+							echo $value[3];
+							echo " ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[2]; //amount 
+							echo " Sterlings to ";
+							echo $value[1]; //account from							
 						}
 						?></a></li>
 					</ul>
@@ -114,7 +127,7 @@
 							echo $value[2]; //account to							
 							
 						}
-						else {
+						else if (count($value)==4){
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -125,6 +138,19 @@
 							echo $value[1]; //account from
 							echo " to ";
 							echo $value[2]; //account to
+						}
+						else if (count($value)==6) {
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo " Teller ";
+							echo $value[3];
+							echo " ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[2]; //amount 
+							echo " Sterlings to ";
+							echo $value[1]; //account from							
 						}
 							?></a></li>
 						</ul>
@@ -166,7 +192,7 @@
 							echo $value[2]; //account to							
 							
 						}
-						else {
+						else if (count($value)==4){
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -177,6 +203,19 @@
 							echo $value[1]; //account from
 							echo " to ";
 							echo $value[2]; //account to
+						}
+						else if (count($value)==6) {
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo " Teller ";
+							echo $value[3];
+							echo " ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[2]; //amount 
+							echo " Sterlings to ";
+							echo $value[1]; //account from							
 						}
 							?></a></li>
 						</ul>

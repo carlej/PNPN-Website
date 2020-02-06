@@ -80,23 +80,25 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	else if ($_POST['delim']=='dept') {
 		$temp=explode("-!split!-", $_POST['Accfrom']);
 	$Accfrom = mysqli_real_escape_string($con, $temp[0]);
-	$dept = mysqli_real_escape_string($con, $_POST['dept']);
+	$depts = mysqli_real_escape_string($con, $_POST['depts']);
 	$tellerTemp=$_SESSION['username'];
 	$queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
 	$resultInTeller = mysqli_query($con, $queryInTeller);
 	$rowTeller=mysqli_fetch_row($resultInTeller);
 	$space=' ';
 	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
-	if (($dept=="") && $_POST['submit']!="Cancel") {
+
+	if (($depts=="") && $_POST['submit']!="Cancel") {
 		header("Location: /PNPN-Website/teller.php");
 	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
 	$row=mysqli_fetch_row($result);
-	if ($dept <= $row[0] && $dept>0) { //basic error handling
+	echo $teller;
+	if ($depts <= $row[0] && $depts>0) { //basic error handling
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
 			$timeStamp=date('Y/m/d h:i:s A'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
-			$rema = $row[0]+$dept;
+			$rema = $row[0]+$depts;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$addition = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
 
@@ -108,7 +110,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Deposited",$temp[1],$dept,$teller];
+			$tran=["Deposited",$temp[1],$depts,$teller,'0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";

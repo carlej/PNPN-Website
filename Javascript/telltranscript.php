@@ -87,8 +87,8 @@
 			</select>
 		</p>
 		<p>
-			<label for="dept">Amount to Deposite:</label>
-			<input type="number" name="dept" id="dept" min="1">
+			<label for="depts">Amount to Deposite:</label>
+			<input type="number" name="depts" id="depts" min="1">
 		</p>
 	</fieldset>
 
