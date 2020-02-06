@@ -3,6 +3,7 @@
 <!doctype html>
 <html>
 	<head>
+
 		<?php include("Javascript/Connections/req.php");
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b") {
 			//echo "Welcome " . $_SESSION['username'];
@@ -13,12 +14,15 @@
 			header("Location: /PNPN-Website/bank.php");
 		}
 		?>
-		
 
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
 		<title>Bank</title>
 		<?php include("Views\Partials/header.php");?>
+
+		<a href="/PNPN-Website/teller.php" class="TellerPressed">Teller</a>
+		<a href="/PNPN-Website/bank.php" class="PersonalButton">Personal</a>
+
 	</head>
 	<body>
 		<?php

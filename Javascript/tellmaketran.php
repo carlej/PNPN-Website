@@ -6,6 +6,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
 	}
+	if ($_POST['delim']=='tran') {
 	$temp=explode("-!split!-", $_POST['Accfrom']);
 	$Accfrom = mysqli_real_escape_string($con, $temp[0]);
 	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
@@ -74,5 +75,48 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	elseif($trans>0){
 		//echo "error you don't have enough money";
 		header("Location: /PNPN-Website/teller.php");
+	}
+	}
+	else if ($_POST['delim']=='dept') {
+		$temp=explode("-!split!-", $_POST['Accfrom']);
+	$Accfrom = mysqli_real_escape_string($con, $temp[0]);
+	$depts = mysqli_real_escape_string($con, $_POST['depts']);
+	$tellerTemp=$_SESSION['username'];
+	$queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
+	$resultInTeller = mysqli_query($con, $queryInTeller);
+	$rowTeller=mysqli_fetch_row($resultInTeller);
+	$space=' ';
+	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
+
+	if (($depts=="") && $_POST['submit']!="Cancel") {
+		header("Location: /PNPN-Website/teller.php");
+	}
+	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
+	$result = mysqli_query($con, $accountQuery);
+	$row=mysqli_fetch_row($result);
+	echo $teller;
+	if ($depts <= $row[0] && $depts>0) { //basic error handling
+			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
+			$timeStamp=date('Y/m/d h:i:s A'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
+			$rema = $row[0]+$depts;
+			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
+			$addition = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
+
+			//This adds a new entry into the JSON file that is used to store the history of each account
+
+			
+			//creates history in the account making the deposite
+			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
+			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
+			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
+			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
+			$tran=["Deposited",$temp[1],$depts,$teller,'0','0'];
+			$parsed_jsonHistFrom[$timeStamp]=$tran;
+			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
+			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
+			$resultHistFrom=mysqli_query($con,$queryHistFrom);
+			header("Location: /PNPN-Website/teller.php");//refreshes page to reflect new ballance
+			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
+	}
 	}
 ?>

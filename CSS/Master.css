@@ -1,3 +1,5 @@
+@font-face { font-family: Pirates; src: url('Pieces of Eight Font/Pieces of Eight.ttf'); } 
+
 
 body{
 	
@@ -9,6 +11,16 @@ padding:0px;
 		rgba(194,181,155,0.65),
 		rgba(194,181,155,0.65)),
 	url(styles/Texture_Bkgd_1.jpg);	
+
+}
+
+.overlay {
+	background: 
+	linear-gradient(
+		rgba(194,181,155,0.65),
+		rgba(194,181,155,0.65)),
+	url(styles/Compass_Rose.png);
+	opacity: 0.5;
 }
 
 .Header {height:100px;}
@@ -27,13 +39,13 @@ padding:0px;
 
 .bankButton img{
 	display: block;
-	max-height: 3em;
-	max-width: 3em;
+	max-height: 1.9em;
+	max-width: 1.9em;
 	width: auto;
 	height: auto;
 	position: absolute;
-	top: 8em;
-	right: 18.5em;
+	top: 8.9em;
+	right: 18.1em;
 }
 
 .logoutButton img{
@@ -49,11 +61,217 @@ padding:0px;
 
 .tilda1 img{
 	display: block;
-	max-height: 1em;
-	max-width: 1em;
+	max-height: 0.6em;
+	max-width: 0.6em;
 	width: auto;
 	height: auto;
 	position: absolute;
-	top: 10.8em;
-	right: 18.45em;
+	top: 11.3em;
+	right: 17.8em;
+}
+
+.volunteerButton img{
+	display: block;
+	max-height: 3.7em;
+	max-width: 3.7em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 12.4em;
+	right: 15em;
+}
+
+.tilda2 img{
+	display: block;
+	max-height: 0.4em;
+	max-width: 0.4em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 16.45em;
+	right: 14em;
+}
+
+.full img{
+	display: block;
+	max-height: 10em;
+	max-width: 10em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 8.8em;
+	right: 9.1em;
+}
+
+.landgrantButton img{
+	display: block;
+	max-height: 4.4em;
+	max-width: 4.4em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 16.9em;
+	right: 9.1em;
+}
+
+.TopStripe img{
+	display: block;
+	max-height: 35em;
+	max-width: 35em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 2em;
+	left: 2em;
+	opacity: 0.7;
+}
+
+.SideStripe img{
+	display: block;
+	max-height: 35em;
+	max-width: 35em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 2em;
+	left: 2em;
+	opacity: 0.7;
+
+}
+
+.PersonalButton {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0.4em 0em 0em 0.4em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+	position: absolute;
+	top: 4.5em;
+	left: 20em;
+}
+
+.PersonalPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0.4em 0em 0em 0.4em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+	position: absolute;
+	top: 4.5em;
+	left: 20em;
+}
+
+.TellerButton {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+	position: absolute;
+	top: 4.5em;
+	left: 29.02em;
+}
+
+.TellerPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+	position: absolute;
+	top: 4.5em;
+	left: 29.02em;
+}
+
+li{
+	display: inline;
+	padding-left: 5em;
+}
+
+.AccDiss{
+	position: relative;
+	font-family: Pirates;
+	font-size: 1.55em;
+	top: 9em;
+	left: 2.8em;
+}
+
+.HistBox {
+	position: relative;
+	width: 60em;
+	height: 20em;
+	max-height: 20em;
+	border: .1em solid;
+	top:20em;
+	left: 12em;
+	overflow: auto;
+}
+
+.HistBox li{
+	position: relative;
+	left:-6em;
+}
+
+#search {
+	position: relative;
+	top: 13em;
+	left: 12em;
+	width: 60em;
+}
+
+#telltransferForm {
+	position: relative;
+	top: 21em;
+	left: 12em;
+	width: 20em;
+}
+
+#transferForm {
+	position: relative;
+	top: 21em;
+	left: 12em;
+	width: 20em;
+}
+
+#tellDepositeForm {
+	position: relative;
+	top: 5.5em;
+	left: 35em;
+	width: 20em;
 }

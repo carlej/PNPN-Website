@@ -1,6 +1,6 @@
 <?php //This file is to display the accounts and the transfer window that anyone can see so that they can make account to account transfers without going to the bank?>
 
-<form name="transfer"method="POST" action="Javascript/tellmaketran.php" onsubmit="return valadatetran();" id="addForm">
+<form name="transfer"method="POST" action="Javascript/tellmaketran.php" id="telltransferForm">
 	<fieldset>
 		<legend>Transfer:</legend>
 		<p><?php
@@ -46,13 +46,61 @@
 	</fieldset>
 
 	<p>
+		<input type="hidden" name="delim" value="tran">
 		<input type="submit" name="tran" value="Transfer" />
 		<input type="reset" value="Clear" />
 		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
 	</p>
 </form>
 
-<form name="transfer"method="POST" action="Javascript/tellmaketran.php" onsubmit="return valadatetran();" id="addForm">
+<form name="Deposite"method="POST" action="Javascript/tellmaketran.php" id="tellDepositeForm">
+	<legend>Deposite:</legend>
+		<p><?php
+		echo $name;
+		$split="-!split!-";
+		?></p>
+		<p>
+
+			<label>Account from:</label>
+			<select name="Accfrom">
+				<?php
+				foreach ($parsed_json as $value) {
+					if ($value) {
+						echo '<option value="'."{$value}{$split}{$name}".'">'.$name.'</option>';
+					}
+				}
+				if($parsed_ship_json!=NULL){
+					foreach ($parsed_ship_json as $value) {
+						if ($value) {
+							echo '<option value="'."{$value}{$split}{$shipName}".'">'.$shipName.'</option>';
+						}
+					}
+				}
+				if($parsed_fleet_json!=NULL){
+					foreach ($parsed_fleet_json as $value) {
+						if ($value) {
+							echo '<option value="'."{$value}{$split}{$fleetName}".'">'.$fleetName.'</option>';
+						}
+					}
+				}
+				?>
+			</select>
+		</p>
+		<p>
+			<label for="depts">Amount to Deposite:</label>
+			<input type="number" name="depts" id="depts" min="1">
+		</p>
+	</fieldset>
+
+	<p>
+		<input type="hidden" name="delim" value="dept">
+		<input type="submit" name="dept" value="Deposite" />
+		<input type="reset" value="Clear" />
+		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
+	</p>
+</form>
+
+
 
 <script type="text/javascript">
 	function Cancel(){
