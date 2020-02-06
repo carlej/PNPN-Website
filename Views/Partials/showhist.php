@@ -1,3 +1,4 @@
+<div class="HistBox">
 <?php 
 //foreach ($parsed_json as $value) {
 //	if ($value) {
@@ -49,15 +50,15 @@
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
-							echo " Teller: ";
+							echo " Teller ";
 							echo $value[4];
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
 							echo $value[3]; //amount 
-							echo " Sterlings from: ";
+							echo " Sterlings from ";
 							echo $value[1]; //account from
-							echo " to: ";
+							echo " to ";
 							echo $value[2]; //account to							
 							
 						}
@@ -68,9 +69,9 @@
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
 							echo $value[3]; //amount 
-							echo " Sterlings from: ";
+							echo " Sterlings from ";
 							echo $value[1]; //account from
-							echo " to: ";
+							echo " to ";
 							echo $value[2]; //account to
 						}
 						?></a></li>
@@ -99,15 +100,15 @@
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
-							echo " Teller: ";
+							echo " Teller ";
 							echo $value[4];
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
 							echo $value[3]; //amount 
-							echo " Sterlings from: ";
+							echo " Sterlings from ";
 							echo $value[1]; //account from
-							echo " to: ";
+							echo " to ";
 							echo $value[2]; //account to							
 							
 						}
@@ -118,9 +119,9 @@
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
 							echo $value[3]; //amount 
-							echo " Sterlings from: ";
+							echo " Sterlings from ";
 							echo $value[1]; //account from
-							echo " to: ";
+							echo " to ";
 							echo $value[2]; //account to
 						}
 							?></a></li>
@@ -150,15 +151,15 @@
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
-							echo " Teller: ";
+							echo " Teller ";
 							echo $value[4];
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
 							echo $value[3]; //amount 
-							echo " Sterlings from: ";
+							echo " Sterlings from ";
 							echo $value[1]; //account from
-							echo " to: ";
+							echo " to ";
 							echo $value[2]; //account to							
 							
 						}
@@ -169,9 +170,9 @@
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
 							echo $value[3]; //amount 
-							echo " Sterlings from: ";
+							echo " Sterlings from ";
 							echo $value[1]; //account from
-							echo " to: ";
+							echo " to ";
 							echo $value[2]; //account to
 						}
 							?></a></li>
@@ -182,3 +183,4 @@
 		<?php endif; ?>
 	<?php endforeach; ?>
 <?php endif; ?>
+</div>

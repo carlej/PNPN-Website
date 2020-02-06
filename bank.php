@@ -5,7 +5,6 @@
 	<head>
 		<?php include("Javascript/Connections/req.php");
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-			echo "Welcome " . $_SESSION['username'];
 			$username = $_SESSION['username'];
 		}
 		else{
@@ -16,9 +15,17 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
 		<title>Bank</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php include("Views\Partials/header.php");
+		?>
+		<a href="/PNPN-Website/bank.php" class="PersonalPressed">Personal</a>
+
+		<?php if ($url=="/PNPN-Website/bank.php"):?>
+				<a href="/PNPN-Website/teller.php" class="TellerButton">Teller</a>
+			<?php endif;?>
+
 	</head>
 	<body>
+
 		<?php
 		include 'Javascript/Connections/convar.php';
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
