@@ -241,6 +241,7 @@ li{
 	border: .1em solid;
 	top:20em;
 	left: 12em;
+	overflow: auto;
 }
 
 .HistBox li{

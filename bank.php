@@ -76,7 +76,8 @@
 			if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
 				header("Location: /PNPN-Website/transfer.php");
 			}
-			include "Views/Partials/bankButtons.php"; //Its just a button
+			//include "Views/Partials/bankButtons.php"; //Its just a button
+			include "Javascript/transcript.php";
 		}
 		mysqli_close($con);
 

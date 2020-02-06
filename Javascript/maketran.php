@@ -12,7 +12,8 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$trans = mysqli_real_escape_string($con, $_POST['trans']);
 	//$user=$_SESSION['username'];
 	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
-		header("Location: /PNPN-Website/transfer.php");
+		//header("Location: /PNPN-Website/transfer.php");
+		header("Location: /PNPN-Website/bank.php");
 	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
@@ -53,17 +54,20 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$temp[0]'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			header("Location: /PNPN-Website/transfer.php");//refreshes page to reflect new ballance
+			//header("Location: /PNPN-Website/transfer.php");//refreshes page to reflect new ballance
+			header("Location: /PNPN-Website/bank.php");
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 		}
 		else{
 			//error = "Error that account doesn't exist";
 			//echo "<script type='text/javascript'>alert('".$error."');</script>";
 			//header("Location: /PNPN-Website/transfer.php");
+			header("Location: /PNPN-Website/bank.php");
 		}
 	}
 	elseif($trans>0){
 		//echo "error you don't have enough money";
-		header("Location: /PNPN-Website/transfer.php");
+		//header("Location: /PNPN-Website/transfer.php");
+		header("Location: /PNPN-Website/bank.php");
 	}
 ?>
