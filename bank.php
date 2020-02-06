@@ -17,11 +17,14 @@
 		<title>Bank</title>
 		<?php include("Views\Partials/header.php");
 		?>
-		<a href="/PNPN-Website/bank.php" class="PersonalPressed">Personal</a>
 
-		<?php if ($url=="/PNPN-Website/bank.php"):?>
-				<a href="/PNPN-Website/teller.php" class="TellerButton">Teller</a>
+		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b"): ?>
+			<a href="/PNPN-Website/bank.php" class="PersonalPressed">Personal</a>
+
+			<?php if ($url=="/PNPN-Website/bank.php"):?>
+					<a href="/PNPN-Website/teller.php" class="TellerButton">Teller</a>
 			<?php endif;?>
+		<?php endif;?>
 
 	</head>
 	<body>
