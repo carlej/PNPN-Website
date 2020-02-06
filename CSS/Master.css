@@ -124,7 +124,6 @@ padding:0px;
 	top: 2em;
 	left: 2em;
 	opacity: 0.7;
-
 }
 
 .SideStripe img{
@@ -230,7 +229,7 @@ li{
 	font-family: Pirates;
 	font-size: 1.55em;
 	top: 9em;
-	left: 2.5em;
+	left: 2.8em;
 }
 
 .HistBox {
@@ -247,4 +246,18 @@ li{
 .HistBox li{
 	position: relative;
 	left:-6em;
+}
+
+#search {
+	position: relative;
+	top: 13em;
+	left: 12em;
+	width: 60em;
+}
+
+#transferForm {
+	position: relative;
+	top: 14em;
+	left: 12em;
+	width: 60em;
 }

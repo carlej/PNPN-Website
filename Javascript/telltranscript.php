@@ -1,6 +1,6 @@
 <?php //This file is to display the accounts and the transfer window that anyone can see so that they can make account to account transfers without going to the bank?>
 
-<form name="transfer"method="POST" action="Javascript/tellmaketran.php" onsubmit="return valadatetran();" id="addForm">
+<form name="transfer"method="POST" action="Javascript/tellmaketran.php" onsubmit="return valadatetran();" id="transferForm">
 	<fieldset>
 		<legend>Transfer:</legend>
 		<p><?php
@@ -52,7 +52,7 @@
 	</p>
 </form>
 
-<form name="transfer"method="POST" action="Javascript/tellmaketran.php" onsubmit="return valadatetran();" id="addForm">
+
 
 <script type="text/javascript">
 	function Cancel(){
