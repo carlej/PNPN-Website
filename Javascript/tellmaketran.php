@@ -119,4 +119,47 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 	}
 	}
+
+	if ($_POST['delim']=='with') {
+	$temp=explode("-!split!-", $_POST['Accfrom']);
+	$Accfrom = mysqli_real_escape_string($con, $temp[0]);
+	$with = mysqli_real_escape_string($con, $_POST['with']);
+	$tellerTemp=$_SESSION['username'];
+	$queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
+	$resultInTeller = mysqli_query($con, $queryInTeller);
+	$rowTeller=mysqli_fetch_row($resultInTeller);
+	$space=' ';
+	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
+	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
+	$result = mysqli_query($con, $accountQuery);
+	$row=mysqli_fetch_row($result);
+	if ($with <= $row[0] && $with>0) { //basic error handling
+			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
+			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
+			$rema = $row[0]-$with;
+			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
+			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
+
+			//This adds a new entry into the JSON file that is used to store the history of each account
+
+			//currently it uses the account numbers for this info. I was trying to phase out account numbers and have this display the name of the account holder but this is a work in progress.
+			//creates history in the account making the transfer
+			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
+			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
+			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
+			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
+			$tran=["Withdraw",$temp[1],$Accto,$with,$teller];
+			$parsed_jsonHistFrom[$timeStamp]=$tran;
+			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
+			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
+			$resultHistFrom=mysqli_query($con,$queryHistFrom);
+			header("Location: /PNPN-Website/teller.php");//refreshes page to reflect new ballance
+			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
+		//header("Location: /PNPN-Website/transfer.php");
+		}
+	}
+	elseif($trans>0){
+		//echo "error you don't have enough money";
+		header("Location: /PNPN-Website/teller.php");
+	}
 ?>
