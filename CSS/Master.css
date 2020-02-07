@@ -357,7 +357,7 @@ li {
 	width: 20em;
 }
 
-#tellDepositeForm {
+.tellDepositFormdiv {
 	position: relative;
 	top: 5.5em;
 	left: 35em;

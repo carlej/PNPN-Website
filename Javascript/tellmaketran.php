@@ -29,7 +29,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		$row2=mysqli_fetch_row($resultIn);
 		if (mysqli_num_rows($resultIn)!=0) {
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
-			$timeStamp=date('Y/m/d h:i:s A'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
+			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
 			$rema = $row[0]-$trans;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
@@ -97,7 +97,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	echo $teller;
 	if ($depts <= $row[0] && $depts>0) { //basic error handling
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
-			$timeStamp=date('Y/m/d h:i:s A'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
+			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
 			$rema = $row[0]+$depts;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$addition = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account

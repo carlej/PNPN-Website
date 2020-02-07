@@ -72,6 +72,7 @@
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
 			include "Javascript/search.php";
+			//echo $_POST['input'];
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Ship/Household") {
 		header("Location: /PNPN-Website/addShip.php");

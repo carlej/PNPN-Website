@@ -6,18 +6,15 @@
 	$method = $_POST['type'];
 	$input = mysqli_real_escape_string($con, $_POST['input']);
 	if ($method=="shipID"){//This is an unused search method as I was not sure what i would be searching by and is one of the easy ones to make
-		$queryIn = "SELECT * FROM ship WHERE ID = '$input'";
-		$resultIn = mysqli_query($con, $queryIn);
-		$row = mysqli_fetch_row($resultIn);
-		$queryIn = "SELECT Accounts FROM ship WHERE ID = '$row[0]'";
-		$resultIn = mysqli_query($con, $queryIn);
-		$row1=mysqli_fetch_row($resultIn);
-		$parsed_json = json_decode($row1[0], true);
-//				$parsed_jsonid=$parsed_json;
-		$parsed_json = $parsed_json['id'];
-		$searchUserName=$row[0];
+		$queryShip = "SELECT * FROM ship WHERE ID = '$input'";
+		$resultShip= mysqli_query($con,$queryShip);
 		$parsed_ship_json=NULL;
-		$parsed_fleet_json=NULL;
+		$rowShip=mysqli_fetch_row($resultShip);
+		$shipName=$rowShip[1];
+		$parsed_ship_json=json_decode($rowShip[4],true);
+		$parsed_ship_json=$parsed_ship_json['id'];
+		$searchUserName=$row[0];
+		
 		$_SESSION['hold']=$searchUserName;
 		$_SESSION['stype']="shipID";
 		//$user=$_SESSION['hold'];
@@ -31,11 +28,12 @@
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
 	}
 	elseif ($method == "Ship") {//This is to search for ships
-		$queryIn = "SELECT * FROM ship WHERE Name = '$input'";
-		$resultIn = mysqli_query($con, $queryIn);
-		if (mysqli_num_rows($resultIn)>1) { //if there are multiple results this makes a drop down list so that you can pick what one you want
+		$queryShip = "SELECT * FROM ship WHERE Name = '$input'";
+		$resultShip= mysqli_query($con,$queryShip);
+		$shipName=NULL;
+		if (mysqli_num_rows($resultShip)>1) { //if there are multiple results this makes a drop down list so that you can pick what one you want
 			$array=NULL;
-			$array = $resultIn->fetch_all(MYSQLI_NUM);
+			$array = $resultShip->fetch_all(MYSQLI_NUM);
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Search by: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
 			foreach ($array as $key => $value) {//this will desplay the name of each captain as each should be different
@@ -47,17 +45,12 @@
 			$_SESSION['stype']="shipID";
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="new"></fieldset></form>';
 		}
-		elseif (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
-			$row = mysqli_fetch_row($resultIn);
-			$queryIn = "SELECT Accounts FROM ship WHERE ID = '$row[0]'";
-			$resultIn = mysqli_query($con, $queryIn);
-			$row1=mysqli_fetch_row($resultIn);
-			$parsed_json = json_decode($row1[0], true);
-//				$parsed_jsonid=$parsed_json;
-			$parsed_json = $parsed_json['id'];
-			$searchUserName=$row[0];
-			$parsed_ship_json=NULL;
-			$parsed_fleet_json=NULL;
+		elseif (mysqli_num_rows($resultShip)==1) { //returns the one account that was found or selected
+			$rowShip=mysqli_fetch_row($resultShip);
+			$shipName=$rowShip[1];
+			$parsed_ship_json=json_decode($rowShip[4],true);
+			$parsed_ship_json=$parsed_ship_json['id'];
+			$shipName=$rowShip[1];
 			$_SESSION['shipName']=$input;
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']="shipID";
@@ -76,18 +69,14 @@
 		}
 	}
 	elseif ($method == "fleetID") {
-		$queryIn = "SELECT * FROM fleet WHERE ID = '$input'";
-		$resultIn = mysqli_query($con, $queryIn);
-		$row = mysqli_fetch_row($resultIn);
-		$queryIn = "SELECT Accounts FROM fleet WHERE ID = '$row[0]'";
-		$resultIn = mysqli_query($con, $queryIn);
-		$row1=mysqli_fetch_row($resultIn);
-		$parsed_json = json_decode($row1[0], true);
-//				$parsed_jsonid=$parsed_json;
-		$parsed_json = $parsed_json['id'];
-		$searchUserName=$row[0];
-		$parsed_ship_json=NULL;
+		$queryFleet = "SELECT * FROM fleet WHERE ID = '$input'";
+		$resultFleet= mysqli_query($con,$queryFleet);
 		$parsed_fleet_json=NULL;
+		$rowFleet=mysqli_fetch_row($resultFleet);
+		$parsed_fleet_json=json_decode($rowFleet[4],true);
+		$parsed_fleet_json=$parsed_fleet_json['id'];
+		$fleetName=$rowFleet[1];
+		$searchUserName=$row[0];
 		$_SESSION['hold']=$searchUserName;
 		$_SESSION['stype']="fleetID";
 		//$user=$_SESSION['hold'];
@@ -101,11 +90,13 @@
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
 	}
 	elseif ($method == "Fleet") {
-		$queryIn = "SELECT * FROM fleet WHERE Name = '$input'";
-		$resultIn = mysqli_query($con, $queryIn);
-		if (mysqli_num_rows($resultIn)>1) {//if there are multiple results this makes a drop down list so that you can pick what one you want
+		$queryFleet = "SELECT * FROM fleet WHERE Name = '$input'";
+		$resultFleet= mysqli_query($con,$queryFleet);
+		$parsed_fleet_json=NULL;
+		$fleetName=NULL;
+		if (mysqli_num_rows($resultFleet)>1) {//if there are multiple results this makes a drop down list so that you can pick what one you want
 			$array=NULL;
-			$array = $resultIn->fetch_all(MYSQLI_NUM);
+			$array = $resultFleet->fetch_all(MYSQLI_NUM);
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Search by: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
 			foreach ($array as $key => $value) {
@@ -117,17 +108,12 @@
 			$_SESSION['stype']="fleetID";
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="new"></fieldset></form>';
 		}
-		elseif (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
-			$row = mysqli_fetch_row($resultIn);
-			$queryIn = "SELECT Accounts FROM fleet WHERE ID = '$row[0]'";
-			$resultIn = mysqli_query($con, $queryIn);
-			$row1=mysqli_fetch_row($resultIn);
-			$parsed_json = json_decode($row1[0], true);
-//				$parsed_jsonid=$parsed_json;
-			$parsed_json = $parsed_json['id'];
+		elseif (mysqli_num_rows($resultFleet)==1) { //returns the one account that was found or selected
+			$rowFleet=mysqli_fetch_row($resultFleet);
+			$parsed_fleet_json=json_decode($rowFleet[4],true);
+			$parsed_fleet_json=$parsed_fleet_json['id'];
+			$fleetName=$rowFleet[1];
 			$searchUserName=$row[0];
-			$parsed_ship_json=NULL;
-			$parsed_fleet_json=NULL;
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']="fleetID";
 			//$user=$_SESSION['hold'];

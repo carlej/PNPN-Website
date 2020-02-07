@@ -53,8 +53,9 @@
 	</p>
 </form>
 
-<form name="Deposite"method="POST" action="Javascript/tellmaketran.php" id="tellDepositeForm">
-	<legend>Deposite:</legend>
+<div class="tellDepositFormdiv">
+<form name="Deposit"method="POST" action="Javascript/tellmaketran.php" id="tellDepositForm">
+	<legend>Deposit:</legend>
 		<p><?php
 		echo $name;
 		$split="-!split!-";
@@ -87,18 +88,19 @@
 			</select>
 		</p>
 		<p>
-			<label for="depts">Amount to Deposite:</label>
+			<label for="depts">Amount to Deposit:</label>
 			<input type="number" name="depts" id="depts" min="1">
 		</p>
 	</fieldset>
 
 	<p>
 		<input type="hidden" name="delim" value="dept">
-		<input type="submit" name="dept" value="Deposite" />
+		<input type="submit" name="dept" value="Deposit" />
 		<input type="reset" value="Clear" />
 		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
 	</p>
 </form>
+</div>
 
 
 
