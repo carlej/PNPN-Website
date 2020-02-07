@@ -6,7 +6,7 @@
 				<div id="cssmenu" class="align-center">
 					<ul>
 						<tr>
-							<td><li><a><?php echo $name.':'; ?></a></li></td>
+							<td><li><a onclick="showhist('showhist.php')" onmouseover="this.style.cursor='pointer'"><?php echo $name.':'; ?></a></li></td>
 							<td>
 								<li><a><?php
 								$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
@@ -27,7 +27,7 @@
 				<div id="cssmenu" class="align-center">
 					<ul>
 						<tr>
-							<td><li><a><?php echo $shipName.':'; ?></a></li></td>
+							<td><li><a onclick="showhist('showhist.php')" onmouseover="this.style.cursor='pointer'"><?php echo $shipName.':'; ?></a></li></td>
 							<td>
 								<li><a><?php
 								$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
@@ -49,7 +49,7 @@
 				<div id="cssmenu" class="align-center">
 					<ul>
 						<tr>
-							<td><li><a><?php echo $fleetName.':'; ?></a></li></td>
+							<td><li><a onclick="showhist('showhist.php')" onmouseover="this.style.cursor='pointer'"><?php echo $fleetName.':'; ?></a></li></td>
 							<td>
 								<li><a><?php
 								$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
@@ -65,3 +65,12 @@
 	<?php endforeach; ?>
 <?php endif; ?>
 </table>
+
+<script type="text/javascript">
+	var parsed_json=<?php echo json_encode($parsed_json); ?>;
+	var parsed_ship_json=<?php echo json_encode($parsed_ship_json); ?>;
+	var parsed_fleet_json=<?php echo json_encode($parsed_fleet_json); ?>;
+    function showhist(catnam){
+    		$("#hist").load("/showhist.php",$parsed_json,$parsed_ship_json,$parsed_fleet_json);
+    }
+</script>

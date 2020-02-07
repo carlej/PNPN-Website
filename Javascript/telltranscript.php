@@ -53,8 +53,9 @@
 	</p>
 </form>
 
-<form name="Deposite"method="POST" action="Javascript/tellmaketran.php" id="tellDepositeForm">
-	<legend>Deposite:</legend>
+<div class="tellDepositFormdiv">
+<form name="Deposit"method="POST" action="Javascript/tellmaketran.php" id="tellDepositForm">
+	<legend>Deposit:</legend>
 		<p><?php
 		echo $name;
 		$split="-!split!-";
@@ -87,18 +88,68 @@
 			</select>
 		</p>
 		<p>
-			<label for="depts">Amount to Deposite:</label>
+			<label for="depts">Amount to Deposit:</label>
 			<input type="number" name="depts" id="depts" min="1">
 		</p>
 	</fieldset>
 
 	<p>
 		<input type="hidden" name="delim" value="dept">
-		<input type="submit" name="dept" value="Deposite" />
+		<input type="submit" name="dept" value="Deposit" />
 		<input type="reset" value="Clear" />
 		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
 	</p>
 </form>
+</div>
+
+<div class="tellWithdrawFormdiv">
+<form name="Withdraw"method="POST" action="Javascript/tellmaketran.php" id="tellWithdrawForm">
+	<legend>Withdraw:</legend>
+		<p><?php
+		echo $name;
+		$split="-!split!-";
+		?></p>
+		<p>
+
+			<label>Account from:</label>
+			<select name="Accfrom">
+				<?php
+				foreach ($parsed_json as $value) {
+					if ($value) {
+						echo '<option value="'."{$value}{$split}{$name}".'">'.$name.'</option>';
+					}
+				}
+				if($parsed_ship_json!=NULL){
+					foreach ($parsed_ship_json as $value) {
+						if ($value) {
+							echo '<option value="'."{$value}{$split}{$shipName}".'">'.$shipName.'</option>';
+						}
+					}
+				}
+				if($parsed_fleet_json!=NULL){
+					foreach ($parsed_fleet_json as $value) {
+						if ($value) {
+							echo '<option value="'."{$value}{$split}{$fleetName}".'">'.$fleetName.'</option>';
+						}
+					}
+				}
+				?>
+			</select>
+		</p>
+		<p>
+			<label for="with">Amount to Withdraw:</label>
+			<input type="number" name="with" id="with" min="1">
+		</p>
+	</fieldset>
+
+	<p>
+		<input type="hidden" name="delim" value="with">
+		<input type="submit" name="dept" value="Withdraw" />
+		<input type="reset" value="Clear" />
+		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
+	</p>
+</form>
+</div>
 
 
 
