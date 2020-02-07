@@ -44,7 +44,7 @@
 				$_SESSION['perm'] = $perm[0];
 				$_SESSION['hold']="hold";
 				echo $perm[0];
-				header("Location: /PNPN-Website");
+				header("Location: /PNPN-Website/bank.php");
 			}
 			else{
 				echo "error";

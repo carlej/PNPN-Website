@@ -1,11 +1,10 @@
-<?php //This is the volinteer page this is the next step after the bank functions are finished. It is not known at this time what this will look like but the base functions are that it will display all the shifts, allow users to sign up for a shift, it will allow checkin and check out of shifts, and it will auto pay on completion of shift ?>
+<?php //This is the volunteer page this is the next step after the bank functions are finished. It is not known at this time what this will look like but the base functions are that it will display all the shifts, allow users to sign up for a shift, it will allow checkin and check out of shifts, and it will auto pay on completion of shift ?>
 
 <!doctype html>
 <html>
 	<head>
 		<?php include("Javascript/Connections/req.php"); 
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-			//echo "Welcome " . $_SESSION['username'];
 			$username = $_SESSION['username'];
 		}
 		?>
@@ -14,6 +13,15 @@
 
 		<title>Volunteering</title>
 		<?php include("Views\Partials/header.php");?>
+
+		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b"): ?>
+			<a href="/PNPN-Website/volunteer.php" class="PersonalPressed">Personal</a>
+
+			<?php if ($url=="/PNPN-Website/volunteer.php"):?>
+					<a href="/PNPN-Website/volunteercord.php" class="CordButton">Coordinator</a>
+			<?php endif;?>
+		<?php endif;?>
+
 	</head>
 	<body>
 		<?php
@@ -27,6 +35,8 @@
 		}
 		mysqli_close($con);
 
-		?></body>
+		?>
+			
+	</body>
 
 </html>

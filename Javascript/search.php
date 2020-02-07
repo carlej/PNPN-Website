@@ -36,7 +36,7 @@
 		if (mysqli_num_rows($resultIn)>1) { //if there are multiple results this makes a drop down list so that you can pick what one you want
 			$array=NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
-			echo '<form method="POST" id="search"><fieldset><label>Search by:</label><select name="input">';
+			echo '<form method="POST" id="SearchBy2"><fieldset><label>Search by: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
 			foreach ($array as $key => $value) {//this will desplay the name of each captain as each should be different
 				//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
@@ -45,7 +45,7 @@
 			//echo '</form>';
 			$input2 = mysqli_real_escape_string($con, $_POST['input']);
 			$_SESSION['stype']="shipID";
-			echo '</select><label for="input">:</label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="new"></fieldset></form>';
+			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="new"></fieldset></form>';
 		}
 		elseif (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
 			$row = mysqli_fetch_row($resultIn);
@@ -72,7 +72,7 @@
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
 		}
 		else{
-			echo "There are no accounts that match that search. Search is case sensitive";
+			echo '<div class="NoneFound">There are no accounts that match that search!</div>';
 		}
 	}
 	elseif ($method == "fleetID") {
@@ -106,7 +106,7 @@
 		if (mysqli_num_rows($resultIn)>1) {//if there are multiple results this makes a drop down list so that you can pick what one you want
 			$array=NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
-			echo '<form method="POST" id="search"><fieldset><label>Search by:</label><select name="input">';
+			echo '<form method="POST" id="SearchBy2"><fieldset><label>Search by: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
 			foreach ($array as $key => $value) {
 				//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
@@ -115,7 +115,7 @@
 			//echo '</form>';
 			$input2 = mysqli_real_escape_string($con, $_POST['input']);
 			$_SESSION['stype']="fleetID";
-			echo '</select><label for="input">:</label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="new"></fieldset></form>';
+			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="new"></fieldset></form>';
 		}
 		elseif (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
 			$row = mysqli_fetch_row($resultIn);
@@ -141,7 +141,7 @@
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
 		}
 		else{
-			echo "There are no accounts that match that search. Search is case sensitive";
+			echo '<div class="NoneFound">There are no accounts that match that search!</div>';
 		}
 	}
 	else{
@@ -150,7 +150,7 @@
 		if (mysqli_num_rows($resultIn)>1) {//if there are multiple results this makes a drop down list so that you can pick what one you want
 			$array = NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
-			echo '<form method="POST" id="search"><fieldset><label>Search by:</label><select name="input">';
+			echo '<form method="POST" id="SearchBy2"><fieldset><label>Search by: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
 			foreach ($array as $key => $value) {
 				//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
@@ -158,7 +158,7 @@
 			}
 			//echo '</form>';
 			$input2 = mysqli_real_escape_string($con, $_POST['input']);
-			echo '</select><label for="input">:</label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="new"></fieldset></form>';
+			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="new"></fieldset></form>';
 		
 		}
 		else if (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
@@ -211,7 +211,7 @@
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."norm".'" /></p></form></html>';
 		}
 		else{
-			echo "There are no accounts that match that search. Search is case sensitive";
+			echo '<div class="NoneFound">There are no accounts that match that search!</div>';
 		}
 	}
 ?>

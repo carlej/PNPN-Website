@@ -10,42 +10,32 @@ padding:0px;
 	linear-gradient(
 		rgba(194,181,155,0.65),
 		rgba(194,181,155,0.65)),
-	url(styles/Texture_Bkgd_1.jpg);	
-
-}
-
-.overlay {
-	background: 
-	linear-gradient(
-		rgba(194,181,155,0.65),
-		rgba(194,181,155,0.65)),
-	url(styles/Compass_Rose.png);
-	opacity: 0.5;
+	url(styles/Texture_Bkgd_1.jpg);
+	
 }
 
 .Header {height:100px;}
 .Menu {height:50px;}
 .compRose img{
 	display: block;
-	max-width: 25em;
-	max-height: 25em;
+	max-width: 23em;
+	max-height: 23em;
 	width: auto;
 	height: auto;
 	position: absolute;
-	overflow: hidden;
-	top: -5em;
-	right: -5em;
+	top: 0em;
+	right: 0em;
 }
 
 .bankButton img{
 	display: block;
-	max-height: 1.9em;
-	max-width: 1.9em;
+	max-height: 3em;
+	max-width: 3em;
 	width: auto;
 	height: auto;
 	position: absolute;
-	top: 8.9em;
-	right: 18.1em;
+	top: 7em;
+	right: 21.5em;
 }
 
 .logoutButton img{
@@ -55,41 +45,41 @@ padding:0px;
 	width: auto;
 	height: auto;
 	position: absolute;
-	top: 6em;
-	right: 6.3em;
+	top: 5.1em;
+	right: 6.5em;
 }
 
 .tilda1 img{
+	display: block;
+	max-height: 0.8em;
+	max-width: 0.8em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 10.75em;
+	right: 21.25em;
+}
+
+.volunteerButton img{
+	display: block;
+	max-height: 5.55em;
+	max-width: 5.55em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 12.15em;
+	right: 17.0em;
+}
+
+.tilda2 img{
 	display: block;
 	max-height: 0.6em;
 	max-width: 0.6em;
 	width: auto;
 	height: auto;
 	position: absolute;
-	top: 11.3em;
-	right: 17.8em;
-}
-
-.volunteerButton img{
-	display: block;
-	max-height: 3.7em;
-	max-width: 3.7em;
-	width: auto;
-	height: auto;
-	position: absolute;
-	top: 12.4em;
-	right: 15em;
-}
-
-.tilda2 img{
-	display: block;
-	max-height: 0.4em;
-	max-width: 0.4em;
-	width: auto;
-	height: auto;
-	position: absolute;
-	top: 16.45em;
-	right: 14em;
+	top: 18.1em;
+	right: 15.6em;
 }
 
 .full img{
@@ -105,13 +95,13 @@ padding:0px;
 
 .landgrantButton img{
 	display: block;
-	max-height: 4.4em;
-	max-width: 4.4em;
+	max-height: 6.35em;
+	max-width: 6.35em;
 	width: auto;
 	height: auto;
 	position: absolute;
-	top: 16.9em;
-	right: 9.1em;
+	top: 18.73em;
+	right: 8.45em;
 }
 
 .TopStripe img{
@@ -139,6 +129,21 @@ padding:0px;
 
 }
 
+.SideStripe2 img{
+	display: block;
+	max-height: 35em;
+	max-width: 35em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 37em;
+	left: 2em;
+	opacity: 0.7;
+	margin: 0;
+	overflow-y: hidden;
+
+}
+
 .PersonalButton {
 	display: flex;
 	font-family: Pirates;
@@ -156,7 +161,7 @@ padding:0px;
 	height: 1.5em;
 	position: absolute;
 	top: 4.5em;
-	left: 20em;
+	left: 14.5em;
 }
 
 .PersonalPressed {
@@ -176,7 +181,7 @@ padding:0px;
 	height: 1.5em;
 	position: absolute;
 	top: 4.5em;
-	left: 20em;
+	left: 14.5em;
 }
 
 .TellerButton {
@@ -196,7 +201,7 @@ padding:0px;
 	height: 1.5em;
 	position: absolute;
 	top: 4.5em;
-	left: 29.02em;
+	left: 23.53em;
 }
 
 .TellerPressed {
@@ -216,20 +221,100 @@ padding:0px;
 	height: 1.5em;
 	position: absolute;
 	top: 4.5em;
-	left: 29.02em;
+	left: 23.53em;
 }
 
-li{
+.CordButton {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+	position: absolute;
+	top: 4.5em;
+	left: 23.53em;
+}
+
+.CordPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+	position: absolute;
+	top: 4.5em;
+	left: 23.53em;
+}
+
+.LandButton {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+	position: absolute;
+	top: 4.5em;
+	left: 23.53em;
+}
+
+.LandPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+	position: absolute;
+	top: 4.5em;
+	left: 23.53em;
+}
+
+li {
 	display: inline;
 	padding-left: 5em;
 }
 
-.AccDiss{
+.AccDiss {
 	position: relative;
 	font-family: Pirates;
 	font-size: 1.55em;
-	top: 9em;
-	left: 2.8em;
+	top: 8em;
+	left: 2em;
 }
 
 .HistBox {
@@ -239,8 +324,9 @@ li{
 	max-height: 20em;
 	border: .1em solid;
 	top:20em;
-	left: 12em;
+	left: 11em;
 	overflow: auto;
+	font-family: Pirates;
 }
 
 .HistBox li{
@@ -250,9 +336,11 @@ li{
 
 #search {
 	position: relative;
-	top: 13em;
-	left: 12em;
-	width: 60em;
+	top: 11em;
+	left: 10em;
+	width: 50em;
+	font-family: pirates;
+	font-size: 13pt;
 }
 
 #telltransferForm {
@@ -265,7 +353,7 @@ li{
 #transferForm {
 	position: relative;
 	top: 21em;
-	left: 12em;
+	left: 11em;
 	width: 20em;
 }
 
@@ -274,4 +362,53 @@ li{
 	top: 5.5em;
 	left: 35em;
 	width: 20em;
+}
+
+.submit {
+	font-size: 0.9em;
+	font-family: pirates;
+}
+
+.submit2 {
+	font-size: 0.9em;
+	font-family: pirates;
+	position: relative;
+	left: 31em;
+	top: -0.40em;
+}
+
+.submit3 {
+	font-size: 0.9em;
+	font-family: pirates;
+	position: relative;
+	left: 39.8em;
+	top: -3em;
+}
+
+.SearchBy {
+	font-size: 0.85em;
+	font-family: pirates;
+	align-content: center;
+}
+
+#SearchBy2 {
+	font-size: 1.1em;
+	font-family: pirates;
+	align-content: center;
+	position:relative;
+	left: 9.8em;
+	top: 5em;
+}
+
+fieldset {
+	border: 0em;
+}
+
+.NoneFound {
+	font-family: pirates;
+	font-size: 1.1em;
+	color: red;
+	position:relative;
+	left:16em;
+	top:5.3em;
 }

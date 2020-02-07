@@ -6,7 +6,6 @@
 
 		<?php include("Javascript/Connections/req.php");
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b") {
-			//echo "Welcome " . $_SESSION['username'];
 			$usename = $_SESSION['username'];
 		}
 		else{
@@ -38,32 +37,28 @@
 		<form method="POST" id="search">
 			<fieldset>
 				<label>Search by:</label>
-				<select name="type">
+				<select name="type" class="SearchBy">
+					<option value="Pname">Pirate Name</option>
+					<option value="Fname">First Name</option>
+					<option value="Lname">Last Name</option>
 					<option value="Username">Username</option>
 					<option value="shipID" style="display:none;">shipID</option>
 					<option value="Ship">Ship/House</option>
 					<option value="fleetID" style="display:none;">fleetID</option>
 					<option value="Fleet">Fleet/Alliance</option>
-					<option value="Pname">Pirate Name</option>
-					<option value="Fname">First Name</option>
-					<option value="Lname">Last Name</option>
-					<option value="Email">Email</option>
-					<option value="Pnumber">Phone Number</option>
-					<option value="Sposition">Staff Position</option>
-					<option value="Rposition">Royalty Position</option>
 				</select>
-				<label for="input">:</label>
-				<input type="search" class="required" name="input" id="input">
-				<input type="submit" name= "submit" value="Search">
-				<input type="hidden" name="new" value="new">
+				<input type="search" class="required" name="input" id="input" style="width: 38em">
+				<input type="submit" name= "submit" value="Search" class="submit">
+				<input type="hidden" name="new" value="new" class="submit">
 				<p>
-					<input type = "submit" name= "submit" value = "Add Ship/Household"?>
+					<input type = "submit" name= "submit" value = "Add Ship/Household"? class="submit2">
 				</p>
 				<p>
-					<input type = "submit" name= "submit" value = "Add Fleet/Alliance"?>
+					<input type = "submit" name= "submit" value = "Add Fleet/Alliance"? class="submit3">
 				</p>
 			</fieldset>
 		</form>
+
 		<?php 
 		error_reporting(E_ERROR);
 		if ($_POST['new']) {
