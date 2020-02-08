@@ -32,7 +32,7 @@
     </p>
     <p>
         <label for="email">E-Mail:</label>
-        <input type="text" class="required" name="email" id="email">
+        <input type="email" class="required" name="email" id="email">
 	</p>
 	<p>
         <label for="Password">Password:</label>
