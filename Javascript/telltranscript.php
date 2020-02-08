@@ -4,7 +4,7 @@
 	<fieldset>
 		<legend>Transfer:</legend>
 		<p><?php
-		echo $name;
+		//echo $name;
 		$split="-!split!-";
 		?></p>
 		<p>
@@ -62,7 +62,7 @@
 <form name="Deposit"method="POST" action="Javascript/tellmaketran.php" id="tellDepositForm">
 	<legend>Deposit:</legend>
 		<p><?php
-		echo $name;
+		//echo $name;
 		$split="-!split!-";
 		?></p>
 		<p>
@@ -116,7 +116,7 @@
 <form name="Withdraw"method="POST" action="Javascript/tellmaketran.php" id="tellWithdrawForm">
 	<legend>Withdraw:</legend>
 		<p><?php
-		echo $name;
+		//echo $name;
 		$split="-!split!-";
 		?></p>
 		<p>
