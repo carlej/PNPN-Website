@@ -357,10 +357,17 @@ li {
 	width: 20em;
 }
 
-.tellDepositFormdiv {
+#tellDepositForm {
 	position: relative;
 	top: 5.5em;
 	left: 35em;
+	width: 20em;
+}
+
+#tellWithdrawForm {
+	position: relative;
+	top: -5.5em;
+	left: 55em;
 	width: 20em;
 }
 
