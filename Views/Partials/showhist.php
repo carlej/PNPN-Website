@@ -47,7 +47,7 @@
 					<ul>
 						<li><a id="persHistShow" style="display: none;"><?php
 						//echo count($value);
-						if (count($value)==5) {
+						if (count($value)==5) {//transfer display from teller
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -57,25 +57,25 @@
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
 							echo $value[3]; //amount 
-							//echo " Sterlings from ";
+							echo " Sterlings from ";
 							echo $value[1]; //account from
 							echo " to ";
 							echo $value[2]; //account to							
 							
 						}
-						else if (count($value)==4){
+						else if (count($value)==4){//transfer display
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
 							echo $value[3]; //amount 
-							//echo " Sterlings from ";
+							echo " Sterlings from ";
 							echo $value[1]; //account from
 							echo " to ";
 							echo $value[2]; //account to
 						}
-						if (count($value)==6) {
+						if (count($value)==6) {//deposit display
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -86,6 +86,19 @@
 							echo " ";
 							echo $value[2]; //amount 
 							echo " Sterlings to ";
+							echo $value[1]; //account from							
+						}
+						else if (count($value)==7) {//withdraw display
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo " Teller ";
+							echo $value[3];
+							echo " ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[2]; //amount 
+							echo " Sterlings from ";
 							echo $value[1]; //account from							
 						}
 						?></a></li>
@@ -111,7 +124,7 @@
 					<div class="cssmenu" class="align-center">
 						<ul>
 							<li><a id="shipHistShow" style="display: none;"><?php
-							if (count($value)==5) {
+							if (count($value)==5) {//transfer display from teller
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -127,7 +140,7 @@
 							echo $value[2]; //account to							
 							
 						}
-						else if (count($value)==4){
+						else if (count($value)==4){//transfer display
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -139,7 +152,7 @@
 							echo " to ";
 							echo $value[2]; //account to
 						}
-						else if (count($value)==6) {
+						else if (count($value)==6) {//deposit display
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -150,6 +163,19 @@
 							echo " ";
 							echo $value[2]; //amount 
 							echo " Sterlings to ";
+							echo $value[1]; //account from							
+						}
+						else if (count($value)==7) {//withdraw display
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo " Teller ";
+							echo $value[3];
+							echo " ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[2]; //amount 
+							echo " Sterlings from ";
 							echo $value[1]; //account from							
 						}
 							?></a></li>
@@ -176,7 +202,7 @@
 					<div class="cssmenu" class="align-center">
 						<ul>
 							<li><a id="fleetHistShow" style="display: none;"><?php
-							if (count($value)==5) {
+							if (count($value)==5) {//transfer display from teller
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -192,7 +218,7 @@
 							echo $value[2]; //account to							
 							
 						}
-						else if (count($value)==4){
+						else if (count($value)==4){//transfer display
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -204,7 +230,7 @@
 							echo " to ";
 							echo $value[2]; //account to
 						}
-						else if (count($value)==6) {
+						else if (count($value)==6) {//deposit display
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -215,6 +241,19 @@
 							echo " ";
 							echo $value[2]; //amount 
 							echo " Sterlings to ";
+							echo $value[1]; //account from							
+						}
+						else if (count($value)==7) {//withdraw display
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo " Teller ";
+							echo $value[3];
+							echo " ";
+							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+							echo " ";
+							echo $value[2]; //amount 
+							echo " Sterlings from ";
 							echo $value[1]; //account from							
 						}
 							?></a></li>
