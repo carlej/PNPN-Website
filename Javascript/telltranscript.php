@@ -45,7 +45,7 @@
 		</p>
 		<p>
 			<label for="notes">Notes:</label>
-			<input type="text" name="notes" maxlength="100" onkeyup="textCounter(this,'tranCount',100);">
+			<input type="text" name="tranNotes" maxlength="100" onkeyup="textCounter(this,'tranCount',100);">
 			<input disabled  maxlength="3" size="3" value="100" id="tranCount">
 		</p>
 	</fieldset>
@@ -98,7 +98,7 @@
 		</p>
 		<p>
 			<label for="notes">Notes:</label>
-			<input type="text" name="notes" maxlength="100" onkeyup="textCounter(this,'deptCount',100);">
+			<input type="text" name="deptNotes" maxlength="100" onkeyup="textCounter(this,'deptCount',100);">
 			<input disabled  maxlength="3" size="3" value="100" id="deptCount">
 		</p>
 	</fieldset>
@@ -152,7 +152,7 @@
 		</p>
 		<p>
 			<label for="notes">Notes:</label>
-			<input type="text" name="notes" maxlength="100" onkeyup="textCounter(this,'withCount',100);">
+			<input type="text" name="withNotes" maxlength="100" onkeyup="textCounter(this,'withCount',100);">
 			<input disabled  maxlength="3" size="3" value="100" id="withCount">
 		</p>
 	</fieldset>
