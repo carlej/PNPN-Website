@@ -12,7 +12,6 @@
 			echo "Please login to view this page.";
 		}
 		?>
-		<meta name="viewport" content="width=device-width, user-scalable=no">
 
 		<title>Bank</title>
 		<?php include("Views\Partials/header.php");

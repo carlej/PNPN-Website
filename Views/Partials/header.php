@@ -2,15 +2,15 @@
 $url=NULL;  
     $url.= $_SERVER['REQUEST_URI'];
   ?>
-  <div class="container">
+<div class="container-flow">
 	<div class="header"></div>
+	<div class="d-none d-lg-block">
 	<div id="cssmenu" class="align-center">
      		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm'] == 'b'): ?>
      		<?php endif; ?>
-     		<div class="TopStripe"><img alt="~" src="CSS/styles/Top_Line.jpg"></div>
-     		<div class="SideStripe"><img alt="~" src="CSS/styles/Side_Line.jpg"></div>
-			<div class="compRose"><img src="CSS\styles\Compass_Rose_2.png" alt="Compass_Rose"></div>
-
+     			<div class="TopStripe"><img alt="~" src="CSS/styles/Top_Line.jpg"></div>
+     			<div class="SideStripe"><img alt="~" src="CSS/styles/Side_Line.jpg"></div>
+				<div class="compRose"><img src="CSS\styles\Compass_Rose_2.png" alt="Compass_Rose"></div>
 
 			<?php if ($url=="/PNPN-Website/teller.php"):?>
 				<div class="bankButton"><a href="/PNPN-Website/bank.php"><img alt="Bank" src="CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
@@ -48,7 +48,44 @@ $url=NULL;
 			<?php else: ?>
 				<div class="landgrantButton"><a href="/PNPN-Website/landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
-			<?php //<div class="full"><img alt="~" src="CSS/styles/Full.png"></div> ?>
 		</ul>
+
+	</div>
+	</div>
+	</div>
+
+</div>
+
+<!-- Code for the navigation bar once the page is shrunk-->
+<div class="container-flow">
+	<div class="header"></div>
+	<div class="d-lg-none"> 
+		<nav class="navbar justify-content-end" id="NavigationBar">
+
+ 		<!-- Toggler/collapsibe Button -->
+ 		<li>
+ 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+ 				<div class = "icons">
+    				<i class="fa fa-bars">
+    				</i>
+    			</div>
+			</button>
+		</li>
+
+  		<!-- Navbar links -->
+  		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+    		<ul class="nav navbar-nav">
+      			<li class="nav-item">
+        			<a class="nav-link" href="bank.php" style="font-family: pirates; color: white" >Bank</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="volunteer.php" style="font-family: pirates; color: white">Volunteering</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="landgrant.php" style="font-family: pirates; color: white">Land Grants</a>
+      			</li>
+    		</ul>
+  		</div>
+		</nav> 
 	</div>
 </div>
