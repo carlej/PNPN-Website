@@ -10,8 +10,6 @@
 		?>
 
 
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-
 		<title>Home</title>
 		<?php 
 		include("Views/Partials/header.php");?>
