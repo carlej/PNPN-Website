@@ -11,6 +11,8 @@
 			header ("location:/PNPN-Website/login.php");
 			echo "Please login to view this page.";
 		}
+		echo $_SERVER['HTTP_HOST'];
+		echo $_SERVER['PHP_SELF'];
 		?>
 
 		<title>Bank</title>
