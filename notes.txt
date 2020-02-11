@@ -1,5 +1,0 @@
-{"hist":[dip",ID",ID","$$"],"hist":[dip",ID",ID","$$"],"hist":[dip",ID",ID","$$"],"hist":[dip",ID",ID","$$"]}
-
-
-
-hist: type,from,to,ammount
