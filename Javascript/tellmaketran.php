@@ -151,7 +151,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Withdraw",$temp[1],$Accto,$with,$teller,$withNotes,'0','0','0'];
+			$tran=["Withdrew",$temp[1],$Accto,$with,$teller,$withNotes,'0','0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
