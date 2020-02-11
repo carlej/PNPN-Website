@@ -52,7 +52,7 @@
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $Username;
                 $_SESSION['perm'] = $perm[0];
-                header("Location: /PNPN-Website");
+                header("Location: /PNPN-Website/bank.php");
             }
             else
                 echo "ERROR";//.mysql_error($con);

@@ -41,7 +41,7 @@
 					<option value="Pname">Pirate Name</option>
 					<option value="Fname">First Name</option>
 					<option value="Lname">Last Name</option>
-					<option value="Username">Username</option>
+					<option value="Username">Email</option>
 					<option value="shipID" style="display:none;">shipID</option>
 					<option value="Ship">Ship/House</option>
 					<option value="fleetID" style="display:none;">fleetID</option>
@@ -74,10 +74,11 @@
 			include "Javascript/search.php";
 			//echo $_POST['input'];
 		}
-		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Ship/Household") {
-		header("Location: /PNPN-Website/addShip.php");
+		else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Ship/Household") {
+		//header("Location: /PNPN-Website/addShip.php");
+			include("addShip.php");
 		}
-		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Fleet/Alliance") {
+		else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Fleet/Alliance") {
 		header("Location: /PNPN-Website/addFleet.php");
 		}
 		?>

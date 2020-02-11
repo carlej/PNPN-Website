@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <form method="post" name="Register" onsubmit="return valadate();" id="addForm" >                                            
+        <form method="post" name="Register" onsubmit="return valadate();" id="addShipForm" >                                            
 <fieldset>
     <legend>Group Info:</legend>
     <p>
@@ -22,7 +22,7 @@
         if($_SESSION['hold']=="hold"){
             echo '<input type="text" class="required" name="name" id="name">';
             echo '<p><label for="Leader search">Search for Leader:</label>
-        <select name="type"><option value="Username">Username</option><option value="Pname">Pirate Name</option><option value="Fname">First Name</option><option value="Lname">Last Name</option><option value="Email">Email</option><option value="Pnumber">Phone Number</option><option value="Sposition">Staff Position</option><option value="Rposition">Royalty Position</option></select><label for="input">:</label><input type="search" class="required" name="input" id="input"><input type="submit" name= "submit" value="Search"></p>';
+        <select name="type"><option value="Username">Username</option><option value="Pname">Pirate Name</option><option value="Fname">First Name</option><option value="Lname">Last Name</option><option value="Email">Email</option><option value="Pnumber">Phone Number</option><option value="Sposition">Staff Position</option><option value="Rposition">Royalty Position</option></select><label for="input">:</label><input type="search" class="required" name="input" id="input"><input type="submit" name= "submit" value="searchShip"></p>';
         }
         else{
             echo '<input type="text" class="required" value="'.$_SESSION['stype'].'"name="name" id="name">';
@@ -68,7 +68,7 @@
 //    }
 //$_SESSION['stype']=mysqli_real_escape_string($con, $_POST['name']);
 //mysqli_close($con);
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "searchShip") {
     include "Javascript/searchship.php";
 //    if ($_SESSION['hold']!="hold") {
  //       include "Javascript/makeship.php";
@@ -80,4 +80,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit ship") {
         include "Javascript/makeship.php";
     }
 }
+
 ?>

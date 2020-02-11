@@ -15,8 +15,8 @@
 
 	<legend style="font-family: pirates; font-size: 1.5em;">Registration:</legend>
     <p>
-        <label for="Username" style="font-family: pirates">Username:</label>
-		<input type="text" class="required" name="Username" id="Username" style="width: 12em;">    
+        <label for="Username" style="font-family: pirates">Email:</label>
+		<input type="email" class="required" name="Username" id="Username" style="width: 12em;">    
     </p>
     <p>
         <label for="firstName" style="font-family: pirates">First Name:</label>
@@ -30,10 +30,10 @@
         <label for="pirateName" style="font-family: pirates">Pirate Name:</label>
         <input type="text" class="required" name="pirateName" id="pirateName" style="width: 12em;">
     </p>
-    <p>
+    <!--<p>
         <label for="email" style="font-family: pirates">E-Mail:</label>
         <input type="email" class="required" name="email" id="email" style="width: 12em;">
-	</p>
+	</p>-->
 	<p>
         <label for="Password" style="font-family: pirates">Password:</label>
         <input type="text" class="required" name="Password" id="Password" style="width: 12em;">

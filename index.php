@@ -12,7 +12,11 @@
 
 		<title>Home</title>
 		<?php 
-		include("Views/Partials/header.php");?>
+		include("Views/Partials/header.php");
+		echo $_SERVER['HTTP_HOST'];
+		echo $_SERVER['PHP_SELF'];
+		//header("Location: /PNPN-Website/bank.php");?>
+
 		
 	</head>
 
