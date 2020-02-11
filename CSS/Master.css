@@ -1,3 +1,4 @@
+/*Adds Pieces of Eight font style*/
 @font-face { font-family: Pirates; src: url('Pieces of Eight Font/Pieces of Eight.ttf'); } 
 
 
@@ -13,6 +14,8 @@ padding:0px;
 	url(styles/Texture_Bkgd_1.jpg);
 	
 }
+
+/*Leave everything above this alone*/
 
 .Header {height:100px;}
 .Menu {height:50px;}
@@ -82,17 +85,6 @@ padding:0px;
 	right: 15.6em;
 }
 
-.full img{
-	display: block;
-	max-height: 10em;
-	max-width: 10em;
-	width: auto;
-	height: auto;
-	position: absolute;
-	top: 8.8em;
-	right: 9.1em;
-}
-
 .landgrantButton img{
 	display: block;
 	max-height: 6.35em;
@@ -102,46 +94,6 @@ padding:0px;
 	position: absolute;
 	top: 18.73em;
 	right: 8.45em;
-}
-
-.TopStripe img{
-	display: block;
-	max-height: 35em;
-	max-width: 35em;
-	width: auto;
-	height: auto;
-	position: absolute;
-	top: 2em;
-	left: 2em;
-	opacity: 0.7;
-}
-
-.SideStripe img{
-	display: block;
-	max-height: 35em;
-	max-width: 35em;
-	width: auto;
-	height: auto;
-	position: absolute;
-	top: 2em;
-	left: 2em;
-	opacity: 0.7;
-
-}
-
-.SideStripe2 img{
-	display: block;
-	max-height: 35em;
-	max-width: 35em;
-	width: auto;
-	height: auto;
-	position: absolute;
-	top: 37em;
-	left: 2em;
-	opacity: 0.7;
-	margin: 0;
-	overflow-y: hidden;
-
 }
 
 .PersonalButton {
@@ -331,7 +283,7 @@ li {
 
 .HistBox li{
 	position: relative;
-	left:-6em;
+	left:-1em;
 }
 
 #search {
@@ -357,10 +309,17 @@ li {
 	width: 20em;
 }
 
-.tellDepositFormdiv {
+#tellDepositForm {
 	position: relative;
 	top: 5.5em;
 	left: 35em;
+	width: 20em;
+}
+
+#tellWithdrawForm {
+	position: relative;
+	top: -5.5em;
+	left: 55em;
 	width: 20em;
 }
 
@@ -400,10 +359,6 @@ li {
 	top: 5em;
 }
 
-fieldset {
-	border: 0em;
-}
-
 .NoneFound {
 	font-family: pirates;
 	font-size: 1.1em;
@@ -412,3 +367,55 @@ fieldset {
 	left:16em;
 	top:5.3em;
 }
+
+/* New Master CSS starts here*/
+
+#LoginWindow {
+	font-size: 1.1em;
+	display: inline-block;
+	text-align: center;
+	margin-top: 10em;
+}
+
+#RegisterWindow {
+	font-size: 1.1em;
+	display: inline-block;
+	text-align: center;
+	margin-top: 7.5em;
+}
+
+#NavigationBar {
+	background-color: rgb(38,23,15);
+}
+
+.icons {
+	color: white;
+}
+
+.nav-item {
+	text-align: center;
+	margin-left: -5em;
+}
+
+.TopStripe img {
+	display: block;
+	max-width: 70em;
+	height: auto;
+	position: absolute;
+	top: 2em;
+	left: 2em;
+	opacity: 0.7;
+}
+
+.SideStripe img {
+	display: block;
+	max-height: 70em;
+	max-width: 35em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 2em;
+	left: 2em;
+	opacity: 0.7;
+}
+

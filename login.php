@@ -5,11 +5,10 @@
 	<head>
 		<?php include("Javascript/Connections/req.php"); ?>
 
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-
 		<title>Login</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php //include("Views\Partials/header.php");?>
 	</head>
+	
 	<body>
 		<?php 
 		include 'Javascript/Connections/convar.php'; 
@@ -47,35 +46,38 @@
 				header("Location: /PNPN-Website/bank.php");
 			}
 			else{
-				echo "error";
+				echo "Incorrect Login";
 			}
 		}
 	}
 	mysqli_close($con);
 	?>
-		<form method="post" id="addForm">											
-<fieldset>
-	<legend>User Info:</legend>
+
+
+<div class ="container">
+	<div class = "d-flex justify-content-center" id = "LoginWindow" >
+	
+	<form method="post" id="addForm">
+	<legend style="padding: 0.5em; font-family: pirates; font-size: 1.5em">Welcome to the New System</legend>
     <p>
-        <label for="Username">Username:</label>
-		<input type="text" class="required" name="Username" id="Username">    </p>
-    <p>
+        <label for="Username" style="font-family: pirates">Email:</label>
+		<input type="text" class="required" name="Username" id="Username" style="width: 15em;">
+	</p>
 	<p>
-        <label for="Password">Password:</label>
-        <input type="password" class="required" name="Password" id="Password">
+        <label for="Password" style="font-family: pirates">Password:</label>
+        <input type="password" class="required" name="Password" id="Password" style="width: 13.6em;">
     </p>
-</fieldset>
-
-      <p>
-        <input type = "submit"  value = "Submit" />
-        <input type = "reset"  value = "Clear" />
-      </p>
-</form>
-		<div id="buttons" class="align-center">
- 			<ul>
-     			<li><a href="/PNPN-Website/register.php">Register</a></li>
-			</ul>
-		</div>
+    <p>
+        <input type = "submit"  value = "Submit" style="font-family: pirates"/>
+        <input type = "reset"  value = "Clear" style="font-family: pirates" />
+    </p>
+		<div id="buttons" class="align-center" style="font-family: pirates">
+     	<a href="/PNPN-Website/register.php" style="color:black; text-decoration: none;">Register Here</a>
+     	</div>
+     	
+     	
 	</body>
-
+	</div>
+</div>
+</form>
 </html>

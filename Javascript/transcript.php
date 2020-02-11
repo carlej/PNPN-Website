@@ -40,6 +40,11 @@
 			<label for="trans">Amount to Transfer:</label>
 			<input type="number" name="trans" id="trans" min="1">
 		</p>
+		<p>
+			<label for="notes">Notes:</label>
+			<input type="text" name="notes" maxlength="100" onkeyup="textCounter(this,'tranCount',100);">
+			<input disabled  maxlength="3" size="3" value="100" id="tranCount">
+		</p>
 	</fieldset>
 	<p>
 		<input type="submit" name="submit" value="Transfer" />
@@ -74,3 +79,15 @@ function valadatetran(){
 	return re;
 }</script>
 
+<script>
+function textCounter(field,field2,maxlimit)
+{
+ var countfield = document.getElementById(field2);
+ if ( field.value.length > maxlimit ) {
+  field.value = field.value.substring( 0, maxlimit );
+  return false;
+ } else {
+  countfield.value = maxlimit - field.value.length;
+ }
+}
+</script>

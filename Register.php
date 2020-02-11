@@ -4,47 +4,51 @@
 	<head>
 		<?php include("Javascript/Connections/req.php"); ?>
 
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-
 		<title>Register</title>
-		<?php include("Views\Partials/header.php");?>
 	</head>
 	<body>
 
-		<form method="post" action="Javascript/makeuser.php" name="Register" onsubmit="return valadate();" id="addForm" >											
-<fieldset>
-	<legend>User Info:</legend>
+<div class ="container">
+    <div class = "d-flex justify-content-center" id = "RegisterWindow" >
+
+		<form method="post" action="Javascript/makeuser.php" name="Register" onsubmit="return valadate();" id="addForm" >	
+
+	<legend style="font-family: pirates; font-size: 1.5em;">Registration:</legend>
     <p>
-        <label for="Username">Username:</label>
-		<input type="text" class="required" name="Username" id="Username">    
+        <label for="Username" style="font-family: pirates">Username:</label>
+		<input type="text" class="required" name="Username" id="Username" style="width: 12em;">    
     </p>
     <p>
-        <label for="firstName">First Name:</label>
-        <input type="text" class="required" name="firstName" id="firstName">
+        <label for="firstName" style="font-family: pirates">First Name:</label>
+        <input type="text" class="required" name="firstName" id="firstName" style="width: 12em;">
     </p>
 	<p>
-        <label for="lastName">Last Name:</label>
-        <input type="text" class="required" name="lastName" id="lastName">
+        <label for="lastName" style="font-family: pirates">Last Name:</label>
+        <input type="text" class="required" name="lastName" id="lastName" style="width: 12em;">
     </p>
     <p>
-        <label for="pirateName">Pirate Name:</label>
-        <input type="text" class="required" name="pirateName" id="pirateName">
+        <label for="pirateName" style="font-family: pirates">Pirate Name:</label>
+        <input type="text" class="required" name="pirateName" id="pirateName" style="width: 12em;">
     </p>
     <p>
-        <label for="email">E-Mail:</label>
-        <input type="text" class="required" name="email" id="email">
+        <label for="email" style="font-family: pirates">E-Mail:</label>
+        <input type="email" class="required" name="email" id="email" style="width: 12em;">
 	</p>
 	<p>
-        <label for="Password">Password:</label>
-        <input type="text" class="required" name="Password" id="Password">
+        <label for="Password" style="font-family: pirates">Password:</label>
+        <input type="text" class="required" name="Password" id="Password" style="width: 12em;">
     </p>
 </fieldset>
 
       <p>
-        <input type = "submit"  value = "Submit" />
-        <input type = "reset"  value = "Clear Form" />
+        <input type = "submit"  value = "Submit" style="font-family: pirates"/>
+        <input type = "reset"  value = "Clear Form" style="font-family: pirates" />
       </p>
+        <div id="buttons" class="align-center" style="font-family: pirates">
+        <a href="/PNPN-Website/login.php" style="color:black; text-decoration: none;">Back to Login</a>
+        </div>
 </form>
+</div></div>
 	</body>
 
 </html>
