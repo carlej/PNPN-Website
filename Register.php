@@ -38,6 +38,10 @@
         <label for="Password" style="font-family: pirates">Password:</label>
         <input type="text" class="required" name="Password" id="Password" style="width: 12em;">
     </p>
+    <p>
+        <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
+        <input type="text" class="required" name="ConfirmPassword" id="ConfirmPassword" style="width: 12em;">
+    </p>
 </fieldset>
 
       <p>

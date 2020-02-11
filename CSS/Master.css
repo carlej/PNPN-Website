@@ -377,6 +377,13 @@ li {
 	margin-top: 10em;
 }
 
+#LoginE {
+	font-family: pirates;
+	font-size: 1em;
+	color: red;
+	text-align: center;
+}
+
 #RegisterWindow {
 	font-size: 1.1em;
 	display: inline-block;

@@ -46,7 +46,7 @@
 				header("Location: /PNPN-Website/bank.php");
 			}
 			else{
-				echo "Incorrect Login";
+				echo '<div class="container-flow" id="LoginE">Incorrect Login</div>';
 			}
 		}
 	}
@@ -81,3 +81,5 @@
 </div>
 </form>
 </html>
+
+
