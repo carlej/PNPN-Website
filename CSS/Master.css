@@ -368,7 +368,15 @@ li {
 	top:5.3em;
 }
 
+
+
+
 /* New Master CSS starts here*/
+#WelcomeMessage {
+	display: inline-block;
+	margin-top: 10em;
+}
+
 #WelcomeMessage {
 	display: inline-block;
 	margin-top: 10em;
@@ -397,7 +405,7 @@ li {
 }
 
 #RegisterWindow {
-	font-size: 1.1em;
+	font-size: 1.2em;
 	display: inline-block;
 	text-align: center;
 	margin-top: 7.5em;
@@ -437,3 +445,4 @@ li {
 	left: 2em;
 	opacity: 0.7;
 }
+

@@ -13,34 +13,31 @@
 
 		<form method="post" action="Javascript/makeuser.php" name="Register" onsubmit="return valadate();" id="addForm" >	
 
-	<legend style="font-family: pirates; font-size: 1.5em;">Registration:</legend>
+	<legend style="font-family: pirates; font-size: 1.6em;">Registration:</legend>
     <p>
         <label for="Username" style="font-family: pirates">Email:</label>
-		<input type="email" class="required" name="Username" id="Username" style="width: 12em;">    
+		<input type="email"  name="Username" id="Username" style="width: 12em;" required>    
     </p>
     <p>
         <label for="firstName" style="font-family: pirates">First Name:</label>
-        <input type="text" class="required" name="firstName" id="firstName" style="width: 12em;">
+        <input type="text" name="firstName" id="firstName" style="width: 12em;" required>
     </p>
 	<p>
         <label for="lastName" style="font-family: pirates">Last Name:</label>
-        <input type="text" class="required" name="lastName" id="lastName" style="width: 12em;">
+        <input type="text" name="lastName" id="lastName" style="width: 12em;" required>
     </p>
     <p>
         <label for="pirateName" style="font-family: pirates">Pirate Name:</label>
-        <input type="text" class="required" name="pirateName" id="pirateName" style="width: 12em;">
+        <input type="text" name="pirateName" id="pirateName" style="width: 12em;">
     </p>
-    <!--<p>
-        <label for="email" style="font-family: pirates">E-Mail:</label>
-        <input type="email" class="required" name="email" id="email" style="width: 12em;">
-	</p>-->
-	<p>
-        <label for="Password" style="font-family: pirates">Password:</label>
-        <input type="text" class="required" name="Password" id="Password" style="width: 12em;">
+	<p style="margin-bottom: -0.4em;">
+        <label for="Password" style="font-family: pirates;">Password:</label>
+        <input type="text" name="Password" id="Password" minlength="5" maxlength="20" style="width: 12em;" required>
     </p>
+			<div style="font-family: pirates; font-size: 0.8em; display:inline-block; margin-bottom: 0.4em">(Password requirement: 5-20 characters)</div>
     <p>
         <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
-        <input type="text" class="required" name="ConfirmPassword" id="ConfirmPassword" style="width: 12em;">
+        <input type="text" name="ConfirmPassword" id="ConfirmPassword" minlength="5" maxlength="20" style="width: 12em;" required>
     </p>
 </fieldset>
 
