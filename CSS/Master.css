@@ -15,8 +15,6 @@ padding:0px;
 	
 }
 
-/*Leave everything above this alone*/
-
 .Header {height:100px;}
 .Menu {height:50px;}
 .compRose img{
@@ -96,165 +94,8 @@ padding:0px;
 	right: 8.45em;
 }
 
-.PersonalButton {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0.4em 0em 0em 0.4em;
-	background: #000000;
-	color: white;
-	width: 9em;
-	height: 1.5em;
-	position: absolute;
-	top: 4.5em;
-	left: 14.5em;
-}
+/*Everything above here is also fine*/
 
-.PersonalPressed {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0.4em 0em 0em 0.4em;
-	background: #000000;
-	color: red;
-	width: 9em;
-	height: 1.5em;
-	position: absolute;
-	top: 4.5em;
-	left: 14.5em;
-}
-
-.TellerButton {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: white;
-	width: 9em;
-	height: 1.5em;
-	position: absolute;
-	top: 4.5em;
-	left: 23.53em;
-}
-
-.TellerPressed {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: red;
-	width: 9em;
-	height: 1.5em;
-	position: absolute;
-	top: 4.5em;
-	left: 23.53em;
-}
-
-.CordButton {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: white;
-	width: 9em;
-	height: 1.5em;
-	position: absolute;
-	top: 4.5em;
-	left: 23.53em;
-}
-
-.CordPressed {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: red;
-	width: 9em;
-	height: 1.5em;
-	position: absolute;
-	top: 4.5em;
-	left: 23.53em;
-}
-
-.LandButton {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: white;
-	width: 9em;
-	height: 1.5em;
-	position: absolute;
-	top: 4.5em;
-	left: 23.53em;
-}
-
-.LandPressed {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: red;
-	width: 9em;
-	height: 1.5em;
-	position: absolute;
-	top: 4.5em;
-	left: 23.53em;
-}
 
 li {
 	display: inline;
@@ -445,4 +286,187 @@ li {
 	left: 2em;
 	opacity: 0.7;
 }
+
+#SwitchButtons {
+	margin-top: 6em;
+	align-content: center;
+	margin-left: -15em;
+}
+
+.PersonalButton {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0.4em 0em 0em 0.4em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.PersonalButton:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.PersonalPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0.4em 0em 0em 0.4em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+}
+
+.PersonalPressed:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.TellerButton {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.TellerButton:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.TellerPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+}
+
+.TellerPressed:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.CordButton {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.CordButton:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.CordPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+}
+
+.CordPressed:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.LandButton {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.LandButton:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.LandPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+}
+
+.LandPressed:hover {
+	color: grey;
+	text-decoration: none;
+}
+
 

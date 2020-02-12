@@ -11,9 +11,19 @@
 
 		<title>Land Grants</title>
 		<?php include("Views\Partials/header.php");?>
-
-		<a href="/PNPN-Website/landsteward.php" class="LandPressed">Land Steward</a>
-		<a href="/PNPN-Website/landgrant.php" class="PersonalButton">Personal</a>
+		
+		<div class = "container-flow" id = "SwitchButtons">
+			<div class = "d-flex justify-content-center">
+				<div class = "row" id ="ButtonsRow">
+					<div class = "col-6" style="padding-right: 0.05em;">
+						<a href="/PNPN-Website/landgrant.php" class="PersonalButton">Personal</a>
+					</div>
+					<div class = "col-6" style = "padding-left: 0.05em;">
+						<a href="/PNPN-Website/landsteward.php" class="LandPressed">Land Steward</a>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</head>
 	<body>
