@@ -17,9 +17,10 @@
 		
 		$_SESSION['hold']=$searchUserName;
 		$_SESSION['stype']="shipID";
-		//$user=$_SESSION['hold'];
-		include "Views/Partials/showAccs.php";
-		include "Views/Partials/showhist.php";
+		//$user=$_SESSION['hold'];?>
+		<div><?php include "Views/Partials/showAccs.php";?></div>
+		<div><?php include "Views/Partials/showhist.php";?></div>
+		<?php
 		mysqli_close($con);
 		$perm = $_SESSION['perm'];
 		$_SERVER["REQUEST_METHOD"]=NULL;
