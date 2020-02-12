@@ -8,8 +8,15 @@
 		<title>Login</title>
 		<?php //include("Views\Partials/header.php");?>
 	</head>
-	
 	<body>
+		
+		<div class ="container">
+			<div class = "d-flex justify-content-center">
+				<div style="font-family: pirates; font-size: 1.5em"; id = "WelcomeMessage">Welcome to the New System</div>
+			</div>
+		</div>
+			
+			
 		<?php 
 		include 'Javascript/Connections/convar.php'; 
 	
@@ -46,40 +53,46 @@
 				header("Location: /PNPN-Website/bank.php");
 			}
 			else{
-				echo '<div class="container-flow" id="LoginE">Incorrect Login</div>';
+				echo '<div class="container-flow" id="LoginE">
+						<div class = "d-flex justify-content-center">
+						<div class = "row" >
+						<div class = "col-12">Incorrect Login</div>
+						</div>
+						</div>
+					 </div>';
 			}
 		}
 	}
 	mysqli_close($con);
 	?>
 
-
-<div class ="container">
-	<div class = "d-flex justify-content-center" id = "LoginWindow" >
-	
-	<form method="post" id="addForm">
-	<legend style="padding: 0.5em; font-family: pirates; font-size: 1.5em">Welcome to the New System</legend>
-    <p>
-        <label for="Username" style="font-family: pirates">Email:</label>
-		<input type="text" class="required" name="Username" id="Username" style="width: 15em;">
-	</p>
-	<p>
-        <label for="Password" style="font-family: pirates">Password:</label>
-        <input type="password" class="required" name="Password" id="Password" style="width: 13.6em;">
-    </p>
-    <p>
-        <input type = "submit"  value = "Submit" style="font-family: pirates"/>
-        <input type = "reset"  value = "Clear" style="font-family: pirates" />
-    </p>
-		<div id="buttons" class="align-center" style="font-family: pirates">
-     	<a href="/PNPN-Website/register.php" style="color:black; text-decoration: none;">Register Here</a>
-     	</div>
-     	
-     	
-	</body>
+	<div class ="container">
+		<div class = "d-flex justify-content-center" id = "LoginWindow" >
+			<div class = "row">
+			<div class = "col-12">
+			<form method="post" id="addForm">
+    			<p>
+        			<label for="Username" style="font-family: pirates">Email:</label>
+					<input type="text" class="required" name="Username" id="Username" style="width: 15em;">
+				</p>
+				<p>
+        			<label for="Password" style="font-family: pirates">Password:</label>
+        			<input type="password" class="required" name="Password" id="Password" style="width: 13.6em;">
+    			</p>
+				<p>
+        			<input type = "submit"  value = "Submit" style="font-family: pirates"/>
+        			<input type = "reset"  value = "Clear" style="font-family: pirates" />
+    			</p>
+				<div id="buttons" class="align-center" style="font-family: pirates">
+     				<a href="/PNPN-Website/register.php" style="color:black; text-decoration: none;">Register Here</a>
+     			</div>
+			</form>
+			</div>
+			</div>
+		</div>
 	</div>
-</div>
-</form>
+	
+	</body>
 </html>
 
 
