@@ -218,11 +218,6 @@ li {
 	margin-top: 10em;
 }
 
-#WelcomeMessage {
-	display: inline-block;
-	margin-top: 10em;
-}
-
 #LoginWindow {
 	font-size: 1.1em;
 	display: inline-block;
@@ -293,6 +288,13 @@ li {
 	margin-left: -15em;
 }
 
+#SwitchButtonsMenu {
+	background-color: rgb(38,23,15);
+	width: 17em;
+	margin-top: -5.5em;
+	border-radius: 0.4em;
+}
+
 .PersonalButton {
 	display: flex;
 	font-family: Pirates;
@@ -311,6 +313,21 @@ li {
 }
 
 .PersonalButton:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.PersonalButton2 {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	align-content: center;
+	justify-content: center;
+	color: white;
+}
+
+.PersonalButton2:hover {
 	color: grey;
 	text-decoration: none;
 }
@@ -337,6 +354,21 @@ li {
 	text-decoration: none;
 }
 
+.PersonalPressed2 {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	align-content: center;
+	justify-content: center;
+	color: red;
+}
+
+.PersonalPressed2:hover {
+	color: grey;
+	text-decoration: none;
+}
+
 .TellerButton {
 	display: flex;
 	font-family: Pirates;
@@ -355,6 +387,21 @@ li {
 }
 
 .TellerButton:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.TellerButton2 {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	align-content: center;
+	justify-content: center;
+	color: white;
+}
+
+.TellerButton2:hover {
 	color: grey;
 	text-decoration: none;
 }
@@ -381,6 +428,21 @@ li {
 	text-decoration: none;
 }
 
+.TellerPressed2 {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	align-content: center;
+	justify-content: center;
+	color: red;
+}
+
+.TellerPressed2:hover {
+	color: grey;
+	text-decoration: none;
+}
+
 .CordButton {
 	display: flex;
 	font-family: Pirates;
@@ -399,6 +461,21 @@ li {
 }
 
 .CordButton:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.CordButton2 {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	align-content: center;
+	justify-content: center;
+	color: white;
+}
+
+.CordButton2:hover {
 	color: grey;
 	text-decoration: none;
 }
@@ -425,6 +502,21 @@ li {
 	text-decoration: none;
 }
 
+.CordPressed2 {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	align-content: center;
+	justify-content: center;
+	color: red;
+}
+
+.CordPressed2:hover {
+	color: grey;
+	text-decoration: none;
+}
+
 .LandButton {
 	display: flex;
 	font-family: Pirates;
@@ -443,6 +535,22 @@ li {
 }
 
 .LandButton:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.LandButton2 {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	align-content: center;
+	justify-content: center;
+	color: white;
+	text-align: center;
+}
+
+.LandButton2:hover {
 	color: grey;
 	text-decoration: none;
 }
@@ -468,5 +576,21 @@ li {
 	color: grey;
 	text-decoration: none;
 }
+
+.LandPressed2 {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	align-content: center;
+	justify-content: center;
+	color: red;
+}
+
+.LandPressed2:hover {
+	color: grey;
+	text-decoration: none;
+}
+
 
 
