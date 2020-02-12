@@ -107,7 +107,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			//This adds a new entry into the JSON file that is used to store the history of each account
 
 			
-			//creates history in the account making the deposite
+			//creates history in the account making the deposited
 			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
