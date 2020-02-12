@@ -66,7 +66,7 @@ $url=NULL;
 			<div class ="col">
 			<?php
 			if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
-				<div style = "font-family: pirates; "><a href="/PNPN-Website/logout.php" onmouseover="this.style.cursor='pointer'">Log Out</a></div>
+				<a href="/PNPN-Website/logout.php" onmouseover="this.style.cursor='pointer'"style = "font-family: pirates; color: white; text-decoration: none; font-size: 1.2em">Log Out</a>
 			<?php else: ?>
 				<li><a href="/PNPN-Website/login.php">Login</a></li>
 			<?php endif; ?>
