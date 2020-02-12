@@ -22,7 +22,7 @@ $url=NULL;
 
 			<?php
 			if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
-				<div class="logoutButton"><a href="/PNPN-Website/logout.php"><img alt="log outk" src="CSS/styles/Log_Out.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="logoutButton"><a href="/PNPN-Website/logout.php"><img alt="log out" src="CSS/styles/Log_Out.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php else: ?>
 				<li><a href="/PNPN-Website/login.php">Login</a></li>
 			<?php endif; ?>
@@ -60,9 +60,21 @@ $url=NULL;
 <div class="container-flow">
 	<div class="header"></div>
 	<div class="d-lg-none"> 
-		<nav class="navbar justify-content-end" id="NavigationBar">
+		<nav class="navbar" id="NavigationBar">
+			
+		<!-- Logout Button-->
+			<div class ="col">
+			<?php
+			if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
+				<div style = "font-family: pirates; "><a href="/PNPN-Website/logout.php" onmouseover="this.style.cursor='pointer'">Log Out</a></div>
+			<?php else: ?>
+				<li><a href="/PNPN-Website/login.php">Login</a></li>
+			<?php endif; ?>
+			</div>
 
+			
  		<!-- Toggler/collapsibe Button -->
+	
  		<li>
  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
  				<div class = "icons">
@@ -71,6 +83,8 @@ $url=NULL;
     			</div>
 			</button>
 		</li>
+
+
 
   		<!-- Navbar links -->
   		<div class="collapse navbar-collapse" id="collapsibleNavbar">

@@ -13,18 +13,37 @@
 		<?php include("Views\Partials/header.php");?>
 
 		<div class = "container-flow" id = "SwitchButtons">
+			<div class="d-none d-lg-block">
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 					<div class = "col-6" style="padding-right: 0.05em;">
 						<a href="/PNPN-Website/volunteer.php" class="PersonalButton">Personal</a>
 					</div>
 					<div class = "col-6" style = "padding-left: 0.05em;">
-						<a href="/PNPN-Website/volunteer.php" class="CordPressed">Coordinator</a>
+						<a href="/PNPN-Website/volunteercord.php" class="CordPressed">Coordinator</a>
 					</div>
 				</div>
 			</div>
+			</div>
 		</div>
 
+		<!-- Code for the teller and personal buttons once the page is shrunk-->
+		<div class = "container" id = "SwitchButtonsMenu">
+			<div class="d-lg-none">
+			<div class = "d-flex justify-content-center">
+				<div class = "row">
+				<div class = "col-sm-6">
+						<a href="/PNPN-Website/volunteer.php" class="PersonalButton2">Personal</a>
+					</div>
+					<div class = "col-sm-6" style = "padding-left: 0.05em;">
+						<a href="/PNPN-Website/volunteercord.php" class="CordPressed2">Coordinator</a>
+					</div>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		
 	</head>
 	<body>
 		
