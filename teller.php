@@ -18,9 +18,22 @@
 
 		<title>Bank</title>
 		<?php include("Views\Partials/header.php");?>
+		
+		
+		<div class = "container-flow" id = "SwitchButtons">
+			<div class = "d-flex justify-content-center">
+				<div class = "row" id ="ButtonsRow">
+					<div class = "col-6" style="padding-right: 0.05em;">
+						<a href="/PNPN-Website/bank.php" class="PersonalButton">Personal</a>
+					</div>
+					<div class = "col-6" style = "padding-left: 0.05em;">
+						<a href="/PNPN-Website/teller.php" class="TellerPressed">Teller</a>
+					</div>
+				</div>
+			</div>
+		</div>
 
-		<a href="/PNPN-Website/teller.php" class="TellerPressed">Teller</a>
-		<a href="/PNPN-Website/bank.php" class="PersonalButton">Personal</a>
+
 
 	</head>
 	<body>

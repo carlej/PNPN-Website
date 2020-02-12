@@ -67,7 +67,7 @@
 		?></p>
 		<p>
 
-			<label>Account from:</label>
+			<label>Account to:</label>
 			<select name="Accfrom">
 				<?php
 				foreach ($parsed_json as $value) {
