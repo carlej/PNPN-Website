@@ -438,3 +438,8 @@ li {
 	opacity: 0.7;
 }
 
+#addShipForm {
+	position: relative;
+	top: 15em;
+	left: 5em;
+}
