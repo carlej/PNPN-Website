@@ -32,20 +32,20 @@
 //}
 ?>
 <?php foreach($parsed_json as $acc):
-	$parsed_hist=NULL;
+	//$parsed_hist=NULL;
 	if ($acc) {
-	 	$queryIn = "SELECT history FROM accounts WHERE ID = '$acc'";
+	 	$queryIn = "SELECT * FROM accounts WHERE ID = '$acc'";
 		$resultIn = mysqli_query($con, $queryIn);
 		$row = mysqli_fetch_row($resultIn);
-		$parsed_hist = json_decode($row[0],true);
+		$parsed_hist = json_decode($row[2],true);
 	 } ?>
 	<?php if($parsed_hist!=NULL): ?>
 		<?php $revPers=array_reverse($parsed_hist); ?>
-		<?php foreach ($revPers as $key => $value): ?>
-			<div class="container">
-				<div class="cssmenu" class="align-center">
-					<ul>
-						<li><a id="persHistShow" style="display: none;"><?php
+		<div class="container">
+			<div class="cssmenu" class="align-center">
+				<ul  id="persHistShow" style="display: none;">
+					<?php foreach ($revPers as $key => $value): ?>
+						<li><a><?php
 						//echo count($value);
 						if (count($value)==6) {//transfer display from teller
 							echo "~ ";
@@ -109,10 +109,11 @@
 							echo $value[4];							
 						}
 						?></a></li>
-					</ul>
-				</div>
+					
+					<?php endforeach; ?>
+				</ul>
 			</div>
-		<?php endforeach; ?>
+		</div>
 	<?php endif; ?>
 <?php endforeach; ?>
 <?php if($parsed_ship_json!=NULL): ?>
@@ -126,10 +127,10 @@
 		 } ?>
 		<?php if($parsed_ship_hist!=NULL): ?>
 			<?php $revShip=array_reverse($parsed_ship_hist); ?>
-			<?php foreach ($revShip as $key => $value): ?>
-				<div class="container">
-					<div class="cssmenu" class="align-center">
-						<ul>
+			<div class="container">
+				<div class="cssmenu" class="align-center">
+					<ul>
+						<?php foreach ($revShip as $key => $value): ?>
 							<li><a id="shipHistShow" style="display: none;"><?php
 							if (count($value)==6) {//transfer display from teller
 							echo "~ ";
@@ -193,10 +194,11 @@
 							echo $value[4];							
 						}
 							?></a></li>
-						</ul>
-					</div>
-				</div>
-			<?php endforeach; ?>
+						
+					<?php endforeach; ?>
+				</ul>
+			</div>
+		</div>
 		<?php endif; ?>
 	<?php endforeach; ?>
 <?php endif; ?>
@@ -211,10 +213,11 @@
 		 } ?>
 		<?php if($parsed_fleet_hist!=NULL): ?>
 			<?php $revFleet=array_reverse($parsed_fleet_hist); ?>
-			<?php foreach ($revFleet as $key => $value): ?>
-				<div class="container">
-					<div class="cssmenu" class="align-center">
-						<ul>
+			<div class="container">
+				<div class="cssmenu" class="align-center">
+					<ul>
+						<?php foreach ($revFleet as $key => $value): ?>
+				
 							<li><a id="fleetHistShow" style="display: none;"><?php
 							if (count($value)==6) {//transfer display from teller
 							echo "~ ";
@@ -278,10 +281,11 @@
 							echo $value[4];							
 						}
 							?></a></li>
-						</ul>
-					</div>
-				</div>
-			<?php endforeach; ?>
+						
+					<?php endforeach; ?>
+				</ul>
+			</div>
+		</div>
 		<?php endif; ?>
 	<?php endforeach; ?>
 <?php endif; ?>

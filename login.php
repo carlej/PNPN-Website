@@ -32,6 +32,11 @@
 
 		$queryIn = "SELECT * FROM users where Username='$Username' ";
 		$resultIn = mysqli_query($con, $queryIn);
+		if (mysqli_num_rows($resultIn)==0){
+			echo '<script type="text/javascript">alert("That email does not exist.");
+		   </script>';
+            $msg = "<h2>Can't Add to Table</h2> That email does not exist. $Username<p>";
+		}
 		if (mysqli_num_rows($resultIn)!=0) {
 			$quirypass = "SELECT Password FROM users WHERE Username LIKE '$Username'";
 			$ackpass = mysqli_query($con, $quirypass);
