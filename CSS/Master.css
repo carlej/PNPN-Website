@@ -368,13 +368,32 @@ li {
 	top:5.3em;
 }
 
+
+
+
 /* New Master CSS starts here*/
+#WelcomeMessage {
+	display: inline-block;
+	margin-top: 10em;
+}
+
+#WelcomeMessage {
+	display: inline-block;
+	margin-top: 10em;
+}
 
 #LoginWindow {
 	font-size: 1.1em;
 	display: inline-block;
 	text-align: center;
-	margin-top: 10em;
+	margin-top: 0em;
+}
+
+#LoginWindow2 {
+	font-size: 1.1em;
+	display: inline-block;
+	text-align: center;
+	margin-top: 0em;
 }
 
 #LoginE {
@@ -382,10 +401,11 @@ li {
 	font-size: 1em;
 	color: red;
 	text-align: center;
+	margin-top: 0em;
 }
 
 #RegisterWindow {
-	font-size: 1.1em;
+	font-size: 1.2em;
 	display: inline-block;
 	text-align: center;
 	margin-top: 7.5em;
@@ -425,3 +445,4 @@ li {
 	left: 2em;
 	opacity: 0.7;
 }
+
