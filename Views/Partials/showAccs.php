@@ -1,70 +1,77 @@
+<?php include ("../../Javascript/Connections/req.php")?>
+<div class="container" id = "ShowAccounts">
 
-<table class="AccDiss">
-<?php foreach ($parsed_json as $value): ?>
+	<?php foreach ($parsed_json as $value): ?>
 			<?php if($value): ?>
-			<div class="container">
-				<div id="cssmenu" class="align-center">
 					<ul>
 						<tr>
-							<td><li><a id="persHist" onmouseover="this.style.cursor='pointer'"><?php echo $name.':'; ?></a></li></td>
-							<td>
-								<li><a><?php
-								$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
-								$result = mysqli_query($con, $accountQuery);
-								$row2=mysqli_fetch_row($result);
-								echo $row2[0]; ?></a></li>
-							<td>
+							<div class ="row no-gutter">
+								<div class = "col-sm-6" style="border-top-style: none">
+									<li><a id="persHist" onmouseover="this.style.cursor='pointer'"><?php echo $name.':'; ?></a></li>
+								</div>
+								<div class = "col-sm-6 align-middle" style="border-top-style: none">
+									<li><a><?php
+									$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
+									$result = mysqli_query($con, $accountQuery);
+									$row2=mysqli_fetch_row($result);
+									echo $row2[0]; ?></a></li>
+								</div>
+							</div>
 						</tr>
 					</ul>
-				</div>
-			</div>
+
 		<?php endif; ?>
-<?php endforeach; ?>
+	<?php endforeach; ?>
+
 <?php if($parsed_ship_json!=NULL): ?>
 	<?php foreach ($parsed_ship_json as $value): ?>
 		<?php if($value): ?>
-			<div class="container">
-				<div id="cssmenu" class="align-center">
 					<ul>
 						<tr>
-							<td><li><a id="shipHist" onmouseover="this.style.cursor='pointer'"><?php echo $shipName.':'; ?></a></li></td>
-							<td>
-								<li><a><?php
-								$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
-								$result = mysqli_query($con, $accountQuery);
-								$row2=mysqli_fetch_row($result);
-								echo $row2[0]; ?></a></li>
-							</td>
+							<div class ="row no-gutter">
+								<div class = "col-sm-6" style="border-top-style: none">
+									<li><a id="shipHist" onmouseover="this.style.cursor='pointer'"><?php echo $shipName.':'; ?></a></li>
+								</div>
+								<div class = "col-sm-6 align-middle" style="border-top-style: none">
+									<li><a><?php
+									$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
+									$result = mysqli_query($con, $accountQuery);
+									$row2=mysqli_fetch_row($result);
+									echo $row2[0]; ?></a></li>
+								</div>
+							</div>
 						</tr>
 					</ul>
-				</div>
-			</div>
 		<?php endif; ?>
 	<?php endforeach; ?>
 <?php endif; ?>
+
 <?php if($parsed_fleet_json!=NULL): ?>
 	<?php foreach ($parsed_fleet_json as $value): ?>
 		<?php if($value): ?>
-			<div class="container">
-				<div id="cssmenu" class="align-center">
 					<ul>
 						<tr>
-							<td><li><a onmouseover="this.style.cursor='pointer'"><?php echo $fleetName.':'; ?></a></li></td>
-							<td>
-								<li><a><?php
-								$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
-								$result = mysqli_query($con, $accountQuery);
-								$row2=mysqli_fetch_row($result);
-								echo $row2[0]; ?></a></li>
-							</td>
+							<div class ="row no-gutter">
+								<div class = "col-sm-6" style="border-top-style: none">
+									<li><a onmouseover="this.style.cursor='pointer'"><?php echo $fleetName.':'; ?></a></li>
+								</div>
+								<div class = "col-sm-6 align-middle" style="border-top-style: none">
+									<li><a><?php
+									$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$value'";
+									$result = mysqli_query($con, $accountQuery);
+									$row2=mysqli_fetch_row($result);
+									echo $row2[0]; ?></a></li>
+								</div>
+							</div>
 						</tr>
 					</ul>
-				</div>
-			</div>
 		<?php endif; ?>
 	<?php endforeach; ?>
 <?php endif; ?>
-</table>
+</div>
+
+
+
 
 <script type="text/javascript"> 
         document.getElementById("persHist").onclick = function() { 

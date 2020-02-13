@@ -105,8 +105,11 @@
 			else{
 				$name=$row[3].' '.$row[4];
 			}
+			
 			include "Views/Partials/showAccs.php";//This desplays the accounts that the user has access to.
+
 			include "Views/Partials/showhist.php"; //Right now all history for all accounts is displayed here this is a work in progress to make it only display one at a time and only when asked
+
 			if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
 				header("Location: /PNPN-Website/transfer.php");
 			}

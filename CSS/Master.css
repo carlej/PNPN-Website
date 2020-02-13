@@ -96,37 +96,6 @@ padding:0px;
 
 /*Everything above here is also fine*/
 
-
-li {
-	display: block;
-	padding-left: 5em;
-}
-
-.AccDiss {
-	position: relative;
-	font-family: Pirates;
-	font-size: 1.55em;
-	top: 8em;
-	left: 2em;
-}
-
-.HistBox {
-	position: relative;
-	width: 60em;
-	height: 20em;
-	max-height: 20em;
-	border: .1em solid;
-	top:20em;
-	left: 11em;
-	overflow: auto;
-	font-family: Pirates;
-}
-
-.HistBox li{
-	position: relative;
-	left:-1em;
-}
-
 #search {
 	position: relative;
 	top: 11em;
@@ -592,5 +561,53 @@ li {
 	text-decoration: none;
 }
 
+#ShowAccounts {
+	font-family: pirates;
+	font-size: 1.6em;
+	margin-top: 6em;
+	margin-left: 0.5em;
+
+}
+
+@media (max-width: 992px) {
+	#ShowAccounts {
+		margin-top: 2em;
+	}
+}
+
+@media (min-width: 992px) {
+	#ShowAccounts {
+		margin-left: 3em;
+		margin-top: 8em;
+	}
+}
+
+li {
+	display: block;
+}
+
+#HistBox {
+	border: .1em solid;
+	overflow: auto;
+	font-family: Pirates;
+	font-size: 1em;
+	width: 90%;
+	max-width: 76em;
+	text-align: left;
+}
+
+@media (max-width: 992px) {
+	#HistBox {
+		margin-top: 2em;
+		max-height: 20em;
+	}
+}
+
+@media (min-width: 992px) {
+	#HistBox {
+		margin-top: 3em;
+		max-height: 30em;
+	}
+}
 
 

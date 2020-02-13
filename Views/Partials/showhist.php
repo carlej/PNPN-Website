@@ -1,4 +1,7 @@
-<div class="HistBox">
+
+<div class="container" id="HistBox">
+	<div style="font-size: 1.4em; text-align: center">Records (Click Account Above)</div>
+
 <?php 
 //foreach ($parsed_json as $value) {
 //	if ($value) {
@@ -41,8 +44,9 @@
 	 } ?>
 	<?php if($parsed_hist!=NULL): ?>
 		<?php $revPers=array_reverse($parsed_hist); ?>
-		<div class="container">
-			<div class="cssmenu" class="align-center">
+			<div class = "d-flex justify-content-left" style="margin-left: -2.2em;">
+			<div class = "row">
+			<div class = "col-12">
 				<ul  id="persHistShow" style="display: none;">
 					<?php foreach ($revPers as $key => $value): ?>
 						<li><a><?php
@@ -113,7 +117,8 @@
 					<?php endforeach; ?>
 				</ul>
 			</div>
-		</div>
+			</div>
+			</div>
 	<?php endif; ?>
 <?php endforeach; ?>
 <?php if($parsed_ship_json!=NULL): ?>
@@ -127,8 +132,9 @@
 		 } ?>
 		<?php if($parsed_ship_hist!=NULL): ?>
 			<?php $revShip=array_reverse($parsed_ship_hist); ?>
-			<div class="container">
-				<div class="cssmenu" class="align-center">
+				<div class = "d-flex justify-content-left" style="margin-left: -2.2em;">
+				<div class = "row">
+				<div class = "col-12">
 					<ul>
 						<?php foreach ($revShip as $key => $value): ?>
 							<li><a id="shipHistShow" style="display: none;"><?php
@@ -198,7 +204,8 @@
 					<?php endforeach; ?>
 				</ul>
 			</div>
-		</div>
+			</div>
+			</div>
 		<?php endif; ?>
 	<?php endforeach; ?>
 <?php endif; ?>
@@ -213,8 +220,9 @@
 		 } ?>
 		<?php if($parsed_fleet_hist!=NULL): ?>
 			<?php $revFleet=array_reverse($parsed_fleet_hist); ?>
-			<div class="container">
-				<div class="cssmenu" class="align-center">
+				<div class = "d-flex justify-content-left" style="margin-left: -2.2em;">
+				<div class = "row">
+				<div class = "col-12">
 					<ul>
 						<?php foreach ($revFleet as $key => $value): ?>
 				
@@ -285,8 +293,10 @@
 					<?php endforeach; ?>
 				</ul>
 			</div>
-		</div>
+			</div>
+			</div>
 		<?php endif; ?>
 	<?php endforeach; ?>
 <?php endif; ?>
+
 </div>
