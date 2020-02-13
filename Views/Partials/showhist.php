@@ -1,6 +1,6 @@
 
 <div class="container" id="HistBox">
-	<div style="font-size: 1.4em; text-align: center">Records (Click Account Above)</div>
+	<div style="font-size: 1.4em; text-align: center; margin-bottom: -0.7em">Records (Click Account Above)</div>
 
 <?php 
 //foreach ($parsed_json as $value) {
@@ -47,7 +47,7 @@
 			<div class = "d-flex justify-content-left" style="margin-left: -2.2em;">
 			<div class = "row">
 			<div class = "col-12">
-				<ul  id="persHistShow" style="display: none;">
+				<ul  id="persHistShow" style="display: none; padding-top: 1em;">
 					<?php foreach ($revPers as $key => $value): ?>
 						<li><a><?php
 						//echo count($value);
@@ -137,7 +137,7 @@
 				<div class = "col-12">
 					<ul>
 						<?php foreach ($revShip as $key => $value): ?>
-							<li><a id="shipHistShow" style="display: none;"><?php
+							<li><a id="shipHistShow" style="display: none; padding-top: 1em;"><?php
 							if (count($value)==6) {//transfer display from teller
 							echo "~ ";
 							echo $key; //time and date that it happened
@@ -226,7 +226,7 @@
 					<ul>
 						<?php foreach ($revFleet as $key => $value): ?>
 				
-							<li><a id="fleetHistShow" style="display: none;"><?php
+							<li><a id="fleetHistShow" style="display: none; padding-top: 1em;"><?php
 							if (count($value)==6) {//transfer display from teller
 							echo "~ ";
 							echo $key; //time and date that it happened
