@@ -1,5 +1,1 @@
-{"hist":[dip",ID",ID","$$"],"hist":[dip",ID",ID","$$"],"hist":[dip",ID",ID","$$"],"hist":[dip",ID",ID","$$"]}
-
-
-
-hist: type,from,to,ammount
+make javascript function to change the accto value to the account to and hide the search bar

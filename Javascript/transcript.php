@@ -32,26 +32,31 @@
 			</select>
 			
 		</p>
-		<!--<form method="POST" id="search">
-			<fieldset>
-				<label>Search by:</label>
-				<select name="type" class="SearchBy">
-					<option value="Pname">Pirate Name</option>
-					<option value="Fname">First Name</option>
-					<option value="Lname">Last Name</option>
-					<option value="Username">Email</option>
-					<option value="shipID" style="display:none;">shipID</option>
-					<option value="Ship">Ship/House</option>
-					<option value="fleetID" style="display:none;">fleetID</option>
-					<option value="Fleet">Fleet/Alliance</option>
-				</select>
-				<input type="search" class="required" name="input" id="input" style="width: 38em">
-				<input type="submit" name= "submit" value="Search" class="submit">
-				<input type="hidden" name="new" value="new" class="submit">-->
-		<p>
+		<div name="searcher">
+			<select name="type" class="SearchBy">
+				<option>Search by:</option>
+				<option value="Pname">Pirate Name</option>
+				<option value="Fname">First Name</option>
+				<option value="Lname">Last Name</option>
+				<option value="Username">Email</option>
+				<option value="shipID" style="display:none;">shipID</option>
+				<option value="Ship">Ship/House</option>
+				<option value="fleetID" style="display:none;">fleetID</option>
+				<option value="Fleet">Fleet/Alliance</option>
+			</select>
+			<input type="search" class="required" name="input" id="input" style="width: 38em">
+			<input type="submit" name= "submit" value="Search" class="submit">
+			<input type="hidden" name="new" value="new" class="submit">
+		</div>	
+		<p name= "transearched" style="display: none">
+			<label for="Accto">Account to:</label>
+			<input disabled  value="test" name="Accto" id="Accto">
+		</p>
+				
+		<!--<p>
 			<label for="Accto">Account to:</label>
 			<input type="number" name="Accto" id="Accto" min="100000000" max="999999999">
-		</p>
+		</p>-->
 		<p>
 			<label for="trans">Amount to Transfer:</label>
 			<input type="number" name="trans" id="trans" min="1">
@@ -74,7 +79,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
 	include "transearch.php";
 }
 else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Transfer") {
-		   include('valTran.php');
+	$valid=false;
+	include('valTran.php');
+	if ($valid) {
+		include('maketran.php');
+		$madetran=true;
+	}
 }
 ?>
 <script type="text/javascript">

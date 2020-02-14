@@ -17,14 +17,13 @@
 		
 		$_SESSION['hold']=$searchUserName;
 		$_SESSION['stype']="shipID";
-		//$user=$_SESSION['hold'];?>
-		<div><?php include "Views/Partials/showAccs.php";?></div>
-		<div><?php include "Views/Partials/showhist.php";?></div>
-		<?php
-		mysqli_close($con);
+		//$user=$_SESSION['hold'];
+		////include "Views/Partials/showAccs.php";
+		////include "Views/Partials/showhist.php";
+		
 		$perm = $_SESSION['perm'];
 		$_SERVER["REQUEST_METHOD"]=NULL;
-		include("Javascript/telltranscript.php");
+		////include("Javascript/telltranscript.php");
 		//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
 	}
@@ -47,6 +46,7 @@
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="new"></fieldset></form>';
 		}
 		elseif (mysqli_num_rows($resultShip)==1) { //returns the one account that was found or selected
+			$searched=true;
 			$rowShip=mysqli_fetch_row($resultShip);
 			$shipName=$rowShip[1];
 			$parsed_ship_json=json_decode($rowShip[4],true);
@@ -56,12 +56,12 @@
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']="shipID";
 			//$user=$_SESSION['hold'];
-			include "Views/Partials/showAccs.php";
-			include "Views/Partials/showhist.php";
-			mysqli_close($con);
+			//include "Views/Partials/showAccs.php";
+			//include "Views/Partials/showhist.php";
+			
 			$perm = $_SESSION['perm'];
 			$_SERVER["REQUEST_METHOD"]=NULL;
-			include("Javascript/telltranscript.php");
+			//include("Javascript/telltranscript.php");
 			//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
 		}
@@ -81,12 +81,12 @@
 		$_SESSION['hold']=$searchUserName;
 		$_SESSION['stype']="fleetID";
 		//$user=$_SESSION['hold'];
-		include "Views/Partials/showAccs.php";
-		include "Views/Partials/showhist.php";
-		mysqli_close($con);
+		//include "Views/Partials/showAccs.php";
+		//include "Views/Partials/showhist.php";
+		
 		$perm = $_SESSION['perm'];
 		$_SERVER["REQUEST_METHOD"]=NULL;
-		include("Javascript/telltranscript.php");
+		//include("Javascript/telltranscript.php");
 		//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
 	}
@@ -110,6 +110,7 @@
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="new"></fieldset></form>';
 		}
 		elseif (mysqli_num_rows($resultFleet)==1) { //returns the one account that was found or selected
+			$searched=true;
 			$rowFleet=mysqli_fetch_row($resultFleet);
 			$parsed_fleet_json=json_decode($rowFleet[4],true);
 			$parsed_fleet_json=$parsed_fleet_json['id'];
@@ -118,12 +119,12 @@
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']="fleetID";
 			//$user=$_SESSION['hold'];
-			include "Views/Partials/showAccs.php";
-			include "Views/Partials/showhist.php";
-			mysqli_close($con);
+			//include "Views/Partials/showAccs.php";
+			//include "Views/Partials/showhist.php";
+			
 			$perm = $_SESSION['perm'];
 			$_SERVER["REQUEST_METHOD"]=NULL;
-			include("Javascript/telltranscript.php");
+			//include("Javascript/telltranscript.php");
 			//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
 		}
@@ -149,6 +150,7 @@
 		
 		}
 		else if (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
+			$searched=true;
 			$row = mysqli_fetch_row($resultIn);
 			$username=$row[0];
 			$name=NULL;
@@ -188,12 +190,12 @@
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']=$method;
 			//$user=$_SESSION['hold'];
-			include "Views/Partials/showAccs.php";
-			include "Views/Partials/showhist.php";
-			mysqli_close($con);
+			//include "Views/Partials/showAccs.php";
+			//include "Views/Partials/showhist.php";
+			
 			$perm = $_SESSION['perm'];
 			$_SERVER["REQUEST_METHOD"]=NULL;
-			include("Javascript/telltranscript.php");
+			//include("Javascript/telltranscript.php");
 			//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."norm".'" /></p></form></html>';
 		}
