@@ -53,9 +53,9 @@
 		<p id= "transearched">
 			<label for="Accto">Account to:</label>
 			<input disabled  value=<?php echo $_SESSION['hold'] ?>>
-			<input type="hidden" value= <?php echo $accnum[0]; ?> name="Accto" id="Accto">
+			<input type="hidden" value= <?php echo $_SESSION['temp']; ?> name="Accto" id="Accto">
 		</p>
-
+		<?php  ?>
 
 		<?php endif; ?>
 				

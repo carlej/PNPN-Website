@@ -54,6 +54,7 @@
 				$_SESSION['username'] = $Username;
 				$_SESSION['perm'] = $perm[0];
 				$_SESSION['hold']="hold";
+				$_SESSION['temp']="temp";
 				echo $perm[0];
 				header("Location: /PNPN-Website/bank.php");
 			}
