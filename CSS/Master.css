@@ -96,15 +96,6 @@ padding:0px;
 
 /*Everything above here is also fine*/
 
-#search {
-	position: relative;
-	top: 11em;
-	left: 10em;
-	width: 50em;
-	font-family: pirates;
-	font-size: 13pt;
-}
-
 #telltransferForm {
 	position: relative;
 	top: 21em;
@@ -600,3 +591,18 @@ li {
 	}
 }
 
+.SSearch {
+	font-family: pirates;
+	font-size: 1.1em;
+	text-align: center;
+	margin-top: 0.5em;
+
+}
+
+@media (min-width: 992px) {
+	.SSearch {
+		text-align: left;
+		margin-top: 0.5em;
+		margin-left: 1em;
+	}
+}
