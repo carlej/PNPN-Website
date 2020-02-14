@@ -18,9 +18,19 @@
 		$_SESSION['hold']=$searchUserName;
 		$_SESSION['stype']="shipID";
 		//$user=$_SESSION['hold'];?>
-		<?php include("Javascript/telltranscript.php");?>
-		<div><?php include "Views/Partials/showAccs.php";?></div>
-		<div><?php include "Views/Partials/showhist.php";?></div>
+
+		<div class = "container">
+				<div class = "row">
+					<?php include "Javascript/telltranscript.php"; ?>
+				</div>
+				<div class = "row">
+					<?php include "Views/Partials/showAccs.php"; ?>
+				</div>
+				<div class = "row">
+					<?php include "Views/Partials/showhist.php"; ?>
+				</div>
+		</div>
+
 		<?php
 		mysqli_close($con);
 		$perm = $_SESSION['perm'];
@@ -65,10 +75,19 @@
 			$_SESSION['shipName']=$input;
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']="shipID";
-			//$user=$_SESSION['hold'];
-			include("Javascript/telltranscript.php");
-			include "Views/Partials/showAccs.php";
-			include "Views/Partials/showhist.php";
+			//$user=$_SESSION['hold']; ?>
+			<div class = "container">
+					<div class = "row">
+						<?php include "Javascript/telltranscript.php"; ?>
+					</div>
+					<div class = "row">
+						<?php include "Views/Partials/showAccs.php"; ?>
+					</div>
+					<div class = "row">
+						<?php include "Views/Partials/showhist.php"; ?>
+					</div>
+			</div>
+			<?php
 			mysqli_close($con);
 			$perm = $_SESSION['perm'];
 			$_SERVER["REQUEST_METHOD"]=NULL;
@@ -92,10 +111,19 @@
 		$searchUserName=$row[0];
 		$_SESSION['hold']=$searchUserName;
 		$_SESSION['stype']="fleetID";
-		//$user=$_SESSION['hold'];
-		include("Javascript/telltranscript.php");
-		include "Views/Partials/showAccs.php";
-		include "Views/Partials/showhist.php";
+		//$user=$_SESSION['hold']; ?>
+		<div class = "container">
+				<div class = "row">
+					<?php include "Javascript/telltranscript.php"; ?>
+				</div>
+				<div class = "row">
+					<?php include "Views/Partials/showAccs.php"; ?>
+				</div>
+				<div class = "row">
+					<?php include "Views/Partials/showhist.php"; ?>
+				</div>
+		</div>
+		<?php
 		mysqli_close($con);
 		$perm = $_SESSION['perm'];
 		$_SERVER["REQUEST_METHOD"]=NULL;
@@ -139,10 +167,19 @@
 			$searchUserName=$row[0];
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']="fleetID";
-			//$user=$_SESSION['hold'];
-			include("Javascript/telltranscript.php");
-			include "Views/Partials/showAccs.php";
-			include "Views/Partials/showhist.php";
+			//$user=$_SESSION['hold']; ?>
+			<div class = "container">
+					<div class = "row">
+						<?php include "Javascript/telltranscript.php"; ?>
+					</div>
+					<div class = "row">
+						<?php include "Views/Partials/showAccs.php"; ?>
+					</div>
+					<div class = "row">
+						<?php include "Views/Partials/showhist.php"; ?>
+					</div>
+			</div>
+			<?php
 			mysqli_close($con);
 			$perm = $_SESSION['perm'];
 			$_SERVER["REQUEST_METHOD"]=NULL;
@@ -220,10 +257,19 @@
 			}
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']=$method;
-			//$user=$_SESSION['hold'];
-			include("Javascript/telltranscript.php");
-			include "Views/Partials/showAccs.php";
-			include "Views/Partials/showhist.php";
+			//$user=$_SESSION['hold']; ?>
+			<div class = "container">
+					<div class = "row">
+						<?php include "Javascript/telltranscript.php"; ?>
+					</div>
+					<div class = "row">
+						<?php include "Views/Partials/showAccs.php"; ?>
+					</div>
+					<div class = "row">
+						<?php include "Views/Partials/showhist.php"; ?>
+					</div>
+			</div>
+			<?php
 			mysqli_close($con);
 			$perm = $_SESSION['perm'];
 			$_SERVER["REQUEST_METHOD"]=NULL;
