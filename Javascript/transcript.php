@@ -55,7 +55,6 @@
 			<input disabled  value=<?php echo $_SESSION['hold'] ?>>
 			<input type="hidden" value= <?php echo $_SESSION['temp']; ?> name="Accto" id="Accto">
 		</p>
-		<?php  ?>
 
 		<?php endif; ?>
 				
@@ -75,8 +74,8 @@
 	</fieldset>
 	<p>
 		<input type="submit" name="submit" value="Transfer" />
-		<input type="reset" value="Clear" onclick="Cancel(<?php echo $_SERVER['PHP_SELF']; ?>)" />
-		<input type="button" name="button" value="Cancel" onclick="Cancel(<?php echo $_SERVER['PHP_SELF']; ?>)" />
+		<input type="submit" name="submit" value="Clear" />
+		<input type="submit" name="submit" value="Cancel" />
 	</p>
 </form>
 
@@ -91,24 +90,19 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Transfer")
 		include('maketran.php');
 		$madetran=true;
 	}
-}//$.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/bank.php")}});
+}
+else if ($_SERVER["REQUEST_METHOD"] == "POST" && ($_POST['submit'] == "Cancel" || $_POST['submit'] == "Clear")){
+	include('clear.php');
+	//$_SESSION['hold']="hold";
+	//$_SESSION['temp']="temp";
+	//echo '<script type="text/javascript">window.location.href="/PNPN-Website/bank.php"</script>';
+}
 
 ?>
 <script type="text/javascript">
-	function Cancel(from){
-		$.ajax({
-		async: false,
-		type: "POST",
-		url: 'http://localhost/PNPN-Website/Javascript/clear.php',
-		data:{from},
-		dataType: 'JSON',
-		success: function(output){
-			if(output[1])
-				alert(output[1]);
-			re=output[0];
-		}
-});
-	}
+	function Cancel(){
+		window.location.href='/PNPN-Website/Javascript/clear.php';
+}
 function valadatetran(){
 	var to = document.forms["transfer"]["Accto"].value;
 	var from = document.forms["transfer"]["Accfrom"].value;
