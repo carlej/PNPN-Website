@@ -12,10 +12,10 @@
 		$rowShip=mysqli_fetch_row($resultShip);
 		$shipName=$rowShip[1];
 		$parsed_ship_json=json_decode($rowShip[4],true);
-		$parsed_ship_json=$parsed_ship_json['id'];
+		$accnum=$parsed_ship_json['id'];
 		$searchUserName=$row[0];
 		
-		$_SESSION['hold']=$searchUserName;
+		$_SESSION['hold']=$shipName;
 		$_SESSION['stype']="shipID";
 		//$user=$_SESSION['hold'];
 		////include "Views/Partials/showAccs.php";
@@ -50,10 +50,10 @@
 			$rowShip=mysqli_fetch_row($resultShip);
 			$shipName=$rowShip[1];
 			$parsed_ship_json=json_decode($rowShip[4],true);
-			$parsed_ship_json=$parsed_ship_json['id'];
+			$accnum=$parsed_ship_json['id'];
 			$shipName=$rowShip[1];
 			$_SESSION['shipName']=$input;
-			$_SESSION['hold']=$searchUserName;
+			$_SESSION['hold']=$shipName;
 			$_SESSION['stype']="shipID";
 			//$user=$_SESSION['hold'];
 			//include "Views/Partials/showAccs.php";
@@ -77,10 +77,10 @@
 		$parsed_fleet_json=NULL;
 		$rowFleet=mysqli_fetch_row($resultFleet);
 		$parsed_fleet_json=json_decode($rowFleet[4],true);
-		$parsed_fleet_json=$parsed_fleet_json['id'];
+		$accnum=$parsed_fleet_json['id'];
 		$fleetName=$rowFleet[1];
 		$searchUserName=$row[0];
-		$_SESSION['hold']=$searchUserName;
+		$_SESSION['hold']=$fleetName;
 		$_SESSION['stype']="fleetID";
 		//$user=$_SESSION['hold'];
 		//include "Views/Partials/showAccs.php";
@@ -115,10 +115,10 @@
 			$searched=true;
 			$rowFleet=mysqli_fetch_row($resultFleet);
 			$parsed_fleet_json=json_decode($rowFleet[4],true);
-			$parsed_fleet_json=$parsed_fleet_json['id'];
+			$accnum=$parsed_fleet_json['id'];
 			$fleetName=$rowFleet[1];
 			$searchUserName=$row[0];
-			$_SESSION['hold']=$searchUserName;
+			$_SESSION['hold']=$fleetName;
 			$_SESSION['stype']="fleetID";
 			//$user=$_SESSION['hold'];
 			//include "Views/Partials/showAccs.php";
@@ -171,7 +171,7 @@
 			$row1=mysqli_fetch_row($resultIn);
 			$parsed_json = json_decode($row1[0], true);
 //				$parsed_jsonid=$parsed_json;
-			$parsed_json = $parsed_json['id'];
+			$accnum = $parsed_json['id'];
 			$searchUserName=$row[0];
 			$_SESSION['hold']=$name;
 			$_SESSION['stype']=$method;
@@ -180,7 +180,6 @@
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
-			echo $parsed_json;
 
 			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
 			

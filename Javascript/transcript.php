@@ -53,7 +53,7 @@
 		<p id= "transearched">
 			<label for="Accto">Account to:</label>
 			<input disabled  value=<?php echo $_SESSION['hold'] ?>>
-			<input type="hidden" value= <?php echo $parsed_json[0]; ?> name="Accto" id="Accto">
+			<input type="hidden" value= <?php echo $accnum[0]; ?> name="Accto" id="Accto">
 		</p>
 
 
