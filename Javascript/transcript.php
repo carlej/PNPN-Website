@@ -32,6 +32,7 @@
 			</select>
 			
 		</p>
+		<?php if($_SESSION['hold']=='hold'): ?>
 		<div id="searcher">
 			<select name="type" class="SearchBy" >
 				<option>Search by:</option>
@@ -47,11 +48,16 @@
 			<input type="text" required name="input" id="input" style="width: 38em">
 			<input type="submit" name= "submit" value="Search" class="submit">
 			<input type="hidden" name="new" value="new" class="submit">
-		</div>	
-		<p id= "transearched" style="display: none">
+		</div>
+		<?php else: ?>	
+		<p id= "transearched">
 			<label for="Accto">Account to:</label>
-			<input disabled  value="test" name="Accto" id="Accto">
+			<input disabled  value=<?php echo $_SESSION['hold'] ?>>
+			<input type="hidden" value= <?php echo $parsed_json[0]; ?> name="Accto" id="Accto">
 		</p>
+
+
+		<?php endif; ?>
 				
 		<!--<p>
 			<label for="Accto">Account to:</label>
@@ -69,7 +75,7 @@
 	</fieldset>
 	<p>
 		<input type="submit" name="submit" value="Transfer" />
-		<input type="reset" value="Clear" />
+		<input type="reset" value="Clear" onclick="Cancel()" />
 		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
 	</p>
 </form>
@@ -114,7 +120,7 @@ function valadatetran(){
 	return re;
 }</script>
 
-<script>
+<script type="text/javascript">
 function textCounter(field,field2,maxlimit){
 	var countfield = document.getElementById(field2);
 	if ( field.value.length > maxlimit ) {
@@ -125,12 +131,5 @@ function textCounter(field,field2,maxlimit){
 		countfield.value = maxlimit - field.value.length;
 	}
 }
-
-function searched(val){
-	document.getElementById(searcher).setAttribute("style","display:none");
-	document.getElementById(transearched).setAttribute("style","display:block");
-	document.getElementById(Accto).value = val;
-}
-
 </script>
 
