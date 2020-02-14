@@ -93,6 +93,7 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Transfer")
 }
 else if ($_SERVER["REQUEST_METHOD"] == "POST" && ($_POST['submit'] == "Cancel" || $_POST['submit'] == "Clear")){
 	include('clear.php');
+	?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
 	//$_SESSION['hold']="hold";
 	//$_SESSION['temp']="temp";
 	//echo '<script type="text/javascript">window.location.href="/PNPN-Website/bank.php"</script>';
