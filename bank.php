@@ -14,7 +14,7 @@
 		?>
 
 		<title>Bank</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php include("Views\Partials/header.php"); ?>
 		
 		
 		<!-- Creates the Personal and Teller Buttons and who has access to them-->
@@ -25,11 +25,13 @@
 				<div class = "col-6" style="padding-right: 0.05em;">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b"): ?>
 						<a href="/PNPN-Website/bank.php" class="PersonalPressed">Personal</a>
+						
 					<?php endif;?>
 				</div>
 				<div class = "col-6" style = "padding-left: 0.05em;">
 					<?php if ($url=="/PNPN-Website/bank.php"):?>
 					<a href="/PNPN-Website/teller.php" class="TellerButton">Teller</a>
+					
 					<?php endif;?>
 				</div>
 				</div>
@@ -46,11 +48,13 @@
 				<div class = "col-sm-6">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b"): ?>
 						<a href="/PNPN-Website/bank.php" class="PersonalPressed2">Personal</a>
+						
 					<?php endif;?>
 				</div>
 				<div class = "col-sm-6">
 					<?php if ($url=="/PNPN-Website/bank.php"):?>
 					<a href="/PNPN-Website/teller.php" class="TellerButton2">Teller</a>
+					
 					<?php endif;?>
 				</div>
 				</div>
@@ -110,9 +114,9 @@
 
 			include "Views/Partials/showhist.php"; //Right now all history for all accounts is displayed here this is a work in progress to make it only display one at a time and only when asked
 
-			if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
-				header("Location: /PNPN-Website/transfer.php");
-			}
+			//if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
+			//	header("Location: /PNPN-Website/transfer.php");
+			//}
 			//include "Views/Partials/bankButtons.php"; //Its just a button
 			include "Javascript/transcript.php";
 		}

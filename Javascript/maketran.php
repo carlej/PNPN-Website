@@ -1,6 +1,5 @@
 <?php //this file is to make a transaction for more comments see tellmaketran.php these files are fundimentally the same but with small changes as eventually the teller may add who the teller was to each transaction so as to track who does what action.
-include("Connections/req.php");
-include 'Connections/convar.php';
+
 $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
@@ -56,19 +55,20 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$temp[0]'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			//header("Location: /PNPN-Website/transfer.php");//refreshes page to reflect new ballance
-			header("Location: /PNPN-Website/bank.php");
+			//header("Location: /PNPN-Website/bank.php");
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
+			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
 		}
 		else{
 			//error = "Error that account doesn't exist";
 			//echo "<script type='text/javascript'>alert('".$error."');</script>";
 			//header("Location: /PNPN-Website/transfer.php");
-			header("Location: /PNPN-Website/bank.php");
+			//header("Location: /PNPN-Website/bank.php");
 		}
 	}
 	elseif($trans>0){
 		//echo "error you don't have enough money";
 		//header("Location: /PNPN-Website/transfer.php");
-		header("Location: /PNPN-Website/bank.php");
+		//header("Location: /PNPN-Website/bank.php");
 	}
 ?>
