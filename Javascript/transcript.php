@@ -75,8 +75,8 @@
 	</fieldset>
 	<p>
 		<input type="submit" name="submit" value="Transfer" />
-		<input type="reset" value="Clear" onclick="Cancel()" />
-		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
+		<input type="reset" value="Clear" onclick="Cancel(<?php echo $_SERVER['PHP_SELF']; ?>)" />
+		<input type="button" name="button" value="Cancel" onclick="Cancel(<?php echo $_SERVER['PHP_SELF']; ?>)" />
 	</p>
 </form>
 
@@ -91,11 +91,23 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Transfer")
 		include('maketran.php');
 		$madetran=true;
 	}
-}
+}//$.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/bank.php")}});
+
 ?>
 <script type="text/javascript">
-	function Cancel(){
-		$.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/bank.php")}});
+	function Cancel(from){
+		$.ajax({
+		async: false,
+		type: "POST",
+		url: 'http://localhost/PNPN-Website/Javascript/clear.php',
+		data:{from},
+		dataType: 'JSON',
+		success: function(output){
+			if(output[1])
+				alert(output[1]);
+			re=output[0];
+		}
+});
 	}
 function valadatetran(){
 	var to = document.forms["transfer"]["Accto"].value;

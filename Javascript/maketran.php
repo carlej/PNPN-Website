@@ -57,6 +57,8 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			//header("Location: /PNPN-Website/transfer.php");//refreshes page to reflect new ballance
 			//header("Location: /PNPN-Website/bank.php");
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
+			$_SESSION['hold']="hold";
+			$_SESSION['temp']="temp";
 			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
 		}
 		else{
