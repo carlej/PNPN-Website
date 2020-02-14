@@ -32,8 +32,8 @@
 			</select>
 			
 		</p>
-		<div name="searcher">
-			<select name="type" class="SearchBy">
+		<div id="searcher">
+			<select name="type" class="SearchBy" >
 				<option>Search by:</option>
 				<option value="Pname">Pirate Name</option>
 				<option value="Fname">First Name</option>
@@ -44,11 +44,11 @@
 				<option value="fleetID" style="display:none;">fleetID</option>
 				<option value="Fleet">Fleet/Alliance</option>
 			</select>
-			<input type="search" class="required" name="input" id="input" style="width: 38em">
+			<input type="text" required name="input" id="input" style="width: 38em">
 			<input type="submit" name= "submit" value="Search" class="submit">
 			<input type="hidden" name="new" value="new" class="submit">
 		</div>	
-		<p name= "transearched" style="display: none">
+		<p id= "transearched" style="display: none">
 			<label for="Accto">Account to:</label>
 			<input disabled  value="test" name="Accto" id="Accto">
 		</p>
@@ -115,14 +115,22 @@ function valadatetran(){
 }</script>
 
 <script>
-function textCounter(field,field2,maxlimit)
-{
- var countfield = document.getElementById(field2);
- if ( field.value.length > maxlimit ) {
-  field.value = field.value.substring( 0, maxlimit );
-  return false;
- } else {
-  countfield.value = maxlimit - field.value.length;
- }
+function textCounter(field,field2,maxlimit){
+	var countfield = document.getElementById(field2);
+	if ( field.value.length > maxlimit ) {
+		field.value = field.value.substring( 0, maxlimit );
+		return false;
+	}
+	else {
+		countfield.value = maxlimit - field.value.length;
+	}
 }
+
+function searched(val){
+	document.getElementById(searcher).setAttribute("style","display:none");
+	document.getElementById(transearched).setAttribute("style","display:block");
+	document.getElementById(Accto).value = val;
+}
+
 </script>
+

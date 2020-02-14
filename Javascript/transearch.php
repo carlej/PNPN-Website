@@ -22,7 +22,7 @@
 		////include "Views/Partials/showhist.php";
 		
 		$perm = $_SESSION['perm'];
-		$_SERVER["REQUEST_METHOD"]=NULL;
+		
 		////include("Javascript/telltranscript.php");
 		//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
@@ -60,7 +60,8 @@
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
-			$_SERVER["REQUEST_METHOD"]=NULL;
+			
+			echo '<script type="text/javascript">searched('.$shipName.');</script>';
 			//include("Javascript/telltranscript.php");
 			//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
@@ -85,7 +86,7 @@
 		//include "Views/Partials/showhist.php";
 		
 		$perm = $_SESSION['perm'];
-		$_SERVER["REQUEST_METHOD"]=NULL;
+		
 		//include("Javascript/telltranscript.php");
 		//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
@@ -123,7 +124,8 @@
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
-			$_SERVER["REQUEST_METHOD"]=NULL;
+			
+			echo '<script type="text/javascript">searched('.$fleetName.');</script>';
 			//include("Javascript/telltranscript.php");
 			//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
@@ -156,6 +158,7 @@
 			$name=NULL;
 			$fleetName=NULL;
 			$shipName=NULL;
+			echo "test";
 			if ($row[5]!=NULL) {
 				$name=$row[5];
 			}
@@ -194,7 +197,8 @@
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
-			$_SERVER["REQUEST_METHOD"]=NULL;
+			
+
 			//include("Javascript/telltranscript.php");
 			//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."norm".'" /></p></form></html>';

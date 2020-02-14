@@ -14,7 +14,7 @@
 		?>
 
 		<title>Bank</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php include("Views\Partials/header.php"); ?>
 		
 		
 		<!-- Creates the Personal and Teller Buttons and who has access to them-->
@@ -25,11 +25,13 @@
 				<div class = "col-6" style="padding-right: 0.05em;">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b"): ?>
 						<a href="/PNPN-Website/bank.php" class="PersonalPressed">Personal</a>
+						<?php $_SESSION['hold']='hold'; ?>
 					<?php endif;?>
 				</div>
 				<div class = "col-6" style = "padding-left: 0.05em;">
 					<?php if ($url=="/PNPN-Website/bank.php"):?>
 					<a href="/PNPN-Website/teller.php" class="TellerButton">Teller</a>
+					<?php $_SESSION['hold']='hold'; ?>
 					<?php endif;?>
 				</div>
 				</div>
@@ -46,11 +48,13 @@
 				<div class = "col-sm-6">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b"): ?>
 						<a href="/PNPN-Website/bank.php" class="PersonalPressed2">Personal</a>
+						<?php $_SESSION['hold']='hold'; ?>
 					<?php endif;?>
 				</div>
 				<div class = "col-sm-6">
 					<?php if ($url=="/PNPN-Website/bank.php"):?>
 					<a href="/PNPN-Website/teller.php" class="TellerButton2">Teller</a>
+					<?php $_SESSION['hold']='hold'; ?>
 					<?php endif;?>
 				</div>
 				</div>

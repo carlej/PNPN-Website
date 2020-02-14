@@ -54,7 +54,6 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$temp[0]'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			$madetran=true;
 			//header("Location: /PNPN-Website/transfer.php");//refreshes page to reflect new ballance
 			//header("Location: /PNPN-Website/bank.php");
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
