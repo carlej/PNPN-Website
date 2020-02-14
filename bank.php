@@ -110,9 +110,9 @@
 
 			include "Views/Partials/showhist.php"; //Right now all history for all accounts is displayed here this is a work in progress to make it only display one at a time and only when asked
 
-			if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
-				header("Location: /PNPN-Website/transfer.php");
-			}
+			//if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
+			//	header("Location: /PNPN-Website/transfer.php");
+			//}
 			//include "Views/Partials/bankButtons.php"; //Its just a button
 			include "Javascript/transcript.php";
 		}

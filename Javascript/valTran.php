@@ -1,6 +1,7 @@
 <?php //this validates that the transaction that was subbmitted is a valid transaction.
-if ($_POST['to']) {
-$Accto=$_POST['to'];
+if ($_POST['Accto']) {
+$Accto=$_POST['Accto'];
+echo $Accto;
 $Accfrom=$_POST['from'];
 $trans=$_POST['tra'];
 
@@ -18,6 +19,7 @@ include 'Connections/convar.php';
 		$row2=mysqli_fetch_row($resultIn);
 		if (mysqli_num_rows($resultIn)!=0){ //checks that the account your tranfering to exists
 			echo json_encode(array("0"=>true,"1"=>""));
+//			return 1;
 //			echo "true";
 		}
 		else{
@@ -25,6 +27,8 @@ include 'Connections/convar.php';
 //			echo '<script type="text/javascript">alert("text");</script>';
 //			echo "false";
 			echo json_encode(array("0"=>false,"1"=>"Error that account doesn't exist"));
+			echo '<script type="text/javascript">alert("meow");</script>';
+//			return 0;
 		}
 	}
 	elseif($trans>0){
@@ -33,6 +37,8 @@ include 'Connections/convar.php';
 //		echo "false";
 		//header("Location: /PNPN-Website/transfer.php");
 		echo json_encode(array("0"=>false,"1"=>"Error you don't have enough money"));
+		echo '<script type="text/javascript">alert("meow");</script>';
+//		return 0;
 	}
 }
 ?>

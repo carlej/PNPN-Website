@@ -1,4 +1,4 @@
-<form name="transfer"method="POST" action="Javascript/maketran.php" onsubmit="return valadatetran();" id="transferForm">
+<form name="transfer" method="POST" id="transferForm">
 	<fieldset>
 		<legend>Transfer:</legend>
 		<p><?php
@@ -32,6 +32,22 @@
 			</select>
 			
 		</p>
+		<!--<form method="POST" id="search">
+			<fieldset>
+				<label>Search by:</label>
+				<select name="type" class="SearchBy">
+					<option value="Pname">Pirate Name</option>
+					<option value="Fname">First Name</option>
+					<option value="Lname">Last Name</option>
+					<option value="Username">Email</option>
+					<option value="shipID" style="display:none;">shipID</option>
+					<option value="Ship">Ship/House</option>
+					<option value="fleetID" style="display:none;">fleetID</option>
+					<option value="Fleet">Fleet/Alliance</option>
+				</select>
+				<input type="search" class="required" name="input" id="input" style="width: 38em">
+				<input type="submit" name= "submit" value="Search" class="submit">
+				<input type="hidden" name="new" value="new" class="submit">-->
 		<p>
 			<label for="Accto">Account to:</label>
 			<input type="number" name="Accto" id="Accto" min="100000000" max="999999999">
@@ -52,6 +68,15 @@
 		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
 	</p>
 </form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
+	include "transearch.php";
+}
+else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Transfer") {
+		   include('valTran.php');
+}
+?>
 <script type="text/javascript">
 	function Cancel(){
 		$.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/bank.php")}});

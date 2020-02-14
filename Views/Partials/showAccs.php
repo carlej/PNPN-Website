@@ -1,4 +1,3 @@
-<?php include ("../../Javascript/Connections/req.php")?>
 <div class="container" id = "ShowAccounts">
 
 	<?php foreach ($parsed_json as $value): ?>

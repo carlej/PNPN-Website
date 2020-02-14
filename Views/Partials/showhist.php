@@ -1,6 +1,6 @@
 
 <div class="container" id="HistBox">
-	<div style="font-size: 1.4em; text-align: center; margin-bottom: -0.7em">Records (Click Account Above)</div>
+	<div style="font-size: 1.4em; text-align: center;">Records (Click Account Above)</div>
 
 <?php 
 //foreach ($parsed_json as $value) {
