@@ -1,65 +1,69 @@
 <?php //This file is to display the accounts and the transfer window that anyone can see so that they can make account to account transfers without going to the bank?>
-
-<form name="transfer"method="POST" action="Javascript/tellmaketran.php" id="telltransferForm">
-	<fieldset>
-		<legend>Transfer:</legend>
-		<p><?php
-		//echo $name;
-		$split="-!split!-";
-		?></p>
-		<p>
-
-			<label>Account from:</label>
-			<select name="Accfrom">
+<div class = "container" id = "TellerFunction">
+	<div class = "TellerActions">Teller Actions</div>
+	<div class = "row">
+		<form name="transfer"method="POST" action="Javascript/tellmaketran.php" id="telltransferForm">
+			<fieldset>
+				<div class = "col-sm">
+				<legend >Transfer:</legend>
+					<p><?php
+					//echo $name;
+					$split="-!split!-";
+					?></p>
+				<p>
+				<label>Account from:</label>
+				<select name="Accfrom">
 				<?php
 				foreach ($parsed_json as $value) {
-					if ($value) {
-						echo '<option value="'."{$value}{$split}{$name}".'">'.$name.'</option>';
+				if ($value) {
+					echo '<option value="'."{$value}{$split}{$name}".'">'.$name.'</option>';
 					}
 				}
 				if($parsed_ship_json!=NULL){
-					foreach ($parsed_ship_json as $value) {
-						if ($value) {
-							echo '<option value="'."{$value}{$split}{$shipName}".'">'.$shipName.'</option>';
+				foreach ($parsed_ship_json as $value) {
+					if ($value) {
+						echo '<option value="'."{$value}{$split}{$shipName}".'">'.$shipName.'</option>';
 						}
 					}
 				}
 				if($parsed_fleet_json!=NULL){
-					foreach ($parsed_fleet_json as $value) {
-						if ($value) {
-							echo '<option value="'."{$value}{$split}{$fleetName}".'">'.$fleetName.'</option>';
+				foreach ($parsed_fleet_json as $value) {
+					if ($value) {
+						echo '<option value="'."{$value}{$split}{$fleetName}".'">'.$fleetName.'</option>';
 						}
 					}
 				}
 				?>
-			</select>
+				</select>
 			
-		</p>
-		<p><?php //This may end up having a search function attached to it to search for an account vs having to type in an account number?>
-			<label for="Accto">Account to:</label>
-			<input type="number" name="Accto" id="Accto" min="100000000" max="999999999">
-		</p>
-		<p>
-			<label for="trans">Amount to Transfer:</label>
-			<input type="number" name="trans" id="trans" min="1">
-		</p>
-		<p>
-			<label for="notes">Notes:</label>
-			<input type="text" name="tranNotes" maxlength="50" onkeyup="textCounter(this,'tranCount',50);">
-			<input disabled  maxlength="3" size="3" value="50" id="tranCount">
-		</p>
-	</fieldset>
-
-	<p>
-		<input type="hidden" name="delim" value="tran">
-		<input type="submit" name="tran" value="Transfer" />
-		<input type="reset" value="Clear" />
-		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
-	</p>
-</form>
+				</p>		
+			<p><?php //This may end up having a search function attached to it to search for an account vs having to type in an account number?>
+				<label for="Accto">Account to:</label>
+				<input type="number" name="Accto" id="Accto" min="100000000" max="999999999">
+			</p>
+			<p>
+				<label for="trans">Amount to Transfer:</label>
+				<input type="number" name="trans" id="trans" min="1">
+			</p>
+			<p>
+				<label for="notes">Notes:</label>
+				<input type="text" name="tranNotes" maxlength="50" onkeyup="textCounter(this,'tranCount',50);">
+				<input disabled  maxlength="3" size="3" value="50" id="tranCount">
+			</p>
+			<p>
+				<input type="hidden" name="delim" value="tran">
+				<input type="submit" name="tran" value="Transfer" />
+				<input type="reset" value="Clear" />
+				<input type="button" name="button" value="Cancel" onclick="Cancel()" />
+			</p>
+		</div>
+		</fieldset>
+		</form>
 
 <div class="tellDepositFormdiv">
 <form name="Deposit"method="POST" action="Javascript/tellmaketran.php" id="tellDepositForm">
+	<fieldset>
+	<div class = "col-sm">
 	<legend>Deposit:</legend>
 		<p><?php
 		//echo $name;
@@ -101,7 +105,7 @@
 			<input type="text" name="deptNotes" maxlength="50" onkeyup="textCounter(this,'deptCount',50);">
 			<input disabled  maxlength="3" size="3" value="50" id="deptCount">
 		</p>
-	</fieldset>
+	
 
 	<p>
 		<input type="hidden" name="delim" value="dept">
@@ -109,11 +113,15 @@
 		<input type="reset" value="Clear" />
 		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
 	</p>
+	</div>
+	</fieldset>
 </form>
 </div>
 
 <div class="tellWithdrawFormdiv">
 <form name="Withdraw"method="POST" action="Javascript/tellmaketran.php" id="tellWithdrawForm">
+	<fieldset>
+	<div class = "col-sm">	
 	<legend>Withdraw:</legend>
 		<p><?php
 		//echo $name;
@@ -155,7 +163,7 @@
 			<input type="text" name="withNotes" maxlength="50" onkeyup="textCounter(this,'withCount',50);">
 			<input disabled  maxlength="3" size="3" value="50" id="withCount">
 		</p>
-	</fieldset>
+	
 
 	<p>
 		<input type="hidden" name="delim" value="with">
@@ -163,15 +171,33 @@
 		<input type="reset" value="Clear" />
 		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
 	</p>
+	</div>
+	</fieldset>
 </form>
-</div>
 
-<p>
-	<input type = "submit" name= "submit" value = "Add Ship/Household"? class="submit2">
-</p>
-<p>
-	<input type = "submit" name= "submit" value = "Add Fleet/Alliance"? class="submit3">
-</p>
+</div>
+</div>
+</div>	
+
+<div class = "container" id = "SFEdits">
+	<div class = "row">
+		<div class = "col-lg-2">
+			<p>
+				<input type = "submit" name= "submit" value = "Add Ship/Household"?>
+			</p>
+		</div>
+		<div class = "col-lg-2">
+			<p>
+				<input type = "submit" name= "submit" value = "Add Fleet/Alliance"?>
+			</p>
+		</div>
+		<div class = "col-lg-2">
+			<p>
+				<input type = "submit" name= "submit" value = "Edit User"?>
+			</p>
+		</div>
+	</div>
+</div>
 
 <script type="text/javascript">
 	function Cancel(){
