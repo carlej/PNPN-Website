@@ -63,28 +63,32 @@
 		}
 		mysqli_close($con);
 		//creates the basic inputs for the search file to find an user/account?>
-		<form method="POST" id="search">
+		<form method="POST">
 			<fieldset>
-				<label>Search by:</label>
-				<select name="type" class="SearchBy">
-					<option value="Pname">Pirate Name</option>
-					<option value="Fname">First Name</option>
-					<option value="Lname">Last Name</option>
-					<option value="Username">Email</option>
-					<option value="shipID" style="display:none;">shipID</option>
-					<option value="Ship">Ship/House</option>
-					<option value="fleetID" style="display:none;">fleetID</option>
-					<option value="Fleet">Fleet/Alliance</option>
-				</select>
-				<input type="search" class="required" name="input" id="input" style="width: 38em">
-				<input type="submit" name= "submit" value="Search" class="submit">
-				<input type="hidden" name="new" value="new" class="submit">
-				<p>
-					<input type = "submit" name= "submit" value = "Add Ship/Household"? class="submit2">
-				</p>
-				<p>
-					<input type = "submit" name= "submit" value = "Add Fleet/Alliance"? class="submit3">
-				</p>
+				<div class = "container" id="SearchBy">
+					<div class = "d-flex-row">
+						<div calss = "col-2">
+							<select name="type" style="margin-left: 1em; margin-bottom: 0.5em">
+								<option>Search By:</option>
+								<option value="Pname">Pirate Name</option>
+								<option value="Fname">First Name</option>
+								<option value="Lname">Last Name</option>
+								<option value="Username">Email</option>
+								<option value="shipID" style="display:none;">shipID</option>
+								<option value="Ship">Ship/House</option>
+								<option value="fleetID" style="display:none;">fleetID</option>
+								<option value="Fleet">Fleet/Alliance</option>
+							</select>
+						</div>
+						<div class = "col" style="margin-bottom: 0.5em; font-family: ariel">
+							<input type="search" class="required" name="input" id= "SearchBox">
+						</div>
+						<div class = "col">
+							<input type="submit" name= "submit" value="Search" class="submit">
+							<input type="hidden" name="new" value="new" class="submit">
+						</div>
+					</div>
+				</div>
 			</fieldset>
 		</form>
 

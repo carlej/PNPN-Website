@@ -18,13 +18,13 @@
 		$_SESSION['hold']=$searchUserName;
 		$_SESSION['stype']="shipID";
 		//$user=$_SESSION['hold'];?>
+		<?php include("Javascript/telltranscript.php");?>
 		<div><?php include "Views/Partials/showAccs.php";?></div>
 		<div><?php include "Views/Partials/showhist.php";?></div>
 		<?php
 		mysqli_close($con);
 		$perm = $_SESSION['perm'];
 		$_SERVER["REQUEST_METHOD"]=NULL;
-		include("Javascript/telltranscript.php");
 		//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
 	}
@@ -56,17 +56,19 @@
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']="shipID";
 			//$user=$_SESSION['hold'];
+			include("Javascript/telltranscript.php");
 			include "Views/Partials/showAccs.php";
 			include "Views/Partials/showhist.php";
 			mysqli_close($con);
 			$perm = $_SESSION['perm'];
 			$_SERVER["REQUEST_METHOD"]=NULL;
-			include("Javascript/telltranscript.php");
 			//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
 		}
 		else{
-			echo '<div class="NoneFound">There are no accounts that match that search!</div>';
+			echo '<div class="container" id = "NoneFound">
+						There are no accounts that match that search!
+				</div>';
 		}
 	}
 	elseif ($method == "fleetID") {
@@ -81,12 +83,12 @@
 		$_SESSION['hold']=$searchUserName;
 		$_SESSION['stype']="fleetID";
 		//$user=$_SESSION['hold'];
+		include("Javascript/telltranscript.php");
 		include "Views/Partials/showAccs.php";
 		include "Views/Partials/showhist.php";
 		mysqli_close($con);
 		$perm = $_SESSION['perm'];
 		$_SERVER["REQUEST_METHOD"]=NULL;
-		include("Javascript/telltranscript.php");
 		//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
 	}
@@ -118,17 +120,19 @@
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']="fleetID";
 			//$user=$_SESSION['hold'];
+			include("Javascript/telltranscript.php");
 			include "Views/Partials/showAccs.php";
 			include "Views/Partials/showhist.php";
 			mysqli_close($con);
 			$perm = $_SESSION['perm'];
 			$_SERVER["REQUEST_METHOD"]=NULL;
-			include("Javascript/telltranscript.php");
 			//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
 		}
 		else{
-			echo '<div class="NoneFound">There are no accounts that match that search!</div>';
+			echo '<div class="container" id = "NoneFound">
+						There are no accounts that match that search!
+				</div>';
 		}
 	}
 	else{
@@ -188,17 +192,20 @@
 			$_SESSION['hold']=$searchUserName;
 			$_SESSION['stype']=$method;
 			//$user=$_SESSION['hold'];
+			include("Javascript/telltranscript.php");
 			include "Views/Partials/showAccs.php";
 			include "Views/Partials/showhist.php";
 			mysqli_close($con);
 			$perm = $_SESSION['perm'];
 			$_SERVER["REQUEST_METHOD"]=NULL;
-			include("Javascript/telltranscript.php");
+			
 			//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."norm".'" /></p></form></html>';
 		}
 		else{
-			echo '<div class="NoneFound">There are no accounts that match that search!</div>';
+			echo '<div class="container" id = "NoneFound">
+						There are no accounts that match that search!
+				</div>';
 		}
 	}
 ?>
