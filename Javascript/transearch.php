@@ -20,9 +20,11 @@
 		
 		$searchUserName=$row[0];
 		
-		$_SESSION['hold']=$shipName;
-		$_SESSION['stype']="shipID";
-		//$user=$_SESSION['hold'];
+		$_SESSION['nest']=$shipName;
+		$_SESSION['multsearch']=array('1');
+		$_SESSION['stype']=NULL;
+		//$_SESSION['stype']="shipID";
+		//$user=$_SESSION['nest'];
 		////include "Views/Partials/showAccs.php";
 		////include "Views/Partials/showhist.php";
 		
@@ -44,7 +46,10 @@
 			<?php
 			$array=NULL;
 			$array = $resultShip->fetch_all(MYSQLI_NUM);
-			echo '<form method="POST" id="SearchBy2"><fieldset><label>Search by: </label><select name="input">';
+			$_SESSION['multsearch']=$array;
+			$_SESSION['stype']="shipID";
+			/*
+			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
 			foreach ($array as $key => $value) {//this will desplay the name of each captain as each should be different
 				//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
@@ -52,11 +57,12 @@
 			}
 			//echo '</form>';
 			$input2 = mysqli_real_escape_string($con, $_POST['input']);
-			$_SESSION['stype']="shipID";
+			
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="new"></fieldset></form>'; ?>
-			</div>
+			</div>*/?>
+			<script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script>
 		
-		<?php
+		<?php 
 		}
 		elseif (mysqli_num_rows($resultShip)==1) { //returns the one account that was found or selected
 			$searched=true;
@@ -71,9 +77,10 @@
 			
 			$shipName=$rowShip[1];
 			$_SESSION['shipName']=$input;
-			$_SESSION['hold']=$shipName;
-			$_SESSION['stype']="shipID";
-			//$user=$_SESSION['hold'];
+			$_SESSION['nest']=$shipName;
+			$_SESSION['multsearch']=array('1');
+			$_SESSION['stype']=NULL;
+			//$user=$_SESSION['nest'];
 			//include "Views/Partials/showAccs.php";
 			//include "Views/Partials/showhist.php";
 			
@@ -86,7 +93,7 @@
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
 		}
 		else{
-			echo '<div class="NoneFound"> There are no accounts that match your search! </div>';
+			echo '<script type="text/javascript">alert("There are no accounts that match your search!");</script>';
 		}
 	}
 	elseif ($method == "fleetID") {
@@ -102,9 +109,10 @@
 		
 		$fleetName=$rowFleet[1];
 		$searchUserName=$row[0];
-		$_SESSION['hold']=$fleetName;
-		$_SESSION['stype']="fleetID";
-		//$user=$_SESSION['hold'];
+		$_SESSION['nest']=$fleetName;
+		$_SESSION['multsearch']=array('1');
+		$_SESSION['stype']=NULL;
+		//$user=$_SESSION['nest'];
 		//include "Views/Partials/showAccs.php";
 		//include "Views/Partials/showhist.php";
 		
@@ -129,7 +137,10 @@
 			<?php
 			$array=NULL;
 			$array = $resultFleet->fetch_all(MYSQLI_NUM);
-			echo '<form method="POST" id="SearchBy2"><fieldset><label>Search by: </label><select name="input">';
+			$_SESSION['multsearch']=$array;
+			$_SESSION['stype']="fleetID";
+			/*
+			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
 			foreach ($array as $key => $value) {
 				//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
@@ -137,9 +148,11 @@
 			}
 			//echo '</form>';
 			$input2 = mysqli_real_escape_string($con, $_POST['input']);
-			$_SESSION['stype']="fleetID";
+			
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="new"></fieldset></form>'; ?>
-			</div>
+			</div>*/
+			?>
+			<script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script>
 		
 		<?php
 		}
@@ -155,9 +168,10 @@
 			
 			$fleetName=$rowFleet[1];
 			$searchUserName=$row[0];
-			$_SESSION['hold']=$fleetName;
-			$_SESSION['stype']="fleetID";
-			//$user=$_SESSION['hold'];
+			$_SESSION['nest']=$fleetName;
+			$_SESSION['multsearch']=array('1');
+			$_SESSION['stype']=NULL;
+			//$user=$_SESSION['nest'];
 			//include "Views/Partials/showAccs.php";
 			//include "Views/Partials/showhist.php";
 			
@@ -170,7 +184,7 @@
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
 		}
 		else{
-			echo '<div class="NoneFound"> There are no accounts that match your search! </div>';
+			echo '<script type="text/javascript">alert("There are no accounts that match your search!");</script>';
 		}
 	}
 	else{
@@ -183,7 +197,9 @@
 			<?php
 			$array = NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
-			echo '<form method="POST" id="SearchBy2"><fieldset><label>Search by: </label><select name="input">';
+			$_SESSION['multsearch']=$array;
+			/*
+			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
 			foreach ($array as $key => $value) {
 				//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
@@ -192,7 +208,9 @@
 			//echo '</form>';
 			$input2 = mysqli_real_escape_string($con, $_POST['input']);
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="new"></fieldset></form>'; ?>
-			</div>
+			</div>*/
+			?>
+			<script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script>
 		
 		<?php
 		}
@@ -220,9 +238,10 @@
 			$accnum = $parsed_json['id'];
 			$_SESSION['temp']=$accnum[0];
 			$searchUserName=$row[0];
-			$_SESSION['hold']=$name;
-			$_SESSION['stype']=$method;
-			//$user=$_SESSION['hold'];
+			$_SESSION['nest']=$name;
+			$_SESSION['multsearch']=array('1');
+			$_SESSION['stype']=NULL;
+			//$user=$_SESSION['nest'];
 			//include "Views/Partials/showAccs.php";
 			//include "Views/Partials/showhist.php";
 			
@@ -236,7 +255,7 @@
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."norm".'" /></p></form></html>';
 		}
 		else{
-			echo '<div class="NoneFound"> There are no accounts that match your search! </div>';
+			echo '<script type="text/javascript">alert("There are no accounts that match your search!");</script>';
 		}
 	}
 ?>

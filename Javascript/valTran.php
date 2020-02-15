@@ -16,16 +16,14 @@ $trans=$_POST['trans'];
 		$resultIn = mysqli_query($con, $queryIn);
 		$row2=mysqli_fetch_row($resultIn);
 		if (mysqli_num_rows($resultIn)==1){ //checks that the account your tranfering to exists
-			$valid=true;
+			$valid=1;
 		}
 		else{
-			echo '<script type="text/javascript">alert("That account does not exist");</script>';
-			$valid=false;
+			$valid=2;
 		}
 	}
 	elseif($trans<$row[0]){
-		echo '<script type="text/javascript">alert("You do not have anough money");</script>';
-		$valid=false;
+		$valid=0;
 	}
 }
 ?>
