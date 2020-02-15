@@ -24,13 +24,13 @@
 				<div class = "row" id ="ButtonsRow">
 				<div class = "col-6" style="padding-right: 0.05em;">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b"): ?>
-						<a href="/PNPN-Website/bank.php" class="PersonalPressed">Personal</a>
+						<a href="/PNPN-Website/bank.php" class="PersonalPressed" onclick="Cancel()">Personal</a>
 						
 					<?php endif;?>
 				</div>
 				<div class = "col-6" style = "padding-left: 0.05em;">
-					<?php if ($url=="/PNPN-Website/bank.php"):?>
-					<a href="/PNPN-Website/teller.php" class="TellerButton">Teller</a>
+					<?php if ($url=="/PNPN-Website/bank.php" && $_SESSION['perm']=="b"):?>
+					<a href="/PNPN-Website/teller.php" class="TellerButton" onclick="Cancel()">Teller</a>
 					
 					<?php endif;?>
 				</div>
@@ -47,13 +47,13 @@
 				<div class = "row">
 				<div class = "col-sm-6">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b"): ?>
-						<a href="/PNPN-Website/bank.php" class="PersonalPressed2">Personal</a>
+						<a href="/PNPN-Website/bank.php" class="PersonalPressed2" onclick="Cancel()">Personal</a>
 						
 					<?php endif;?>
 				</div>
 				<div class = "col-sm-6">
-					<?php if ($url=="/PNPN-Website/bank.php"):?>
-					<a href="/PNPN-Website/teller.php" class="TellerButton2">Teller</a>
+					<?php if ($url=="/PNPN-Website/bank.php" && $_SESSION['perm']=="b"):?>
+					<a href="/PNPN-Website/teller.php" class="TellerButton2" onclick="Cancel()">Teller</a>
 					
 					<?php endif;?>
 				</div>
@@ -126,3 +126,10 @@
 	</body>
 
 </html>
+
+<script type="text/javascript">
+	function Cancel(){
+		load('Javascript/clear.php');
+		window.location.href='/PNPN-Website/bank.php';
+	}
+</script>

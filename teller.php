@@ -11,7 +11,11 @@
 		else{
 			echo "Please login to view this page.";
 			header("Location: /PNPN-Website/bank.php");
-		}
+		}/*
+		echo $_SESSION['stype'];
+		echo $_SESSION['hold'];
+		echo $_SESSION['nest'];
+		echo $_SESSION['multsearch'][0][0];*/
 		?>
 
 		<meta name="viewport" content="width=device-width, user-scalable=no">
