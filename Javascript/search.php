@@ -18,7 +18,6 @@
 		$_SESSION['hold']=$searchUserName;
 		$_SESSION['stype']="shipID";
 		//$user=$_SESSION['hold'];?>
-
 		<div class = "container">
 				<div class = "row">
 					<?php include "Javascript/telltranscript.php"; ?>

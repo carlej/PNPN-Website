@@ -10,6 +10,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
 	$trans = mysqli_real_escape_string($con, $_POST['trans']);
 	$notes = mysqli_real_escape_string($con, $_POST['notes']);
+	$name = mysqli_real_escape_string($con, $_POST['name']);
 	//$user=$_SESSION['username'];
 	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
 		//header("Location: /PNPN-Website/transfer.php");
@@ -39,7 +40,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$resultHistTo= mysqli_query($con, $queryHistTo);
 			$rowHistTo=mysqli_fetch_row($resultHistTo);
 			$parsed_jsonHistTo=json_decode($rowHistTo[0],true);
-			$dep=["Transfered",$temp[1],$Accto,$trans,$notes];
+			$dep=["Transfered",$temp[1],$name,$trans,$notes];
 			$parsed_jsonHistTo[$timeStamp]=$dep;
 			$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
 			$queryHistTo="UPDATE accounts SET history = '$enco_jsonHistTo' WHERE accounts.ID = '$Accto'";
@@ -49,7 +50,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Transfered",$temp[1],$Accto,$trans,$notes];
+			$tran=["Transfered",$temp[1],$name,$trans,$notes];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$temp[0]'";
@@ -57,8 +58,10 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			//header("Location: /PNPN-Website/transfer.php");//refreshes page to reflect new ballance
 			//header("Location: /PNPN-Website/bank.php");
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
-			$_SESSION['hold']="hold";
+			$_SESSION['nest']="hold";
 			$_SESSION['temp']="temp";
+			$_SESSION['multsearch']=array('1');
+			$_SESSION['stype']=NULL;
 			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
 		}
 		else{

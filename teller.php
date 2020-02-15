@@ -26,11 +26,9 @@
 				<div class = "row" id ="ButtonsRow">
 					<div class = "col-6" style="padding-right: 0.05em;">
 						<a href="/PNPN-Website/bank.php" class="PersonalButton">Personal</a>
-						<?php $_SESSION['hold']='hold'; ?>
 					</div>
 					<div class = "col-6" style = "padding-left: 0.05em;">
 						<a href="/PNPN-Website/teller.php" class="TellerPressed">Teller</a>
-						<?php $_SESSION['hold']='hold'; ?>
 					</div>
 				</div>
 			</div>
@@ -44,11 +42,9 @@
 				<div class = "row">
 				<div class = "col-sm-6">
 						<a href="/PNPN-Website/bank.php" class="PersonalButton2">Personal</a>
-						<?php $_SESSION['hold']='hold'; ?>
 				</div>
 				<div class = "col-sm-6">
 					<a href="/PNPN-Website/teller.php" class="TellerPressed2">Teller</a>
-					<?php $_SESSION['hold']='hold'; ?>
 				</div>
 				</div>
 			</div>
