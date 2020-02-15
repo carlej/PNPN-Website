@@ -52,7 +52,7 @@
 		</div>
 
 	</head>
-	<body>
+	<body class = "TellerAccounts">
 		<?php
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			include 'Javascript/Connections/convar.php';
@@ -103,7 +103,8 @@
 			$_POST['type']=$_SESSION['stype'];//"Username";
 			$_POST['input']=$_SESSION['hold'];
 		}
-		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
+		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") { 
+		
 			include "Javascript/search.php";
 			//echo $_POST['input'];
 		}

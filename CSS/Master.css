@@ -474,6 +474,11 @@ padding:0px;
 	text-decoration: none;
 }
 
+.TellerAccounts #ShowAccounts {
+	margin-top: 1em;
+	margin-left: -1em;
+}
+
 #ShowAccounts {
 	font-family: pirates;
 	font-size: 1.6em;
@@ -499,6 +504,11 @@ li {
 	display: block;
 }
 
+.TellerAccounts #HistBox {
+	margin-left: 1.5em;
+	margin-top: 1em;
+}
+
 #HistBox {
 	border: .1em solid;
 	overflow: auto;
@@ -507,6 +517,7 @@ li {
 	width: 90%;
 	max-width: 76em;
 	text-align: left;
+	margin-bottom: 2em;
 }
 
 @media (max-width: 992px) {
@@ -520,6 +531,12 @@ li {
 	#HistBox {
 		margin-top: 3em;
 		max-height: 30em;
+	}
+}
+
+@media (max-width: 992px) {
+	.TellerAccounts #HistBox {
+		margin-left: 1em;
 	}
 }
 
@@ -649,3 +666,4 @@ li {
 	font-family: pirates;
 	font-size: 1em;
 }
+
