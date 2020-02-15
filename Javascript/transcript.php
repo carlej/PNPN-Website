@@ -1,11 +1,14 @@
+<div class = "container" id = "UserTransfer">
+	<div class = "d-flex justify-content-left"> 
 <form name="transfer" method="POST" id="transferForm">
 	<fieldset>
-		<legend>Transfer:</legend>
+		<div class = "col-sm">
+		<legend style="border-bottom: solid 0.05em;">Transfer:</legend>
 		<p><?php
 		$split="-!split!-";
 		//echo $split;
 		?></p>
-		<p>
+		<p style="margin-bottom: -0.3em">
 			<label>Account from:</label>
 			<select name="Accfrom">
 				<?php
@@ -32,9 +35,12 @@
 			</select>
 			
 		</p>
+		<p>
 		<?php if($_SESSION['hold']=='hold'): ?>
-		<div id="searcher">
-			<select name="type" class="SearchBy" >
+		<p>
+		<p id="searcher">
+			<p style="margin-bottom: 0em; margin-top: -0.7em;">Account to:</p>
+			<select name="type" class="SearchBy3" style="margin-bottom: 0.3em">
 				<option>Search by:</option>
 				<option value="Pname">Pirate Name</option>
 				<option value="Fname">First Name</option>
@@ -45,39 +51,43 @@
 				<option value="fleetID" style="display:none;">fleetID</option>
 				<option value="Fleet">Fleet/Alliance</option>
 			</select>
-			<input type="text" required name="input" id="input" style="width: 38em">
+			<input type="text" required name="input" id="input" style="width: 95%; font-family: arial; margin-bottom: 0.3em">
 			<input type="submit" name= "submit" value="Search" class="submit">
 			<input type="hidden" name="new" value="new" class="submit">
-		</div>
+		</p>
+		</p>
 		<?php else: ?>	
-		<p id= "transearched">
+		<p id= "transearched" style="margin-top: -0.5em">
 			<label for="Accto">Account to:</label>
 			<input disabled  value=<?php echo $_SESSION['hold'] ?>>
-			<input type="hidden" value= <?php echo $_SESSION['temp']; ?> name="Accto" id="Accto">
+			<input type="hidden" value= <?php echo $_SESSION['temp'];?> name= "Accto" id="Accto">
 		</p>
-
 		<?php endif; ?>
 				
 		<!--<p>
 			<label for="Accto">Account to:</label>
 			<input type="number" name="Accto" id="Accto" min="100000000" max="999999999">
 		</p>-->
-		<p>
-			<label for="trans">Amount to Transfer:</label>
-			<input type="number" name="trans" id="trans" min="1">
+		
+		<p style="margin-top: -0.7em">
+			<label for="trans" style="margin-bottom: -1em;">Amount to Transfer:</label>
+			<input type="number" name="trans" id="trans" min="1" style="width: 85%" />
 		</p>
-		<p>
+		<p style="margin-top: -0.5em">
 			<label for="notes">Notes:</label>
-			<input type="text" name="notes" maxlength="100" onkeyup="textCounter(this,'tranCount',100);">
-			<input disabled  maxlength="3" size="3" value="100" id="tranCount">
+			<input type="text" name="notes" maxlength="50" style="width: 68%" />
 		</p>
-	</fieldset>
-	<p>
+	
+	<p style="margin-top: -0.5em">
 		<input type="submit" name="submit" value="Transfer" />
 		<input type="submit" name="submit" value="Clear" />
 		<input type="submit" name="submit" value="Cancel" />
 	</p>
+	</div>
+	</fieldset>
 </form>
+</div>
+</div>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {

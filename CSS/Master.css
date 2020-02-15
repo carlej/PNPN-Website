@@ -1,7 +1,6 @@
 /*Adds Pieces of Eight font style*/
 @font-face { font-family: Pirates; src: url('Pieces of Eight Font/Pieces of Eight.ttf'); } 
 
-
 body{
 	
 margin:0px;
@@ -149,6 +148,7 @@ padding:0px;
 	top: 2em;
 	left: 2em;
 	opacity: 0.7;
+	overflow: hidden;
 }
 
 .SideStripe img {
@@ -161,6 +161,7 @@ padding:0px;
 	top: 2em;
 	left: 2em;
 	opacity: 0.7;
+	overflow: hidden;
 }
 
 #SwitchButtons {
@@ -559,6 +560,21 @@ li {
 	}
 }
 
+.NoneFound {
+	font-family: pirates;
+	font-size: 1.1em;
+	color: red;
+	text-align: left
+	margin-top: -1em;
+	margin-left: 5em;
+}
+
+@media (max-width: 992px) {
+	.NoneFound {
+		margin-left: 0.5em;
+	}
+}
+
 .SSearch {
 	font-family: pirates;
 	font-size: 1.1em;
@@ -613,4 +629,23 @@ li {
 	font-size: 1em;
 	margin-top: 1em;
 	margin-left: 1em;
+}
+
+#UserTransfer {
+	font-size: 1em;
+	font-family: pirates;
+	margin-top: 2em;
+	margin-left: 6em;
+}
+
+@media (max-width: 992px) {
+	#UserTransfer {
+		margin-top: 1em;
+		margin-left: 0.5em;
+	}
+}
+
+#PSSearch {
+	font-family: pirates;
+	font-size: 1em;
 }
