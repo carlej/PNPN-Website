@@ -20,7 +20,9 @@
 		if ($_SESSION['clear']!=$_SERVER['PHP_SELF']) {
 			include "Javascript/clear.php";
 		}
+		//echo $_SESSION['clear'];
 		$_SESSION['clear']=$_SERVER['PHP_SELF'];
+		//echo $_SESSION['clear'];
 		?>
 
 		<meta name="viewport" content="width=device-width, user-scalable=no">
