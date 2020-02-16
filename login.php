@@ -58,6 +58,8 @@
 				$_SESSION['multsearch']=array('1');
 				$_SESSION['stype']=NULL;
 				$_SESSION['nest']="hold";
+				$_SESSION['nstype']=NULL;
+				$_SESSION['clear']=NULL;
 				echo $perm[0];
 				header("Location: /PNPN-Website/bank.php");
 			}

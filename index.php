@@ -15,7 +15,7 @@
 		include("Views/Partials/header.php");
 		//echo $_SERVER['HTTP_HOST'];
 		//echo $_SERVER['PHP_SELF'];
-		header("Location: /PNPN-Website/bank.php");?>
+		?><script type="text/javascript">window.location.href="/PNPN-Website/bank.php"</script><?php?>
 
 		
 	</head>

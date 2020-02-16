@@ -15,7 +15,7 @@
 		$parsed_ship_json=$parsed_ship_json['id'];
 		$searchUserName=$row[0];
 		
-		$_SESSION['hold']=$searchUserName;
+		$_SESSION['hold']=$input;
 		$_SESSION['stype']="shipID";
 		//$user=$_SESSION['hold'];?>
 		<div class = "container">
@@ -58,7 +58,7 @@
 							//echo '</form>';
 							$input2 = mysqli_real_escape_string($con, $_POST['input']);
 							$_SESSION['stype']="shipID";
-							echo '</select><label for="input"></label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="new">';?>
+							echo '</select><label for="input"></label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="1">';?>
 							</div>
 						</div>
 					</div>
@@ -71,8 +71,7 @@
 			$parsed_ship_json=json_decode($rowShip[4],true);
 			$parsed_ship_json=$parsed_ship_json['id'];
 			$shipName=$rowShip[1];
-			$_SESSION['shipName']=$input;
-			$_SESSION['hold']=$searchUserName;
+			$_SESSION['hold']=$input;
 			$_SESSION['stype']="shipID";
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">
@@ -108,7 +107,7 @@
 		$parsed_fleet_json=$parsed_fleet_json['id'];
 		$fleetName=$rowFleet[1];
 		$searchUserName=$row[0];
-		$_SESSION['hold']=$searchUserName;
+		$_SESSION['hold']=$input;
 		$_SESSION['stype']="fleetID";
 		//$user=$_SESSION['hold']; ?>
 		<div class = "container">
@@ -151,7 +150,7 @@
 							//echo '</form>';
 							$input2 = mysqli_real_escape_string($con, $_POST['input']);
 							$_SESSION['stype']="fleetID";
-							echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="new">';?>
+							echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="1">';?>
 							</div>
 						</div>
 					</div>
@@ -164,7 +163,7 @@
 			$parsed_fleet_json=$parsed_fleet_json['id'];
 			$fleetName=$rowFleet[1];
 			$searchUserName=$row[0];
-			$_SESSION['hold']=$searchUserName;
+			$_SESSION['hold']=$input;
 			$_SESSION['stype']="fleetID";
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">
@@ -210,7 +209,7 @@
 							}
 							//echo '</form>';
 							$input2 = mysqli_real_escape_string($con, $_POST['input']);
-							echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="new">';?>
+							echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="1">';?>
 							</div>
 						</div>
 					</div>
@@ -223,6 +222,10 @@
 			$name=NULL;
 			$fleetName=NULL;
 			$shipName=NULL;
+			
+			
+			
+			
 			if ($row[5]!=NULL) {
 				$name=$row[5];
 			}
@@ -254,7 +257,7 @@
 				$parsed_fleet_json=json_decode($rowFleet[4],true);
 				$parsed_fleet_json=$parsed_fleet_json['id'];
 			}
-			$_SESSION['hold']=$searchUserName;
+			$_SESSION['hold']=$input;
 			$_SESSION['stype']=$method;
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">

@@ -12,6 +12,15 @@
 			echo "Please login to view this page.";
 			header("Location: /PNPN-Website/bank.php");
 		}
+		//echo $_SESSION['stype'];
+		//echo $_SESSION["hold"];
+		//echo $_SESSION['nstype'];
+		//echo $_SESSION["nest"];
+		//echo $_SESSION['multsearch'][0][0];
+		if ($_SESSION['clear']!=$_SERVER['PHP_SELF']) {
+			include "Javascript/clear.php";
+		}
+		$_SESSION['clear']=$_SERVER['PHP_SELF'];
 		?>
 
 		<meta name="viewport" content="width=device-width, user-scalable=no">
@@ -95,7 +104,7 @@
 		<?php 
 		error_reporting(E_ERROR);
 		if ($_POST['new']) {
-			$_SESSION['hold']="hold";
+			include "Javascript/clear.php";
 		}
 		if ($_SESSION['hold']!="hold") {
 			$_SERVER["REQUEST_METHOD"] = "POST";
@@ -105,6 +114,9 @@
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
 			include "Javascript/search.php";
+			if($_POST['ntype']){
+				include "Javascript/telltransearch.php";
+			}
 			//echo $_POST['input'];
 		}
 		else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Ship/Household") {
@@ -114,6 +126,15 @@
 		else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Fleet/Alliance") {
 		header("Location: /PNPN-Website/addFleet.php");
 		}
+		else if ($_SERVER["REQUEST_METHOD"] == "POST" && ($_POST['submit'] == "Cancel" || $_POST['submit'] == "Clear")){
+			include('clear.php');
+			?><script type="text/javascript">window.location.href='/PNPN-Website/teller.php'</script><?php
+			//$_SESSION['nest']="nest";
+			//$_SESSION['temp']="temp";
+			//echo '<script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script>';
+		}
+		
+
 		?>
 	</body>
 
