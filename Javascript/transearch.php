@@ -72,13 +72,14 @@
 			$parsed_json=NULL;
 			$parsed_fleet_json=NULL;
 			$rowShip=mysqli_fetch_row($resultShip);
-			$shipName=$rowShip[1];
+			$shipNameUnedit=$rowShip[1];
 			$parsed_ship_json=json_decode($rowShip[4],true);
 			$accnum=$parsed_ship_json['id'];
 			$_SESSION['temp']=$accnum[0];
 			
 			$shipName=$rowShip[1];
 			$_SESSION['shipName']=$input;
+			$shipName=str_replace(' ', '&nbsp;', $shipNameUnedit);
 			$_SESSION['nest']=$shipName;
 			$_SESSION['multsearch']=array('1');
 			$_SESSION['stype']=NULL;
@@ -171,8 +172,9 @@
 			$accnum=$parsed_fleet_json['id'];
 			$_SESSION['temp']=$accnum[0];
 			
-			$fleetName=$rowFleet[1];
+			$fleetNameUnedit=$rowFleet[1];
 			$searchUserName=$row[0];
+			$fleetName=str_replace(' ', '&nbsp;', $fleetNameUnedit);
 			$_SESSION['nest']=$fleetName;
 			$_SESSION['multsearch']=array('1');
 			$_SESSION['stype']=NULL;
@@ -225,7 +227,7 @@
 			$searched=true;
 			$row = mysqli_fetch_row($resultIn);
 			$username=$row[0];
-			$name=NULL;
+			$nameUnedit=NULL;
 			$fleetName=NULL;
 			$shipName=NULL;
 			$parsed_ship_json=NULL;
@@ -237,6 +239,7 @@
 			else{
 				$name=$row[3].' '.$row[4];
 			}
+			$name=str_replace(' ', '&nbsp;', $nameUnedit);
 			$queryIn = "SELECT Accounts FROM users WHERE Username = '$username'";
 			$resultIn = mysqli_query($con, $queryIn);
 			$row1=mysqli_fetch_row($resultIn);
