@@ -3,8 +3,8 @@
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
 	}
-	$method = $_POST['type'];
-	$input = mysqli_real_escape_string($con, $_POST['input']);
+	$method = $_POST['ntype'];
+	$input = mysqli_real_escape_string($con, $_POST['ninput']);
 	if ($method=="shipID"){//This is an unused search method as I was not sure what i would be searching by and is one of the easy ones to make
 		$queryShip = "SELECT * FROM ship WHERE ID = '$input'";
 		$resultShip= mysqli_query($con,$queryShip);
@@ -21,14 +21,15 @@
 		$searchUserName=$row[0];
 		
 		$_SESSION['nest']=$shipName;
-		$_SESSION['multsearch']=array('1');
 		
-		//$_SESSION['stype']="shipID";
+		$_SESSION['nstype']="shipID";
 		//$user=$_SESSION['nest'];
 		////include "Views/Partials/showAccs.php";
 		////include "Views/Partials/showhist.php";
 		
 		$perm = $_SESSION['perm'];
+		mysqli_close($con);
+		?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
 		/*?><?php*/
 		
 		////include("Javascript/telltranscript.php");
@@ -47,7 +48,9 @@
 			$array=NULL;
 			$array = $resultShip->fetch_all(MYSQLI_NUM);
 			$_SESSION['multsearch']=$array;
-			$_SESSION['stype']="shipID";
+			$_SESSION['nstype']="shipID";
+			mysqli_close($con);
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -74,17 +77,19 @@
 			$parsed_ship_json=json_decode($rowShip[4],true);
 			$accnum=$parsed_ship_json['id'];
 			$_SESSION['temp']=$accnum[0];
-			
+			$_SESSION['nstype']="shipID";
 			$shipName=$rowShip[1];
 			$_SESSION['shipName']=$input;
 			$_SESSION['nest']=$shipName;
-			$_SESSION['multsearch']=array('1');
+
 			
 			//$user=$_SESSION['nest'];
 			//include "Views/Partials/showAccs.php";
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
+			mysqli_close($con);
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
 			?><?php
 			
 			echo '<script type="text/javascript">searched('.$shipName.');</script>';
@@ -106,17 +111,19 @@
 		$parsed_fleet_json=json_decode($rowFleet[4],true);
 		$accnum=$parsed_fleet_json['id'];
 		$_SESSION['temp']=$accnum[0];
-		
+		$_SESSION['nstype']="fleetID";
 		$fleetName=$rowFleet[1];
 		$searchUserName=$row[0];
 		$_SESSION['nest']=$fleetName;
-		$_SESSION['multsearch']=array('1');
+
 		
 		//$user=$_SESSION['nest'];
 		//include "Views/Partials/showAccs.php";
 		//include "Views/Partials/showhist.php";
 		
 		$perm = $_SESSION['perm'];
+		mysqli_close($con);
+		?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
 		?><?php
 		
 		//include("Javascript/telltranscript.php");
@@ -130,7 +137,7 @@
 		$parsed_json=NULL;
 		$parsed_fleet_json=NULL;
 		$fleetName=NULL;
-		
+		$_SESSION['nstype']="fleetID";
 		if (mysqli_num_rows($resultFleet)>1) {//if there are multiple results this makes a drop down list so that you can pick what one you want
 			?>
 			<div class = "container" id = "PSSearch">
@@ -138,7 +145,9 @@
 			$array=NULL;
 			$array = $resultFleet->fetch_all(MYSQLI_NUM);
 			$_SESSION['multsearch']=$array;
-			$_SESSION['stype']="fleetID";
+			$_SESSION['nstype']="fleetID";
+			mysqli_close($con);
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -165,17 +174,19 @@
 			$parsed_fleet_json=json_decode($rowFleet[4],true);
 			$accnum=$parsed_fleet_json['id'];
 			$_SESSION['temp']=$accnum[0];
-			
+			$_SESSION['nstype']="fleetID";
 			$fleetName=$rowFleet[1];
 			$searchUserName=$row[0];
 			$_SESSION['nest']=$fleetName;
-			$_SESSION['multsearch']=array('1');
+
 			
 			//$user=$_SESSION['nest'];
 			//include "Views/Partials/showAccs.php";
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
+			mysqli_close($con);
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
 			?><?php
 			
 			echo '<script type="text/javascript">searched('.$fleetName.');</script>';
@@ -198,6 +209,9 @@
 			$array = NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
 			$_SESSION['multsearch']=$array;
+			$_SESSION['nstype']=$method;
+			mysqli_close($con);
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -239,14 +253,15 @@
 			$_SESSION['temp']=$accnum[0];
 			$searchUserName=$row[0];
 			$_SESSION['nest']=$name;
-			$_SESSION['multsearch']=array('1');
+
 			
 			//$user=$_SESSION['nest'];
 			//include "Views/Partials/showAccs.php";
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
-
+			mysqli_close($con);
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
 			?><?php
 			
 

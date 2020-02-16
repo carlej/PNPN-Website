@@ -11,6 +11,10 @@
 			header ("location:/PNPN-Website/login.php");
 			echo "Please login to view this page.";
 		}
+		if ($_SESSION['clear']!=$_SERVER['PHP_SELF']) {
+			include "Javascript/clear.php";
+		}
+		$_SESSION['clear']=$_SERVER['PHP_SELF'];
 		?>
 
 		<title>Bank</title>

@@ -29,6 +29,7 @@
 		////include "Views/Partials/showhist.php";
 		
 		$perm = $_SESSION['perm'];
+		mysqli_close($con);
 		?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
 		
 		////include("Javascript/telltranscript.php");
@@ -48,6 +49,7 @@
 			$array = $resultShip->fetch_all(MYSQLI_NUM);
 			$_SESSION['multsearch']=$array;
 			$_SESSION['stype']="shipID";
+			mysqli_close($con);
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -85,6 +87,7 @@
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
+			mysqli_close($con);
 			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
 			
 			echo '<script type="text/javascript">searched('.$shipName.');</script>';
@@ -117,6 +120,7 @@
 		//include "Views/Partials/showhist.php";
 		
 		$perm = $_SESSION['perm'];
+		mysqli_close($con);
 		?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
 		
 		//include("Javascript/telltranscript.php");
@@ -139,6 +143,7 @@
 			$array = $resultFleet->fetch_all(MYSQLI_NUM);
 			$_SESSION['multsearch']=$array;
 			$_SESSION['stype']="fleetID";
+			mysqli_close($con);
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -176,6 +181,7 @@
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
+			mysqli_close($con);
 			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
 			
 			echo '<script type="text/javascript">searched('.$fleetName.');</script>';
@@ -198,6 +204,7 @@
 			$array = NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
 			$_SESSION['multsearch']=$array;
+			mysqli_close($con);
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -246,7 +253,7 @@
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
-
+			mysqli_close($con);
 			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
 			
 

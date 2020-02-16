@@ -10,7 +10,6 @@
 		$resultShip= mysqli_query($con,$queryShip);
 		$parsed_ship_json=NULL;
 		$rowShip=mysqli_fetch_row($resultShip);
-		$_SESSION['multsearch']=$rowShip;
 		$shipName=$rowShip[1];
 		$parsed_ship_json=json_decode($rowShip[4],true);
 		$parsed_ship_json=$parsed_ship_json['id'];
@@ -223,10 +222,10 @@
 			$name=NULL;
 			$fleetName=NULL;
 			$shipName=NULL;
-			$_SESSION['nest']="hold";
-			$_SESSION['temp']="temp";
-			$_SESSION['multsearch']=array('1');
-			$_SESSION['stype']=NULL;
+			
+			
+			
+			
 			if ($row[5]!=NULL) {
 				$name=$row[5];
 			}
