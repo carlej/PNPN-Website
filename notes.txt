@@ -1,1 +1,7 @@
-make another nested if to do ship fleet and pers
+To make cancle
+Use on click to move to clear.php
+In clear include req
+Use the $_SESSION['clear'] to ref back to previous page
+
+complete make clear
+same as cancle but without the two two session vars

@@ -146,7 +146,7 @@
 		<input type="submit" name="submit" value="Transfer" />
 		<input type="hidden" name="delim" value="tran">
 		<input type="submit" name="submit" value="Clear" />
-		<input type="submit" name="submit" value="Cancel" />
+		<input type="button" name="button" value="Cancel" onclick="location.href='/PNPN-Website/Javascript/clearall.php';"/>
 		<input type="hidden" name="name" value=<?php echo $_SESSION['nest'] ?>>
 	</p>
 	<?php endif; ?>
@@ -207,7 +207,7 @@
 		<input type="hidden" name="delim" value="dept">
 		<input type="submit" name="dept" value="Deposit" />
 		<input type="reset" value="Clear" />
-		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
+		<input type="button" name="button" value="Cancel" value="Cancel" onclick="location.href='/PNPN-Website/Javascript/clearall.php';"/>
 	</p>
 	</div>
 	</fieldset>
@@ -265,7 +265,7 @@
 		<input type="hidden" name="delim" value="with">
 		<input type="submit" name="dept" value="Withdraw" />
 		<input type="reset" value="Clear" />
-		<input type="button" name="button" value="Cancel" onclick="Cancel()" />
+		<input type="button" name="button" value="Cancel" value="Cancel" onclick="location.href='/PNPN-Website/Javascript/clearall.php';"/>
 	</p>
 	</div>
 	</fieldset>
