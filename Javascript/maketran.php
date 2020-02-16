@@ -10,7 +10,10 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
 	$trans = mysqli_real_escape_string($con, $_POST['trans']);
 	$notes = mysqli_real_escape_string($con, $_POST['notes']);
-	$name = mysqli_real_escape_string($con, $_POST['name']);
+	$tempname = mysqli_real_escape_string($con, $_POST['name']);
+	$string = htmlentities($tempname, null, 'utf-8');
+	$tempname = str_replace("&nbsp;", " ", $string);
+	$name = html_entity_decode($tempname);
 	//$user=$_SESSION['username'];
 	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
 		//header("Location: /PNPN-Website/transfer.php");

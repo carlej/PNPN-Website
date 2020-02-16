@@ -3,8 +3,8 @@
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
 	}
-	$method = $_POST['type'];
-	$input = mysqli_real_escape_string($con, $_POST['input']);
+	$method = $_POST['ntype'];
+	$input = mysqli_real_escape_string($con, $_POST['ninput']);
 	if ($method=="shipID"){//This is an unused search method as I was not sure what i would be searching by and is one of the easy ones to make
 		$queryShip = "SELECT * FROM ship WHERE ID = '$input'";
 		$resultShip= mysqli_query($con,$queryShip);
@@ -21,16 +21,16 @@
 		$searchUserName=$row[0];
 		
 		$_SESSION['nest']=$shipName;
-		$_SESSION['multsearch']=array('1');
-		$_SESSION['stype']=NULL;
-		//$_SESSION['stype']="shipID";
+		
+		$_SESSION['nstype']="shipID";
 		//$user=$_SESSION['nest'];
 		////include "Views/Partials/showAccs.php";
 		////include "Views/Partials/showhist.php";
 		
 		$perm = $_SESSION['perm'];
 		mysqli_close($con);
-		?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+		?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+		/*?><?php*/
 		
 		////include("Javascript/telltranscript.php");
 		//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
@@ -48,8 +48,9 @@
 			$array=NULL;
 			$array = $resultShip->fetch_all(MYSQLI_NUM);
 			$_SESSION['multsearch']=$array;
-			$_SESSION['stype']="shipID";
+			$_SESSION['nstype']="shipID";
 			mysqli_close($con);
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -62,7 +63,7 @@
 			
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="new"></fieldset></form>'; ?>
 			</div>*/?>
-			<script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script>
+			
 		
 		<?php 
 		}
@@ -72,24 +73,25 @@
 			$parsed_json=NULL;
 			$parsed_fleet_json=NULL;
 			$rowShip=mysqli_fetch_row($resultShip);
-			$shipNameUnedit=$rowShip[1];
+			$shipName=$rowShip[1];
 			$parsed_ship_json=json_decode($rowShip[4],true);
 			$accnum=$parsed_ship_json['id'];
 			$_SESSION['temp']=$accnum[0];
-			
-			$shipName=$rowShip[1];
+			$_SESSION['nstype']="shipID";
+			$shipNameUnedit=$rowShip[1];
 			$_SESSION['shipName']=$input;
 			$shipName=str_replace(' ', '&nbsp;', $shipNameUnedit);
 			$_SESSION['nest']=$shipName;
-			$_SESSION['multsearch']=array('1');
-			$_SESSION['stype']=NULL;
+
+			
 			//$user=$_SESSION['nest'];
 			//include "Views/Partials/showAccs.php";
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+			?><?php
 			
 			echo '<script type="text/javascript">searched('.$shipName.');</script>';
 			//include("Javascript/telltranscript.php");
@@ -110,19 +112,20 @@
 		$parsed_fleet_json=json_decode($rowFleet[4],true);
 		$accnum=$parsed_fleet_json['id'];
 		$_SESSION['temp']=$accnum[0];
-		
+		$_SESSION['nstype']="fleetID";
 		$fleetName=$rowFleet[1];
 		$searchUserName=$row[0];
 		$_SESSION['nest']=$fleetName;
-		$_SESSION['multsearch']=array('1');
-		$_SESSION['stype']=NULL;
+
+		
 		//$user=$_SESSION['nest'];
 		//include "Views/Partials/showAccs.php";
 		//include "Views/Partials/showhist.php";
 		
 		$perm = $_SESSION['perm'];
 		mysqli_close($con);
-		?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+		?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+		?><?php
 		
 		//include("Javascript/telltranscript.php");
 		//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
@@ -135,7 +138,7 @@
 		$parsed_json=NULL;
 		$parsed_fleet_json=NULL;
 		$fleetName=NULL;
-		
+		$_SESSION['nstype']="fleetID";
 		if (mysqli_num_rows($resultFleet)>1) {//if there are multiple results this makes a drop down list so that you can pick what one you want
 			?>
 			<div class = "container" id = "PSSearch">
@@ -143,8 +146,9 @@
 			$array=NULL;
 			$array = $resultFleet->fetch_all(MYSQLI_NUM);
 			$_SESSION['multsearch']=$array;
-			$_SESSION['stype']="fleetID";
+			$_SESSION['nstype']="fleetID";
 			mysqli_close($con);
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -158,7 +162,7 @@
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="new"></fieldset></form>'; ?>
 			</div>*/
 			?>
-			<script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script>
+			
 		
 		<?php
 		}
@@ -171,20 +175,21 @@
 			$parsed_fleet_json=json_decode($rowFleet[4],true);
 			$accnum=$parsed_fleet_json['id'];
 			$_SESSION['temp']=$accnum[0];
-			
+			$_SESSION['nstype']="fleetID";
 			$fleetNameUnedit=$rowFleet[1];
 			$searchUserName=$row[0];
 			$fleetName=str_replace(' ', '&nbsp;', $fleetNameUnedit);
 			$_SESSION['nest']=$fleetName;
-			$_SESSION['multsearch']=array('1');
-			$_SESSION['stype']=NULL;
+
+			
 			//$user=$_SESSION['nest'];
 			//include "Views/Partials/showAccs.php";
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+			?><?php
 			
 			echo '<script type="text/javascript">searched('.$fleetName.');</script>';
 			//include("Javascript/telltranscript.php");
@@ -206,7 +211,9 @@
 			$array = NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
 			$_SESSION['multsearch']=$array;
+			$_SESSION['nstype']=$method;
 			mysqli_close($con);
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -219,7 +226,7 @@
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="new"></fieldset></form>'; ?>
 			</div>*/
 			?>
-			<script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script>
+			
 		
 		<?php
 		}
@@ -227,17 +234,17 @@
 			$searched=true;
 			$row = mysqli_fetch_row($resultIn);
 			$username=$row[0];
-			$nameUnedit=NULL;
+			$name=NULL;
 			$fleetName=NULL;
 			$shipName=NULL;
 			$parsed_ship_json=NULL;
 			$parsed_json=NULL;
 			$parsed_fleet_json=NULL;
 			if ($row[5]!=NULL) {
-				$name=$row[5];
+				$nameUnedit=$row[5];
 			}
 			else{
-				$name=$row[3].' '.$row[4];
+				$nameUnedit=$row[3].' '.$row[4];
 			}
 			$name=str_replace(' ', '&nbsp;', $nameUnedit);
 			$queryIn = "SELECT Accounts FROM users WHERE Username = '$username'";
@@ -249,15 +256,16 @@
 			$_SESSION['temp']=$accnum[0];
 			$searchUserName=$row[0];
 			$_SESSION['nest']=$name;
-			$_SESSION['multsearch']=array('1');
-			$_SESSION['stype']=NULL;
+
+			
 			//$user=$_SESSION['nest'];
 			//include "Views/Partials/showAccs.php";
 			//include "Views/Partials/showhist.php";
 			
 			$perm = $_SESSION['perm'];
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+			?><?php
 			
 
 			//include("Javascript/telltranscript.php");

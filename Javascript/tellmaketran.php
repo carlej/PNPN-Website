@@ -12,7 +12,10 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
 	$trans = mysqli_real_escape_string($con, $_POST['trans']);
 	$tranNotes = mysqli_real_escape_string($con, $_POST['tranNotes']);
-	$name = mysqli_real_escape_string($con, $_POST['name']);
+	$tempname = mysqli_real_escape_string($con, $_POST['name']);
+	$string = htmlentities($tempname, null, 'utf-8');
+	$tempname = str_replace("&nbsp;", " ", $string);
+	$name = html_entity_decode($tempname);
 	$tellerTemp=$_SESSION['username'];
 	$queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
 	$resultInTeller = mysqli_query($con, $queryInTeller);
@@ -67,6 +70,10 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			header("Location: /PNPN-Website/teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
+			$_SESSION['nest']="hold";
+			$_SESSION['temp']="temp";
+			$_SESSION['multsearch']=array('1');
+			$_SESSION['nstype']=NULL;
 		}
 		else{
 			//error = "Error that account doesn't exist";
@@ -162,7 +169,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		//header("Location: /PNPN-Website/transfer.php");
 		}
 	}
-	elseif($trans>0){
+	elseif($with>0){
 		//echo "error you don't have enough money";
 		header("Location: /PNPN-Website/teller.php");
 	}
