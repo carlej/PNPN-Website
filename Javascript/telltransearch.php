@@ -78,8 +78,9 @@
 			$accnum=$parsed_ship_json['id'];
 			$_SESSION['temp']=$accnum[0];
 			$_SESSION['nstype']="shipID";
-			$shipName=$rowShip[1];
+			$shipNameUnedit=$rowShip[1];
 			$_SESSION['shipName']=$input;
+			$shipName=str_replace(' ', '&nbsp;', $shipNameUnedit);
 			$_SESSION['nest']=$shipName;
 
 			
@@ -175,8 +176,9 @@
 			$accnum=$parsed_fleet_json['id'];
 			$_SESSION['temp']=$accnum[0];
 			$_SESSION['nstype']="fleetID";
-			$fleetName=$rowFleet[1];
+			$fleetNameUnedit=$rowFleet[1];
 			$searchUserName=$row[0];
+			$fleetName=str_replace(' ', '&nbsp;', $fleetNameUnedit);
 			$_SESSION['nest']=$fleetName;
 
 			
@@ -239,11 +241,12 @@
 			$parsed_json=NULL;
 			$parsed_fleet_json=NULL;
 			if ($row[5]!=NULL) {
-				$name=$row[5];
+				$nameUnedit=$row[5];
 			}
 			else{
-				$name=$row[3].' '.$row[4];
+				$nameUnedit=$row[3].' '.$row[4];
 			}
+			$name=str_replace(' ', '&nbsp;', $nameUnedit);
 			$queryIn = "SELECT Accounts FROM users WHERE Username = '$username'";
 			$resultIn = mysqli_query($con, $queryIn);
 			$row1=mysqli_fetch_row($resultIn);
