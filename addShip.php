@@ -13,35 +13,68 @@
     </head>
     <body>
 
-<form method="post" name="Register" onsubmit="return valadate();" id="addShipForm" >
+        <form method="post" name="Register" id="addShipForm" >                                            
 <fieldset>
     <legend>Group Info:</legend>
     <p>
         <label for="Name">Group Name:</label>
+        <input type="text" name="groupName" required>
         <?php
-        if($_SESSION['hold']=="hold"){
-            echo '<input type="text" class="required" name="name" id="name">';
-            echo '<p><label for="Leader search">Search for Leader:</label>
-        <select name="type"><option value="Pname">Pirate Name</option><option value="Fname">First Name</option><option value="Lname">Last Name</option></select><label for="input">:</label><input type="search" class="required" name="input" id="input"><input type="submit" name= "submit" value="searchShip"></p>';
-        }
-        else{
-            echo '<input type="text" class="required" value="'.$_SESSION['stype'].'"name="name" id="name">';
-            echo '<label for="Leader search">Leader:</label><input type="search" class="required" value="'.$_SESSION['hold'].'"name="input" id="input">';
-        }
+        $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+		if (!$con) {
+			die('Could not connect: ' . mysql_error());
+		}
+        $method = $_SESSION['stype'];
+        $input = $_SESSION['hold'];
+        //echo $input;
+        //echo $method;
+        $queryIn = "SELECT * FROM users WHERE `$method` = '$input'";
+		$resultIn = mysqli_query($con, $queryIn);
+
+		if (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
+			$searched=true;
+			$row = mysqli_fetch_row($resultIn);
+			$username=$row[0];
+			$nameUnedit=NULL;
+			$haveShip = $row[7];
+			if ($row[5]!=NULL) {
+				$nameUnedit=$row[5];
+			}
+			else{
+				$nameUnedit=$row[3].' '.$row[4];
+			}
+			$name=str_replace(' ', '&nbsp;', $nameUnedit);
+			mysqli_close($con);
+		}
+//        echo '<input type="text" class="required" value="'.$_SESSION['stype'].'"name="name" id="name">';
+//        echo '<label for="Leader search">Leader:</label><input type="search" class="required" value="'.$_SESSION['hold'].'"name="input" id="input">';
         ?>
+        <label for="Name">Leader:</label>
+        <input disabled  value=<?php echo $name; ?>>
+        <input type="hidden" name="learder" value=<?php echo $username; ?>>
         
     </p>
 </fieldset>
 
       <p>
         <input type = "submit" name= "submit" value = "Submit ship" />
-        <input type = "reset"  value = "Clear Form" />
-        <input type="button" name="button" value="Cancel" onclick="Cancel()" />
+        <input type="button" name="button" value="Cancel" onclick="location.href='/PNPN-Website/Javascript/clearall.php';" />
       </p>
 </form>
     </body>
 
 </html>
+
+<?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['groupName']){
+	if ($haveShip!=NULL) {
+		echo "You already have a ship";
+	}
+	else{
+		include ("Javascript/makeShip.php");
+	}
+}
+
+?>
 <script type="text/javascript">
     function Cancel(){
         $.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/teller.php")}});
@@ -66,19 +99,6 @@
 //    if (!$con) {
 //        die('Could not connect: ' . mysql_error());
 //    }
-//$_SESSION['stype']=mysqli_real_escape_string($con, $_POST['name']);
 //mysqli_close($con);
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "searchShip") {
-    include "Javascript/searchship.php";
-//    if ($_SESSION['hold']!="hold") {
- //       include "Javascript/makeship.php";
-//    }
-}
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit ship") {
-//    include "Javascript/searchsim.php";
-    if ($_SESSION['hold']!="hold") {
-        include "Javascript/makeship.php";
-    }
-}
 
 ?>

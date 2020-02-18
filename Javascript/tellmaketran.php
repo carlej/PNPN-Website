@@ -105,7 +105,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$result = mysqli_query($con, $accountQuery);
 	$row=mysqli_fetch_row($result);
 	echo $teller;
-	if ($depts <= $row[0] && $depts>0) { //basic error handling
+	if ($depts>0) { //basic error handling
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
 			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
 			$rema = $row[0]+$depts;
