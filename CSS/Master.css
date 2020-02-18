@@ -474,6 +474,22 @@ padding:0px;
 	text-decoration: none;
 }
 
+.bankphp #ShowAccounts {
+	margin-top: 11em;
+}
+
+@media (max-width: 992px) {
+	.bankphp #ShowAccounts {
+		margin-top: 2em;
+		margin-left: -0.5em;
+	}
+}
+
+.TellerAccounts #ShowAccounts {
+	margin-top: 1em;
+	margin-left: -1.5em;
+}
+
 #ShowAccounts {
 	font-family: pirates;
 	font-size: 1.6em;
@@ -499,6 +515,11 @@ li {
 	display: block;
 }
 
+.TellerAccounts #HistBox {
+	margin-left: 1.5em;
+	margin-top: 1em;
+}
+
 #HistBox {
 	border: .1em solid;
 	overflow: auto;
@@ -507,6 +528,7 @@ li {
 	width: 90%;
 	max-width: 76em;
 	text-align: left;
+	margin-bottom: 2em;
 }
 
 @media (max-width: 992px) {
@@ -520,6 +542,12 @@ li {
 	#HistBox {
 		margin-top: 3em;
 		max-height: 30em;
+	}
+}
+
+@media (max-width: 992px) {
+	.TellerAccounts #HistBox {
+		margin-left: 1em;
 	}
 }
 
@@ -649,3 +677,38 @@ li {
 	font-family: pirates;
 	font-size: 1em;
 }
+
+.bankphp .AccountAccess {
+	display: none;
+}
+
+.AccountAccess {
+	font-family: pirates;
+	font-size: 0.9em;
+	text-align: left;
+	border: solid 0.05em;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	width: 95%;
+
+}
+
+@media (max-width: 992px) {
+	.AccountAccess {
+		width: 90%;
+		margin-left: 0em;
+	}
+}
+
+#ShowAccounts .AccountAccess {
+	margin-left: 1.6em;
+}
+
+@media (min-width: 992px) {
+	.TellerAccounts #ShowAccounts {
+	margin-top: 1em;
+	margin-left: -1em;
+	}
+}
+

@@ -30,14 +30,14 @@
         <label for="pirateName" style="font-family: pirates">Pirate Name:</label>
         <input type="text" name="pirateName" id="pirateName" style="width: 12em;">
     </p>
-	<p style="margin-bottom: -0.4em;">
+	<p>
         <label for="Password" style="font-family: pirates;">Password:</label>
-        <input type="text" name="Password" id="Password" minlength="5" maxlength="20" style="width: 12em;" required>
+        <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
     </p>
-			<div style="font-family: pirates; font-size: 0.8em; display:inline-block; margin-bottom: 0.4em">(Password requirement: 5-20 characters)</div>
+
     <p>
         <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
-        <input type="text" name="ConfirmPassword" id="ConfirmPassword" minlength="5" maxlength="20" style="width: 12em;" required>
+        <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required>
     </p>
 </fieldset>
 

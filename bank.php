@@ -70,7 +70,7 @@
 	</head>
 	
 	
-	<body>
+	<body class = "bankphp">
 		<?php
 		include 'Javascript/Connections/convar.php';
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
@@ -127,6 +127,7 @@
 		mysqli_close($con);
 
 		?>
+
 	</body>
 
 </html>
