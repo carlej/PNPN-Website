@@ -234,10 +234,10 @@
 			$parsed_json=NULL;
 			$parsed_fleet_json=NULL;
 			if ($row[5]!=NULL) {
-				$name=$row[5];
+				$nameUnedit=$row[5];
 			}
 			else{
-				$name=$row[3].' '.$row[4];
+				$nameUnedit=$row[3].' '.$row[4];
 			}
 			$name=str_replace(' ', '&nbsp;', $nameUnedit);
 			$queryIn = "SELECT Accounts FROM users WHERE Username = '$username'";

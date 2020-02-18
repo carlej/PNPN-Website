@@ -260,18 +260,20 @@
 				</fieldset>
 			</form>
 		</div>
-		<div class = "col-sm">
-			<legend>Edit Info:</legend>
-			<p>
-				<input type = "submit" name= "submit" value = "Add Ship/Household"?>
-			</p>
-			<p>
-				<input type = "submit" name= "submit" value = "Add Fleet/Alliance"?>
-			</p>
-			<p>
-				<input type = "submit" name= "submit" value = "Edit User"?>
-			</p>
-		</div>
+		<?php if($_SESSION['stype']!='shipID' && $_SESSION['stype']!='fleetID'): ?>
+			<div class = "col-sm">
+				<legend>Edit Info:</legend>
+				<p>
+					<input type = "submit" name= "submit" value = "Add Ship/Household" onclick="location.href='/PNPN-Website/addShip.php';"?>
+				</p>
+				<p>
+					<input type = "submit" name= "submit" value = "Add Fleet/Alliance" onclick="location.href='/PNPN-Website/addFleet.php';"?>
+				</p>
+				<p>
+					<input type = "submit" name= "submit" value = "Edit User"?>
+				</p>
+			</div>
+		<?php endif; ?>
 	</div>
 </div>
 

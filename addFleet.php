@@ -1,46 +1,81 @@
-<?php //this file makes the form that you fill out to make a new fleet/group?>
+<?php //This is the same as for fleet but for a new fleet there is no differnece between the two at this time?>
+
 <!doctype html>
 <html>
-	<head>
-		<?php include("Javascript/Connections/req.php"); 
+    <head>
+        <?php include("Javascript/Connections/req.php"); 
         include 'Javascript/Connections/convar.php';?>
 
-		<meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
 
-		<title>Register</title>
-		<?php include("Views\Partials/header.php");?>
-	</head>
-	<body>
+        <title>Register</title>
+        <?php include("Views\Partials/header.php");?>
+    </head>
+    <body>
 
-		<form method="post" name="Register" onsubmit="return valadate();" id="addForm" >											
+        <form method="post" name="Register" id="addfleetForm" >                                            
 <fieldset>
-	<legend>Group Info:</legend>
+    <legend>Group Info:</legend>
     <p>
         <label for="Name">Group Name:</label>
+        <input type="text" name="groupName" required>
         <?php
-        if($_SESSION['hold']=="hold"){
-            echo '<input type="text" class="required" name="name" id="name">';
-            echo '<p><label for="Leader search">Search for Leader:</label>
-        <select name="type"><option value="Username">Username</option><option value="Pname">Pirate Name</option><option value="Fname">First Name</option><option value="Lname">Last Name</option><option value="Email">Email</option><option value="Pnumber">Phone Number</option><option value="Sposition">Staff Position</option><option value="Rposition">Royalty Position</option></select><label for="input">:</label><input type="search" class="required" name="input" id="input"><input type="submit" name= "submit" value="Search"></p>';
+        $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+        if (!$con) {
+            die('Could not connect: ' . mysql_error());
         }
-        else{
-            echo '<input type="text" class="required" value="'.$_SESSION['stype'].'"name="name" id="name">';
-            echo '<label for="Leader search">Leader:</label><input type="search" class="required" value="'.$_SESSION['hold'].'"name="input" id="input">';
+        $method = $_SESSION['stype'];
+        $input = $_SESSION['hold'];
+        //echo $input;
+        //echo $method;
+        $queryIn = "SELECT * FROM users WHERE `$method` = '$input'";
+        $resultIn = mysqli_query($con, $queryIn);
+
+        if (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
+            $searched=true;
+            $row = mysqli_fetch_row($resultIn);
+            $username=$row[0];
+            $nameUnedit=NULL;
+            $havefleet = $row[6];
+            if ($row[5]!=NULL) {
+                $nameUnedit=$row[5];
+            }
+            else{
+                $nameUnedit=$row[3].' '.$row[4];
+            }
+            $name=str_replace(' ', '&nbsp;', $nameUnedit);
+            mysqli_close($con);
         }
+//        echo '<input type="text" class="required" value="'.$_SESSION['stype'].'"name="name" id="name">';
+//        echo '<label for="Leader search">Leader:</label><input type="search" class="required" value="'.$_SESSION['hold'].'"name="input" id="input">';
         ?>
+        <label for="Name">Leader:</label>
+        <input disabled  value=<?php echo $name; ?>>
+        <input type="hidden" name="learder" value=<?php echo $username; ?>>
         
     </p>
 </fieldset>
 
       <p>
-        <input type = "submit" name= "submit" value = "Submit Fleet" />
-        <input type = "reset"  value = "Clear Form" />
-        <input type="button" name="button" value="Cancel" onclick="Cancel()" />
+        <input type = "submit" name= "submit" value = "Submit fleet" />
+        <input type="button" name="button" value="Cancel" onclick="location.href='/PNPN-Website/Javascript/clearall.php';" />
       </p>
 </form>
-	</body>
+    </body>
 
 </html>
+
+<?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['groupName']){
+    if ($havefleet!=NULL) {
+        echo "You already have a fleet";
+    }
+    else{
+        echo "here";
+        include ("Javascript/makeFleet.php");
+    }
+}
+
+?>
 <script type="text/javascript">
     function Cancel(){
         $.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/teller.php")}});
@@ -65,19 +100,6 @@
 //    if (!$con) {
 //        die('Could not connect: ' . mysql_error());
 //    }
-//$_SESSION['stype']=mysqli_real_escape_string($con, $_POST['name']);
 //mysqli_close($con);
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
-    include "Javascript/searchfleet.php";
-//    if ($_SESSION['hold']!="hold") {
- //       include "Javascript/makeFleet.php";
-//    }
-}
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit Fleet") {
-//    include "Javascript/searchsim.php";
-    if ($_SESSION['hold']!="hold") {
-        include "Javascript/makeFleet.php";
-    }
-}
-?>
 
+?>
