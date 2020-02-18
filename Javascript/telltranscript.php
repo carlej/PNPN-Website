@@ -36,7 +36,7 @@
 									<input type="hidden" name="new2" value="new2"/>
 									<input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>/>
 									<input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>/>
-									<input type="submit" name="submit" value="Clear" />
+									<input type="submit" name="submit" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';"/>
 							</fieldset>
 						</form>
 						<?php elseif($_SESSION['nstype']=="fleetID"): ?>
@@ -49,7 +49,7 @@
 									echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
 									}
 									$input2 = mysqli_real_escape_string($con, $_POST['ninput']);
-									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="ntype" value="shipID"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>><input type="submit" name="submit" value="Clear" /></fieldset></form>'; ?>
+									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="ntype" value="shipID"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>><input type="submit" name="submit" value="Clear" onclick="location.href="/PNPN-Website/Javascript/clearsome.php";" /></fieldset></form>'; ?>
 								</select>
 							</fieldset>
 						</form>
@@ -64,7 +64,7 @@
 									}
 									//echo '</form>';
 									$input2 = mysqli_real_escape_string($con, $_POST['ninput']);
-									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="ntype" value="Username"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>><input type="submit" name="submit" value="Clear" /></fieldset></form>'; ?>
+									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="ntype" value="Username"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>><input type="submit" name="submit" value="Clear" onclick="location.href="/PNPN-Website/Javascript/clearsome.php";"/></fieldset></form>'; ?>
 								</select>
 							</fieldset>
 						</form>
@@ -142,7 +142,7 @@
 								<p style="margin-top: -0.5em">
 									<input type="submit" name="submit" value="Transfer" />
 									<input type="hidden" name="delim" value="tran">
-									<input type="submit" name="submit" value="Clear" />
+									<input type="submit" name="submit" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';"/>
 									<input type="button" name="button" value="Cancel" onclick="location.href='/PNPN-Website/Javascript/clearall.php';"/>
 									<input type="hidden" name="name" value=<?php echo $_SESSION['nest'] ?>>
 								</p>
@@ -200,7 +200,7 @@
 						<p>
 							<input type="hidden" name="delim" value="dept">
 							<input type="submit" name="dept" value="Deposit" />
-							<input type="reset" value="Clear" />
+							<input type="reset" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';"/>
 						</p>
 					</div>
 				</fieldset>
@@ -254,7 +254,7 @@
 						<p>
 							<input type="hidden" name="delim" value="with">
 							<input type="submit" name="dept" value="Withdraw" />
-							<input type="reset" value="Clear" />
+							<input type="reset" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';"/>
 						</p>
 					</div>
 				</fieldset>
