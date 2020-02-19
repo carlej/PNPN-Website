@@ -8,8 +8,7 @@ $url=NULL;
 	<div id="cssmenu" class="align-center">
      		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm'] == 'b'): ?>
      		<?php endif; ?>
-     			<div class="TopStripe"><img alt="~" src="CSS/styles/Top_Line.jpg"></div>
-     			<div class="SideStripe"><img alt="~" src="CSS/styles/Side_Line.jpg"></div>
+
 				<div class="compRose"><img src="CSS\styles\Compass_Rose_2.png" alt="Compass_Rose"></div>
 
 			<?php if ($url=="/PNPN-Website/teller.php"):?>
@@ -20,8 +19,7 @@ $url=NULL;
 				<div class="bankButton"><a href="/PNPN-Website/bank.php"><img alt="Bank" src="CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
 
-			<?php
-			if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
+			<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
 				<div class="logoutButton"><a href="/PNPN-Website/logout.php"><img alt="log out" src="CSS/styles/Log_Out.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php else: ?>
 				<li><a href="/PNPN-Website/login.php">Login</a></li>
@@ -47,6 +45,15 @@ $url=NULL;
 				<div class="landgrantButton"><a href="/PNPN-Website/landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php else: ?>
 				<div class="landgrantButton"><a href="/PNPN-Website/landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php endif;?>
+
+
+			<?php if ($url=="/PNPN-Website/account.php"):?>
+				<div class="accountButton"><a href="/PNPN-Website/account.php"><img alt="account" src="CSS/styles/Account_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php elseif ($url!="/PNPN-Website/account.php"):?>
+				<div class="accountButton"><a href="/PNPN-Website/account.php"><img alt="account" src="CSS/styles/Account_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php else: ?>
+				<div class="accountButton"><a href="/PNPN-Website/account.php"><img alt="account" src="CSS/styles/Account_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
 		</ul>
 
@@ -97,6 +104,9 @@ $url=NULL;
       			</li>
       			<li class="nav-item">
         			<a class="nav-link" href="landgrant.php" style="font-family: pirates; color: white">Land Grants</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="account.php" style="font-family: pirates; color: white">Account</a>
       			</li>
     		</ul>
   		</div>
