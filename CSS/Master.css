@@ -7,11 +7,21 @@ margin:0px;
 padding:0px;
 
 	background: 
-	linear-gradient(
-		rgba(194,181,155,0.65),
-		rgba(194,181,155,0.65)),
-	url(styles/Texture_Bkgd_1.jpg);
-	
+	url(styles/Background1.png), url(styles/Background2.png);
+	background-position: top, bottom;
+	background-repeat: no-repeat, repeat;
+	background-size: 100%;
+
+}
+
+@media (max-width: 992px) {
+	body {
+		margin:0px;
+		padding:0px;
+		background: 
+			url(styles/Background_Plain.png);
+		background-size: 100%
+	}
 }
 
 .Header {height:100px;}
@@ -93,6 +103,17 @@ padding:0px;
 	right: 8.45em;
 }
 
+.accountButton img{
+	display: block;
+	max-height: 3.9em;
+	max-width: 3.9em;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 20.4em;
+	right: 2.6em;
+}
+
 #WelcomeMessage {
 	display: inline-block;
 	margin-top: 10em;
@@ -138,30 +159,6 @@ padding:0px;
 .nav-item {
 	text-align: center;
 	margin-left: -5em;
-}
-
-.TopStripe img {
-	display: block;
-	max-width: 70em;
-	height: auto;
-	position: absolute;
-	top: 2em;
-	left: 2em;
-	opacity: 0.7;
-	overflow: hidden;
-}
-
-.SideStripe img {
-	display: block;
-	max-height: 70em;
-	max-width: 35em;
-	width: auto;
-	height: auto;
-	position: absolute;
-	top: 2em;
-	left: 2em;
-	opacity: 0.7;
-	overflow: hidden;
 }
 
 #SwitchButtons {
@@ -474,6 +471,8 @@ padding:0px;
 	text-decoration: none;
 }
 
+
+
 .bankphp #ShowAccounts {
 	margin-top: 11em;
 }
@@ -531,6 +530,7 @@ li {
 	margin-bottom: 2em;
 }
 
+
 @media (max-width: 992px) {
 	#HistBox {
 		margin-top: 2em;
@@ -541,7 +541,7 @@ li {
 @media (min-width: 992px) {
 	#HistBox {
 		margin-top: 3em;
-		max-height: 30em;
+		max-height: 20em;
 	}
 }
 
@@ -712,3 +712,44 @@ li {
 	}
 }
 
+#AddShipHouse {
+	font-family: pirates;
+	font-size: 1.2em;
+	margin-top: 8em;
+}
+
+@media (max-width: 992px) {
+	#AddShipHouse {
+	margin-top: 2em;
+	}
+}
+
+#AddFleetAlliance {
+	font-family: pirates;
+	font-size: 1.2em;
+	margin-top: 8em;
+}
+
+@media (max-width: 992px) {
+	#AddFleetAlliance {
+	margin-top: 2em;
+	}
+}
+
+#EditUser {
+	font-family: pirates;
+	font-size: 1.1em;
+	margin-top: 2em;
+}
+
+#AccountPage {
+	font-family: pirates;
+	font-size: 1.1em;
+	margin-top: 6em;
+}
+
+@media (max-width: 992px) {
+	#AccountPage {
+	margin-top: 2em;
+	}
+}

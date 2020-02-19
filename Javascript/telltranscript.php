@@ -36,7 +36,7 @@
 									<input type="hidden" name="new2" value="new2"/>
 									<input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>/>
 									<input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>/>
-									<input type="submit" name="submit" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';"/>
+									
 							</fieldset>
 						</form>
 						<?php elseif($_SESSION['nstype']=="fleetID"): ?>
@@ -49,7 +49,7 @@
 									echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
 									}
 									$input2 = mysqli_real_escape_string($con, $_POST['ninput']);
-									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="ntype" value="shipID"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>><input type="submit" name="submit" value="Clear" onclick="location.href="/PNPN-Website/Javascript/clearsome.php";" /></fieldset></form>'; ?>
+									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="ntype" value="shipID"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>></fieldset></form>'; ?>
 								</select>
 							</fieldset>
 						</form>
@@ -64,7 +64,7 @@
 									}
 									//echo '</form>';
 									$input2 = mysqli_real_escape_string($con, $_POST['ninput']);
-									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="ntype" value="Username"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>><input type="submit" name="submit" value="Clear" onclick="location.href="/PNPN-Website/Javascript/clearsome.php";"/></fieldset></form>'; ?>
+									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="ntype" value="Username"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>></fieldset></form>'; ?>
 								</select>
 							</fieldset>
 						</form>
@@ -91,7 +91,7 @@
 										<input type="submit" name= "submit" value="Search" class="submit">
 										<input type="hidden" name="new2" value="new2" class="submit">
 										<input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>>
-										<input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>>
+										<input type="hidden" name="input" value=<?php echo $_SESSION["hold"];?>>
 									</p>
 								</p>
 							</fieldset>
@@ -143,7 +143,6 @@
 									<input type="submit" name="submit" value="Transfer" />
 									<input type="hidden" name="delim" value="tran">
 									<input type="submit" name="submit" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';"/>
-									<input type="button" name="button" value="Cancel" onclick="location.href='/PNPN-Website/Javascript/clearall.php';"/>
 									<input type="hidden" name="name" value=<?php echo $_SESSION['nest'] ?>>
 								</p>
 							</fieldset>
@@ -262,7 +261,7 @@
 		</div>
 		<?php if($_SESSION['stype']!='shipID' && $_SESSION['stype']!='fleetID'): ?>
 			<div class = "col-sm">
-				<legend>Edit Info:</legend>
+				<legend>Info:</legend>
 				<p>
 					<input type = "submit" name= "submit" value = "Add Ship/Household" onclick="location.href='/PNPN-Website/addShip.php';"?>
 				</p>
@@ -270,7 +269,10 @@
 					<input type = "submit" name= "submit" value = "Add Fleet/Alliance" onclick="location.href='/PNPN-Website/addFleet.php';"?>
 				</p>
 				<p>
-					<input type = "submit" name= "submit" value = "Edit User"?>
+					<input type="submit" name="submit" value="Grant Access" onclick="location.href='#';">
+				</p>
+				<p>
+					<input type = "submit" name= "submit" value = "Edit User" onclick="location.href='/PNPN-Website/editUser.php';">
 				</p>
 			</div>
 		<?php endif; ?>

@@ -75,27 +75,27 @@
 
 
 <script type="text/javascript"> 
-        document.getElementById("persHist").onclick = function() { 
-  
-            document.getElementById("persHistShow").style.display = "block";
-            document.getElementById("shipHistShow").style.display = "none";
-            document.getElementById("fleetHistShow").style.display = "none"; 
-  
-        } 
-  
-        document.getElementById("shipHist").onclick = function() { 
-  
-            document.getElementById("persHistShow").style.display = "none";
-            document.getElementById("shipHistShow").style.display = "block";
-            document.getElementById("fleetHistShow").style.display = "none";  
-  
-        } 
-  
-        document.getElementById("fleetHist").onclick = function() { 
-  
-            document.getElementById("persHistShow").style.display = "none";
-            document.getElementById("shipHistShow").style.display = "none";
-            document.getElementById("fleetHistShow").style.display = "block";  
-  
-        } 
-    </script> 
+    document.getElementById("persHist").onclick = function() { 
+
+        document.getElementById("persHistShow").style.display = "block";
+        document.getElementById("shipHistShow").style.display = "none";
+        document.getElementById("fleetHistShow").style.display = "none"; 
+
+    } 
+
+    document.getElementById("shipHist").onclick = function() { 
+
+        document.getElementById("persHistShow").style.display = "none";
+        document.getElementById("shipHistShow").style.display = "block";
+        document.getElementById("fleetHistShow").style.display = "none";  
+
+    } 
+
+    document.getElementById("fleetHist").onclick = function() { 
+
+        document.getElementById("persHistShow").style.display = "none";
+        document.getElementById("shipHistShow").style.display = "none";
+        document.getElementById("fleetHistShow").style.display = "block";  
+
+    } 
+   </script> 
