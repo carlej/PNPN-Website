@@ -3,36 +3,7 @@
 	<div style="font-size: 1.4em; text-align: center;">Records (Click Account Above)</div>
 
 <?php 
-//foreach ($parsed_json as $value) {
-//	if ($value) {
-//		$queryIn = "SELECT history FROM accounts WHERE ID = '$value'";
-//		$resultIn = mysqli_query($con, $queryIn);
-//		$row = mysqli_fetch_row($resultIn);
-//		$parsed_hist = json_decode($row[0],true);	
-//	}
-//}
-//$parsed_ship_hist=NULL;
-//$parsed_fleet_hist=NULL;
-//if ($parsed_ship_json!=NULL) {
-//	foreach ($parsed_ship_json as $value) {
-//		if ($value) {
-//			$queryIn = "SELECT history FROM accounts WHERE ID = '$value'";
-//			$resultIn = mysqli_query($con, $queryIn);
-//			$row = mysqli_fetch_row($resultIn);
-//			$parsed_ship_hist = json_decode($row[0],true);	
-//		}
-//	}
-//}
-//if ($parsed_fleet_json!=NULL) {
-//	foreach ($parsed_fleet_json as $value) {
-//		if ($value) {
-//			$queryIn = "SELECT history FROM accounts WHERE ID = '$value'";
-//			$resultIn = mysqli_query($con, $queryIn);
-//			$row = mysqli_fetch_row($resultIn);
-//			$parsed_fleet_hist = json_decode($row[0],true);	
-//		}
-//	}
-//}
+
 ?>
 <?php foreach($parsed_json as $acc):
 	//$parsed_hist=NULL;
@@ -219,13 +190,12 @@
 			$parsed_fleet_hist = json_decode($row[0],true);
 		 } ?>
 		<?php if($parsed_fleet_hist!=NULL): ?>
-			<?php $revFleet=array_reverse($parsed_fleet_hist); ?>
+			<?php $revfleet=array_reverse($parsed_fleet_hist); ?>
 				<div class = "d-flex justify-content-left" style="margin-left: -2.2em;">
 				<div class = "row">
 				<div class = "col-12">
 					<ul>
-						<?php foreach ($revFleet as $key => $value): ?>
-				
+						<?php foreach ($revfleet as $key => $value): ?>
 							<li><a id="fleetHistShow" style="display: none; padding-top: 1em;"><?php
 							if (count($value)==6) {//transfer display from teller
 							echo "~ ";
@@ -271,7 +241,7 @@
 							echo " Sterlings to ";
 							echo $value[1]; //account from
 							echo " Notes: ";
-							echo $value[4];						
+							echo $value[4];							
 						}
 						else if (count($value)==8) {//withdraw display
 							echo "~ ";

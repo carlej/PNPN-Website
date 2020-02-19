@@ -16,7 +16,7 @@
 		//echo $_SESSION["hold"];
 		//echo $_SESSION['nstype'];
 		//echo $_SESSION["nest"];
-		//echo $_SESSION['multsearch'][0][0];
+		//echo $_SESSION['multsearch'][0][1];
 		if ($_SESSION['clear']!=$_SERVER['PHP_SELF']) {
 			include "Javascript/clear.php";
 		}

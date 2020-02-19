@@ -57,7 +57,7 @@
                         </fieldset>
                         <p>
                             <input type = "submit" name= "submit" value = "Submit" />
-                            <input type="button" name="button" value="Cancel" onclick="location.href='/PNPN-Website/Javascript/clearall.php';" />
+                            <input type="button" name="button" value="Cancel" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';" />
                         </p>
                     </form>
                 </div>

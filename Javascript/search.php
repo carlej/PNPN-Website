@@ -38,7 +38,7 @@
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
 	}
 	elseif ($method == "Ship") {//This is to search for ships
-		$queryShip = "SELECT * FROM ship WHERE Name = '$input'";
+		$queryShip = "SELECT * FROM ship WHERE Name LIKE '%$input%'";
 		$resultShip= mysqli_query($con,$queryShip);
 		$shipName=NULL;
 		if (mysqli_num_rows($resultShip)>1) { //if there are multiple results this makes a drop down list so that you can pick what one you want
@@ -129,7 +129,7 @@
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
 	}
 	elseif ($method == "Fleet") {
-		$queryFleet = "SELECT * FROM fleet WHERE Name = '$input'";
+		$queryFleet = "SELECT * FROM fleet WHERE Name LIKE '%$input%'";
 		$resultFleet= mysqli_query($con,$queryFleet);
 		$parsed_fleet_json=NULL;
 		$fleetName=NULL;
@@ -191,7 +191,7 @@
 		}
 	}
 	else{
-		$queryIn = "SELECT * FROM users WHERE `$method` = '$input'";
+		$queryIn = "SELECT * FROM users WHERE `$method` LIKE '%$input%'";
 		$resultIn = mysqli_query($con, $queryIn);
 		if (mysqli_num_rows($resultIn)>1) {//if there are multiple results this makes a drop down list so that you can pick what one you want
 			$array = NULL;
