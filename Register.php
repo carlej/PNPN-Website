@@ -6,7 +6,7 @@
 
 		<title>Register</title>
 	</head>
-	<body>
+	<body class = "RegistrationPage">
 
 <div class ="container">
     <div class = "d-flex justify-content-center" id = "RegisterWindow" >

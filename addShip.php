@@ -9,7 +9,7 @@
         <title>Add Ship</title>
 
     </head>
-    <body>
+    <body class = "AddShipPage">
         <div class = "container" id = "AddShipHouse">
             <div class = "d-flex justify-content-center">
                 <div class = "col-sm-5">

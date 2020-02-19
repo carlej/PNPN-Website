@@ -8,7 +8,7 @@
 		<title>Login</title>
 		<?php //include("Views\Partials/header.php");?>
 	</head>
-	<body>
+	<body class = "LoginPage">
 		
 		<div class ="container">
 			<div class = "d-flex justify-content-center">

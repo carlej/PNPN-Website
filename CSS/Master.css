@@ -24,6 +24,55 @@ padding:0px;
 	}
 }
 
+
+.EditUserPage {
+	margin:0px;
+	padding:0px;
+	background: 
+		url(styles/Background_Plain.png);
+		background-size: 100%
+}
+
+.AddFleetPage {
+	margin:0px;
+	padding:0px;
+	background: 
+		url(styles/Background_Plain.png);
+		background-size: 100%
+}
+
+.AddShipPage {
+	margin:0px;
+	padding:0px;
+	background: 
+		url(styles/Background_Plain.png);
+		background-size: 100%
+}
+
+.LoginPage {
+	margin:0px;
+	padding:0px;
+	background: 
+		url(styles/Background_Plain.png);
+		background-size: 100%
+}
+
+.RegistrationPage {
+	margin:0px;
+	padding:0px;
+	background: 
+		url(styles/Background_Plain.png);
+		background-size: 100%
+}
+
+.GrantAccessPage {
+	margin:0px;
+	padding:0px;
+	background: 
+		url(styles/Background_Plain.png);
+		background-size: 100%
+}
+
 .Header {height:100px;}
 .Menu {height:50px;}
 .compRose img{
@@ -110,8 +159,8 @@ padding:0px;
 	width: auto;
 	height: auto;
 	position: absolute;
-	top: 20.4em;
-	right: 2.6em;
+	top: 20.45em;
+	right: 2.7em;
 }
 
 #WelcomeMessage {
@@ -738,8 +787,21 @@ li {
 
 #EditUser {
 	font-family: pirates;
-	font-size: 1.1em;
+	font-size: 1.2em;
+	margin-top: 6em;
+}
+
+@media (max-width: 992px) {
+	#EditUser {
 	margin-top: 2em;
+	}
+}
+
+#AcctInfoDisp {
+	font-size: 1.3em;
+	font-family: pirates;
+	border-bottom: solid 0.05em;
+
 }
 
 #AccountPage {

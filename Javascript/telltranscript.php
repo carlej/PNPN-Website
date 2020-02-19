@@ -31,11 +31,11 @@
 									} ?>
 								</select>
 									<label for="ninput">   </label>
-									<input type="submit" name= "submit" value="Search" />
-									<input type="hidden" name="ntype" value="shipID"/>
-									<input type="hidden" name="new2" value="new2"/>
-									<input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>/>
-									<input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>/>
+									<input type="submit" name= "submit" value="Search" >
+									<input type="hidden" name="ntype" value="shipID">
+									<input type="hidden" name="new2" value="new2">
+									<input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>>
+									<input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>>
 									
 							</fieldset>
 						</form>
@@ -43,7 +43,7 @@
 						<form method="POST" id="SearchBy2">
 							<fieldset>
 								<label style="margin-bottom: 0em;">Select: </label>
-								<select name="ninput" style="width: 80%; margin-bottom: 0.5em; font-size: 1.1em">';
+								<select name="ninput" style="width: 80%; margin-bottom: 0.5em; font-size: 1.1em">;
 					 				<?php foreach ($_SESSION['multsearch'] as $key => $value) {//this will desplay the name of each captain as each should be different
 				 					echo $value[0];
 									echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
@@ -57,14 +57,14 @@
 						<form method="POST" id="SearchBy2">
 							<fieldset>
 								<label style="margin-bottom: 0em;">Select: </label>
-								<select name="ninput" style="width: 80%; margin-bottom: 0.5em; font-size: 1.1em">';
+								<select name="ninput" style="width: 80%; margin-bottom: 0.5em; font-size: 1.1em">;
 									<?php foreach ($_SESSION['multsearch'] as $key => $value) {
 									//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
 									echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
 									}
 									//echo '</form>';
 									$input2 = mysqli_real_escape_string($con, $_POST['ninput']);
-									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="ntype" value="Username"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>></fieldset></form>'; ?>
+									echo '</select><label for="ninput"></label><input type="submit" name= "submit" value="Search"><input type="hidden" name="ntype" value="Username"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?></fieldset></form>'; ?>
 								</select>
 							</fieldset>
 						</form>
@@ -133,16 +133,16 @@
 								</p>
 								<p style="margin-top: -1em">
 									<label for="trans" style="margin-bottom: -1em;">Amount to Transfer:</label>
-									<input type="number" name="trans" id="trans" min="1" />
+									<input type="number" name="trans" id="trans" min="1" >
 								</p>
 								<p style="margin-top: -0.5em">
 									<label for="notes">Notes:</label>
-									<input type="text" name="tranNotes" maxlength="50" />
+									<input type="text" name="tranNotes" maxlength="50" >
 								</p>
 								<p style="margin-top: -0.5em">
-									<input type="submit" name="submit" value="Transfer" />
+									<input type="submit" name="submit" value="Transfer" >
 									<input type="hidden" name="delim" value="tran">
-									<input type="submit" name="submit" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';"/>
+									<input type="submit" name="submit" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';">
 									<input type="hidden" name="name" value=<?php echo $_SESSION['nest'] ?>>
 								</p>
 							</fieldset>
@@ -198,8 +198,8 @@
 						</p>
 						<p>
 							<input type="hidden" name="delim" value="dept">
-							<input type="submit" name="dept" value="Deposit" />
-							<input type="reset" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';"/>
+							<input type="submit" name="dept" value="Deposit" >
+							<input type="reset" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';">
 						</p>
 					</div>
 				</fieldset>
@@ -252,8 +252,8 @@
 						</p>
 						<p>
 							<input type="hidden" name="delim" value="with">
-							<input type="submit" name="dept" value="Withdraw" />
-							<input type="reset" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';"/>
+							<input type="submit" name="dept" value="Withdraw" >
+							<input type="reset" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';">
 						</p>
 					</div>
 				</fieldset>
@@ -269,7 +269,7 @@
 					<input type = "submit" name= "submit" value = "Add Fleet/Alliance" onclick="location.href='/PNPN-Website/addFleet.php';"?>
 				</p>
 				<p>
-					<input type="submit" name="submit" value="Grant Access" onclick="location.href='#';">
+					<input type="submit" name="submit" value="Grant Access" onclick="location.href='/PNPN-Website/grantaccess.php';">
 				</p>
 				<p>
 					<input type = "submit" name= "submit" value = "Edit User" onclick="location.href='/PNPN-Website/editUser.php';">
