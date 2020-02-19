@@ -10,7 +10,7 @@
 
     </head>
 
-    <body>
+    <body class = "AddFleetPage">
         <div class = "container" id = "AddFleetAlliance">
             <div class = "d-flex justify-content-center">
                 <div class = "col-sm-5">
