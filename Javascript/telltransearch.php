@@ -13,7 +13,8 @@
 		$parsed_fleet_json=NULL;
 		$accnum=NULL;
 		$rowShip=mysqli_fetch_row($resultShip);
-		$shipName=$rowShip[1];
+		$shipNameUnedit=$rowShip[1];
+		$shipName=str_replace(' ', '&nbsp;', $shipNameUnedit);
 		$parsed_ship_json=json_decode($rowShip[4],true);
 		$accnum=$parsed_ship_json['id'];
 		$_SESSION['temp']=$accnum[0];
@@ -37,7 +38,7 @@
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Ship".'" /></p></form></html>';
 	}
 	elseif ($method == "Ship") {//This is to search for ships
-		$queryShip = "SELECT * FROM ship WHERE Name = '$input'";
+		$queryShip = "SELECT * FROM ship WHERE Name LIKE '%$input%'";
 		$resultShip= mysqli_query($con,$queryShip);
 		$shipName=NULL;
 	
@@ -113,8 +114,9 @@
 		$accnum=$parsed_fleet_json['id'];
 		$_SESSION['temp']=$accnum[0];
 		$_SESSION['nstype']="fleetID";
-		$fleetName=$rowFleet[1];
+		$fleetNameUnedit=$rowFleet[1];
 		$searchUserName=$row[0];
+		$fleetName=str_replace(' ', '&nbsp;', $fleetNameUnedit);
 		$_SESSION['nest']=$fleetName;
 
 		
@@ -132,7 +134,7 @@
 		//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."Fleet".'" /></p></form></html>';
 	}
 	elseif ($method == "Fleet") {
-		$queryFleet = "SELECT * FROM fleet WHERE Name = '$input'";
+		$queryFleet = "SELECT * FROM fleet WHERE Name LIKE '%$input%'";
 		$resultFleet= mysqli_query($con,$queryFleet);
 		$parsed_ship_json=NULL;
 		$parsed_json=NULL;
@@ -201,7 +203,7 @@
 		}
 	}
 	else{
-		$queryIn = "SELECT * FROM users WHERE `$method` = '$input'";
+		$queryIn = "SELECT * FROM users WHERE `$method` LIKE '%$input%'";
 		$resultIn = mysqli_query($con, $queryIn);
 
 		if (mysqli_num_rows($resultIn)>1) {//if there are multiple results this makes a drop down list so that you can pick what one you want

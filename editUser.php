@@ -19,7 +19,9 @@
         $queryIn = "SELECT * FROM users WHERE username = '$input'";
         $resultIn = mysqli_query($con, $queryIn);
         $row = mysqli_fetch_row($resultIn);
-        $temp = $row[3];
+        $Fname = str_replace(' ', '&nbsp;', $row[3]);
+        $Lname = str_replace(' ', '&nbsp;', $row[4]);
+        $Pname = str_replace(' ', '&nbsp;', $row[5]);
         //echo $_POST['submit'];
         //echo $_POST['Edit'];
         ?>
@@ -39,7 +41,7 @@
                                 <fieldset>
                                     <p>
                                         <label style="padding-right: 5em">First Name: </label>
-                                        <input type="text"  name="name" value=<?php echo $row[3];?> required>
+                                        <input type="text"  name="name" value=<?php echo $Fname;?> required>
                                         <input type="submit" name="submit" value="Confirm">
                                         <input type="hidden" name="delim" value="First">
                                         <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
@@ -50,7 +52,7 @@
                                 <fieldset>
                                     <p>
                                         <label style="padding-right: 5em">Last Name: </label>
-                                        <label> <?php echo $row[4]; ?></label>
+                                        <label> <?php echo $Lname; ?></label>
                                         <input type="submit" name="submit" value="Edit">
                                         <input type="hidden" name="Edit" value="Last">
                                     </p>
@@ -60,7 +62,7 @@
                             <fieldset>
                                 <p>
                                     <label style="padding-right: 4.6em">Pirate Name: </label>
-                                    <label><?php echo $row[5]; ?></label>
+                                    <label><?php echo $Pname; ?></label>
                                     <input type="submit" name="submit" value="Edit">
                                     <input type="hidden" name="Edit" value="Pirate">
                                 </p>
@@ -91,7 +93,7 @@
                                 <fieldset>
                                     <p>
                                         <label style="padding-right: 5em">First Name: </label>
-                                        <label><?php echo $row[3]; ?></label>
+                                        <label><?php echo $Fname; ?></label>
                                         <input type="submit" name="submit" value="Edit">
                                         <input type="hidden" name="Edit" value="First">
                                     </p>
@@ -101,7 +103,7 @@
                                 <fieldset>
                                     <p>
                                         <label style="padding-right: 5em">Last Name: </label>
-                                        <input type="text" name="name" value=<?php echo $row[4];?> required>
+                                        <input type="text" name="name" value=<?php echo $Lname;?> required>
                                         <input type="submit" name="submit" value="Confirm">
                                         <input type="hidden" name="delim" value="Last">
                                         <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
@@ -113,7 +115,7 @@
                             <fieldset>
                                 <p>
                                     <label style="padding-right: 4.6em">Pirate Name: </label>
-                                    <label><?php echo $row[5]; ?></label>
+                                    <label><?php echo $Pname; ?></label>
                                     <input type="submit" name="submit" value="Edit">
                                     <input type="hidden" name="Edit" value="Pirate">
                                 </p>
@@ -144,7 +146,7 @@
                                 <fieldset>
                                     <p>
                                         <label style="padding-right: 5em">First Name: </label>
-                                        <label><?php echo $row[3]; ?></label>
+                                        <label><?php echo $Fname; ?></label>
                                         <input type="submit" name="submit" value="Edit">
                                         <input type="hidden" name="Edit" value="First">
                                     </p>
@@ -154,7 +156,7 @@
                             <fieldset>
                                 <p>
                                     <label style="padding-right: 5em">Last Name: </label>
-                                    <label><?php echo $row[4]; ?></label>
+                                    <label><?php echo $Lname; ?></label>
                                     <input type="submit" name="submit" value="Edit">
                                     <input type="hidden" name="Edit" value="Last">
                                 </p>
@@ -164,7 +166,7 @@
                                 <fieldset>
                                     <p>
                                         <label style="padding-right: 4.6em">Pirate Name: </label>
-                                        <input type="text" name="name" value=<?php echo $row[5];?> required>
+                                        <input type="text" name="name" value=<?php echo $Pname;?> required>
                                         <input type="submit" name="submit" value="Confirm">
                                         <input type="hidden" name="delim" value="Pirate">
                                         <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
@@ -249,7 +251,7 @@
                             <fieldset>
                             	<p>
                             		<label style="padding-right: 5em">First Name: </label>
-                                    <label><?php echo $row[3]; ?></label>
+                                    <label><?php echo $Fname; ?></label>
                                     <input type="submit" name="submit" value="Edit">
                                     <input type="hidden" name="Edit" value="First">
                             	</p>
@@ -259,7 +261,7 @@
                             <fieldset>
                             	<p>
                             		<label style="padding-right: 5em">Last Name: </label>
-                                    <label><?php echo $row[4]; ?></label>
+                                    <label><?php echo $Lname; ?></label>
                                     <input type="submit" name="submit" value="Edit">
                                     <input type="hidden" name="Edit" value="Last">
                             	</p>
@@ -269,7 +271,7 @@
                             <fieldset>
                             	<p>
                             		<label style="padding-right: 4.6em">Pirate Name: </label>
-                                    <label><?php echo $row[5]; ?></label>
+                                    <label><?php echo $Pname; ?></label>
                                     <input type="submit" name="submit" value="Edit">
                                     <input type="hidden" name="Edit" value="Pirate">
                             	</p>

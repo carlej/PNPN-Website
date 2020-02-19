@@ -54,7 +54,7 @@
 						<tr>
 							<div class ="row no-gutter">
 								<div class = "col-sm-6" style="border-top-style: none">
-									<li><a onmouseover="this.style.cursor='pointer'"><?php echo $fleetName.':'; ?></a></li>
+									<li><a id="fleetHist" onmouseover="this.style.cursor='pointer'"><?php echo $fleetName.':'; ?></a></li>
 								</div>
 								<div class = "col-sm-6 align-middle" style="border-top-style: none">
 									<li><a><?php
@@ -95,7 +95,7 @@
 
         document.getElementById("persHistShow").style.display = "none";
         document.getElementById("shipHistShow").style.display = "none";
-        document.getElementById("fleetHistShow").style.display = "block";  
+        document.getElementById("fleetHistShow").style.display = "block"; 
 
     } 
    </script> 

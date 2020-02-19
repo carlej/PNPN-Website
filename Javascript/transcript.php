@@ -68,7 +68,7 @@
 				}
 				$input2 = mysqli_real_escape_string($con, $_POST['input']);
 				
-				echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="new"><input type="submit" name="submit" value="Clear" /></fieldset></form>'; ?>
+				echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="new"><input type="submit" name="submit" value="Clear" /></fieldset></form>'; ?>
 				</div>
 				<?php else: ?>
 					<form method="POST" id="SearchBy2">

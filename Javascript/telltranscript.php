@@ -49,7 +49,7 @@
 									echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
 									}
 									$input2 = mysqli_real_escape_string($con, $_POST['ninput']);
-									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="ntype" value="shipID"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?>></fieldset></form>'; ?>
+									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="ntype" value="fleetID"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?></fieldset></form>'; ?>
 								</select>
 							</fieldset>
 						</form>
