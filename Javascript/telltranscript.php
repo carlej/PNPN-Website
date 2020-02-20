@@ -27,7 +27,17 @@
 								<select name="ninput" style="width: 80%; margin-bottom: 0.5em; font-size: 1.1em">
 									<?php foreach ($_SESSION['multsearch'] as $key => $value) {//this will desplay the name of each captain as each should be different
 									//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-									echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
+									$queryIn = "SELECT * FROM users WHERE Username LIKE '%$value[2]%'";
+									$resultIn = mysqli_query($con, $queryIn);
+									$row = mysqli_fetch_row($resultIn);
+									if ($row[5]!=NULL) {
+										$nameUnedit=$row[5];
+									}
+									else{
+										$nameUnedit=$row[3].' '.$row[4];
+									}
+									$capname=str_replace(' ', '&nbsp;', $nameUnedit);
+									echo '<option value="'.$value[0].'">"Captain: " '.$capname.'</option>';
 									} ?>
 								</select>
 									<label for="ninput">   </label>
@@ -45,8 +55,17 @@
 								<label style="margin-bottom: 0em;">Select: </label>
 								<select name="ninput" style="width: 80%; margin-bottom: 0.5em; font-size: 1.1em">;
 					 				<?php foreach ($_SESSION['multsearch'] as $key => $value) {//this will desplay the name of each captain as each should be different
-				 					echo $value[0];
-									echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
+				 					$queryIn = "SELECT * FROM users WHERE Username LIKE '%$value[2]%'";
+									$resultIn = mysqli_query($con, $queryIn);
+									$row = mysqli_fetch_row($resultIn);
+									if ($row[5]!=NULL) {
+										$nameUnedit=$row[5];
+									}
+									else{
+										$nameUnedit=$row[3].' '.$row[4];
+									}
+									$capname=str_replace(' ', '&nbsp;', $nameUnedit);
+									echo '<option value="'.$value[0].'">"Captain: " '.$capname.'</option>';
 									}
 									$input2 = mysqli_real_escape_string($con, $_POST['ninput']);
 									echo '</select><label for="ninput">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="ntype" value="fleetID"><input type="hidden" name="new2" value="new2"><input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?><input type="hidden" name="input" value=<?php echo $_SESSION["hold"]; ?></fieldset></form>'; ?>
