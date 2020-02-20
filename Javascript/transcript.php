@@ -51,7 +51,17 @@
 						<label>Select: </label><select name="input">
 						<?php foreach ($_SESSION['multsearch'] as $key => $value) {//this will desplay the name of each captain as each should be different
 						//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-							echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
+							$queryIn = "SELECT * FROM users WHERE Username LIKE '%$value[2]%'";
+							$resultIn = mysqli_query($con, $queryIn);
+							$row = mysqli_fetch_row($resultIn);
+							if ($row[5]!=NULL) {
+								$nameUnedit=$row[5];
+							}
+							else{
+								$nameUnedit=$row[3].' '.$row[4];
+							}
+							$capname=str_replace(' ', '&nbsp;', $nameUnedit);
+							echo '<option value="'.$value[0].'">"Captain: " '.$capname.'</option>';
 							} ?>
 						</select>
 						<label for="input">   </label>
@@ -64,7 +74,17 @@
 			<?php elseif($_SESSION['stype']=="fleetID"): ?>
 				<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 				 <?php foreach ($_SESSION['multsearch'] as $key => $value) {//this will desplay the name of each captain as each should be different
-					echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
+				 	$queryIn = "SELECT * FROM users WHERE Username LIKE '%$value[2]%'";
+					$resultIn = mysqli_query($con, $queryIn);
+					$row = mysqli_fetch_row($resultIn);
+					if ($row[5]!=NULL) {
+						$nameUnedit=$row[5];
+					}
+					else{
+						$nameUnedit=$row[3].' '.$row[4];
+					}
+					$capname=str_replace(' ', '&nbsp;', $nameUnedit);
+					echo '<option value="'.$value[0].'">"Captain: " '.$capname.'</option>';
 				}
 				$input2 = mysqli_real_escape_string($con, $_POST['input']);
 				

@@ -32,7 +32,7 @@ if (mysqli_num_rows($resultIn)==0) {
             $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
             $inResult = mysqli_query($con, $insert); //Updates the DB with the new account
             $updateacc = "UPDATE ship SET Accounts = '$accs' WHERE ship.ID = '$shipid'";
-            $updateuse="UPDATE users SET ship = '$shipid' WHERE users.username='$leaderName'";
+            $updateuse="UPDATE users SET ship = '$shipid', shipC = '$shipid' WHERE users.username='$leaderName'";
             $upuser=mysqli_query($con, $updateuse);
             $inup= mysqli_query($con, $updateacc); //Updates the users DB section to show ownership of the new account.
             ?><script type="text/javascript">window.location.href='/PNPN-Website/teller.php'</script><?php
