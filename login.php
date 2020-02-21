@@ -42,7 +42,7 @@
 			$ackpass = $row2[1];
 			$salt = $row2[2];
 			$passwordhold = md5($salt.$Password);
-			$queryperm = "SELECT `Account Permissions` FROM Users WHERE username LIKE '$Username'";
+			$queryperm = "SELECT `AccountPerm` FROM Users WHERE username LIKE '$Username'";
 			$ackperm = mysqli_query($con, $queryperm);
 			$perm = mysqli_fetch_row($ackperm);
 			echo $passwordhold;

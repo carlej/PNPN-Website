@@ -120,6 +120,15 @@
                                 </p>
                             </fieldset>
                         </form>
+                        <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 4.6em">Password: </label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Pass">
+                                    </p>
+                                </fieldset>
+                            </form>
                         <?php
                             elseif ($_POST["Edit"] == "First"):
                         ?>
@@ -184,6 +193,15 @@
                                 </p>
                             </fieldset>
                         </form>
+                        <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 4.6em">Password: </label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Pass">
+                                    </p>
+                                </fieldset>
+                            </form>
                         <?php
                             elseif ($_POST["Edit"] == "Last"):
                         ?>
@@ -249,6 +267,15 @@
                                 </p>
                             </fieldset>
                         </form>
+                        <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 4.6em">Password: </label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Pass">
+                                    </p>
+                                </fieldset>
+                            </form>
                         <?php
                             elseif ($_POST["Edit"] == "Pirate"):
                         ?>
@@ -317,6 +344,15 @@
                                 </p>
                             </fieldset>
                         </form>
+                        <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 4.6em">Password: </label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Pass">
+                                    </p>
+                                </fieldset>
+                            </form>
 
 
                         <?php
@@ -387,6 +423,15 @@
                                     </p>
                                 </fieldset>
                             </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 4.6em">Password: </label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Pass">
+                                    </p>
+                                </fieldset>
+                            </form>
                         <?php
                             elseif ($_POST["Edit"] == "Fleet"):
                         ?>
@@ -452,6 +497,15 @@
                                         <input type="submit" name="submit" value="Confirm">
                                         <input type="hidden" name="delim" value="Fleet">
                                         <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 4.6em">Password: </label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Pass">
                                     </p>
                                 </fieldset>
                             </form>
@@ -755,15 +809,14 @@
                             </fieldset>
                         </form>
                         <form method="POST">
-                                <fieldset>
-                                    <p>
-                                        <label style="padding-right: 4.6em">Password: </label>
-                                        <input type="password" value="<?php echo $pass; ?>" disabled>
-                                        <input type="submit" name="submit" value="Edit">
-                                        <input type="hidden" name="Edit" value="Pass">
-                                    </p>
-                                </fieldset>
-                            </form>
+                            <fieldset>
+                                <p>
+                                    <label style="padding-right: 4.6em">Password: </label>
+                                    <input type="submit" name="submit" value="Edit">
+                                    <input type="hidden" name="Edit" value="Pass">
+                                </p>
+                            </fieldset>
+                        </form>
                         <?php
                             endif;
                         ?>
