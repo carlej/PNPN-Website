@@ -2,8 +2,12 @@
 <html>
 	<head>
 		<?php include("Javascript/Connections/req.php"); 
-		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-			$username = $_SESSION['username'];
+		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")) {
+			$usename = $_SESSION['username'];
+		}
+		else{
+			echo "Please login to view this page.";
+			header("Location: /PNPN-Website/bank.php");
 		}
 		?>
 		

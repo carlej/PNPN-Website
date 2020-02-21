@@ -5,7 +5,7 @@
 	<head>
 
 		<?php include("Javascript/Connections/req.php");
-		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b") {
+		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")) {
 			$usename = $_SESSION['username'];
 		}
 		else{
