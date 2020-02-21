@@ -341,26 +341,26 @@
                         <?php 
                             elseif ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Confirm"):
                                 if ($_POST['delim']=="First") {
-                                    $name=$_POST['name'];
+                                    $name=mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Fname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
                                     header("Location: /PNPN-Website/editUser.php");
                                 }
                                 else if ($_POST['delim']=="Last") {
-                                    $name=$_POST['name'];
+                                    $name=mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Lname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
                                     header("Location: /PNPN-Website/editUser.php");
                                 }
                                 else if ($_POST['delim']=="Pirate") {
-                                    $name=$_POST['name'];
+                                    $name=mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Pname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
                                     header("Location: /PNPN-Website/editUser.php");
                                 }
                                 else if ($_POST['delim']=='Ship') {
                             		//echo $_POST['name'];
-                            		$input=$_POST['name'];
+                            		$input=mysqli_real_escape_string($con,$_POST['name']);
                             		$queryShipNest = "SELECT * FROM ship WHERE Name LIKE '%$input%'";
                             		$resultShipNest = mysqli_query($con, $queryShipNest);
                             		if (mysqli_num_rows($resultShipNest)>1) {
@@ -406,7 +406,7 @@
 							}
                                 else if ($_POST['delim']=='Fleet') {
                                 	//echo $_POST['name'];
-                            		$input=$_POST['name'];
+                            		$input=mysqli_real_escape_string($con,$_POST['name']);
                             		$queryFleetNest = "SELECT * FROM fleet WHERE Name LIKE '%$input%'";
                             		$resultFleetNest = mysqli_query($con, $queryFleetNest);
                             		if (mysqli_num_rows($resultFleetNest)>1) {

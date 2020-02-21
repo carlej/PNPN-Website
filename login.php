@@ -27,28 +27,29 @@
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Escape user inputs for security
-		$Username = mysqli_real_escape_string($con, $_POST['Username']);
+		$Username = $_POST['Username'];
 		$Password = mysqli_real_escape_string($con, $_POST['Password']);
 
 		$queryIn = "SELECT * FROM users where Username='$Username' ";
 		$resultIn = mysqli_query($con, $queryIn);
 		if (mysqli_num_rows($resultIn)==0){
-			echo '<script type="text/javascript">alert("That email does not exist.");
-		   </script>';
-            $msg = "<h2>Can't Add to Table</h2> That email does not exist. $Username<p>";
+			echo $Username;
+			//echo '<script type="text/javascript">alert("That email does not exist.");</script>';
+            //$msg = "<h2>Can't Add to Table</h2> That email does not exist. $Username<p>";
 		}
 		if (mysqli_num_rows($resultIn)!=0) {
-			$quirypass = "SELECT Password FROM users WHERE Username LIKE '$Username'";
-			$ackpass = mysqli_query($con, $quirypass);
-			$row=mysqli_fetch_row($ackpass);
-			$querysalt = "SELECT salt FROM Users WHERE username LIKE '$Username'";
-			$acksalt = mysqli_query($con, $querysalt);
-			$salt = mysqli_fetch_row($acksalt);
-			$passwordhold = MD5($salt[0].$Password);
+			$row2 = mysqli_fetch_row($resultIn);
+			$ackpass = $row2[1];
+			$salt = $row2[2];
+			$passwordhold = md5($salt.$Password);
 			$queryperm = "SELECT `Account Permissions` FROM Users WHERE username LIKE '$Username'";
 			$ackperm = mysqli_query($con, $queryperm);
 			$perm = mysqli_fetch_row($ackperm);
-			if ($row[0]==$passwordhold) {
+			echo $passwordhold;
+			echo "\r\n";
+			echo $ackpass;
+
+			if ($ackpass==$passwordhold) {
 				$msg = "Log in successfull";
 				$_SESSION['loggedin'] = true;
 				$_SESSION['username'] = $Username;
@@ -59,11 +60,13 @@
 				$_SESSION['stype']=NULL;
 				$_SESSION['nest']="hold";
 				$_SESSION['nstype']=NULL;
-				$_SESSION['clear']=NULL;
+				$_SESSION['clear']='NULL';
 				echo $perm[0];
 				header("Location: /PNPN-Website/bank.php");
 			}
 			else{
+				//echo $Username;
+				//echo $Password;
 				echo '<div class="container-flow" id="LoginE">
 						<div class = "d-flex justify-content-center">
 						<div class = "row" >
