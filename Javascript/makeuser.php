@@ -16,7 +16,7 @@
         $lastName = mysqli_real_escape_string($con, $_POST['lastName']);
         $pirateName = mysqli_real_escape_string($con, $_POST['pirateName']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
-        $Password = mysqli_real_escape_string($con, $_POST['Password']);
+        $Password = mysqli_real_escape_string($con, $_POST['password']);
         $queryIn = "SELECT * FROM users where Username='$Username' ";
         $resultIn = mysqli_query($con, $queryIn);
         if (mysqli_num_rows($resultIn)>0) {

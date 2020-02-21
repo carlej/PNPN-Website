@@ -12,7 +12,7 @@
     <!--This will allow Tellers to edit user information-->
 
     </head>
-    <body class="EditUserPage">
+    <body class="accountPage">
 
         <?php $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
             if (!$con) {
@@ -24,9 +24,12 @@
         $queryIn = "SELECT * FROM users WHERE Username = '$ID'";
         $resultIn = mysqli_query($con, $queryIn);
         $row = mysqli_fetch_row($resultIn);
+        $Email = str_replace(' ', '&nbsp;', $row[0]);
         $Fname = str_replace(' ', '&nbsp;', $row[3]);
         $Lname = str_replace(' ', '&nbsp;', $row[4]);
         $Pname = str_replace(' ', '&nbsp;', $row[5]);
+        $salt = $row[2];
+        $pass = $row[1];
         $shipName='&nbsp';
         $fleetName='&nbsp';
         if ($row[15]) {//ship
@@ -45,7 +48,7 @@
         //echo $_POST['Edit'];
         ?>
         <div class = "container" >
-            <div class = "d-flex justify-content-center" id = "EditUser">
+            <div class = "d-flex justify-content-center" id = "account">
                 <div class = "row">
                     <div class = "col-xl">
                         <legend id="AcctInfoDisp">Account Information:</legend>
@@ -54,8 +57,82 @@
                             if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Edit"): 
                         ?>
                         <?php
-                            if ($_POST["Edit"] == "First"):
+                            if ($_POST["Edit"] == "Email"):
                         ?>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 5em">Email: </label>
+                                        <input type="Email"  name="name" value='<?php echo $Email;?>' required>
+                                        <input type="submit" name="submit" value="Confirm">
+                                        <input type="hidden" name="delim" value="Email">
+                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 5em">First Name: </label>
+                                        <label><?php echo $Fname; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="First">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 5em">Last Name: </label>
+                                        <label> <?php echo $Lname; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Last">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                            <fieldset>
+                                <p>
+                                    <label style="padding-right: 4.6em">Pirate Name: </label>
+                                    <label><?php echo $Pname; ?></label>
+                                    <input type="submit" name="submit" value="Edit">
+                                    <input type="hidden" name="Edit" value="Pirate">
+                                </p>
+                            </fieldset>
+                        </form>
+                        <form method="POST">
+                            <fieldset>
+                                <p>
+                                    <label style="padding-right: 4.6em">Ship or Household: </label>
+                                    <label><?php echo $shipName; ?></label>
+                                    <input type="submit" name="submit" value="Edit">
+                                    <input type="hidden" name="Edit" value="Ship">
+                                </p>
+                            </fieldset>
+                        </form>
+                        <form method="POST">
+                            <fieldset>
+                                <p> 
+                                    <label style="padding-right: 4.6em">Fleet or Alliance: </label>
+                                    <label><?php echo $fleetName; ?></label>
+                                    <input type="submit" name="submit" value="Edit">
+                                    <input type="hidden" name="Edit" value="Fleet">
+                                </p>
+                            </fieldset>
+                        </form>
+                        <?php
+                            elseif ($_POST["Edit"] == "First"):
+                        ?>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 5em">Email: </label>
+                                        <label> <?php echo $Email; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Email">
+                                    </p>
+                                </fieldset>
+                            </form>
                             <form method="POST">
                                 <fieldset>
                                     <p>
@@ -63,7 +140,7 @@
                                         <input type="text"  name="name" value='<?php echo $Fname;?>' required>
                                         <input type="submit" name="submit" value="Confirm">
                                         <input type="hidden" name="delim" value="First">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
                                     </p>
                                 </fieldset>
                             </form>
@@ -113,6 +190,16 @@
                             <form method="POST">
                                 <fieldset>
                                     <p>
+                                        <label style="padding-right: 5em">Email: </label>
+                                        <label> <?php echo $Email; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Email">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
                                         <label style="padding-right: 5em">First Name: </label>
                                         <label><?php echo $Fname; ?></label>
                                         <input type="submit" name="submit" value="Edit">
@@ -127,7 +214,7 @@
                                         <input type="text" name="name" value=<?php echo $Lname;?> required>
                                         <input type="submit" name="submit" value="Confirm">
                                         <input type="hidden" name="delim" value="Last">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
                                     </p>
                                 </fieldset>
                             </form>
@@ -168,6 +255,16 @@
                             <form method="POST">
                                 <fieldset>
                                     <p>
+                                        <label style="padding-right: 5em">Email: </label>
+                                        <label> <?php echo $Email; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Email">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
                                         <label style="padding-right: 5em">First Name: </label>
                                         <label><?php echo $Fname; ?></label>
                                         <input type="submit" name="submit" value="Edit">
@@ -196,7 +293,7 @@
                                         <?php endif; ?>
                                         <input type="submit" name="submit" value="Confirm">
                                         <input type="hidden" name="delim" value="Pirate">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
                                     </p>
                                 </fieldset>
                             </form>
@@ -225,6 +322,16 @@
                         <?php
                             elseif ($_POST["Edit"] == "Ship"):
                         ?>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 5em">Email: </label>
+                                        <label> <?php echo $Email; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Email">
+                                    </p>
+                                </fieldset>
+                            </form>
                             <form method="POST">
                                 <fieldset>
                                     <p>
@@ -266,7 +373,7 @@
                                         <?php endif; ?>
                                         <input type="submit" name="submit" value="Confirm">
                                         <input type="hidden" name="delim" value="Ship">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
                                     </p>
                                 </fieldset>
                             </form>
@@ -283,6 +390,16 @@
                         <?php
                             elseif ($_POST["Edit"] == "Fleet"):
                         ?>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 5em">Email: </label>
+                                        <label> <?php echo $Email; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Email">
+                                    </p>
+                                </fieldset>
+                            </form>
                             <form method="POST">
                                 <fieldset>
                                     <p>
@@ -334,7 +451,87 @@
                                         <?php endif; ?>
                                         <input type="submit" name="submit" value="Confirm">
                                         <input type="hidden" name="delim" value="Fleet">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                    </p>
+                                </fieldset>
+                            </form>
+                        <?php
+                            elseif ($_POST["Edit"] == "Pass"):
+                        ?>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 5em">Email: </label>
+                                        <label> <?php echo $Email; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Email">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 5em">First Name: </label>
+                                        <label><?php echo $Fname; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="First">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 5em">Last Name: </label>
+                                        <label><?php echo $Lname; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Last">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 4.6em">Pirate Name: </label>
+                                        <label><?php echo $Pname; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Pirate">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 4.6em">Ship or Household: </label>
+                                        <label><?php echo $shipName; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Ship">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 4.6em">Fleet or Alliance: </label>
+                                        <label><?php echo $fleetName; ?></label>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Fleet">
+                                    </p>
+                                </fieldset>
+                            </form>
+                            <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label>Please enter current passowrd</label>
+                                        <label for="Password" style="font-family: pirates">Password:</label>
+                                        <input type="password" class="required" name="Password" id="Password" style="width: 13.6em;">
+                                    </p>
+                                    <p>
+                                        
+                                        <label style="padding-right: 4.6em">Password: </label>
+                                        <input type="password" name="name" required>
+                                        <input type="submit" name="submit" value="Confirm">
+                                        <input type="hidden" name="delim" value="Pass">
+                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
                                     </p>
                                 </fieldset>
                             </form>
@@ -343,27 +540,47 @@
                         ?>
                         <?php 
                             elseif ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Confirm"):
-                                if ($_POST['delim']=="First") {
-                                    $name=$_POST['name'];
+                                if ($_POST['delim']=="Email") {
+                                    echo $_POST['name'];
+                                    $name=mysqli_real_escape_string($con,$_POST['name']);
+                                    echo $name;
+                                    $queryIn = "SELECT * FROM users where Username='$name' ";
+                                    $resultIn = mysqli_query($con, $queryIn);
+                                    if ($_SESSION['username']==$name) {
+                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                    }
+                                    else if (mysqli_num_rows($resultIn)>0){
+                                        echo '<script type="text/javascript">alert("There is already someone with that Email");</script>';
+                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                    }
+                                    else{
+                                        $_SESSION['username'] = $name;
+                                        $update = "UPDATE users SET Username = '$name' WHERE `$type` LIKE '%$ID%'";
+                                        $temp=mysqli_query($con, $update);
+                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                    }
+                                }
+                                else if ($_POST['delim']=="First") {
+                                    $name=mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Fname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
-                                    header("Location: /PNPN-Website/editUser.php");
+                                    echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
                                 }
                                 else if ($_POST['delim']=="Last") {
-                                    $name=$_POST['name'];
+                                    $name=$mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Lname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
-                                    header("Location: /PNPN-Website/editUser.php");
+                                    echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
                                 }
                                 else if ($_POST['delim']=="Pirate") {
-                                    $name=$_POST['name'];
+                                    $name=mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Pname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
-                                    header("Location: /PNPN-Website/editUser.php");
+                                    echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
                                 }
                                 else if ($_POST['delim']=='Ship') {
                                     //echo $_POST['name'];
-                                    $input=$_POST['name'];
+                                    $input=mysqli_real_escape_string($con,$_POST['name']);
                                     $queryShipNest = "SELECT * FROM ship WHERE Name LIKE '%$input%'";
                                     $resultShipNest = mysqli_query($con, $queryShipNest);
                                     if (mysqli_num_rows($resultShipNest)>1) {
@@ -400,16 +617,16 @@
                                         $update = "UPDATE users SET shipC = '$IDnum[0]' WHERE `$type` LIKE '%$ID%'";
                                         $temp=mysqli_query($con, $update);
                                         $_SESSION['multsearch']=array('1');
-                                        header("Location: /PNPN-Website/editUser.php");
+                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
                                     }
                                     else {
-                                        echo '<script type="text/javascript">alert("There are no ships that match that name.");</script>';
+                                        echo '<script type="text/javascript">alert("There are no ships that match that name. Please see a teller for help.");</script>';
                                     }
                                     
                             }
                                 else if ($_POST['delim']=='Fleet') {
                                     //echo $_POST['name'];
-                                    $input=$_POST['name'];
+                                    $input=mysqli_real_escape_string($con,$_POST['name']);
                                     $queryFleetNest = "SELECT * FROM fleet WHERE Name LIKE '%$input%'";
                                     $resultFleetNest = mysqli_query($con, $queryFleetNest);
                                     if (mysqli_num_rows($resultFleetNest)>1) {
@@ -446,18 +663,47 @@
                                         $update = "UPDATE users SET fleetC = '$IDnum[0]' WHERE `$type` LIKE '%$ID%'";
                                         $temp=mysqli_query($con, $update);
                                         $_SESSION['multsearch']=array('1');
-                                        header("Location: /PNPN-Website/editUser.php");
+                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
                                     }
                                     else {
-                                        echo '<script type="text/javascript">alert("There are no fleets that match that name.");</script>';
+                                        echo '<script type="text/javascript">alert("There are no fleets that match that name. Please see a teller for help.");</script>';
                                     }
                                     
                             }
+                            else if ($_POST['delim']=="Pass") {
+                                    $name=mysqli_real_escape_string($con,$_POST['name']);
+                                    $Password=mysqli_real_escape_string($con,$_POST['Password']);
+                                    $passwordhold = MD5($salt.$Password);
+                                    $newpass = MD5($salt.$name);
+                                    echo $passwordhold;
+                                    echo "\r\n";
+                                    echo $pass;
+                                    if ($pass==$passwordhold) {
+                                        $update = "UPDATE users SET Password = '$newpass' WHERE `$type` LIKE '%$ID%'";
+                                        $temp=mysqli_query($con, $update);
+                                        echo '<script type="text/javascript">alert("pass changed");</script>';
+                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                    }
+                                    else{
+                                        echo '<script type="text/javascript">alert("You did not enter the correct password. Please see a teller for help.");</script>';
+                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                    }
+                                }
 
                         ?>
                         <?php 
                             else: 
                         ?>
+                        <form method="POST">
+                            <fieldset>
+                                <p>
+                                    <label style="padding-right: 5em">Email: </label>
+                                    <label> <?php echo $Email; ?></label>
+                                    <input type="submit" name="submit" value="Edit">
+                                    <input type="hidden" name="Edit" value="Email">
+                                </p>
+                            </fieldset>
+                        </form>
                         <form method="POST">
                             <fieldset>
                                 <p>
@@ -508,11 +754,21 @@
                                 </p>
                             </fieldset>
                         </form>
+                        <form method="POST">
+                                <fieldset>
+                                    <p>
+                                        <label style="padding-right: 4.6em">Password: </label>
+                                        <input type="password" value="<?php echo $pass; ?>" disabled>
+                                        <input type="submit" name="submit" value="Edit">
+                                        <input type="hidden" name="Edit" value="Pass">
+                                    </p>
+                                </fieldset>
+                            </form>
                         <?php
                             endif;
                         ?>
                         <div class="col">
-                        <a href="/PNPN-Website/teller.php" style="text-decoration: none; color: black; align-content: center">Back to Teller Page</a>
+                        <a href="/PNPN-Website/bank.php" style="text-decoration: none; color: black; align-content: center">Back to Bank Page</a>
                         </div>
                     </div>
                 </div>
