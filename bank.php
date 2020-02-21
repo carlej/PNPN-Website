@@ -27,13 +27,13 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 				<div class = "col-6" style="padding-right: 0.05em;">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b"): ?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")): ?>
 						<a href="/PNPN-Website/bank.php" class="PersonalPressed" onclick="Cancel()">Personal</a>
 						
 					<?php endif;?>
 				</div>
 				<div class = "col-6" style = "padding-left: 0.05em;">
-					<?php if ($url=="/PNPN-Website/bank.php" && $_SESSION['perm']=="b"):?>
+					<?php if ($url=="/PNPN-Website/bank.php" && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")):?>
 					<a href="/PNPN-Website/teller.php" class="TellerButton" onclick="Cancel()">Teller</a>
 					
 					<?php endif;?>
@@ -50,13 +50,13 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
 				<div class = "col-sm-6">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="b"): ?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")): ?>
 						<a href="/PNPN-Website/bank.php" class="PersonalPressed2" onclick="Cancel()">Personal</a>
 						
 					<?php endif;?>
 				</div>
 				<div class = "col-sm-6">
-					<?php if ($url=="/PNPN-Website/bank.php" && $_SESSION['perm']=="b"):?>
+					<?php if ($url=="/PNPN-Website/bank.php" && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")):?>
 					<a href="/PNPN-Website/teller.php" class="TellerButton2" onclick="Cancel()">Teller</a>
 					
 					<?php endif;?>
