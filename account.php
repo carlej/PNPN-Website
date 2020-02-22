@@ -48,7 +48,7 @@
         //echo $_POST['Edit'];
         ?>
         <div class = "container" >
-            <div class = "d-flex justify-content-center" id = "account">
+            <div class = "d-flex justify-content-center" id = "AccountPage">
                 <div class = "row">
                     <div class = "col-xl">
                         <legend id="AcctInfoDisp">Account Information:</legend>
@@ -820,9 +820,6 @@
                         <?php
                             endif;
                         ?>
-                        <div class="col">
-                        <a href="/PNPN-Website/bank.php" style="text-decoration: none; color: black; align-content: center">Back to Bank Page</a>
-                        </div>
                     </div>
                 </div>
             </div>
