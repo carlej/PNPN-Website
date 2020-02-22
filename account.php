@@ -820,9 +820,6 @@
                         <?php
                             endif;
                         ?>
-                        <div class="col">
-                        <a href="/PNPN-Website/bank.php" style="text-decoration: none; color: black; align-content: center">Back to Bank Page</a>
-                        </div>
                     </div>
                 </div>
             </div>
