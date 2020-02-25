@@ -15,7 +15,7 @@
 		}*/
 		?>
 		<p>		
-			<div class = "col-sm">
+			<div class = "col-md">
 				<?php if($_SESSION['nest']=='hold' && $_SESSION['nstype']): ?>
 				<form name="transferSearch" method="POST" id="transferSearchForm">
 					<fieldset>
@@ -94,7 +94,10 @@
 								<legend>Transfer:</legend>	
 								<p>
 									<p id="searcher">
+										<div class="col-sm">
 										<p style="margin-bottom: 0em; margin-top: -0.7em;">Account to:</p>
+										</div>
+										<div class="col-sm">
 										<select name="ntype" class="SearchBy3" style=" margin-bottom: 0.3em;">
 											<option>Search by:</option>
 											<option value="Pname">Pirate Name</option>
@@ -106,8 +109,11 @@
 											<option value="fleetID" style="display:none;">fleetID</option>
 											<option value="Fleet">Fleet/Alliance</option>
 										</select>
+										</div>
+										<div class = "col-sm">
 										<input type="text" required name="ninput" id="ninput" style="font-family: arial; margin-bottom: 0.3em">
 										<input type="submit" name= "submit" value="Search" class="submit">
+										</div>
 										<input type="hidden" name="new2" value="new2" class="submit">
 										<input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>>
 										<input type="hidden" name="input" value=<?php echo $_SESSION["hold"];?>>
@@ -174,7 +180,7 @@
 		<div class="tellDepositFormdiv">
 			<form name="Deposit"method="POST" action="Javascript/tellmaketran.php" id="tellDepositForm">
 				<fieldset>
-					<div class = "col-sm">
+					<div class = "col-md">
 						<legend>Deposit:</legend>
 						<p><?php
 						//echo $name;
@@ -228,7 +234,7 @@
 		<div class="tellWithdrawFormdiv">
 			<form name="Withdraw"method="POST" action="Javascript/tellmaketran.php" id="tellWithdrawForm">
 				<fieldset>
-					<div class = "col-sm">	
+					<div class = "col-md">	
 						<legend>Withdraw:</legend>
 						<p><?php
 						//echo $name;
@@ -279,7 +285,7 @@
 			</form>
 		</div>
 		<?php if($_SESSION['stype']!='shipID' && $_SESSION['stype']!='fleetID'): ?>
-			<div class = "col-sm">
+			<div class = "col-md" id = "InfoColumn">
 				<legend>Info:</legend>
 				<p>
 					<input type = "submit" name= "submit" value = "Add Ship/Household" onclick="location.href='/PNPN-Website/addShip.php';"?>

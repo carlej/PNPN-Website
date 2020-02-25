@@ -44,8 +44,8 @@
     	<div class = "container" >
             <div class = "d-flex justify-content-center" id = "EditUser">
                 <div class = "row">
-                    <div class = "col-xl">
-                    	<legend id="AcctInfoDisp">Edit User:</legend>
+                    <div class = "col-sm">
+                    	<legend id="EditUserDisp">Edit User:</legend>
                        
                         <?php 
                             if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Edit"): 
@@ -55,53 +55,73 @@
                         ?>
                             <form method="POST">
                                 <fieldset>
-                                    <p>
-                                        <label style="padding-right: 5em">First Name: </label>
-                                        <input type="text"  name="name" value='<?php echo $Fname;?>' required>
-                                        <input type="submit" name="submit" value="Confirm">
-                                        <input type="hidden" name="delim" value="First">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
-                                    </p>
+                                    <div class="row">
+                                        <p>
+                                            <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">First Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+                                                <input type="text"  name="name" value='<?php echo $Fname;?>' required>
+                                                <input type="submit" name="submit" value="Confirm">
+                                                <input type="hidden" name="delim" value="First">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                            </div>
+                                        </p>
+                                    </div>
                                 </fieldset>
                             </form>
                             <form method="POST">
                                 <fieldset>
-                                    <p>
-                                        <label style="padding-right: 5em">Last Name: </label>
-                                        <label> <?php echo $Lname; ?></label>
-                                        <input type="submit" name="submit" value="Edit">
-                                        <input type="hidden" name="Edit" value="Last">
-                                    </p>
+                                    <div class="row">
+                                        <p>
+                                            <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Last Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+                                                <label> <?php echo $Lname; ?></label>
+                                                <input type="submit" name="submit" value="Edit">
+                                                <input type="hidden" name="Edit" value="Last">
+                                            </div>
+                                        </p>
+                                    </div>
                                 </fieldset>
                             </form>
                             <form method="POST">
                             <fieldset>
-                                <p>
-                                    <label style="padding-right: 4.6em">Pirate Name: </label>
-                                    <label><?php echo $Pname; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Pirate">
-                                </p>
+                                <div class="row">
+                                    <p>
+                                        <label style="padding-right: 9.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Pirate Name: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $Pname; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Pirate">
+                                        </div>
+                                    </p>
+                                </div>
                             </fieldset>
                         </form>
                         <form method="POST">
                             <fieldset>
-                                <p>
-                                	<label style="padding-right: 4.6em">Ship or Household: </label>
-                                    <label><?php echo $shipName; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Ship">
-                                </p>
+                                <div class="row">
+                                    <p>
+                                    	<label style="padding-right: 7.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $shipName; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Ship">
+                                        </div>
+                                    </p>
+                                </div>
                             </fieldset>
                         </form>
                         <form method="POST">
                             <fieldset>
-                                <p> 
-                                	<label style="padding-right: 4.6em">Fleet or Alliance: </label>
-                                   	<label><?php echo $fleetName; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Fleet">
-                                </p>
+                                <div class="row">
+                                    <p> 
+                                    	<label style="padding-right: 7.9em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                           	<label><?php echo $fleetName; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Fleet">
+                                        </div>
+                                    </p>
+                                </div>
                             </fieldset>
                         </form>
                         <?php
@@ -109,54 +129,74 @@
                         ?>
                             <form method="POST">
                                 <fieldset>
-                                    <p>
-                                        <label style="padding-right: 5em">First Name: </label>
-                                        <label><?php echo $Fname; ?></label>
-                                        <input type="submit" name="submit" value="Edit">
-                                        <input type="hidden" name="Edit" value="First">
-                                    </p>
+                                    <div class="row">
+                                        <p>
+                                            <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">First Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+                                                <label><?php echo $Fname; ?></label>
+                                                <input type="submit" name="submit" value="Edit">
+                                                <input type="hidden" name="Edit" value="First">
+                                            </div>
+                                        </p>
+                                    </div>
                                 </fieldset>
                             </form>
                             <form method="POST">
                                 <fieldset>
-                                    <p>
-                                        <label style="padding-right: 5em">Last Name: </label>
-                                        <input type="text" name="name" value=<?php echo $Lname;?> required>
-                                        <input type="submit" name="submit" value="Confirm">
-                                        <input type="hidden" name="delim" value="Last">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
-                                    </p>
+                                    <div class="row">
+                                        <p>
+                                            <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Last Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+                                                <input type="text" name="name" value=<?php echo $Lname;?> required>
+                                                <input type="submit" name="submit" value="Confirm">
+                                                <input type="hidden" name="delim" value="Last">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                            </div>
+                                        </p>
+                                    </div>
                                 </fieldset>
                             </form>
 
                             <form method="POST">
                             <fieldset>
-                                <p>
-                                    <label style="padding-right: 4.6em">Pirate Name: </label>
-                                    <label><?php echo $Pname; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Pirate">
-                                </p>
+                                <div class="row">
+                                    <p>
+                                        <label style="padding-right: 9.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Pirate Name: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $Pname; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Pirate">
+                                        </div>
+                                    </p>
+                                </div>
                             </fieldset>
                         </form>
                         <form method="POST">
                             <fieldset>
-                                <p>
-                                	<label style="padding-right: 4.6em">Ship or Household: </label>
-                                    <label><?php echo $shipName; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Ship">
-                                </p>
+                                <div class="row">
+                                    <p>
+                                    	<label style="padding-right: 7.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $shipName; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Ship">
+                                        </div>
+                                    </p>
+                                </div>
                             </fieldset>
                         </form>
                         <form method="POST">
                             <fieldset>
-                                <p> 
-                                	<label style="padding-right: 4.6em">Fleet or Alliance: </label>
-                                    <label><?php echo $fleetName; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Fleet">
-                                </p>
+                                <div class="row">
+                                    <p> 
+                                    	<label style="padding-right: 7.9em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $fleetName; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Fleet">
+                                        </div>
+                                    </p>
+                                </div>
                             </fieldset>
                         </form>
                         <?php
@@ -164,57 +204,77 @@
                         ?>
                             <form method="POST">
                                 <fieldset>
-                                    <p>
-                                        <label style="padding-right: 5em">First Name: </label>
-                                        <label><?php echo $Fname; ?></label>
-                                        <input type="submit" name="submit" value="Edit">
-                                        <input type="hidden" name="Edit" value="First">
-                                    </p>
+                                    <div class="row">
+                                        <p>
+                                            <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">First Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+                                                <label><?php echo $Fname; ?></label>
+                                                <input type="submit" name="submit" value="Edit">
+                                                <input type="hidden" name="Edit" value="First">
+                                            </div>
+                                        </p>
+                                    </div>
                                 </fieldset>
                             </form>
                             <form method="POST">
                             <fieldset>
-                                <p>
-                                    <label style="padding-right: 5em">Last Name: </label>
-                                    <label><?php echo $Lname; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Last">
-                                </p>
+                                <div class="row">
+                                    <p>
+                                        <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Last Name: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $Lname; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Last">
+                                        </div>
+                                    </p>
+                                </div>
                             </fieldset>
                         </form>
                             <form method="POST">
                                 <fieldset>
-                                    <p>
-                                        <label style="padding-right: 4.6em">Pirate Name: </label>
-                                        <?php if($Pname):?>
-                                    		<input type="text" name="name" value=<?php echo $Pname;?> required>
-                                    	<?php else: ?>
-                                        	<input type="text" name="name" required>
-                                        <?php endif; ?>
-                                        <input type="submit" name="submit" value="Confirm">
-                                        <input type="hidden" name="delim" value="Pirate">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
-                                    </p>
+                                    <div class="row">
+                                        <p>
+                                            <label style="padding-right: 9.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Pirate Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+                                                <?php if($Pname):?>
+                                            		<input type="text" name="name" value=<?php echo $Pname;?> required>
+                                            	<?php else: ?>
+                                                	<input type="text" name="name" required>
+                                                <?php endif; ?>
+                                                <input type="submit" name="submit" value="Confirm">
+                                                <input type="hidden" name="delim" value="Pirate">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                            </div>
+                                        </p>
+                                    </div>
                                 </fieldset>
                             </form>
                         <form method="POST">
                             <fieldset>
-                                <p>
-                                	<label style="padding-right: 4.6em">Ship or Household: </label>
-                                    <label><?php echo $shipName; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Ship">
-                                </p>
+                                <div class="row">
+                                    <p>
+                                    	<label style="padding-right: 7.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $shipName; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Ship">
+                                        </div>
+                                    </p>
+                                </div>
                             </fieldset>
                         </form>
                         <form method="POST">
                             <fieldset>
-                                <p> 
-                                	<label style="padding-right: 4.6em">Fleet or Alliance: </label>
-                                    <label><?php echo $fleetName; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Fleet">
-                                </p>
+                                <div class="row">
+                                    <p> 
+                                    	<label style="padding-right: 7.9em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $fleetName; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Fleet">
+                                        </div>
+                                    </p>
+                                </div>
                             </fieldset>
                         </form>
 
@@ -224,57 +284,77 @@
                         ?>
 	                        <form method="POST">
 	                            <fieldset>
-	                            	<p>
-	                            		<label style="padding-right: 5em">First Name: </label>
-	                                    <label><?php echo $Fname; ?></label>
-	                                    <input type="submit" name="submit" value="Edit">
-	                                    <input type="hidden" name="Edit" value="First">
-	                            	</p>
+                                    <div class="row">
+    	                            	<p>
+    	                            		<label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">First Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+        	                                    <label><?php echo $Fname; ?></label>
+        	                                    <input type="submit" name="submit" value="Edit">
+        	                                    <input type="hidden" name="Edit" value="First">
+                                            </div>
+    	                            	</p>
+                                    </div>
 	                            </fieldset>
 	                        </form>
 	                        <form method="POST">
 	                            <fieldset>
-	                            	<p>
-	                            		<label style="padding-right: 5em">Last Name: </label>
-	                                    <label><?php echo $Lname; ?></label>
-	                                    <input type="submit" name="submit" value="Edit">
-	                                    <input type="hidden" name="Edit" value="Last">
-	                            	</p>
+                                    <div class="row">
+    	                            	<p>
+    	                            		<label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Last Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+        	                                    <label><?php echo $Lname; ?></label>
+        	                                    <input type="submit" name="submit" value="Edit">
+        	                                    <input type="hidden" name="Edit" value="Last">
+                                            </div>
+    	                            	</p>
+                                    </div>
 	                            </fieldset>
 	                        </form>
 	                        <form method="POST">
 	                            <fieldset>
-	                            	<p>
-	                            		<label style="padding-right: 4.6em">Pirate Name: </label>
-	                                    <label><?php echo $Pname; ?></label>
-	                                    <input type="submit" name="submit" value="Edit">
-	                                    <input type="hidden" name="Edit" value="Pirate">
-	                            	</p>
+                                    <div class="row">
+    	                            	<p>
+    	                            		<label style="padding-right: 9.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Pirate Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+        	                                    <label><?php echo $Pname; ?></label>
+        	                                    <input type="submit" name="submit" value="Edit">
+        	                                    <input type="hidden" name="Edit" value="Pirate">
+                                            </div>
+    	                            	</p>
+                                    </div>
 	                            </fieldset>
 	                        </form>
 							<form method="POST">
                                 <fieldset>
-                                    <p>
-                                    	<label style="padding-right: 4.6em">Ship or Household: </label>
-                                    	<?php if($shipName=='&nbsp'):?>
-                                    		<input type="text" name="name" required>
-                                    	<?php else: ?>
-                                        	<input type="text" name="name" value=<?php echo $shipName;?> required>
-                                        <?php endif; ?>
-                                        <input type="submit" name="submit" value="Confirm">
-                                        <input type="hidden" name="delim" value="Ship">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
-                                    </p>
+                                    <div class="row">
+                                        <p>
+                                        	<label style="padding-right: 7.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            	<?php if($shipName=='&nbsp'):?>
+                                            		<input type="text" name="name" required>
+                                            	<?php else: ?>
+                                                	<input type="text" name="name" value=<?php echo $shipName;?> required>
+                                                <?php endif; ?>
+                                                <input type="submit" name="submit" value="Confirm">
+                                                <input type="hidden" name="delim" value="Ship">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                            </div>
+                                        </p>
+                                    </div>
                                 </fieldset>
                             </form>
 	                        <form method="POST">
 	                            <fieldset>
-	                            	<p>
-	                            		<label style="padding-right: 4.6em">Fleet or Alliance: </label>
-	                                    <label><?php echo $fleetName; ?></label>
-	                                    <input type="submit" name="submit" value="Edit">
-	                                    <input type="hidden" name="Edit" value="Fleet">
-	                            	</p>
+                                    <div class="row">
+    	                            	<p>
+    	                            		<label style="padding-right: 7.9em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+        	                                    <label><?php echo $fleetName; ?></label>
+        	                                    <input type="submit" name="submit" value="Edit">
+        	                                    <input type="hidden" name="Edit" value="Fleet">
+                                            </div>
+    	                            	</p>
+                                    </div>
 	                            </fieldset>
 	                        </form>
                         <?php
@@ -282,57 +362,77 @@
                         ?>
 	                        <form method="POST">
 	                            <fieldset>
-	                            	<p>
-	                            		<label style="padding-right: 5em">First Name: </label>
-	                                    <label><?php echo $Fname; ?></label>
-	                                    <input type="submit" name="submit" value="Edit">
-	                                    <input type="hidden" name="Edit" value="First">
-	                            	</p>
+                                    <div class="row">
+    	                            	<p>
+    	                            		<label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">First Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+        	                                    <label><?php echo $Fname; ?></label>
+        	                                    <input type="submit" name="submit" value="Edit">
+        	                                    <input type="hidden" name="Edit" value="First">
+                                            </div>
+    	                            	</p>
+                                    </div>
 	                            </fieldset>
 	                        </form>
 	                        <form method="POST">
 	                            <fieldset>
-	                            	<p>
-	                            		<label style="padding-right: 5em">Last Name: </label>
-	                                    <label><?php echo $Lname; ?></label>
-	                                    <input type="submit" name="submit" value="Edit">
-	                                    <input type="hidden" name="Edit" value="Last">
-	                            	</p>
+                                    <div class="row">
+    	                            	<p>
+    	                            		<label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Last Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+        	                                    <label><?php echo $Lname; ?></label>
+        	                                    <input type="submit" name="submit" value="Edit">
+        	                                    <input type="hidden" name="Edit" value="Last">
+                                            </div>
+    	                            	</p>
+                                    </div>
 	                            </fieldset>
 	                        </form>
 	                        <form method="POST">
 	                            <fieldset>
-	                            	<p>
-	                            		<label style="padding-right: 4.6em">Pirate Name: </label>
-	                                    <label><?php echo $Pname; ?></label>
-	                                    <input type="submit" name="submit" value="Edit">
-	                                    <input type="hidden" name="Edit" value="Pirate">
-	                            	</p>
+                                    <div class="row">
+    	                            	<p>
+    	                            		<label style="padding-right: 9.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Pirate Name: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+        	                                    <label><?php echo $Pname; ?></label>
+        	                                    <input type="submit" name="submit" value="Edit">
+        	                                    <input type="hidden" name="Edit" value="Pirate">
+                                            </div>
+    	                            	</p>
+                                    </div>
 	                            </fieldset>
 	                        </form>
 	                        <form method="POST">
 	                            <fieldset>
-	                            	<p>
-	                            		<label style="padding-right: 4.6em">Ship or Household: </label>
-	                                    <label><?php echo $shipName; ?></label>
-	                                    <input type="submit" name="submit" value="Edit">
-	                                    <input type="hidden" name="Edit" value="Ship">
-	                            	</p>
+                                    <div class="row">
+    	                            	<p>
+    	                            		<label style="padding-right: 7.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+        	                                    <label><?php echo $shipName; ?></label>
+        	                                    <input type="submit" name="submit" value="Edit">
+        	                                    <input type="hidden" name="Edit" value="Ship">
+                                            </div>
+    	                            	</p>
+                                    </div>
 	                            </fieldset>
 	                        </form>
                             <form method="POST">
                                 <fieldset>
-                                    <p>
-                                    	<label style="padding-right: 4.6em">Fleet or Alliance: </label>
-                                        <?php if($fleetName=='&nbsp'):?>
-                                    		<input type="text" name="name" required>
-                                    	<?php else: ?>
-                                        	<input type="text" name="name" value=<?php echo $fleetName;?> required>
-                                        <?php endif; ?>
-                                        <input type="submit" name="submit" value="Confirm">
-                                        <input type="hidden" name="delim" value="Fleet">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
-                                    </p>
+                                    <div class="row">
+                                        <p>
+                                        	<label style="padding-right: 7.9em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+                                                <?php if($fleetName=='&nbsp'):?>
+                                            		<input type="text" name="name" required>
+                                            	<?php else: ?>
+                                                	<input type="text" name="name" value=<?php echo $fleetName;?> required>
+                                                <?php endif; ?>
+                                                <input type="submit" name="submit" value="Confirm">
+                                                <input type="hidden" name="delim" value="Fleet">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                            </div>
+                                        </p>
+                                    </div>
                                 </fieldset>
                             </form>
                         <?php
@@ -633,60 +733,80 @@
                         ?>
                         <form method="POST">
                             <fieldset>
-                            	<p>
-                            		<label style="padding-right: 5em">First Name: </label>
-                                    <label><?php echo $Fname; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="First">
-                            	</p>
+                                <div class="row">
+                                	<p>
+                                		<label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">First Name: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $Fname; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="First">
+                                        </div>
+                                	</p>
+                                </div>
                             </fieldset>
                         </form>
                         <form method="POST">
                             <fieldset>
-                            	<p>
-                            		<label style="padding-right: 5em">Last Name: </label>
-                                    <label><?php echo $Lname; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Last">
-                            	</p>
+                                <div class="row">
+                                	<p>
+                                		<label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Last Name: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $Lname; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Last">
+                                        </div>
+                                	</p>
+                                </div>
                             </fieldset>
                         </form>
                         <form method="POST">
                             <fieldset>
-                            	<p>
-                            		<label style="padding-right: 4.6em">Pirate Name: </label>
-                                    <label><?php echo $Pname; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Pirate">
-                            	</p>
+                                <div class="row">
+                                	<p>
+                                		<label style="padding-right: 9.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Pirate Name: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $Pname; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Pirate">
+                                        </div>
+                                	</p>
+                                </div>
                             </fieldset>
                         </form>
                         <form method="POST">
                             <fieldset>
-                            	<p>
-                            		<label style="padding-right: 4.6em">Ship or Household: </label>
-                                    <label><?php echo $shipName; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Ship">
-                            	</p>
+                                <div class="row">
+                                	<p>
+                                		<label style="padding-right: 7.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $shipName; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Ship">
+                                        </div>
+                                	</p>
+                                </div>
                             </fieldset>
                         </form>
                         <form method="POST">
                             <fieldset>
-                            	<p>
-                            		<label style="padding-right: 4.6em">Fleet or Alliance: </label>
-                                    <label><?php echo $fleetName; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Fleet">
-                            	</p>
+                                <div class="row">
+                                	<p>
+                                		<label style="padding-right: 7.9em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $fleetName; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Fleet">
+                                        </div>
+                                	</p>
+                                </div>
                             </fieldset>
                         </form>
                         <?php
                             endif;
                         ?>
-                        <div class="col">
-                        <a href="/PNPN-Website/teller.php" style="text-decoration: none; color: black; align-content: center">Back to Teller Page</a>
-                        </div>
+
+                        <input type="submit" name="submit" value="Back to Teller" onclick="location.href='/PNPN-Website/teller.php';" style="margin-top: 1em">
+
                     </div>
                 </div>
             </div>
