@@ -106,7 +106,7 @@
 											<option value="fleetID" style="display:none;">fleetID</option>
 											<option value="Fleet">Fleet/Alliance</option>
 										</select>
-										<input type="text" required name="ninput" id="ninput" style="width: 90%; font-family: arial; margin-bottom: 0.3em">
+										<input type="text" required name="ninput" id="ninput" style="font-family: arial; margin-bottom: 0.3em">
 										<input type="submit" name= "submit" value="Search" class="submit">
 										<input type="hidden" name="new2" value="new2" class="submit">
 										<input type="hidden" name="type" value=<?php echo $_SESSION["stype"]; ?>>
