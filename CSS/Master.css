@@ -812,7 +812,7 @@ li {
 
 }
 
-#account {
+#AccountPage {
 	font-family: pirates;
 	font-size: 1.1em;
 	margin-top: 12em;
@@ -821,7 +821,7 @@ li {
 }
 
 @media (max-width: 992px) {
-	#account {
+	#AccountPage {
 	margin-top: 2em;
 	margin-left: 0em;
 	}
