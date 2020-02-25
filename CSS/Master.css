@@ -801,17 +801,33 @@ li {
 	font-size: 1.3em;
 	font-family: pirates;
 	border-bottom: solid 0.05em;
+	width: 75%;
 
 }
 
-#AccountPage {
+#account {
 	font-family: pirates;
 	font-size: 1.1em;
-	margin-top: 6em;
+	margin-top: 12em;
+	margin-left: -12em;
+
 }
 
 @media (max-width: 992px) {
-	#AccountPage {
+	#account {
+	margin-top: 2em;
+	margin-left: 0em;
+	}
+}
+
+#GrantAccess {
+	font-family: pirates;
+	font-size: 1.2em;
+	margin-top: 8em;
+}
+
+@media (max-width: 992px) {
+	#GrantAccess {
 	margin-top: 2em;
 	}
 }

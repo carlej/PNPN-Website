@@ -39,7 +39,7 @@
             <div class = "d-flex justify-content-center" id = "GrantAccess">
                 <div class = "row">
                     <div class = "col-xl">
-                    	<legend id="AcctInfoDisp">Account Information:</legend>
+                    	<legend id="AcctInfoDisp">Grant Access:</legend>
                        
                         <?php 
                             if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Edit"): 
@@ -49,27 +49,35 @@
                         ?>    
 							<form method="POST">
                                 <fieldset>
-                                    <p>
-                                    	<label style="padding-right: 4.6em">Ship or Household: </label>
-                                    	<?php if($shipName=='&nbsp'):?>
-                                    		<input type="text" name="name" required>
-                                    	<?php else: ?>
-                                        	<input type="text" name="name" value=<?php echo $shipName;?> required>
-                                        <?php endif; ?>
-                                        <input type="submit" name="submit" value="Confirm">
-                                        <input type="hidden" name="delim" value="Ship">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/GrantAccess.php';">
-                                    </p>
+                                    <div class = "row">
+                                        <p>
+                                        	<label style="padding-right: 6.0em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+                                            	<?php if($shipName=='&nbsp'):?>
+                                            		<input type="text" name="name" required>
+                                            	<?php else: ?>
+                                                	<input type="text" name="name" value=<?php echo $shipName;?> required>
+                                                <?php endif; ?>
+                                                <input type="submit" name="submit" value="Confirm">
+                                                <input type="hidden" name="delim" value="Ship">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/GrantAccess.php';">
+                                            </div>
+                                        </p>
+                                    </div>
                                 </fieldset>
                             </form>
 	                        <form method="POST">
 	                            <fieldset>
-	                            	<p>
-	                            		<label style="padding-right: 4.6em">Fleet or Alliance: </label>
-	                                    <label><?php echo $fleetName; ?></label>
-	                                    <input type="submit" name="submit" value="Edit">
-	                                    <input type="hidden" name="Edit" value="Fleet">
-	                            	</p>
+                                    <div class = "row">
+    	                            	<p>
+    	                            		<label style="padding-right: 6.3em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+        	                                    <label><?php echo $fleetName; ?></label>
+        	                                    <input type="submit" name="submit" value="Edit">
+        	                                    <input type="hidden" name="Edit" value="Fleet">
+                                            </div>
+    	                            	</p>
+                                    </div>
 	                            </fieldset>
 	                        </form>
                         <?php
@@ -77,27 +85,35 @@
                         ?>
 	                        <form method="POST">
 	                            <fieldset>
-	                            	<p>
-	                            		<label style="padding-right: 4.6em">Ship or Household: </label>
-	                                    <label><?php echo $shipName; ?></label>
-	                                    <input type="submit" name="submit" value="Edit">
-	                                    <input type="hidden" name="Edit" value="Ship">
-	                            	</p>
+                                    <div class = "row">
+    	                            	<p>
+    	                            		<label style="padding-right: 6.0em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+        	                                    <label><?php echo $shipName; ?></label>
+        	                                    <input type="submit" name="submit" value="Edit">
+        	                                    <input type="hidden" name="Edit" value="Ship">
+                                            </div>
+    	                            	</p>
+                                    </div>
 	                            </fieldset>
 	                        </form>
                             <form method="POST">
                                 <fieldset>
-                                    <p>
-                                    	<label style="padding-right: 4.6em">Fleet or Alliance: </label>
-                                        <?php if($fleetName=='&nbsp'):?>
-                                    		<input type="text" name="name" required>
-                                    	<?php else: ?>
-                                        	<input type="text" name="name" value=<?php echo $fleetName;?> required>
-                                        <?php endif; ?>
-                                        <input type="submit" name="submit" value="Confirm">
-                                        <input type="hidden" name="delim" value="Fleet">
-                                        <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/GrantAccess.php';">
-                                    </p>
+                                    <div class="row">
+                                        <p>
+                                        	<label style="padding-right: 6.3em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+                                            <div class="col-sm" style="margin-bottom: 1.5em">
+                                                <?php if($fleetName=='&nbsp'):?>
+                                            		<input type="text" name="name" required>
+                                            	<?php else: ?>
+                                                	<input type="text" name="name" value=<?php echo $fleetName;?> required>
+                                                <?php endif; ?>
+                                                <input type="submit" name="submit" value="Confirm">
+                                                <input type="hidden" name="delim" value="Fleet">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/GrantAccess.php';">
+                                            </div>
+                                        </p>
+                                    </div>
                                 </fieldset>
                             </form>
                         <?php
@@ -204,29 +220,43 @@
                         ?>
                         <form method="POST">
                             <fieldset>
-                            	<p>
-                            		<label style="padding-right: 4.6em">Ship or Household: </label>
-                                    <label><?php echo $shipName; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Ship">
-                            	</p>
+                                <div class="row">
+                                	<p>
+                                		<label style="padding-right: 6.0em; padding-left: 1em; padding-bottom: -2em; margin-bottom: -2em">Ship or Household: </label>
+                                        <div class="col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $shipName; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Ship">
+                                        </div>
+                                	</p>
+                                </div>
                             </fieldset>
                         </form>
                         <form method="POST">
                             <fieldset>
-                            	<p>
-                            		<label style="padding-right: 4.6em">Fleet or Alliance: </label>
-                                    <label><?php echo $fleetName; ?></label>
-                                    <input type="submit" name="submit" value="Edit">
-                                    <input type="hidden" name="Edit" value="Fleet">
-                            	</p>
+                                <div class="row">
+                                	<p>
+                                		<label style="padding-right: 6.3em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+                                        <div class="col-sm" style="margin-bottom: 1.5em">
+                                            <label><?php echo $fleetName; ?></label>
+                                            <input type="submit" name="submit" value="Edit">
+                                            <input type="hidden" name="Edit" value="Fleet">
+                                        </div>
+                                	</p>
+                                </div>
                             </fieldset>
                         </form>
                         <?php
                             endif;
                         ?>
-                        <div class="col">
-                        <a href="/PNPN-Website/teller.php" style="text-decoration: none; color: black; align-content: center">Back to Teller Page</a>
+                        <div class = "container">
+                            <div class = "d-flex justify-content-center">
+                                <div class="row">
+                                    <div class="col-sm" style="margin-top: 0em">
+                                        <a href="/PNPN-Website/teller.php" style="text-decoration: none; color: black">Back to Teller Page</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
