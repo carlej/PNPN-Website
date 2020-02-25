@@ -36,13 +36,13 @@
             $queryShip = "SELECT * FROM ship WHERE ID = '$row[15]'";
             $resultShip= mysqli_query($con,$queryShip);
             $rowShip=mysqli_fetch_row($resultShip);
-            $shipName=$rowShip[1];
+            $shipName = str_replace(' ', '&nbsp;', $rowShip[1]);
         }
         if ($row[16]) {//fleet
             $queryFleet = "SELECT * FROM fleet WHERE ID = '$row[16]'";
             $resultFleet= mysqli_query($con,$queryFleet);
             $rowFleet=mysqli_fetch_row($resultFleet);
-            $fleetName=$rowFleet[1];
+            $fleetName = str_replace(' ', '&nbsp;', $rowFleet[1]);
         }
         //echo $_POST['submit'];
         //echo $_POST['Edit'];
