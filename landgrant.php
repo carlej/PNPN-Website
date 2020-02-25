@@ -38,7 +38,7 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
 				<div class = "col-sm-6">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")): ?>
 						<a href="/PNPN-Website/landgrant.php" class="PersonalPressed2">Personal</a>
 					<?php endif;?>
 				</div>
