@@ -12,7 +12,7 @@
 		
 		<div class ="container">
 			<div class = "d-flex justify-content-center">
-				<div style="font-family: pirates; font-size: 1.5em"; id = "WelcomeMessage">Welcome to the New System</div>
+				<div style="font-family: pirates; font-size: 1.5em"; id = "WelcomeMessage">Welcome to Three Key Connections</div>
 			</div>
 		</div>
 			
@@ -45,9 +45,6 @@
 			$queryperm = "SELECT `AccountPerm` FROM Users WHERE username LIKE '$Username'";
 			$ackperm = mysqli_query($con, $queryperm);
 			$perm = mysqli_fetch_row($ackperm);
-			echo $passwordhold;
-			echo "\r\n";
-			echo $ackpass;
 
 			if ($ackpass==$passwordhold) {
 				$msg = "Log in successfull";

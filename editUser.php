@@ -45,7 +45,7 @@
             <div class = "d-flex justify-content-center" id = "EditUser">
                 <div class = "row">
                     <div class = "col-xl">
-                    	<legend id="AcctInfoDisp">Account Information:</legend>
+                    	<legend id="AcctInfoDisp">Edit User:</legend>
                        
                         <?php 
                             if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Edit"): 
