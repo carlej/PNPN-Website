@@ -9,8 +9,6 @@
 		}
 		?>
 
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-
 		<title>Land Grants</title>
 		<?php include("Views\Partials/header.php");?>
 

@@ -165,7 +165,14 @@ padding:0px;
 
 #WelcomeMessage {
 	display: inline-block;
-	margin-top: 10em;
+	margin-top: 9em;
+	margin-bottom: 1em;
+}
+
+@media (max-width: 992px) {
+	#WelcomeMessage {
+	font-size: 0.8em;
+	}
 }
 
 #LoginWindow {

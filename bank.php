@@ -19,8 +19,7 @@
 		?>
 
 		<title>Bank</title>
-		<?php include("Views\Partials/header.php");
-		echo $_SESSION['perm']; ?>
+		<?php include("Views\Partials/header.php");?>
 		
 		
 		<!-- Creates the Personal and Teller Buttons and who has access to them-->

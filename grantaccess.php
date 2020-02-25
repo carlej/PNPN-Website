@@ -39,7 +39,11 @@
             <div class = "d-flex justify-content-center" id = "GrantAccess">
                 <div class = "row">
                     <div class = "col-xl">
+<<<<<<< Updated upstream
                     	<legend id="AcctInfoDisp">Grant Access:</legend>
+=======
+                    	<legend id="AcctInfoDisp">Grant Account Access:</legend>
+>>>>>>> Stashed changes
                        
                         <?php 
                             if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Edit"): 
