@@ -140,7 +140,7 @@
 							echo " Notes: ";
 							echo $value[4];
 						}
-						else if (count($value)==7) {//deposit display
+						if (count($value)==7) {//deposit display
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -196,7 +196,7 @@
 				<div class = "col-12">
 					<ul>
 						<?php foreach ($revfleet as $key => $value): ?>
-							<li><a id="fleetHistShow" style="display: none; padding-top: 1em;"><?php
+							<li><a id="fleetHistShow" style="display: none; padding-top: 0em; padding-bottom: 1em"><?php
 							if (count($value)==6) {//transfer display from teller
 							echo "~ ";
 							echo $key; //time and date that it happened
@@ -228,7 +228,7 @@
 							echo " Notes: ";
 							echo $value[4];
 						}
-						else if (count($value)==7) {//deposit display
+						if (count($value)==7) {//deposit display
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";

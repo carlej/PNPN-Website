@@ -248,15 +248,9 @@
                         <?php
                             endif;
                         ?>
-                        <div class = "container">
-                            <div class = "d-flex justify-content-center">
-                                <div class="row">
-                                    <div class="col-sm" style="margin-top: 0em">
-                                        <a href="/PNPN-Website/teller.php" style="text-decoration: none; color: black">Back to Teller Page</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        <input type="submit" name="submit" value="Back to Teller" onclick="location.href='/PNPN-Website/teller.php';" style="margin-top: 1em">
+                                   
                     </div>
                 </div>
             </div>
