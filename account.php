@@ -803,9 +803,106 @@
                                     if ($_SESSION['username']==$name) {
                                         echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
                                     }
-                                    else if (mysqli_num_rows($resultIn)>0){
-                                        echo '<script type="text/javascript">alert("There is already someone with that Email");</script>';
-                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                    else if (mysqli_num_rows($resultIn)>0){?>
+                                        <form method="POST">
+			                                <fieldset>
+			                                    <div class="row">
+			                                        <p>
+
+			                                            <label style="padding-right: 12.1em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Email: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <input type="Email"  name="name" value='<?php echo $Email;?>' required>
+			                                                <input type="submit" name="submit" value="Confirm">
+			                                                <input type="hidden" name="delim" value="Email">
+			                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">First Name: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label><?php echo $Fname; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="First">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Last Name: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label> <?php echo $Lname; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Last">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                            <fieldset>
+			                                <div class = "row">
+			                                    <p>
+			                                        <label style="padding-right: 9.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Pirate Name: </label>
+			                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                            <label><?php echo $Pname; ?></label>
+			                                            <input type="submit" name="submit" value="Edit">
+			                                            <input type="hidden" name="Edit" value="Pirate">
+			                                        </div>
+			                                    </p>
+			                                </div>
+			                            </fieldset>
+			                        </form>
+			                        <form method="POST">
+			                            <fieldset>
+			                                <div class = "row">
+			                                    <p>
+			                                        <label style="padding-right: 7.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+			                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                            <label><?php echo $shipName; ?></label>
+			                                            <input type="submit" name="submit" value="Edit">
+			                                            <input type="hidden" name="Edit" value="Ship">
+			                                        </div>
+			                                    </p>
+			                                </div>
+			                            </fieldset>
+			                        </form>
+			                        <form method="POST">
+			                            <fieldset>
+			                                <div class = "row">
+			                                    <p> 
+			                                        <label style="padding-right: 7.9em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+			                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                            <label><?php echo $fleetName; ?></label>
+			                                            <input type="submit" name="submit" value="Edit">
+			                                            <input type="hidden" name="Edit" value="Fleet">
+			                                        </div>
+			                                    </p>
+			                                </div>
+			                            </fieldset>
+			                        </form>
+			                        <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 10.8em; padding-left: 1em; margin-bottom: -2em">Password: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Pass">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form><?php
                                     }
                                     else{
                                         $_SESSION['username'] = $name;
@@ -873,9 +970,110 @@
                                         $_SESSION['multsearch']=array('1');
                                         echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
                                     }
-                                    else {
-                                        echo '<script type="text/javascript">alert("There are no ships that match that name. Please see a teller for help.");</script>';
-                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                    else {?>
+                                    	<form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 12.1em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Email: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label> <?php echo $Email; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Email">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">First Name: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label><?php echo $Fname; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="First">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Last Name: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label><?php echo $Lname; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Last">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 9.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Pirate Name: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label><?php echo $Pname; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Pirate">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 7.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <?php if($shipName=='&nbsp'):?>
+			                                                    <input type="text" name="name" required>
+			                                                <?php else: ?>
+			                                                    <input type="text" name="name" value=<?php echo $shipName;?> required>
+			                                                <?php endif; ?>
+			                                                <div class="container" id = "NoneFound">There are no ships that match that search!</div>
+			                                                <input type="submit" name="submit" value="Confirm">
+			                                                <input type="hidden" name="delim" value="Ship">
+			                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 7.9em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label><?php echo $fleetName; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Fleet">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 10.8em; padding-left: 1em; margin-bottom: -2em">Password: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Pass">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form><?php
                                     }
                                     
                             }
@@ -920,9 +1118,110 @@
                                         $_SESSION['multsearch']=array('1');
                                         echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
                                     }
-                                    else {
-                                        echo '<script type="text/javascript">alert("There are no fleets that match that name. Please see a teller for help.");</script>';
-                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                    else {?>
+                                        <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 12.1em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Email: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label> <?php echo $Email; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Email">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">First Name: </label>
+			                                             <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label><?php echo $Fname; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="First">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 10em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Last Name: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label><?php echo $Lname; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Last">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 9.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Pirate Name: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label><?php echo $Pname; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Pirate">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 7.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <label><?php echo $shipName; ?></label>
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Ship">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 7.9em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <?php if($fleetName=='&nbsp'):?>
+			                                                    <input type="text" name="name" required>
+			                                                <?php else: ?>
+			                                                    <input type="text" name="name" value=<?php echo $fleetName;?> required>
+			                                                <?php endif; ?>
+			                                                <div class="container" id = "NoneFound">There are no fleets that match that search!</div>
+			                                                <input type="submit" name="submit" value="Confirm">
+			                                                <input type="hidden" name="delim" value="Fleet">
+			                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form>
+			                            <form method="POST">
+			                                <fieldset>
+			                                    <div class = "row">
+			                                        <p>
+			                                            <label style="padding-right: 10.8em; padding-left: 1em; margin-bottom: -2em">Password: </label>
+			                                            <div class = "col-sm" style="margin-bottom: 1.5em">
+			                                                <input type="submit" name="submit" value="Edit">
+			                                                <input type="hidden" name="Edit" value="Pass">
+			                                            </div>
+			                                        </p>
+			                                    </div>
+			                                </fieldset>
+			                            </form><?php
                                     }
                                     
                             }
