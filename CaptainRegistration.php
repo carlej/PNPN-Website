@@ -13,7 +13,10 @@
 
 		<form method="post" action="Javascript/makeuser.php" name="Register" onsubmit="return valadate();" id="addForm" >	
 
-	<legend style="font-family: pirates; font-size: 1.6em;">Registration:</legend>
+	<legend style="font-family: pirates; font-size: 1.6em; margin-bottom: 1em;">Captain/Head of House Registration:</legend>
+    <p style="font-family: pirates; font-size: 1.2em; margin-bottom: 0.1em"> READ ME:</p>
+    <p style="font-family: pirates; font-size: 1.2em; margin-bottom: 1em"> This registration form is specifically for the Captains and Heads of Households. Only one may sign-up under this registration form. If you have a council of members instead of a single head please choose one person to fill out this form. The purpose of this separate registration form is to create ship/household and fleet/alliance accounts. Once you have completed this form, the rest of your ship/household may signup under the normal registration form. 
+    </p>
     <p>
         <label for="Username" style="font-family: pirates">Email:</label>
 		<input type="email"  name="Username" id="Username" style="width: 12em;" required>    
@@ -30,10 +33,12 @@
         <label for="pirateName" style="font-family: pirates">Pirate Name:</label>
         <input type="text" name="pirateName" id="pirateName" style="width: 12em;">
     </p>
+    <p style="font-family: pirates; font-size: 1.2em;"> If you are NOT a Captain or Head of House DO NOT input a Ship/Household Name!! </p>
     <p>
         <label for="shipName" style="font-family: pirates">Ship/Household Name:</label>
         <input type="text" name="shipName" id="shipName" style="width: 12em;">
     </p>
+    <p style="font-family: pirates; font-size: 1.2em;"> If you are NOT the leader of a Fleet or Alliance DO NOT input a Fleet/Alliance Name!! </p>
     <p>
         <label for="fleetName" style="font-family: pirates">Fleet/Alliance Name:</label>
         <input type="text" name="fleetName" id="fleetName" style="width: 12em;">
@@ -54,7 +59,6 @@
         <input type = "reset"  value = "Clear Form" style="font-family: pirates" />
       </p>
         <div id="buttons" class="align-center" style="font-family: pirates">
-        <a href="/PNPN-Website/login.php" style="color:black; text-decoration: none;">Back to Login</a>
         </div>
 </form>
 </div></div>
