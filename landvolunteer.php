@@ -7,6 +7,8 @@
 		}
 		?>
 
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+
 		<title>Land Grants</title>
 		<?php include("Views\Partials/header.php");?>
 		
@@ -18,10 +20,10 @@
 						<a href="/PNPN-Website/landgrant.php" class="PersonalButton3">Personal</a>
 					</div>
 					<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-						<a href="/PNPN-Website/landsteward.php" class="LandPressed3">Steward</a>
+						<a href="/PNPN-Website/landsteward.php" class="LandButton3">Steward</a>
 					</div>
 					<div class = "col" style="padding-left: 0.05em;">
-						<a href="/PNPN-Website/landvolunteer.php" class="LandVolunteer">Volunteer</a>
+						<a href="/PNPN-Website/landvolunteer.php" class="LandVolunteerPressed">Volunteer</a>
 					</div>
 				</div>
 			</div>
@@ -37,10 +39,10 @@
 						<a href="/PNPN-Website/landgrant.php" class="PersonalButton2">Personal</a>
 					</div>
 					<div class = "col-lg">
-						<a href="/PNPN-Website/landsteward.php" class="LandPressed2">Steward</a>
+						<a href="/PNPN-Website/landsteward.php" class="LandButton2">Steward</a>
 					</div>
 					<div class = "col-lg">
-						<a href="/PNPN-Website/landvolunteer.php" class="LandVolunteer2">Volunteer</a>
+						<a href="/PNPN-Website/landvolunteer.php" class="LandVolunteerPressed2">Volunteer</a>
 					</div>
 				</div>
 			</div>
