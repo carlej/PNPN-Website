@@ -2,18 +2,13 @@
 <html>
 	<head>
 		<?php include("Javascript/Connections/req.php"); 
-		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")) {
-			$usename = $_SESSION['username'];
-		}
-		else{
-			echo "Please login to view this page.";
-			header("Location: /PNPN-Website/bank.php");
+		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+			$username = $_SESSION['username'];
 		}
 		?>
 
-		<title>Volunteering</title>
+		<title>Charter</title>
 		<?php include("Views\Partials/header.php");?>
-
 
 		<!-- Creates the Personal, Coordinator, and Charter Buttons -->
 		<div class = "container-flow" id = "SwitchButtonsVol">
@@ -24,10 +19,10 @@
 						<a href="/PNPN-Website/volunteer.php" class="PersonalButton3">Personal</a>
 					</div>
 					<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-						<a href="/PNPN-Website/volunteercord.php" class="CordPressed3">Coordinator</a>
+						<a href="/PNPN-Website/volunteercord.php" class="CordButton3">Coordinator</a>
 					</div>
 					<div class = "col" style = "padding-left: 0.05em;">
-						<a href="/PNPN-Website/chartercord.php" class="CharterButton">Charter/Land Grant</a>
+						<a href="/PNPN-Website/chartercord.php" class="CharterPressed2">Charter/Land Grant</a>
 					</div>
 				</div>
 			</div>
@@ -43,20 +38,18 @@
 					<a href="/PNPN-Website/volunteer.php" class="PersonalButton2">Personal</a>
 				</div>
 				<div class = "col-lg" style = "padding-left: 0.05em;">
-					<a href="/PNPN-Website/volunteercord.php" class="CordPressed2">Coordinator</a>
+					<a href="/PNPN-Website/volunteercord.php" class="CordButton3">Coordinator</a>
 				</div>
 				<div class = "col-lg">
-					<a href="/PNPN-Website/chartercord.php" class="CharterButton2">Charter/Land Grant</a>
+					<a href="/PNPN-Website/chartercord.php" class="CharterPressed2">Charter/Land Grant</a>
 				</div>
 				</div>
 				</div>
 			</div>
 			</div>
 		</div>
-		
 	</head>
 	<body>
-		
-	</body>
 
+	</body>
 </html>

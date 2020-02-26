@@ -13,18 +13,23 @@
 		<?php include("Views\Partials/header.php");?>
 
 		<!-- Creates the Personal and Steward Buttons and who has access to them-->
-		<div class = "container-flow" id = "SwitchButtons">
+		<div class = "container-flow" id = "SwitchButtonsVol">
 			<div class="d-none d-lg-block">
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
-				<div class = "col-6" style="padding-right: 0.05em;">
+				<div class = "col" style="padding-right: 0.05em;">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="/PNPN-Website/landgrant.php" class="PersonalPressed">Personal</a>
+						<a href="/PNPN-Website/landgrant.php" class="PersonalPressed4">Personal</a>
 					<?php endif;?>
 				</div>
-				<div class = "col-6" style = "padding-left: 0.05em;">
+				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 					<?php if ($url=="/PNPN-Website/landgrant.php" && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")):?>
-					<a href="/PNPN-Website/landsteward.php" class="LandButton">Steward</a>
+					<a href="/PNPN-Website/landsteward.php" class="LandButton3">Steward</a>
+					<?php endif;?>
+				</div>
+				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+					<?php if ($url=="/PNPN-Website/landgrant.php" && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")):?>
+					<a href="/PNPN-Website/landvolunteer.php" class="LandVolunteer">Volunteer</a>
 					<?php endif;?>
 				</div>
 				</div>
@@ -33,18 +38,23 @@
 		</div>
 		
 		<!-- Code for the teller and personal buttons once the page is shrunk-->
-		<div class = "container" id = "SwitchButtonsMenu">
+		<div class = "container" id = "SwitchButtonsMenuVol">
 			<div class="d-lg-none">
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
-				<div class = "col-sm-6">
+				<div class = "col-lg">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")): ?>
 						<a href="/PNPN-Website/landgrant.php" class="PersonalPressed2">Personal</a>
 					<?php endif;?>
 				</div>
-				<div class = "col-sm-6">
+				<div class = "col-lg">
 					<?php if ($url=="/PNPN-Website/landgrant.php" && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")):?>
 					<a href="/PNPN-Website/landsteward.php" class="LandButton2">Steward</a>
+					<?php endif;?>
+				</div>
+				<div class = "col-lg">
+					<?php if ($url=="/PNPN-Website/landgrant.php" && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")):?>
+					<a href="/PNPN-Website/landvolunteer.php" class="LandVolunteer2">Volunteer</a>
 					<?php endif;?>
 				</div>
 				</div>
