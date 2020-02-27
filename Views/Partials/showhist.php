@@ -35,9 +35,11 @@
 							echo " Sterlings from ";
 							echo $value[1]; //account from
 							echo " to ";
-							echo $value[2]; //account to							
-							echo " Notes: ";
-							echo $value[5];
+							echo $value[2]; //account to
+							if ($value[5]) {
+								echo " Notes: ";
+								echo $value[5];
+							}							
 						}
 						else if (count($value)==5){//transfer display
 							echo "~ ";
@@ -50,8 +52,10 @@
 							echo $value[1]; //account from
 							echo " to ";
 							echo $value[2]; //account to
-							echo " Notes: ";
-							echo $value[4];
+							if ($value[4]) {
+								echo " Notes: ";
+								echo $value[4];
+							}
 						}
 						if (count($value)==7) {//deposit display
 							echo "~ ";
@@ -65,8 +69,10 @@
 							echo $value[2]; //amount 
 							echo " Sterlings to ";
 							echo $value[1]; //account from
-							echo " Notes: ";
-							echo $value[4];							
+							if ($value[4]) {
+								echo " Notes: ";
+								echo $value[4];
+							}							
 						}
 						else if (count($value)==8) {//withdraw display
 							echo "~ ";
@@ -80,8 +86,10 @@
 							echo $value[2]; //amount 
 							echo " Sterlings from ";
 							echo $value[1]; //account from
-							echo " Notes: ";
-							echo $value[4];							
+							if ($value[4]) {
+								echo " Notes: ";
+								echo $value[4];
+							}							
 						}
 						?></a></li>
 					
@@ -96,19 +104,19 @@
 	<?php foreach($parsed_ship_json as $acc):
 		$parsed_ship_hist=NULL;
 		if ($acc) {
-		 	$queryIn = "SELECT history FROM accounts WHERE ID = '$acc'";
+		 	$queryIn = "SELECT * FROM accounts WHERE ID = '$acc'";
 			$resultIn = mysqli_query($con, $queryIn);
 			$row = mysqli_fetch_row($resultIn);
-			$parsed_ship_hist = json_decode($row[0],true);
+			$parsed_ship_hist = json_decode($row[2],true);
 		 } ?>
 		<?php if($parsed_ship_hist!=NULL): ?>
 			<?php $revShip=array_reverse($parsed_ship_hist); ?>
 				<div class = "d-flex justify-content-left" style="margin-left: -2.2em;">
 				<div class = "row">
 				<div class = "col-12">
-					<ul>
-						<?php foreach ($revShip as $key => $value): ?>
-							<li><a id="shipHistShow" style="display: none; padding-top: 1em;"><?php
+					<ul id="shipHistShow" style="display: none; padding-top: 1em;">
+						<?php foreach ($revShip as $key => $value): //echo count($value); ?>
+							<li><a><?php
 							if (count($value)==6) {//transfer display from teller
 							echo "~ ";
 							echo $key; //time and date that it happened
@@ -123,10 +131,12 @@
 							echo $value[1]; //account from
 							echo " to ";
 							echo $value[2]; //account to							
-							echo " Notes: ";
-							echo $value[5];
+							if ($value[5]) {
+								echo " Notes: ";
+								echo $value[5];
+							}
 						}
-						else if (count($value)==5){//transfer display
+						if (count($value)==5){//transfer display
 							echo "~ ";
 							echo $key; //time and date that it happened
 							echo " ~ ";
@@ -137,8 +147,10 @@
 							echo $value[1]; //account from
 							echo " to ";
 							echo $value[2]; //account to
-							echo " Notes: ";
-							echo $value[4];
+							if ($value[4]) {
+								echo " Notes: ";
+								echo $value[4];
+							}
 						}
 						if (count($value)==7) {//deposit display
 							echo "~ ";
@@ -152,8 +164,10 @@
 							echo $value[2]; //amount 
 							echo " Sterlings to ";
 							echo $value[1]; //account from
-							echo " Notes: ";
-							echo $value[4];							
+							if ($value[4]) {
+								echo " Notes: ";
+								echo $value[4];
+							}							
 						}
 						else if (count($value)==8) {//withdraw display
 							echo "~ ";
@@ -167,8 +181,10 @@
 							echo $value[2]; //amount 
 							echo " Sterlings from ";
 							echo $value[1]; //account from
-							echo " Notes: ";
-							echo $value[4];							
+							if ($value[4]) {
+								echo " Notes: ";
+								echo $value[4];
+							}							
 						}
 							?></a></li>
 						
@@ -184,19 +200,19 @@
 	<?php foreach($parsed_fleet_json as $acc):
 		$parsed_fleet_hist=NULL;
 		if ($acc) {
-		 	$queryIn = "SELECT history FROM accounts WHERE ID = '$acc'";
+		 	$queryIn = "SELECT * FROM accounts WHERE ID = '$acc'";
 			$resultIn = mysqli_query($con, $queryIn);
 			$row = mysqli_fetch_row($resultIn);
-			$parsed_fleet_hist = json_decode($row[0],true);
+			$parsed_fleet_hist = json_decode($row[2],true);
 		 } ?>
 		<?php if($parsed_fleet_hist!=NULL): ?>
 			<?php $revfleet=array_reverse($parsed_fleet_hist); ?>
 				<div class = "d-flex justify-content-left" style="margin-left: -2.2em;">
 				<div class = "row">
 				<div class = "col-12">
-					<ul>
+					<ul id="fleetHistShow" style="display: none; padding-top: 0em; padding-bottom: 1em">
 						<?php foreach ($revfleet as $key => $value): ?>
-							<li><a id="fleetHistShow" style="display: none; padding-top: 0em; padding-bottom: 1em"><?php
+							<li><a><?php
 							if (count($value)==6) {//transfer display from teller
 							echo "~ ";
 							echo $key; //time and date that it happened
@@ -211,8 +227,10 @@
 							echo $value[1]; //account from
 							echo " to ";
 							echo $value[2]; //account to							
-							echo " Notes: ";
-							echo $value[5];
+							if ($value[5]) {
+								echo " Notes: ";
+								echo $value[5];
+							}
 						}
 						else if (count($value)==5){//transfer display
 							echo "~ ";
@@ -225,8 +243,10 @@
 							echo $value[1]; //account from
 							echo " to ";
 							echo $value[2]; //account to
-							echo " Notes: ";
-							echo $value[4];
+							if ($value[4]) {
+								echo " Notes: ";
+								echo $value[4];
+							}
 						}
 						if (count($value)==7) {//deposit display
 							echo "~ ";
@@ -240,8 +260,10 @@
 							echo $value[2]; //amount 
 							echo " Sterlings to ";
 							echo $value[1]; //account from
-							echo " Notes: ";
-							echo $value[4];							
+							if ($value[4]) {
+								echo " Notes: ";
+								echo $value[4];
+							}							
 						}
 						else if (count($value)==8) {//withdraw display
 							echo "~ ";
@@ -255,8 +277,10 @@
 							echo $value[2]; //amount 
 							echo " Sterlings from ";
 							echo $value[1]; //account from
-							echo " Notes: ";
-							echo $value[4];							
+							if ($value[4]) {
+								echo " Notes: ";
+								echo $value[4];
+							}							
 						}
 							?></a></li>
 						
