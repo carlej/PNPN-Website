@@ -576,19 +576,7 @@
                                                 </div>
                                             </fieldset>
                                         </form>
-                                        <form method="POST">
-                                            <fieldset>
-                                                <div class = "row">
-                                                    <p>
-                                                        <label style="padding-right: 10.8em; padding-left: 1em; margin-bottom: -2em">Password: </label>
-                                                        <div class = "col-sm" style="margin-bottom: 1.5em">
-                                                            <input type="submit" name="submit" value="Edit">
-                                                            <input type="hidden" name="Edit" value="Pass">
-                                                        </div>
-                                                    </p>
-                                                </div>
-                                            </fieldset>
-                                        </form><?php
+                                        <?php
                             		}
                                 	
 							}
@@ -710,19 +698,7 @@
                                                 </div>
                                             </fieldset>
                                         </form>
-                                        <form method="POST">
-                                            <fieldset>
-                                                <div class = "row">
-                                                    <p>
-                                                        <label style="padding-right: 10.8em; padding-left: 1em; margin-bottom: -2em">Password: </label>
-                                                        <div class = "col-sm" style="margin-bottom: 1.5em">
-                                                            <input type="submit" name="submit" value="Edit">
-                                                            <input type="hidden" name="Edit" value="Pass">
-                                                        </div>
-                                                    </p>
-                                                </div>
-                                            </fieldset>
-                                        </form><?php
+                                        <?php
                             		}
                                 	
 							}

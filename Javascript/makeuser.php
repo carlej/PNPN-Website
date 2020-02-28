@@ -1,12 +1,6 @@
 <?php //This file creates a new user
 
-        include 'Connections/convar.php'; 
-        include("Connections/req.php");
-    
-        $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-        if (!$con) {
-            die('Could not connect: ' . mysql_error());
-        }
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Escape user inputs for security
@@ -15,14 +9,15 @@
         $firstName = mysqli_real_escape_string($con, $_POST['firstName']);
         $lastName = mysqli_real_escape_string($con, $_POST['lastName']);
         $pirateName = mysqli_real_escape_string($con, $_POST['pirateName']);
-        $email = mysqli_real_escape_string($con, $_POST['email']);
+        $shipName = mysqli_real_escape_string($con, $_POST['shipName']);
+        $fleetName = mysqli_real_escape_string($con, $_POST['fleetName']);
         $Password = mysqli_real_escape_string($con, $_POST['password']);
         $queryIn = "SELECT * FROM users where Username='$Username' ";
         $resultIn = mysqli_query($con, $queryIn);
         if (mysqli_num_rows($resultIn)>0) {
  //           echo "There is already a user with that email!";
            echo '<script type="text/javascript">alert("There is already a user with that email!");
-		   		window.location = "/PNPN-Website/Register.php"
+		   		window.location = "/PNPN-Website/register.php"
 		   </script>';
             $msg = "<h2>Can't Add to Table</h2> There is already a user with that email! $Username<p>";
 			
@@ -34,7 +29,7 @@
                 $queryIn = "SELECT ID FROM accounts WHERE ID = '$id'";
                 $resultIn = mysqli_query($con, $queryIn);
                 $row=mysqli_fetch_row($resultIn);
-                if (mysqli_num_rows($resultIn)==0) {echo $id;
+                if (mysqli_num_rows($resultIn)==0) {//echo $id;
                     $a=false;
                     $accs="{\"id\": [";
                     $accs.=$id.", 0]}";
@@ -48,17 +43,54 @@
     }while($a); //adds the data to the db
             $salt = md5(time());
             $passhold = md5($salt.$Password);
-            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Email, Password, salt) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$email', '$passhold', '$salt')";
+            if ($shipName!=NULL && $fleetName!=NULL){
+                $queryShip = "SELECT * FROM ship WHERE Name LIKE '%$shipName%'";
+                $resultShip= mysqli_query($con,$queryShip);
+                $rowShip=mysqli_fetch_row($resultShip);
+                $sName = $rowShip[0];
+                $queryFleet = "SELECT * FROM fleet WHERE Name LIKE '%$fleetName%'";
+                $resultFleet= mysqli_query($con,$queryFleet);
+                $rowFleet=mysqli_fetch_row($resultFleet);
+                $fName = $rowFleet[0];
+                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, fleetC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $sName, $fName)";
+            }
+            else if ($shipName!=NULL) {
+                $queryShip = "SELECT * FROM ship WHERE Name LIKE '%$shipName%'";
+                $resultShip= mysqli_query($con,$queryShip);
+                $rowShip=mysqli_fetch_row($resultShip);
+                $sName = $rowShip[0];
+                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $sName)";
+            }
+            else if ($fleetName!=NULL) {
+                $queryFleet = "SELECT * FROM fleet WHERE Name LIKE '%$fleetName%'";
+                $resultFleet= mysqli_query($con,$queryFleet);
+                $rowFleet=mysqli_fetch_row($resultFleet);
+                $fName = $rowFleet[0];
+                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, fleetC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $fName)";
+            }
+            else{
+                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt')";
+            }
+            
             if (mysqli_query($con,$query)) {
             $inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
                 $msg = "Record added.<p>";
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $Username;
                 $_SESSION['perm'] = $perm[0];
+                $_SESSION['hold']="hold";
+                $_SESSION['temp']="temp";
+                $_SESSION['multsearch']=array('1');
+                $_SESSION['stype']=NULL;
+                $_SESSION['nest']="hold";
+                $_SESSION['nstype']=NULL;
+                $_SESSION['clear']='NULL';
                 header("Location: /PNPN-Website/bank.php");
             }
             else
-                echo "ERROR";//.mysql_error($con);
+                //echo $shipName;
+                echo $queryShip;
+                //echo "ERROR";//.mysql_error($con);
         }
     }
     mysqli_close($con);
