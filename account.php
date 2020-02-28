@@ -1038,7 +1038,7 @@
 			                                                <?php else: ?>
 			                                                    <input type="text" name="name" value=<?php echo $shipName;?> required>
 			                                                <?php endif; ?>
-			                                                <div class="container" id = "NoneFound">There are no ships that match that search!</div>
+			                                                <div class="container" id = "NoneFound" style="margin-top: 0em">There are no ships/households that match that search!</div>
 			                                                <input type="submit" name="submit" value="Confirm">
 			                                                <input type="hidden" name="delim" value="Ship">
 			                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
@@ -1200,7 +1200,7 @@
 			                                                <?php else: ?>
 			                                                    <input type="text" name="name" value=<?php echo $fleetName;?> required>
 			                                                <?php endif; ?>
-			                                                <div class="container" id = "NoneFound">There are no fleets that match that search!</div>
+			                                                <div class="container" id = "NoneFound" style="margin-top: 0em">There are no fleets/alliances that match that search!</div>
 			                                                <input type="submit" name="submit" value="Confirm">
 			                                                <input type="hidden" name="delim" value="Fleet">
 			                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
