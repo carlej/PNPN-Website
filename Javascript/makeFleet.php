@@ -16,6 +16,7 @@ do{
 if (mysqli_num_rows($resultIn)==0) {
     //echo $fleetid;
     $b=false;
+    $a = true;
     $query = "INSERT INTO fleet (ID, Name, Admiral) VALUES ('$fleetid', '$name', '$leaderName')";
     mysqli_query($con, $query);
     do{ //this loop is the same as in make users to make an accoutn for the new fleet/house
@@ -32,7 +33,7 @@ if (mysqli_num_rows($resultIn)==0) {
             $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
             $inResult = mysqli_query($con, $insert); //Updates the DB with the new account
             $updateacc = "UPDATE fleet SET Accounts = '$accs' WHERE fleet.ID = '$fleetid'";
-            $updateuse="UPDATE users SET fleet = '$fleetid', fleetC = '$fleetid' WHERE users.username='$leaderName'";
+            $updateuse="UPDATE users SET Fleet = '$fleetid' WHERE users.username='$leaderName'";
             $upuser=mysqli_query($con, $updateuse);
             $inup= mysqli_query($con, $updateacc); //Updates the users DB section to show ownerfleet of the new account.
             ?><script type="text/javascript">window.location.href='teller.php'</script><?php

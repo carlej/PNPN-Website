@@ -35,7 +35,7 @@
                     $accs.=$id.", 0]}";
                     $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
                     $inResult = mysqli_query($con, $insert); //Updates the DB with the new account
-                    $update = "UPDATE users SET Accounts = '$accs' WHERE users.Username = '$Username'";
+                    $Updates = "UPDATE users SET Accounts = '$accs' WHERE users.Username = '$Username'";
                     //$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
         }
         else
