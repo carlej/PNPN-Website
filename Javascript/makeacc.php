@@ -49,7 +49,7 @@ include 'Connections/convar.php';
 			}
 			echo $update;
 			$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
-			//header("Location: /PNPN-Website/teller.php"); //refresh the page to disply the new account
+			//header("Location: teller.php"); //refresh the page to disply the new account
 		}
 		else
 			$a=true; //statment to keep looping as the account number already existed

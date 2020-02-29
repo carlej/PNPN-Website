@@ -17,12 +17,12 @@
 				<div class = "row" id ="ButtonsRow">
 				<div class = "col" style="padding-right: 0.05em;">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
-						<a href="/PNPN-Website/volunteer.php" class="PersonalButton3">Personal</a>
+						<a href="volunteer.php" class="PersonalButton3">Personal</a>
 					<?php endif;?>
 				</div>
 				<div class="col" style="padding-left: 0.05em" >
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
-						<a href="/PNPN-Website/charter.php" class="CharterPressed2">Charter/Land Grant</a>
+						<a href="charter.php" class="CharterPressed2">Charter/Land Grant</a>
 					<?php endif;?>
 				</div>
 				</div>
@@ -37,12 +37,12 @@
 				<div class = "row">
 				<div class = "col-lg">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
-						<a href="/PNPN-Website/volunteer.php" class="PersonalButton3">Personal</a>
+						<a href="volunteer.php" class="PersonalButton3">Personal</a>
 					<?php endif;?>
 				</div>
 				<div class="col-lg" style="padding-right: 0.05em" >
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
-						<a href="/PNPN-Website/charter.php" class="CharterPressed2">Charter/Land Grant</a>
+						<a href="charter.php" class="CharterPressed2">Charter/Land Grant</a>
 					<?php endif;?>
 				</div>
 				</div>

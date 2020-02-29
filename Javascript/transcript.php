@@ -168,16 +168,16 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Transfer")
 }
 else if ($_SERVER["REQUEST_METHOD"] == "POST" && ($_POST['submit'] == "Cancel" || $_POST['submit'] == "Clear")){
 	include('clear.php');
-	?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+	?><script type="text/javascript">window.location.href='bank.php'</script><?php
 	//$_SESSION['nest']="nest";
 	//$_SESSION['temp']="temp";
-	//echo '<script type="text/javascript">window.location.href="/PNPN-Website/bank.php"</script>';
+	//echo '<script type="text/javascript">window.location.href="bank.php"</script>';
 }
 
 ?>
 <script type="text/javascript">
 	function Cancel(){
-		window.location.href='/PNPN-Website/Javascript/clear.php';
+		window.location.href='Javascript/clear.php';
 }
 function valadatetran(){
 	var to = document.forms["transfer"]["Accto"].value;
@@ -190,7 +190,7 @@ function valadatetran(){
 	$.ajax({
 		async: false,
 		type: "POST",
-		url: 'http://localhost/PNPN-Website/Javascript/valTran.php',
+		url: 'http://Javascript/valTran.php',
 		data:{to,from,tra},
 		dataType: 'JSON',
 		success: function(output){

@@ -30,7 +30,7 @@
 		
 		$perm = $_SESSION['perm'];
 		mysqli_close($con);
-		?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+		?><script type="text/javascript">window.location.href="teller.php"</script><?php
 		/*?><?php*/
 		
 		////include("Javascript/telltranscript.php");
@@ -51,7 +51,7 @@
 			$_SESSION['multsearch']=$array;
 			$_SESSION['nstype']="shipID";
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+			?><script type="text/javascript">window.location.href="teller.php"</script><?php
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -91,7 +91,7 @@
 			
 			$perm = $_SESSION['perm'];
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+			?><script type="text/javascript">window.location.href="teller.php"</script><?php
 			?><?php
 			
 			echo '<script type="text/javascript">searched('.$shipName.');</script>';
@@ -126,7 +126,7 @@
 		
 		$perm = $_SESSION['perm'];
 		mysqli_close($con);
-		?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+		?><script type="text/javascript">window.location.href="teller.php"</script><?php
 		?><?php
 		
 		//include("Javascript/telltranscript.php");
@@ -150,7 +150,7 @@
 			$_SESSION['multsearch']=$array;
 			$_SESSION['nstype']="fleetID";
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+			?><script type="text/javascript">window.location.href="teller.php"</script><?php
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -190,7 +190,7 @@
 			
 			$perm = $_SESSION['perm'];
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+			?><script type="text/javascript">window.location.href="teller.php"</script><?php
 			?><?php
 			
 			echo '<script type="text/javascript">searched('.$fleetName.');</script>';
@@ -215,7 +215,7 @@
 			$_SESSION['multsearch']=$array;
 			$_SESSION['nstype']=$method;
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+			?><script type="text/javascript">window.location.href="teller.php"</script><?php
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';
 			//echo '<form method="post" id = "select">';
@@ -266,7 +266,7 @@
 			
 			$perm = $_SESSION['perm'];
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script><?php
+			?><script type="text/javascript">window.location.href="teller.php"</script><?php
 			?><?php
 			
 

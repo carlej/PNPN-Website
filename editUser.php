@@ -62,7 +62,7 @@
                                                 <input type="text"  name="name" value='<?php echo $Fname;?>' required>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="First">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='editUser.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -150,7 +150,7 @@
                                                 <input type="text" name="name" value=<?php echo $Lname;?> required>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Last">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='editUser.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -243,7 +243,7 @@
                                                 <?php endif; ?>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Pirate">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='editUser.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -337,7 +337,7 @@
                                                 <?php endif; ?>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Ship">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='editUser.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -429,7 +429,7 @@
                                                 <?php endif; ?>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Fleet">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/editUser.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='editUser.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -444,19 +444,19 @@
                                     $name=mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Fname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
-                                    header("Location: /PNPN-Website/editUser.php");
+                                    header("Location: editUser.php");
                                 }
                                 else if ($_POST['delim']=="Last") {
                                     $name=mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Lname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
-                                    header("Location: /PNPN-Website/editUser.php");
+                                    header("Location: editUser.php");
                                 }
                                 else if ($_POST['delim']=="Pirate") {
                                     $name=mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Pname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
-                                    header("Location: /PNPN-Website/editUser.php");
+                                    header("Location: editUser.php");
                                 }
                                 else if ($_POST['delim']=='Ship') {
                             		//echo $_POST['name'];
@@ -497,7 +497,7 @@
                             			$update = "UPDATE users SET shipC = '$IDnum[0]' WHERE `$type` LIKE '%$ID%'";
                                     	$temp=mysqli_query($con, $update);
                                     	$_SESSION['multsearch']=array('1');
-                                    	header("Location: /PNPN-Website/editUser.php");
+                                    	header("Location: editUser.php");
                             		}
                             		else {?>
                                         <form method="POST">
@@ -556,7 +556,7 @@
                                                             <div class="container" id = "NoneFound" style="margin-top: 0em">There are no ships that match that search!</div>
                                                             <input type="submit" name="submit" value="Confirm">
                                                             <input type="hidden" name="delim" value="Ship">
-                                                            <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                                            <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
                                                         </div>
                                                     </p>
                                                 </div>
@@ -576,19 +576,7 @@
                                                 </div>
                                             </fieldset>
                                         </form>
-                                        <form method="POST">
-                                            <fieldset>
-                                                <div class = "row">
-                                                    <p>
-                                                        <label style="padding-right: 10.8em; padding-left: 1em; margin-bottom: -2em">Password: </label>
-                                                        <div class = "col-sm" style="margin-bottom: 1.5em">
-                                                            <input type="submit" name="submit" value="Edit">
-                                                            <input type="hidden" name="Edit" value="Pass">
-                                                        </div>
-                                                    </p>
-                                                </div>
-                                            </fieldset>
-                                        </form><?php
+                                        <?php
                             		}
                                 	
 							}
@@ -631,7 +619,7 @@
                             			$update = "UPDATE users SET fleetC = '$IDnum[0]' WHERE `$type` LIKE '%$ID%'";
                                     	$temp=mysqli_query($con, $update);
                                     	$_SESSION['multsearch']=array('1');
-                                    	header("Location: /PNPN-Website/editUser.php");
+                                    	header("Location: editUser.php");
                             		}
                             		else {?>
                                         <form method="POST">
@@ -704,25 +692,13 @@
                                                             <div class="container" id = "NoneFound" style="margin-top: 0em">There are no fleets that match that search!</div>
                                                             <input type="submit" name="submit" value="Confirm">
                                                             <input type="hidden" name="delim" value="Fleet">
-                                                            <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                                            <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
                                                         </div>
                                                     </p>
                                                 </div>
                                             </fieldset>
                                         </form>
-                                        <form method="POST">
-                                            <fieldset>
-                                                <div class = "row">
-                                                    <p>
-                                                        <label style="padding-right: 10.8em; padding-left: 1em; margin-bottom: -2em">Password: </label>
-                                                        <div class = "col-sm" style="margin-bottom: 1.5em">
-                                                            <input type="submit" name="submit" value="Edit">
-                                                            <input type="hidden" name="Edit" value="Pass">
-                                                        </div>
-                                                    </p>
-                                                </div>
-                                            </fieldset>
-                                        </form><?php
+                                        <?php
                             		}
                                 	
 							}
@@ -805,7 +781,7 @@
                             endif;
                         ?>
 
-                        <input type="submit" name="submit" value="Back to Teller" onclick="location.href='/PNPN-Website/teller.php';" style="margin-top: 1em">
+                        <input type="submit" name="submit" value="Back to Teller" onclick="location.href='teller.php';" style="margin-top: 1em">
 
                     </div>
                 </div>

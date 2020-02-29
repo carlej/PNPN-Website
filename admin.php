@@ -8,7 +8,7 @@
 		}
 
 		/*if ($perm!='z') {
-			echo '<script type="text/javascript">window.location.href="/PNPN-Website/bank.php"</script>';
+			echo '<script type="text/javascript">window.location.href="bank.php"</script>';
 		}
 		else if ($perm=='z'):*/
 		?>
@@ -143,7 +143,7 @@
 			$perm=mysqli_real_escape_string($con,$_POST['perm']);
             $update = "UPDATE users SET AccountPerm = '$perm' WHERE `$method` LIKE '%$input%'";
             $temp=mysqli_query($con, $update);
-            echo '<script type="text/javascript">window.location.href="/PNPN-Website/admin.php"</script>';
+            echo '<script type="text/javascript">window.location.href="admin.php"</script>';
 		}
 		
 		//endif; ?>

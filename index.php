@@ -4,7 +4,7 @@
 		<?php 
 		//echo $_SERVER['HTTP_HOST'];
 		//echo $_SERVER['PHP_SELF'];
-		?><script type="text/javascript">window.location.href="/PNPN-Website/bank.php"</script><?php?>
+		?><script type="text/javascript">window.location.href="bank.php"</script><?php?>
 
 		
 	</head>

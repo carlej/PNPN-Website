@@ -59,7 +59,7 @@
 				$_SESSION['nstype']=NULL;
 				$_SESSION['clear']='NULL';
 				echo $perm[0];
-				header("Location: /PNPN-Website/bank.php");
+				header("Location: bank.php");
 			}
 			else{
 				//echo $Username;
@@ -95,7 +95,7 @@
         			<input type = "reset"  value = "Clear" style="font-family: pirates" />
     			</p>
 				<div id="buttons" class="align-center" style="font-family: pirates">
-     				<a href="/PNPN-Website/register.php" style="color:black; text-decoration: none;">Register Here</a>
+     				<a href="register.php" style="color:black; text-decoration: none;">Register Here</a>
      			</div>
 			</form>
 			</div>

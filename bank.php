@@ -8,7 +8,7 @@
 			$username = $_SESSION['username'];
 		}
 		else{
-			header ("location:/PNPN-Website/login.php");
+			header ("location:login.php");
 			echo "Please login to view this page.";
 		}
 		if ($_SESSION['clear']!=$_SERVER['PHP_SELF']) {
@@ -29,13 +29,13 @@
 				<div class = "row" id ="ButtonsRow">
 				<div class = "col-6" style="padding-right: 0.05em;">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")): ?>
-						<a href="/PNPN-Website/bank.php" class="PersonalPressed" onclick="Cancel()">Personal</a>
+						<a href="bank.php" class="PersonalPressed" onclick="Cancel()">Personal</a>
 						
 					<?php endif;?>
 				</div>
 				<div class = "col-6" style = "padding-left: 0.05em;">
-					<?php if ($url=="/PNPN-Website/bank.php" && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")):?>
-					<a href="/PNPN-Website/teller.php" class="TellerButton" onclick="Cancel()">Teller</a>
+					<?php if ($url=="bank.php" && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")):?>
+					<a href="teller.php" class="TellerButton" onclick="Cancel()">Teller</a>
 					
 					<?php endif;?>
 				</div>
@@ -52,13 +52,13 @@
 				<div class = "row">
 				<div class = "col-sm-6">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")): ?>
-						<a href="/PNPN-Website/bank.php" class="PersonalPressed2" onclick="Cancel()">Personal</a>
+						<a href="bank.php" class="PersonalPressed2" onclick="Cancel()">Personal</a>
 						
 					<?php endif;?>
 				</div>
 				<div class = "col-sm-6">
-					<?php if ($url=="/PNPN-Website/bank.php" && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")):?>
-					<a href="/PNPN-Website/teller.php" class="TellerButton2" onclick="Cancel()">Teller</a>
+					<?php if ($url=="bank.php" && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")):?>
+					<a href="teller.php" class="TellerButton2" onclick="Cancel()">Teller</a>
 					
 					<?php endif;?>
 				</div>
@@ -120,7 +120,7 @@
 			include "Views/Partials/showhist.php"; //Right now all history for all accounts is displayed here this is a work in progress to make it only display one at a time and only when asked
 
 			//if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['button'] == "Transfer"){
-			//	header("Location: /PNPN-Website/transfer.php");
+			//	header("Location: transfer.php");
 			//}
 			//include "Views/Partials/bankButtons.php"; //Its just a button
 			include "Javascript/transcript.php";
@@ -137,6 +137,6 @@
 <script type="text/javascript">
 	function Cancel(){
 		load('Javascript/clear.php');
-		window.location.href='/PNPN-Website/bank.php';
+		window.location.href='bank.php';
 	}
 </script>

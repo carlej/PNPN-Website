@@ -167,7 +167,7 @@
 								<p style="margin-top: -0.5em">
 									<input type="submit" name="submit" value="Transfer" >
 									<input type="hidden" name="delim" value="tran">
-									<input type="submit" name="submit" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';">
+									<input type="submit" name="submit" value="Clear" onclick="location.href='Javascript/clearsome.php';">
 									<input type="hidden" name="name" value=<?php echo $_SESSION['nest'] ?>>
 								</p>
 							</fieldset>
@@ -224,7 +224,7 @@
 						<p>
 							<input type="hidden" name="delim" value="dept">
 							<input type="submit" name="dept" value="Deposit" >
-							<input type="reset" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';">
+							<input type="reset" value="Clear" onclick="location.href='Javascript/clearsome.php';">
 						</p>
 					</div>
 				</fieldset>
@@ -278,7 +278,7 @@
 						<p>
 							<input type="hidden" name="delim" value="with">
 							<input type="submit" name="dept" value="Withdraw" >
-							<input type="reset" value="Clear" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';">
+							<input type="reset" value="Clear" onclick="location.href='Javascript/clearsome.php';">
 						</p>
 					</div>
 				</fieldset>
@@ -288,16 +288,16 @@
 			<div class = "col-md" id = "InfoColumn">
 				<legend>Info:</legend>
 				<p>
-					<input type = "submit" name= "submit" value = "Add Ship/Household" onclick="location.href='/PNPN-Website/addShip.php';"?>
+					<input type = "submit" name= "submit" value = "Add Ship/Household" onclick="location.href='addShip.php';"?>
 				</p>
 				<p>
-					<input type = "submit" name= "submit" value = "Add Fleet/Alliance" onclick="location.href='/PNPN-Website/addFleet.php';"?>
+					<input type = "submit" name= "submit" value = "Add Fleet/Alliance" onclick="location.href='addFleet.php';"?>
 				</p>
 				<p>
-					<input type="submit" name="submit" value="Grant Access" onclick="location.href='/PNPN-Website/grantaccess.php';">
+					<input type="submit" name="submit" value="Grant Access" onclick="location.href='grantaccess.php';">
 				</p>
 				<p>
-					<input type = "submit" name= "submit" value = "Edit User" onclick="location.href='/PNPN-Website/editUser.php';">
+					<input type = "submit" name= "submit" value = "Edit User" onclick="location.href='editUser.php';">
 				</p>
 			</div>
 		<?php endif; ?>
@@ -307,7 +307,7 @@
 
 <script type="text/javascript">
 	function Cancel(){
-		$.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/teller.php")}});
+		$.ajax({url:'http://Javascript/cancel.php',success: function(){window.location.assign("http://teller.php")}});
 	}
 function valadatetran(){
 	var to = document.forms["transfer"]["Accto"].value;
@@ -320,7 +320,7 @@ function valadatetran(){
 	$.ajax({
 		async: false,
 		type: "POST",
-		url: 'http://localhost/PNPN-Website/Javascript/valTran.php',
+		url: 'http://Javascript/valTran.php',
 		data:{to,from,tra},
 		dataType: 'JSON',
 		success: function(output){
