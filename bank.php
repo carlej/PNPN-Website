@@ -19,7 +19,7 @@
 		?>
 
 		<title>Bank</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php include("Views/Partials/header.php");?>
 		
 		
 		<!-- Creates the Personal and Teller Buttons and who has access to them-->
@@ -76,7 +76,7 @@
 		include 'Javascript/Connections/convar.php';
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			
-			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+			$con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
 			if (!$con) {
 				die('Could not connect: ' . mysql_error());
 			}
