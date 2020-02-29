@@ -10,7 +10,7 @@
 	<?php
 		session_unset();
 		session_destroy();
-		header("Location: /PNPN-Website/login.php");
+		header("Location: login.php");
 		//echo "LOGGED OUT";
 	?>
 

@@ -16,13 +16,13 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 					<div class = "col" style="padding-right: 0.05em;">
-						<a href="/PNPN-Website/volunteer.php" class="PersonalButton3">Personal</a>
+						<a href="volunteer.php" class="PersonalButton3">Personal</a>
 					</div>
 					<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-						<a href="/PNPN-Website/volunteercord.php" class="CordPressed3">Coordinator</a>
+						<a href="volunteercord.php" class="CordPressed3">Coordinator</a>
 					</div>
 					<div class = "col" style = "padding-left: 0.05em;">
-						<a href="/PNPN-Website/chartercord.php" class="CharterButton">Charter/Land Grant</a>
+						<a href="chartercord.php" class="CharterButton">Charter/Land Grant</a>
 					</div>
 				</div>
 			</div>
@@ -35,13 +35,13 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
 				<div class = "col-lg">
-					<a href="/PNPN-Website/volunteer.php" class="PersonalButton2">Personal</a>
+					<a href="volunteer.php" class="PersonalButton2">Personal</a>
 				</div>
 				<div class = "col-lg" style = "padding-left: 0.05em;">
-					<a href="/PNPN-Website/volunteercord.php" class="CordPressed2">Coordinator</a>
+					<a href="volunteercord.php" class="CordPressed2">Coordinator</a>
 				</div>
 				<div class = "col-lg">
-					<a href="/PNPN-Website/chartercord.php" class="CharterButton2">Charter/Land Grant</a>
+					<a href="chartercord.php" class="CharterButton2">Charter/Land Grant</a>
 				</div>
 				</div>
 				</div>

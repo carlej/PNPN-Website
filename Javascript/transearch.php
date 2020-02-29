@@ -31,7 +31,7 @@
 		
 		$perm = $_SESSION['perm'];
 		mysqli_close($con);
-		?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+		?><script type="text/javascript">window.location.href='bank.php'</script><?php
 		
 		////include("Javascript/telltranscript.php");
 		//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
@@ -63,7 +63,7 @@
 			
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search" ><input type="hidden" name="type" value="shipID"><input type="hidden" name="new" value="new"></fieldset></form>'; ?>
 			</div>*/?>
-			<script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script>
+			<script type="text/javascript">window.location.href='bank.php'</script>
 		
 		<?php 
 		}
@@ -90,7 +90,7 @@
 			
 			$perm = $_SESSION['perm'];
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+			?><script type="text/javascript">window.location.href='bank.php'</script><?php
 			
 			echo '<script type="text/javascript">searched('.$shipName.');</script>';
 			//include("Javascript/telltranscript.php");
@@ -124,7 +124,7 @@
 		
 		$perm = $_SESSION['perm'];
 		mysqli_close($con);
-		?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+		?><script type="text/javascript">window.location.href='bank.php'</script><?php
 		
 		//include("Javascript/telltranscript.php");
 		//This was commented out as I was told to not allow multiple accounts and it was easer to just remove the one button that made them then to remove the ability to have multiple I'm leaving it as it still functions and so could be used later if wanted.
@@ -160,7 +160,7 @@
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="fleetID"><input type="hidden" name="new" value="new"></fieldset></form>'; ?>
 			</div>*/
 			?>
-			<script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script>
+			<script type="text/javascript">window.location.href='bank.php'</script>
 		
 		<?php
 		}
@@ -186,7 +186,7 @@
 			
 			$perm = $_SESSION['perm'];
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+			?><script type="text/javascript">window.location.href='bank.php'</script><?php
 			
 			echo '<script type="text/javascript">searched('.$fleetName.');</script>';
 			//include("Javascript/telltranscript.php");
@@ -221,7 +221,7 @@
 			echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="new"></fieldset></form>'; ?>
 			</div>*/
 			?>
-			<script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script>
+			<script type="text/javascript">window.location.href='bank.php'</script>
 		
 		<?php
 		}
@@ -259,7 +259,7 @@
 			
 			$perm = $_SESSION['perm'];
 			mysqli_close($con);
-			?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+			?><script type="text/javascript">window.location.href='bank.php'</script><?php
 			
 
 			//include("Javascript/telltranscript.php");

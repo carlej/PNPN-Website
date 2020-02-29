@@ -57,7 +57,7 @@
                         </fieldset>
                         <p>
                             <input type = "submit" name= "submit" value = "Submit" />
-                            <input type="button" name="button" value="Cancel" onclick="location.href='/PNPN-Website/Javascript/clearsome.php';" />
+                            <input type="button" name="button" value="Cancel" onclick="location.href='Javascript/clearsome.php';" />
                         </p>
                     </form>
                 </div>
@@ -79,7 +79,7 @@
 ?>
 <script type="text/javascript">
     function Cancel(){
-        $.ajax({url:'http://localhost/PNPN-Website/Javascript/cancel.php',success: function(){window.location.assign("http://localhost/PNPN-Website/teller.php")}});
+        $.ajax({url:'http://Javascript/cancel.php',success: function(){window.location.assign("http://teller.php")}});
     }
     function valadate(){
         var name = document.forms["Register"]["name"].value;

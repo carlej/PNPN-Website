@@ -104,10 +104,12 @@
                                         } ?>
                                     </select>
                                     <label for="name">   </label>
+
                                     <input type="hidden"  name="Username" value=<?php echo $Username; ?>>
                                     <input type="hidden" name="firstName" value=<?php echo $firstName; ?>>
                                     <input type="hidden" name="lastName" value=<?php echo $lastName; ?>>
                                     <input type="hidden" name="pirateName" value=<?php echo $pirateName; ?>>
+
                                     <?php 
                                     if (mysqli_num_rows($resultFleet)==1) {
                                     	echo '<input type="hidden" name="fleetName" value='.$fleetName.'>';
@@ -474,7 +476,7 @@
         $.ajax({
             async: false,
             type: "POST",
-            url: 'http://localhost/PNPN-Website/Javascript/valuse.php',
+            url: 'http://Javascript/valuse.php',
             data:{Username},
             dataType: 'JSON',
             success: function(output){

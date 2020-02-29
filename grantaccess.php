@@ -59,7 +59,7 @@
                                                 <?php endif; ?>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Ship">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/GrantAccess.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='GrantAccess.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -109,7 +109,7 @@
                                                 <?php endif; ?>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Fleet">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/GrantAccess.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='GrantAccess.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -159,7 +159,7 @@
                             			$update = "UPDATE users SET Ship = '$IDnum[0]' WHERE `$type` LIKE '%$ID%'";
                                     	$temp=mysqli_query($con, $update);
                                     	$_SESSION['multsearch']=array('1');
-                                    	header("Location: /PNPN-Website/GrantAccess.php");
+                                    	header("Location: GrantAccess.php");
                             		}
                             		else {
                             			echo '<script type="text/javascript">alert("There are no ships that match that name.");</script>';
@@ -205,7 +205,7 @@
                             			$update = "UPDATE users SET Fleet = '$IDnum[0]' WHERE `$type` LIKE '%$ID%'";
                                     	$temp=mysqli_query($con, $update);
                                     	$_SESSION['multsearch']=array('1');
-                                    	header("Location: /PNPN-Website/GrantAccess.php");
+                                    	header("Location: GrantAccess.php");
                             		}
                             		else {
                             			echo '<script type="text/javascript">alert("There are no fleets that match that name.");</script>';
@@ -249,7 +249,7 @@
                             endif;
                         ?>
 
-                        <input type="submit" name="submit" value="Back to Teller" onclick="location.href='/PNPN-Website/teller.php';" style="margin-top: 1em">
+                        <input type="submit" name="submit" value="Back to Teller" onclick="location.href='teller.php';" style="margin-top: 1em">
                                    
                     </div>
                 </div>

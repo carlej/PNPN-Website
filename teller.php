@@ -10,7 +10,7 @@
 		}
 		else{
 			echo "Please login to view this page.";
-			header("Location: /PNPN-Website/bank.php");
+			header("Location: bank.php");
 		}
 		//echo $_SESSION['stype'];
 		//echo $_SESSION["hold"];
@@ -36,10 +36,10 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 					<div class = "col-6" style="padding-right: 0.05em;">
-						<a href="/PNPN-Website/bank.php" class="PersonalButton">Personal</a>
+						<a href="bank.php" class="PersonalButton">Personal</a>
 					</div>
 					<div class = "col-6" style = "padding-left: 0.05em;">
-						<a href="/PNPN-Website/teller.php" class="TellerPressed">Teller</a>
+						<a href="teller.php" class="TellerPressed">Teller</a>
 					</div>
 				</div>
 			</div>
@@ -52,10 +52,10 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
 				<div class = "col-sm-6">
-						<a href="/PNPN-Website/bank.php" class="PersonalButton2">Personal</a>
+						<a href="bank.php" class="PersonalButton2">Personal</a>
 				</div>
 				<div class = "col-sm-6">
-					<a href="/PNPN-Website/teller.php" class="TellerPressed2">Teller</a>
+					<a href="teller.php" class="TellerPressed2">Teller</a>
 				</div>
 				</div>
 			</div>
@@ -123,18 +123,18 @@
 			//echo $_POST['input'];
 		}
 		else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Ship/Household") {
-		//header("Location: /PNPN-Website/addShip.php");
+		//header("Location: addShip.php");
 			include("addShip.php");
 		}
 		else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Add Fleet/Alliance") {
-		header("Location: /PNPN-Website/addFleet.php");
+		header("Location: addFleet.php");
 		}
 		else if ($_SERVER["REQUEST_METHOD"] == "POST" && ($_POST['submit'] == "Cancel" || $_POST['submit'] == "Clear")){
 			include('clear.php');
-			?><script type="text/javascript">window.location.href='/PNPN-Website/teller.php'</script><?php
+			?><script type="text/javascript">window.location.href='teller.php'</script><?php
 			//$_SESSION['nest']="nest";
 			//$_SESSION['temp']="temp";
-			//echo '<script type="text/javascript">window.location.href="/PNPN-Website/teller.php"</script>';
+			//echo '<script type="text/javascript">window.location.href="teller.php"</script>';
 		}
 		
 

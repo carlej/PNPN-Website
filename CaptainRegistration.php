@@ -68,8 +68,6 @@
                         <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
                         <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required>
                     </p>
-                
-
                     <p>
                     <input type = "submit"  value = "Submit" style="font-family: pirates"/>
                     <input type = "reset"  value = "Clear Form" style="font-family: pirates" />
@@ -282,7 +280,6 @@
                         <label for="Password" style="font-family: pirates;">Password:</label>
                         <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
                     </p>
-
                     <p>
                         <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
                         <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required>
@@ -309,7 +306,7 @@
         $.ajax({
             async: false,
             type: "POST",
-            url: 'http://localhost/PNPN-Website/Javascript/valuse.php',
+            url: 'http://Javascript/valuse.php',
             data:{Username},
             dataType: 'JSON',
             success: function(output){

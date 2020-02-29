@@ -15,13 +15,13 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 					<div class = "col" style="padding-right: 0.05em;">
-						<a href="/PNPN-Website/landgrant.php" class="PersonalButton3">Personal</a>
+						<a href="landgrant.php" class="PersonalButton3">Personal</a>
 					</div>
 					<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-						<a href="/PNPN-Website/landsteward.php" class="LandPressed3">Steward</a>
+						<a href="landsteward.php" class="LandPressed3">Steward</a>
 					</div>
 					<div class = "col" style="padding-left: 0.05em;">
-						<a href="/PNPN-Website/landvolunteer.php" class="LandVolunteer">Volunteer</a>
+						<a href="landvolunteer.php" class="LandVolunteer">Volunteer</a>
 					</div>
 				</div>
 			</div>
@@ -34,13 +34,13 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
 					<div class = "col-lg">
-						<a href="/PNPN-Website/landgrant.php" class="PersonalButton2">Personal</a>
+						<a href="landgrant.php" class="PersonalButton2">Personal</a>
 					</div>
 					<div class = "col-lg">
-						<a href="/PNPN-Website/landsteward.php" class="LandPressed2">Steward</a>
+						<a href="landsteward.php" class="LandPressed2">Steward</a>
 					</div>
 					<div class = "col-lg">
-						<a href="/PNPN-Website/landvolunteer.php" class="LandVolunteer2">Volunteer</a>
+						<a href="landvolunteer.php" class="LandVolunteer2">Volunteer</a>
 					</div>
 				</div>
 			</div>

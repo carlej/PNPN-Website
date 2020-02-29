@@ -36,7 +36,7 @@ if (mysqli_num_rows($resultIn)==0) {
             $updateuse="UPDATE users SET Ship = '$shipid', shipC = '$shipid' WHERE users.username='$leaderName'";
             $upuser=mysqli_query($con, $updateuse);
             $inup= mysqli_query($con, $updateacc); //Updates the users DB section to show ownership of the new account.
-            ?><script type="text/javascript">window.location.href='/PNPN-Website/teller.php'</script><?php
+            ?><script type="text/javascript">window.location.href='teller.php'</script><?php
         }
         else
             echo "ERROR";//.mysql_error($con);

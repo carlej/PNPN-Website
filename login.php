@@ -6,21 +6,20 @@
 		<?php include("Javascript/Connections/req.php"); ?>
 
 		<title>Login</title>
-		<?php //include("Views\Partials/header.php");?>
 	</head>
 	<body class = "LoginPage">
 		
 		<div class ="container">
 			<div class = "d-flex justify-content-center">
-				<div style="font-family: pirates; font-size: 1.5em"; id = "WelcomeMessage">Welcome to Three Key Connections</div>
+				<div style="font-family: pirates; font-size: 1.5em"; id = "WelcomeMessage">Welcome</div>
 			</div>
 		</div>
 			
 			
 		<?php 
 		include 'Javascript/Connections/convar.php'; 
-	
-		$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+		
+		$con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
 		if (!$con) {
 			die('Could not connect: ' . mysql_error());
 		}
@@ -59,7 +58,7 @@
 				$_SESSION['nstype']=NULL;
 				$_SESSION['clear']='NULL';
 				echo $perm[0];
-				header("Location: /PNPN-Website/bank.php");
+				header("Location: bank.php");
 			}
 			else{
 				//echo $Username;
@@ -95,7 +94,7 @@
         			<input type = "reset"  value = "Clear" style="font-family: pirates" />
     			</p>
 				<div id="buttons" class="align-center" style="font-family: pirates">
-     				<a href="/PNPN-Website/register.php" style="color:black; text-decoration: none;">Register Here</a>
+     				<a href="register.php" style="color:black; text-decoration: none;">Register Here</a>
      			</div>
 			</form>
 			</div>

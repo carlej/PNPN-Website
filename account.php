@@ -69,7 +69,7 @@
                                                 <input type="Email"  name="name" value='<?php echo $Email;?>' required>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Email">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -184,7 +184,7 @@
                                                 <input type="text"  name="name" value='<?php echo $Fname;?>' required>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="First">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -299,7 +299,7 @@
                                                 <input type="text" name="name" value=<?php echo $Lname;?> required>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Last">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -419,7 +419,7 @@
                                                 <?php endif; ?>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Pirate">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -540,7 +540,7 @@
                                                 <?php endif; ?>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Ship">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -659,7 +659,7 @@
                                                 <?php endif; ?>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Fleet">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -783,7 +783,7 @@
                                                 <input type="password" name="name" required>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Pass">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -801,7 +801,7 @@
                                     $queryIn = "SELECT * FROM users where Username='$name' ";
                                     $resultIn = mysqli_query($con, $queryIn);
                                     if ($_SESSION['username']==$name) {
-                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                        echo '<script type="text/javascript">window.location.href="account.php"</script>';
                                     }
                                     else if (mysqli_num_rows($resultIn)>0){?>
                                         <form method="POST">
@@ -814,7 +814,7 @@
 			                                                <input type="Email"  name="name" value='<?php echo $Email;?>' required>
 			                                                <input type="submit" name="submit" value="Confirm">
 			                                                <input type="hidden" name="delim" value="Email">
-			                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+			                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
 			                                            </div>
 			                                        </p>
 			                                    </div>
@@ -908,26 +908,26 @@
                                         $_SESSION['username'] = $name;
                                         $update = "UPDATE users SET Username = '$name' WHERE `$type` LIKE '%$ID%'";
                                         $temp=mysqli_query($con, $update);
-                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                        echo '<script type="text/javascript">window.location.href="account.php"</script>';
                                     }
                                 }
                                 else if ($_POST['delim']=="First") {
                                     $name=mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Fname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
-                                    echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                    echo '<script type="text/javascript">window.location.href="account.php"</script>';
                                 }
                                 else if ($_POST['delim']=="Last") {
                                     $name=$mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Lname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
-                                    echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                    echo '<script type="text/javascript">window.location.href="account.php"</script>';
                                 }
                                 else if ($_POST['delim']=="Pirate") {
                                     $name=mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Pname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
-                                    echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                    echo '<script type="text/javascript">window.location.href="account.php"</script>';
                                 }
                                 else if ($_POST['delim']=='Ship') {
                                     //echo $_POST['name'];
@@ -968,7 +968,7 @@
                                         $update = "UPDATE users SET shipC = '$IDnum[0]' WHERE `$type` LIKE '%$ID%'";
                                         $temp=mysqli_query($con, $update);
                                         $_SESSION['multsearch']=array('1');
-                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                        echo '<script type="text/javascript">window.location.href="account.php"</script>';
                                     }
                                     else {?>
                                     	<form method="POST">
@@ -1041,7 +1041,7 @@
 			                                                <div class="container" id = "NoneFound" style="margin-top: 0em">There are no ships/households that match that search!</div>
 			                                                <input type="submit" name="submit" value="Confirm">
 			                                                <input type="hidden" name="delim" value="Ship">
-			                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+			                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
 			                                            </div>
 			                                        </p>
 			                                    </div>
@@ -1116,7 +1116,7 @@
                                         $update = "UPDATE users SET fleetC = '$IDnum[0]' WHERE `$type` LIKE '%$ID%'";
                                         $temp=mysqli_query($con, $update);
                                         $_SESSION['multsearch']=array('1');
-                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                        echo '<script type="text/javascript">window.location.href="account.php"</script>';
                                     }
                                     else {?>
                                         <form method="POST">
@@ -1203,7 +1203,7 @@
 			                                                <div class="container" id = "NoneFound" style="margin-top: 0em">There are no fleets/alliances that match that search!</div>
 			                                                <input type="submit" name="submit" value="Confirm">
 			                                                <input type="hidden" name="delim" value="Fleet">
-			                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='/PNPN-Website/account.php';">
+			                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='account.php';">
 			                                            </div>
 			                                        </p>
 			                                    </div>
@@ -1237,11 +1237,11 @@
                                         $update = "UPDATE users SET Password = '$newpass' WHERE `$type` LIKE '%$ID%'";
                                         $temp=mysqli_query($con, $update);
                                         echo '<script type="text/javascript">alert("pass changed");</script>';
-                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                        echo '<script type="text/javascript">window.location.href="account.php"</script>';
                                     }
                                     else{
                                         echo '<script type="text/javascript">alert("You did not enter the correct password. Please see a teller for help.");</script>';
-                                        echo '<script type="text/javascript">window.location.href="/PNPN-Website/account.php"</script>';
+                                        echo '<script type="text/javascript">window.location.href="account.php"</script>';
                                     }
                                 }
 
