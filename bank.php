@@ -34,7 +34,7 @@
 					<?php endif;?>
 				</div>
 				<div class = "col-6" style = "padding-left: 0.05em;">
-					<?php if ($url=="bank.php" && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")):?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")): ?>
 					<a href="teller.php" class="TellerButton" onclick="Cancel()">Teller</a>
 					
 					<?php endif;?>
@@ -57,7 +57,7 @@
 					<?php endif;?>
 				</div>
 				<div class = "col-sm-6">
-					<?php if ($url=="bank.php" && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")):?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")): ?>
 					<a href="teller.php" class="TellerButton2" onclick="Cancel()">Teller</a>
 					
 					<?php endif;?>

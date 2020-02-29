@@ -11,14 +11,14 @@
 		
 		<div class ="container">
 			<div class = "d-flex justify-content-center">
-				<div style="font-family: pirates; font-size: 1.5em"; id = "WelcomeMessage">Welcome to Three Key Connections</div>
+				<div style="font-family: pirates; font-size: 1.5em"; id = "WelcomeMessage">Welcome</div>
 			</div>
 		</div>
 			
 			
 		<?php 
 		include 'Javascript/Connections/convar.php'; 
-	
+		
 		$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		if (!$con) {
 			die('Could not connect: ' . mysql_error());

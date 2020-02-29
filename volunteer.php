@@ -23,7 +23,7 @@
 					<?php endif;?>
 				</div>
 				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-					<?php if ($url=="volunteer.php" && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")):?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
 					<a href="volunteercord.php" class="CordButton3">Coordinator</a>
 					<?php endif;?>
 				</div>
@@ -48,7 +48,7 @@
 					<?php endif;?>
 				</div>
 				<div class = "col-lg" style = "padding-left: 0.05em;">
-					<?php if ($url=="volunteer.php" && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")):?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
 					<a href="volunteercord.php" class="CordButton2">Coordinator</a>
 					<?php endif;?>
 				</div>

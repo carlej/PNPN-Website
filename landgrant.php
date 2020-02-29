@@ -23,12 +23,12 @@
 					<?php endif;?>
 				</div>
 				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-					<?php if ($url=="landgrant.php" && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")):?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
 					<a href="landsteward.php" class="LandButton3">Steward</a>
 					<?php endif;?>
 				</div>
 				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-					<?php if ($url=="landgrant.php" && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")):?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
 					<a href="landvolunteer.php" class="LandVolunteer">Volunteer</a>
 					<?php endif;?>
 				</div>
@@ -48,12 +48,12 @@
 					<?php endif;?>
 				</div>
 				<div class = "col-lg">
-					<?php if ($url=="landgrant.php" && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")):?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
 					<a href="landsteward.php" class="LandButton2">Steward</a>
 					<?php endif;?>
 				</div>
 				<div class = "col-lg">
-					<?php if ($url=="landgrant.php" && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")):?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
 					<a href="landvolunteer.php" class="LandVolunteer2">Volunteer</a>
 					<?php endif;?>
 				</div>
