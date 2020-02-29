@@ -13,7 +13,7 @@
 
 		<form method="post" action="Javascript/makeuser.php" name="Register" onsubmit="return valadate();" id="addForm" >	
 
-	<legend style="font-family: pirates; font-size: 1.6em; margin-bottom: 1em;">Captain/Head of House Registration:</legend>
+	<legend style="font-family: pirates; font-size: 1.6em; margin-bottom: 1em;"> Captain/Head of House Registration:</legend>
     <p style="font-family: pirates; font-size: 1.2em; margin-bottom: 0.1em"> READ ME:</p>
     <p style="font-family: pirates; font-size: 1.2em; margin-bottom: 1em"> This registration form is specifically for the Captains and Heads of Households. Only one may sign-up under this registration form. If you have a council of members instead of a single head please choose one person to fill out this form. The purpose of this separate registration form is to create ship/household and fleet/alliance accounts. Once you have completed this form, the rest of your ship/household may signup under the normal registration form. 
     </p>
