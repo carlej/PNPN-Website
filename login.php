@@ -6,7 +6,6 @@
 		<?php include("Javascript/Connections/req.php"); ?>
 
 		<title>Login</title>
-		<?php //include("Views\Partials/header.php");?>
 	</head>
 	<body class = "LoginPage">
 		
