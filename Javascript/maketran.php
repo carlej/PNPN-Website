@@ -1,6 +1,6 @@
 <?php //this file is to make a transaction for more comments see tellmaketran.php these files are fundimentally the same but with small changes as eventually the teller may add who the teller was to each transaction so as to track who does what action.
 
-$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
 	}
