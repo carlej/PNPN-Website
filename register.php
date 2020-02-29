@@ -80,7 +80,7 @@
                         $resultShip = mysqli_query($con, $queryShip);
                         $queryFleet = "SELECT * FROM fleet WHERE Name LIKE '%$fleetName%'";
                         $resultFleet = mysqli_query($con, $queryFleet);
-                        if (mysqli_num_rows($resultShip)>1) {
+                        if (mysqli_num_rows($resultShip)>1 && mysqli_num_rows($resultFleet)>0) {
                             $array = NULL;
                             $array = $resultShip->fetch_all(MYSQLI_NUM);
                             ?>
@@ -104,7 +104,6 @@
                                         } ?>
                                     </select>
                                     <label for="name">   </label>
-                                    <input type="submit" name="submit" value="Submit">
                                     <input type="hidden"  name="Username" value=<?php echo $Username; ?>>
                                     <input type="hidden" name="firstName" value=<?php echo $firstName; ?>>
                                     <input type="hidden" name="lastName" value=<?php echo $lastName; ?>>
@@ -115,16 +114,22 @@
                                     }
                                     ?>
                                     <input type="hidden" name="password" value=<?php echo $Password; ?>>
-                                    <input type="submit" name="submit" value="Clear" />
-                                </fieldset>
-                            </form><?php
+                                    <?php 
+                                    if (mysqli_num_rows($resultFleet)==1): ?>
+			                                    <input type="submit" name="submit" value="Submit">
+			                                    <input type="submit" name="submit" value="Clear" />
+			                                </fieldset>
+			                            </form>
+                        			<?php endif; ?><?php
                         }
-                        if (mysqli_num_rows($resultFleet)>1) {
+                        if (mysqli_num_rows($resultFleet)>1 && mysqli_num_rows($resultShip)>0) {
                             $array = NULL;
                             $array = $resultFleet->fetch_all(MYSQLI_NUM);
                             ?>
-                            <form method="POST" id="SearchBy2">
-                                <fieldset>
+                            <?php if (mysqli_num_rows($resultShip)==1): ?>
+	                            <form method="POST" id="SearchBy2">
+	                                <fieldset>
+                            <?php endif;?>
                                     <label>Select: </label><select name="fleetName">
                                     <?php foreach ($array as $key => $value) {//this will desplay the name of each captain as each should be different
                                     //echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
@@ -143,7 +148,6 @@
                                         } ?>
                                     </select>
                                     <label for="name">   </label>
-                                    <input type="submit" name="submit" value="Submit">
                                     <input type="hidden"  name="Username" value=<?php echo $Username; ?>>
                                     <input type="hidden" name="firstName" value=<?php echo $firstName; ?>>
                                     <input type="hidden" name="lastName" value=<?php echo $lastName; ?>>
@@ -154,6 +158,7 @@
                                     }
                                     ?>
                                     <input type="hidden" name="password" value=<?php echo $Password; ?>>
+                                    <input type="submit" name="submit" value="Submit">
                                     <input type="submit" name="submit" value="Clear" />
                                 </fieldset>
                             </form><?php
