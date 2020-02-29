@@ -21,6 +21,8 @@
         $queryIn = "SELECT * FROM users WHERE `$type` LIKE '%$ID%'";
         $resultIn = mysqli_query($con, $queryIn);
         $row = mysqli_fetch_row($resultIn);
+        $_SESSION['hold'] = $row[0];
+        $_SESSION['stype']; = "Username";
         $Fname = str_replace(' ', '&nbsp;', $row[3]);
         $Lname = str_replace(' ', '&nbsp;', $row[4]);
         $Pname = str_replace(' ', '&nbsp;', $row[5]);

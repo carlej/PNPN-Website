@@ -17,7 +17,7 @@
         if (mysqli_num_rows($resultIn)>0) {
  //           echo "There is already a user with that email!";
            echo '<script type="text/javascript">alert("There is already a user with that email!");
-		   		window.location = "register.php"
+		   		window.location = "/PNPN-Website/register.php"
 		   </script>';
             $msg = "<h2>Can't Add to Table</h2> There is already a user with that email! $Username<p>";
 			
@@ -35,7 +35,7 @@
                     $accs.=$id.", 0]}";
                     $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
                     $inResult = mysqli_query($con, $insert); //Updates the DB with the new account
-                    $update = "UPDATE users SET Accounts = '$accs' WHERE users.Username = '$Username'";
+                    $Updates = "UPDATE users SET Accounts = '$accs' WHERE users.Username = '$Username'";
                     //$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
         }
         else
@@ -85,7 +85,7 @@
                 $_SESSION['nest']="hold";
                 $_SESSION['nstype']=NULL;
                 $_SESSION['clear']='NULL';
-                header("Location: bank.php");
+                header("Location: /PNPN-Website/bank.php");
             }
             else
                 //echo $shipName;
