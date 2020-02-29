@@ -10,7 +10,7 @@
 		?>
 
 		<title>Land Grants</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php include("Views/Partials/header.php");?>
 
 		<!-- Creates the Personal and Steward Buttons and who has access to them-->
 		<div class = "container-flow" id = "SwitchButtonsVol">

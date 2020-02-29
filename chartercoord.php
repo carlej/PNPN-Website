@@ -8,7 +8,7 @@
 		?>
 
 		<title>Charter</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php include("Views/Partials/header.php");?>
 
 		<!-- Creates the Personal, Coordinator, and Charter Buttons -->
 		<div class = "container-flow" id = "SwitchButtonsVol">

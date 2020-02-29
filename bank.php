@@ -4,6 +4,7 @@
 <html>
 	<head>
 		<?php include("Javascript/Connections/req.php");
+		echo $_SERVER['REQUEST_URI'];
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			$username = $_SESSION['username'];
 		}

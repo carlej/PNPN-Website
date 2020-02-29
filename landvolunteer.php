@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
 		<title>Land Grants</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php include("Views/Partials/header.php");?>
 		
 		<div class = "container-flow" id = "SwitchButtonsVol">
 			<div class="d-none d-lg-block">
