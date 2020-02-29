@@ -49,7 +49,7 @@
 				$msg = "Log in successfull";
 				$_SESSION['loggedin'] = true;
 				$_SESSION['username'] = $Username;
-				$_SESSION['perm'] = $perm[0];
+				$_SESSION['perm'] = $row2[9];
 				$_SESSION['hold']="hold";
 				$_SESSION['temp']="temp";
 				$_SESSION['multsearch']=array('1');
