@@ -12,56 +12,56 @@ $url=NULL;
 				<div class="compRose"><img src="CSS\styles\Compass_Rose_2.png" alt="Compass_Rose"></div>
 
 			<?php if ($url=="teller.php"):?>
-				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="/CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url!="bank.php"):?>
-				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="/CSS/styles/Bank_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php else: ?>
-				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="/CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
 
 			<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
-				<div class="logoutButton"><a href="logout.php"><img alt="log out" src="CSS/styles/Log_Out.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="logoutButton"><a href="logout.php"><img alt="log out" src="/CSS/styles/Log_Out.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php else: ?>
 				<li><a href="login.php">Login</a></li>
 			<?php endif; ?>
 
 
-			<div class="tilda1"><img alt="~" src="CSS/styles/Scwig_1.png"></div>
+			<div class="tilda1"><img alt="~" src="/CSS/styles/Scwig_1.png"></div>
 			
 
 			<?php if ($url=="volunteercord.php"):?>
-				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="/CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url=="volunteer.php"):?>
-				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="/CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url=="chartercord.php"):?>
-				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="/CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url=="charter.php"):?>
-				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>	
+				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="/CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>	
 			<?php else: ?>
-				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="/CSS/styles/Volunteering_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
 
 
-			<div class="tilda2"><img alt="~" src="CSS/styles/Scwig_2.png"></div>
+			<div class="tilda2"><img alt="~" src="/CSS/styles/Scwig_2.png"></div>
 			
 
 			<?php if ($url=="landsteward.php"):?>
-				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="/CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url=="landgrant.php"):?>
-				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="/CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url=="landvolunteer.php"):?>
-				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="/CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php else: ?>
-				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="/CSS/styles/Land_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
 
 
 			<?php if ($url=="account.php"):?>
-				<div class="accountButton"><a href="account.php"><img alt="account" src="CSS/styles/Account_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="accountButton"><a href="account.php"><img alt="account" src="/CSS/styles/Account_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url!="account.php"):?>
-				<div class="accountButton"><a href="account.php"><img alt="account" src="CSS/styles/Account_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="accountButton"><a href="account.php"><img alt="account" src="/CSS/styles/Account_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php else: ?>
-				<div class="accountButton"><a href="account.php"><img alt="account" src="CSS/styles/Account_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="accountButton"><a href="account.php"><img alt="account" src="/CSS/styles/Account_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
 		</ul>
 
