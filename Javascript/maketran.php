@@ -5,6 +5,10 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 		die('Could not connect: ' . mysql_error());
 	}
 	$temp=explode("-!split!-", $_POST['Accfrom']);
+	$tempfromname = $temp[1];
+	$string = htmlentities($tempfromname, null, 'utf-8');
+	$tempfrom = str_replace("&nbsp;", " ", $string);
+	$namefrom = html_entity_decode($tempfrom);
 	$Accfrom = mysqli_real_escape_string($con, $temp[0]);
 	$Accfrom = mysqli_real_escape_string($con, $_POST['Accfrom']);
 	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
@@ -43,7 +47,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$resultHistTo= mysqli_query($con, $queryHistTo);
 			$rowHistTo=mysqli_fetch_row($resultHistTo);
 			$parsed_jsonHistTo=json_decode($rowHistTo[0],true);
-			$dep=["Transfered",$temp[1],$name,$trans,$notes];
+			$dep=["Transfered",$namefrom,$name,$trans,$notes];
 			$parsed_jsonHistTo[$timeStamp]=$dep;
 			$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
 			$queryHistTo="UPDATE accounts SET history = '$enco_jsonHistTo' WHERE accounts.ID = '$Accto'";
@@ -53,7 +57,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Transfered",$temp[1],$name,$trans,$notes];
+			$tran=["Transfered",$namefrom,$name,$trans,$notes];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$temp[0]'";

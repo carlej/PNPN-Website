@@ -76,6 +76,11 @@
                         </form><?php
                     }
                     else if ($_POST['shipName']!=NULL && $_POST['fleetName']!=NULL) {
+                        $queryShip = "SELECT * FROM ship WHERE Name LIKE '%$shipName%'";
+                        $resultShip = mysqli_query($con, $queryShip);
+                        $queryFleet = "SELECT * FROM fleet WHERE Name LIKE '%$fleetName%'";
+                        $resultFleet = mysqli_query($con, $queryFleet);
+                        if (mysqli_num_rows($resultShip)>1 && mysqli_num_rows($resultFleet)>0) {
                             $array = NULL;
                             $array = $resultShip->fetch_all(MYSQLI_NUM);
                             ?>

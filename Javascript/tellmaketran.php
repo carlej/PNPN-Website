@@ -8,6 +8,10 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	}
 	if ($_POST['delim']=='tran') {
 	$temp=explode("-!split!-", $_POST['Accfrom']);
+	$tempfromname = $temp[1];
+	$string = htmlentities($tempfromname, null, 'utf-8');
+	$tempfrom = str_replace("&nbsp;", " ", $string);
+	$namefrom = html_entity_decode($tempfrom);
 	$Accfrom = mysqli_real_escape_string($con, $temp[0]);
 	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
 	$trans = mysqli_real_escape_string($con, $_POST['trans']);
@@ -53,7 +57,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$resultHistTo= mysqli_query($con, $queryHistTo);
 			$rowHistTo=mysqli_fetch_row($resultHistTo);
 			$parsed_jsonHistTo=json_decode($rowHistTo[0],true);
-			$dep=["Transfered",$temp[1],$name,$trans,$teller,$tranNotes];
+			$dep=["Transfered",$namefrom,$name,$trans,$teller,$tranNotes];
 			$parsed_jsonHistTo[$timeStamp]=$dep;
 			$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
 			$queryHistTo="UPDATE accounts SET history = '$enco_jsonHistTo' WHERE accounts.ID = '$Accto'";
@@ -63,7 +67,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Transfered",$temp[1],$name,$trans,$teller,$tranNotes];
+			$tran=["Transfered",$namefrom,$name,$trans,$teller,$tranNotes];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
@@ -88,6 +92,10 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	}
 	else if ($_POST['delim']=='dept') {
 		$temp=explode("-!split!-", $_POST['Accfrom']);
+		$tempfromname = $temp[1];
+	$string = htmlentities($tempfromname, null, 'utf-8');
+	$tempfrom = str_replace("&nbsp;", " ", $string);
+	$namefrom = html_entity_decode($tempfrom);
 	$Accfrom = mysqli_real_escape_string($con, $temp[0]);
 	$depts = mysqli_real_escape_string($con, $_POST['depts']);
 	$deptNotes = mysqli_real_escape_string($con, $_POST['deptNotes']);
@@ -120,7 +128,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Deposited",$temp[1],$depts,$teller,$deptNotes,'0','0'];
+			$tran=["Deposited",$namefrom,$depts,$teller,$deptNotes,'0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
@@ -132,6 +140,10 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 
 	if ($_POST['delim']=='with') {
 	$temp=explode("-!split!-", $_POST['Accfrom']);
+	$tempfromname = $temp[1];
+	$string = htmlentities($tempfromname, null, 'utf-8');
+	$tempfrom = str_replace("&nbsp;", " ", $string);
+	$namefrom = html_entity_decode($tempfrom);
 	$Accfrom = mysqli_real_escape_string($con, $temp[0]);
 	$with = mysqli_real_escape_string($con, $_POST['with']);
 	$withNotes = mysqli_real_escape_string($con, $_POST['withNotes']);
@@ -159,7 +171,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Withdrew",$temp[1],$with,$teller,$withNotes,'0','0','0'];
+			$tran=["Withdrew",$namefrom,$with,$teller,$withNotes,'0','0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
