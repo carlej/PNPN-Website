@@ -257,8 +257,8 @@
 				$parsed_fleet_json=json_decode($rowFleet[4],true);
 				$parsed_fleet_json=$parsed_fleet_json['id'];
 			}
-			$_SESSION['hold']=$input;
-			$_SESSION['stype']=$method;
+			$_SESSION['hold']=$username;
+			$_SESSION['stype']='Username';
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">
 					<div class = "row">
