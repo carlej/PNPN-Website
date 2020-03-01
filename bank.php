@@ -4,9 +4,6 @@
 <html>
 	<head>
 		<?php include("Javascript/Connections/req.php");
-		echo isset($_SESSION['loggedin']);
-		echo $_SESSION['perm'];
-		echo $_SESSION['loggedin'];
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			$username = $_SESSION['username'];
 		}
