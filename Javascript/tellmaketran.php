@@ -27,7 +27,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	$space=' ';
 	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
 	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
-		header("Location: teller.php");
+		header("Location: ../teller.php");
 	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
@@ -72,7 +72,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			header("Location: teller.php");//refreshes page to reflect new ballance
+			header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 			$_SESSION['nest']="hold";
 			$_SESSION['temp']="temp";
@@ -87,7 +87,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	}
 	elseif($trans>0){
 		//echo "error you don't have enough money";
-		header("Location: teller.php");
+		header("Location: ../teller.php");
 	}
 	}
 	else if ($_POST['delim']=='dept') {
@@ -107,7 +107,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
 
 	if (($depts=="") && $_POST['submit']!="Cancel") {
-		header("Location: teller.php");
+		header("Location: ../teller.php");
 	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
@@ -133,7 +133,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			header("Location: teller.php");//refreshes page to reflect new ballance
+			header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 	}
 	}
@@ -176,13 +176,13 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			header("Location: teller.php");//refreshes page to reflect new ballance
+			header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 		//header("Location: transfer.php");
 		}
 	}
 	elseif($with>0){
 		//echo "error you don't have enough money";
-		header("Location: teller.php");
+		header("Location: ../teller.php");
 	}
 ?>

@@ -115,7 +115,9 @@
 			$_POST['input']=$_SESSION['hold'];
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") { 
-		
+			//$string = htmlentities($_POST['input'], null, 'utf-8');
+			$cat = substr_count($_POST['input'], ' ');
+			echo $cat;
 			include "Javascript/search.php";
 			if($_POST['ntype']){
 				include "Javascript/telltransearch.php";
