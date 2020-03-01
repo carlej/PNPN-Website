@@ -4,7 +4,8 @@
 		die('Could not connect: ' . mysql_error());
 	}
 	$method = $_POST['ntype'];
-	$input = mysqli_real_escape_string($con, $_POST['ninput']);
+	$temp = mysqli_real_escape_string($con, $_POST['ninput']);
+	$input = str_replace(' ', '%', $temp);
 	if ($method=="shipID"){//This is an unused search method as I was not sure what i would be searching by and is one of the easy ones to make
 		$queryShip = "SELECT * FROM ship WHERE ID = '$input'";
 		$resultShip= mysqli_query($con,$queryShip);
@@ -275,6 +276,7 @@
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."norm".'" /></p></form></html>';
 		}
 		else{
+			echo $queryIn;
 			echo '<script type="text/javascript">alert("There are no accounts that match your search!");</script>';
 		}
 	}

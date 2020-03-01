@@ -4,7 +4,8 @@
 		die('Could not connect: ' . mysql_error());
 	}
 	$method = $_POST['type'];
-	$input = mysqli_real_escape_string($con, $_POST['input']);
+	$temp = mysqli_real_escape_string($con, $_POST['input']);
+	$input = str_replace(' ', '%', $temp);
 	if ($method=="shipID"){//This is an unused search method as I was not sure what i would be searching by and is one of the easy ones to make
 		$queryShip = "SELECT * FROM ship WHERE ID = '$input'";
 		$resultShip= mysqli_query($con,$queryShip);

@@ -162,7 +162,8 @@
 								</p>
 								<p style="margin-top: -0.5em">
 									<label for="notes">Notes:</label>
-									<input type="text" name="tranNotes" maxlength="50" >
+									<input type="text" name="tranNotes" maxlength="50" onkeyup="textCounter(this,'tranCount',50);">
+									<input disabled  maxlength="3" size="3" value="50" id="tranCount">
 								</p>
 								<p style="margin-top: -0.5em">
 									<input type="submit" name="submit" value="Transfer" >
