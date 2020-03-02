@@ -194,7 +194,7 @@
                         $salt = md5(time());
                         $passhold = md5($salt.$Password);
                         if ($shipName!=NULL && $fleetName!=NULL){
-                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, fleetC, Fleet, Ship, Accounts) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $shipid, $fleetid, $shipid, $fleetid, '$accs')";
+                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, fleetC, Fleet, Ship, Accounts) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $shipid, $fleetid, $fleetid, $shipid, '$accs')";
                         }
                         else if ($shipName!=NULL) {
                             $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, Ship, Accounts) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $shipid, $shipid, '$accs')";
