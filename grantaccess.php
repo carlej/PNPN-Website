@@ -165,14 +165,18 @@
                             			?>
                                         <form method="POST">
                                             <fieldset>
-                                                <div class="row">
                                                     <p>
-                                                        <label style="padding-right: 6.0em; padding-left: 1em; padding-bottom: -2em; margin-bottom: -2em">Ship or Household: </label>
-                                                        <div class="col-sm" style="margin-bottom: 1.5em">
-                                                            <label><?php echo $shipName; ?></label>
-                                                            <div class="container" id = "NoneFound" style="margin-top: 0em">There are no ships that match that search!</div>
-                                                            <input type="submit" name="submit" value="Edit">
-                                                            <input type="hidden" name="Edit" value="Ship">
+                                                        <label style="padding-right: 6.0em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
+                                                        <div class = "col-sm" style="margin-bottom: 1.5em">
+                                                            <?php if($shipName=='&nbsp'):?>
+                                                                <input type="text" name="name" required>
+                                                            <?php else: ?>
+                                                                <input type="text" name="name" value=<?php echo $shipName;?> required>
+                                                            <?php endif; ?>
+                                                            <div class="row"><div class="container" id = "NoneFound" style="margin-top: 0em">There are no ships that match that search!</div>
+                                                            <input type="submit" name="submit" value="Confirm">
+                                                            <input type="hidden" name="delim" value="Ship">
+                                                            <input type="submit" name="submit" value="Cancel" onclick="location.href='GrantAccess.php';">
                                                         </div>
                                                     </p>
                                                 </div>
@@ -254,15 +258,19 @@
                                         </form>
                                         <form method="POST">
                                             <fieldset>
-                                                <div class="row">
                                                     <p>
                                                         <label style="padding-right: 6.3em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
                                                         <div class="col-sm" style="margin-bottom: 1.5em">
-                                                            <label><?php echo $fleetName; ?></label>
-                                                            <div class="container" id = "NoneFound" style="margin-top: 0em">There are no fleets that match that search!</div>
-                                                            <input type="submit" name="submit" value="Edit">
-                                                            <input type="hidden" name="Edit" value="Fleet">
-                                                        </div>
+                                                            <?php if($fleetName=='&nbsp'):?>
+                                                                <input type="text" name="name" required>
+                                                            <?php else: ?>
+                                                                <input type="text" name="name" value=<?php echo $fleetName;?> required>
+                                                            <?php endif; ?>
+                                                            <div class="row"><div class="container" id = "NoneFound" style="margin-top: 0em">There are no fleets that match that search!</div>
+                                                            <input type="submit" name="submit" value="Confirm">
+                                                            <input type="hidden" name="delim" value="Fleet">
+                                                            <input type="submit" name="submit" value="Cancel" onclick="location.href='GrantAccess.php';">
+                                                            </div>
                                                     </p>
                                                 </div>
                                             </fieldset>
