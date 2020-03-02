@@ -9,7 +9,7 @@
             die('Could not connect: ' . mysql_error());
         } ?>
 
-		<title>Register</title>
+		<title>Registration</title>
 	</head>
 	<body class = "RegistrationPage">
 
