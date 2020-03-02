@@ -8,6 +8,17 @@
 			$username = $_SESSION['username'];
 		}
 		?>
+		<?php
+		include 'Javascript/Connections/convar.php';
+		$con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
+		if (!$con) {
+			die('Could not connect: ' . mysql_error());
+		}
+		else{
+			//$queryIn = "SELECT * FROM volunteering WHERE 1"
+		}
+		mysqli_close($con);
+		?>
 
 		<title>Volunteering</title>
 		<?php include("Views/Partials/header.php");?>
@@ -107,18 +118,7 @@
 		
 	</head>
 	<body>
-		<?php
-		include 'Javascript/Connections/convar.php';
-		$con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
-		if (!$con) {
-			die('Could not connect: ' . mysql_error());
-		}
-		else{
-			//$queryIn = "SELECT * FROM volunteering WHERE 1"
-		}
-		mysqli_close($con);
-
-		?>
+		<p style="font-family: pirates; font-size: 1.2em; align-content: center">Features coming soon!</p>
 			
 	</body>
 

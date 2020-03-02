@@ -185,4 +185,9 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 		//echo "error you don't have enough money";
 		header("Location: ../teller.php");
 	}
+	if (($row[0]-$with)<0) {
+		echo '<script type="text/javascript">alert("There is not enough in that account to do this.")</script>';
+		header("Location: ../teller.php");
+	}
 ?>
+
