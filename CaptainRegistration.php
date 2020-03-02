@@ -92,17 +92,17 @@
                         $query = "INSERT INTO ship (ID, Name, Captain) VALUES ('$shipid', '$shipName', '$Username')";
                         do{ //this loop is the same as in make users to make an accoutn for the new ship/house
                             srand(time());
-                            $shipid=rand(1000,9999);
-                            $queryIn = "SELECT ID FROM ship WHERE ID = '$shipid'";
-                            $resultIn = mysqli_query($con, $queryIn);
+                            $idship=rand(100000000,999999999);
+                            $queryInshipacc = "SELECT ID FROM accounts WHERE ID = '$idship'";
+                            $resultInshipacc = mysqli_query($con, $queryInshipacc);
                             //$row=mysqli_fetch_row($resultIn);
                             //echo $queryIn;
-                            if (mysqli_num_rows($resultIn)==0) {
+                            if (mysqli_num_rows($resultInshipacc)==0) {
                                 //echo $id;
                                 $a=false;
                                 $accs="{\"id\": [";
-                                $accs.=$id.", 0]}";
-                                $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
+                                $accs.=$idship.", 0]}";
+                                $insert = "INSERT INTO accounts (ID) VALUES ('$idship')";
                                 $inResult = mysqli_query($con, $insert); //Updates the DB with the new account
                                 $insertship = mysqli_query($con, $query);
                                 $updateacc = "UPDATE ship SET Accounts = '$accs' WHERE ship.ID = '$shipid'";
@@ -194,21 +194,21 @@
                         $salt = md5(time());
                         $passhold = md5($salt.$Password);
                         if ($shipName!=NULL && $fleetName!=NULL){
-                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, fleetC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $shipid, $fleetid)";
+                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, fleetC, Fleet, Ship, Accounts) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $shipid, $fleetid, $shipid, $fleetid, '$accs')";
                         }
                         else if ($shipName!=NULL) {
-                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $shipid)";
+                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, Ship, Accounts) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $shipid, $shipid, '$accs')";
                         }
                         else if ($fleetName!=NULL) {
-                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, fleetC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $fleetid)";
+                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, fleetC, Fleet, Accounts) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $fleetid, $fleetid, '$accs')";
                         }
                         else{
-                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt')";
+                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, Accounts) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', '$accs')";
                         }
                         
                         if (mysqli_query($con,$query)) {
-                        $inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
-                        $upuser=mysqli_query($con, $updateuse);
+                        //$inup= mysqli_query($con, $update); //Updates the users DB section to show ownership of the new account.
+                        //$upuser=mysqli_query($con, $updateuse);
                             $msg = "Record added.<p>";
                             $_SESSION['loggedin'] = true;
                             $_SESSION['username'] = $Username;
