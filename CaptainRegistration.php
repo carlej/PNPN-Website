@@ -155,7 +155,7 @@
                                 $updateuse="UPDATE users SET fleet = '$fleetid' WHERE users.Username='$Username'";
                                 $inup= mysqli_query($con, $updateacc); //Updates the users DB section to show ownerfleet of the new account.
                                 
-                                ?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
+                                ?><script type="text/javascript">window.location.href='bank.php'</script><?php
                             }
                             else
                                 echo mysqli_num_rows($resultInfleetacc);//.mysql_error($con);
@@ -220,7 +220,7 @@
                             $_SESSION['nest']="hold";
                             $_SESSION['nstype']=NULL;
                             $_SESSION['clear']='NULL';
-                            header("Location: /PNPN-Website/bank.php");
+                            header("Location: bank.php");
                         }
                         else{
                             //echo $shipName;
