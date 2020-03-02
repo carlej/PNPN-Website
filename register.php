@@ -75,6 +75,9 @@
                             </fieldset>
                         </form><?php
                     }
+                    else if($_POST['shipName']==NULL && $_POST['fleetName']==NULL){
+                    	include 'Javascript/makeuser.php';
+                    }
                     else if ($_POST['shipName']!=NULL && $_POST['fleetName']!=NULL) {
                         $queryShip = "SELECT * FROM ship WHERE Name LIKE '%$shipName%'";
                         $resultShip = mysqli_query($con, $queryShip);
@@ -85,7 +88,7 @@
                             $array = $resultShip->fetch_all(MYSQLI_NUM);
                             ?>
                             <form method="POST" id="SearchBy2">
-                                <fieldset>
+                                <fieldset style="font-family: pirates">
                                     <label>Select: </label><select name="shipName">
                                     <?php foreach ($array as $key => $value) {//this will desplay the name of each captain as each should be different
                                     //echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
@@ -128,7 +131,7 @@
                             ?>
                             <?php if (mysqli_num_rows($resultShip)==1): ?>
 	                            <form method="POST" id="SearchBy2">
-	                                <fieldset>
+	                                <fieldset style="font-family: pirates">
                             <?php endif;?>
                                     <label>Select: </label><select name="fleetName">
                                     <?php foreach ($array as $key => $value) {//this will desplay the name of each captain as each should be different
@@ -233,7 +236,7 @@
                             $array = $resultShip->fetch_all(MYSQLI_NUM);
                             ?>
                             <form method="POST" id="SearchBy2">
-                                <fieldset>
+                                <fieldset style="font-family: pirates">
                                     <label>Select: </label><select name="shipName">
                                     <?php foreach ($array as $key => $value) {//this will desplay the name of each captain as each should be different
                                     //echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
@@ -326,7 +329,7 @@
                             $array = $resultFleet->fetch_all(MYSQLI_NUM);
                             ?>
                             <form method="POST" id="SearchBy2">
-                                <fieldset>
+                                <fieldset style="font-family: pirates">
                                     <label>Select: </label><select name="fleetName">
                                     <?php foreach ($array as $key => $value) {//this will desplay the name of each captain as each should be different
                                     //echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
