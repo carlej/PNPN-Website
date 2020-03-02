@@ -162,7 +162,36 @@
                                     	header("Location: GrantAccess.php");
                             		}
                             		else {
-                            			echo '<script type="text/javascript">alert("There are no ships that match that name.");</script>';
+                            			?>
+                                        <form method="POST">
+                                            <fieldset>
+                                                <div class="row">
+                                                    <p>
+                                                        <label style="padding-right: 6.0em; padding-left: 1em; padding-bottom: -2em; margin-bottom: -2em">Ship or Household: </label>
+                                                        <div class="col-sm" style="margin-bottom: 1.5em">
+                                                            <label><?php echo $shipName; ?></label>
+                                                            <div class="container" id = "NoneFound" style="margin-top: 0em">There are no ships that match that search!</div>
+                                                            <input type="submit" name="submit" value="Edit">
+                                                            <input type="hidden" name="Edit" value="Ship">
+                                                        </div>
+                                                    </p>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                        <form method="POST">
+                                            <fieldset>
+                                                <div class="row">
+                                                    <p>
+                                                        <label style="padding-right: 6.3em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+                                                        <div class="col-sm" style="margin-bottom: 1.5em">
+                                                            <label><?php echo $fleetName; ?></label>
+                                                            <input type="submit" name="submit" value="Edit">
+                                                            <input type="hidden" name="Edit" value="Fleet">
+                                                        </div>
+                                                    </p>
+                                                </div>
+                                            </fieldset>
+                                        </form><?php
                             		}
                                 	
 							}
@@ -208,7 +237,36 @@
                                     	header("Location: GrantAccess.php");
                             		}
                             		else {
-                            			echo '<script type="text/javascript">alert("There are no fleets that match that name.");</script>';
+                                        ?>
+                                        <form method="POST">
+                                            <fieldset>
+                                                <div class="row">
+                                                    <p>
+                                                        <label style="padding-right: 6.0em; padding-left: 1em; padding-bottom: -2em; margin-bottom: -2em">Ship or Household: </label>
+                                                        <div class="col-sm" style="margin-bottom: 1.5em">
+                                                            <label><?php echo $shipName; ?></label>
+                                                            <input type="submit" name="submit" value="Edit">
+                                                            <input type="hidden" name="Edit" value="Ship">
+                                                        </div>
+                                                    </p>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                        <form method="POST">
+                                            <fieldset>
+                                                <div class="row">
+                                                    <p>
+                                                        <label style="padding-right: 6.3em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
+                                                        <div class="col-sm" style="margin-bottom: 1.5em">
+                                                            <label><?php echo $fleetName; ?></label>
+                                                            <div class="container" id = "NoneFound" style="margin-top: 0em">There are no fleets that match that search!</div>
+                                                            <input type="submit" name="submit" value="Edit">
+                                                            <input type="hidden" name="Edit" value="Fleet">
+                                                        </div>
+                                                    </p>
+                                                </div>
+                                            </fieldset>
+                                        </form><?php
                             		}
                                 	
 							}
