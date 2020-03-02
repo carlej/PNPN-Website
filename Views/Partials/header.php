@@ -103,7 +103,7 @@ $url=NULL;
 
   		<!-- Navbar links -->
   		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-    		<ul class="nav navbar-nav">
+    		<ul class="nav navbar-nav justify-content-center">
       			<li class="nav-item">
         			<a class="nav-link" href="bank.php" style="font-family: pirates; color: white" >Bank</a>
       			</li>

@@ -67,8 +67,15 @@
 </html>
 
 <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['groupName']){
-    if ($havefleet!=NULL) {
-        echo "You already have a fleet";
+    if ($havefleet!=NULL) { ?>
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div style="align-content: center; font-family: pirates; color: red">
+                    <?php echo "This account already has a Fleet or Alliance!";?>
+                </div>
+            </div>
+        </div>
+        <?php
     }
     else{
         echo "here";

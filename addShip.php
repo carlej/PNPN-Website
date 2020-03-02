@@ -66,8 +66,15 @@
 </html>
 
 <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['groupName']){
-	if ($haveShip!=NULL) {
-		echo "You already have a ship";
+	if ($haveShip!=NULL) { ?>
+        <div class="container">
+            <div class="d-flex justify-content-center">
+		        <div style="align-content: center; font-family: pirates; color: red">
+                    <?php echo "This account already has a Ship or Household!";?>
+                </div>
+            </div>
+        </div>
+        <?php
 	}
 	else{
 		include ("Javascript/makeShip.php");

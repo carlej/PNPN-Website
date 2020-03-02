@@ -93,12 +93,12 @@
 							<fieldset>
 								<legend>Transfer:</legend>	
 								<p>
-									<p id="searcher">
+									<p id="searcher1">
 										<div class="col-sm">
-										<p style="margin-bottom: 0em; margin-top: -0.7em;">Account to:</p>
+										<p style="margin-bottom: 0em; margin-top: -0.7em; margin-left: -1em">Account to:</p>
 										</div>
 										<div class="col-sm">
-										<select name="ntype" class="SearchBy3" style=" margin-bottom: 0.3em;">
+										<select name="ntype" class="SearchBy3" style=" margin-bottom: 0.3em; margin-left: -1em">
 											<option>Search by:</option>
 											<option value="Pname">Pirate Name</option>
 											<option value="Fname">First Name</option>
@@ -111,7 +111,7 @@
 										</select>
 										</div>
 										<div class = "col-sm">
-										<input type="text" required name="ninput" id="ninput" style="font-family: arial; margin-bottom: 0.3em">
+										<input type="text" required name="ninput" id="ninput" style="font-family: arial; margin-bottom: 0.3em; margin-left: -1em">
 										<input type="submit" name= "submit" value="Search" class="submit">
 										</div>
 										<input type="hidden" name="new2" value="new2" class="submit">
@@ -181,7 +181,7 @@
 		<div class="tellDepositFormdiv">
 			<form name="Deposit"method="POST" action="Javascript/tellmaketran.php" id="tellDepositForm">
 				<fieldset>
-					<div class = "col-md">
+					<div class = "col-md" >
 						<legend>Deposit:</legend>
 						<p><?php
 						//echo $name;
@@ -286,7 +286,8 @@
 			</form>
 		</div>
 		<?php if($_SESSION['stype']!='shipID' && $_SESSION['stype']!='fleetID'): ?>
-			<div class = "col-md" id = "InfoColumn">
+			<div class = "col-md" >
+			<div id = "InfoColumn">
 				<legend>Info:</legend>
 				<p>
 					<input type = "submit" name= "submit" value = "Add Ship/Household" onclick="location.href='addShip.php';"?>
@@ -300,6 +301,7 @@
 				<p>
 					<input type = "submit" name= "submit" value = "Edit User" onclick="location.href='editUser.php';">
 				</p>
+			</div>
 			</div>
 		<?php endif; ?>
 	</div>

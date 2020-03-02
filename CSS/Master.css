@@ -172,6 +172,7 @@ padding:0px;
 @media (max-width: 992px) {
 	#WelcomeMessage {
 	font-size: 0.8em;
+	margin-top: 2em;
 	}
 }
 
@@ -214,7 +215,6 @@ padding:0px;
 
 .nav-item {
 	text-align: center;
-	margin-left: -5em;
 }
 
 #SwitchButtons {
@@ -1146,14 +1146,30 @@ li {
 	margin-left: 1em;
 }
 
-@media (max-width: 992px) {
+@media (min-width: 768px; max-width: 992px) {
 	#InfoColumn {
-	margin-left: 4em;
+	margin-left: 8em;
 	}
 }
 
 @media (max-width: 768px) {
 	#InfoColumn {
+	margin-left: 0em;
+	}
+}
+
+#searcher1 {
+	margin-left: 1em;
+}
+
+@media (max-width: 992px) {
+	#searcher1 {
+	margin-left: -1em;
+	}
+}
+
+@media (max-width: 768px) {
+	#searcher1 {
 	margin-left: 0em;
 	}
 }
