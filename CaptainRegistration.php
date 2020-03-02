@@ -6,6 +6,7 @@
         include 'Javascript/Connections/convar.php';
         $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         if (!$con) {
+        	echo "here";
             die('Could not connect: ' . mysql_error());
         } ?>
 
@@ -15,7 +16,7 @@
 
 <div class ="container">
     <div class = "d-flex justify-content-center" id = "RegisterWindow" >
-        <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Submit"):
+        <?php if ($_SERVER["REQUEST_METHOD"] == "POST"):
             $Username = mysqli_real_escape_string($con, $_POST['Username']);
             $firstName = mysqli_real_escape_string($con, $_POST['firstName']);
             $lastName = mysqli_real_escape_string($con, $_POST['lastName']);
@@ -89,13 +90,13 @@
                         //echo $shipid;
                         $b=false;
                         $a = true;
-                        $query = "INSERT INTO ship (ID, Name, Captain) VALUES ('$shipid', '$name', '$leaderName')";
+                        $query = "INSERT INTO ship (ID, Name, Captain) VALUES ('$shipid', '$shipName', '$Username')";
                         do{ //this loop is the same as in make users to make an accoutn for the new ship/house
                             srand(time());
                             $id=rand(100000000,999999999);
                             $queryIn = "SELECT ID FROM accounts WHERE ID = '$id'";
                             $resultIn = mysqli_query($con, $queryIn);
-                            $row=mysqli_fetch_row($resultIn);
+                            //$row=mysqli_fetch_row($resultIn);
                             //echo $queryIn;
                             if (mysqli_num_rows($resultIn)==0) {
                                 //echo $id;
@@ -104,12 +105,13 @@
                                 $accs.=$id.", 0]}";
                                 $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
                                 $inResult = mysqli_query($con, $insert); //Updates the DB with the new account
+                                $insertship = mysqli_query($con, $query);
                                 $updateacc = "UPDATE ship SET Accounts = '$accs' WHERE ship.ID = '$shipid'";
-                                $updateuse="UPDATE users SET ship = '$shipid', shipC = '$shipid' WHERE users.username='$leaderName'";
+                                $updateuse="UPDATE users SET ship = '$shipid', shipC = '$shipid' WHERE users.username='$Username'";
                                 $inup= mysqli_query($con, $updateacc); //Updates the users DB section to show ownership of the new account.
                             }
                             else
-                                echo "ERROR";//.mysql_error($con);
+                                echo "ERROR 112";//.mysql_error($con);
                         }while($a);
                     }
                     else{
@@ -123,6 +125,8 @@
                 }
                 if ($fleetName!=NULL) {
                     srand(time());
+                    $b=true;
+                    $a=true;
                     $fleetid=rand(1000,9999);
                     $queryIn = "SELECT ID FROM fleet WHERE ID = '$fleetid'";
                     $resultIn = mysqli_query($con, $queryIn);
@@ -132,29 +136,30 @@
                     if (mysqli_num_rows($resultIn)==0) {
                         //echo $fleetid;
                         $b=false;
-                        $a = true;
-                        $query = "INSERT INTO fleet (ID, Name, Admiral) VALUES ('$fleetid', '$name', '$leaderName')";
-                        mysqli_query($con, $query);
+                        $query = "INSERT INTO fleet (ID, Name, Admiral) VALUES ('$fleetid', '$fleetName', '$Username')";
                         do{ //this loop is the same as in make users to make an accoutn for the new fleet/house
                             srand(time());
-                            $id=rand(100000000,999999999);
-                            $queryIn = "SELECT ID FROM accounts WHERE ID = '$id'";
-                            $resultIn = mysqli_query($con, $queryIn);
+                            $idfleet=rand(100000000,999999999);
+                            $queryInfleetacc = "SELECT ID FROM accounts WHERE ID = '$idfleet'";
+                            $resultInfleetacc = mysqli_query($con, $queryInfleetacc);
                             //echo $queryIn;
-                            if (mysqli_num_rows($resultIn)==0) {
+                            if (mysqli_num_rows($resultInfleetacc)==0) {
                                 //echo $id;
                                 $a=false;
+                                echo "here";
                                 $accs="{\"id\": [";
-                                $accs.=$id.", 0]}";
-                                $insert = "INSERT INTO accounts (ID) VALUES ('$id')";
+                                $accs.=$idfleet.", 0]}";
+                                $insert = "INSERT INTO accounts (ID) VALUES ('$idfleet')";
                                 $inResult = mysqli_query($con, $insert); //Updates the DB with the new account
+                                $insertfleet = mysqli_query($con, $query);
                                 $updateacc = "UPDATE fleet SET Accounts = '$accs' WHERE fleet.ID = '$fleetid'";
-                                $updateuse="UPDATE users SET fleet = '$fleetid' WHERE users.Username='$leaderName'";
+                                $updateuse="UPDATE users SET fleet = '$fleetid' WHERE users.Username='$Username'";
                                 $inup= mysqli_query($con, $updateacc); //Updates the users DB section to show ownerfleet of the new account.
-                                ?><script type="text/javascript">window.location.href='/PNPN-Website/teller.php'</script><?php
+                                
+                                ?><script type="text/javascript">window.location.href='/PNPN-Website/bank.php'</script><?php
                             }
                             else
-                                echo "ERROR";//.mysql_error($con);
+                                echo mysqli_num_rows($resultInfleetacc);//.mysql_error($con);
                         }while($a);
                     }
                     else{
@@ -167,7 +172,7 @@
                     }while($b);
                 }
                 if ($fleetName!=NULL && $shipName!=NULL) {
-                    $updateuse="UPDATE users SET Fleet = '$fleetid', Ship = '$shipid', shipC = '$shipid', fleetC = '$fleetid' WHERE users.Username='$leaderName'";
+                    $updateuse="UPDATE users SET Fleet = '$fleetid', Ship = '$shipid', shipC = '$shipid', fleetC = '$fleetid' WHERE users.Username='$Username'";
                 }
                 do{
                     srand(time()); //this creates their account so that they have an account at creation this loops so make sure that if it makes a account number that already exists that it will make a new one and see if it exists
@@ -234,14 +239,15 @@
                             $_SESSION['clear']='NULL';
                             header("Location: /PNPN-Website/bank.php");
                         }
-                        else
+                        else{
                             //echo $shipName;
-                            echo $queryShip;
-                            //echo "ERROR";//.mysql_error($con);
-                    }
+                            //echo $queryShip;
+                            echo "ERROR 240";//.mysql_error($con);
+                        }
+                    
                 }
                 mysqli_close($con);
-            }
+            
          ?>
         <?php else: ?>
     		<form method="post"  name="Register" id="addForm" >
