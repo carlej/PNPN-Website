@@ -6,6 +6,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
 	}
+
 	if ($_POST['delim']=='tran') {
 	$temp=explode("-!split!-", $_POST['Accfrom']);
 	$tempfromname = $temp[1];
@@ -27,7 +28,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$space=' ';
 	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
 	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
-		header("Location: teller.php");
+		//header("Location: ../teller.php");
 	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
@@ -60,7 +61,8 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$dep=["Transfered",$namefrom,$name,$trans,$teller,$tranNotes];
 			$parsed_jsonHistTo[$timeStamp]=$dep;
 			$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
-			$queryHistTo="UPDATE accounts SET history = '$enco_jsonHistTo' WHERE accounts.ID = '$Accto'";
+			$noApostropheTo = strtr($enco_jsonHistTo,'\'', '`');
+			$queryHistTo="UPDATE accounts SET history = '$noApostropheTo' WHERE accounts.ID = '$Accto'";
 			$resultHistTo=mysqli_query($con,$queryHistTo);
 			//creates history in the account making the transfer
 			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
@@ -70,9 +72,10 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$tran=["Transfered",$namefrom,$name,$trans,$teller,$tranNotes];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
+			$noApostrophe = strtr($enco_jsonHistFrom,'\'', '`');
+			$queryHistFrom="UPDATE accounts SET history = '$noApostrophe' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			header("Location: teller.php");//refreshes page to reflect new ballance
+			//header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 			$_SESSION['nest']="hold";
 			$_SESSION['temp']="temp";
@@ -82,12 +85,12 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		else{
 			//error = "Error that account doesn't exist";
 			//echo "<script type='text/javascript'>alert('".$error."');</script>";
-			//header("Location: transfer.php");
+			////header("Location: transfer.php");
 		}
 	}
 	elseif($trans>0){
 		//echo "error you don't have enough money";
-		header("Location: teller.php");
+		//header("Location: ../teller.php");
 	}
 	}
 	else if ($_POST['delim']=='dept') {
@@ -107,7 +110,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
 
 	if (($depts=="") && $_POST['submit']!="Cancel") {
-		header("Location: teller.php");
+		//header("Location: ../teller.php");
 	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
@@ -117,7 +120,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
 			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
 			$rema = $row[0]+$depts;
-			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
+			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE ID = '$Accfrom'";
 			$addition = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
 
 			//This adds a new entry into the JSON file that is used to store the history of each account
@@ -131,14 +134,15 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$tran=["Deposited",$namefrom,$depts,$teller,$deptNotes,'0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
+			$noApostrophe = strtr($enco_jsonHistFrom,'\'', '`');
+			$queryHistFrom="UPDATE accounts SET history = '$noApostrophe' WHERE accounts.ID = '$Accfrom'";
+			echo $queryHistFrom;
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			header("Location: teller.php");//refreshes page to reflect new ballance
+			//header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 	}
 	}
-
-	if ($_POST['delim']=='with') {
+	else if ($_POST['delim']=='with') {
 	$temp=explode("-!split!-", $_POST['Accfrom']);
 	$tempfromname = $temp[1];
 	$string = htmlentities($tempfromname, null, 'utf-8');
@@ -174,15 +178,12 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$tran=["Withdrew",$namefrom,$with,$teller,$withNotes,'0','0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
+			$noApostrophe = strtr($enco_jsonHistFrom,'\'', '`');
+			$queryHistFrom="UPDATE accounts SET history = '$noApostrophe' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			header("Location: teller.php");//refreshes page to reflect new ballance
+			//header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
-		//header("Location: transfer.php");
+		////header("Location: transfer.php");
 		}
-	}
-	elseif($with>0){
-		//echo "error you don't have enough money";
-		header("Location: teller.php");
 	}
 ?>
