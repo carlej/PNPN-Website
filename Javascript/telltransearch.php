@@ -206,6 +206,7 @@
 	else{
 		$queryIn = "SELECT * FROM users WHERE `$method` LIKE '%$input%'";
 		$resultIn = mysqli_query($con, $queryIn);
+		$_SESSION['nstype']=$method;
 
 		if (mysqli_num_rows($resultIn)>1) {//if there are multiple results this makes a drop down list so that you can pick what one you want
 			?>
@@ -214,7 +215,6 @@
 			$array = NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
 			$_SESSION['multsearch']=$array;
-			$_SESSION['nstype']=$method;
 			mysqli_close($con);
 			?><script type="text/javascript">window.location.href="teller.php"</script><?php
 			/*

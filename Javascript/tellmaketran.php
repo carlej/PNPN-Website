@@ -6,6 +6,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	if (!$con) {
 		die('Could not connect: ' . mysql_error());
 	}
+
 	if ($_POST['delim']=='tran') {
 	$temp=explode("-!split!-", $_POST['Accfrom']);
 	$tempfromname = $temp[1];
@@ -60,7 +61,8 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$dep=["Transfered",$namefrom,$name,$trans,$teller,$tranNotes];
 			$parsed_jsonHistTo[$timeStamp]=$dep;
 			$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
-			$queryHistTo="UPDATE accounts SET history = '$enco_jsonHistTo' WHERE accounts.ID = '$Accto'";
+			$noApostropheTo = strtr($enco_jsonHistTo,'\'', '`');
+			$queryHistTo="UPDATE accounts SET history = '$noApostropheTo' WHERE accounts.ID = '$Accto'";
 			$resultHistTo=mysqli_query($con,$queryHistTo);
 			//creates history in the account making the transfer
 			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
@@ -70,7 +72,8 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$tran=["Transfered",$namefrom,$name,$trans,$teller,$tranNotes];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
+			$noApostrophe = strtr($enco_jsonHistFrom,'\'', '`');
+			$queryHistFrom="UPDATE accounts SET history = '$noApostrophe' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
@@ -117,7 +120,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
 			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
 			$rema = $row[0]+$depts;
-			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
+			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE ID = '$Accfrom'";
 			$addition = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
 
 			//This adds a new entry into the JSON file that is used to store the history of each account
@@ -131,14 +134,15 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$tran=["Deposited",$namefrom,$depts,$teller,$deptNotes,'0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
+			$noApostrophe = strtr($enco_jsonHistFrom,'\'', '`');
+			$queryHistFrom="UPDATE accounts SET history = '$noApostrophe' WHERE accounts.ID = '$Accfrom'";
+			echo $queryHistFrom;
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 	}
 	}
-
-	if ($_POST['delim']=='with') {
+	else if ($_POST['delim']=='with') {
 	$temp=explode("-!split!-", $_POST['Accfrom']);
 	$tempfromname = $temp[1];
 	$string = htmlentities($tempfromname, null, 'utf-8');
@@ -174,7 +178,8 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$tran=["Withdrew",$namefrom,$with,$teller,$withNotes,'0','0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$Accfrom'";
+			$noApostrophe = strtr($enco_jsonHistFrom,'\'', '`');
+			$queryHistFrom="UPDATE accounts SET history = '$noApostrophe' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
