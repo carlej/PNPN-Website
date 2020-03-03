@@ -9,10 +9,18 @@
 			echo "Please login to view this page.";
 			header("Location: bank.php");
 		}
+		include 'Javascript/Connections/convar.php';
+		$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+		if (!$con) {
+			die('Could not connect: ' . mysql_error());
+		}
+		else{
+			//$queryIn = "SELECT * FROM volunteering WHERE 1"
+		}
 		?>
 
 		<title>Volunteering</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php include("Views/Partials/header.php");?>
 
 
 		<!-- Creates the Personal, Coordinator, and Charter Buttons -->
@@ -56,6 +64,122 @@
 		
 	</head>
 	<body>
+		<form method="POST">
+			<fieldset>
+				<div class = "container" id="SearchBy">
+					<div class = "d-flex-row">
+						<div class = "col">
+							<input type="submit" name= "submit" value="Gate" >
+							<input type="submit" name= "submit" value="Parking" >
+							<input type="submit" name= "submit" value="Constab" >
+							<input type="hidden" name="job" value="null">
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+		<?php
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			if ($_POST['submit'] == "Gate") {
+				?>
+				<form method="POST">
+					<fieldset>
+						<div class = "container" id="SearchBy">
+							<div class = "d-flex-row">
+								<div class = "col">
+									<input type="submit" name= "job" value="Prereg" >
+									<input type="submit" name= "job" value="cathurder" >
+									<input type="submit" name= "job" value="other things" >
+									<input type="hidden" name="submit" value="Gate">
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+				<?php
+				if ($_POST['job']=="Prereg") {
+					$queryJob = "SELECT * FROM jobs WHERE job LIKE 'prereg' ";
+					$resultJob= mysqli_query($con,$queryJob);
+					if ($resultJob) {
+						if (mysqli_num_rows($resultJob)>1) {
+							$array = $resultJob->fetch_all(MYSQLI_NUM);
+							foreach ($array as $key => $value) {
+								echo '<p><li>pay '.$value[1].'</li>';
+								echo '<li>start '.$value[2].'</li>';
+								echo '<li>end '.$value[3].'</li>';
+								echo '<li>total hours '.$value[4].'</li></p>';
+							}
+						}
+						else
+							echo mysqli_fetch_row($resultJob);
+					}
+				}
+				else if ($_POST['job']=="cathurder") {
+					echo "catzz";
+				}
+				else if ($_POST['job']=="other things") {
+					echo "idk what jobs there is";
+				}
+			}
+			else if ($_POST['submit'] == "Parking") {
+				?>
+				<form method="POST">
+					<fieldset>
+						<div class = "container" id="SearchBy">
+							<div class = "d-flex-row">
+								<div class = "col">
+									<input type="submit" name= "job" value="Outer lot" >
+									<input type="submit" name= "job" value="Inner lot" >
+									<input type="submit" name= "job" value="other things" >
+									<input type="hidden" name="submit" value="Parking">
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+				<?php
+				if ($_POST['job']=="Outer lot") {
+					echo "outer";
+				}
+				else if ($_POST['job']=="Inner lot") {
+					echo "inner";
+				}
+				else if ($_POST['job']=="other things") {
+					echo "idk what jobs there is";
+				}
+			}
+			else if ($_POST['submit'] == "Constab") {
+				?>
+				<form method="POST">
+					<fieldset>
+						<div class = "container" id="SearchBy">
+							<div class = "d-flex-row">
+								<div class = "col">
+									<input type="submit" name= "job" value="Roming" >
+									<input type="submit" name= "job" value="Not roming" >
+									<input type="submit" name= "job" value="Much stabbs" >
+									<input type="hidden" name="submit" value="Constab">
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+				<?php
+				if ($_POST['job']=="Roming") {
+					echo "walkzz";
+				}
+				else if ($_POST['job']=="Not roming") {
+					echo "stations";
+				}
+				else if ($_POST['job']=="Much stabbs") {
+					echo "knife";
+				}
+			}
+		}
+		//$time = 1;
+		//$cenvertedTime = date('Y-m-d H:i:s',strtotime('+'.$time.' hour',strtotime($startTime)));//add time to datetime object
+		mysqli_close($con);
+		?>
 		
 	</body>
 
