@@ -1,7 +1,9 @@
 <?php //this validates that the transaction that was subbmitted is a valid transaction.
 if ($_POST['Accto']) {
 $Accto=$_POST['Accto'];
-$Accfrom=$_POST['Accfrom'];
+$temp=explode("-!split!-", $_POST['Accfrom']);
+$Accfrom=$temp[0];
+//echo $Accfrom;
 $trans=$_POST['trans'];
 
 	$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
