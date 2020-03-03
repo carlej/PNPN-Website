@@ -50,7 +50,8 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$dep=["Transfered",$namefrom,$name,$trans,$notes];
 			$parsed_jsonHistTo[$timeStamp]=$dep;
 			$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
-			$queryHistTo="UPDATE accounts SET history = '$enco_jsonHistTo' WHERE accounts.ID = '$Accto'";
+			$noApostropheTo = strtr($enco_jsonHistTo,'\'', '`');
+			$queryHistTo="UPDATE accounts SET history = '$noApostropheTo' WHERE accounts.ID = '$Accto'";
 			$resultHistTo=mysqli_query($con,$queryHistTo);
 			//creates history in the account making the transfer
 			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$temp[0]'";
@@ -60,7 +61,8 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$tran=["Transfered",$namefrom,$name,$trans,$notes];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$queryHistFrom="UPDATE accounts SET history = '$enco_jsonHistFrom' WHERE accounts.ID = '$temp[0]'";
+			$noApostrophe = strtr($enco_jsonHistFrom,'\'', '`');
+			$queryHistFrom="UPDATE accounts SET history = '$noApostrophe' WHERE accounts.ID = '$temp[0]'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			//header("Location: transfer.php");//refreshes page to reflect new ballance
 			//header("Location: bank.php");
