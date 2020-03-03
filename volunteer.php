@@ -68,12 +68,12 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 				<div class = "col" style="padding-right: 0.05em;">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d")): ?>
 						<a href="volunteer.php" class="PersonalPressed4">Personal</a>
 					<?php endif;?>
 				</div>
 				<div class="col" style="padding-left: 0.05em" >
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d")): ?>
 						<a href="charter.php" class="CharterButton">Charter/Land Grant</a>
 					<?php endif;?>
 				</div>
@@ -88,12 +88,12 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
 				<div class = "col-lg">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d")): ?>
 						<a href="volunteer.php" class="PersonalPressed2">Personal</a>
 					<?php endif;?>
 				</div>
 				<div class="col-lg" style="padding-right: 0.05em" >
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d")): ?>
 						<a href="charter.php" class="CharterButton2">Charter/Land Grant</a>
 					<?php endif;?>
 				</div>
@@ -118,8 +118,8 @@
 		}
 		mysqli_close($con);
 
-		?>
-			
+		//$cenvertedTime = date('Y-m-d H:i:s',strtotime('+'.$time.' hour',strtotime($startTime)));//add time to datetime object
+			?>
 	</body>
 
 </html>
