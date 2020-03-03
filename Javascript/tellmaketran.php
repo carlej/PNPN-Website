@@ -28,7 +28,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$space=' ';
 	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
 	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
-		//header("Location: ../teller.php");
+		header("Location: ../teller.php");
 	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
@@ -75,7 +75,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$noApostrophe = strtr($enco_jsonHistFrom,'\'', '`');
 			$queryHistFrom="UPDATE accounts SET history = '$noApostrophe' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			//header("Location: ../teller.php");//refreshes page to reflect new ballance
+			header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 			$_SESSION['nest']="hold";
 			$_SESSION['temp']="temp";
@@ -85,12 +85,12 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		else{
 			//error = "Error that account doesn't exist";
 			//echo "<script type='text/javascript'>alert('".$error."');</script>";
-			////header("Location: transfer.php");
+			//header("Location: transfer.php");
 		}
 	}
 	elseif($trans>0){
 		//echo "error you don't have enough money";
-		//header("Location: ../teller.php");
+		header("Location: ../teller.php");
 	}
 	}
 	else if ($_POST['delim']=='dept') {
@@ -110,7 +110,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
 
 	if (($depts=="") && $_POST['submit']!="Cancel") {
-		//header("Location: ../teller.php");
+		header("Location: ../teller.php");
 	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
@@ -138,7 +138,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$queryHistFrom="UPDATE accounts SET history = '$noApostrophe' WHERE accounts.ID = '$Accfrom'";
 			echo $queryHistFrom;
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			//header("Location: ../teller.php");//refreshes page to reflect new ballance
+			header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
 	}
 	}
@@ -181,9 +181,9 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			$noApostrophe = strtr($enco_jsonHistFrom,'\'', '`');
 			$queryHistFrom="UPDATE accounts SET history = '$noApostrophe' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
-			//header("Location: ../teller.php");//refreshes page to reflect new ballance
+			header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
-		////header("Location: transfer.php");
+		//header("Location: transfer.php");
 		}
 	}
 ?>
