@@ -118,8 +118,7 @@
 		
 	</head>
 	<body>
-		<p style="font-family: pirates; font-size: 1.2em; align-content: center">Features coming soon!</p>
-			
+		
 	</body>
 
 </html>
