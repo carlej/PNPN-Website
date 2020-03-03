@@ -69,7 +69,7 @@
 					//echo $date;
 					//echo $timeStamp;
 					$diff=date_diff($date,$timeStamp);
-					if ($diff->format("%a")<30) { //doesnt display if date is too old
+					if ($diff->format("%a")<30) { //doesnt display if date is too old in days
 						echo '<li><a>';
 						if (count($value)==6) {//transfer display from teller
 							echo "~ ";
@@ -128,22 +128,14 @@
 					}
 				}
 			}
-			/* search and return all unique values from multidementional array
-			$temp = array_unique(array_map(function ($i) { return $i[3]; }, $parsed_hist));
-			if ($_POST['sort']=="teller") {
-
-				foreach ($temp as $key => $value) {
-					echo '<p>'.$value.'</p>';
-				}
-			}*/
 			else if ($_POST['sort']=='time') {
-				# code...
+				//returns everything from specified time ago sorted by time
 			}
 			else if ($_POST['sort']=='amount') {
-				# code...
+				//sorts the list based on the amount
 			}
 			else if ($_POST['sort']=='type') {
-				# code...
+				//returns all of a specified type.
 			}
 		}
 		//endif; ?>
