@@ -72,7 +72,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$tran=["Transfered",$namefrom,$name,$trans,$teller,$tranNotes];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistTo);
+			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$NOSPECIALCHARACERS' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			header("Location: ../teller.php");//refreshes page to reflect new ballance
@@ -134,7 +134,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$tran=["Deposited",$namefrom,$depts,$teller,$deptNotes,'0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistTo);
+			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$NOSPECIALCHARACERS' WHERE accounts.ID = '$Accfrom'";
 			echo $queryHistFrom;
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
@@ -178,7 +178,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$tran=["Withdrew",$namefrom,$with,$teller,$withNotes,'0','0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistTo);
+			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$NOSPECIALCHARACERS' WHERE accounts.ID = '$Accfrom'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			header("Location: ../teller.php");//refreshes page to reflect new ballance

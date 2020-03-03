@@ -61,7 +61,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$tran=["Transfered",$namefrom,$name,$trans,$notes];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistTo);
+			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$NOSPECIALCHARACERS' WHERE accounts.ID = '$temp[0]'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			//header("Location: transfer.php");//refreshes page to reflect new ballance
