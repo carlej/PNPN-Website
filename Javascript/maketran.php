@@ -13,7 +13,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	$Accfrom = mysqli_real_escape_string($con, $_POST['Accfrom']);
 	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
 	$trans = mysqli_real_escape_string($con, $_POST['trans']);
-	$notes = mysqli_real_escape_string($con, $_POST['notes']);
+	$notes = $_POST['notes'];
 	$tempname = mysqli_real_escape_string($con, $_POST['name']);
 	$string = htmlentities($tempname, null, 'utf-8');
 	$tempname = str_replace("&nbsp;", " ", $string);
@@ -50,8 +50,8 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$dep=["Transfered",$namefrom,$name,$trans,$notes];
 			$parsed_jsonHistTo[$timeStamp]=$dep;
 			$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
-			$noApostropheTo = strtr($enco_jsonHistTo,'\'', '`');
-			$queryHistTo="UPDATE accounts SET history = '$noApostropheTo' WHERE accounts.ID = '$Accto'";
+			$NOSPECIALCHARACERSto = mysqli_real_escape_string($con, $enco_jsonHistTo);
+			$queryHistTo="UPDATE accounts SET history = '$NOSPECIALCHARACERSto' WHERE accounts.ID = '$Accto'";
 			$resultHistTo=mysqli_query($con,$queryHistTo);
 			//creates history in the account making the transfer
 			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$temp[0]'";
@@ -61,8 +61,8 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$tran=["Transfered",$namefrom,$name,$trans,$notes];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
-			$noApostrophe = strtr($enco_jsonHistFrom,'\'', '`');
-			$queryHistFrom="UPDATE accounts SET history = '$noApostrophe' WHERE accounts.ID = '$temp[0]'";
+			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistTo);
+			$queryHistFrom="UPDATE accounts SET history = '$NOSPECIALCHARACERS' WHERE accounts.ID = '$temp[0]'";
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			//header("Location: transfer.php");//refreshes page to reflect new ballance
 			//header("Location: bank.php");
