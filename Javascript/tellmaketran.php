@@ -40,6 +40,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		if (mysqli_num_rows($resultIn)!=0) {
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
 			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
+			$auditTimeStamp= new DateTime();
 			$rema = $row[0]-$trans;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
@@ -52,8 +53,18 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			//creates a history of the transaction in the account to
 
 			//This adds a new entry into the JSON file that is used to store the history of each account
-
-			//currently it uses the account numbers for this info. I was trying to phase out account numbers and have this display the name of the account holder but this is a work in progress.
+			//start audit
+			$AuditHist="SELECT history FROM accounts WHERE ID = '330425394'";
+			$AuditHist= mysqli_query($con, $AuditHist);		
+			$AuditHist=mysqli_fetch_row($AuditHist);
+			$Audit_jsonHist=json_decode($AuditHist[0],true);
+			$Audittran=["Transfered",$namefrom,$name,$trans,$teller,$tranNotes];
+			$Audit_jsonHist[$auditTimeStamp]=$Audittran;
+			$Audit_jsonHist=json_encode($Audit_jsonHist);
+			$Audit = mysqli_real_escape_string($con, $Audit_jsonHist);
+			$AuditHist="UPDATE accounts SET history = '$Audit' WHERE accounts.ID = '330425394'";
+			$AuditHistFrom=mysqli_query($con,$AuditHist);
+			//end audit
 			$queryHistTo="SELECT history FROM accounts WHERE ID = '$Accto'";
 			$resultHistTo= mysqli_query($con, $queryHistTo);
 			$rowHistTo=mysqli_fetch_row($resultHistTo);
@@ -119,13 +130,25 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	if ($depts>0) { //basic error handling
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
 			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
+			$auditTimeStamp= new DateTime();
 			$rema = $row[0]+$depts;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE ID = '$Accfrom'";
 			$addition = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
 
 			//This adds a new entry into the JSON file that is used to store the history of each account
 
-			
+			//start audit
+			$AuditHist="SELECT history FROM accounts WHERE ID = '330425394'";
+			$AuditHist= mysqli_query($con, $AuditHist);		
+			$AuditHist=mysqli_fetch_row($AuditHist);
+			$Audit_jsonHist=json_decode($AuditHist[0],true);
+			$Audittran=["Deposited",$namefrom,'0',$teller,$depts,$deptNotes,'0'];
+			$Audit_jsonHist[$auditTimeStamp]=$Audittran;
+			$Audit_jsonHist=json_encode($Audit_jsonHist);
+			$Audit = mysqli_real_escape_string($con, $Audit_jsonHist);
+			$AuditHist="UPDATE accounts SET history = '$Audit' WHERE accounts.ID = '330425394'";
+			$AuditHistFrom=mysqli_query($con,$AuditHist);
+			//end audit
 			//creates history in the account making the deposited
 			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
@@ -163,6 +186,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	if ($with <= $row[0] && $with>0) { //basic error handling
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
 			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
+			$auditTimeStamp= new DateTime();
 			$rema = $row[0]-$with;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
@@ -170,12 +194,25 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			//This adds a new entry into the JSON file that is used to store the history of each account
 
 			//currently it uses the account numbers for this info. I was trying to phase out account numbers and have this display the name of the account holder but this is a work in progress.
+			
+			//start audit
+			$AuditHist="SELECT history FROM accounts WHERE ID = '330425394'";
+			$AuditHist= mysqli_query($con, $AuditHist);		
+			$AuditHist=mysqli_fetch_row($AuditHist);
+			$Audit_jsonHist=json_decode($AuditHist[0],true);
+			$Audittran=["Withdrew",$name,'0',$teller,$with,$withNotes,'0','0'];
+			$Audit_jsonHist[$auditTimeStamp]=$Audittran;
+			$Audit_jsonHist=json_encode($Audit_jsonHist);
+			$Audit = mysqli_real_escape_string($con, $Audit_jsonHist);
+			$AuditHist="UPDATE accounts SET history = '$Audit' WHERE accounts.ID = '330425394'";
+			$AuditHistFrom=mysqli_query($con,$AuditHist);
+			//end audit
 			//creates history in the account making the transfer
 			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Withdrew",$namefrom,,'0'$teller,$with,$withNotes,'0','0'];
+			$tran=["Withdrew",$namefrom,'0',$teller,$with,$withNotes,'0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistFrom);
