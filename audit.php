@@ -55,8 +55,8 @@
 		<?php
 		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Sort") {
 			$method = $_POST['sort'];
-			//$queryIn = "SELECT history FROM accounts WHERE ID = '330425394'"; //real one
-			$queryIn = "SELECT history FROM accounts WHERE ID = '555555555'";
+			$queryIn = "SELECT history FROM accounts WHERE ID = '330425394'"; //real one
+			//$queryIn = "SELECT history FROM accounts WHERE ID = '555555555'";
 			$resultIn = mysqli_query($con, $queryIn);
 			$row = mysqli_fetch_row($resultIn);
 			$parsed_hist = json_decode($row[0],true);
@@ -71,7 +71,7 @@
 								<?php foreach ($unique as $key => $value) {//this will desplay the name of each captain as each should be different
 								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
 								$capname=str_replace(' ', '&nbsp;', $value);
-								echo '<option value="'.$value.'">"Teller: " '.$capname.'</option>';
+								echo '<option value="'.$value.'">'.$capname.'</option>';
 								} ?>
 							</select>
 								<input type="submit" name= "submit" value="Sort" >
@@ -126,12 +126,12 @@
 								echo " ";
 								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 								echo " ";
-								echo $value[2]; //amount 
+								echo $value[4]; //amount 
 								echo " Sterlings to ";
 								echo $value[1]; //account from
-								if ($value[4]) {
+								if ($value[5]) {
 									echo " Notes: ";
-									echo $value[4];
+									echo $value[5];
 								}							
 							}
 							else if (count($value)==8) {//withdraw display
@@ -143,12 +143,12 @@
 								echo " ";
 								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 								echo " ";
-								echo $value[2]; //amount 
+								echo $value[4]; //amount 
 								echo " Sterlings from ";
 								echo $value[1]; //account from
-								if ($value[4]) {
+								if ($value[5]) {
 									echo " Notes: ";
-									echo $value[4];
+									echo $value[5];
 								}							
 							}
 							echo '</a></li>';
