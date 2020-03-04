@@ -73,7 +73,8 @@
 				die('Could not connect: ' . mysql_error());
 			}
 		}
-		mysqli_close($con);
+
+
 		//creates the basic inputs for the search file to find an user/account?>
 		<form method="POST">
 			<fieldset>
@@ -103,6 +104,11 @@
 				</div>
 			</fieldset>
 		</form>
+		<?php if($_SESSION['perm']=="z"):?>
+			<p>
+				<input type = "submit" name= "submit" value = "Audit" onclick="location.href='audit.php';">
+			</p>
+		<?php endif; ?>
 
 		<?php 
 		error_reporting(E_ERROR);
@@ -137,8 +143,7 @@
 			//$_SESSION['temp']="temp";
 			//echo '<script type="text/javascript">window.location.href="teller.php"</script>';
 		}
-		
-
+		mysqli_close($con);
 		?>
 	</body>
 
