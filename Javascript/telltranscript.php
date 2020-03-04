@@ -13,6 +13,7 @@
 			echo "\n";
 			echo $value[0];
 		}*/
+		//$test = 'volunteers';
 		?>
 		<p>		
 			<div class = "col-md">
@@ -299,11 +300,6 @@
 				<p>
 					<input type = "submit" name= "submit" value = "Edit User" onclick="location.href='editUser.php';">
 				</p>
-				<?php if ($_SESSION['perm']=="z"): ?>
-				<p>
-					<input type = "submit" name= "submit" value = "Audit" onclick="location.href='audit.php';">
-				</p>
-				<?php endif; ?>
 			</div>
 		<?php endif; ?>
 	</div>

@@ -19,9 +19,11 @@
 		$_SESSION['stype']="shipID";
 		//$user=$_SESSION['hold'];?>
 		<div class = "container">
+			<?php if($_SESSION['username']!='volunteers'):?>
 				<div class = "row">
 					<?php include "Javascript/telltranscript.php"; ?>
 				</div>
+			<?php endif; ?>
 				<div class = "row">
 					<?php include "Views/Partials/showAccs.php"; ?>
 				</div>
@@ -75,9 +77,11 @@
 			$_SESSION['stype']="shipID";
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">
+				<?php if($_SESSION['username']!='volunteers'):?>
 					<div class = "row">
 						<?php include "Javascript/telltranscript.php"; ?>
 					</div>
+				<?php endif; ?>
 					<div class = "row">
 						<?php include "Views/Partials/showAccs.php"; ?>
 					</div>
@@ -111,9 +115,11 @@
 		$_SESSION['stype']="fleetID";
 		//$user=$_SESSION['hold']; ?>
 		<div class = "container">
+			<?php if($_SESSION['username']!='volunteers'):?>
 				<div class = "row">
 					<?php include "Javascript/telltranscript.php"; ?>
 				</div>
+			<?php endif; ?>
 				<div class = "row">
 					<?php include "Views/Partials/showAccs.php"; ?>
 				</div>
@@ -167,9 +173,11 @@
 			$_SESSION['stype']="fleetID";
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">
+				<?php if($_SESSION['username']!='volunteers'):?>
 					<div class = "row">
 						<?php include "Javascript/telltranscript.php"; ?>
 					</div>
+				<?php endif; ?>
 					<div class = "row">
 						<?php include "Views/Partials/showAccs.php"; ?>
 					</div>
@@ -261,9 +269,11 @@
 			$_SESSION['stype']='Username';
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">
+				<?php if($_SESSION['username']!='volunteers'):?>
 					<div class = "row">
 						<?php include "Javascript/telltranscript.php"; ?>
 					</div>
+				<?php endif; ?>
 					<div class = "row">
 						<?php include "Views/Partials/showAccs.php"; ?>
 					</div>

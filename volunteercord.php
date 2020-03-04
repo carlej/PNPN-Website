@@ -104,10 +104,10 @@
 						if (mysqli_num_rows($resultJob)>1) {
 							$array = $resultJob->fetch_all(MYSQLI_NUM);
 							foreach ($array as $key => $value) {
-								echo '<p><li>pay '.$value[1].'</li>';
-								echo '<li>start '.$value[2].'</li>';
-								echo '<li>end '.$value[3].'</li>';
-								echo '<li>total hours '.$value[4].'</li></p>';
+								echo '<p><li>pay '.$value[2].'</li>';
+								echo '<li>start '.$value[3].'</li>';
+								echo '<li>end '.$value[4].'</li>';
+								echo '<li>total hours '.$value[5].'</li></p>';
 							}
 						}
 						else
