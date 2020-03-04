@@ -13,6 +13,7 @@
 			echo "\n";
 			echo $value[0];
 		}*/
+		//$test = 'volunteers';
 		?>
 		<p>		
 			<div class = "col-md">

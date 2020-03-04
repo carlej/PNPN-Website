@@ -37,12 +37,16 @@
 								<option>Sort By:</option>
 								<option value="teller">Teller</option>
 								<option value="time">Time</option>
-								<option value="amount">Amount</option>
+								<option value="amount">Amount over</option>
 								<option value="type">Type</option>
 							</select>
 						</div>
 						<div class = "col">
 							<input type="submit" name= "submit" value="Sort" class="submit">
+							<input type="hidden" name="time">
+							<input type="hidden" name="teller">
+							<input type="hidden" name="amount">
+							<input type="hidden" name="type">
 						</div>
 					</div>
 				</div>
@@ -56,75 +60,99 @@
 			$resultIn = mysqli_query($con, $queryIn);
 			$row = mysqli_fetch_row($resultIn);
 			$parsed_hist = json_decode($row[0],true);
-			//$parsed_hist=array_reverse($temphist);
-			if ($_POST['sort']=="teller") {
-				//$numResults=-1;
-				array_multisort(array_map(function($element) {
-					return $element[3];
-				}, $parsed_hist), SORT_ASC, $parsed_hist);
-				//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
-				foreach ($parsed_hist as $key => $value) {
-					$tempD = strtotime($key);
-					$date = new DateTime($key);
-					//echo $date;
-					//echo $timeStamp;
-					$diff=date_diff($date,$timeStamp);
-					if ($diff->format("%a")<30) { //doesnt display if date is too old in days
-						echo '<li><a>';
-						if (count($value)==6) {//transfer display from teller
-							echo "~ ";
-							echo $key; //time and date that it happened
-							echo " ~ ";
-							echo " Teller ";
-							echo $value[3];
-							echo " ";
-							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
-							echo " ";
-							echo $value[4]; //amount 
-							echo " Sterlings from ";
-							echo $value[1]; //account from
-							echo " to ";
-							echo $value[2]; //account to
-							if ($value[5]) {
-								echo " Notes: ";
-								echo $value[5];
-							}							
+			if ($_POST['sort']=='teller') {
+				$teller = json_decode($row[0],true);
+				$unique = array_unique(array_map(function ($i) { return $i[3]; }, $teller));
+				if (!$_POST['teller']) {?>
+					<form method="POST">
+						<fieldset>
+							<label style="margin-bottom: 0em;">Select Teller: </label>
+							<select name="teller" style=" margin-bottom: 0.5em; font-size: 1.1em">
+								<?php foreach ($unique as $key => $value) {//this will desplay the name of each captain as each should be different
+								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+								$capname=str_replace(' ', '&nbsp;', $value);
+								echo '<option value="'.$value.'">"Teller: " '.$capname.'</option>';
+								} ?>
+							</select>
+								<input type="submit" name= "submit" value="Sort" >
+								<input type="hidden" name="sort" value="teller">
+								<input type="hidden" name="time">
+								<input type="hidden" name="amount">
+								<input type="hidden" name="type">
+						</fieldset>
+					</form><?php
+				}
+				//$parsed_hist=array_reverse($temphist);
+				if ($_POST['teller']) {
+					$tell = $_POST['teller'];
+					//$numResults=-1;
+					array_multisort(array_map(function($i) {
+						return $i[3];
+					}, $parsed_hist), SORT_ASC, $parsed_hist);
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
+					foreach ($parsed_hist as $key => $value) {
+						$tempD = strtotime($key);
+						$date = new DateTime($key);
+						//echo $date;
+						//echo $timeStamp;
+						$diff=date_diff($date,$timeStamp);
+						if ($diff->format("%a")<30 && $value[3]==$tell) { //doesnt display if date is too old in days
+							echo '<li><a>';
+							if (count($value)==6) {//transfer display from teller
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[4]; //amount 
+								echo " Sterlings from ";
+								echo $value[1]; //account from
+								echo " to ";
+								echo $value[2]; //account to
+								if ($value[5]) {
+									echo " Notes: ";
+									echo $value[5];
+								}							
+							}
+							if (count($value)==7) {//deposit display
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[2]; //amount 
+								echo " Sterlings to ";
+								echo $value[1]; //account from
+								if ($value[4]) {
+									echo " Notes: ";
+									echo $value[4];
+								}							
+							}
+							else if (count($value)==8) {//withdraw display
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[2]; //amount 
+								echo " Sterlings from ";
+								echo $value[1]; //account from
+								if ($value[4]) {
+									echo " Notes: ";
+									echo $value[4];
+								}							
+							}
+							echo '</a></li>';
 						}
-						if (count($value)==7) {//deposit display
-							echo "~ ";
-							echo $key; //time and date that it happened
-							echo " ~ ";
-							echo " Teller ";
-							echo $value[3];
-							echo " ";
-							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
-							echo " ";
-							echo $value[2]; //amount 
-							echo " Sterlings to ";
-							echo $value[1]; //account from
-							if ($value[4]) {
-								echo " Notes: ";
-								echo $value[4];
-							}							
-						}
-						else if (count($value)==8) {//withdraw display
-							echo "~ ";
-							echo $key; //time and date that it happened
-							echo " ~ ";
-							echo " Teller ";
-							echo $value[3];
-							echo " ";
-							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
-							echo " ";
-							echo $value[2]; //amount 
-							echo " Sterlings from ";
-							echo $value[1]; //account from
-							if ($value[4]) {
-								echo " Notes: ";
-								echo $value[4];
-							}							
-						}
-						echo '</a></li>';
 					}
 				}
 			}
@@ -132,10 +160,186 @@
 				//returns everything from specified time ago sorted by time
 			}
 			else if ($_POST['sort']=='amount') {
-				//sorts the list based on the amount
+				if (!$_POST['amount']) {?>
+					<form method="POST">
+						<fieldset>
+							<label style="margin-bottom: 0em;">Enter Max Amount: </label>
+								<input type="number" name="amount" min="1">
+								<input type="submit" name= "submit" value="Sort" >
+								<input type="hidden" name="sort" value="amount">
+								<input type="hidden" name="time">
+								<input type="hidden" name="teller">
+								<input type="hidden" name="type">
+						</fieldset>
+					</form><?php
+				}
+				//$parsed_hist=array_reverse($temphist);
+				if ($_POST['amount']) {
+					$amount = $_POST['amount'];
+					echo $amount;
+					//$numResults=-1;
+					array_multisort(array_map(function($i) {
+						return $i[4];
+					}, $parsed_hist), SORT_ASC, $parsed_hist);
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
+					foreach ($parsed_hist as $key => $value) {
+						$tempD = strtotime($key);
+						$date = new DateTime($key);
+						//echo $date;
+						//echo $timeStamp;
+						$diff=date_diff($date,$timeStamp);
+						if ($diff->format("%a")<30) {
+						echo $value[4]; //doesnt display if date is too old in days
+							echo '<li><a>';
+							if (count($value)==6) {//transfer display from teller
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[4]; //amount 
+								echo " Sterlings from ";
+								echo $value[1]; //account from
+								echo " to ";
+								echo $value[2]; //account to
+								if ($value[5]) {
+									echo " Notes: ";
+									echo $value[5];
+								}							
+							}
+							if (count($value)==7) {//deposit display
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[4]; //amount 
+								echo " Sterlings to ";
+								echo $value[1]; //account from
+								if ($value[5]) {
+									echo " Notes: ";
+									echo $value[5];
+								}							
+							}
+							else if (count($value)==8) {//withdraw display
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[4]; //amount 
+								echo " Sterlings from ";
+								echo $value[1]; //account from
+								if ($value[5]) {
+									echo " Notes: ";
+									echo $value[5];
+								}							
+							}
+							echo '</a></li>';
+						}
+					}
+				}
 			}
 			else if ($_POST['sort']=='type') {
-				//returns all of a specified type.
+				if (!$_POST['type']) {?>
+					<form method="POST">
+						<fieldset>
+							<label style="margin-bottom: 0em;">Select Type: </label>
+							<select name="type" style=" margin-bottom: 0.5em; font-size: 1.1em">
+								<option value="Transfered">Transfer</option>
+								<option value="Deposited">Deposit</option>
+								<option value="Withdrew">Withdraw</option>
+							</select>
+								<input type="submit" name= "submit" value="Sort" >
+								<input type="hidden" name="sort" value="type">
+								<input type="hidden" name="time">
+								<input type="hidden" name="amount">
+								<input type="hidden" name="teller">
+						</fieldset>
+					</form><?php
+				}
+				//$parsed_hist=array_reverse($temphist);
+				if ($_POST['type']) {
+					$type = $_POST['type'];
+					//$numResults=-1;
+					array_multisort(array_map(function($i) {
+						return $i[0];
+					}, $parsed_hist), SORT_ASC, $parsed_hist);
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
+					foreach ($parsed_hist as $key => $value) {
+						$tempD = strtotime($key);
+						$date = new DateTime($key);
+						//echo $date;
+						//echo $timeStamp;
+						$diff=date_diff($date,$timeStamp);
+						if ($diff->format("%a")<30 && $value[0]==$type) { //doesnt display if date is too old in days
+							echo '<li><a>';
+							if (count($value)==6) {//transfer display from teller
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[4]; //amount 
+								echo " Sterlings from ";
+								echo $value[1]; //account from
+								echo " to ";
+								echo $value[2]; //account to
+								if ($value[5]) {
+									echo " Notes: ";
+									echo $value[5];
+								}							
+							}
+							if (count($value)==7) {//deposit display
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[2]; //amount 
+								echo " Sterlings to ";
+								echo $value[1]; //account from
+								if ($value[4]) {
+									echo " Notes: ";
+									echo $value[4];
+								}							
+							}
+							else if (count($value)==8) {//withdraw display
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[2]; //amount 
+								echo " Sterlings from ";
+								echo $value[1]; //account from
+								if ($value[4]) {
+									echo " Notes: ";
+									echo $value[4];
+								}							
+							}
+							echo '</a></li>';
+						}
+					}
+				}
 			}
 		}
 		//endif; ?>
