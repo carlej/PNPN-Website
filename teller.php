@@ -29,7 +29,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
 		<title>Bank</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php include("Views/Partials/header.php");?>
 		
 		
 		<div class = "container-flow" id = "SwitchButtons">
@@ -104,7 +104,7 @@
 				</div>
 			</fieldset>
 		</form>
-		<?php if($_SESSION['perm']=="z"):?>
+		<?php if($_SESSION['perm']=="z" && $_SESSION['hold']=="hold"):?>
 			<p>
 				<input type = "submit" name= "submit" value = "Audit" onclick="location.href='audit.php';">
 			</p>
