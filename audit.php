@@ -43,7 +43,8 @@
 						</div>
 						<div class = "col">
 							<input type="submit" name= "submit" value="Sort" class="submit">
-							<input type="hidden" name="time">
+							<input type="hidden" name="start">
+							<input type="hidden" name="end">
 							<input type="hidden" name="teller">
 							<input type="hidden" name="amount">
 							<input type="hidden" name="type">
@@ -76,7 +77,8 @@
 							</select>
 								<input type="submit" name= "submit" value="Sort" >
 								<input type="hidden" name="sort" value="teller">
-								<input type="hidden" name="time">
+								<input type="hidden" name="start">
+								<input type="hidden" name="end">
 								<input type="hidden" name="amount">
 								<input type="hidden" name="type">
 						</fieldset>
@@ -91,7 +93,7 @@
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
 					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
 					foreach ($parsed_hist as $key => $value) {
-						$tempD = strtotime($key);
+						
 						$date = new DateTime($key);
 						//echo $date;
 						//echo $timeStamp;
@@ -158,37 +160,124 @@
 			}
 			else if ($_POST['sort']=='time') {
 				//way date is stored $timeStamp=date('Y/m/d H:i:s');
-
-				//this would not work
-				/*if (!$_POST['time']) {?>
+				if ($_POST['end'] && $_POST['start']) {
+					$endHold = $_POST['end'];
+					$startHold = $_POST['start'];
+					$startTemp = new DateTime($startHold);
+					$endTemp = new DateTime($endHold);
+					$hold=false;
+					$start=date_diff($startTemp,$timeStamp);
+					$end=date_diff($endTemp,$timeStamp);
+					//$numResults=-1;
+					array_multisort(array_map(function($i) {
+						return $i[4];
+					}, $parsed_hist), SORT_ASC, $parsed_hist);
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
+					foreach ($parsed_hist as $key => $value) {
+						
+						$date = new DateTime($key);
+						//echo $date;
+						//echo $timeStamp;
+						$diff=date_diff($date,$timeStamp);
+						if ($diff->format("%a")<=$start->format("%a") && $diff->format("%a")<=$end->format("%a")) {
+							$hold=true;
+							echo '<li><a>';
+							if (count($value)==6) {//transfer display from teller
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[4]; //amount 
+								echo " Sterlings from ";
+								echo $value[1]; //account from
+								echo " to ";
+								echo $value[2]; //account to
+								if ($value[5]) {
+									echo " Notes: ";
+									echo $value[5];
+								}							
+							}
+							if (count($value)==7) {//deposit display
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[4]; //amount 
+								echo " Sterlings to ";
+								echo $value[1]; //account from
+								if ($value[5]) {
+									echo " Notes: ";
+									echo $value[5];
+								}							
+							}
+							else if (count($value)==8) {//withdraw display
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[4]; //amount 
+								echo " Sterlings from ";
+								echo $value[1]; //account from
+								if ($value[5]) {
+									echo " Notes: ";
+									echo $value[5];
+								}							
+							}
+							echo '</a></li>';
+						}
+					}
+					if (!$hold) {
+						?>
+						<p>There are no records between those dates!</p><?php
+					}
+				}
+				else if (!$_POST['end'] xor !$_POST['start']) {
+					?>
+					<p>Please input both a start and end date</p>
 					<form method="POST">
 						<fieldset>
-							<label style="margin-bottom: 0em;">Select Start Time: </label>
-							<li>
-							<label style="margin-bottom: 0em;">Month: </label>
-								<select name="type" style=" margin-bottom: 0.5em; font-size: 1.1em">
-									<option value="1">January</option>
-									<option value="2">Febuary</option>
-									<option value="3">March</option>
-									<option value="4">April</option>
-									<option value="5">May</option>
-									<option value="6">June</option>
-									<option value="7">July</option>
-									<option value="8">August</option>
-									<option value="9">September</option>
-									<option value="10">October</option>
-									<option value="11">November</option>
-									<option value="12">December</option>
-								</select>
-							</li>
-								<input type="submit" name= "submit" value="Sort" >
-								<input type="hidden" name="sort" value="type">
-								<input type="hidden" name="time">
-								<input type="hidden" name="amount">
-								<input type="hidden" name="teller">
+							<label style="margin-bottom: 0em;">Start Date: </label>
+							<input type="date" name="start">
+							<label style="margin-bottom: 0em;">End Date: </label>
+							<input type="date" name="end">
+							<input type="submit" name= "submit" value="Sort" >
+							<input type="hidden" name="sort" value="time">
+							<input type="hidden" name="teller">
+							<input type="hidden" name="amount">
+							<input type="hidden" name="type">
 						</fieldset>
-					</form><?php
-				}*/
+					</form>
+					<?php
+				}
+				else{
+					?>
+					<form method="POST">
+						<fieldset>
+							<label style="margin-bottom: 0em;">Start Date: </label>
+							<input type="date" name="start">
+							<label style="margin-bottom: 0em;">End Date: </label>
+							<input type="date" name="end">
+							<input type="submit" name= "submit" value="Sort" >
+							<input type="hidden" name="sort" value="time">
+							<input type="hidden" name="teller">
+							<input type="hidden" name="amount">
+							<input type="hidden" name="type">
+						</fieldset>
+					</form>
+					<?php 
+				}
 			}
 			else if ($_POST['sort']=='amount') {
 				if (!$_POST['amount']) {?>
@@ -198,7 +287,8 @@
 								<input type="number" name="amount" min="1">
 								<input type="submit" name= "submit" value="Sort" >
 								<input type="hidden" name="sort" value="amount">
-								<input type="hidden" name="time">
+								<input type="hidden" name="start">
+								<input type="hidden" name="end">
 								<input type="hidden" name="teller">
 								<input type="hidden" name="type">
 						</fieldset>
@@ -214,7 +304,7 @@
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
 					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
 					foreach ($parsed_hist as $key => $value) {
-						$tempD = strtotime($key);
+						
 						$date = new DateTime($key);
 						//echo $date;
 						//echo $timeStamp;
@@ -279,7 +369,8 @@
 						}
 					}
 					if (!$hold) {
-						?><p>There are no records with amounts greater then the the chosen amount!</p><?php
+						?>
+						<p>There are no records with amounts greater then the the chosen amount!</p><?php
 					}
 				}
 			}
@@ -295,7 +386,8 @@
 							</select>
 								<input type="submit" name= "submit" value="Sort" >
 								<input type="hidden" name="sort" value="type">
-								<input type="hidden" name="time">
+								<input type="hidden" name="start">
+								<input type="hidden" name="end">
 								<input type="hidden" name="amount">
 								<input type="hidden" name="teller">
 						</fieldset>
@@ -311,7 +403,7 @@
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
 					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
 					foreach ($parsed_hist as $key => $value) {
-						$tempD = strtotime($key);
+						
 						$date = new DateTime($key);
 						//echo $date;
 						//echo $timeStamp;
