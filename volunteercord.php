@@ -111,6 +111,7 @@
 								<input type="hidden" name="submit" value="Gate">
 							</fieldset>
 						</form>
+						<input type="hidden" name="ID" value="'.$key.'">
 						<?php
 						$queryJob = "SELECT * FROM jobs WHERE job LIKE 'prereg' ";
 						$resultJob= mysqli_query($con,$queryJob);
@@ -118,10 +119,10 @@
 							if (mysqli_num_rows($resultJob)>1) {
 								$array = $resultJob->fetch_all(MYSQLI_NUM);
 								foreach ($array as $key => $value) {
-									echo '<p><li>pay '.$value[2].'</li>';
+									echo '<form method="POST"><fieldset><p><li>pay '.$value[2].'</li>';
 									echo '<li>start '.$value[3].'</li>';
 									echo '<li>end '.$value[4].'</li>';
-									echo '<li>total hours '.$value[5].'</li></p>';
+									echo '<li>total hours '.$value[5].'<input type="hidden" name="ID" value="'.$key.'"><input type="submit" name= "submit" value="Delete" ><input type="submit" name= "submit" value="Edit" ></li></p></fieldset></form>';
 								}
 							}
 							else
