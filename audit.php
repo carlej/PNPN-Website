@@ -25,7 +25,7 @@
 			if (!$con) {
 				die('Could not connect: ' . mysql_error());
 			}
-		include("Views\Partials/header.php");?>
+		include("Views/Partials/header.php");?>
 
 	<body>
 		<form method="POST">
