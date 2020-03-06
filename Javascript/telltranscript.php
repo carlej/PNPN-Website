@@ -1,5 +1,6 @@
 <?php //This file is to display the accounts and the transfer window that anyone can see so that they can make account to account transfers without going to the bank?>
 <div class = "container" id = "TellerFunction">
+	<?php if($_SESSION['stype']!='shipID' && $_SESSION['stype']!='fleetID'): ?>
 	<div class = "TellerActions">Teller Actions</div>
 	<div class = "row">
 		<?php
@@ -285,6 +286,7 @@
 				</fieldset>
 			</form>
 		</div>
+		<?php endif; ?>
 		<?php if($_SESSION['stype']!='shipID' && $_SESSION['stype']!='fleetID'): ?>
 			<div class = "col-md" id = "InfoColumn">
 				<legend>Info:</legend>
@@ -300,12 +302,15 @@
 				<p>
 					<input type = "submit" name= "submit" value = "Edit User" onclick="location.href='editUser.php';">
 				</p>
-				<?php if($_SESSION['perm']=="z" && $_SESSION['hold']=="hold"):?>
-					<p>
-						<input type = "submit" name= "submit" value = "Audit" onclick="location.href='audit.php';">
-					</p>
-				<?php endif; ?>
 			</div>
+		<?php elseif($_SESSION['stype']=='shipID'):?>
+			<p>
+				<input type = "submit" name= "submit" value = "Transfer Ownership of Ship/Household" onclick="location.href='editShipFleet.php';"?>
+			</p>
+		<?php elseif($_SESSION['stype']=='fleetID'):?>
+			<p>
+				<input type = "submit" name= "submit" value = "Transfer Ownership of Fleet/Alliance" onclick="location.href='editShipFleet.php';"?>
+			</p>
 		<?php endif; ?>
 	</div>
 </div>
