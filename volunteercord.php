@@ -72,7 +72,7 @@
 							<input type="submit" name= "submit" value="Gate" >
 							<input type="submit" name= "submit" value="Parking" >
 							<input type="submit" name= "submit" value="Constab" >
-							<input type="hidden" name="job" value="null">
+							<input type="hidden" name="job">
 						</div>
 					</div>
 				</div>
@@ -80,6 +80,9 @@
 		</form>
 		<?php
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			if ($_POST['submit'] == "Add Shifts") {
+				include("Javascript/addshift.php");
+			}
 			if ($_POST['submit'] == "Gate") {
 				?>
 				<form method="POST">
@@ -91,6 +94,7 @@
 									<input type="submit" name= "job" value="cathurder" >
 									<input type="submit" name= "job" value="other things" >
 									<input type="hidden" name="submit" value="Gate">
+									<input type="hidden" name= "add">
 								</div>
 							</div>
 						</div>
@@ -98,21 +102,67 @@
 				</form>
 				<?php
 				if ($_POST['job']=="Prereg") {
-					$queryJob = "SELECT * FROM jobs WHERE job LIKE 'prereg' ";
-					$resultJob= mysqli_query($con,$queryJob);
-					if ($resultJob) {
-						if (mysqli_num_rows($resultJob)>1) {
-							$array = $resultJob->fetch_all(MYSQLI_NUM);
-							foreach ($array as $key => $value) {
-								echo '<p><li>pay '.$value[2].'</li>';
-								echo '<li>start '.$value[3].'</li>';
-								echo '<li>end '.$value[4].'</li>';
-								echo '<li>total hours '.$value[5].'</li></p>';
+					if (!$_POST['add']) {
+						?>
+						<form method="POST">
+							<fieldset>
+								<input type="submit" name="add" value="Add">
+								<input type="hidden" name= "job" value="Prereg" >
+								<input type="hidden" name="submit" value="Gate">
+							</fieldset>
+						</form>
+						<input type="hidden" name="ID" value="'.$key.'">
+						<?php
+						$queryJob = "SELECT * FROM jobs WHERE job LIKE 'prereg' ";
+						$resultJob= mysqli_query($con,$queryJob);
+						if ($resultJob) {
+							if (mysqli_num_rows($resultJob)>1) {
+								$array = $resultJob->fetch_all(MYSQLI_NUM);
+								foreach ($array as $key => $value) {
+									echo '<form method="POST"><fieldset><p><li>pay '.$value[2].'</li>';
+									echo '<li>start '.$value[3].'</li>';
+									echo '<li>end '.$value[4].'</li>';
+									echo '<li>total hours '.$value[5].'<input type="hidden" name="ID" value="'.$key.'"><input type="submit" name= "submit" value="Delete" ><input type="submit" name= "submit" value="Edit" ></li></p></fieldset></form>';
+								}
 							}
+							else
+								echo mysqli_fetch_row($resultJob);
 						}
-						else
-							echo mysqli_fetch_row($resultJob);
 					}
+					else{?>
+						<label style="margin-bottom: 0em;">Adding a new Prereg Shift</label>
+						<form method="POST">
+							<fieldset>
+								<li>
+									<label style="margin-bottom: 0em;">Start Date: </label>
+									<input type="date" name="start">
+								</li>
+								<li>
+									<label style="margin-bottom: 0em;">End Date: </label>
+									<input type="date" name="end">
+								</li>
+								<li>
+									<label style="margin-bottom: 0em;">Start Time: </label>
+									<input type="time" name="stime">
+								</li>
+								<li>
+									<label style="margin-bottom: 0em;">End Time: </label>
+									<input type="time" name="etime">
+								</li>
+								<li>
+									<label style="margin-bottom: 0em;">Shift Length: </label>
+									<input type="num" name="length" min="1">
+								</li>
+								<li>
+									<label style="margin-bottom: 0em;">Pay Per Hour: </label>
+									<input type="num" name="pay" min="1">
+								</li>
+								<input type="submit" name= "submit" value="Add Shifts">
+								<input type="hidden" name= "job" value="Prereg">
+							</fieldset>
+						</form><?php
+					}
+					
 				}
 				else if ($_POST['job']=="cathurder") {
 					echo "catzz";
