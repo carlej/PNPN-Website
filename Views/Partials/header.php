@@ -13,11 +13,14 @@ $url=NULL;
 
 			<?php if ($url=="/PNPN-Website/teller.php"):?>
 				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url!="/PNPN-Website/bank.php"):?>
-				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php else: ?>
+			<?php elseif ($url=="/PNPN-Website/bank.php"):?>
 				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php elseif ($url=="/PNPN-Website/headbanker.php"):?>
+				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php else: ?>
+				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
+
 
 			<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
 				<div class="logoutButton"><a href="logout.php"><img alt="log out" src="CSS/styles/Log_Out.png" onmouseover="this.style.cursor='pointer'"></a></div>

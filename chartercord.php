@@ -22,7 +22,7 @@
 						<a href="volunteercord.php" class="CordButton3">Coordinator</a>
 					</div>
 					<div class = "col" style = "padding-left: 0.05em;">
-						<a href="chartercord.php" class="CharterPressed2">Charter/Land Grant</a>
+						<a href="chartercord.php" class="CharterPressed3">Charter/Land Grant</a>
 					</div>
 				</div>
 			</div>
@@ -38,10 +38,10 @@
 					<a href="volunteer.php" class="PersonalButton2">Personal</a>
 				</div>
 				<div class = "col-lg" style = "padding-left: 0.05em;">
-					<a href="volunteercord.php" class="CordButton3">Coordinator</a>
+					<a href="volunteercord.php" class="PersonalButton2">Coordinator</a>
 				</div>
 				<div class = "col-lg">
-					<a href="chartercord.php" class="CharterPressed2">Charter/Land Grant</a>
+					<a href="chartercord.php" class="PersonalPressed2">Charter/Land Grant</a>
 				</div>
 				</div>
 				</div>

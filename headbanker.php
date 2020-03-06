@@ -15,9 +15,7 @@
 		else if ($perm=='z'):*/
 		?>
 
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-
-		<title>Welcome</title>
+		<title>HeadBanker</title>
 		<?php 
 		include("Javascript/Connections/req.php");
 		include 'Javascript/Connections/convar.php';
@@ -27,12 +25,53 @@
 			}
 		include("Views\Partials/header.php");?>
 
+<!-- Creates the Personal, Teller, and Head Banker Buttons -->
+		<div class = "container-flow" id = "SwitchButtonsVol">
+			<div class="d-none d-lg-block">
+				<div class = "d-flex justify-content-center">
+					<div class = "row" id ="ButtonsRow">
+						<div class = "col" style="padding-right: 0.05em;">
+							<a href="bank.php" class="PersonalButton3">Personal</a>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<a href="teller.php" class="CordButton3">Teller</a>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em;">
+							<a href="headbanker.php" class="CharterPressed3">Head Banker</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Code for the Personal, Teller, and Head Banker Buttons once the page is shrunk-->
+		<div class = "container" id = "SwitchButtonsMenuVol">
+			<div class="d-lg-none">
+				<div class = "d-flex justify-content-center">
+					<div class = "row">
+						<div class = "col-lg">
+							<a href="bank.php" class="PersonalButton2">Personal</a>
+						</div>
+						<div class = "col-lg" style = "padding-left: 0.05em;">
+							<a href="teller.php" class="PersonalButton2">Teller</a>
+						</div>
+						<div class = "col-lg">
+							<a href="headbanker.php" class="PersonalPressed2">Head Banker</a>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 	<body>
 		<form method="POST">
 			<fieldset>
 				<div class = "container" id="SearchBy">
 					<div class = "d-flex-row">
-						<div calss = "col-2">
+						<div calss = "col">
+							<div style="font-size: 1.3em; font-family: pirates; border-bottom: 0.05em solid black; width: 20%; margin-bottom: 1em;">Audit:</div>
 							<select name="sort" style="margin-left: 1em; margin-bottom: 0.5em">
 								<option>Sort By:</option>
 								<option value="teller">Teller</option>
