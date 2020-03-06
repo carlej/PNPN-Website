@@ -72,7 +72,7 @@
 			$shipName=$rowShip[1];
 			$parsed_ship_json=json_decode($rowShip[4],true);
 			$parsed_ship_json=$parsed_ship_json['id'];
-			$_SESSION['hold']=$rowShip[0];;
+			$_SESSION['hold']=$rowShip[0];
 			$_SESSION['stype']="shipID";
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">
