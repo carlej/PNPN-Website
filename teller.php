@@ -126,9 +126,9 @@
 								<option value="Lname">Last Name</option>
 								<option value="Username">Email</option>
 								<option value="shipID" style="display:none;">shipID</option>
-								<option value="Ship" style="display:none;">Ship/House</option>
+								<option value="Ship">Ship/House</option>
 								<option value="fleetID" style="display:none;">fleetID</option>
-								<option value="Fleet" style="display:none;">Fleet/Alliance</option>
+								<option value="Fleet">Fleet/Alliance</option>
 							</select>
 						</div>
 						<div class = "col" style="margin-bottom: 0.5em; font-family: ariel">
@@ -142,11 +142,6 @@
 				</div>
 			</fieldset>
 		</form>
-		<?php if($_SESSION['perm']=="z" && $_SESSION['hold']=="hold"):?>
-			<p>
-				<input type = "submit" name= "submit" value = "Audit" onclick="location.href='audit.php';">
-			</p>
-		<?php endif; ?>
 
 		<?php 
 		error_reporting(E_ERROR);
