@@ -1,9 +1,13 @@
-<?php //This is the same as for fleet but for a new ship there is no differnece between the two at this time?>
+<?php //This is the same as for fleet but for a new ship there is no differnece between the two at this time
+include("Javascript/Connections/req.php");
+if ($_SESSION['perm']!="b" && $_SESSION['perm']!="z") {
+    ?><script type="text/javascript">window.location.href="bank.php"</script><?php
+}?>
 
 <!doctype html>
 <html>
     <head>
-        <?php include("Javascript/Connections/req.php"); 
+        <?php  
         include 'Javascript/Connections/convar.php';?>
 
         <title>Add Ship</title>

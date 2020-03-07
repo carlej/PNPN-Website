@@ -5,6 +5,9 @@
 	<head>
 
 		<?php include("Javascript/Connections/req.php");
+		if ($_SESSION['perm']!="b" && $_SESSION['perm']!="z") {
+		    ?><script type="text/javascript">window.location.href="bank.php"</script><?php
+		}
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")) {
 			$usename = $_SESSION['username'];
 		}

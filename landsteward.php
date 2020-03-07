@@ -1,7 +1,11 @@
 <!doctype html>
 <html>
 	<head>
-		<?php include("Javascript/Connections/req.php"); 
+		<?php 
+		include("Javascript/Connections/req.php");
+		if ($_SESSION['perm']!="d" && $_SESSION['perm']!="z") {
+		    ?><script type="text/javascript">window.location.href="bank.php"</script><?php
+		} 
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			$username = $_SESSION['username'];
 		}
