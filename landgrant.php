@@ -62,7 +62,13 @@
 		
 	</head>
 	<body>
-		
+		<div class = "container-flow" style="font-family: pirates; font-size: 1.3em; margin-top: 5em; margin-left: -11em;">
+			<div class = "d-flex justify-content-center">
+				<div class="row">
+					Coming Soon!!
+				</div>
+			</div>
+		</div>
 	</body>
 
 </html>
