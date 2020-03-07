@@ -116,9 +116,9 @@
 	</head>
 	<body>
 
-		<div class = "container-flow" style="font-family: pirates; font-size: 1.3em; margin-top: 5em; margin-left: -11em;">
+		<div class = "container-flow">
 			<div class = "d-flex justify-content-center">
-				<div class="row">
+				<div class="row" id="ComingSoon">
 				<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
 				<div>Coming Soon!!</div>
 				<?php endif;?>

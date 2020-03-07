@@ -43,6 +43,12 @@
 		</div>
 	</head>
 	<body>
-
+		<div class = "container-flow">
+			<div class = "d-flex justify-content-center">
+				<div class="row" id="ComingSoon">
+					Coming Soon!!
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
