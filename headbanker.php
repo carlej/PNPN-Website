@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<?php
-		if ($_SESSION['username']!="todd_135791@yahoo.com" || $_SESSION['perm']!="z") {
+		include("Javascript/Connections/req.php");
+		if ($_SESSION['username']!="todd_135791@yahoo.com" && $_SESSION['perm']!="z") {
 			?><script type="text/javascript">window.location.href="bank.php"</script><?php
 		}
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true ) {
@@ -20,7 +21,6 @@
 
 		<title>Head Banker</title>
 		<?php 
-		include("Javascript/Connections/req.php");
 		include 'Javascript/Connections/convar.php';
 		$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			if (!$con) {

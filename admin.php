@@ -2,12 +2,13 @@
 <html>
 	<head>
 		<?php
+		include("Javascript/Connections/req.php");
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			$username = $_SESSION['username'];
 			$perm = $_SESSION['perm'];
 		}
 
-		if ($perm!='z') {
+		if ($_SESSION['perm']!='z') {
 			echo '<script type="text/javascript">window.location.href="bank.php"</script>';
 		}
 		//else if ($perm=='z'):*/
@@ -17,7 +18,6 @@
 
 		<title>Welcome Omega</title>
 		<?php 
-		include("Javascript/Connections/req.php");
 		include 'Javascript/Connections/convar.php';
 		$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			if (!$con) {
