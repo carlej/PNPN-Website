@@ -26,18 +26,18 @@
 		include("Views\Partials/header.php");?>
 
 <!-- Creates the Personal, Teller, and Head Banker Buttons -->
-		<div class = "container-flow" id = "SwitchButtonsVol">
+		<div class = "container-flow" id = "SwitchButtonsThree">
 			<div class="d-none d-lg-block">
 				<div class = "d-flex justify-content-center">
 					<div class = "row" id ="ButtonsRow">
 						<div class = "col" style="padding-right: 0.05em;">
-							<a href="bank.php" class="PersonalButton3">Personal</a>
+							<a href="bank.php" class="LeftButtonThreeUn">Personal</a>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-							<a href="teller.php" class="CordButton3">Teller</a>
+							<a href="teller.php" class="MiddleButtonThreeUn">Teller</a>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em;">
-							<a href="headbanker.php" class="CharterPressed3">Head Banker</a>
+							<a href="headbanker.php" class="RightButtonThreePressed">Head Banker</a>
 						</div>
 					</div>
 				</div>
@@ -45,18 +45,18 @@
 		</div>
 
 		<!-- Code for the Personal, Teller, and Head Banker Buttons once the page is shrunk-->
-		<div class = "container" id = "SwitchButtonsMenuVol">
+		<div class = "container" id = "SwitchButtonsMenuTwoThree">
 			<div class="d-lg-none">
 				<div class = "d-flex justify-content-center">
 					<div class = "row">
 						<div class = "col-lg">
-							<a href="bank.php" class="PersonalButton2">Personal</a>
+							<a href="bank.php" class="MenuButtonUn">Personal</a>
 						</div>
 						<div class = "col-lg" style = "padding-left: 0.05em;">
-							<a href="teller.php" class="PersonalButton2">Teller</a>
+							<a href="teller.php" class="MenuButtonUn">Teller</a>
 						</div>
 						<div class = "col-lg">
-							<a href="headbanker.php" class="PersonalPressed2">Head Banker</a>
+							<a href="headbanker.php" class="MenuButtonPressed">Head Banker</a>
 						</div>
 						</div>
 					</div>

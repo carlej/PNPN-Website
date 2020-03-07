@@ -217,33 +217,31 @@ padding:0px;
 	margin-left: -5em;
 }
 
-#SwitchButtons {
+/*Buttons at the top of each page*/
+/*Stylizes the container of the buttons*/
+#SwitchButtonsTwo {
 	margin-top: 6em;
 	align-content: center;
 	margin-left: -15em;
 }
 
-#SwitchButtonsMenu {
+#SwitchButtonsMenuTwoThree {
 	background-color: rgb(38,23,15);
 	width: 17em;
 	margin-top: -5.5em;
 	border-radius: 0.4em;
 }
 
-#SwitchButtonsVol {
+#SwitchButtonsThree {
 	margin-top: 6em;
 	align-content: center;
 	margin-left: -20em;
 }
 
-#SwitchButtonsMenuVol {
-	background-color: rgb(38,23,15);
-	width: 17em;
-	margin-top: -5.5em;
-	border-radius: 0.4em;
-}
+/*Stylizes the actual buttons*/
 
-.PersonalButton {
+	/*Two Buttons*/
+.LeftButtonTwoUn {
 	display: flex;
 	font-family: Pirates;
 	font-size: 1.5em;
@@ -260,49 +258,34 @@ padding:0px;
 	height: 1.5em;
 }
 
-.PersonalButton:hover {
+.LeftButtonTwoUn:hover {
 	color: grey;
 	text-decoration: none;
 }
 
-.PersonalButton2 {
+.RightButtonTwoUn {
 	display: flex;
 	font-family: Pirates;
 	font-size: 1.5em;
-	text-decoration: none;
-	align-content: center;
-	justify-content: center;
-	color: white;
-}
-
-.PersonalButton2:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.PersonalButton3 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.3em;
 	text-decoration: none;
 	border: 0.01em;
 	border-color: transparent;
 	align-content: center;
 	justify-content: center;
 	line-height: 1.4em;
-	border-radius: 0.4em 0em 0em 0.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
 	background: #000000;
 	color: white;
 	width: 9em;
 	height: 1.5em;
 }
 
-.PersonalButton3:hover {
+.RightButtonTwoUn:hover {
 	color: grey;
 	text-decoration: none;
 }
 
-.PersonalPressed {
+.LeftButtonTwoPressed {
 	display: flex;
 	font-family: Pirates;
 	font-size: 1.5em;
@@ -319,27 +302,101 @@ padding:0px;
 	height: 1.5em;
 }
 
-.PersonalPressed:hover {
+.LeftButtonTwoPressed:hover {
 	color: grey;
 	text-decoration: none;
 }
 
-.PersonalPressed2 {
+.RightButtonTwoPressed {
 	display: flex;
 	font-family: Pirates;
 	font-size: 1.5em;
 	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
 	align-content: center;
 	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
 	color: red;
+	width: 9em;
+	height: 1.5em;
 }
 
-.PersonalPressed2:hover {
+.RightButtonTwoPressed:hover {
 	color: grey;
 	text-decoration: none;
 }
 
-.PersonalPressed4 {
+
+	/*Three Buttons*/
+.LeftButtonThreeUn {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0.4em 0em 0em 0.4em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.LeftButtonThreeUn:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.MiddleButtonThreeUn {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.MiddleButtonThreeUn:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.RightButtonThreeUn {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.RightButtonThreeUn:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.LeftButtonThreePressed {
 	display: flex;
 	font-family: Pirates;
 	font-size: 1.3em;
@@ -356,181 +413,12 @@ padding:0px;
 	height: 1.5em;
 }
 
-.PersonalPressed4:hover {
+.LeftButtonThreePressed:hover {
 	color: grey;
 	text-decoration: none;
 }
 
-.TellerButton {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: white;
-	width: 9em;
-	height: 1.5em;
-}
-
-.TellerButton:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.TellerButton2 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	align-content: center;
-	justify-content: center;
-	color: white;
-}
-
-.TellerButton2:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.TellerPressed {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: red;
-	width: 9em;
-	height: 1.5em;
-}
-
-.TellerPressed:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.TellerPressed2 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	align-content: center;
-	justify-content: center;
-	color: red;
-}
-
-.TellerPressed2:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.CordButton {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: white;
-	width: 9em;
-	height: 1.5em;
-}
-
-.CordButton:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.CordButton2 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	align-content: center;
-	justify-content: center;
-	color: white;
-}
-
-.CordButton2:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.CordButton3 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.3em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	background: #000000;
-	color: white;
-	width: 9em;
-	height: 1.5em;
-}
-
-.CordButton3:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.CordPressed {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: red;
-	width: 9em;
-	height: 1.5em;
-}
-
-.CordPressed:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.CordPressed2 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	align-content: center;
-	justify-content: center;
-	color: red;
-}
-
-.CordPressed2:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.CordPressed3 {
+.MiddleButtonThreePressed {
 	display: flex;
 	font-family: Pirates;
 	font-size: 1.3em;
@@ -546,49 +434,12 @@ padding:0px;
 	height: 1.5em;
 }
 
-.CordPressed3:hover {
+.MiddleButtonThreePressed:hover {
 	color: grey;
 	text-decoration: none;
 }
 
-.CharterButton {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.3em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: white;
-	width: 9em;
-	height: 1.5em;
-}
-
-.CharterButton:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.CharterButton2 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.3em;
-	text-decoration: none;
-	align-content: center;
-	justify-content: center;
-	color: white;
-}
-
-.CharterButton2:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.CharterPressed {
+.RightButtonThreePressed {
 	display: flex;
 	font-family: Pirates;
 	font-size: 1.3em;
@@ -605,78 +456,13 @@ padding:0px;
 	height: 1.5em;
 }
 
-.CharterPressed:hover {
+.RightButtonThreePressed:hover {
 	color: grey;
 	text-decoration: none;
 }
 
-.CharterPressed2 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.3em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: red;
-	width: 9em;
-	height: 1.5em;
-}
-
-.CharterPressed2:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.CharterPressed3 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.3em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: red;
-	width: 9em;
-	height: 1.5em;
-}
-
-.CharterPressed3:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.LandButton {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: white;
-	width: 9em;
-	height: 1.5em;
-}
-
-.LandButton:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.LandButton2 {
+	/*Buttons when page is shrunk*/
+.MenuButtonUn {
 	display: flex;
 	font-family: Pirates;
 	font-size: 1.5em;
@@ -684,58 +470,14 @@ padding:0px;
 	align-content: center;
 	justify-content: center;
 	color: white;
-	text-align: center;
 }
 
-.LandButton2:hover {
+.MenuButtonUn:hover {
 	color: grey;
 	text-decoration: none;
 }
 
-.LandButton3 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.3em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	background: #000000;
-	color: white;
-	width: 9em;
-	height: 1.5em;
-}
-
-.LandButton3:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.LandPressed {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: red;
-	width: 9em;
-	height: 1.5em;
-}
-
-.LandPressed:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.LandPressed2 {
+.MenuButtonPressed {
 	display: flex;
 	font-family: Pirates;
 	font-size: 1.5em;
@@ -745,107 +487,13 @@ padding:0px;
 	color: red;
 }
 
-.LandPressed2:hover {
+.MenuButtonPressed:hover {
 	color: grey;
 	text-decoration: none;
 }
 
-.LandPressed3 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.3em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	background: #000000;
-	color: red;
-	width: 9em;
-	height: 1.5em;
-}
+/*Buttons End Here*/
 
-.LandPressed3:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.LandVolunteerPressed {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.3em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: red;
-	width: 9em;
-	height: 1.5em;
-}
-
-.LandVolunteerPressed:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.LandVolunteer {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.3em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: white;
-	width: 9em;
-	height: 1.5em;
-}
-
-.LandVolunteer:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.LandVolunteer2 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	align-content: center;
-	justify-content: center;
-	color: white;
-	text-align: center;
-}
-
-.LandVolunteer2:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.LandVolunteerPressed2 {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.5em;
-	text-decoration: none;
-	align-content: center;
-	justify-content: center;
-	color: red;
-	text-align: center;
-}
-
-.LandVolunteerPressed2:hover {
-	color: grey;
-	text-decoration: none;
-}
 
 .bankphp #ShowAccounts {
 	margin-top: 11em;

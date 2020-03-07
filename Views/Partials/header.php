@@ -32,11 +32,11 @@ $url=NULL;
 			<div class="tilda1"><img alt="~" src="CSS/styles/Scwig_1.png"></div>
 			
 
-			<?php if ($url=="/PNPN-Website/volunteercord.php"):?>
+			<?php if ($url=="/PNPN-Website/volunteercoord.php"):?>
 				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url=="/PNPN-Website/volunteer.php"):?>
 				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url=="/PNPN-Website/chartercord.php"):?>
+			<?php elseif ($url=="/PNPN-Website/chartercoord.php"):?>
 				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url=="/PNPN-Website/charter.php"):?>
 				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>	
