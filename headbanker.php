@@ -225,19 +225,26 @@
 					$endTemp = new DateTime($endHold);
 					$hold=false;
 					$start=date_diff($startTemp,$timeStamp);
-					$end=date_diff($endTemp,$timeStamp);
+					//echo $start->format("%a");
+					if ($endTemp>$timeStamp) {
+						$end = $timeStamp;
+					}
+					else
+						$end=date_diff($endTemp,$timeStamp);
+					//echo (-$end->format("%a"));
 					//$numResults=-1;
 					array_multisort(array_map(function($i) {
 						return $i[4];
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
-					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container"><?php
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container" id="HistBox"><?php
 					foreach ($parsed_hist as $key => $value) {
 						
 						$date = new DateTime($key);
 						//echo $date;
 						//echo $timeStamp;
 						$diff=date_diff($date,$timeStamp);
-						if ($diff->format("%a")<=$start->format("%a") && $diff->format("%a")<=$end->format("%a")) {
+
+						if ($diff->format("%a")<=$start->format("%a") && $diff->format("%a")>=$end->format("%a")) {
 							$hold=true;
 							echo '<li><a>';
 							if (count($value)==6) {//transfer display from teller
@@ -378,7 +385,7 @@
 					array_multisort(array_map(function($i) {
 						return $i[4];
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
-					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container"><?php
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container" id="HistBox"><?php
 					foreach ($parsed_hist as $key => $value) {
 						
 						$date = new DateTime($key);
@@ -483,7 +490,7 @@
 					array_multisort(array_map(function($i) {
 						return $i[0];
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
-					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container"><?php
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container" id="HistBox"><?php
 					foreach ($parsed_hist as $key => $value) {
 						
 						$date = new DateTime($key);
