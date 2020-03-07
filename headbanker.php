@@ -149,7 +149,7 @@
 					array_multisort(array_map(function($i) {
 						return $i[3];
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
-					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container" id="HistBox"><?php
 					foreach ($parsed_hist as $key => $value) {
 						
 						$date = new DateTime($key);
@@ -213,7 +213,7 @@
 							}
 							echo '</a></li>';
 						}
-					}
+					}?></div><?php
 				}
 			}
 			else if ($_POST['sort']=='time') {
@@ -230,7 +230,7 @@
 					array_multisort(array_map(function($i) {
 						return $i[4];
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
-					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container"><?php
 					foreach ($parsed_hist as $key => $value) {
 						
 						$date = new DateTime($key);
@@ -295,7 +295,7 @@
 							}
 							echo '</a></li>';
 						}
-					}
+					}?></div><?php
 					if (!$hold) {
 						?>
 						<p>There are no records between those dates!</p><?php
@@ -378,7 +378,7 @@
 					array_multisort(array_map(function($i) {
 						return $i[4];
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
-					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container"><?php
 					foreach ($parsed_hist as $key => $value) {
 						
 						$date = new DateTime($key);
@@ -443,7 +443,7 @@
 							}
 							echo '</a></li>';
 						}
-					}
+					}?></div><?php
 					if (!$hold) {
 						?>
 						<p>There are no records with amounts greater then the the chosen amount!</p><?php
@@ -483,7 +483,7 @@
 					array_multisort(array_map(function($i) {
 						return $i[0];
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
-					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container"><?php
 					foreach ($parsed_hist as $key => $value) {
 						
 						$date = new DateTime($key);
@@ -549,7 +549,7 @@
 							echo '</a></li>';
 						}
 						
-					}
+					}?></div><?php
 					if (!$hold) {
 						?><p>There are no records with amounts greater then the the chosen amount!</p><?php
 					}
