@@ -29,16 +29,20 @@
 		<title>Bank</title>
 		<?php include("Views/Partials/header.php");?>
 		
-		
-		<div class = "container-flow" id = "SwitchButtons">
+	<!-- Code for the teller and personal buttons-->		
+		<div class = "container-flow" id = "SwitchButtonsTwo">
 			<div class="d-none d-lg-block">
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 					<div class = "col-6" style="padding-right: 0.05em;">
-						<a href="bank.php" class="PersonalButton">Personal</a>
+						<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b")): ?>
+							<a href="bank.php" class="LeftButtonTwoUn">Personal</a>
+						<?php endif;?>
 					</div>
 					<div class = "col-6" style = "padding-left: 0.05em;">
-						<a href="teller.php" class="TellerPressed">Teller</a>
+						<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b")): ?>
+							<a href="teller.php" class="RightButtonTwoPressed">Teller</a>
+						<?php endif;?>
 					</div>
 				</div>
 			</div>
@@ -46,15 +50,19 @@
 		</div>
 
 	<!-- Code for the teller and personal buttons once the page is shrunk-->
-		<div class = "container" id = "SwitchButtonsMenu">
+		<div class = "container" id = "SwitchButtonsMenuTwoThree">
 			<div class="d-lg-none">
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
 				<div class = "col-sm-6">
-						<a href="bank.php" class="PersonalButton2">Personal</a>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b")): ?>
+						<a href="bank.php" class="MenuButtonUn">Personal</a>
+					<?php endif;?>
 				</div>
 				<div class = "col-sm-6">
-					<a href="teller.php" class="TellerPressed2">Teller</a>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b")): ?>
+						<a href="teller.php" class="MenuButtonPressed">Teller</a>
+					<?php endif;?>
 				</div>
 				</div>
 			</div>
@@ -62,18 +70,24 @@
 		</div>
 		
 		<!-- Creates the Personal, Teller, and Head Banker Buttons -->
-		<div class = "container-flow" id = "SwitchButtonsVol">
+		<div class = "container-flow" id = "SwitchButtonsThree">
 			<div class="d-none d-lg-block">
 				<div class = "d-flex justify-content-center">
 					<div class = "row" id ="ButtonsRow">
 						<div class = "col" style="padding-right: 0.05em;">
-							<a href="bank.php" class="PersonalButton3">Personal</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="bank.php" class="LeftButtonThreeUn">Personal</a>
+							<?php endif;?>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-							<a href="teller.php" class="CordPressed3">Teller</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="teller.php" class="MiddleButtonThreePressed">Teller</a>
+							<?php endif;?>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em;">
-							<a href="headbanker.php" class="CharterButton">Head Banker</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="headbanker.php" class="RightButtonThreeUn">Head Banker</a>
+							<?php endif;?>
 						</div>
 					</div>
 				</div>
@@ -81,18 +95,24 @@
 		</div>
 
 		<!-- Code for the Personal, Teller, and Head Banker Buttons once the page is shrunk-->
-		<div class = "container" id = "SwitchButtonsMenuVol">
+		<div class = "container" id = "SwitchButtonsMenuTwoThree">
 			<div class="d-lg-none">
 				<div class = "d-flex justify-content-center">
 					<div class = "row">
 						<div class = "col-lg">
-							<a href="bank.php" class="PersonalButton2">Personal</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="bank.php" class="MenuButtonUn">Personal</a>
+							<?php endif;?>
 						</div>
 						<div class = "col-lg" style = "padding-left: 0.05em;">
-							<a href="teller.php" class="CordPressed2">Teller</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="teller.php" class="MenuButtonPressed">Teller</a>
+							<?php endif;?>
 						</div>
 						<div class = "col-lg">
-							<a href="headbanker.php" class="CharterButton2">Head Banker</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="headbanker.php" class="MenuButtonUn">Head Banker</a>
+							<?php endif;?>
 						</div>
 						</div>
 					</div>
