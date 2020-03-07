@@ -115,7 +115,18 @@
 		
 	</head>
 	<body>
-			<form method="POST">
+
+		<div class = "container-flow">
+			<div class = "d-flex justify-content-center">
+				<div class="row" id="ComingSoon">
+				<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
+				<div>Coming Soon!!</div>
+				<?php endif;?>
+			</div>
+		</div>
+
+	<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+		<form method="POST">
 			<fieldset>
 				<div class = "container" id="SearchBy">
 					<div class = "d-flex-row">
@@ -216,6 +227,7 @@
 		//$cenvertedTime = date('Y-m-d H:i:s',strtotime('+'.$time.' hour',strtotime($startTime)));//add time to datetime object
 		mysqli_close($con);
 		?>
+	<?php endif;?>
 	</body>
 
 </html>
