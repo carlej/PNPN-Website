@@ -81,9 +81,10 @@
 	<body>
 		<form method="POST">
 			<fieldset>
-				<div class = "container" id="SearchBy">
+				<div class = "container" id="AuditSearchBy">
 					<div class = "d-flex-row">
-						<div calss = "col-2">
+						<div calss = "col">
+							<div class="AuditName">Audit:</div>
 							<select name="sort" style="margin-left: 1em; margin-bottom: 0.5em">
 								<option>Sort By:</option>
 								<option value="teller">Teller</option>
@@ -118,20 +119,26 @@
 				if (!$_POST['teller']) {?>
 					<form method="POST">
 						<fieldset>
-							<label style="margin-bottom: 0em;">Select Teller: </label>
-							<select name="teller" style=" margin-bottom: 0.5em; font-size: 1.1em">
-								<?php foreach ($unique as $key => $value) {//this will desplay the name of each captain as each should be different
-								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-								$capname=str_replace(' ', '&nbsp;', $value);
-								echo '<option value="'.$value.'">'.$capname.'</option>';
-								} ?>
-							</select>
-								<input type="submit" name= "submit" value="Sort" >
-								<input type="hidden" name="sort" value="teller">
-								<input type="hidden" name="start">
-								<input type="hidden" name="end">
-								<input type="hidden" name="amount">
-								<input type="hidden" name="type">
+							<div class = "container" id="AuditSearchBy">
+								<div class = "d-flex-row">
+									<div calss = "col">
+										<label id="SelectTeller">Select Teller: </label>
+										<select name="teller" style="margin-left: 1em;  ; margin-bottom: 0.5em; font-size: 1.1em">
+											<?php foreach ($unique as $key => $value) {//this will desplay the name of each captain as each should be different
+											//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+											$capname=str_replace(' ', '&nbsp;', $value);
+											echo '<option value="'.$value.'">'.$capname.'</option>';
+											} ?>
+										</select>
+											<input type="submit" name= "submit" value="Sort" >
+											<input type="hidden" name="sort" value="teller">
+											<input type="hidden" name="start">
+											<input type="hidden" name="end">
+											<input type="hidden" name="amount">
+											<input type="hidden" name="type">
+										</div>
+									</div>
+								</div>
 						</fieldset>
 					</form><?php
 				}
@@ -299,15 +306,21 @@
 					<p>Please input both a start and end date</p>
 					<form method="POST">
 						<fieldset>
-							<label style="margin-bottom: 0em;">Start Date: </label>
-							<input type="date" name="start">
-							<label style="margin-bottom: 0em;">End Date: </label>
-							<input type="date" name="end">
-							<input type="submit" name= "submit" value="Sort" >
-							<input type="hidden" name="sort" value="time">
-							<input type="hidden" name="teller">
-							<input type="hidden" name="amount">
-							<input type="hidden" name="type">
+							<div class = "container">
+								<div class = "d-flex-row">
+									<div calss = "col" style="font-family: pirates; font-size: 1em; margin-left: 1em; margin-bottom: 0.5em;">
+										<label style="margin-bottom: 0em;">Start Date: </label>
+										<input type="date" name="start">
+										<label style="margin-bottom: 0em;">End Date: </label>
+										<input type="date" name="end">
+										<input type="submit" name= "submit" value="Sort" >
+										<input type="hidden" name="sort" value="time">
+										<input type="hidden" name="teller">
+										<input type="hidden" name="amount">
+										<input type="hidden" name="type">
+									</div>
+								</div>
+							</div>
 						</fieldset>
 					</form>
 					<?php
@@ -316,15 +329,21 @@
 					?>
 					<form method="POST">
 						<fieldset>
-							<label style="margin-bottom: 0em;">Start Date: </label>
-							<input type="date" name="start">
-							<label style="margin-bottom: 0em;">End Date: </label>
-							<input type="date" name="end">
-							<input type="submit" name= "submit" value="Sort" >
-							<input type="hidden" name="sort" value="time">
-							<input type="hidden" name="teller">
-							<input type="hidden" name="amount">
-							<input type="hidden" name="type">
+							<div class = "container">
+								<div class = "d-flex-row">
+									<div calss = "col" style="font-family: pirates; font-size: 1em; margin-left: 1em; margin-bottom: 0.5em;">
+										<label style="margin-bottom: 0em;">Start Date: </label>
+										<input type="date" name="start">
+										<label style="margin-bottom: 0em;">End Date: </label>
+										<input type="date" name="end">
+										<input type="submit" name= "submit" value="Sort" >
+										<input type="hidden" name="sort" value="time">
+										<input type="hidden" name="teller">
+										<input type="hidden" name="amount">
+										<input type="hidden" name="type">
+									</div>
+								</div>
+							</div>
 						</fieldset>
 					</form>
 					<?php 
@@ -334,14 +353,20 @@
 				if (!$_POST['amount']) {?>
 					<form method="POST">
 						<fieldset>
-							<label style="margin-bottom: 0em;">Enter Max Amount: </label>
-								<input type="number" name="amount" min="1">
-								<input type="submit" name= "submit" value="Sort" >
-								<input type="hidden" name="sort" value="amount">
-								<input type="hidden" name="start">
-								<input type="hidden" name="end">
-								<input type="hidden" name="teller">
-								<input type="hidden" name="type">
+							<div class = "container">
+								<div class = "d-flex-row">
+									<div calss = "col" style="font-family: pirates; font-size: 1em; margin-left: 1em; margin-bottom: 0.5em;">
+										<label style="margin-bottom: 0em;">Enter Max Amount: </label>
+										<input type="number" name="amount" min="1">
+										<input type="submit" name= "submit" value="Sort" >
+										<input type="hidden" name="sort" value="amount">
+										<input type="hidden" name="start">
+										<input type="hidden" name="end">
+										<input type="hidden" name="teller">
+										<input type="hidden" name="type">
+									</div>
+								</div>
+							</div>
 						</fieldset>
 					</form><?php
 				}
@@ -429,18 +454,24 @@
 				if (!$_POST['type']) {?>
 					<form method="POST">
 						<fieldset>
-							<label style="margin-bottom: 0em;">Select Type: </label>
-							<select name="type" style=" margin-bottom: 0.5em; font-size: 1.1em">
-								<option value="Transfered">Transfer</option>
-								<option value="Deposited">Deposit</option>
-								<option value="Withdrew">Withdraw</option>
-							</select>
-								<input type="submit" name= "submit" value="Sort" >
-								<input type="hidden" name="sort" value="type">
-								<input type="hidden" name="start">
-								<input type="hidden" name="end">
-								<input type="hidden" name="amount">
-								<input type="hidden" name="teller">
+							<div class = "container">
+								<div class = "d-flex-row">
+									<div calss = "col" style="font-family: pirates; font-size: 1em; margin-left: 1em; margin-bottom: 0.5em;">
+										<label style="margin-bottom: 0em;">Select Type: </label>
+										<select name="type" style=" margin-bottom: 0.5em; font-size: 1.1em">
+											<option value="Transfered">Transfer</option>
+											<option value="Deposited">Deposit</option>
+											<option value="Withdrew">Withdraw</option>
+										</select>
+										<input type="submit" name= "submit" value="Sort" >
+										<input type="hidden" name="sort" value="type">
+										<input type="hidden" name="start">
+										<input type="hidden" name="end">
+										<input type="hidden" name="amount">
+										<input type="hidden" name="teller">
+									</div>
+								</div>
+							</div>
 						</fieldset>
 					</form><?php
 				}
@@ -529,26 +560,28 @@
 		
 		<form method="POST">
 			<fieldset>
-				<div class = "container" id="SearchBy">
-					<div class = "d-flex-row"><label>Add or Remove Teller Access</label>
-						<div calss = "col-2">
-
-							<select name="type" style="margin-left: 1em; margin-bottom: 0.5em">
-								<option>Search By:</option>
-								<option value="Pname">Pirate Name</option>
-								<option value="Fname">First Name</option>
-								<option value="Lname">Last Name</option>
-								<option value="Username">Email</option>
-								<option value="shipID" style="display:none;">shipID</option>
-								<option value="Ship" style="display:none;">Ship/House</option>
-								<option value="fleetID" style="display:none;">fleetID</option>
-								<option value="Fleet" style="display:none;">Fleet/Alliance</option>
-							</select>
+				<div class = "container"  id="AddRemoveTeller">
+					<div class = "d-flex-row">
+						<div calss = "col">
+							<label style="font-size: 1.5em">Add or Remove Teller Access:</label>
+							<div class="col" style="margin-bottom: 0.5em;">
+								<select name="type">
+									<option>Search By:</option>
+									<option value="Pname">Pirate Name</option>
+									<option value="Fname">First Name</option>
+									<option value="Lname">Last Name</option>
+									<option value="Username">Email</option>
+									<option value="shipID" style="display:none;">shipID</option>
+									<option value="Ship" style="display:none;">Ship/House</option>
+									<option value="fleetID" style="display:none;">fleetID</option>
+									<option value="Fleet" style="display:none;">Fleet/Alliance</option>
+								</select>
+							</div>
 						</div>
-						<div class = "col" style="margin-bottom: 0.5em; font-family: ariel">
+						<div class = "col" style="margin-bottom: 0.5em;">
 							<input type="search" class="required" name="input" id= "SearchBox">
 						</div>
-						<div class = "col">
+						<div class = "col" style="margin-bottom: 0.5em;">
 							<input type="submit" name= "submit" value="Search" class="submit">
 						</div>
 					</div>
@@ -585,19 +618,31 @@
 				$row = mysqli_fetch_row($resultIn);?>
 				<form method="POST">
                  	<fieldset>
-                        <p>
-                            <label style="padding-right: 5em">Email: </label>
-                            <label> <?php echo $row[0]; ?></label>
-                        </p>
+                 		 <div class = "container" style="font-family: pirates; font-size: 1.2em;">
+							<div class = "d-flex-row">
+								<div calss = "col">
+			                        <p>
+			                            <label style="padding-right: 5em">Email: </label>
+			                            <label> <?php echo $row[0]; ?></label>
+			                        </p>
+			                    </div>
+			                </div>
+			            </div>
                     </fieldset>
                 </form>
                 <form method="POST">
                     <fieldset>
-                        <p>
-                            <label style="padding-right: 5em">Permissions: </label>
-                            <label><?php echo $row[9]; ?></label>
-                            <input type="submit" name="submit" value="Edit">
-                        </p>
+                    	<div class = "container" style="font-family: pirates; font-size: 1.2em">
+							<div class = "d-flex-row">
+								<div calss = "col">
+			                        <p>
+			                            <label style="padding-right: 5em">Permissions: </label>
+			                            <label><?php echo $row[9]; ?></label>
+			                            <input type="submit" name="submit" value="Edit">
+			                        </p>
+			                    </div>
+			                </div>
+			            </div>
                     </fieldset>
                 </form>
                 <?php
@@ -618,10 +663,10 @@
 		else if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Edit"){?>
 			<form method="POST">
 				<fieldset>
-					<div class = "container">
+					<div class = "container" style="font-family: pirates; font-size: 1.2em">
 						<div class = "d-flex-row">
-							<div calss = "col-2">
-								<select name="perm" style="margin-left: 1em; margin-bottom: 0.5em">
+							<div calss = "col">
+								<select name="perm">
 									<option>Select Permission level:</option>
 									<option value="a">Normal</option>
 									<option value="b">Teller</option>
