@@ -72,8 +72,7 @@
 			$shipName=$rowShip[1];
 			$parsed_ship_json=json_decode($rowShip[4],true);
 			$parsed_ship_json=$parsed_ship_json['id'];
-			$shipName=$rowShip[1];
-			$_SESSION['hold']=$input;
+			$_SESSION['hold']=$rowShip[0];
 			$_SESSION['stype']="shipID";
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">
@@ -169,7 +168,7 @@
 			$parsed_fleet_json=$parsed_fleet_json['id'];
 			$fleetName=$rowFleet[1];
 			$searchUserName=$row[0];
-			$_SESSION['hold']=$input;
+			$_SESSION['hold']=$rowFleet[0];
 			$_SESSION['stype']="fleetID";
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">

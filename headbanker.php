@@ -15,7 +15,9 @@
 		else if ($perm=='z'):*/
 		?>
 
-		<title>HeadBanker</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+
+		<title>Welcome</title>
 		<?php 
 		include("Javascript/Connections/req.php");
 		include 'Javascript/Connections/convar.php';
@@ -25,53 +27,29 @@
 			}
 		include("Views\Partials/header.php");?>
 
-<!-- Creates the Personal, Teller, and Head Banker Buttons -->
-		<div class = "container-flow" id = "SwitchButtonsThree">
+	<body>
+		<div class = "container-flow" id = "SwitchButtonsVol">
 			<div class="d-none d-lg-block">
 				<div class = "d-flex justify-content-center">
 					<div class = "row" id ="ButtonsRow">
 						<div class = "col" style="padding-right: 0.05em;">
-							<a href="bank.php" class="LeftButtonThreeUn">Personal</a>
+							<a href="bank.php" class="PersonalButton3">Personal</a>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-							<a href="teller.php" class="MiddleButtonThreeUn">Teller</a>
+							<a href="teller.php" class="CordButton3">Teller</a>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em;">
-							<a href="headbanker.php" class="RightButtonThreePressed">Head Banker</a>
+							<a href="headbanker.php" class="CharterPressed3">Head Banker</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<!-- Code for the Personal, Teller, and Head Banker Buttons once the page is shrunk-->
-		<div class = "container" id = "SwitchButtonsMenuTwoThree">
-			<div class="d-lg-none">
-				<div class = "d-flex justify-content-center">
-					<div class = "row">
-						<div class = "col-lg">
-							<a href="bank.php" class="MenuButtonUn">Personal</a>
-						</div>
-						<div class = "col-lg" style = "padding-left: 0.05em;">
-							<a href="teller.php" class="MenuButtonUn">Teller</a>
-						</div>
-						<div class = "col-lg">
-							<a href="headbanker.php" class="MenuButtonPressed">Head Banker</a>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-	<body>
 		<form method="POST">
 			<fieldset>
 				<div class = "container" id="SearchBy">
 					<div class = "d-flex-row">
-						<div calss = "col">
-							<div style="font-size: 1.3em; font-family: pirates; border-bottom: 0.05em solid black; width: 20%; margin-bottom: 1em;">Audit:</div>
+						<div calss = "col-2">
 							<select name="sort" style="margin-left: 1em; margin-bottom: 0.5em">
 								<option>Sort By:</option>
 								<option value="teller">Teller</option>
@@ -82,7 +60,8 @@
 						</div>
 						<div class = "col">
 							<input type="submit" name= "submit" value="Sort" class="submit">
-							<input type="hidden" name="time">
+							<input type="hidden" name="start">
+							<input type="hidden" name="end">
 							<input type="hidden" name="teller">
 							<input type="hidden" name="amount">
 							<input type="hidden" name="type">
@@ -115,7 +94,8 @@
 							</select>
 								<input type="submit" name= "submit" value="Sort" >
 								<input type="hidden" name="sort" value="teller">
-								<input type="hidden" name="time">
+								<input type="hidden" name="start">
+								<input type="hidden" name="end">
 								<input type="hidden" name="amount">
 								<input type="hidden" name="type">
 						</fieldset>
@@ -130,7 +110,7 @@
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
 					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
 					foreach ($parsed_hist as $key => $value) {
-						$tempD = strtotime($key);
+						
 						$date = new DateTime($key);
 						//echo $date;
 						//echo $timeStamp;
@@ -197,37 +177,124 @@
 			}
 			else if ($_POST['sort']=='time') {
 				//way date is stored $timeStamp=date('Y/m/d H:i:s');
-
-				//this would not work
-				/*if (!$_POST['time']) {?>
+				if ($_POST['end'] && $_POST['start']) {
+					$endHold = $_POST['end'];
+					$startHold = $_POST['start'];
+					$startTemp = new DateTime($startHold);
+					$endTemp = new DateTime($endHold);
+					$hold=false;
+					$start=date_diff($startTemp,$timeStamp);
+					$end=date_diff($endTemp,$timeStamp);
+					//$numResults=-1;
+					array_multisort(array_map(function($i) {
+						return $i[4];
+					}, $parsed_hist), SORT_ASC, $parsed_hist);
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
+					foreach ($parsed_hist as $key => $value) {
+						
+						$date = new DateTime($key);
+						//echo $date;
+						//echo $timeStamp;
+						$diff=date_diff($date,$timeStamp);
+						if ($diff->format("%a")<=$start->format("%a") && $diff->format("%a")<=$end->format("%a")) {
+							$hold=true;
+							echo '<li><a>';
+							if (count($value)==6) {//transfer display from teller
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[4]; //amount 
+								echo " Sterlings from ";
+								echo $value[1]; //account from
+								echo " to ";
+								echo $value[2]; //account to
+								if ($value[5]) {
+									echo " Notes: ";
+									echo $value[5];
+								}							
+							}
+							if (count($value)==7) {//deposit display
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[4]; //amount 
+								echo " Sterlings to ";
+								echo $value[1]; //account from
+								if ($value[5]) {
+									echo " Notes: ";
+									echo $value[5];
+								}							
+							}
+							else if (count($value)==8) {//withdraw display
+								echo "~ ";
+								echo $key; //time and date that it happened
+								echo " ~ ";
+								echo " Teller ";
+								echo $value[3];
+								echo " ";
+								echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
+								echo " ";
+								echo $value[4]; //amount 
+								echo " Sterlings from ";
+								echo $value[1]; //account from
+								if ($value[5]) {
+									echo " Notes: ";
+									echo $value[5];
+								}							
+							}
+							echo '</a></li>';
+						}
+					}
+					if (!$hold) {
+						?>
+						<p>There are no records between those dates!</p><?php
+					}
+				}
+				else if (!$_POST['end'] xor !$_POST['start']) {
+					?>
+					<p>Please input both a start and end date</p>
 					<form method="POST">
 						<fieldset>
-							<label style="margin-bottom: 0em;">Select Start Time: </label>
-							<li>
-							<label style="margin-bottom: 0em;">Month: </label>
-								<select name="type" style=" margin-bottom: 0.5em; font-size: 1.1em">
-									<option value="1">January</option>
-									<option value="2">Febuary</option>
-									<option value="3">March</option>
-									<option value="4">April</option>
-									<option value="5">May</option>
-									<option value="6">June</option>
-									<option value="7">July</option>
-									<option value="8">August</option>
-									<option value="9">September</option>
-									<option value="10">October</option>
-									<option value="11">November</option>
-									<option value="12">December</option>
-								</select>
-							</li>
-								<input type="submit" name= "submit" value="Sort" >
-								<input type="hidden" name="sort" value="type">
-								<input type="hidden" name="time">
-								<input type="hidden" name="amount">
-								<input type="hidden" name="teller">
+							<label style="margin-bottom: 0em;">Start Date: </label>
+							<input type="date" name="start">
+							<label style="margin-bottom: 0em;">End Date: </label>
+							<input type="date" name="end">
+							<input type="submit" name= "submit" value="Sort" >
+							<input type="hidden" name="sort" value="time">
+							<input type="hidden" name="teller">
+							<input type="hidden" name="amount">
+							<input type="hidden" name="type">
 						</fieldset>
-					</form><?php
-				}*/
+					</form>
+					<?php
+				}
+				else{
+					?>
+					<form method="POST">
+						<fieldset>
+							<label style="margin-bottom: 0em;">Start Date: </label>
+							<input type="date" name="start">
+							<label style="margin-bottom: 0em;">End Date: </label>
+							<input type="date" name="end">
+							<input type="submit" name= "submit" value="Sort" >
+							<input type="hidden" name="sort" value="time">
+							<input type="hidden" name="teller">
+							<input type="hidden" name="amount">
+							<input type="hidden" name="type">
+						</fieldset>
+					</form>
+					<?php 
+				}
 			}
 			else if ($_POST['sort']=='amount') {
 				if (!$_POST['amount']) {?>
@@ -237,7 +304,8 @@
 								<input type="number" name="amount" min="1">
 								<input type="submit" name= "submit" value="Sort" >
 								<input type="hidden" name="sort" value="amount">
-								<input type="hidden" name="time">
+								<input type="hidden" name="start">
+								<input type="hidden" name="end">
 								<input type="hidden" name="teller">
 								<input type="hidden" name="type">
 						</fieldset>
@@ -253,7 +321,7 @@
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
 					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
 					foreach ($parsed_hist as $key => $value) {
-						$tempD = strtotime($key);
+						
 						$date = new DateTime($key);
 						//echo $date;
 						//echo $timeStamp;
@@ -318,7 +386,8 @@
 						}
 					}
 					if (!$hold) {
-						?><p>There are no records with amounts greater then the the chosen amount!</p><?php
+						?>
+						<p>There are no records with amounts greater then the the chosen amount!</p><?php
 					}
 				}
 			}
@@ -334,7 +403,8 @@
 							</select>
 								<input type="submit" name= "submit" value="Sort" >
 								<input type="hidden" name="sort" value="type">
-								<input type="hidden" name="time">
+								<input type="hidden" name="start">
+								<input type="hidden" name="end">
 								<input type="hidden" name="amount">
 								<input type="hidden" name="teller">
 						</fieldset>
@@ -350,7 +420,7 @@
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
 					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost
 					foreach ($parsed_hist as $key => $value) {
-						$tempD = strtotime($key);
+						
 						$date = new DateTime($key);
 						//echo $date;
 						//echo $timeStamp;
@@ -422,6 +492,125 @@
 			}
 		}
 		//endif; ?>
+		
+		<form method="POST">
+			<fieldset>
+				<div class = "container" id="SearchBy">
+					<div class = "d-flex-row"><label>Add or Remove Teller Access</label>
+						<div calss = "col-2">
+
+							<select name="type" style="margin-left: 1em; margin-bottom: 0.5em">
+								<option>Search By:</option>
+								<option value="Pname">Pirate Name</option>
+								<option value="Fname">First Name</option>
+								<option value="Lname">Last Name</option>
+								<option value="Username">Email</option>
+								<option value="shipID" style="display:none;">shipID</option>
+								<option value="Ship" style="display:none;">Ship/House</option>
+								<option value="fleetID" style="display:none;">fleetID</option>
+								<option value="Fleet" style="display:none;">Fleet/Alliance</option>
+							</select>
+						</div>
+						<div class = "col" style="margin-bottom: 0.5em; font-family: ariel">
+							<input type="search" class="required" name="input" id= "SearchBox">
+						</div>
+						<div class = "col">
+							<input type="submit" name= "submit" value="Search" class="submit">
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+		<?php
+		if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Search") {
+			$method = $_POST['type'];
+			$input = mysqli_real_escape_string($con, $_POST['input']);
+			$queryIn = "SELECT * FROM users WHERE `$method` LIKE '%$input%'";
+			$resultIn = mysqli_query($con, $queryIn);
+			if (mysqli_num_rows($resultIn)>1) {
+				$array = NULL;
+				$array = $resultIn->fetch_all(MYSQLI_NUM);?>
+				<form method = "POST">
+					<fieldset>
+						<div class = "container" id = "Search" >
+							<div class = "d-flex-row">
+								<div class = "SSearch">
+								<?php echo '<label>Search by: </label><select name="input">';
+								foreach ($array as $key => $value) {
+								echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
+								}
+								$input2 = mysqli_real_escape_string($con, $_POST['input']);
+								echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="1">';?>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			<?php }
+			else if (mysqli_num_rows($resultIn)==1) {
+				$row = mysqli_fetch_row($resultIn);?>
+				<form method="POST">
+                 	<fieldset>
+                        <p>
+                            <label style="padding-right: 5em">Email: </label>
+                            <label> <?php echo $row[0]; ?></label>
+                        </p>
+                    </fieldset>
+                </form>
+                <form method="POST">
+                    <fieldset>
+                        <p>
+                            <label style="padding-right: 5em">Permissions: </label>
+                            <label><?php echo $row[9]; ?></label>
+                            <input type="submit" name="submit" value="Edit">
+                        </p>
+                    </fieldset>
+                </form>
+                <?php
+				 ?>
+				<?php
+				$_SESSION['hold']=$input;
+				$_SESSION['stype']=$method;
+				mysqli_close($con);
+				$_SERVER["REQUEST_METHOD"]=NULL;
+				
+			}
+			else{
+				echo '<div class="container" id = "NoneFound">
+							There are no accounts that match that search!
+					</div>';
+			}
+		}
+		else if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Edit"){?>
+			<form method="POST">
+				<fieldset>
+					<div class = "container">
+						<div class = "d-flex-row">
+							<div calss = "col-2">
+								<select name="perm" style="margin-left: 1em; margin-bottom: 0.5em">
+									<option>Select Permission level:</option>
+									<option value="a">Normal</option>
+									<option value="b">Teller</option>
+								</select>
+							</div>
+							<div class = "col">
+								<input type="submit" name= "submit" value="Change" class="submit">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<?php
+		}
+		else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Change") {
+			$input=$_SESSION['hold'];
+			$method=$_SESSION['stype'];
+			$perm=mysqli_real_escape_string($con,$_POST['perm']);
+            $update = "UPDATE users SET AccountPerm = '$perm' WHERE `$method` LIKE '%$input%'";
+            $temp=mysqli_query($con, $update);
+            echo '<script type="text/javascript">window.location.href="admin.php"</script>';
+		}
+?>
 		
 	</body>
 
