@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<?php include("Javascript/Connections/req.php"); 
-		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")) {
+		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			$usename = $_SESSION['username'];
 		}
 		else{
@@ -29,13 +29,19 @@
 				<div class = "d-flex justify-content-center">
 					<div class = "row" id ="ButtonsRow">
 						<div class = "col" style="padding-right: 0.05em;">
-							<a href="volunteer.php" class="LeftButtonThreeUn">Personal</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+								<a href="volunteer.php" class="LeftButtonThreeUn">Personal</a>
+							<?php endif;?>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-							<a href="volunteercoord.php" class="MiddleButtonThreePressed">Coordinator</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+								<a href="volunteercoord.php" class="MiddleButtonThreePressed">Coordinator</a>
+							<?php endif;?>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em;">
-							<a href="chartercoord.php" class="RightButtonThreeUn">Charter/Land Grant</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+								<a href="chartercoord.php" class="RightButtonThreeUn">Charter/Land Grant</a>
+							<?php endif;?>
 						</div>
 					</div>
 				</div>
@@ -48,13 +54,19 @@
 				<div class = "d-flex justify-content-center">
 					<div class = "row">
 						<div class = "col-lg">
-							<a href="volunteer.php" class="MenuButtonUn">Personal</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+								<a href="volunteer.php" class="MenuButtonUn">Personal</a>
+							<?php endif;?>
 						</div>
 						<div class = "col-lg" style = "padding-left: 0.05em;">
-							<a href="volunteercoord.php" class="MenuButtonPressed">Coordinator</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+								<a href="volunteercoord.php" class="MenuButtonPressed">Coordinator</a>
+							<?php endif;?>
 						</div>
 						<div class = "col-lg">
-							<a href="chartercoord.php" class="MenuButtonUn">Charter/Land Grant</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+								<a href="chartercoord.php" class="MenuButtonUn">Charter/Land Grant</a>
+							<?php endif;?>
 						</div>
 						</div>
 					</div>
