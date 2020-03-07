@@ -28,10 +28,19 @@
             $queryIn = "SELECT * FROM ship WHERE ID = '$input'";
             $resultIn = mysqli_query($con, $queryIn);
             $row = mysqli_fetch_row($resultIn);
+            $queryUser = "SELECT * FROM users WHERE Username = '$row[2]'";
+            $resultUser = mysqli_query($con, $queryUser);
+            $rowUser = mysqli_fetch_row($resultUser);
+            if ($rowUser[5]==NULL) {
+                $name = $rowUser[3].' '.$rowUser[4];
+            }
+            else
+                $name = $rowUser[5];
+            ?><label>Leader: </label><li><?php echo $name; ?></li><?php
             if ($_SERVER["REQUEST_METHOD"] != "POST") {
             ?>
                 <li>
-                    <label>Leader: </label>
+                    <label>Select a new Leader: </label>
                     <form method="POST">
                         <fieldset>
                             <select name="type" style="margin-left: 1em; margin-bottom: 0.5em">
@@ -43,28 +52,28 @@
                             </select>
                             <input type="text" name="leader">
                             <input type="submit" name="submit" value="Submit">
+                            <input type="button" value="Cancle" onclick="location.href='teller.php';">
+                            <input type="hidden" name="tansfer" value="1">
                         </fieldset>
                     </form>
                 </li>
             <?php
             }
             else{
-                $user = $_POST['leader'];
+                $user = mysqli_real_escape_string($con,$_POST['leader']);
                 $method = $_POST['type'];
-                $queryUser = "SELECT * FROM users WHERE '$method' LIKE '%$user%'";
-                echo $queryUser;
+                $queryUser = "SELECT * FROM users WHERE `$method` LIKE '%$user%'";
                 $resultUser = mysqli_query($con, $queryUser);
-                $rowUser = mysqli_fetch_row($resultUser);
-                if (mysqli_num_rows($resultUser)>0) {
-                    <?php echo '<label>Search by: </label><select name="leader">';
+                if (mysqli_num_rows($resultUser)>1) {
+                    $array = $resultUser->fetch_all(MYSQLI_NUM);
+                    echo '<label>Search by: </label><form method="POST"><fieldset><select name="leader">';
                             //echo '<form method="post" id = "select">';
                             foreach ($array as $key => $value) {
                             //echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
                             echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
                             }
                             //echo '</form>';
-                            $input2 = mysqli_real_escape_string($con, $_POST['input']);
-                            echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Submit"><input type="hidden" name="type" value="Username">';?>
+                            echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Submit"><input type="hidden" name="type" value="Username"></fieldset></form>';
                 }
                 else if (mysqli_num_rows($resultUser)==0){ ?>
                     <li>
@@ -74,14 +83,17 @@
                                 <input type="email" name="leader" value='<?php echo $row[2]; ?>'>
                                 <div class="container" id = "NoneFound" style="margin-top: 0em">There are no users that match this Email!</div>
                                 <input type="submit" name="submit" value="Submit">
+                                <input type="button" value="Cancle" onclick="location.href='teller.php';">
                             </fieldset>
                         </form>
                     </li><?php
                 }
                 else{
+                    $user = $_POST['leader'];
                     $queryUpdate = "UPDATE ship SET Captain = '$user' WHERE ID = '$input'";
+                    echo $queryUpdate;
                     $resultUpdate = mysqli_query($con, $queryUpdate);
-                    echo'<script type="text/javascript">alert("Owner changed");</script>';
+                    //echo'<script type="text/javascript">alert("Owner changed");</script>';
                     header('Location: /PNPN-Website/teller.php');
                 }
             }
