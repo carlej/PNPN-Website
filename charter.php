@@ -46,7 +46,9 @@
 		<div class = "container-flow">
 			<div class = "d-flex justify-content-center">
 				<div class="row" id="ComingSoon">
-					Coming Soon!!
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
+						<div>Coming Soon!!</div>
+					<?php endif;?>
 				</div>
 			</div>
 		</div>
