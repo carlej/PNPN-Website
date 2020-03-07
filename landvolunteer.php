@@ -1,14 +1,18 @@
 <!doctype html>
 <html>
 	<head>
-		<?php include("Javascript/Connections/req.php"); 
+		<?php 
+		if ($_SESSION['perm']!="d" || $_SESSION['perm']!="z") {
+		    ?><script type="text/javascript">window.location.href="bank.php"</script><?php
+		}
+		include("Javascript/Connections/req.php"); 
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			$username = $_SESSION['username'];
 		}
 		?>
 
 		<title>Land Volunteer</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php include("Views/Partials/header.php");?>
 
 		<!-- Creates the Personal and Steward Buttons and who has access to them-->
 		<div class = "container-flow" id = "SwitchButtonsThree">

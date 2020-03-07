@@ -2,6 +2,9 @@
 <html>
 	<head>
 		<?php
+		if ($_SESSION['username']!="todd_135791@yahoo.com" || $_SESSION['perm']!="z") {
+			?><script type="text/javascript">window.location.href="bank.php"</script><?php
+		}
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true ) {
 			$username = $_SESSION['username'];
 			$perm = $_SESSION['perm'];

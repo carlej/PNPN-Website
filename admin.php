@@ -7,10 +7,10 @@
 			$perm = $_SESSION['perm'];
 		}
 
-		/*if ($perm!='z') {
+		if ($perm!='z') {
 			echo '<script type="text/javascript">window.location.href="bank.php"</script>';
 		}
-		else if ($perm=='z'):*/
+		//else if ($perm=='z'):*/
 		?>
 
 		<meta name="viewport" content="width=device-width, user-scalable=no">
