@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<?php
-		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true ) {
 			$username = $_SESSION['username'];
 			$perm = $_SESSION['perm'];
 		}
@@ -15,9 +15,7 @@
 		else if ($perm=='z'):*/
 		?>
 
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-
-		<title>Welcome</title>
+		<title>Head Banker</title>
 		<?php 
 		include("Javascript/Connections/req.php");
 		include 'Javascript/Connections/convar.php';
@@ -27,24 +25,60 @@
 			}
 		include("Views\Partials/header.php");?>
 
-	<body>
-		<div class = "container-flow" id = "SwitchButtonsVol">
+	<head>
+		<!-- Creates the Personal, Teller, and Head Banker Buttons -->
+		<div class = "container-flow" id = "SwitchButtonsThree">
 			<div class="d-none d-lg-block">
 				<div class = "d-flex justify-content-center">
 					<div class = "row" id ="ButtonsRow">
 						<div class = "col" style="padding-right: 0.05em;">
-							<a href="bank.php" class="PersonalButton3">Personal</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="bank.php" class="LeftButtonThreeUn">Personal</a>
+							<?php endif;?>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-							<a href="teller.php" class="CordButton3">Teller</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="teller.php" class="MiddleButtonThreeUn">Teller</a>
+							<?php endif;?>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em;">
-							<a href="headbanker.php" class="CharterPressed3">Head Banker</a>
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="headbanker.php" class="RightButtonThreePressed">Head Banker</a>
+							<?php endif;?>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<!-- Code for the Personal, Teller, and Head Banker Buttons once the page is shrunk-->
+		<div class = "container" id = "SwitchButtonsMenuTwoThree">
+			<div class="d-lg-none">
+				<div class = "d-flex justify-content-center">
+					<div class = "row">
+						<div class = "col-lg">
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="bank.php" class="MenuButtonUn">Personal</a>
+							<?php endif;?>
+						</div>
+						<div class = "col-lg" style = "padding-left: 0.05em;">
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="teller.php" class="MenuButtonUn">Teller</a>
+							<?php endif;?>
+						</div>
+						<div class = "col-lg">
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="headbanker.php" class="MenuButtonPressed">Head Banker</a>
+							<?php endif;?>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</head>
+
+	<body>
 		<form method="POST">
 			<fieldset>
 				<div class = "container" id="SearchBy">

@@ -76,12 +76,12 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 				<div class = "col" style="padding-right: 0.05em;">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" || $_SESSION['perm']!="z")): ?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
 						<a href="volunteer.php" class="LeftButtonTwoPressed">Personal</a>
 					<?php endif;?>
 				</div>
 				<div class="col" style="padding-left: 0.05em" >
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" || $_SESSION['perm']!="z")): ?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
 						<a href="charter.php" class="RightButtonTwoUn">Charter/Land Grant</a>
 					<?php endif;?>
 				</div>
@@ -96,12 +96,12 @@
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
 				<div class = "col-lg">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" || $_SESSION['perm']!="z")): ?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
 						<a href="volunteer.php" class="MenuButtonPressed">Personal</a>
 					<?php endif;?>
 				</div>
 				<div class="col-lg" style="padding-right: 0.05em" >
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" || $_SESSION['perm']!="z")): ?>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
 						<a href="charter.php" class="MenuButtonUn">Charter/Land Grant</a>
 					<?php endif;?>
 				</div>
