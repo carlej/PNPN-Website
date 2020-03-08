@@ -81,7 +81,7 @@
 		</div>
 	</head>
 
-	<body>
+	<body class="HeadBanker">
 		<form method="POST">
 			<fieldset>
 				<div class = "container" id="AuditSearchBy">
@@ -92,7 +92,7 @@
 								<option>Sort By:</option>
 								<option value="teller">Teller</option>
 								<option value="time">Time</option>
-								<option value="amount">Amount over</option>
+								<option value="amount">Amount Over</option>
 								<option value="type">Type</option>
 							</select>
 						</div>
@@ -152,7 +152,9 @@
 					array_multisort(array_map(function($i) {
 						return $i[3];
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
-					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container" id="HistBox"><?php
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?>
+					<div class="container" id="HistBox">
+						<?php
 					foreach ($parsed_hist as $key => $value) {
 						
 						$date = new DateTime($key);
@@ -239,7 +241,9 @@
 					array_multisort(array_map(function($i) {
 						return $i[4];
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
-					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container" id="HistBox"><?php
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?>
+					<div class="container" id="HistBox">
+						<?php
 					foreach ($parsed_hist as $key => $value) {
 						
 						$date = new DateTime($key);
@@ -305,11 +309,14 @@
 							}
 							echo '</a></li>';
 						}
-					}?></div><?php
+					}?><?php
 					if (!$hold) {
 						?>
-						<p>There are no records between those dates!</p><?php
-					}
+						<div style="font-family: pirates; font-size: 1.2em; color: darkred; text-align: center;">
+							<p>There are no records between those dates!</p>
+						</div>
+						<?php
+					}?> </div> <?php
 				}
 				else if (!$_POST['end'] xor !$_POST['start']) {
 					?>
@@ -388,7 +395,9 @@
 					array_multisort(array_map(function($i) {
 						return $i[4];
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
-					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container" id="HistBox"><?php
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?>
+					<div class="container" id="HistBox">
+						<?php
 					foreach ($parsed_hist as $key => $value) {
 						
 						$date = new DateTime($key);
@@ -453,11 +462,14 @@
 							}
 							echo '</a></li>';
 						}
-					}?></div><?php
+					}?><?php
 					if (!$hold) {
 						?>
-						<p>There are no records with amounts greater then the the chosen amount!</p><?php
-					}
+						<div style="font-family: pirates; font-size: 1.2em; color: darkred; text-align: center;">
+							<p>There are no records with amounts greater then the chosen amount!</p>
+						</div>
+					<?php
+					}?> </div> <?php
 				}
 			}
 			else if ($_POST['sort']=='type') {
@@ -493,7 +505,9 @@
 					array_multisort(array_map(function($i) {
 						return $i[0];
 					}, $parsed_hist), SORT_ASC, $parsed_hist);
-					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?><div class="container" id="HistBox"><?php
+					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?>
+					<div class="container" id="HistBox">
+						<?php
 					foreach ($parsed_hist as $key => $value) {
 						
 						$date = new DateTime($key);
@@ -561,7 +575,8 @@
 						
 					}?></div><?php
 					if (!$hold) {
-						?><p>There are no records with amounts greater then the the chosen amount!</p><?php
+						?>
+					<?php
 					}
 				}
 			}
@@ -609,9 +624,9 @@
 				$array = $resultIn->fetch_all(MYSQLI_NUM);?>
 				<form method = "POST">
 					<fieldset>
-						<div class = "container" id = "Search" >
+						<div class = "container">
 							<div class = "d-flex-row">
-								<div class = "SSearch">
+								<div class="col" id = "SSearchAudit">
 								<?php echo '<label>Search by: </label><select name="input">';
 								foreach ($array as $key => $value) {
 								echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
@@ -628,9 +643,9 @@
 				$row = mysqli_fetch_row($resultIn);?>
 				<form method="POST">
                  	<fieldset>
-                 		 <div class = "container" style="font-family: pirates; font-size: 1.2em;">
+                 		 <div class = "container">
 							<div class = "d-flex-row">
-								<div calss = "col">
+								<div calss = "col" id="PermissionChange">
 			                        <p>
 			                            <label style="padding-right: 5em">Email: </label>
 			                            <label> <?php echo $row[0]; ?></label>
@@ -642,11 +657,11 @@
                 </form>
                 <form method="POST">
                     <fieldset>
-                    	<div class = "container" style="font-family: pirates; font-size: 1.2em">
+                    	<div class = "container">
 							<div class = "d-flex-row">
-								<div calss = "col">
+								<div calss = "col" id="PermissionChange">
 			                        <p>
-			                            <label style="padding-right: 5em">Permissions: </label>
+			                            <label style="padding-right: 3em">Permissions: </label>
 			                            <label><?php echo $row[9]; ?></label>
 			                            <input type="submit" name="submit" value="Edit">
 			                        </p>
@@ -673,16 +688,16 @@
 		else if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['submit'] == "Edit"){?>
 			<form method="POST">
 				<fieldset>
-					<div class = "container" style="font-family: pirates; font-size: 1.2em">
+					<div class = "container">
 						<div class = "d-flex-row">
-							<div calss = "col">
+							<div calss = "col" style="font-family: pirates; font-size: 1.1em; margin-bottom: 0.5em; margin-left: 0.9em;">
 								<select name="perm">
-									<option>Select Permission level:</option>
+									<option>Select Permission Level:</option>
 									<option value="a">Normal</option>
 									<option value="b">Teller</option>
 								</select>
 							</div>
-							<div class = "col">
+							<div class = "col" style="font-family: pirates; font-size: 1.1em;">
 								<input type="submit" name= "submit" value="Change" class="submit">
 							</div>
 						</div>
