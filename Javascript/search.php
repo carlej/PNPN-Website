@@ -55,7 +55,16 @@
 								//echo '<form method="post" id = "select">';
 							foreach ($array as $key => $value) {//this will display the name of each captain as each should be different
 							//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-							echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
+							$temp = $value[2];
+							$queryUser = "SELECT * FROM users WHERE Username = '$temp'";
+							$resultUser = mysqli_query($con, $queryUser);
+							$rowUser = mysqli_fetch_row($resultUser);
+							if ($rowUser[5]==NULL) {
+				                $name = $rowUser[3].' '.$rowUser[4];
+				            }
+				            else
+				                $name = $rowUser[5];
+							echo '<option value="'.$value[0].'">"Captain: " '.$name.'</option>';
 							}
 							//echo '</form>';
 							$input2 = mysqli_real_escape_string($con, $_POST['input']);
@@ -150,7 +159,16 @@
 								//echo '<form method="post" id = "select">';
 							foreach ($array as $key => $value) {
 								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-							echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
+								$temp = $value[2];
+								$queryUser = "SELECT * FROM users WHERE Username = '$temp'";
+								$resultUser = mysqli_query($con, $queryUser);
+								$rowUser = mysqli_fetch_row($resultUser);
+								if ($rowUser[5]==NULL) {
+					                $name = $rowUser[3].' '.$rowUser[4];
+					            }
+					            else
+					                $name = $rowUser[5];
+							echo '<option value="'.$value[0].'">"Admiral: " '.$name.'</option>';
 							}
 							//echo '</form>';
 							$input2 = mysqli_real_escape_string($con, $_POST['input']);
