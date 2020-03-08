@@ -149,9 +149,14 @@
 				if ($_POST['teller']) {
 					$tell = $_POST['teller'];
 					//$numResults=-1;
-					array_multisort(array_map(function($i) {
-						return $i[3];
-					}, $parsed_hist), SORT_ASC, $parsed_hist);
+					//array_multisort(array_map(function($i) {
+					//	return $i[0];
+					//}, $parsed_hist), SORT_ASC, $parsed_hist);
+
+					//array_map(function($i) {
+					//	return $i[0];
+					//}, $parsed_hist);
+					//array_multisort(array_map($parsed_hist),SORT_ASC,SORT_STRING);
 					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?>
 					<div class="container" id="HistBox">
 						<?php
@@ -238,9 +243,9 @@
 						$end=date_diff($endTemp,$timeStamp);
 					//echo (-$end->format("%a"));
 					//$numResults=-1;
-					array_multisort(array_map(function($i) {
-						return $i[4];
-					}, $parsed_hist), SORT_ASC, $parsed_hist);
+					//array_multisort(array_map(function($i) {
+					//	return $i[4];
+					//}, $parsed_hist), SORT_ASC, $parsed_hist);
 					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?>
 					<div class="container" id="HistBox">
 						<?php
@@ -374,7 +379,7 @@
 								<div class = "d-flex-row">
 									<div calss = "col" style="font-family: pirates; font-size: 1em; margin-left: 1em; margin-bottom: 0.5em;">
 										<label style="margin-bottom: 0em;">Enter Max Amount: </label>
-										<input type="number" name="amount" min="1">
+										<input type="number" name="amount">
 										<input type="submit" name= "submit" value="Sort" >
 										<input type="hidden" name="sort" value="amount">
 										<input type="hidden" name="start">
@@ -394,7 +399,7 @@
 					//$numResults=-1;
 					array_multisort(array_map(function($i) {
 						return $i[4];
-					}, $parsed_hist), SORT_ASC, $parsed_hist);
+					}, $parsed_hist), SORT_DESC, $parsed_hist);
 					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?>
 					<div class="container" id="HistBox">
 						<?php
@@ -502,9 +507,9 @@
 					$type = $_POST['type'];
 					$hold=false;
 					//$numResults=-1;
-					array_multisort(array_map(function($i) {
-						return $i[0];
-					}, $parsed_hist), SORT_ASC, $parsed_hist);
+					//array_multisort(array_map(function($i) {
+					//	return $i[0];
+					//}, $parsed_hist), SORT_ASC, $parsed_hist);
 					//$temp = usort($parsed_hist, function($a, $b){ return strcmp($a[3], $b[3]); }); //datetime key lost?>
 					<div class="container" id="HistBox">
 						<?php
@@ -629,7 +634,9 @@
 								<div class="col" id = "SSearchAudit">
 								<?php echo '<label>Search by: </label><select name="input">';
 								foreach ($array as $key => $value) {
-								echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
+									if ($value[9]=='a' || $value[9]=='b') {
+										echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
+									}
 								}
 								$input2 = mysqli_real_escape_string($con, $_POST['input']);
 								echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="1">';?>
@@ -699,6 +706,7 @@
 							</div>
 							<div class = "col" style="font-family: pirates; font-size: 1.1em;">
 								<input type="submit" name= "submit" value="Change" class="submit">
+								<input type="button" value="Cancel" onclick="location.href='headbanker.php';">
 							</div>
 						</div>
 					</div>

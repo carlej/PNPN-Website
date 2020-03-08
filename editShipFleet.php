@@ -17,11 +17,11 @@
         ?>
 
 
-        <title>Edit Ship/Fleet</title>
+        <title>Edit ship/fleet</title>
 
     </head>
 
-    <body class="EditShipFleetPage">
+    <body>
         <?php
         $input = $_SESSION['hold'];
         if ($_SESSION['stype']=='shipID') {
@@ -36,44 +36,31 @@
             }
             else
                 $name = $rowUser[5];
+            ?><label>Leader: </label><li><?php echo $name; ?></li><?php
+            if ($_SERVER["REQUEST_METHOD"] != "POST") {
             ?>
-            <div class="container">
-                <div class="d-flex-row d-block">
-                    <div class="col" id="EditShipFleet">
-
-                        <label>Leader: <?php echo $name; ?></label><?php
-                            if ($_SERVER["REQUEST_METHOD"] != "POST") {
-                            ?>
-                                <li>
-                                    <label>Select a new Leader: </label>
-                                    <form method="POST">
-                                        <fieldset>
-                                            <select name="type" style="margin-bottom: 0.5em">
-                                                <option>Search By:</option>
-                                                <option value="Pname">Pirate Name</option>
-                                                <option value="Fname">First Name</option>
-                                                <option value="Lname">Last Name</option>
-                                                <option value="Username">Email</option>
-                                            </select>
-                                            <input type="text" name="leader">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <input type="submit" name="submit" value="Submit">
-                                                    <input type="button" value="Cancel" onclick="location.href='teller.php';">
-                                                    <input type="hidden" name="tansfer" value="1">
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </li>
-                    </div>
-                </div>
-            </div>
-                            <?php
-                            }
+                <li>
+                    <label>Select a new Leader: </label>
+                    <form method="POST">
+                        <fieldset>
+                            <select name="type" style="margin-left: 1em; margin-bottom: 0.5em">
+                                <option>Search By:</option>
+                                <option value="Pname">Pirate Name</option>
+                                <option value="Fname">First Name</option>
+                                <option value="Lname">Last Name</option>
+                                <option value="Username">Email</option>
+                            </select>
+                            <input type="text" name="leader">
+                            <input type="submit" name="submit" value="Submit">
+                            <input type="button" value="Cancle" onclick="location.href='teller.php';">
+                            <input type="hidden" name="tansfer" value="1">
+                        </fieldset>
+                    </form>
+                </li>
+            <?php
+            }
             else{
                 $user = mysqli_real_escape_string($con,$_POST['leader']);
-                echo $_POST['type'];
                 $method = $_POST['type'];
                 $queryUser = "SELECT * FROM users WHERE `$method` LIKE '%$user%'";
                 $resultUser = mysqli_query($con, $queryUser);
@@ -86,37 +73,30 @@
                             echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
                             }
                             //echo '</form>';
-                            echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Submit"><input type="hidden" name="type" value="Username"></fieldset></form>';
+                            echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Submit"><input type="hidden" name="type" value="Username">'; ?>
+                            <input type="button" value="Cancel" onclick="location.href='teller.php';">
+                            <?php 
+                            echo '</fieldset></form>';
                 }
                 else if (mysqli_num_rows($resultUser)==0){ ?>
                     <li>
-                        <div class="container">
-                            <div class="d-flex-row d-block">
-                                <div class="col" id="EditShipFleet">
-                                    <label>Leader: </label>
-                                    <form method="POST">
-                                        <fieldset>
-                                            <select name="type" style="margin-bottom: 0.5em">
-                                                <option>Search By:</option>
-                                                <option value="Pname">Pirate Name</option>
-                                                <option value="Fname">First Name</option>
-                                                <option value="Lname">Last Name</option>
-                                                <option value="Username">Email</option>
-                                            </select>
-                                            <input type="text" name="leader">
-                                            <input type="hidden" name="tansfer" value="1">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <input type="submit" name="submit" value="Submit">
-                                                    <input type="button" value="Cancel" onclick="location.href='teller.php';">
-                                                    <div class="container" id = "NoneFound" style="margin-top: 0em">There are no users that match this Email!</div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                        <label>Leader: </label>
+                        <form method="POST">
+                            <fieldset>
+                                <select name="type" style="margin-left: 1em; margin-bottom: 0.5em">
+                                    <option>Search By:</option>
+                                    <option value="Pname">Pirate Name</option>
+                                    <option value="Fname">First Name</option>
+                                    <option value="Lname">Last Name</option>
+                                    <option value="Username">Email</option>
+                                </select>
+                                <input type="text" name="leader">
+                                <input type="hidden" name="tansfer" value="1">
+                                <input type="submit" name="submit" value="Submit">
+                                <input type="button" value="Cancle" onclick="location.href='teller.php';">
+                                <div class="container" id = "NoneFound" style="margin-top: 0em">There are no users that match this Email!</div>
+                            </fieldset>
+                        </form>
                     </li><?php
                 }
                 else{
@@ -141,37 +121,26 @@
             }
             else
                 $name = $rowUser[5];
+            ?><label>Leader: </label><li><?php echo $name; ?></li><?php
+            if ($_SERVER["REQUEST_METHOD"] != "POST") {
             ?>
-            <div class="container">
-                    <div class="d-flex-row d-block">
-                        <div class="col" id="EditShipFleet">
-                            <label>Leader: <?php echo $name; ?></label><?php
-                            if ($_SERVER["REQUEST_METHOD"] != "POST") {
-                            ?>
-                                <li>
-                                <label>Select a new Leader: </label>
-                                <form method="POST">
-                                    <fieldset>
-                                        <select name="type" style="margin-bottom: 0.5em">
-                                            <option>Search By:</option>
-                                            <option value="Pname">Pirate Name</option>
-                                            <option value="Fname">First Name</option>
-                                            <option value="Lname">Last Name</option>
-                                            <option value="Username">Email</option>
-                                        </select>
-                                        <input type="text" name="leader">
-                                        <div class="row">
-                                            <div class="col">
-                                                <input type="submit" name="submit" value="Submit">
-                                                <input type="button" value="Cancel" onclick="location.href='teller.php';">
-                                                <input type="hidden" name="tansfer" value="1">
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                <li>
+                    <label>Select a new Leader: </label>
+                    <form method="POST">
+                        <fieldset>
+                            <select name="type" style="margin-left: 1em; margin-bottom: 0.5em">
+                                <option>Search By:</option>
+                                <option value="Pname">Pirate Name</option>
+                                <option value="Fname">First Name</option>
+                                <option value="Lname">Last Name</option>
+                                <option value="Username">Email</option>
+                            </select>
+                            <input type="text" name="leader">
+                            <input type="submit" name="submit" value="Submit">
+                            <input type="button" value="Cancle" onclick="location.href='teller.php';">
+                            <input type="hidden" name="tansfer" value="1">
+                        </fieldset>
+                    </form>
                 </li>
             <?php
             }
@@ -193,33 +162,23 @@
                 }
                 else if (mysqli_num_rows($resultUser)==0){ ?>
                     <li>
-                        <div class="container">
-                            <div class="d-flex-row d-block">
-                                <div class="col" id="EditShipFleet">
-                                    <label>Leader: </label>
-                                    <form method="POST">
-                                        <fieldset>
-                                            <select name="type" style="margin-bottom: 0.5em">
-                                                <option>Search By:</option>
-                                                <option value="Pname">Pirate Name</option>
-                                                <option value="Fname">First Name</option>
-                                                <option value="Lname">Last Name</option>
-                                                <option value="Username">Email</option>
-                                            </select>
-                                            <input type="text" name="leader">
-                                            <input type="hidden" name="tansfer" value="1">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <input type="submit" name="submit" value="Submit">
-                                                    <input type="button" value="Cancel" onclick="location.href='teller.php';">
-                                                    <div class="container" id = "NoneFound" style="margin-top: 0em">There is not match for that search!</div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                        <label>Leader: </label>
+                        <form method="POST">
+                            <fieldset>
+                                <select name="type" style="margin-left: 1em; margin-bottom: 0.5em">
+                                    <option>Search By:</option>
+                                    <option value="Pname">Pirate Name</option>
+                                    <option value="Fname">First Name</option>
+                                    <option value="Lname">Last Name</option>
+                                    <option value="Username">Email</option>
+                                </select>
+                                <input type="text" name="leader">
+                                <input type="hidden" name="tansfer" value="1">
+                                <input type="submit" name="submit" value="Submit">
+                                <input type="button" value="Cancle" onclick="location.href='teller.php';">
+                                <div class="container" id = "NoneFound" style="margin-top: 0em">There is not match for that search!</div>
+                            </fieldset>
+                        </form>
                     </li><?php
                 }
                 else{
