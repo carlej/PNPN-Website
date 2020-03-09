@@ -1,48 +1,62 @@
 <!doctype html>
 <html>
 	<head>
-		<?php include("Javascript/Connections/req.php"); 
+		<?php 
+		include("Javascript/Connections/req.php"); 
+		if ($_SESSION['perm']!="d" && $_SESSION['perm']!="z") {
+		    ?><script type="text/javascript">window.location.href="bank.php"</script><?php
+		}
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			$username = $_SESSION['username'];
 		}
 		?>
 
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-
-		<title>Land Grants</title>
+		<title>Land Volunteer</title>
 		<?php include("Views/Partials/header.php");?>
-		
-		<div class = "container-flow" id = "SwitchButtonsVol">
+		<!-- Creates the Personal and Steward Buttons and who has access to them-->
+		<div class = "container-flow" id = "SwitchButtonsThree">
 			<div class="d-none d-lg-block">
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 					<div class = "col" style="padding-right: 0.05em;">
-						<a href="landgrant.php" class="PersonalButton3">Personal</a>
+						<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
+							<a href="landgrant.php" class="LeftButtonThreeUn">Personal</a>
+						<?php endif;?>
 					</div>
 					<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-						<a href="landsteward.php" class="LandButton3">Steward</a>
+						<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
+							<a href="landsteward.php" class="MiddleButtonThreeUn">Steward</a>
+						<?php endif;?>
 					</div>
 					<div class = "col" style="padding-left: 0.05em;">
-						<a href="landvolunteer.php" class="LandVolunteerPressed">Volunteer</a>
+						<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
+							<a href="landvolunteer.php" class="RightButtonThreePressed">Volunteer</a>
+						<?php endif;?>
 					</div>
 				</div>
 			</div>
 			</div>
 		</div>
 
-		<!-- Code for the teller and personal buttons once the page is shrunk-->
-		<div class = "container" id = "SwitchButtonsMenuVol">
+		<!-- Creates the Personal and Steward Buttons once the page is shrunk -->
+		<div class = "container" id = "SwitchButtonsMenuTwoThree">
 			<div class="d-lg-none">
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
 					<div class = "col-lg">
-						<a href="landgrant.php" class="PersonalButton2">Personal</a>
+						<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
+							<a href="landgrant.php" class="MenuButtonUn">Personal</a>
+						<?php endif;?>
 					</div>
 					<div class = "col-lg">
-						<a href="landsteward.php" class="LandButton2">Steward</a>
+						<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
+							<a href="landsteward.php" class="MenuButtonUn">Steward</a>
+						<?php endif;?>
 					</div>
 					<div class = "col-lg">
-						<a href="landvolunteer.php" class="LandVolunteerPressed2">Volunteer</a>
+						<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
+							<a href="landvolunteer.php" class="MenuButtonPressed">Volunteer</a>
+						<?php endif;?>
 					</div>
 				</div>
 			</div>

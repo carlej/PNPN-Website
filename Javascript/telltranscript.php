@@ -1,5 +1,6 @@
 <?php //This file is to display the accounts and the transfer window that anyone can see so that they can make account to account transfers without going to the bank?>
 <div class = "container" id = "TellerFunction">
+	<?php if($_SESSION['stype']!='shipID' && $_SESSION['stype']!='fleetID'): ?>
 	<div class = "TellerActions">Teller Actions</div>
 	<div class = "row">
 		<?php
@@ -13,6 +14,7 @@
 			echo "\n";
 			echo $value[0];
 		}*/
+		//$test = 'volunteers';
 		?>
 		<p>		
 			<div class = "col-md">
@@ -285,6 +287,7 @@
 				</fieldset>
 			</form>
 		</div>
+		<?php endif; ?>
 		<?php if($_SESSION['stype']!='shipID' && $_SESSION['stype']!='fleetID'): ?>
 			<div class = "col-md" >
 			<div id = "InfoColumn">
@@ -302,10 +305,96 @@
 					<input type = "submit" name= "submit" value = "Edit User" onclick="location.href='editUser.php';">
 				</p>
 			</div>
-			</div>
+		<?php elseif($_SESSION['stype']=='shipID'):
+			$input = $_SESSION['hold'];
+			$queryIn = "SELECT * FROM ship WHERE ID = '$input'";
+            $resultIn = mysqli_query($con, $queryIn);
+            $row = mysqli_fetch_row($resultIn);
+            ?>
+            <div class = "col-md">
+			<p>
+				<input type = "submit" name= "submit" id="TranOwnership" value = "Transfer Ownership of Ship/Household" onclick="location.href='editShipFleet.php';"?>
+			</p>
+			<form method="POST">
+				<fieldset>
+					<input type="submit" name="submit" value="Show Crew" id="ShowCrew">
+					<input type="hidden" name="test" value="crew">
+				</fieldset>
+			</form>
+			<?php 
+			$user = $row[2];
+			$queryUser = "SELECT * FROM users WHERE Username LIKE '%$user%'";
+            $resultUser = mysqli_query($con, $queryUser);
+            $rowUser = mysqli_fetch_row($resultUser);
+            if ($rowUser[5]==NULL) {
+            	$nameUser = $rowUser[3].' '.$rowUser[4];
+            }
+            else
+            	$nameUser = $rowUser[5];
+			echo '<li class="DispLeader">Leader: '.$nameUser.'</li>';
+			if ($_POST['test']=="crew") {
+				$queryInUser = "SELECT * FROM users WHERE shipC = '$input'";
+	            $resultInUser = mysqli_query($con, $queryInUser);
+	            $array = $resultInUser->fetch_all(MYSQLI_NUM);
+	            ?><div class="container" id="HistBox"><?php
+		            foreach ($array as $key => $value) {
+		            	if ($value[5]==NULL) {
+		            		$name = $value[3].' '.$value[4];
+		            	}
+		            	else
+		            		$name = $value[5];
+		            	echo '<li>'.$name.'</li>';
+		            }
+		            ?></div><?php
+			}
+			?>
+		<?php elseif($_SESSION['stype']=='fleetID'):
+			$input = $_SESSION['hold'];
+			$queryIn = "SELECT * FROM fleet WHERE ID = '$input'";
+            $resultIn = mysqli_query($con, $queryIn);
+            $row = mysqli_fetch_row($resultIn);
+            ?>
+            <div class = "col-md">
+			<p>
+				<input type = "submit" name= "submit" id="TranOwnership" value = "Transfer Ownership of Fleet/Aliance" onclick="location.href='editShipFleet.php';"?>
+			</p>
+			<form method="POST">
+				<fieldset>
+					<input type="submit" name="submit" value="Show Crew" id="ShowCrew">
+					<input type="hidden" name="test" value="crew">
+				</fieldset>
+			</form>
+			<?php 
+			$user = $row[2];
+			$queryUser = "SELECT * FROM users WHERE Username LIKE '%$user%'";
+            $resultUser = mysqli_query($con, $queryUser);
+            $rowUser = mysqli_fetch_row($resultUser);
+            if ($rowUser[5]==NULL) {
+            	$nameUser = $rowUser[3].' '.$rowUser[4];
+            }
+            else
+            	$nameUser = $rowUser[5];
+			echo '<li class="DispLeader">Leader: '.$nameUser.'</li>';
+			if ($_POST['test']=="crew") {
+				$queryInUser = "SELECT * FROM users WHERE fleetC = '$input'";
+	            $resultInUser = mysqli_query($con, $queryInUser);
+	            $array = $resultInUser->fetch_all(MYSQLI_NUM);
+	            ?><div class="container" id="HistBox"><?php
+		            foreach ($array as $key => $value) {
+		            	if ($value[5]==NULL) {
+		            		$name = $value[3].' '.$value[4];
+		            	}
+		            	else
+		            		$name = $value[5];
+		            	echo '<li>'.$name.'</li>';
+		            }
+		            ?></div><?php
+			}
+			?>
 		<?php endif; ?>
 	</div>
 </div>
+
 
 
 <script type="text/javascript">

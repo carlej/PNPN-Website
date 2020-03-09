@@ -20,9 +20,11 @@
 		$_SESSION['stype']="shipID";
 		//$user=$_SESSION['hold'];?>
 		<div class = "container">
+			<?php if($_SESSION['username']!='volunteers'):?>
 				<div class = "row">
 					<?php include "Javascript/telltranscript.php"; ?>
 				</div>
+			<?php endif; ?>
 				<div class = "row">
 					<?php include "Views/Partials/showAccs.php"; ?>
 				</div>
@@ -54,7 +56,16 @@
 								//echo '<form method="post" id = "select">';
 							foreach ($array as $key => $value) {//this will display the name of each captain as each should be different
 							//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-							echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
+							$temp = $value[2];
+							$queryUser = "SELECT * FROM users WHERE Username = '$temp'";
+							$resultUser = mysqli_query($con, $queryUser);
+							$rowUser = mysqli_fetch_row($resultUser);
+							if ($rowUser[5]==NULL) {
+				                $name = $rowUser[3].' '.$rowUser[4];
+				            }
+				            else
+				                $name = $rowUser[5];
+							echo '<option value="'.$value[0].'">"Captain: " '.$name.'</option>';
 							}
 							//echo '</form>';
 							$input2 = mysqli_real_escape_string($con, $_POST['input']);
@@ -71,14 +82,15 @@
 			$shipName=$rowShip[1];
 			$parsed_ship_json=json_decode($rowShip[4],true);
 			$parsed_ship_json=$parsed_ship_json['id'];
-			$shipName=$rowShip[1];
-			$_SESSION['hold']=$input;
+			$_SESSION['hold']=$rowShip[0];
 			$_SESSION['stype']="shipID";
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">
+				<?php if($_SESSION['username']!='volunteers'):?>
 					<div class = "row">
 						<?php include "Javascript/telltranscript.php"; ?>
 					</div>
+				<?php endif; ?>
 					<div class = "row">
 						<?php include "Views/Partials/showAccs.php"; ?>
 					</div>
@@ -112,9 +124,11 @@
 		$_SESSION['stype']="fleetID";
 		//$user=$_SESSION['hold']; ?>
 		<div class = "container">
+			<?php if($_SESSION['username']!='volunteers'):?>
 				<div class = "row">
 					<?php include "Javascript/telltranscript.php"; ?>
 				</div>
+			<?php endif; ?>
 				<div class = "row">
 					<?php include "Views/Partials/showAccs.php"; ?>
 				</div>
@@ -146,7 +160,16 @@
 								//echo '<form method="post" id = "select">';
 							foreach ($array as $key => $value) {
 								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-							echo '<option value="'.$value[0].'">"Captain: " '.$value[2].'</option>';
+								$temp = $value[2];
+								$queryUser = "SELECT * FROM users WHERE Username = '$temp'";
+								$resultUser = mysqli_query($con, $queryUser);
+								$rowUser = mysqli_fetch_row($resultUser);
+								if ($rowUser[5]==NULL) {
+					                $name = $rowUser[3].' '.$rowUser[4];
+					            }
+					            else
+					                $name = $rowUser[5];
+							echo '<option value="'.$value[0].'">"Admiral: " '.$name.'</option>';
 							}
 							//echo '</form>';
 							$input2 = mysqli_real_escape_string($con, $_POST['input']);
@@ -164,13 +187,15 @@
 			$parsed_fleet_json=$parsed_fleet_json['id'];
 			$fleetName=$rowFleet[1];
 			$searchUserName=$row[0];
-			$_SESSION['hold']=$input;
+			$_SESSION['hold']=$rowFleet[0];
 			$_SESSION['stype']="fleetID";
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">
+				<?php if($_SESSION['username']!='volunteers'):?>
 					<div class = "row">
 						<?php include "Javascript/telltranscript.php"; ?>
 					</div>
+				<?php endif; ?>
 					<div class = "row">
 						<?php include "Views/Partials/showAccs.php"; ?>
 					</div>
@@ -262,9 +287,11 @@
 			$_SESSION['stype']='Username';
 			//$user=$_SESSION['hold']; ?>
 			<div class = "container">
+				<?php if($_SESSION['username']!='volunteers'):?>
 					<div class = "row">
 						<?php include "Javascript/telltranscript.php"; ?>
 					</div>
+				<?php endif; ?>
 					<div class = "row">
 						<?php include "Views/Partials/showAccs.php"; ?>
 					</div>

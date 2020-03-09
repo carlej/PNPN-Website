@@ -27,11 +27,11 @@
 							echo $key; //time and date that it happened
 							echo " ~ ";
 							echo " Teller ";
-							echo $value[4];
+							echo $value[3];
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
-							echo $value[3]; //amount 
+							echo $value[4]; //amount 
 							echo " Sterlings from ";
 							echo $value[1]; //account from
 							echo " to ";
@@ -66,12 +66,12 @@
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
-							echo $value[2]; //amount 
+							echo $value[4]; //amount 
 							echo " Sterlings to ";
 							echo $value[1]; //account from
-							if ($value[4]) {
+							if ($value[5]) {
 								echo " Notes: ";
-								echo $value[4];
+								echo $value[5];
 							}							
 						}
 						else if (count($value)==8) {//withdraw display
@@ -83,12 +83,12 @@
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
-							echo $value[2]; //amount 
+							echo $value[4]; //amount 
 							echo " Sterlings from ";
 							echo $value[1]; //account from
-							if ($value[4]) {
+							if ($value[5]) {
 								echo " Notes: ";
-								echo $value[4];
+								echo $value[5];
 							}							
 						}
 						?></a></li>
@@ -122,11 +122,11 @@
 							echo $key; //time and date that it happened
 							echo " ~ ";
 							echo " Teller ";
-							echo $value[4];
+							echo $value[3];
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
-							echo $value[3]; //amount 
+							echo $value[4]; //amount 
 							echo " Sterlings from ";
 							echo $value[1]; //account from
 							echo " to ";
@@ -161,12 +161,12 @@
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
-							echo $value[2]; //amount 
+							echo $value[4]; //amount 
 							echo " Sterlings to ";
 							echo $value[1]; //account from
-							if ($value[4]) {
+							if ($value[5]) {
 								echo " Notes: ";
-								echo $value[4];
+								echo $value[5];
 							}							
 						}
 						else if (count($value)==8) {//withdraw display
@@ -178,12 +178,12 @@
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
-							echo $value[2]; //amount 
+							echo $value[4]; //amount 
 							echo " Sterlings from ";
 							echo $value[1]; //account from
-							if ($value[4]) {
+							if ($value[5]) {
 								echo " Notes: ";
-								echo $value[4];
+								echo $value[5];
 							}							
 						}
 							?></a></li>
@@ -218,11 +218,11 @@
 							echo $key; //time and date that it happened
 							echo " ~ ";
 							echo " Teller ";
-							echo $value[4];
+							echo $value[3];
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
-							echo $value[3]; //amount 
+							echo $value[4]; //amount 
 							echo " Sterlings from ";
 							echo $value[1]; //account from
 							echo " to ";
@@ -257,12 +257,12 @@
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
-							echo $value[2]; //amount 
+							echo $value[4]; //amount 
 							echo " Sterlings to ";
 							echo $value[1]; //account from
-							if ($value[4]) {
+							if ($value[5]) {
 								echo " Notes: ";
-								echo $value[4];
+								echo $value[5];
 							}							
 						}
 						else if (count($value)==8) {//withdraw display
@@ -274,12 +274,12 @@
 							echo " ";
 							echo $value[0]; //what type of history is it ex transfer, deposite, withdraw
 							echo " ";
-							echo $value[2]; //amount 
+							echo $value[4]; //amount 
 							echo " Sterlings from ";
 							echo $value[1]; //account from
-							if ($value[4]) {
+							if ($value[5]) {
 								echo " Notes: ";
-								echo $value[4];
+								echo $value[5];
 							}							
 						}
 							?></a></li>

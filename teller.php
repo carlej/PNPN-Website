@@ -5,6 +5,9 @@
 	<head>
 
 		<?php include("Javascript/Connections/req.php");
+		if ($_SESSION['perm']!="b" && $_SESSION['perm']!="z") {
+		    ?><script type="text/javascript">window.location.href="bank.php"</script><?php
+		}
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")) {
 			$usename = $_SESSION['username'];
 		}
@@ -26,21 +29,23 @@
 		//echo $_SESSION['clear'];
 		?>
 
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-
 		<title>Bank</title>
 		<?php include("Views/Partials/header.php");?>
 		
-		
-		<div class = "container-flow" id = "SwitchButtons">
+	<!-- Code for the teller and personal buttons-->		
+		<div class = "container-flow" id = "SwitchButtonsTwo">
 			<div class="d-none d-lg-block">
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 					<div class = "col-6" style="padding-right: 0.05em;">
-						<a href="bank.php" class="PersonalButton">Personal</a>
+						<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b")): ?>
+							<a href="bank.php" class="LeftButtonTwoUn">Personal</a>
+						<?php endif;?>
 					</div>
 					<div class = "col-6" style = "padding-left: 0.05em;">
-						<a href="teller.php" class="TellerPressed">Teller</a>
+						<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b")): ?>
+							<a href="teller.php" class="RightButtonTwoPressed">Teller</a>
+						<?php endif;?>
 					</div>
 				</div>
 			</div>
@@ -48,20 +53,76 @@
 		</div>
 
 	<!-- Code for the teller and personal buttons once the page is shrunk-->
-		<div class = "container" id = "SwitchButtonsMenu">
+		<div class = "container" id = "SwitchButtonsMenuTwoThree">
 			<div class="d-lg-none">
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
 				<div class = "col-sm-6">
-						<a href="bank.php" class="PersonalButton2">Personal</a>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b")): ?>
+						<a href="bank.php" class="MenuButtonUn">Personal</a>
+					<?php endif;?>
 				</div>
 				<div class = "col-sm-6">
-					<a href="teller.php" class="TellerPressed2">Teller</a>
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b")): ?>
+						<a href="teller.php" class="MenuButtonPressed">Teller</a>
+					<?php endif;?>
 				</div>
 				</div>
 			</div>
 			</div>
 		</div>
+		
+		<!-- Creates the Personal, Teller, and Head Banker Buttons -->
+		<div class = "container-flow" id = "SwitchButtonsThree">
+			<div class="d-none d-lg-block">
+				<div class = "d-flex justify-content-center">
+					<div class = "row" id ="ButtonsRow">
+						<div class = "col" style="padding-right: 0.05em;">
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="bank.php" class="LeftButtonThreeUn">Personal</a>
+							<?php endif;?>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="teller.php" class="MiddleButtonThreePressed">Teller</a>
+							<?php endif;?>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em;">
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="headbanker.php" class="RightButtonThreeUn">Head Banker</a>
+							<?php endif;?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Code for the Personal, Teller, and Head Banker Buttons once the page is shrunk-->
+		<div class = "container" id = "SwitchButtonsMenuTwoThree">
+			<div class="d-lg-none">
+				<div class = "d-flex justify-content-center">
+					<div class = "row">
+						<div class = "col-lg">
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="bank.php" class="MenuButtonUn">Personal</a>
+							<?php endif;?>
+						</div>
+						<div class = "col-lg" style = "padding-left: 0.05em;">
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="teller.php" class="MenuButtonPressed">Teller</a>
+							<?php endif;?>
+						</div>
+						<div class = "col-lg">
+							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['username']=="todd_135791@yahoo.com" || $_SESSION['perm']=="z")): ?>
+								<a href="headbanker.php" class="MenuButtonUn">Head Banker</a>
+							<?php endif;?>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 	</head>
 	<body class = "TellerAccounts">
@@ -73,7 +134,8 @@
 				die('Could not connect: ' . mysql_error());
 			}
 		}
-		mysqli_close($con);
+
+
 		//creates the basic inputs for the search file to find an user/account?>
 		<form method="POST">
 			<fieldset>
@@ -87,9 +149,9 @@
 								<option value="Lname">Last Name</option>
 								<option value="Username">Email</option>
 								<option value="shipID" style="display:none;">shipID</option>
-								<option value="Ship" style="display:none;">Ship/House</option>
+								<option value="Ship">Ship/House</option>
 								<option value="fleetID" style="display:none;">fleetID</option>
-								<option value="Fleet" style="display:none;">Fleet/Alliance</option>
+								<option value="Fleet">Fleet/Alliance</option>
 							</select>
 						</div>
 						<div class = "col" style="margin-bottom: 0.5em; font-family: ariel">
@@ -140,8 +202,7 @@
 			//$_SESSION['temp']="temp";
 			//echo '<script type="text/javascript">window.location.href="teller.php"</script>';
 		}
-		
-
+		mysqli_close($con);
 		?>
 	</body>
 

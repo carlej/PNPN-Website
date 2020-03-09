@@ -1,7 +1,8 @@
-To make cancle
-Use on click to move to clear.php
-In clear include req
-Use the $_SESSION['clear'] to ref back to previous page
+to change the db on aws
+ALTER TABLE `jobs` ADD `start` DATETIME NULL DEFAULT NULL AFTER `pay`, ADD `end` DATETIME NULL DEFAULT NULL AFTER `start`, ADD `length` INT(1) NULL DEFAULT NULL AFTER `end`;
 
-complete make clear
-same as cancle but without the two two session vars
+ALTER TABLE `jobs` ADD `user` VARCHAR(256) NOT NULL AFTER `length`;
+
+ALTER TABLE `jobs` ADD `ID` INT(6) UNSIGNED NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`ID`);
+
+ALTER TABLE `jobs` CHANGE `user` `user` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;

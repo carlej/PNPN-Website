@@ -54,11 +54,23 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			//This adds a new entry into the JSON file that is used to store the history of each account
 
 			//currently it uses the account numbers for this info. I was trying to phase out account numbers and have this display the name of the account holder but this is a work in progress.
+			//start audit
+			$AuditHist="SELECT history FROM accounts WHERE ID = '330425394'";
+			$AuditHist= mysqli_query($con, $AuditHist);		
+			$AuditHist=mysqli_fetch_row($AuditHist);
+			$Audit_jsonHist=json_decode($AuditHist[0],true);
+			$Audittran=["Transfered",$namefrom,$name,$teller,$trans,$tranNotes];
+			$Audit_jsonHist[$timeStamp]=$Audittran;
+			$Audit_jsonHist=json_encode($Audit_jsonHist);
+			$Audit = mysqli_real_escape_string($con, $Audit_jsonHist);
+			$AuditHist="UPDATE accounts SET history = '$Audit' WHERE accounts.ID = '330425394'";
+			$AuditHistFrom=mysqli_query($con,$AuditHist);
+			//end audit
 			$queryHistTo="SELECT history FROM accounts WHERE ID = '$Accto'";
 			$resultHistTo= mysqli_query($con, $queryHistTo);
 			$rowHistTo=mysqli_fetch_row($resultHistTo);
 			$parsed_jsonHistTo=json_decode($rowHistTo[0],true);
-			$dep=["Transfered",$namefrom,$name,$trans,$teller,$tranNotes];
+			$dep=["Transfered",$namefrom,$name,$teller,$trans,$tranNotes];
 			$parsed_jsonHistTo[$timeStamp]=$dep;
 			$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
 			$NOSPECIALCHARACERSto = mysqli_real_escape_string($con, $enco_jsonHistTo);
@@ -69,7 +81,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Transfered",$namefrom,$name,$trans,$teller,$tranNotes];
+			$tran=["Transfered",$namefrom,$name,$teller,$trans,$tranNotes];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistFrom);
@@ -126,17 +138,29 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			//This adds a new entry into the JSON file that is used to store the history of each account
 
 			
+			
+			//start audit
+			$AuditHist="SELECT history FROM accounts WHERE ID = '330425394'";
+			$AuditHist= mysqli_query($con, $AuditHist);		
+			$AuditHist=mysqli_fetch_row($AuditHist);
+			$Audit_jsonHist=json_decode($AuditHist[0],true);
+			$Audittran=["Deposited",$namefrom,'0',$teller,$depts,$deptNotes,'0'];
+			$Audit_jsonHist[$timeStamp]=$Audittran;
+			$Audit_jsonHist=json_encode($Audit_jsonHist);
+			$Audit = mysqli_real_escape_string($con, $Audit_jsonHist);
+			$AuditHist="UPDATE accounts SET history = '$Audit' WHERE accounts.ID = '330425394'";
+			$AuditHistFrom=mysqli_query($con,$AuditHist);
+			//end audit
 			//creates history in the account making the deposited
 			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Deposited",$namefrom,$depts,$teller,$deptNotes,'0','0'];
+			$tran=["Deposited",$namefrom,'0',$teller,$depts,$deptNotes,'0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistFrom);
 			$queryHistFrom="UPDATE accounts SET history = '$NOSPECIALCHARACERS' WHERE accounts.ID = '$Accfrom'";
-			echo $queryHistFrom;
 			$resultHistFrom=mysqli_query($con,$queryHistFrom);
 			header("Location: ../teller.php");//refreshes page to reflect new ballance
 			//echo htmlspecialchars($_SERVER["PHP_SELF"]);
@@ -170,12 +194,24 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 			//This adds a new entry into the JSON file that is used to store the history of each account
 
 			//currently it uses the account numbers for this info. I was trying to phase out account numbers and have this display the name of the account holder but this is a work in progress.
+			//start audit
+			$AuditHist="SELECT history FROM accounts WHERE ID = '330425394'";
+			$AuditHist= mysqli_query($con, $AuditHist);		
+			$AuditHist=mysqli_fetch_row($AuditHist);
+			$Audit_jsonHist=json_decode($AuditHist[0],true);
+			$Audittran=["Withdrew",$namefrom,'0',$teller,$with,$withNotes,'0','0'];
+			$Audit_jsonHist[$timeStamp]=$Audittran;
+			$Audit_jsonHist=json_encode($Audit_jsonHist);
+			$Audit = mysqli_real_escape_string($con, $Audit_jsonHist);
+			$AuditHist="UPDATE accounts SET history = '$Audit' WHERE accounts.ID = '330425394'";
+			$AuditHistFrom=mysqli_query($con,$AuditHist);
+			//end audit
 			//creates history in the account making the transfer
 			$queryHistFrom="SELECT history FROM accounts WHERE ID = '$Accfrom'";
 			$resultHistFrom= mysqli_query($con, $queryHistFrom);		
 			$rowHistFrom=mysqli_fetch_row($resultHistFrom);
 			$parsed_jsonHistFrom=json_decode($rowHistFrom[0],true);
-			$tran=["Withdrew",$namefrom,$with,$teller,$withNotes,'0','0','0'];
+			$tran=["Withdrew",$namefrom,'0',$teller,$with,$withNotes,'0','0'];
 			$parsed_jsonHistFrom[$timeStamp]=$tran;
 			$enco_jsonHistFrom=json_encode($parsed_jsonHistFrom);
 			$NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonHistFrom);
