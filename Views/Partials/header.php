@@ -10,11 +10,11 @@ $url=NULL;
      		<?php endif; ?>
 
 				<div class="compRose"><img src="CSS\styles\Compass_Rose_2.png" alt="Compass_Rose"></div>
-			<?php if ($url=="/PNPN-Website/teller.php"):?>
+			<?php if ($url=="/teller.php"):?>
 				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url=="/PNPN-Website/bank.php"):?>
+			<?php elseif ($url=="/bank.php"):?>
 				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url=="/PNPN-Website/headbanker.php"):?>
+			<?php elseif ($url=="/headbanker.php"):?>
 				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php else: ?>
 				<div class="bankButton"><a href="bank.php"><img alt="Bank" src="CSS/styles/Bank_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
@@ -30,13 +30,13 @@ $url=NULL;
 
 			<div class="tilda1"><img alt="~" src="CSS/styles/Scwig_1.png"></div>
 			
-			<?php if ($url=="/PNPN-Website/volunteercoord.php"):?>
+			<?php if ($url=="/volunteercoord.php"):?>
 				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url=="/PNPN-Website/volunteer.php"):?>
+			<?php elseif ($url=="/volunteer.php"):?>
 				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url=="/PNPN-Website/chartercoord.php"):?>
+			<?php elseif ($url=="/chartercoord.php"):?>
 				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url=="/PNPN-Website/charter.php"):?>
+			<?php elseif ($url=="/charter.php"):?>
 				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>	
 			<?php else: ?>
 				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
@@ -46,20 +46,20 @@ $url=NULL;
 			<div class="tilda2"><img alt="~" src="CSS/styles/Scwig_2.png"></div>
 			
 
-			<?php if ($url=="/PNPN-Website/landsteward.php"):?>
+			<?php if ($url=="/landsteward.php"):?>
 				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url=="/PNPN-Website/landgrant.php"):?>
+			<?php elseif ($url=="/landgrant.php"):?>
 				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url=="/PNPN-Website/landvolunteer.php"):?>
+			<?php elseif ($url=="/landvolunteer.php"):?>
 				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php else: ?>
 				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
 
 
-			<?php if ($url=="/PNPN-Website/account.php"):?>
+			<?php if ($url=="/account.php"):?>
 				<div class="accountButton"><a href="account.php"><img alt="account" src="CSS/styles/Account_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url!="/PNPN-Website/account.php"):?>
+			<?php elseif ($url!="/account.php"):?>
 				<div class="accountButton"><a href="account.php"><img alt="account" src="CSS/styles/Account_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php else: ?>
 				<div class="accountButton"><a href="account.php"><img alt="account" src="CSS/styles/Account_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
