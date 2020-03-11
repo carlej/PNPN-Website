@@ -21,7 +21,7 @@
 
     </head>
 
-    <body class="EditShipFleetPage">
+    <body id="EditShipFleet">
         <?php
         $input = $_SESSION['hold'];
         if ($_SESSION['stype']=='shipID') {
