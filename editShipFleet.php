@@ -52,7 +52,7 @@
                             </select>
                             <input type="text" name="leader">
                             <input type="submit" name="submit" value="Submit">
-                            <input type="button" value="Cancle" onclick="location.href='teller.php';">
+                            <input type="button" value="Cancel" onclick="location.href='teller.php';">
                             <input type="hidden" name="tansfer" value="1">
                         </fieldset>
                     </form>
@@ -93,7 +93,7 @@
                                 <input type="text" name="leader">
                                 <input type="hidden" name="tansfer" value="1">
                                 <input type="submit" name="submit" value="Submit">
-                                <input type="button" value="Cancle" onclick="location.href='teller.php';">
+                                <input type="button" value="Cancel" onclick="location.href='teller.php';">
                                 <div class="container" id = "NoneFound" style="margin-top: 0em">There are no users that match this Email!</div>
                             </fieldset>
                         </form>
@@ -137,7 +137,7 @@
                             </select>
                             <input type="text" name="leader">
                             <input type="submit" name="submit" value="Submit">
-                            <input type="button" value="Cancle" onclick="location.href='teller.php';">
+                            <input type="button" value="Cancel" onclick="location.href='teller.php';">
                             <input type="hidden" name="tansfer" value="1">
                         </fieldset>
                     </form>
@@ -175,7 +175,7 @@
                                 <input type="text" name="leader">
                                 <input type="hidden" name="tansfer" value="1">
                                 <input type="submit" name="submit" value="Submit">
-                                <input type="button" value="Cancle" onclick="location.href='teller.php';">
+                                <input type="button" value="Cancel" onclick="location.href='teller.php';">
                                 <div class="container" id = "NoneFound" style="margin-top: 0em">There is not match for that search!</div>
                             </fieldset>
                         </form>
