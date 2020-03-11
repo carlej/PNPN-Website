@@ -345,7 +345,7 @@
 		            }
 		            ?></div><?php
 			}
-			?>
+			?></div>
 		<?php elseif($_SESSION['stype']=='fleetID'):
 			$input = $_SESSION['hold'];
 			$queryIn = "SELECT * FROM fleet WHERE ID = '$input'";
@@ -388,10 +388,8 @@
 		            }
 		            ?></div><?php
 			}
-			?>
+			?></div>
 		<?php endif; ?>
-	</div>
-</div>
 
 
 
