@@ -290,34 +290,37 @@
 		<?php endif; ?>
 		<?php if($_SESSION['stype']!='shipID' && $_SESSION['stype']!='fleetID'): ?>
 			<div class = "col-md" >
-			<div id = "InfoColumn">
-				<legend>Info:</legend>
-				<p>
-					<input type = "submit" name= "submit" value = "Add Ship/Household" onclick="location.href='addShip.php';"?>
-				</p>
-				<p>
-					<input type = "submit" name= "submit" value = "Add Fleet/Alliance" onclick="location.href='addFleet.php';"?>
-				</p>
-				<p>
-					<input type="submit" name="submit" value="Grant Access" onclick="location.href='grantaccess.php';">
-				</p>
-				<p>
-					<input type = "submit" name= "submit" value = "Edit User" onclick="location.href='editUser.php';">
-				</p>
+				<div id = "InfoColumn">
+					<legend>Info:</legend>
+					<p>
+						<input type = "submit" name= "submit" value = "Add Ship/Household" onclick="location.href='addShip.php';"?>
+					</p>
+					<p>
+						<input type = "submit" name= "submit" value = "Add Fleet/Alliance" onclick="location.href='addFleet.php';"?>
+					</p>
+					<p>
+						<input type="submit" name="submit" value="Grant Access" onclick="location.href='grantaccess.php';">
+					</p>
+					<p>
+						<input type = "submit" name= "submit" value = "Edit User" onclick="location.href='editUser.php';">
+					</p>
+				</div>
 			</div>
+
 		<?php elseif($_SESSION['stype']=='shipID'):
 			$input = $_SESSION['hold'];
 			$queryIn = "SELECT * FROM ship WHERE ID = '$input'";
             $resultIn = mysqli_query($con, $queryIn);
             $row = mysqli_fetch_row($resultIn);
             ?>
+            <div class="row">
             <div class = "col-md">
 			<p>
-				<input type = "submit" name= "submit" id="TranOwnership" value = "Transfer Ownership of Ship/Household" onclick="location.href='editShipFleet.php';"?>
+				<input type = "submit" name= "submit" id="TranOwnership" value = "Transfer Ownership of Ship/Aliance" onclick="location.href='editShipFleet.php';" style="margin-left: 0em" ?>
 			</p>
 			<form method="POST">
 				<fieldset>
-					<input type="submit" name="submit" value="Show Crew" id="ShowCrew">
+					<input type="submit" name="submit" value="Show Crew" id="ShowCrew" style="margin-left: 0em">
 					<input type="hidden" name="test" value="crew">
 				</fieldset>
 			</form>
@@ -331,7 +334,7 @@
             }
             else
             	$nameUser = $rowUser[5];
-			echo '<li class="DispLeader">Leader: '.$nameUser.'</li>';
+			echo '<li class="DispLeader" style="margin-left: 0em">Leader: '.$nameUser.'</li>';
 			if ($_POST['test']=="crew") {
 				$queryInUser = "SELECT * FROM users WHERE shipC = '$input'";
 	            $resultInUser = mysqli_query($con, $queryInUser);
@@ -347,20 +350,21 @@
 		            }
 		            ?></div><?php
 			}
-			?>
+			?></div></div>
 		<?php elseif($_SESSION['stype']=='fleetID'):
 			$input = $_SESSION['hold'];
 			$queryIn = "SELECT * FROM fleet WHERE ID = '$input'";
             $resultIn = mysqli_query($con, $queryIn);
             $row = mysqli_fetch_row($resultIn);
             ?>
-            <div class = "col-md">
+            <div class="row">
+            <div class = "col-md" id="ShipFleetDisp">
 			<p>
-				<input type = "submit" name= "submit" id="TranOwnership" value = "Transfer Ownership of Fleet/Aliance" onclick="location.href='editShipFleet.php';"?>
+				<input type = "submit" name= "submit" id="TranOwnership" value = "Transfer Ownership of Fleet/Aliance" onclick="location.href='editShipFleet.php';" style="margin-left: 0em"?>
 			</p>
 			<form method="POST">
 				<fieldset>
-					<input type="submit" name="submit" value="Show Crew" id="ShowCrew">
+					<input type="submit" name="submit" value="Show Crew" id="ShowCrew" style="margin-left: 0em">
 					<input type="hidden" name="test" value="crew">
 				</fieldset>
 			</form>
@@ -374,7 +378,7 @@
             }
             else
             	$nameUser = $rowUser[5];
-			echo '<li class="DispLeader">Leader: '.$nameUser.'</li>';
+			echo '<li class="DispLeader" style="margin-left: 0em">Leader: '.$nameUser.'</li>';
 			if ($_POST['test']=="crew") {
 				$queryInUser = "SELECT * FROM users WHERE fleetC = '$input'";
 	            $resultInUser = mysqli_query($con, $queryInUser);
@@ -390,9 +394,10 @@
 		            }
 		            ?></div><?php
 			}
-			?>
+			?></div></div>
 		<?php endif; ?>
-	</div>
+	
+</div>
 </div>
 
 

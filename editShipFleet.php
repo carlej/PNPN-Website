@@ -17,11 +17,11 @@
         ?>
 
 
-        <title>Edit ship/fleet</title>
+        <title>Edit Ship/Fleet</title>
 
     </head>
 
-    <body>
+    <body class="EditShipFleetPage">
         <?php
         $input = $_SESSION['hold'];
         if ($_SESSION['stype']=='shipID') {
