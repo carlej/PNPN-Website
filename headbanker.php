@@ -647,15 +647,21 @@
 				</form>
 			<?php }
 			else if (mysqli_num_rows($resultIn)==1) {
-				$row = mysqli_fetch_row($resultIn);?>
+				$row = mysqli_fetch_row($resultIn);
+				if ($row[5]==NULL) {
+					$namuse = $row[3].' '.$row[4];
+				}
+				else
+					$nameuse = $row[5];
+				?>
 				<form method="POST">
                  	<fieldset>
                  		 <div class = "container">
 							<div class = "d-flex-row">
 								<div calss = "col" id="PermissionChange">
 			                        <p>
-			                            <label style="padding-right: 5em">Email: </label>
-			                            <label> <?php echo $row[0]; ?></label>
+			                            <label style="padding-right: 5em">Name: </label>
+			                            <label> <?php echo $nameuse; ?></label>
 			                        </p>
 			                    </div>
 			                </div>
@@ -720,7 +726,7 @@
 			$perm=mysqli_real_escape_string($con,$_POST['perm']);
             $update = "UPDATE users SET AccountPerm = '$perm' WHERE `$method` LIKE '%$input%'";
             $temp=mysqli_query($con, $update);
-            echo '<script type="text/javascript">window.location.href="admin.php"</script>';
+            echo '<script type="text/javascript">window.location.href="headbanker.php"</script>';
 		}
 ?>
 		
