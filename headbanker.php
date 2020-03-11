@@ -26,7 +26,7 @@
 			if (!$con) {
 				die('Could not connect: ' . mysql_error());
 			}
-		include("Views\Partials/header.php");?>
+		include("Views/Partials/header.php");?>
 
 	<head>
 		<!-- Creates the Personal, Teller, and Head Banker Buttons -->
