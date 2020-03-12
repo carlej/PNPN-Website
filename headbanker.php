@@ -648,49 +648,55 @@
 			<?php }
 			else if (mysqli_num_rows($resultIn)==1) {
 				$row = mysqli_fetch_row($resultIn);
-				if ($row[5]==NULL) {
-					$namuse = $row[3].' '.$row[4];
+				if ($row[9]=='a' || $row[9]=='b') {
+					if ($row[5]==NULL) {
+						$namuse = $row[3].' '.$row[4];
+					}
+					else
+						$nameuse = $row[5];
+					?>
+					<form method="POST">
+	                 	<fieldset>
+	                 		 <div class = "container">
+								<div class = "d-flex-row">
+									<div calss = "col" id="PermissionChange">
+				                        <p>
+				                            <label style="padding-right: 5em">Name: </label>
+				                            <label> <?php echo $nameuse; ?></label>
+				                        </p>
+				                    </div>
+				                </div>
+				            </div>
+	                    </fieldset>
+	                </form>
+	                <form method="POST">
+	                    <fieldset>
+	                    	<div class = "container">
+								<div class = "d-flex-row">
+									<div calss = "col" id="PermissionChange">
+				                        <p>
+				                            <label style="padding-right: 3em">Permissions: </label>
+				                            <label><?php echo $row[9]; ?></label>
+				                            <input type="submit" name="submit" value="Edit">
+				                        </p>
+				                    </div>
+				                </div>
+				            </div>
+	                    </fieldset>
+	                </form>
+	                <?php
+					 ?>
+					<?php
+					$_SESSION['hold']=$input;
+					$_SESSION['stype']=$method;
+					mysqli_close($con);
+					$_SERVER["REQUEST_METHOD"]=NULL;
 				}
-				else
-					$nameuse = $row[5];
-				?>
-				<form method="POST">
-                 	<fieldset>
-                 		 <div class = "container">
-							<div class = "d-flex-row">
-								<div calss = "col" id="PermissionChange">
-			                        <p>
-			                            <label style="padding-right: 5em">Name: </label>
-			                            <label> <?php echo $nameuse; ?></label>
-			                        </p>
-			                    </div>
-			                </div>
-			            </div>
-                    </fieldset>
-                </form>
-                <form method="POST">
-                    <fieldset>
-                    	<div class = "container">
-							<div class = "d-flex-row">
-								<div calss = "col" id="PermissionChange">
-			                        <p>
-			                            <label style="padding-right: 3em">Permissions: </label>
-			                            <label><?php echo $row[9]; ?></label>
-			                            <input type="submit" name="submit" value="Edit">
-			                        </p>
-			                    </div>
-			                </div>
-			            </div>
-                    </fieldset>
-                </form>
-                <?php
-				 ?>
-				<?php
-				$_SESSION['hold']=$input;
-				$_SESSION['stype']=$method;
-				mysqli_close($con);
-				$_SERVER["REQUEST_METHOD"]=NULL;
-				
+				else{
+					echo '<div class="container" id = "NoneFound">
+								There are no accounts that match that search!
+						</div>';
+				}
 			}
 			else{
 				echo '<div class="container" id = "NoneFound">

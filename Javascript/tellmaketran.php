@@ -20,7 +20,8 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	$tempname = mysqli_real_escape_string($con, $_POST['name']);
 	$string = htmlentities($tempname, null, 'utf-8');
 	$tempname = str_replace("&nbsp;", " ", $string);
-	$name = html_entity_decode($tempname);
+	$tempname2 = str_replace("\\", "", $tempname);
+	$name = html_entity_decode($tempname2);
 	$tellerTemp=$_SESSION['username'];
 	$queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
 	$resultInTeller = mysqli_query($con, $queryInTeller);
