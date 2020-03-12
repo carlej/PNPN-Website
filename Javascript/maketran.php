@@ -12,7 +12,9 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	$Accfrom = mysqli_real_escape_string($con, $temp[0]);
 	$Accfrom = mysqli_real_escape_string($con, $_POST['Accfrom']);
 	$Accto = mysqli_real_escape_string($con, $_POST['Accto']);
-	$trans = mysqli_real_escape_string($con, $_POST['trans']);
+	$transTemp = mysqli_real_escape_string($con, $_POST['trans']);
+	$trans = (int) $transTemp;
+	echo $trans;
 	$notes = $_POST['notes'];
 	$tempname = mysqli_real_escape_string($con, $_POST['name']);
 	$string = htmlentities($tempname, null, 'utf-8');
@@ -22,7 +24,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	//$user=$_SESSION['username'];
 	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
 		//header("Location: transfer.php");
-		header("Location: bank.php");
+		//header("Location: bank.php");
 	}
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
