@@ -246,6 +246,12 @@ padding:0px;
 	margin-left: -20em;
 }
 
+#SwitchButtonsFour {
+	margin-top: 6em;
+	align-content: center;
+	margin-left: -20em;
+}
+
 /*Stylizes the actual buttons*/
 
 	/*Two Buttons*/
@@ -468,6 +474,139 @@ padding:0px;
 	color: grey;
 	text-decoration: none;
 }
+
+	/*Four Buttons*/
+
+.LeftButtonFourUn {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0.4em 0em 0em 0.4em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.LeftButtonFourUn:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.MiddleButtonFourUn {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.MiddleButtonFourUn:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.RightButtonFourUn {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.RightButtonFourUn:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.LeftButtonFourPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0.4em 0em 0em 0.4em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+}
+
+.LeftButtonFourPressed:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.MiddleButtonFourPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+}
+
+.MiddleButtonFourPressed:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.RightButtonFourPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+}
+
+.RightButtonFourPressed:hover {
+	color: grey;
+	text-decoration: none;
+}
+
 
 	/*Buttons when page is shrunk*/
 .MenuButtonUn {
@@ -964,4 +1103,86 @@ li {
 	.DispLeader {
 	margin-left: 1em;
 }
+}
+
+/*Buttons for each department on the volunteering page*/
+
+#SwitchButtonsVolunteerDeptOne {
+	margin-top: 7em;
+	align-content: center;
+	margin-left: -20em;
+}
+
+#SwitchButtonsVolunteerDeptTwo {
+	margin-top: 15em;
+	align-content: center;
+	margin-left: -20em;
+}
+
+.LeftButtonVolunteerDept {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0.4em 0em 0em 0.4em;
+	background: #000000;
+	color: white;
+	width: 6em;
+	height: 3em;
+	text-align: center;
+}
+
+.LeftButtonVolunteerDept:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.MiddleButtonVolunteerDept {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	background: #000000;
+	color: white;
+	width: 6em;
+	height: 3em;
+	text-align: center;
+}
+
+.MiddleButtonVolunteerDept:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.RightButtonVolunteerDept {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: white;
+	width: 6em;
+	height: 3em;
+	text-align: center;
+}
+
+.RightButtonVolunteerDept:hover {
+	color: grey;
+	text-decoration: none;
 }

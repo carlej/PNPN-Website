@@ -33,15 +33,17 @@ $url=NULL;
 			
 
 			<?php if ($url=="/PNPN-Website/volunteercoord.php"):?>
-				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url=="/PNPN-Website/volunteer.php"):?>
-				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="volunteerButton"><a href="volunteerNassau.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php elseif ($url=="/PNPN-Website/volunteerNassau.php"):?>
+				<div class="volunteerButton"><a href="volunteerNassau.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php elseif ($url=="/PNPN-Website/volunteerTortuga.php"):?>
+				<div class="volunteerButton"><a href="volunteerNassau.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url=="/PNPN-Website/chartercoord.php"):?>
-				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="volunteerButton"><a href="volunteerNassau.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url=="/PNPN-Website/charter.php"):?>
-				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>	
+				<div class="volunteerButton"><a href="volunteerNassau.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>	
 			<?php else: ?>
-				<div class="volunteerButton"><a href="volunteer.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
+				<div class="volunteerButton"><a href="volunteerNassau.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
 
 
@@ -111,7 +113,7 @@ $url=NULL;
         			<a class="nav-link" href="bank.php" style="font-family: pirates; color: white" >Bank</a>
       			</li>
       			<li class="nav-item">
-        			<a class="nav-link" href="volunteer.php" style="font-family: pirates; color: white">Volunteering</a>
+        			<a class="nav-link" href="volunteerNassau.php" style="font-family: pirates; color: white">Volunteering</a>
       			</li>
       			<li class="nav-item">
         			<a class="nav-link" href="landgrant.php" style="font-family: pirates; color: white">Land Grants</a>
