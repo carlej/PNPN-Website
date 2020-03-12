@@ -28,13 +28,13 @@
         	$queryShip = "SELECT * FROM ship WHERE ID = '$row[7]'";
 			$resultShip= mysqli_query($con,$queryShip);
 			$rowShip=mysqli_fetch_row($resultShip);
-			$shipName=$rowShip[1];
+			$shipName = str_replace(' ', '&nbsp;', $rowShip[1]);
         }
         if ($row[6]) {//fleet
         	$queryFleet = "SELECT * FROM fleet WHERE ID = '$row[6]'";
 			$resultFleet= mysqli_query($con,$queryFleet);
 			$rowFleet=mysqli_fetch_row($resultFleet);
-			$fleetName=$rowFleet[1];
+			$fleetName = str_replace(' ', '&nbsp;', $rowFleet[1]);
         }
         //echo $_POST['submit'];
         //echo $_POST['Edit'];
@@ -57,13 +57,13 @@
                                         	<label style="padding-right: 6.0em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Ship or Household: </label>
                                             <div class = "col-sm" style="margin-bottom: 1.5em">
                                             	<?php if($shipName=='&nbsp'):?>
-                                            		<input type="text" name="name" required>
+                                            		<input type="text" name="name">
                                             	<?php else: ?>
-                                                	<input type="text" name="name" value=<?php echo $shipName;?> required>
+                                                	<input type="text" name="name" value=<?php echo $shipName;?>>
                                                 <?php endif; ?>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Ship">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='GrantAccess.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='grantaccess.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -107,13 +107,13 @@
                                         	<label style="padding-right: 6.3em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Fleet or Alliance: </label>
                                             <div class="col-sm" style="margin-bottom: 1.5em">
                                                 <?php if($fleetName=='&nbsp'):?>
-                                            		<input type="text" name="name" required>
+                                            		<input type="text" name="name">
                                             	<?php else: ?>
-                                                	<input type="text" name="name" value=<?php echo $fleetName;?> required>
+                                                	<input type="text" name="name" value=<?php echo $fleetName;?>>
                                                 <?php endif; ?>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Fleet">
-                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='GrantAccess.php';">
+                                                <input type="submit" name="submit" value="Cancel" onclick="location.href='grantaccess.php';">
                                             </div>
                                         </p>
                                     </div>
@@ -130,40 +130,48 @@
                             		$queryShipNest = "SELECT * FROM ship WHERE Name LIKE '%$input%'";
                             		$resultShipNest = mysqli_query($con, $queryShipNest);
                             		if (mysqli_num_rows($resultShipNest)>1) {
-                            			$array=NULL;
-										$array = $resultShipNest->fetch_all(MYSQLI_NUM);
-										$_SESSION['multsearch']=$array;?>
-                            			<form method="POST" id="SearchBy2">
-											<fieldset>
-												<label>Select: </label><select name="name">
-												<?php foreach ($_SESSION['multsearch'] as $key => $value) {//this will desplay the name of each captain as each should be different
-												//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-													$queryIn = "SELECT * FROM users WHERE Username LIKE '%$value[2]%'";
-													$resultIn = mysqli_query($con, $queryIn);
-													$row = mysqli_fetch_row($resultIn);
-													if ($row[5]!=NULL) {
-														$nameUnedit=$row[5];
-													}
-													else{
-														$nameUnedit=$row[3].' '.$row[4];
-													}
-													$capname=str_replace(' ', '&nbsp;', $nameUnedit);
-													echo '<option value="'.$value[1].'">"Captain: " '.$capname.'</option>';
-													} ?>
-												</select>
-												<label for="name">   </label>
-												<input type="submit" name="submit" value="Confirm">
-                                    			<input type="hidden" name="delim" value="Ship">
-												<input type="submit" name="submit" value="Clear" />
-											</fieldset>
-										</form><?php
-                            		}
+                                        if ($input==NULL) {
+                                            $update = "UPDATE users SET Ship = NULL WHERE `$type` LIKE '%$ID%'";
+                                            $temp=mysqli_query($con, $update);
+                                            $_SESSION['multsearch']=array('1');
+                                            header("Location: grantaccess.php");
+                                        }
+                                        else{
+                                			$array=NULL;
+    										$array = $resultShipNest->fetch_all(MYSQLI_NUM);
+    										$_SESSION['multsearch']=$array;?>
+                                			<form method="POST" id="SearchBy2">
+    											<fieldset>
+    												<label>Select: </label><select name="name">
+    												<?php foreach ($_SESSION['multsearch'] as $key => $value) {//this will desplay the name of each captain as each should be different
+    												//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+    													$queryIn = "SELECT * FROM users WHERE Username LIKE '%$value[2]%'";
+    													$resultIn = mysqli_query($con, $queryIn);
+    													$row = mysqli_fetch_row($resultIn);
+    													if ($row[5]!=NULL) {
+    														$nameUnedit=$row[5];
+    													}
+    													else{
+    														$nameUnedit=$row[3].' '.$row[4];
+    													}
+    													$capname=str_replace(' ', '&nbsp;', $nameUnedit);
+    													echo '<option value="'.$value[1].'">"Captain: " '.$capname.'</option>';
+    													} ?>
+    												</select>
+    												<label for="name">   </label>
+    												<input type="submit" name="submit" value="Confirm">
+                                        			<input type="hidden" name="delim" value="Ship">
+    												<input type="submit" name="submit" value="Clear" />
+    											</fieldset>
+    										</form><?php
+                                		}
+                                    }
                             		else if(mysqli_num_rows($resultShipNest)==1){
                             			$IDnum=mysqli_fetch_row($resultShipNest);
                             			$update = "UPDATE users SET Ship = '$IDnum[0]' WHERE `$type` LIKE '%$ID%'";
                                     	$temp=mysqli_query($con, $update);
                                     	$_SESSION['multsearch']=array('1');
-                                    	header("Location: GrantAccess.php");
+                                    	header("Location: grantaccess.php");
                             		}
                             		else {
                             			?>
@@ -197,48 +205,55 @@
                                             </fieldset>
                                         </form><?php
                             		}
-                                	
-							}
+                                }
                                 else if ($_POST['delim']=='Fleet') {
                                 	//echo $_POST['name'];
                             		$input=mysqli_real_escape_string($con,$_POST['name']);
                             		$queryFleetNest = "SELECT * FROM fleet WHERE Name LIKE '%$input%'";
                             		$resultFleetNest = mysqli_query($con, $queryFleetNest);
                             		if (mysqli_num_rows($resultFleetNest)>1) {
-                            			$array=NULL;
-										$array = $resultFleetNest->fetch_all(MYSQLI_NUM);
-										$_SESSION['multsearch']=$array;?>
-                            			<form method="POST" id="SearchBy2">
-											<fieldset>
-												<label>Select: </label><select name="name">
-												<?php foreach ($_SESSION['multsearch'] as $key => $value) {//this will desplay the name of each captain as each should be different
-												//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-													$queryIn = "SELECT * FROM users WHERE Username LIKE '%$value[2]%'";
-													$resultIn = mysqli_query($con, $queryIn);
-													$row = mysqli_fetch_row($resultIn);
-													if ($row[5]!=NULL) {
-														$nameUnedit=$row[5];
-													}
-													else{
-														$nameUnedit=$row[3].' '.$row[4];
-													}
-													$capname=str_replace(' ', '&nbsp;', $nameUnedit);
-													echo '<option value="'.$value[1].'">"Captain: " '.$capname.'</option>';
-													} ?>
-												</select>
-												<label for="name">   </label>
-												<input type="submit" name="submit" value="Confirm">
-                                    			<input type="hidden" name="delim" value="Fleet">
-												<input type="submit" name="submit" value="Clear" />
-											</fieldset>
-										</form><?php
-                            		}
+                                        if ($input==NULL) {
+                                            $update = "UPDATE users SET Ship = NULL WHERE `$type` LIKE '%$ID%'";
+                                            $temp=mysqli_query($con, $update);
+                                            $_SESSION['multsearch']=array('1');
+                                            header("Location: grantaccess.php");
+                                        }
+                                        else{
+                                			$array=NULL;
+    										$array = $resultFleetNest->fetch_all(MYSQLI_NUM);
+    										$_SESSION['multsearch']=$array;?>
+                                			<form method="POST" id="SearchBy2">
+    											<fieldset>
+    												<label>Select: </label><select name="name">
+    												<?php foreach ($_SESSION['multsearch'] as $key => $value) {//this will desplay the name of each captain as each should be different
+    												//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+    													$queryIn = "SELECT * FROM users WHERE Username LIKE '%$value[2]%'";
+    													$resultIn = mysqli_query($con, $queryIn);
+    													$row = mysqli_fetch_row($resultIn);
+    													if ($row[5]!=NULL) {
+    														$nameUnedit=$row[5];
+    													}
+    													else{
+    														$nameUnedit=$row[3].' '.$row[4];
+    													}
+    													$capname=str_replace(' ', '&nbsp;', $nameUnedit);
+    													echo '<option value="'.$value[1].'">"Captain: " '.$capname.'</option>';
+    													} ?>
+    												</select>
+    												<label for="name">   </label>
+    												<input type="submit" name="submit" value="Confirm">
+                                        			<input type="hidden" name="delim" value="Fleet">
+    												<input type="submit" name="submit" value="Clear" />
+    											</fieldset>
+    										</form><?php
+                                		}
+                                    }
                             		else if(mysqli_num_rows($resultFleetNest)==1){
                             			$IDnum=mysqli_fetch_row($resultFleetNest);
                             			$update = "UPDATE users SET Fleet = '$IDnum[0]' WHERE `$type` LIKE '%$ID%'";
                                     	$temp=mysqli_query($con, $update);
                                     	$_SESSION['multsearch']=array('1');
-                                    	header("Location: GrantAccess.php");
+                                    	header("Location: grantaccess.php");
                             		}
                             		else {
                                         ?>
@@ -271,8 +286,7 @@
                                                 </div>
                                             </fieldset>
                                         </form><?php
-                            		}
-                                	
+                            		}   	
 							}
 
                         ?>

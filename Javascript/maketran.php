@@ -17,7 +17,8 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$tempname = mysqli_real_escape_string($con, $_POST['name']);
 	$string = htmlentities($tempname, null, 'utf-8');
 	$tempname = str_replace("&nbsp;", " ", $string);
-	$name = html_entity_decode($tempname);
+	$tempname2 = str_replace("\\", "", $tempname);
+	$name = html_entity_decode($tempname2);
 	//$user=$_SESSION['username'];
 	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
 		//header("Location: transfer.php");

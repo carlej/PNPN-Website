@@ -100,10 +100,13 @@
                     </li><?php
                 }
                 else{
-                    $user = $_POST['leader'];
+                    $row = mysqli_fetch_row($resultUser);
+                    $user = $row[0];
                     $queryUpdate = "UPDATE ship SET Captain = '$user' WHERE ID = '$input'";
                     echo $queryUpdate;
                     $resultUpdate = mysqli_query($con, $queryUpdate);
+                    $queryUpdateUser = "UPDATE users SET Ship = '$input', shipC = '$input' WHERE Username = '$user'";
+                    $resultUpdateUser = mysqli_query($con, $queryUpdateUser);
                     //echo'<script type="text/javascript">alert("Owner changed");</script>';
                     header('Location: /PNPN-Website/teller.php');
                 }
