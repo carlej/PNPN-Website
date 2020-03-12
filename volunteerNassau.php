@@ -18,7 +18,7 @@
 		?>
 
 		<title>Volunteering</title>
-		<?php include("Views\Partials/header.php");?>
+		<?php include("Views/Partials/header.php");?>
 
 		<!-- Creates the Personal, Coordinator, and Charter Buttons and who has access to them-->
 		<div class = "container-flow" id = "SwitchButtonsFour">
@@ -136,12 +136,12 @@
 	</head>
 	<body>
 		<!--Creates the tabs for all of the volunteering departments-->
-		<div class = "container-flow">
+		<div class = "container-flow" id = "SwitchButtonsVolunteerDept">
 			<div class="d-none d-xl-block">
-				<div class = "d-flex justify-content-center">
-					<div class = "row" id = "SwitchButtonsVolunteerDeptOne">
+				<div class = "d-flex">
+					<div class = "row" id="DeptRowOne">
 						<div class = "col" style="padding-right: 0.05em;">
-							<a href="#" class="LeftButtonVolunteerDept">Set-Up</a>
+							<a href="#" class="LeftButtonTopVolunteerDept">Set-Up</a>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 							<a href="#" class="MiddleButtonVolunteerDept">Gate</a>
@@ -158,13 +158,15 @@
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 							<a href="#" class="MiddleButtonVolunteerDept">Volunteer Check-In</a>
 						</div>
-						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-							<a href="#" class="RightButtonVolunteerDept">Scuttlebutt</a>
+						<div class = "col" style = "padding-left: 0.05em;">
+							<a href="#" class="RightButtonTopVolunteerDept">Scuttlebutt</a>
 						</div>
 					</div>
-					<div class = "row" id = "SwitchButtonsVolunteerDeptTwo">
+				</div>
+				<div class="d-flex">
+					<div class = "row" id="DeptRowTwo">
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-							<a href="#" class="LeftButtonVolunteerDept">Gold Key</a>
+							<a href="#" class="LeftButtonBottomVolunteerDept">Gold Key</a>
 						</div>
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 							<a href="#" class="MiddleButtonVolunteerDept">Sanitation</a>
@@ -181,8 +183,8 @@
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 							<a href="#" class="MiddleButtonVolunteerDept">Monkey Island</a>
 						</div>
-						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-							<a href="#" class="RightButtonVolunteerDept">Tear Down</a>
+						<div class = "col" style = "padding-left: 0.05em;">
+							<a href="#" class="RightButtonBottomVolunteerDept">Tear Down</a>
 						</div>
 					</div>
 				</div>
