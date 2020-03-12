@@ -210,7 +210,7 @@
 				<div class = "d-flex justify-content-left" style="margin-left: -2.2em;">
 				<div class = "row">
 				<div class = "col-12">
-					<ul id="fleetHistShow" style="display: none; padding-top: 0em; padding-bottom: 1em">
+					<ul id="fleetHistShow" style="display: none; padding-top: 1em;">
 						<?php foreach ($revfleet as $key => $value): ?>
 							<li><a><?php
 							if (count($value)==6) {//transfer display from teller
