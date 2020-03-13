@@ -82,5 +82,16 @@
 				<input type="submit" name="delim" value="Langrant">
 			</fieldset>
 		</form>
+		<?php
+		if ($_SERVER["REQUEST_METHOD"] == "POST"){
+			if ($_POST['delim']=='Charter') {
+				$queryJob = "SELECT * FROM charter";
+				$resultJob= mysqli_query($con,$queryJob);
+			}
+			else if ($_POST['delim']=="Langrant") {
+				# code...
+			}
+		}
+		?>
 	</body>
 </html>

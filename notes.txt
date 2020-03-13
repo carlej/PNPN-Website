@@ -12,6 +12,6 @@ fleet and ship alters
 
 ALTER TABLE `fleet` ADD `hist` JSON NULL AFTER `Accounts`;
 ALTER TABLE `ship` ADD `hist` JSON NULL AFTER `Accounts`;
-
+ALTER TABLE `ship` ADD `landgrant` BOOLEAN NOT NULL DEFAULT FALSE AFTER `hist`;
 
 add charter table
