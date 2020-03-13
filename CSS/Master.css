@@ -20,7 +20,7 @@ padding:0px;
 		padding:0px;
 		background: 
 			url(styles/Background_Plain.png);
-		background-size: 100%
+		background-size: 100%;
 	}
 }
 
@@ -30,7 +30,7 @@ padding:0px;
 	padding:0px;
 	background: 
 		url(styles/Background_Plain.png);
-		background-size: 100%
+		background-size: 100%;
 }
 
 .AddFleetPage {
@@ -38,7 +38,7 @@ padding:0px;
 	padding:0px;
 	background: 
 		url(styles/Background_Plain.png);
-		background-size: 100%
+		background-size: 100%;
 }
 
 .AddShipPage {
@@ -46,7 +46,7 @@ padding:0px;
 	padding:0px;
 	background: 
 		url(styles/Background_Plain.png);
-		background-size: 100%
+		background-size: 100%;
 }
 
 .LoginPage {
@@ -54,7 +54,7 @@ padding:0px;
 	padding:0px;
 	background: 
 		url(styles/Background_Plain.png);
-		background-size: 100%
+		background-size: 100%;
 }
 
 .RegistrationPage {
@@ -62,7 +62,7 @@ padding:0px;
 	padding:0px;
 	background: 
 		url(styles/Background_Plain.png);
-		background-size: 100%
+		background-size: 100%;
 }
 
 .GrantAccessPage {
@@ -70,15 +70,15 @@ padding:0px;
 	padding:0px;
 	background: 
 		url(styles/Background_Plain.png);
-		background-size: 100%
+		background-size: 100%;
 }
 
-.EditShipFleetPage {
+#EditShipFleetPage {
 	margin:0px;
 	padding:0px;
 	background: 
 		url(styles/Background_Plain.png);
-		background-size: 100%
+		background-size: 100%;
 }
 
 .Header {height:100px;}
@@ -1108,19 +1108,14 @@ li {
 /*Buttons for each department on the volunteering page*/
 
 #SwitchButtonsVolunteerDept {
-	margin-top: 7em;
-	margin-left: 5em;
 	align-content: center;
 }
 
-#DeptRowOne {
-	margin-left: 0em;
+#DeptRowTwo {
+	margin-top: 0.1em;
+	margin-left: -0.05em;
 }
 
-#DeptRowTwo {
-	margin-top: 0.05em;
-	margin-left: 0.9em;
-}
 
 .LeftButtonTopVolunteerDept {
 	display: flex;
@@ -1135,7 +1130,7 @@ li {
 	border-radius: 0.4em 0em 0em 0em;
 	background: #000000;
 	color: white;
-	width: 6em;
+	width: 5.5em;
 	height: 3em;
 }
 
@@ -1157,7 +1152,7 @@ li {
 	border-radius: 0em 0em 0em 0.4em;
 	background: #000000;
 	color: white;
-	width: 6em;
+	width: 5.5em;
 	height: 3em;
 }
 
@@ -1178,7 +1173,7 @@ li {
 	line-height: 1.4em;
 	background: #000000;
 	color: white;
-	width: 6em;
+	width: 5.5em;
 	height: 3em;
 	text-align: center;
 }
@@ -1201,7 +1196,7 @@ li {
 	border-radius: 0em 0.4em 0em 0em;
 	background: #000000;
 	color: white;
-	width: 6em;
+	width: 5.5em;
 	height: 3em;
 }
 
@@ -1223,7 +1218,7 @@ li {
 	border-radius: 0em 0em 0.4em 0em;
 	background: #000000;
 	color: white;
-	width: 6em;
+	width: 5.5em;
 	height: 3em;
 }
 
