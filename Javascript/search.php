@@ -29,7 +29,7 @@
 					<?php include "Views/Partials/showAccs.php"; ?>
 				</div>
 				<div class = "row">
-					<?php include "Views/Partials/showhist.php"; ?>
+					<?php //include "Views/Partials/showhist.php"; ?>
 				</div>
 		</div>
 
@@ -95,7 +95,7 @@
 						<?php include "Views/Partials/showAccs.php"; ?>
 					</div>
 					<div class = "row">
-						<?php include "Views/Partials/showhist.php"; ?>
+						<?php //include "Views/Partials/showhist.php"; ?>
 					</div>
 			</div>
 			<?php
@@ -133,7 +133,7 @@
 					<?php include "Views/Partials/showAccs.php"; ?>
 				</div>
 				<div class = "row">
-					<?php include "Views/Partials/showhist.php"; ?>
+					<?php //include "Views/Partials/showhist.php"; ?>
 				</div>
 		</div>
 		<?php
@@ -200,7 +200,7 @@
 						<?php include "Views/Partials/showAccs.php"; ?>
 					</div>
 					<div class = "row">
-						<?php include "Views/Partials/showhist.php"; ?>
+						<?php //include "Views/Partials/showhist.php"; ?>
 					</div>
 			</div>
 			<?php
