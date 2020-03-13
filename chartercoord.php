@@ -9,6 +9,11 @@
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			$username = $_SESSION['username'];
 		}
+		include 'Javascript/Connections/convar.php';
+		$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+		if (!$con) {
+			die('Could not connect: ' . mysql_error());
+		}
 		?>
 
 		<title>Charter</title>
@@ -85,8 +90,12 @@
 		<?php
 		if ($_SERVER["REQUEST_METHOD"] == "POST"){
 			if ($_POST['delim']=='Charter') {
-				$queryJob = "SELECT * FROM charter";
-				$resultJob= mysqli_query($con,$queryJob);
+				$queryCharter = "SELECT * FROM charter";
+				$resultCharter = mysqli_query($con,$queryCharter);
+				$array = $resultCharter->fetch_all(MYSQLI_NUM);
+				foreach ($array as $key => $value) {
+					echo $value[0];
+				}
 			}
 			else if ($_POST['delim']=="Langrant") {
 				# code...
