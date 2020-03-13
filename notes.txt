@@ -12,3 +12,6 @@ fleet and ship alters
 
 ALTER TABLE `fleet` ADD `hist` JSON NULL AFTER `Accounts`;
 ALTER TABLE `ship` ADD `hist` JSON NULL AFTER `Accounts`;
+
+
+add charter table

@@ -66,6 +66,11 @@
 		</div>
 	</head>
 	<body>
-
+		<form method="POST">
+			<fieldset>
+				<input type="submit" name="delim" value="Charter">
+				<input type="submit" name="delim" value="Langrant">
+			</fieldset>
+		</form>
 	</body>
 </html>
