@@ -6,3 +6,9 @@ ALTER TABLE `jobs` ADD `user` VARCHAR(256) NOT NULL AFTER `length`;
 ALTER TABLE `jobs` ADD `ID` INT(6) UNSIGNED NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`ID`);
 
 ALTER TABLE `jobs` CHANGE `user` `user` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;
+
+
+fleet and ship alters
+
+ALTER TABLE `fleet` ADD `hist` JSON NULL AFTER `Accounts`;
+ALTER TABLE `ship` ADD `hist` JSON NULL AFTER `Accounts`;

@@ -45,7 +45,7 @@
                                 </p>
                                 <p>
                                     <label for="pirateName" style="font-family: pirates">Pirate Name:</label>
-                                    <input type="text" name="pirateName" id="pirateName" style="width: 12em;">
+                                    <input type="text" name="pirateName" id="pirateName" minlength="3" style="width: 12em;">
                                 </p>
                                 <p>
                                     <label for="shipName" style="font-family: pirates">Ship/Household Name:</label>

@@ -17,7 +17,7 @@
         ?>
 
 
-        <title>Edit ship/fleet</title>
+        <title>Edit Ship/Fleet</title>
 
     </head>
 
@@ -50,7 +50,7 @@
                                 <option value="Lname">Last Name</option>
                                 <option value="Username">Email</option>
                             </select>
-                            <input type="text" name="leader">
+                            <input type="text" name="leader" minlength="3">
                             <input type="submit" name="submit" value="Submit">
                             <input type="button" value="Cancel" onclick="location.href='teller.php';">
                             <input type="hidden" name="tansfer" value="1">
@@ -90,7 +90,7 @@
                                     <option value="Lname">Last Name</option>
                                     <option value="Username">Email</option>
                                 </select>
-                                <input type="text" name="leader">
+                                <input type="text" name="leader" minlength="3">
                                 <input type="hidden" name="tansfer" value="1">
                                 <input type="submit" name="submit" value="Submit">
                                 <input type="button" value="Cancel" onclick="location.href='teller.php';">
@@ -102,9 +102,23 @@
                 else{
                     $row = mysqli_fetch_row($resultUser);
                     $user = $row[0];
-                    $queryUpdate = "UPDATE ship SET Captain = '$user' WHERE ID = '$input'";
-                    echo $queryUpdate;
-                    $resultUpdate = mysqli_query($con, $queryUpdate);
+                    $timeStamp=date('Y/m/d H:i:s');
+                    $tellerTemp=$_SESSION['username'];
+                    $queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
+                    $resultInTeller = mysqli_query($con, $queryInTeller);
+                    $rowTeller=mysqli_fetch_row($resultInTeller);
+                    $space=' ';
+                    $teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
+                    $queryShip="SELECT * FROM ship WHERE ID = '$input'";
+                    $resultShip= mysqli_query($con, $queryShip);
+                    $rowShip=mysqli_fetch_row($resultShip);
+                    $parsed_jsonShip=json_decode($rowShip[5],true);
+                    $hist=[$teller,$rowShip[2]];
+                    $parsed_jsonShip[$timeStamp]=$hist;
+                    $enco_jsonShip=json_encode($parsed_jsonShip);
+                    $NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonShip);
+                    $queryShipUpdate="UPDATE ship SET hist = '$NOSPECIALCHARACERS', Captain = '$user' WHERE ID = '$input'";
+                    $resultShipUpdate=mysqli_query($con,$queryShipUpdate);
                     $queryUpdateUser = "UPDATE users SET Ship = '$input', shipC = '$input' WHERE Username = '$user'";
                     $resultUpdateUser = mysqli_query($con, $queryUpdateUser);
                     //echo'<script type="text/javascript">alert("Owner changed");</script>';
@@ -138,7 +152,7 @@
                                 <option value="Lname">Last Name</option>
                                 <option value="Username">Email</option>
                             </select>
-                            <input type="text" name="leader">
+                            <input type="text" name="leader" minlength="3">
                             <input type="submit" name="submit" value="Submit">
                             <input type="button" value="Cancel" onclick="location.href='teller.php';">
                             <input type="hidden" name="tansfer" value="1">
@@ -175,7 +189,7 @@
                                     <option value="Lname">Last Name</option>
                                     <option value="Username">Email</option>
                                 </select>
-                                <input type="text" name="leader">
+                                <input type="text" name="leader" minlength="3">
                                 <input type="hidden" name="tansfer" value="1">
                                 <input type="submit" name="submit" value="Submit">
                                 <input type="button" value="Cancel" onclick="location.href='teller.php';">
@@ -185,10 +199,28 @@
                     </li><?php
                 }
                 else{
-                    $user = $_POST['leader'];
-                    $queryUpdate = "UPDATE fleet SET Admiral = '$user' WHERE ID = '$input'";
-                    echo $queryUpdate;
-                    $resultUpdate = mysqli_query($con, $queryUpdate);
+                    $row = mysqli_fetch_row($resultUser);
+                    $user = $row[0];
+                    $timeStamp=date('Y/m/d H:i:s');
+                    $tellerTemp=$_SESSION['username'];
+                    $queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
+                    $resultInTeller = mysqli_query($con, $queryInTeller);
+                    $rowTeller=mysqli_fetch_row($resultInTeller);
+                    $space=' ';
+                    $teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
+                    $queryFleet="SELECT * FROM fleet WHERE ID = '$input'";
+                    $resultFleet= mysqli_query($con, $queryFleet);
+                    $rowFleet=mysqli_fetch_row($resultFleet);
+                    $parsed_jsonFleet=json_decode($rowFleet[5],true);
+                    $hist=[$teller,$rowFleet[2]];
+                    $parsed_jsonFleet[$timeStamp]=$hist;
+                    $enco_jsonFleet=json_encode($parsed_jsonFleet);
+                    $NOSPECIALCHARACERS = mysqli_real_escape_string($con, $enco_jsonFleet);
+                    $queryFleetUpdate="UPDATE fleet SET hist = '$NOSPECIALCHARACERS', Admiral = '$user' WHERE ID = '$input'";
+                    echo $queryFleetUpdate;
+                    $resultFleetUpdate=mysqli_query($con,$queryFleetUpdate);
+                    $queryUpdateUser = "UPDATE users SET Fleet = '$input', fleetC = '$input' WHERE Username = '$user'";
+                    $resultUpdateUser = mysqli_query($con, $queryUpdateUser);
                     //echo'<script type="text/javascript">alert("Owner changed");</script>';
                     header('Location: /PNPN-Website/teller.php');
                 }

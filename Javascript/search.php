@@ -228,9 +228,17 @@
 							<div class = "SSearch">
 							<?php echo '<label>Search by: </label><select name="input">';
 							//echo '<form method="post" id = "select">';
-							foreach ($array as $key => $value) {
-							//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-							echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
+							if ($method!="Pname") {
+								foreach ($array as $key => $value) {
+								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+								echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
+								}
+							}
+							else{
+								foreach ($array as $key => $value) {
+								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+								echo '<option value="'.$value[0].'">'.$value[5].'</option>';
+								}
 							}
 							//echo '</form>';
 							$input2 = mysqli_real_escape_string($con, $_POST['input']);
