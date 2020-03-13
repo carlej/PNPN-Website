@@ -72,10 +72,18 @@
 							<label>Select: </label>
 								<select name="input">';
 									<?php
-									foreach ($_SESSION['multsearch'] as $key => $value) {
-										//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-										echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
-									}
+									if ($_SESSION['nstype']!="Pname") {
+								foreach ($_SESSION['multsearch'] as $key => $value) {
+								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+								echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
+								}
+							}
+							else{
+								foreach ($_SESSION['multsearch'] as $key => $value) {
+								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+								echo '<option value="'.$value[0].'">'.$value[5].'</option>';
+								}
+							}
 									//echo '</form>';
 									$input2 = mysqli_real_escape_string($con, $_POST['input']);
 									echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="new"><input type="submit" name="submit" value="Clear" /></fieldset></form>'; ?>
@@ -94,7 +102,7 @@
 											<option value="fleetID" style="display:none;">fleetID</option>
 											<option value="Fleet">Fleet/Alliance</option>
 										</select>
-										<input type="text" required name="input" id="input" style="width: 95%; font-family: arial; margin-bottom: 0.3em">
+										<input type="search" required name="input" id="input" style="width: 95%; margin-bottom: 0.3em" minlength="3">
 										<input type="submit" name= "submit" value="Search" class="submit">
 										<input type="hidden" name="new" value="new" class="submit">
 										</p>

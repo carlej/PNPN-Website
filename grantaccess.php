@@ -213,7 +213,7 @@
                             		$resultFleetNest = mysqli_query($con, $queryFleetNest);
                             		if (mysqli_num_rows($resultFleetNest)>1) {
                                         if ($input==NULL) {
-                                            $update = "UPDATE users SET Ship = NULL WHERE `$type` LIKE '%$ID%'";
+                                            $update = "UPDATE users SET Fleet = NULL WHERE `$type` LIKE '%$ID%'";
                                             $temp=mysqli_query($con, $update);
                                             $_SESSION['multsearch']=array('1');
                                             header("Location: grantaccess.php");

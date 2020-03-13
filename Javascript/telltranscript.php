@@ -79,9 +79,18 @@
 							<fieldset>
 								<label style="margin-bottom: 0em;">Select: </label>
 								<select name="ninput" style="width: 80%; margin-bottom: 0.5em; font-size: 1.1em">;
-									<?php foreach ($_SESSION['multsearch'] as $key => $value) {
-									//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-									echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
+									<?php 
+									if ($_SESSION['nstype']!="Pname") {
+										foreach ($_SESSION['multsearch'] as $key => $value) {
+										//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+										echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
+										}
+									}
+									else{
+										foreach ($_SESSION['multsearch'] as $key => $value) {
+										//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+										echo '<option value="'.$value[0].'">'.$value[5].'</option>';
+										}
 									}
 									//echo '</form>';
 									$input2 = mysqli_real_escape_string($con, $_POST['ninput']);
@@ -113,7 +122,7 @@
 										</select>
 										</div>
 										<div class = "col-sm">
-										<input type="text" required name="ninput" id="ninput" style="font-family: arial; margin-bottom: 0.3em">
+										<input type="search" required name="ninput" id="ninput" style=" margin-bottom: 0.3em" minlength="3">
 										<input type="submit" name= "submit" value="Search" class="submit">
 										</div>
 										<input type="hidden" name="new2" value="new2" class="submit">

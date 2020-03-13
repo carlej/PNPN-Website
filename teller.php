@@ -154,8 +154,8 @@
 								<option value="Fleet">Fleet/Alliance</option>
 							</select>
 						</div>
-						<div class = "col" style="margin-bottom: 0.5em; font-family: ariel">
-							<input type="search" class="required" name="input" id= "SearchBox">
+						<div class = "col" style="margin-bottom: 0.5em;">
+							<input type="search" class="required" name="input" id= "SearchBox" minlength="3">
 						</div>
 						<div class = "col">
 							<input type="submit" name= "submit" value="Search" class="submit">
