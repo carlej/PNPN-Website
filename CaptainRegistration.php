@@ -47,7 +47,7 @@
                     </p>
                     <p>
                         <label for="pirateName" style="font-family: pirates">Pirate Name:</label>
-                        <input type="text" name="pirateName" id="pirateName" style="width: 12em;">
+                        <input type="text" name="pirateName" id="pirateName" minlength="3" style="width: 12em;">
                     </p>
                     <p style="font-family: pirates; font-size: 1.2em;"> If you are NOT a Captain or Head of House DO NOT input a Ship/Household Name!! </p>
                     <p>

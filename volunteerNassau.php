@@ -28,27 +28,32 @@
 		mysqli_close($con);
 		?>
 
-		<title>Volunteering</title>
+		<title>Volunteering Port Nassau</title>
 		<?php include("Views/Partials/header.php");?>
 
 		<!-- Creates the Personal, Coordinator, and Charter Buttons and who has access to them-->
-		<div class = "container-flow" id = "SwitchButtonsThree">
+		<div class = "container-flow" id = "SwitchButtonsFour">
 			<div class="d-none d-lg-block">
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
-				<div class = "col" style="padding-right: 0.05em;">
+				<div class = "col" style="padding-right: 0.05em">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteer.php" class="LeftButtonThreePressed">Personal</a>
+						<a href="volunteerNassau.php" class="LeftButtonFourPressed">Port Nassau</a>
+					<?php endif;?>
+				</div>
+				<div class = "col" style="padding-left: 0.05em; padding-right: 0.05em">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="volunteerTortuga.php" class="MiddleButtonFourUn">Tortuga Nights</a>
 					<?php endif;?>
 				</div>
 				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-					<a href="volunteercoord.php" class="MiddleButtonThreeUn">Coordinator</a>
+					<a href="volunteercoord.php" class="MiddleButtonFourUn">Coordinator</a>
 					<?php endif;?>
 				</div>
 				<div class="col" style="padding-left: 0.05em" >
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="chartercoord.php" class="RightButtonThreeUn">Charter/Land Grant</a>
+						<a href="chartercoord.php" class="RightButtonFourUn">Charter/Land Grant</a>
 					<?php endif;?>
 				</div>
 				</div>
@@ -61,17 +66,22 @@
 			<div class="d-lg-none">
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
-				<div class = "col-lg">
+				<div class = "col-xl">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteer.php" class="MenuButtonPressed">Personal</a>
+						<a href="volunteerNassau.php" class="MenuButtonPressed">Port Nassau</a>
 					<?php endif;?>
 				</div>
-				<div class = "col-lg" style = "padding-left: 0.05em;">
+				<div class = "col-xl">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="volunteerTortuga.php" class="MenuButtonUn">Tortuga Nights</a>
+					<?php endif;?>
+				</div>
+				<div class = "col-xl">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
 					<a href="volunteercoord.php" class="MenuButtonUn">Coordinator</a>
 					<?php endif;?>
 				</div>
-				<div class="col-lg" style="padding-right: 0.05em" >
+				<div class="col-xl">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
 						<a href="chartercoord.php" class="MenuButtonUn">Charter/Land Grant</a>
 					<?php endif;?>
@@ -82,18 +92,23 @@
 		</div>
 
 		<!-- Creates the Personal and Charter Buttons for regular users-->
-		<div class = "container-flow" id = "SwitchButtonsTwo">
-			<div class="d-none d-lg-block">
+		<div class = "container-flow" id = "SwitchButtonsThree">
+			<div class="d-none d-xl-block">
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 				<div class = "col" style="padding-right: 0.05em;">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
-						<a href="volunteer.php" class="LeftButtonTwoPressed">Personal</a>
+						<a href="volunteerNassau.php" class="LeftButtonThreePressed">Port Nassau</a>
+					<?php endif;?>
+				</div>
+				<div class = "col" style="padding-right: 0.05em; padding-left: 0.05em">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
+						<a href="volunteerTortuga.php" class="MiddleButtonThreeUn">Tortuga Nights</a>
 					<?php endif;?>
 				</div>
 				<div class="col" style="padding-left: 0.05em" >
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
-						<a href="charter.php" class="RightButtonTwoUn">Charter/Land Grant</a>
+						<a href="charter.php" class="RightButtonThreeUn">Charter/Land Grants</a>
 					<?php endif;?>
 				</div>
 				</div>
@@ -103,17 +118,22 @@
 		
 		<!-- Code for the Personal and Charter Buttons once the page is shrunk-->
 		<div class = "container" id = "SwitchButtonsMenuTwoThree">
-			<div class="d-lg-none">
+			<div class="d-xl-none">
 			<div class = "d-flex justify-content-center">
-				<div class = "row">
+				<div class = "row" id ="ButtonsRow">
 				<div class = "col-lg">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
-						<a href="volunteer.php" class="MenuButtonPressed">Personal</a>
+						<a href="volunteerNassau.php" class="MenuButtonPressed">Port Nassau</a>
+					<?php endif;?>
+				</div>
+				<div class = "col-lg">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
+						<a href="volunteerTortuga.php" class="MenuButtonUn">Tortuga Nights</a>
 					<?php endif;?>
 				</div>
 				<div class="col-lg" style="padding-right: 0.05em" >
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
-						<a href="charter.php" class="MenuButtonUn">Charter/Land Grant</a>
+						<a href="charter.php" class="MenuButtonUn">Charter/Land Grants</a>
 					<?php endif;?>
 				</div>
 				</div>
@@ -127,6 +147,65 @@
 	</head>
 	<body>
 
+		<!--Creates the tabs for all of the volunteering departments-->
+		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+		<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: 8em;">
+			<div class="d-none d-xl-block">
+				<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
+					<div class = "row" id="DeptRowOne">
+						<div class = "col" style="padding-right: 0.05em;">
+							<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept" value="Set-Up">
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Gate"></input>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Parking"></input>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Constab"></input>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Medic"></input>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Volunteer Check-In" style="white-space: normal;"></input>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em;">
+							<input type="submit" name= "submit" class="RightButtonTopVolunteerDept" value="Scuttlebutt"></input>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
+					<div class = "row" id="DeptRowTwo">
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept" value="Gold Key"></input>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Sanitation"></input>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Hearld"></input>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Bank"></input>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Lost Cove"></input>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+							<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Monkey Island" style="white-space: normal;"></input>
+						</div>
+						<div class = "col" style = "padding-left: 0.05em;">
+							<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept" value="Tear Down"></input>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php endif;?>
+		
+		<!--Creates coming soon message for non c and z users-->
 		<div class = "container-flow">
 			<div class = "d-flex justify-content-center">
 				<div class="row" id="ComingSoon">
@@ -135,6 +214,10 @@
 				<?php endif;?>
 			</div>
 		</div>
+
+
+
+
 
 	<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
 		<form method="POST">

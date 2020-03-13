@@ -209,6 +209,7 @@
 			$array = NULL;
 			$array = $resultIn->fetch_all(MYSQLI_NUM);
 			$_SESSION['multsearch']=$array;
+			$_SESSION['nstype']=$method;
 			mysqli_close($con);
 			/*
 			echo '<form method="POST" id="SearchBy2"><fieldset><label>Select: </label><select name="input">';

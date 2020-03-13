@@ -240,9 +240,9 @@
                                             <label style="padding-right: 9.6em; padding-left: 1em; padding-bottom: -1.5em; margin-bottom: -2em">Pirate Name: </label>
                                             <div class = "col-sm" style="margin-bottom: 1.5em">
                                                 <?php if($Pname):?>
-                                            		<input type="text" name="name" value=<?php echo $Pname;?> required>
+                                            		<input type="text" name="name" minlength="3" value=<?php echo $Pname;?> required>
                                             	<?php else: ?>
-                                                	<input type="text" name="name" required>
+                                                	<input type="text" name="name" minlength="3" required>
                                                 <?php endif; ?>
                                                 <input type="submit" name="submit" value="Confirm">
                                                 <input type="hidden" name="delim" value="Pirate">

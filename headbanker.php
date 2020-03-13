@@ -609,7 +609,7 @@
 							</div>
 						</div>
 						<div class = "col" style="margin-bottom: 0.5em;">
-							<input type="search" class="required" name="input" id= "SearchBox">
+							<input type="search" class="required" name="input" id= "SearchBox" minlength="3">
 						</div>
 						<div class = "col" style="margin-bottom: 0.5em;">
 							<input type="submit" name= "submit" value="Search" class="submit">
@@ -638,6 +638,18 @@
 										echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
 									}
 								}
+								if ($method!="Pname") {
+								foreach ($array as $key => $value) {
+								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+								echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
+								}
+							}
+							else{
+								foreach ($array as $key => $value) {
+								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+								echo '<option value="'.$value[0].'">'.$value[5].'</option>';
+								}
+							}
 								$input2 = mysqli_real_escape_string($con, $_POST['input']);
 								echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="1">';?>
 								</div>
