@@ -26,57 +26,66 @@
 		<title>Volunteering</title>
 		<?php include("Views/Partials/header.php");?>
 
-
-		<!-- Creates the Personal, Coordinator, and Charter Buttons -->
-		<div class = "container-flow" id = "SwitchButtonsThree">
-			<div class="d-none d-lg-block">
-				<div class = "d-flex justify-content-center">
-					<div class = "row" id ="ButtonsRow">
-						<div class = "col" style="padding-right: 0.05em;">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-								<a href="volunteer.php" class="LeftButtonThreeUn">Personal</a>
-							<?php endif;?>
-						</div>
-						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-								<a href="volunteercoord.php" class="MiddleButtonThreePressed">Coordinator</a>
-							<?php endif;?>
-						</div>
-						<div class = "col" style = "padding-left: 0.05em;">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-								<a href="chartercoord.php" class="RightButtonThreeUn">Charter/Land Grant</a>
-							<?php endif;?>
-						</div>
-					</div>
+		<!-- Creates the Personal, Coordinator, and Charter Buttons and who has access to them-->
+		<div class = "container-flow" id = "SwitchButtonsFour">
+			<div class="d-none d-xl-block">
+			<div class = "d-flex justify-content-center">
+				<div class = "row" id ="ButtonsRow">
+				<div class = "col" style="padding-right: 0.05em">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="volunteerNassau.php" class="LeftButtonFourUn">Port Nassau</a>
+					<?php endif;?>
+				</div>
+				<div class = "col" style="padding-left: 0.05em; padding-right: 0.05em">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="volunteerTortuga.php" class="MiddleButtonFourUn">Tortuga Nights</a>
+					<?php endif;?>
+				</div>
+				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+					<a href="volunteercoord.php" class="MiddleButtonFourPressed">Coordinator</a>
+					<?php endif;?>
+				</div>
+				<div class="col" style="padding-left: 0.05em" >
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="chartercoord.php" class="RightButtonFourUn">Charter/Land Grant</a>
+					<?php endif;?>
+				</div>
 				</div>
 			</div>
+			</div>
 		</div>
-
+		
 		<!-- Code for the Personal, Coordinator, and Charter Buttons once the page is shrunk-->
 		<div class = "container" id = "SwitchButtonsMenuTwoThree">
-			<div class="d-lg-none">
-				<div class = "d-flex justify-content-center">
-					<div class = "row">
-						<div class = "col-lg">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-								<a href="volunteer.php" class="MenuButtonUn">Personal</a>
-							<?php endif;?>
-						</div>
-						<div class = "col-lg" style = "padding-left: 0.05em;">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-								<a href="volunteercoord.php" class="MenuButtonPressed">Coordinator</a>
-							<?php endif;?>
-						</div>
-						<div class = "col-lg">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-								<a href="chartercoord.php" class="MenuButtonUn">Charter/Land Grant</a>
-							<?php endif;?>
-						</div>
-						</div>
-					</div>
+			<div class="d-xl-none">
+			<div class = "d-flex justify-content-center">
+				<div class = "row">
+				<div class = "col-lg">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="volunteerNassau.php" class="MenuButtonUn">Port Nassau</a>
+					<?php endif;?>
+				</div>
+				<div class = "col-lg">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="volunteerTortuga.php" class="MenuButtonUn">Tortuga Nights</a>
+					<?php endif;?>
+				</div>
+				<div class = "col-lg">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+					<a href="volunteercoord.php" class="MenuButtonPressed">Coordinator</a>
+					<?php endif;?>
+				</div>
+				<div class="col-lg">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="chartercoord.php" class="MenuButtonUn">Charter/Land Grant</a>
+					<?php endif;?>
+				</div>
 				</div>
 			</div>
+			</div>
 		</div>
+		
 		
 	</head>
 	<body>
