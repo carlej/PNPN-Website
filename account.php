@@ -918,7 +918,7 @@
                                     echo '<script type="text/javascript">window.location.href="account.php"</script>';
                                 }
                                 else if ($_POST['delim']=="Last") {
-                                    $name=$mysqli_real_escape_string($con,$_POST['name']);
+                                    $name=mysqli_real_escape_string($con,$_POST['name']);
                                     $update = "UPDATE users SET Lname = '$name' WHERE `$type` LIKE '%$ID%'";
                                     $temp=mysqli_query($con, $update);
                                     echo '<script type="text/javascript">window.location.href="account.php"</script>';
