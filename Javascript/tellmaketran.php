@@ -41,7 +41,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 		$row2=mysqli_fetch_row($resultIn);
 		if (mysqli_num_rows($resultIn)!=0) {
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
-			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
+			$timeStamp=date('m/d/Y H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
 			$rema = $row[0]-$trans;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
@@ -133,7 +133,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	echo $teller;
 	if ($depts>0) { //basic error handling
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
-			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
+			$timeStamp=date('m/d/Y H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
 			$rema = $row[0]+$depts;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE ID = '$Accfrom'";
 			$addition = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
@@ -190,7 +190,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 	$row=mysqli_fetch_row($result);
 	if ($with <= $row[0] && $with>0) { //basic error handling
 			date_default_timezone_set('Etc/GMT+8'); //changes timezone for date to pacific time from GMT
-			$timeStamp=date('Y/m/d H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
+			$timeStamp=date('m/d/Y H:i:s'); //Adds a datestamp with the current date and time. Display in YYYY/MM/DD/ 12 hour AMPM format down to the second
 			$rema = $row[0]-$with;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$Accfrom'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account

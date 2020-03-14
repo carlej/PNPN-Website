@@ -141,7 +141,7 @@
 						$queryJob = "SELECT * FROM jobs WHERE job LIKE 'prereg' ";
 						$resultJob= mysqli_query($con,$queryJob);
 						if ($resultJob) {
-							if (mysqli_num_rows($resultJob)>1) {
+							if (mysqli_num_rows($resultJob)>0) {
 								$array = $resultJob->fetch_all(MYSQLI_NUM);
 								foreach ($array as $key => $value) {
 									echo '<form method="POST"><fieldset><p><li>pay '.$value[2].'</li>';

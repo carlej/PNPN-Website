@@ -35,7 +35,7 @@ $con = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['
 		$row2=mysqli_fetch_row($resultIn);
 		if (mysqli_num_rows($resultIn)!=0) {
 			date_default_timezone_set('Etc/GMT+8');
-			$timeStamp=date('Y/m/d H:i:s'); //this is a time stamp that is placed on the transaction in the history so that we know when it happened.
+			$timeStamp=date('m/d/Y H:i:s'); //this is a time stamp that is placed on the transaction in the history so that we know when it happened.
 			$rema = $row[0]-$trans;
 			$updateFrom = "UPDATE accounts SET Ballance = '$rema' WHERE accounts.ID = '$temp[0]'";
 			$deduct = mysqli_query($con, $updateFrom); //sets the new ballance of the transfering account
