@@ -23,48 +23,65 @@
                     $shipName = mysqli_real_escape_string($con, $_POST['shipName']);
                     $fleetName = mysqli_real_escape_string($con, $_POST['fleetName']);
                     $Password = mysqli_real_escape_string($con, $_POST['password']);
+                    $confPass = mysqli_real_escape_string($con, $_POST['password_two']);
                     $queryIn = "SELECT * FROM users where Username='$Username' ";
                     $resultIn = mysqli_query($con, $queryIn);
-                    if (mysqli_num_rows($resultIn)>0) {
+                    if (mysqli_num_rows($resultIn)>0 || ($Password != $confPass)) {
                         //error code for user already exists?>
                         <form method="POST" id="addForm" >  
                             <fieldset>
                                 <legend style="font-family: pirates; font-size: 1.6em;">Registration:</legend>
                                 <p>
                                     <label for="Username" style="font-family: pirates">Email:</label>
-                                    <input type="email"  name="Username" id="Username" style="width: 12em;" required>
-                                    <div class="container" id = "NoneFound" style="margin-top: 0em">There is already a user with that Email!</div>    
+                                    <input type="email"  name="Username" id="Username" value='<?php echo $Username;?>' style="width: 12em;" required> 
+                                    <?php if (mysqli_num_rows($resultIn)>0): ?>
+                                        <div class="container" id = "NoneFound" style="margin-top: 0em">There is already a user with that Email!</div> 
+                                    <?php endif; ?>
                                 </p>
                                 <p>
                                     <label for="firstName" style="font-family: pirates">First Name:</label>
-                                    <input type="text" name="firstName" id="firstName" style="width: 12em;" required>
+                                    <input type="text" name="firstName" id="firstName" value='<?php echo $firstName;?>' style="width: 12em;" required>
                                 </p>
                                 <p>
                                     <label for="lastName" style="font-family: pirates">Last Name:</label>
-                                    <input type="text" name="lastName" id="lastName" style="width: 12em;" required>
+                                    <input type="text" name="lastName" id="lastName" value='<?php echo $lastName;?>' style="width: 12em;" required>
                                 </p>
                                 <p>
                                     <label for="pirateName" style="font-family: pirates">Pirate Name:</label>
-                                    <input type="text" name="pirateName" id="pirateName" minlength="3" style="width: 12em;">
+                                    <?php if($pirateName!=NULL): ?>
+                                        <input type="text" name="pirateName" id="pirateName" minlength="3" value='<?php echo $pirateName;?>' style="width: 12em;">
+                                    <?php else: ?>
+                                        <input type="text" name="pirateName" id="pirateName" minlength="3" style="width: 12em;">
+                                    <?php endif; ?>
                                 </p>
                                 <p>
                                     <label for="shipName" style="font-family: pirates">Ship/Household Name:</label>
-                                    <input type="text" name="shipName" id="shipName" style="width: 12em;">
+                                    <?php if($shipName!=NULL): ?>
+                                        <input type="text" name="shipName" id="shipName" value='<?php echo $shipName;?>' style="width: 12em;">
+                                    <?php else: ?>
+                                        <input type="text" name="shipName" id="shipName" style="width: 12em;">
+                                    <?php endif; ?>
                                 </p>
                                 <p>
                                     <label for="fleetName" style="font-family: pirates">Fleet/Alliance Name:</label>
-                                    <input type="text" name="fleetName" id="fleetName" style="width: 12em;">
+                                    <?php if($fleetName!=NULL): ?>
+                                        <input type="text" name="fleetName" id="fleetName" value='<?php echo $fleetName;?>' style="width: 12em;">
+                                    <?php else: ?>
+                                        <input type="text" name="fleetName" id="fleetName" style="width: 12em;">
+                                    <?php endif; ?>
                                 </p>
                                 <p>
                                     <label for="Password" style="font-family: pirates;">Password:</label>
-                                    <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
+                                    <input id="password" name="password" type="password" minlength="6" required>
                                 </p>
 
                                 <p>
                                     <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
-                                    <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required>
+                                    <input id="password_two" name="password_two" type="password" minlength="6" required>
+                                    <?php if ($Password != $confPass): ?>
+                                        <div class="container" id = "NoneFound" style="margin-top: 0em">Please enter the same password as above!</div> 
+                                    <?php endif; ?> 
                                 </p>
-                            
                                 <p>
                                     <input type = "submit"  name= "submit" value = "Submit" style="font-family: pirates"/>
                                     <input type = "reset"  value = "Clear Form" style="font-family: pirates" onclick="location.href='register.php';"/>
@@ -177,43 +194,52 @@
                             <legend style="font-family: pirates; font-size: 1.6em;">Registration:</legend>
                             <p>
                                 <label for="Username" style="font-family: pirates">Email:</label>
-                                <input type="email"  name="Username" id="Username" style="width: 12em;" required>    
+                                <input type="email"  name="Username" id="Username" value='<?php echo $Username;?>' style="width: 12em;" required> 
+                                <?php if (mysqli_num_rows($resultIn)>0): ?>
+                                    <div class="container" id = "NoneFound" style="margin-top: 0em">There is already a user with that Email!</div> 
+                                <?php endif; ?>
                             </p>
                             <p>
                                 <label for="firstName" style="font-family: pirates">First Name:</label>
-                                <input type="text" name="firstName" id="firstName" style="width: 12em;" required>
+                                <input type="text" name="firstName" id="firstName" value='<?php echo $firstName;?>' style="width: 12em;" required>
                             </p>
                             <p>
                                 <label for="lastName" style="font-family: pirates">Last Name:</label>
-                                <input type="text" name="lastName" id="lastName" style="width: 12em;" required>
+                                <input type="text" name="lastName" id="lastName" value='<?php echo $lastName;?>' style="width: 12em;" required>
                             </p>
                             <p>
                                 <label for="pirateName" style="font-family: pirates">Pirate Name:</label>
-                                <input type="text" name="pirateName" id="pirateName" style="width: 12em;">
+                                <?php if($pirateName!=NULL): ?>
+                                    <input type="text" name="pirateName" id="pirateName" minlength="3" value='<?php echo $pirateName;?>' style="width: 12em;">
+                                <?php else: ?>
+                                    <input type="text" name="pirateName" id="pirateName" minlength="3" style="width: 12em;">
+                                <?php endif; ?>
                             </p>
                             <p>
                                 <label for="shipName" style="font-family: pirates">Ship/Household Name:</label>
-                                <input type="text" name="shipName" id="shipName" style="width: 12em;"><?php if (mysqli_num_rows($resultShip)==0) {
-                                	echo '<div class="container" id = "NoneFound" style="margin-top: 0em">There is no Ship or Household by that name!</div>';
-                                }
-                                 ?>
+                                <input type="text" name="shipName" id="shipName" style="width: 12em;">
+                                <?php if(mysqli_num_rows($resultShip)==0): ?>
+                                    <div class="container" id = "NoneFound" style="margin-top: 0em">There is no Ship/Household by that name please see a teller for help!</div> 
+                                <?php endif; ?>
                             </p>
                             <p>
                                 <label for="fleetName" style="font-family: pirates">Fleet/Alliance Name:</label>
-                                <input type="text" name="fleetName" id="fleetName" style="width: 12em;"> <?php 
-                                if (mysqli_num_rows($resultFleet)==0) {
-                                	echo '<div class="container" id = "NoneFound" style="margin-top: 0em">There is no Fleet or Alliance by that name!</div>';
-                                }
-                                ?>
+                                <input type="text" name="fleetName" id="fleetName" style="width: 12em;">
+                                <?php if(mysqli_num_rows($resultFleet)==0): ?>
+                                    <div class="container" id = "NoneFound" style="margin-top: 0em">There is no Fleet/Alliance by that name please see a teller for help!</div> 
+                                <?php endif; ?>
                             </p>
                             <p>
                                 <label for="Password" style="font-family: pirates;">Password:</label>
-                                <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
+                                <input id="password" name="password" type="password" minlength="6" required>
                             </p>
 
                             <p>
                                 <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
-                                <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required>
+                                <input id="password_two" name="password_two" type="password" minlength="6" required>
+                                <?php if ($Password != $confPass): ?>
+                                    <div class="container" id = "NoneFound" style="margin-top: 0em">Please enter the same password as above!</div> 
+                                <?php endif; ?> 
                             </p>
                         
                             <p>
@@ -277,24 +303,33 @@
                             <legend style="font-family: pirates; font-size: 1.6em;">Registration:</legend>
                             <p>
                                 <label for="Username" style="font-family: pirates">Email:</label>
-                                <input type="email"  name="Username" id="Username" style="width: 12em;" required>    
+                                <input type="email"  name="Username" id="Username" value='<?php echo $Username;?>' style="width: 12em;" required> 
+                                <?php if (mysqli_num_rows($resultIn)>0): ?>
+                                    <div class="container" id = "NoneFound" style="margin-top: 0em">There is already a user with that Email!</div> 
+                                <?php endif; ?>
                             </p>
                             <p>
                                 <label for="firstName" style="font-family: pirates">First Name:</label>
-                                <input type="text" name="firstName" id="firstName" style="width: 12em;" required>
+                                <input type="text" name="firstName" id="firstName" value='<?php echo $firstName;?>' style="width: 12em;" required>
                             </p>
                             <p>
                                 <label for="lastName" style="font-family: pirates">Last Name:</label>
-                                <input type="text" name="lastName" id="lastName" style="width: 12em;" required>
+                                <input type="text" name="lastName" id="lastName" value='<?php echo $lastName;?>' style="width: 12em;" required>
                             </p>
                             <p>
                                 <label for="pirateName" style="font-family: pirates">Pirate Name:</label>
-                                <input type="text" name="pirateName" id="pirateName" style="width: 12em;">
+                                <?php if($pirateName!=NULL): ?>
+                                    <input type="text" name="pirateName" id="pirateName" minlength="3" value='<?php echo $pirateName;?>' style="width: 12em;">
+                                <?php else: ?>
+                                    <input type="text" name="pirateName" id="pirateName" minlength="3" style="width: 12em;">
+                                <?php endif; ?>
                             </p>
                             <p>
                                 <label for="shipName" style="font-family: pirates">Ship/Household Name:</label>
                                 <input type="text" name="shipName" id="shipName" style="width: 12em;">
-                                <div class="container" id = "NoneFound" style="margin-top: 0em">There is no Ship or Household by that name!</div>
+                                <?php if(mysqli_num_rows($resultShip)==0): ?>
+                                    <div class="container" id = "NoneFound" style="margin-top: 0em">There is no Ship/Household by that name please see a teller for help!</div> 
+                                <?php endif; ?>
                             </p>
                             <p>
                                 <label for="fleetName" style="font-family: pirates">Fleet/Alliance Name:</label>
@@ -302,12 +337,15 @@
                             </p>
                             <p>
                                 <label for="Password" style="font-family: pirates;">Password:</label>
-                                <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
+                                <input id="password" name="password" type="password" minlength="6" required>
                             </p>
 
                             <p>
                                 <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
-                                <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required>
+                                <input id="password_two" name="password_two" type="password" minlength="6" required>
+                                <?php if ($Password != $confPass): ?>
+                                    <div class="container" id = "NoneFound" style="margin-top: 0em">Please enter the same password as above!</div> 
+                                <?php endif; ?> 
                             </p>
                         
                             <p>
@@ -370,19 +408,26 @@
                             <legend style="font-family: pirates; font-size: 1.6em;">Registration:</legend>
                             <p>
                                 <label for="Username" style="font-family: pirates">Email:</label>
-                                <input type="email"  name="Username" id="Username" style="width: 12em;" required>    
+                                <input type="email"  name="Username" id="Username" value='<?php echo $Username;?>' style="width: 12em;" required> 
+                                <?php if (mysqli_num_rows($resultIn)>0): ?>
+                                    <div class="container" id = "NoneFound" style="margin-top: 0em">There is already a user with that Email!</div> 
+                                <?php endif; ?>
                             </p>
                             <p>
                                 <label for="firstName" style="font-family: pirates">First Name:</label>
-                                <input type="text" name="firstName" id="firstName" style="width: 12em;" required>
+                                <input type="text" name="firstName" id="firstName" value='<?php echo $firstName;?>' style="width: 12em;" required>
                             </p>
                             <p>
                                 <label for="lastName" style="font-family: pirates">Last Name:</label>
-                                <input type="text" name="lastName" id="lastName" style="width: 12em;" required>
+                                <input type="text" name="lastName" id="lastName" value='<?php echo $lastName;?>' style="width: 12em;" required>
                             </p>
                             <p>
                                 <label for="pirateName" style="font-family: pirates">Pirate Name:</label>
-                                <input type="text" name="pirateName" id="pirateName" style="width: 12em;">
+                                <?php if($pirateName!=NULL): ?>
+                                    <input type="text" name="pirateName" id="pirateName" minlength="3" value='<?php echo $pirateName;?>' style="width: 12em;">
+                                <?php else: ?>
+                                    <input type="text" name="pirateName" id="pirateName" minlength="3" style="width: 12em;">
+                                <?php endif; ?>
                             </p>
                             <p>
                                 <label for="shipName" style="font-family: pirates">Ship/Household Name:</label>
@@ -391,16 +436,21 @@
                             <p>
                                 <label for="fleetName" style="font-family: pirates">Fleet/Alliance Name:</label>
                                 <input type="text" name="fleetName" id="fleetName" style="width: 12em;">
-                                <div class="container" id = "NoneFound" style="margin-top: 0em">There is no Fleet or Alliance by that name!</div>
+                                <?php if(mysqli_num_rows($resultFleet)==0): ?>
+                                    <div class="container" id = "NoneFound" style="margin-top: 0em">There is no Fleet/Alliance by that name please see a teller for help!</div> 
+                                <?php endif; ?>
                             </p>
                             <p>
                                 <label for="Password" style="font-family: pirates;">Password:</label>
-                                <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
+                                <input id="password" name="password" type="password" minlength="6" required>
                             </p>
 
                             <p>
                                 <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
-                                <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required>
+                                <input id="password_two" name="password_two" type="password" minlength="6" required>
+                                <?php if ($Password != $confPass): ?>
+                                    <div class="container" id = "NoneFound" style="margin-top: 0em">Please enter the same password as above!</div> 
+                                <?php endif; ?> 
                             </p>
                         
                             <p>
@@ -444,12 +494,12 @@
                             </p>
                         	<p>
                                 <label for="Password" style="font-family: pirates;">Password:</label>
-                                <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
+                                <input id="password" name="password" type="password" minlength="6" required>
                             </p>
 
                             <p>
                                 <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
-                                <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required>
+                                <input id="password_two" name="password_two" type="password" minlength="6" required>
                             </p>
                         
                             <p>
