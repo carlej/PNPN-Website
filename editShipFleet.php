@@ -102,7 +102,7 @@
                 else{
                     $row = mysqli_fetch_row($resultUser);
                     $user = $row[0];
-                    $timeStamp=date('Y/m/d H:i:s');
+                    $timeStamp=date('m/d/Y H:i:s');
                     $tellerTemp=$_SESSION['username'];
                     $queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
                     $resultInTeller = mysqli_query($con, $queryInTeller);
@@ -201,7 +201,7 @@
                 else{
                     $row = mysqli_fetch_row($resultUser);
                     $user = $row[0];
-                    $timeStamp=date('Y/m/d H:i:s');
+                    $timeStamp=date('m/d/Y H:i:s');
                     $tellerTemp=$_SESSION['username'];
                     $queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
                     $resultInTeller = mysqli_query($con, $queryInTeller);
