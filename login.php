@@ -96,7 +96,7 @@
         			<input type = "reset"  value = "Clear" style="font-family: pirates" />
     			</p>
 				<div id="buttons" class="align-center" style="font-family: pirates">
-     				<a href="register.php" style="color:black; text-decoration: none;">Register Here</a>
+     				<a href="register.php" style="color:black; text-decoration: none;">Don't have an account? Sign Up Here!</a>
      			</div>
 			</form>
 			</div>
