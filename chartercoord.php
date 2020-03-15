@@ -90,7 +90,7 @@
 		<?php
 		if ($_SERVER["REQUEST_METHOD"] == "POST"){
 			if ($_POST['delim']=='Charter') {
-				$queryCharter = "SELECT * FROM charter";
+				$queryCharter = "SELECT * FROM charter WHERE landgrant = '0'";
 				$resultCharter = mysqli_query($con,$queryCharter);
 				$array = $resultCharter->fetch_all(MYSQLI_NUM);
 				foreach ($array as $key => $value) {
@@ -98,7 +98,12 @@
 				}
 			}
 			else if ($_POST['delim']=="Langrant") {
-				# code...
+				$queryCharter = "SELECT * FROM charter WHERE landgrant = '1'";
+				$resultCharter = mysqli_query($con,$queryCharter);
+				$array = $resultCharter->fetch_all(MYSQLI_NUM);
+				foreach ($array as $key => $value) {
+					echo $value[0];
+				}
 			}
 		}
 		?>
