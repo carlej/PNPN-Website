@@ -1,4 +1,4 @@
-<?php //this is the log in file?>
+<?php //this is the password recovery file?>
 
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,6 @@
 
 // Escape user inputs for security
 		$Username = $_POST['Username'];
-		$Password = mysqli_real_escape_string($con, $_POST['Password']);
 
 		$queryIn = "SELECT * FROM users where Username='$Username' ";
 		$resultIn = mysqli_query($con, $queryIn);
@@ -40,7 +39,8 @@
 		}
 		if (mysqli_num_rows($resultIn)!=0) {
 			$row2 = mysqli_fetch_row($resultIn);
-			$ackpass = $row2[1];
+			$question = $row2[17];
+			$answer = $row2[18];
 			$salt = $row2[2];
 			$passwordhold = md5($salt.$Password);
 			$queryperm = "SELECT `AccountPerm` FROM Users WHERE username LIKE '$Username'";
@@ -88,18 +88,11 @@
 					<input type="text" class="required" name="Username" id="Username" style="width: 15em;">
 				</p>
 				<p>
-        			<label for="Password" style="font-family: pirates">Password:</label>
-        			<input type="password" class="required" name="Password" id="Password" style="width: 13.6em;">
-    			</p>
-				<p>
         			<input type = "submit"  value = "Submit" style="font-family: pirates"/>
         			<input type = "reset"  value = "Clear" style="font-family: pirates" />
     			</p>
 				<div id="buttons" class="align-center" style="font-family: pirates">
      				<a href="register.php" style="color:black; text-decoration: none;">Don't have an account? Sign Up Here!</a>
-     			</div>
-     			<div id="buttons" class="align-center" style="font-family: pirates">
-     				<a href="passRecov.php" style="color:black; text-decoration: none;">Forgot Password!</a>
      			</div>
 			</form>
 			</div>

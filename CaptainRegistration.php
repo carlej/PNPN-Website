@@ -26,6 +26,8 @@
             $fleetName = mysqli_real_escape_string($con, $_POST['fleetName']);
             $Password = mysqli_real_escape_string($con, $_POST['password']);
             $confPass = mysqli_real_escape_string($con, $_POST['password_two']);
+            $question = mysqli_real_escape_string($con, $_POST['question']);
+            $answerUnhash = mysqli_real_escape_string($con, $_POST['answer']);
             $queryIn = "SELECT * FROM users where Username='$Username' ";
             $resultIn = mysqli_query($con, $queryIn);
             if (mysqli_num_rows($resultIn)>0 || ($Password != $confPass)) { ?>
@@ -75,6 +77,21 @@
                         <?php else: ?>
                             <input type="text" name="fleetName" id="fleetName" style="width: 12em;">
                         <?php endif; ?>
+                    </p>
+                    <p><label>Select Secutiry Question</label></p>
+                    <p>
+                        <select name="question" style="margin-left: 1em; margin-bottom: 0.5em">
+                            <option value="0">What is the name of your first pet?</option>
+                            <option value="1">What is the name of your favorite book?</option>
+                            <option value="2">What is the name of your favorite teacher in school?</option>
+                            <option value="3">Where was your first full time job?</option>
+                            <option value="4">What is the name of your third-grade teacher?</option>
+                            <option value="5">Where were you when you had your first alcoholic drink(or cigarette, joint etc.)?</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="Answer" style="font-family: pirates">Answer:</label>
+                        <input type="text" name="answer" id="answer" value='<?php echo $answer;?>' style="width: 12em;" required>
                     </p>
                     <p>
                         <label for="Password" style="font-family: pirates;">Password:</label>
@@ -213,17 +230,18 @@
                 }while($a); //adds the data to the db
                         $salt = md5(time());
                         $passhold = md5($salt.$Password);
+                        $answer = md5($salt.$answerUnhash);
                         if ($shipName!=NULL && $fleetName!=NULL){
-                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, fleetC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $shipid, $fleetid)";
+                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, fleetC, question, answer) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', '$shipid', '$fleetid', '$question', '$answer')";
                         }
                         else if ($shipName!=NULL) {
-                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $shipid)";
+                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, question, answer) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', '$shipid', '$question', '$answer')";
                         }
                         else if ($fleetName!=NULL) {
-                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, fleetC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $fleetid)";
+                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, fleetC, question, answer) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', '$fleetid', '$question', '$answer')";
                         }
                         else{
-                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt')";
+                            $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, question, answer) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', '$question', '$answer')";
                         }
                         
                         if (mysqli_query($con,$query)) {
@@ -284,6 +302,21 @@
                     <p>
                         <label for="fleetName" style="font-family: pirates">Fleet/Alliance Name:</label>
                         <input type="text" name="fleetName" id="fleetName" style="width: 12em;">
+                    </p>
+                    <p><label>Select Secutiry Question</label></p>
+                    <p>
+                        <select name="question" style="margin-left: 1em; margin-bottom: 0.5em">
+                            <option value="0">What is the name of your first pet?</option>
+                            <option value="1">What is the name of your favorite book?</option>
+                            <option value="2">What is the name of your favorite teacher in school?</option>
+                            <option value="3">Where was your first full time job?</option>
+                            <option value="4">What is the name of your third-grade teacher?</option>
+                            <option value="5">Where were you when you had your first alcoholic drink(or cigarette, joint etc.)?</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="Answer" style="font-family: pirates">Answer:</label>
+                        <input type="text" name="answer" id="answer" style="width: 12em;" required>
                     </p>
                 	<p>
                         <label for="Password" style="font-family: pirates;">Password:</label>

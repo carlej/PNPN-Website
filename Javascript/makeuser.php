@@ -12,6 +12,8 @@
         $shipName = mysqli_real_escape_string($con, $_POST['shipName']);
         $fleetName = mysqli_real_escape_string($con, $_POST['fleetName']);
         $Password = mysqli_real_escape_string($con, $_POST['password']);
+        $question = mysqli_real_escape_string($con, $_POST['question']);
+        $answerUnhash = mysqli_real_escape_string($con, $_POST['answer']);
         $queryIn = "SELECT * FROM users where Username='$Username' ";
         $resultIn = mysqli_query($con, $queryIn);
         if (mysqli_num_rows($resultIn)>0) {
@@ -43,6 +45,7 @@
     }while($a); //adds the data to the db
             $salt = md5(time());
             $passhold = md5($salt.$Password);
+            $answer = md5($salt.$answerUnhash);
             if ($shipName!=NULL && $fleetName!=NULL){
                 $queryShip = "SELECT * FROM ship WHERE Name LIKE '%$shipName%'";
                 $resultShip= mysqli_query($con,$queryShip);
@@ -52,24 +55,24 @@
                 $resultFleet= mysqli_query($con,$queryFleet);
                 $rowFleet=mysqli_fetch_row($resultFleet);
                 $fName = $rowFleet[0];
-                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, fleetC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $sName, $fName)";
+                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, fleetC, question, answer) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', '$sName', '$fName', '$question', '$answer')";
             }
             else if ($shipName!=NULL) {
                 $queryShip = "SELECT * FROM ship WHERE Name LIKE '%$shipName%'";
                 $resultShip= mysqli_query($con,$queryShip);
                 $rowShip=mysqli_fetch_row($resultShip);
                 $sName = $rowShip[0];
-                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $sName)";
+                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, shipC, question, answer) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', '$sName', '$question', '$answer')";
             }
             else if ($fleetName!=NULL) {
                 $queryFleet = "SELECT * FROM fleet WHERE Name LIKE '%$fleetName%'";
                 $resultFleet= mysqli_query($con,$queryFleet);
                 $rowFleet=mysqli_fetch_row($resultFleet);
                 $fName = $rowFleet[0];
-                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, fleetC) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', $fName)";
+                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, fleetC, question, answer) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', '$fName', '$question', '$answer')";
             }
             else{
-                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt')";
+                $query = "INSERT INTO users (Username, Fname, Lname, Pname, Password, salt, question, answer) VALUES ('$Username', '$firstName', '$lastName', '$pirateName', '$passhold', '$salt', '$question', '$answer')";
             }
             
             if (mysqli_query($con,$query)) {
