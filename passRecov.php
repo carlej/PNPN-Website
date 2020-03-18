@@ -68,12 +68,12 @@
 						echo "How did you even get here?";
 						break;
 				}
-				echo "</label></p><p><label for='Answer' style='font-family: pirates'>Answer:</label><input type='text' name='answer' id='answer' style='width: 12em;' required></p><p><input type = 'submit'  value = 'Submit' style='font-family: pirates'/></p><input type='hidden' name='Username' value = '".$Username."'></form><a href='login.php' style='color:black; text-decoration: none;'>Back to Login</a></div></div></div></div>";
+				echo "</label></p><p><label for='Answer' style='font-family: pirates'>Answer:</label><input type='text' name='answer' id='answer' style='width: 12em;' required></p><p><input type = 'submit'  value = 'Submit' style='font-family: pirates'/></p><input type='hidden' name='Username' value = '".$Username."'><input type = 'hidden' name='password'></form><a href='login.php' style='color:black; text-decoration: none;'>Back to Login</a></div></div></div></div>";
 			}
 			else if ($_POST['answer']) {
 				$answerTemp = $_POST['answer'];
 				$answer = md5($salt.$answerTemp);
-				if ($answer==$ackAnswer) {
+				if ($answer==$ackAnswer && !$_POST['password']) {
 					?>
 					<div class ="container">
 						<div class = "d-flex justify-content-center" id = "LoginWindow" >
@@ -91,7 +91,8 @@
 			                            <p>
 						        			<input type = "submit"  value = "Submit" style="font-family: pirates"/>
 						        			<input type = "reset"  value = "Clear" style="font-family: pirates" />
-						        			<input type = "hidden" name="answer">
+						        			<input type = "hidden" name="answer" value='<?php echo $answerTemp?>'>
+						        			<input type='hidden' name='Username' value = '<?php echo $Username?>' >
 						    			</p>
 			                        </form>
 	                            </div>
@@ -101,6 +102,44 @@
 
 					<?php
 					//header("Location: login.php");
+				}
+				else if ($answer==$ackAnswer && $_POST['password']) {
+					$Password = mysqli_real_escape_string($con, $_POST['password']);
+                    $confPass = mysqli_real_escape_string($con, $_POST['password_two']);
+					if ($Password != $confPass) { ?>
+						<div class ="container">
+						<div class = "d-flex justify-content-center" id = "LoginWindow" >
+							<div class = "row">
+								<div class = "col-12">
+									<form method="post" id="addForm">
+										<p>
+			                                <label for="Password" style="font-family: pirates;">Password:</label>
+			                                <input id="password" name="password" type="password" minlength="6" required>
+			                            </p>
+			                            <p>
+			                                <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
+			                                <input id="password_two" name="password_two" type="password" minlength="6" required>
+			                                <div class="container" id = "NoneFound" style="margin-top: 0em">Please enter the same password as above!</div>
+			                            </p>
+			                            <p>
+						        			<input type = "submit"  value = "Submit" style="font-family: pirates"/>
+						        			<input type = "reset"  value = "Clear" style="font-family: pirates" />
+						        			<input type = "hidden" name="answer" value='<?php echo $answerTemp?>'>
+						        			<input type='hidden' name='Username' value = '<?php echo $Username?>'>
+						    			</p>
+			                        </form>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+					<?php
+					}
+					elseif ($Password == $confPass) {
+						$passhold = md5($salt.$Password);
+						$update = "UPDATE users SET Password = '$passhold' WHERE Username = '$Username'";
+                        $temp=mysqli_query($con, $update);
+                        header("Location: login.php");
+					}
 				}
 				else{
 					//echo $Username;
@@ -114,7 +153,7 @@
 						 </div>';
 				}
 			}
-			}
+		}
 	}
 	else {
 	
