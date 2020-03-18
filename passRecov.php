@@ -5,7 +5,7 @@
 	<head>
 		<?php include("Javascript/Connections/req.php"); ?>
 
-		<title>Login</title>
+		<title>Password Recovery</title>
 	</head>
 	<body class = "LoginPage">
 		
@@ -27,6 +27,7 @@
 
 // Escape user inputs for security
 		$Username = $_POST['Username'];
+		$answer = NULL;
 
 		$queryIn = "SELECT * FROM users where Username='$Username' ";
 		$resultIn = mysqli_query($con, $queryIn);
@@ -40,42 +41,83 @@
 		if (mysqli_num_rows($resultIn)!=0) {
 			$row2 = mysqli_fetch_row($resultIn);
 			$question = $row2[17];
-			$answer = $row2[18];
+			$ackAnswer = $row2[18];
 			$salt = $row2[2];
-			$passwordhold = md5($salt.$Password);
-			$queryperm = "SELECT `AccountPerm` FROM Users WHERE username LIKE '$Username'";
-			$ackperm = mysqli_query($con, $queryperm);
-			$perm = mysqli_fetch_row($ackperm);
+			if (!$_POST['answer']) {
+				echo "<div class ='container'><div class = 'd-flex justify-content-center' id = 'LoginWindow' ><div class = 'row'><div class = 'col-12'><p><form method='post' id='addForm'><label>";
+				switch ($question) {
+					case '0':
+						echo "What is the name of your first pet?";
+						break;
+					case '1':
+						echo "What is the name of your favorite book?";
+						break;
+					case '2':
+						echo "What is the name of your favorite teacher in school?";
+						break;
+					case '3':
+						echo "Where was your first full time job?";
+						break;
+					case '4':
+						echo "What is the name of your third-grade teacher?";
+						break;
+					case '5':
+						echo "Where were you when you had your first alcoholic drink(or cigarette, joint etc.)?";
+						break;
+					default:
+						echo "How did you even get here?";
+						break;
+				}
+				echo "</label></p><p><label for='Answer' style='font-family: pirates'>Answer:</label><input type='text' name='answer' id='answer' style='width: 12em;' required></p><p><input type = 'submit'  value = 'Submit' style='font-family: pirates'/></p><input type='hidden' name='Username' value = '".$Username."'></form><a href='login.php' style='color:black; text-decoration: none;'>Back to Login</a></div></div></div></div>";
+			}
+			else if ($_POST['answer']) {
+				$answerTemp = $_POST['answer'];
+				$answer = md5($salt.$answerTemp);
+				if ($answer==$ackAnswer) {
+					?>
+					<div class ="container">
+						<div class = "d-flex justify-content-center" id = "LoginWindow" >
+							<div class = "row">
+								<div class = "col-12">
+									<form method="post" id="addForm">
+										<p>
+			                                <label for="Password" style="font-family: pirates;">Password:</label>
+			                                <input id="password" name="password" type="password" minlength="6" required>
+			                            </p>
+			                            <p>
+			                                <label for="ConfirmPassword" style="font-family: pirates">Confirm Password:</label>
+			                                <input id="password_two" name="password_two" type="password" minlength="6" required>
+			                            </p>
+			                            <p>
+						        			<input type = "submit"  value = "Submit" style="font-family: pirates"/>
+						        			<input type = "reset"  value = "Clear" style="font-family: pirates" />
+						        			<input type = "hidden" name="answer">
+						    			</p>
+			                        </form>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
 
-			if ($ackpass==$passwordhold) {
-				$msg = "Log in successfull";
-				$_SESSION['loggedin'] = true;
-				$_SESSION['username'] = $Username;
-				$_SESSION['perm'] = $perm[0];
-				$_SESSION['hold']="hold";
-				$_SESSION['temp']="temp";
-				$_SESSION['multsearch']=array('1');
-				$_SESSION['stype']=NULL;
-				$_SESSION['nest']="hold";
-				$_SESSION['nstype']=NULL;
-				$_SESSION['clear']='NULL';
-				echo $perm[0];
-				header("Location: bank.php");
+					<?php
+					//header("Location: login.php");
+				}
+				else{
+					//echo $Username;
+					//echo $Password;
+					echo '<div class="container-flow" id="LoginE">
+							<div class = "d-flex justify-content-center">
+							<div class = "row" >
+							<div class = "col-12">Incorrect Answer</div>
+							</div>
+							</div>
+						 </div>';
+				}
 			}
-			else{
-				//echo $Username;
-				//echo $Password;
-				echo '<div class="container-flow" id="LoginE">
-						<div class = "d-flex justify-content-center">
-						<div class = "row" >
-						<div class = "col-12">Incorrect Login</div>
-						</div>
-						</div>
-					 </div>';
 			}
-		}
 	}
-	mysqli_close($con);
+	else {
+	
 	?>
 
 	<div class ="container">
@@ -90,15 +132,14 @@
 				<p>
         			<input type = "submit"  value = "Submit" style="font-family: pirates"/>
         			<input type = "reset"  value = "Clear" style="font-family: pirates" />
+        			<input type = "hidden" name="answer">
     			</p>
-				<div id="buttons" class="align-center" style="font-family: pirates">
-     				<a href="register.php" style="color:black; text-decoration: none;">Don't have an account? Sign Up Here!</a>
-     			</div>
 			</form>
 			</div>
 			</div>
 		</div>
 	</div>
+<?php } mysqli_close($con); ?>
 	
 	</body>
 </html>
