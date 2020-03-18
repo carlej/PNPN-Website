@@ -98,6 +98,9 @@
 				<div id="buttons" class="align-center" style="font-family: pirates">
      				<a href="register.php" style="color:black; text-decoration: none;">Don't have an account? Sign Up Here!</a>
      			</div>
+     			<div id="buttons" class="align-center" style="font-family: pirates">
+     				<a href="passRecov.php" style="color:black; text-decoration: none;">Forgot Password!</a>
+     			</div>
 			</form>
 			</div>
 			</div>

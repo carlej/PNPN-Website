@@ -70,6 +70,21 @@
                                         <input type="text" name="fleetName" id="fleetName" style="width: 12em;">
                                     <?php endif; ?>
                                 </p>
+                                <p><label>Select Secutiry Question</label></p>
+                                <p>
+                                    <select name="question" style="margin-left: 1em; margin-bottom: 0.5em">
+                                        <option value="0">What is the name of your first pet?</option>
+                                        <option value="1">What is the name of your favorite book?</option>
+                                        <option value="2">What is the name of your favorite teacher in school?</option>
+                                        <option value="3">Where was your first full time job?</option>
+                                        <option value="4">What is the name of your third-grade teacher?</option>
+                                        <option value="5">Where were you when you had your first alcoholic drink(or cigarette, joint etc.)?</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <label for="Answer" style="font-family: pirates">Answer:</label>
+                                    <input type="text" name="answer" id="answer" value='<?php echo $answer;?>' style="width: 12em;" required>
+                                </p>
                                 <p>
                                     <label for="Password" style="font-family: pirates;">Password:</label>
                                     <input id="password" name="password" type="password" minlength="6" required>
@@ -231,6 +246,21 @@
                                     <div class="container" id = "NoneFound" style="margin-top: 0em">There is no Fleet/Alliance by that name please see a teller for help!</div> 
                                 <?php endif; ?>
                             </p>
+                            <p><label>Select Secutiry Question</label></p>
+                            <p>
+                                <select name="question" style="margin-left: 1em; margin-bottom: 0.5em">
+                                    <option value="0">What is the name of your first pet?</option>
+                                    <option value="1">What is the name of your favorite book?</option>
+                                    <option value="2">What is the name of your favorite teacher in school?</option>
+                                    <option value="3">Where was your first full time job?</option>
+                                    <option value="4">What is the name of your third-grade teacher?</option>
+                                    <option value="5">Where were you when you had your first alcoholic drink(or cigarette, joint etc.)?</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="Answer" style="font-family: pirates">Answer:</label>
+                                <input type="text" name="answer" id="answer" value='<?php echo $answer;?>' style="width: 12em;" required>
+                            </p>
                             <p>
                                 <label for="Password" style="font-family: pirates;">Password:</label>
                                 <input id="password" name="password" type="password" minlength="6" required>
@@ -337,6 +367,21 @@
                                 <label for="fleetName" style="font-family: pirates">Fleet/Alliance Name:</label>
                                 <input type="text" name="fleetName" id="fleetName" style="width: 12em;">
                             </p>
+                            <p><label>Select Secutiry Question</label></p>
+                            <p>
+                                <select name="question" style="margin-left: 1em; margin-bottom: 0.5em">
+                                    <option value="0">What is the name of your first pet?</option>
+                                    <option value="1">What is the name of your favorite book?</option>
+                                    <option value="2">What is the name of your favorite teacher in school?</option>
+                                    <option value="3">Where was your first full time job?</option>
+                                    <option value="4">What is the name of your third-grade teacher?</option>
+                                    <option value="5">Where were you when you had your first alcoholic drink(or cigarette, joint etc.)?</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="Answer" style="font-family: pirates">Answer:</label>
+                                <input type="text" name="answer" id="answer" value='<?php echo $answer;?>' style="width: 12em;" required>
+                            </p>
                             <p>
                                 <label for="Password" style="font-family: pirates;">Password:</label>
                                 <input id="password" name="password" type="password" minlength="6" required>
@@ -442,6 +487,21 @@
                                     <div class="container" id = "NoneFound" style="margin-top: 0em">There is no Fleet/Alliance by that name please see a teller for help!</div> 
                                 <?php endif; ?>
                             </p>
+                            <p><label>Select Secutiry Question</label></p>
+                            <p>
+                                <select name="question" style="margin-left: 1em; margin-bottom: 0.5em">
+                                    <option value="0">What is the name of your first pet?</option>
+                                    <option value="1">What is the name of your favorite book?</option>
+                                    <option value="2">What is the name of your favorite teacher in school?</option>
+                                    <option value="3">Where was your first full time job?</option>
+                                    <option value="4">What is the name of your third-grade teacher?</option>
+                                    <option value="5">Where were you when you had your first alcoholic drink(or cigarette, joint etc.)?</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="Answer" style="font-family: pirates">Answer:</label>
+                                <input type="text" name="answer" id="answer" value='<?php echo $answer;?>' style="width: 12em;" required>
+                            </p>
                             <p>
                                 <label for="Password" style="font-family: pirates;">Password:</label>
                                 <input id="password" name="password" type="password" minlength="6" required>
@@ -493,6 +553,21 @@
                             <p>
                                 <label for="fleetName" style="font-family: pirates">Fleet/Alliance Name:</label>
                                 <input type="text" name="fleetName" id="fleetName" style="width: 12em;">
+                            </p>
+                            <p><label>Select Secutiry Question</label></p>
+                            <p>
+                                <select name="question" style="margin-left: 1em; margin-bottom: 0.5em">
+                                    <option value="0">What is the name of your first pet?</option>
+                                    <option value="1">What is the name of your favorite book?</option>
+                                    <option value="2">What is the name of your favorite teacher in school?</option>
+                                    <option value="3">Where was your first full time job?</option>
+                                    <option value="4">What is the name of your third-grade teacher?</option>
+                                    <option value="5">Where were you when you had your first alcoholic drink(or cigarette, joint etc.)?</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="Answer" style="font-family: pirates">Answer:</label>
+                                <input type="text" name="answer" id="answer" style="width: 12em;" required>
                             </p>
                         	<p>
                                 <label for="Password" style="font-family: pirates;">Password:</label>
