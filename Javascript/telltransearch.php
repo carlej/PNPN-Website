@@ -246,7 +246,7 @@
 				$nameUnedit=$row[5];
 			}
 			else{
-				$nameUnedit=$row[3].' '.$row[4];
+				$nameUnedit="{$row[3]} {$row[4]}";;
 			}
 			$name=str_replace(' ', '&nbsp;', $nameUnedit);
 			$queryIn = "SELECT Accounts FROM users WHERE Username = '$username'";

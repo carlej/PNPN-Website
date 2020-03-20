@@ -194,6 +194,7 @@
 						</div>
 					</div>
 				</div>
+				<input type="hidden" name="job"></input>
 			</fieldset>
 		</form>
 
