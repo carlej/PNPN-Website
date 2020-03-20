@@ -104,18 +104,19 @@
 				if (!$_POST['chart']) {
 					$queryCharter = "SELECT * FROM charter";
 					$resultCharter = mysqli_query($con,$queryCharter);
-					$array = $resultCharter->fetch_all(MYSQLI_NUM);
-					foreach ($array as $key => $value) {
-						?>
-						<form method="POST">
-							<fieldset>
+					$array = $resultCharter->fetch_all(MYSQLI_NUM);?>
+					<form method="POST">
+						<fieldset><?php
+							foreach ($array as $key => $value) {
+								?>
 								<div class = "container-flow" id = "SwitchButtonsVolunteerSection">
 									<div class="d-none d-xl-block">
 										<div class = "d-flex justify-content-center">
 											<input type="submit" name= "chart" value='<?php echo $value[0]?>'></input>
-											<?php
-											}?>
+							<?php
+							}?>
 											<input type="hidden" name="delim" value="Charter">
+											<input type="hidden" name="edit">
 										</div>
 									</div>
 								</div>
@@ -128,23 +129,47 @@
 					$queryCharter = "SELECT * FROM charter WHERE name = '$chartName'";
 					$resultCharter = mysqli_query($con,$queryCharter);
 					$row = mysqli_fetch_row($resultCharter);
-					echo '<p>'.$row[0].'</p>';
+					echo "<p>$row[0]</p>";
 					$parsed_member_json=json_decode($row[3],true);
-					$accmem=$parsed_member_json['name'];
-					foreach ($accmem as $key => $value) {
-						if ($value) {
-							$queryUser = "SELECT * FROM users WHERE Username = '$value'";
-							$resultUser = mysqli_query($con,$queryUser);
-							$rowUser = mysqli_fetch_row($resultUser);
-							if ($rowUser[5]) {
-								$name = $rowUser[5];
-							}
-							else{
-								$name = "{$rowUser[3]} {$rowUser[4]}";
-							}
-							echo $name;
-						}
+					$accmem=$parsed_member_json;
+					if ($_POST['edit']=="Remove") {
+						array_splice($accmem, $_POST['name'], 1);
+						$remove=json_encode($accmem);
+						$update = "UPDATE charter SET part = '$remove' WHERE name = '$row[0]'";
+						$inup= mysqli_query($con, $update);
 					}
+					else if ($_POST['edit']=="Add") {
+						echo "here";
+					}
+					echo "<p>Members:</p>";?>
+					<form method="POST">
+						<fieldset><?php
+							foreach ($accmem as $key => $value) {
+								if ($value) {
+									$queryUser = "SELECT * FROM users WHERE Username = '$value'";
+									$resultUser = mysqli_query($con,$queryUser);
+									$rowUser = mysqli_fetch_row($resultUser);
+									if ($rowUser[5]) {
+										$name = $rowUser[5];
+									}
+									else{
+										$name = "{$rowUser[3]} {$rowUser[4]}";
+									}
+									echo $name;
+									?>
+									<input type="submit" name= "edit" value="Remove"></input>
+									<input type="hidden" name="name" value='<?php echo $key?>'>
+									<?php
+								}
+							}?>
+							<p>
+								<input type="submit" name= "edit" value="Add"></input>
+								<input type="hidden" name="delim" value="Charter">
+								<input type="hidden" name= "chart" value='<?php echo $row[0]?>'></input>
+							</p>
+						</fieldset>
+					</form>
+					<?php
 					?>
 					<!--
 					<form method="POST" id="SearchBy2">
