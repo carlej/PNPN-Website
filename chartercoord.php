@@ -83,18 +83,95 @@
 	<body>
 		<form method="POST">
 			<fieldset>
-				<input type="submit" name="delim" value="Charter">
-				<input type="submit" name="delim" value="Langrant">
+				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: 8em;">
+					<div class = "d-none d-xl-block">
+						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div class = "row" id = "DeptRowOne">
+								<div class = "col" style="padding-right: 0.05em;">
+									<input type="submit" name="delim" class="MiddleButtonVolunteerDept" value="Charter">
+								</div>
+								<input type="submit" name="delim" class="MiddleButtonVolunteerDept" value="Langrant">
+								<input type="hidden" name= "chart"></input>
+							</div>
+						</div>
+					</div>
+				</div>
 			</fieldset>
 		</form>
 		<?php
 		if ($_SERVER["REQUEST_METHOD"] == "POST"){
 			if ($_POST['delim']=='Charter') {
-				$queryCharter = "SELECT * FROM charter";
-				$resultCharter = mysqli_query($con,$queryCharter);
-				$array = $resultCharter->fetch_all(MYSQLI_NUM);
-				foreach ($array as $key => $value) {
-					echo $value[0];
+				if (!$_POST['chart']) {
+					$queryCharter = "SELECT * FROM charter";
+					$resultCharter = mysqli_query($con,$queryCharter);
+					$array = $resultCharter->fetch_all(MYSQLI_NUM);
+					foreach ($array as $key => $value) {
+						?>
+						<form method="POST">
+							<fieldset>
+								<div class = "container-flow" id = "SwitchButtonsVolunteerSection">
+									<div class="d-none d-xl-block">
+										<div class = "d-flex justify-content-center">
+											<input type="submit" name= "chart" value='<?php echo $value[0]?>'></input>
+											<?php
+											}?>
+											<input type="hidden" name="delim" value="Charter">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					<?php
+				}
+				else{
+					$chartName = $_POST['chart'];
+					$queryCharter = "SELECT * FROM charter WHERE name = '$chartName'";
+					$resultCharter = mysqli_query($con,$queryCharter);
+					$row = mysqli_fetch_row($resultCharter);
+					echo '<p>'.$row[0].'</p>';
+					$parsed_member_json=json_decode($row[3],true);
+					$accmem=$parsed_member_json['name'];
+					foreach ($accmem as $key => $value) {
+						if ($value) {
+							$queryUser = "SELECT * FROM users WHERE Username = '$value'";
+							$resultUser = mysqli_query($con,$queryUser);
+							$rowUser = mysqli_fetch_row($resultUser);
+							if ($rowUser[5]) {
+								$name = $rowUser[5];
+							}
+							else{
+								$name = "{$rowUser[3]} {$rowUser[4]}";
+							}
+							echo $name;
+						}
+					}
+					?>
+					<!--
+					<form method="POST" id="SearchBy2">
+						<fieldset>
+							<label>Select: </label>
+									<p id="searcher">
+										<p style="margin-bottom: 0em; margin-top: -0.4em;">Add:</p>
+										<select name="type" class="SearchBy3" style="margin-bottom: 0em">
+											<option>Search by:</option>
+											<option value="Pname">Pirate Name</option>
+											<option value="Fname">First Name</option>
+											<option value="Lname">Last Name</option>
+											<option value="Username">Email</option>
+											<option value="shipID" style="display:none;">shipID</option>
+											<option value="Ship">Ship/House</option>
+											<option value="fleetID" style="display:none;">fleetID</option>
+											<option value="Fleet">Fleet/Alliance</option>
+										</select>
+										<input type="search" required name="input" id="input" style="width: 95%; margin-bottom: 0.3em" minlength="3">
+										<input type="submit" name= "submit" value="Search" class="submit">
+										<input type="hidden" name="new" value="new" class="submit">
+										</p>
+									</p>
+						</fieldset>
+					</form>
+					-->
+					<?php
 				}
 			}
 			else if ($_POST['delim']=="Langrant") {

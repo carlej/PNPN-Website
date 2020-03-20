@@ -27,8 +27,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
 	$resultInTeller = mysqli_query($con, $queryInTeller);
 	$rowTeller=mysqli_fetch_row($resultInTeller);
-	$space=' ';
-	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
+	$teller="{$rowTeller[3]} {$rowTeller[4]}";
 	if (($Accto=="" || $trans=="") && $_POST['submit']!="Cancel") {
 		header("Location: ../teller.php");
 	}
@@ -121,8 +120,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
 	$resultInTeller = mysqli_query($con, $queryInTeller);
 	$rowTeller=mysqli_fetch_row($resultInTeller);
-	$space=' ';
-	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
+	$teller="{$rowTeller[3]} {$rowTeller[4]}";
 
 	if (($depts=="") && $_POST['submit']!="Cancel") {
 		header("Location: ../teller.php");
@@ -183,8 +181,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$queryInTeller = "SELECT * FROM users WHERE Username = '$tellerTemp'";
 	$resultInTeller = mysqli_query($con, $queryInTeller);
 	$rowTeller=mysqli_fetch_row($resultInTeller);
-	$space=' ';
-	$teller="{$rowTeller[3]}{$space}{$rowTeller[4]}";
+	$teller="{$rowTeller[3]} {$rowTeller[4]}";
 	$accountQuery = "SELECT Ballance FROM accounts WHERE ID = '$Accfrom'";
 	$result = mysqli_query($con, $accountQuery);
 	$row=mysqli_fetch_row($result);
