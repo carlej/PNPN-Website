@@ -92,6 +92,8 @@
 								</div>
 								<input type="submit" name="delim" class="MiddleButtonVolunteerDept" value="Langrant">
 								<input type="hidden" name= "chart"></input>
+								<input type="hidden" name="edit">
+								<input type="hidden" name="add">
 							</div>
 						</div>
 					</div>
@@ -105,7 +107,7 @@
 				$resultCharter = mysqli_query($con,$queryCharter);
 				$array = $resultCharter->fetch_all(MYSQLI_NUM);
 				foreach ($array as $key => $value) {
-					echo $value[0];
+					//echo $value[0];
 				if (!$_POST['chart']) {
 					$queryCharter = "SELECT * FROM charter";
 					$resultCharter = mysqli_query($con,$queryCharter);
@@ -145,9 +147,7 @@
 						$inup= mysqli_query($con, $update);
 					}
 					else if ($_POST['edit']=="Add") {
-						echo "here";
-					}
-					echo "<p>Members:</p>";?>
+						echo "<p>Members:</p>";?>
 					<form method="POST">
 						<fieldset><?php
 						if (!$_POST['add']) {
@@ -237,7 +237,7 @@
 								<input type="hidden" name= "edit" value="Add">
 							</fieldset>
 						</form>
-						<?php 
+						<?php
 						}
 						else{
 							$num=0;
@@ -269,8 +269,9 @@
 					?>
 					<form method="POST">
 						<fieldset>
-							<?php if($_POST['edit']!="Add" && !$_POST['add']): ?>
+							<?php if($_POST['edit']!="Add" xor $_POST['add']): ?>
 								<input type="submit" name= "edit" value="Add"></input>
+								<input type="hidden" name="add">
 							<?php endif;?>
 							<?php
 							echo "<p>Members:</p>";
@@ -289,46 +290,18 @@
 									?>
 									<input type="submit" name= "edit" value="Remove"></input>
 									<input type="hidden" name="name" value='<?php echo $key?>'>
+									<input type="hidden" name="add">
 									<?php
 								}
 							}?>
 							<p>
-								<input type="submit" name= "edit" value="Add"></input>
 								<input type="hidden" name="delim" value="Charter">
 								<input type="hidden" name= "chart" value='<?php echo $row[0]?>'></input>
 							</p>
 						</fieldset>
 					</form>
 					<?php
-					?>
-					<!--
-					<form method="POST" id="SearchBy2">
-						<fieldset>
-							<label>Select: </label>
-									<p id="searcher">
-										<p style="margin-bottom: 0em; margin-top: -0.4em;">Add:</p>
-										<select name="type" class="SearchBy3" style="margin-bottom: 0em">
-											<option>Search by:</option>
-											<option value="Pname">Pirate Name</option>
-											<option value="Fname">First Name</option>
-											<option value="Lname">Last Name</option>
-											<option value="Username">Email</option>
-											<option value="shipID" style="display:none;">shipID</option>
-											<option value="Ship">Ship/House</option>
-											<option value="fleetID" style="display:none;">fleetID</option>
-											<option value="Fleet">Fleet/Alliance</option>
-										</select>
-										<input type="search" required name="input" id="input" style="width: 95%; margin-bottom: 0.3em" minlength="3">
-										<input type="submit" name= "submit" value="Search" class="submit">
-										<input type="hidden" name="new" value="new" class="submit">
-										</p>
-									</p>
-						</fieldset>
-					</form>
-					-->
-					<?php
-				}
-			}
+				}}}
 			else if ($_POST['delim']=="Langrant") {
 				$queryCharter = "SELECT * FROM charter WHERE landgrant = '1'";
 				$resultCharter = mysqli_query($con,$queryCharter);
