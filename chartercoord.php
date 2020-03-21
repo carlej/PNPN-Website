@@ -113,7 +113,10 @@
 					$resultCharter = mysqli_query($con,$queryCharter);
 					$array = $resultCharter->fetch_all(MYSQLI_NUM);?>
 					<form method="POST">
-						<fieldset><?php
+						<fieldset>
+							<input type="submit" name="edit" value="Add Charter">
+							<input type="hidden" name="chart">
+							<?php
 							foreach ($array as $key => $value) {
 								?>
 								<div class = "container-flow" id = "SwitchButtonsVolunteerSection">
@@ -241,6 +244,8 @@
 						}
 						else{
 							$num=0;
+							echo '<form method="POST" id="SearchBy2">
+							<fieldset>';
 							for ($i=1; $i < 6; $i++) { 
 								if ($_POST['input'.$i]) {
 									$method = $_POST['type'.$i];
@@ -254,13 +259,36 @@
 										array_push($accmem, $rowUser[0]);
 									}
 									else if (mysqli_num_rows($resultUser)>1) {
-										array_push($mults,$i);
+										$array = NULL;
+										$array = $resultUser->fetch_all(MYSQLI_NUM);?>
+										<?php echo '<label>Search by: </label><select name="input">';
+										//echo '<form method="post" id = "select">';
+										if ($method!="Pname") {
+											foreach ($array as $key => $value) {
+											//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+											echo '<option value="'.$value[0].'">'.$value[1].' '.$value[2].'</option>';
+											}
+										}
+										else{
+											foreach ($array as $key => $value) {
+											//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+											echo '<option value="'.$value[0].'">'.$value[3].'</option>';
+											}
+										}
+										//echo '</form>';
 									}
 									else{
 										# code...
 									}
 								}
 							}
+							?>
+							<input type="submit" name="add" value="Add">
+										<input type="hidden" name="delim" value="Charter">
+								<input type="hidden" name= "chart" value='<?php echo $row[0]?>'></input>
+								<input type="hidden" name= "edit" value="Add">
+							</fieldset>
+						</form><?php
 							$add=json_encode($accmem);
 							$update = "UPDATE charter SET part = '$add' WHERE name = '$row[0]'";
 							$inup= mysqli_query($con, $update);
@@ -270,8 +298,9 @@
 					<form method="POST">
 						<fieldset>
 							<?php if($_POST['edit']!="Add" xor $_POST['add']): ?>
-								<input type="submit" name= "edit" value="Add"></input>
+								<input type="submit" name= "changeval" value="Add Members"></input>
 								<input type="hidden" name="add">
+								<input type="hidden" name="edit" value="Add">
 							<?php endif;?>
 							<?php
 							echo "<p>Members:</p>";
@@ -286,11 +315,12 @@
 									else{
 										$name = "{$rowUser[3]} {$rowUser[4]}";
 									}
+									echo '<p>';
 									echo $name;
 									?>
 									<input type="submit" name= "edit" value="Remove"></input>
 									<input type="hidden" name="name" value='<?php echo $key?>'>
-									<input type="hidden" name="add">
+									<input type="hidden" name="add"></p>
 									<?php
 								}
 							}?>
