@@ -95,6 +95,222 @@
 				$array = $resultCharter->fetch_all(MYSQLI_NUM);
 				foreach ($array as $key => $value) {
 					echo $value[0];
+				if (!$_POST['chart']) {
+					$queryCharter = "SELECT * FROM charter";
+					$resultCharter = mysqli_query($con,$queryCharter);
+					$array = $resultCharter->fetch_all(MYSQLI_NUM);?>
+					<form method="POST">
+						<fieldset><?php
+							foreach ($array as $key => $value) {
+								?>
+								<div class = "container-flow" id = "SwitchButtonsVolunteerSection">
+									<div class="d-none d-xl-block">
+										<div class = "d-flex justify-content-center">
+											<input type="submit" name= "chart" value='<?php echo $value[0]?>'></input>
+							<?php
+							}?>
+											<input type="hidden" name="delim" value="Charter">
+											<input type="hidden" name="edit">
+											<input type="hidden" name="add">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					<?php
+				}
+				else{
+					$chartName = $_POST['chart'];
+					$queryCharter = "SELECT * FROM charter WHERE name = '$chartName'";
+					$resultCharter = mysqli_query($con,$queryCharter);
+					$row = mysqli_fetch_row($resultCharter);
+					echo "<p>$row[0]</p>";
+					$parsed_member_json=json_decode($row[3],true);
+					$accmem=$parsed_member_json;
+					if ($_POST['edit']=="Remove") {
+						array_splice($accmem, $_POST['name'], 1);
+						$remove=json_encode($accmem);
+						$update = "UPDATE charter SET part = '$remove' WHERE name = '$row[0]'";
+						$inup= mysqli_query($con, $update);
+					}
+					else if ($_POST['edit']=="Add") {
+						if (!$_POST['add']) {
+						?>
+							<form method="POST" id="SearchBy2">
+							<fieldset>
+								<label>Select: </label>
+										<p id="searcher">
+											<label>Add: </label>
+											<select name="type1" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input1" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type2" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input2" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type3" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input3" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type4" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input4" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type5" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input5" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<input type="submit" name="add" value="Add">
+										<input type="hidden" name="delim" value="Charter">
+								<input type="hidden" name= "chart" value='<?php echo $row[0]?>'></input>
+								<input type="hidden" name= "edit" value="Add">
+							</fieldset>
+						</form>
+						<?php 
+						}
+						else{
+							$num=0;
+							for ($i=1; $i < 6; $i++) { 
+								if ($_POST['input'.$i]) {
+									$method = $_POST['type'.$i];
+									$input = $_POST['input'.$i];
+									$queryUser = "SELECT Username, Fname, Lname, Pname FROM users WHERE `$method` LIKE '%$input%'";
+									$resultUser = mysqli_query($con,$queryUser);
+									//echo $queryUser;
+									if (mysqli_num_rows($resultUser)==1) {
+										$num++;
+										$rowUser = mysqli_fetch_row($resultUser);
+										array_push($accmem, $rowUser[0]);
+									}
+									else if (mysqli_num_rows($resultUser)>1) {
+										array_push($mults,$i);
+									}
+									else{
+										# code...
+									}
+								}
+							}
+							$add=json_encode($accmem);
+							$update = "UPDATE charter SET part = '$add' WHERE name = '$row[0]'";
+							$inup= mysqli_query($con, $update);
+						}
+					}
+					?>
+					<form method="POST">
+						<fieldset>
+							<?php if($_POST['edit']!="Add" && !$_POST['add']): ?>
+								<input type="submit" name= "edit" value="Add"></input>
+							<?php endif;?>
+							<?php
+							echo "<p>Members:</p>";
+							foreach ($accmem as $key => $value) {
+								if ($value) {
+									$queryUser = "SELECT * FROM users WHERE Username = '$value'";
+									$resultUser = mysqli_query($con,$queryUser);
+									$rowUser = mysqli_fetch_row($resultUser);
+									if ($rowUser[5]) {
+										$name = $rowUser[5];
+									}
+									else{
+										$name = "{$rowUser[3]} {$rowUser[4]}";
+									}
+									echo $name;
+									?>
+									<input type="submit" name= "edit" value="Remove"></input>
+									<input type="hidden" name="name" value='<?php echo $key?>'>
+									<?php
+								}
+							}?>
+							<p>
+								<input type="hidden" name="delim" value="Charter">
+								<input type="hidden" name= "chart" value='<?php echo $row[0]?>'></input>
+								<input type="hidden" name="add">
+							</p>
+						</fieldset>
+					</form>
+					<?php
+					?>
+					<!--
+					<form method="POST" id="SearchBy2">
+						<fieldset>
+							<label>Select: </label>
+									<p id="searcher">
+										<p style="margin-bottom: 0em; margin-top: -0.4em;">Add:</p>
+										<select name="type" class="SearchBy3" style="margin-bottom: 0em">
+											<option>Search by:</option>
+											<option value="Pname">Pirate Name</option>
+											<option value="Fname">First Name</option>
+											<option value="Lname">Last Name</option>
+											<option value="Username">Email</option>
+											<option value="shipID" style="display:none;">shipID</option>
+											<option value="Ship">Ship/House</option>
+											<option value="fleetID" style="display:none;">fleetID</option>
+											<option value="Fleet">Fleet/Alliance</option>
+										</select>
+										<input type="search" required name="input" id="input" style="width: 95%; margin-bottom: 0.3em" minlength="3">
+										<input type="submit" name= "submit" value="Search" class="submit">
+										<input type="hidden" name="new" value="new" class="submit">
+										</p>
+									</p>
+						</fieldset>
+					</form>
+					-->
+					<?php
 				}
 			}
 			else if ($_POST['delim']=="Langrant") {
