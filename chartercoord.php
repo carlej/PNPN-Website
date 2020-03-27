@@ -114,8 +114,8 @@
 					$array = $resultCharter->fetch_all(MYSQLI_NUM);?>
 					<form method="POST">
 						<fieldset>
-							<input type="submit" name="edit" value="Add Charter">
-							<input type="hidden" name="chart">
+							<input type="submit" name="edits" value="Add Charter">
+							<input type="hidden" name="chart" value="additionscatfactscatcat">
 							<?php
 							foreach ($array as $key => $value) {
 								?>
@@ -135,7 +135,302 @@
 						</form>
 					<?php
 				}
-				else{
+				else if ($_POST['edits']=="Add Charter") {
+					$addmem= [];
+						if (!$_POST['add']) {
+						?>
+							<form method="POST" id="SearchBy2">
+							<fieldset>
+								<p><label>Group Name: </label>
+								<input type="text" name="gname" minlength="3" required></p>
+								<label>Select: </label>
+										<p id="searcher">
+											<label>Add: </label>
+											<select name="type1" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input1" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type2" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input2" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type3" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input3" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type4" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input4" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type5" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input5" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type1" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input1" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type2" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input2" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type3" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input3" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type4" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input4" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type5" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input5" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type1" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input1" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type2" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input2" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type3" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input3" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type4" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input4" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<label>Add: </label>
+											<select name="type5" class="SearchBy3" style="margin-bottom: 0em">
+												<option>Search by:</option>
+												<option value="Pname">Pirate Name</option>
+												<option value="Fname">First Name</option>
+												<option value="Lname">Last Name</option>
+												<option value="Username">Email</option>
+												<option value="shipID" style="display:none;">shipID</option>
+												<option value="Ship">Ship/House</option>
+												<option value="fleetID" style="display:none;">fleetID</option>
+												<option value="Fleet">Fleet/Alliance</option>
+											</select>
+											<input type="search" name="input5" id="input" style="width: 10%; margin-bottom: 0.3em" minlength="3">
+											</p>
+										</p>
+										<input type="submit" name="add" value="Add">
+										<input type="hidden" name="delim" value="Charter">
+								<input type="hidden" name= "chart" value='<?php echo $row[0]?>'></input>
+								<input type="hidden" name= "edit" value="Add">
+							</fieldset>
+						</form>
+						<?php
+						}
+						else{
+							$num=0;
+							echo '<form method="POST" id="SearchBy2">
+							<fieldset>';
+							for ($i=1; $i < 6; $i++) { 
+								if ($_POST['input'.$i]) {
+									$method = $_POST['type'.$i];
+									$input = $_POST['input'.$i];
+									$queryUser = "SELECT Username, Fname, Lname, Pname FROM users WHERE `$method` LIKE '%$input%'";
+									$resultUser = mysqli_query($con,$queryUser);
+									//echo $queryUser;
+									if (mysqli_num_rows($resultUser)==1) {
+										$num++;
+										$rowUser = mysqli_fetch_row($resultUser);
+										array_push($addmem, $rowUser[0]);
+									}
+									else if (mysqli_num_rows($resultUser)>1) {
+										$array = NULL;
+										$array = $resultUser->fetch_all(MYSQLI_NUM);?>
+										<?php echo '<label>Search by: </label><select name="input">';
+										//echo '<form method="post" id = "select">';
+										if ($method!="Pname") {
+											foreach ($array as $key => $value) {
+											//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+											echo '<option value="'.$value[0].'">'.$value[1].' '.$value[2].'</option>';
+											}
+										}
+										else{
+											foreach ($array as $key => $value) {
+											//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
+											echo '<option value="'.$value[0].'">'.$value[3].'</option>';
+											}
+										}
+										//echo '</form>';
+									}
+									else{
+										# code...
+									}
+								}
+							}
+							?>
+							<input type="submit" name="add" value="Add">
+										<input type="hidden" name="delim" value="Charter">
+								<input type="hidden" name= "chart" value='<?php echo $row[0]?>'></input>
+								<input type="hidden" name= "edit" value="Add">
+							</fieldset>
+						</form><?php
+							$add=json_encode($addmem);
+							$update = "INSERT INTO charter (`name`, `part`) VALUES ('cat', '$add')";
+							$inup= mysqli_query($con, $update);
+						}
+					}
+				else if(!$_POST['edits']){echo $_POST['edit'];
 					$chartName = $_POST['chart'];
 					$queryCharter = "SELECT * FROM charter WHERE name = '$chartName'";
 					$resultCharter = mysqli_query($con,$queryCharter);
@@ -331,16 +626,18 @@
 						</fieldset>
 					</form>
 					<?php
-				}}}
-			else if ($_POST['delim']=="Langrant") {
-				$queryCharter = "SELECT * FROM charter WHERE landgrant = '1'";
-				$resultCharter = mysqli_query($con,$queryCharter);
-				$array = $resultCharter->fetch_all(MYSQLI_NUM);
-				foreach ($array as $key => $value) {
-					echo $value[0];
 				}
 			}
 		}
+		else if ($_POST['delim']=="Langrant") {
+			echo "here";
+			$queryCharter = "SELECT * FROM charter WHERE landgrant = '1'";
+			$resultCharter = mysqli_query($con,$queryCharter);
+			$array = $resultCharter->fetch_all(MYSQLI_NUM);
+			foreach ($array as $key => $value) {
+				echo $value[0];
+			}
+		}}
 		?>
 	</body>
 </html>
