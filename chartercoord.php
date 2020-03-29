@@ -91,7 +91,7 @@
 									<input type="submit" name="delim" class="MiddleButtonVolunteerDept" value="Charter">
 								</div>
 								<input type="submit" name="delim" class="MiddleButtonVolunteerDept" value="Langrant">
-								<input type="hidden" name= "chart"></input>
+								<input type="hidden" name= "chart">
 								<input type="hidden" name="edit">
 								<input type="hidden" name="add">
 							</div>
@@ -101,6 +101,8 @@
 			</fieldset>
 		</form>
 		<?php
+		top:
+		echo $_POST['chart'];
 		if ($_SERVER["REQUEST_METHOD"] == "POST"){
 			if ($_POST['delim']=='Charter') {
 				$queryCharter = "SELECT * FROM charter WHERE landgrant = '0'";
@@ -392,7 +394,6 @@
 									$resultUser = mysqli_query($con,$queryUser);
 									//echo $queryUser;
 									if (mysqli_num_rows($resultUser)==1) {
-										$num++;
 										$rowUser = mysqli_fetch_row($resultUser);
 										array_push($addmem, $rowUser[0]);
 										?>
@@ -400,6 +401,7 @@
 										<?php
 									}
 									else if (mysqli_num_rows($resultUser)>1) {
+										$num=1;
 										$array = NULL;
 										$array = $resultUser->fetch_all(MYSQLI_NUM);?>
 										<?php echo '<label>Search by: </label><select name="input'.$i.'">';
@@ -415,7 +417,9 @@
 										echo "</select>";
 										echo '<input type="hidden" name= "type'.$i.'" value="Username">';
 									}
-									else{?>
+									else{
+										$num=1;
+										?>
 										<label>Add: </label>
 											<select name='<?php echo 'type'.$i; ?>' class="SearchBy3" style="margin-bottom: 0em" value= '<?php echo $method; ?>'>
 												<option value="Pname">Search by:</option>
@@ -442,14 +446,16 @@
 									<?php
 								}
 							}
+							if ($num) {
 							?>
-							<input type="submit" name="add" value="Add">
-										<input type="hidden" name="delim" value="Charter">
-								<input type="hidden" name="gname" value='<?php echo $gname?>'></input>
-								<input type="hidden" name= "edit" value="Add">
-								<input type="hidden" name="chart" value="additionscatfactscatcat">
-							</fieldset>
-						</form><?php
+								<input type="submit" name="add" value="Add">
+											<input type="hidden" name="delim" value="Charter">
+									<input type="hidden" name="gname" value='<?php echo $gname?>'></input>
+									<input type="hidden" name= "edit" value="Add">
+									<input type="hidden" name="chart" value="additionscatfactscatcat">
+								</fieldset>
+							</form><?php
+							}
 							$gname = $_POST['gname'];
 							$add=json_encode($addmem);
 							if (mysqli_num_rows($resultCharter)>=1) {
@@ -459,6 +465,14 @@
 								$update = "INSERT INTO charter (`name`, `part`) VALUES ('$gname', '$add')";
 							}
 							$inup= mysqli_query($con, $update);
+							if (!$num) {
+								$_SERVER["REQUEST_METHOD"] = "POST";
+								$_POST['delim'] = "Charter";
+								$_POST['chart'] = NULL;
+								$_POST['edit']=NULL;
+								$_POST['add']=NULL;
+								goto top;
+							}
 						}
 					}
 				else{
