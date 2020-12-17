@@ -136,14 +136,30 @@
 					<div class = "d-flex justify-content-center">
 						<div class = "row" id ="ButtonsRow" style="margin-right: -20em; margin-top: -3em">
 						<div class = "col" style="padding-right: 0.05em">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+								if ($_POST['submit'] == "Port Nassau") { ?>
+									<input type="submit" name= "submit" class="LeftButtonTwoPressed" value="Port Nassau"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
+								<?php }
+							}
+							else{ ?>
 								<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
-							<?php endif;?>
+							<?php } ?>
 						</div>
 						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+								if ($_POST['submit'] == "Tortuga Nights") { ?>
+									<input type="submit" name= "submit" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+								<?php }
+							}
+							else{ ?>
 								<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
-							<?php endif;?>
+							<?php } ?>
 						</div>
 						</div>
 					</div>
@@ -156,14 +172,30 @@
 					<div class = "d-flex justify-content-center">
 						<div class = "row" id ="ButtonsRow" style="margin-right: -22em; margin-top: 2em">
 						<div class = "col" style="padding-right: 0.05em">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+								if ($_POST['submit'] == "Port Nassau") { ?>
+									<input type="submit" name= "submit" class="LeftButtonTwoPressed" value="Port Nassau"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
+								<?php }
+							}
+							else{ ?>
 								<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
-							<?php endif;?>
+							<?php } ?>
 						</div>
 						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+								if ($_POST['submit'] == "Tortuga Nights") { ?>
+									<input type="submit" name= "submit" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+								<?php }
+							}
+							else{ ?>
 								<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
-							<?php endif;?>
+							<?php } ?>
 						</div>
 						</div>
 					</div>
@@ -176,14 +208,30 @@
 					<div class = "d-flex justify-content-center">
 						<div class = "row" id ="ButtonsRow" style="margin-right: -40em; margin-top: -4em">
 						<div class = "col" style="padding-right: 0.05em">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+								if ($_POST['submit'] == "Port Nassau") { ?>
+									<input type="submit" name= "submit" class="LeftButtonTwoPressed" value="Port Nassau"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
+								<?php }
+							}
+							else{ ?>
 								<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
-							<?php endif;?>
+							<?php } ?>
 						</div>
 						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+								if ($_POST['submit'] == "Tortuga Nights") { ?>
+									<input type="submit" name= "submit" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+								<?php }
+							}
+							else{ ?>
 								<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
-							<?php endif;?>
+							<?php } ?>
 						</div>
 						</div>
 					</div>
