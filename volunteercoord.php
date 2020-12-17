@@ -244,6 +244,7 @@
 				<!--Creates the tabs for all of the Port Nassau volunteering departments-->
 				<form method="POST">
 					<fieldset>
+						<input type="hidden" name="event" value="Port Nassau">
 						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
 							<div class = "d-none d-xl-block">
 								<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
@@ -303,6 +304,7 @@
 				<!--Creates the tabs for all of the Port Nassau volunteering departments for a smaller screen-->
 				<form method="POST">
 					<fieldset>
+						<input type="hidden" name="event" value="Port Nassau">
 						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
 							<div class = "d-none d-lg-block d-xl-none">
 								<div class = "d-flex justify-content-center" style="margin-left: -19.0em;">
@@ -372,6 +374,7 @@
 				<!--Creates the tabs for all of the volunteering departments-->
 				<form method="POST">
 					<fieldset>
+						<input type="hidden" name="event" value="Tortuga Nights">
 						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
 							<div class = "d-none d-xl-block">
 								<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
@@ -421,6 +424,7 @@
 				</form>
 				<form method="POST">
 					<fieldset>
+						<input type="hidden" name="event" value="Tortuga Nights">
 						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
 							<div class = "d-none d-lg-block d-xl-none">
 								<div class = "d-flex justify-content-center" style="margin-left: -20.8em;">
