@@ -372,7 +372,7 @@
 				<!--Creates the tabs for all of the volunteering departments-->
 				<form method="POST">
 					<fieldset>
-						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: 8em;">
+						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
 							<div class = "d-none d-xl-block">
 								<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 									<div class = "row" id = "DeptRowOne">
@@ -421,7 +421,7 @@
 				</form>
 				<form method="POST">
 					<fieldset>
-						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -7em;">
+						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
 							<div class = "d-none d-lg-block d-xl-none">
 								<div class = "d-flex justify-content-center" style="margin-left: -20.8em;">
 									<div class = "row" id = "DeptRowOne">
