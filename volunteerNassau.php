@@ -183,50 +183,50 @@
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 							<div class = "row" id = "DeptRowOne">
 								<div class = "col" style="padding-right: 0.05em;">
-									<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept" value="Set-Up">
+									<input type="submit" name= "submit" class="LeftButtonTopVolunteerDeptUn" value="Set-Up">
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Gate"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Gate"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Parking"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Parking"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Constab"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Constab"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Medic"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Medic"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Volunteer Check-In" style="white-space: normal;"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Volunteer Check-In" style="white-space: normal;"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em;">
-									<input type="submit" name= "submit" class="RightButtonTopVolunteerDept" value="Scuttlebutt"></input>
+									<input type="submit" name= "submit" class="RightButtonTopVolunteerDeptUn" value="Scuttlebutt"></input>
 								</div>
 							</div>
 						</div>
 						<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
 							<div class = "row" id="DeptRowTwo">
 								<div class = "col" style = "padding-right: 0.05em;">
-									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept" value="Gold Key"></input>
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptUn" value="Gold Key"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Sanitation"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Sanitation"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Hearld"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Hearld"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Bank"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Bank"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Lost Cove"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Lost Cove"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Monkey Island" style="white-space: normal;"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Monkey Island" style="white-space: normal;"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em;">
-									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept" value="Tear Down"></input>
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptUn" value="Tear Down"></input>
 								</div>
 							</div>
 						</div>
@@ -242,19 +242,19 @@
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 							<div class = "row" id = "DeptRowOne">
 								<div class = "col" style="padding-right: 0.05em;">
-									<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept" value="Set-Up">
+									<input type="submit" name= "submit" class="LeftButtonTopVolunteerDeptUn" value="Set-Up">
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Gate"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Gate"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Parking"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Parking"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Constab"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Constab"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="RightButtonTopVolunteerDept" value="Medic"></input>
+									<input type="submit" name= "submit" class="RightButtonTopVolunteerDeptUn" value="Medic"></input>
 								</div>
 							</div>
 						</div>
@@ -262,35 +262,35 @@
 							<div class = "row" id="DeptRowTwo">
 								
 								<div class = "col" style = "padding-right: 0.05em">
-									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept" value="Volunteer Check-In" style="white-space: normal;"></input>
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptUn" value="Volunteer Check-In" style="white-space: normal;"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Scuttlebutt"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Scuttlebutt"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Gold Key"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Gold Key"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Sanitation"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Sanitation"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept" value="Hearld"></input>
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptUn" value="Hearld"></input>
 								</div>
 							</div>
 						</div>
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em; margin-top: 0.05em">
 							<div class = "row" id = "DeptRowOne">
 								<div class = "col" style = "padding-right: 0.05em; margin-top: 0.05em">
-									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept" value="Bank"></input>
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptUn" value="Bank"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Lost Cove"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Lost Cove"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Monkey Island" style="white-space: normal;"></input>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Monkey Island" style="white-space: normal;"></input>
 								</div>
 								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept" value="Tear Down"></input>
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptUn" value="Tear Down"></input>
 								</div>
 							</div>
 						</div>
