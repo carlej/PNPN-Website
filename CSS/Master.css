@@ -252,6 +252,12 @@ padding:0px;
 	margin-left: -20em;
 }
 
+#SwitchButtonsTwoLayered {
+	margin-top: 6em;
+	align-content: center;
+	margin-left: -40em;
+}
+
 /*Stylizes the actual buttons*/
 
 	/*Two Buttons*/
@@ -273,6 +279,50 @@ padding:0px;
 }
 
 .LeftButtonTwoUn:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.LeftButtonTopTwoUn {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0.4em 0em 0em 0em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.LeftButtonTopTwoUn:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.LeftButtonBottomTwoUn {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0em 0em 0.4em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.LeftButtonBottomTwoUn:hover {
 	color: grey;
 	text-decoration: none;
 }
@@ -299,6 +349,50 @@ padding:0px;
 	text-decoration: none;
 }
 
+.RightButtonTopTwoUn {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0em 0em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.RightButtonTopTwoUn:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.RightButtonBottomTwoUn {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0em 0.4em 0em;
+	background: #000000;
+	color: white;
+	width: 9em;
+	height: 1.5em;
+}
+
+.RightButtonBottomTwoUn:hover {
+	color: grey;
+	text-decoration: none;
+}
+
 .LeftButtonTwoPressed {
 	display: flex;
 	font-family: Pirates;
@@ -321,6 +415,50 @@ padding:0px;
 	text-decoration: none;
 }
 
+.LeftButtonBottomTwoPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0em 0em 0.4em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+}
+
+.LeftButtonBottomTwoPressed:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.LeftButtonTopTwoPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0.4em 0em 0em 0em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+}
+
+.LeftButtonTopTwoPressed:hover {
+	color: grey;
+	text-decoration: none;
+}
+
 .RightButtonTwoPressed {
 	display: flex;
 	font-family: Pirates;
@@ -339,6 +477,28 @@ padding:0px;
 }
 
 .RightButtonTwoPressed:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.RightButtonTopTwoPressed {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0em 0em;
+	background: #000000;
+	color: red;
+	width: 9em;
+	height: 1.5em;
+}
+
+.RightButtonTopTwoPressed:hover {
 	color: grey;
 	text-decoration: none;
 }
@@ -638,6 +798,9 @@ padding:0px;
 	color: grey;
 	text-decoration: none;
 }
+
+/* Dropdown CSS */
+
 
 /*Buttons End Here*/
 
@@ -1138,6 +1301,28 @@ li {
 	text-decoration: none;
 }
 
+.LeftButtonTop2VolunteerDept {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.2em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0.4em 0em 0em 0.4em;
+	background: #000000;
+	color: white;
+	width: 5.5em;
+	height: 3em;
+}
+
+.LeftButtonTop2VolunteerDept:hover {
+	color: grey;
+	text-decoration: none;
+}
+
 .LeftButtonBottomVolunteerDept {
 	display: flex;
 	font-family: Pirates;
@@ -1200,6 +1385,28 @@ li {
 }
 
 .RightButtonTopVolunteerDept:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.RightButtonTop2VolunteerDept {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.2em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0.4em 0.4em 0em;
+	background: #000000;
+	color: white;
+	width: 5.5em;
+	height: 3em;
+}
+
+.RightButtonTop2VolunteerDept:hover {
 	color: grey;
 	text-decoration: none;
 }

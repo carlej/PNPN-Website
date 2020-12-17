@@ -49,10 +49,48 @@
 			</div>
 			</div>
 		</div>
+
+		<!-- Creates the Personal, Coordinator, and Charter Buttons with the page shrunk-->
+		<div class = "container-flow" id = "SwitchButtonsTwoLayered">
+			<div class="d-none d-lg-block d-xl-none">
+			<div class = "d-flex justify-content-center">
+				<div class = "row" id ="ButtonsRow" style="margin-right: -20.1em">
+				<div class = "col" style="padding-right: 0.05em">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="volunteerNassau.php" class="LeftButtonTopTwoUn">Port Nassau</a>
+					<?php endif;?>
+				</div>
+				<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="volunteerTortuga.php" class="RightButtonTopTwoPressed">Tortuga Nights</a>
+					<?php endif;?>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class = "container-flow" id = "SwitchButtonsTwoLayered">
+			<div class="d-none d-lg-block d-xl-none">
+			<div class = "d-flex justify-content-center">
+				<div class = "row" id ="ButtonsRow" style="margin-right: -22em; margin-top: -5.9em">
+				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+					<a href="volunteercoord.php" class="LeftButtonBottomTwoUn">Coordinator</a>
+					<?php endif;?>
+				</div>
+				<div class="col" style="padding-left: 0.05em" >
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="chartercoord.php" class="RightButtonBottomTwoUn">Charter/Land Grant</a>
+					<?php endif;?>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
 		
 		<!-- Code for the Personal, Coordinator, and Charter Buttons once the page is shrunk-->
 		<div class = "container" id = "SwitchButtonsMenuTwoThree">
-			<div class="d-xl-none">
+			<div class="d-lg-none">
 			<div class = "d-flex justify-content-center">
 				<div class = "row">
 				<div class = "col-lg">
@@ -135,14 +173,111 @@
 		
 
 	<body>
-		<div class = "container-flow">
-			<div class = "d-flex justify-content-center">
-				<div class="row" id="ComingSoon">
-				<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
-				<div>Coming Soon!!</div>
-				<?php endif;?>
-			</div>
-		</div>
+		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+		<!--Creates the tabs for all of the volunteering departments-->
+		<form method="POST">
+			<fieldset>
+				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: 8em;">
+					<div class = "d-none d-xl-block">
+						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div class = "row" id = "DeptRowOne">
+								<div class = "col" style="padding-right: 0.05em;">
+									<input type="submit" name= "submit" class="LeftButtonTop2VolunteerDept" value="Set-Up">
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Gate"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Parking"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Constab"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Medic"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em;">
+									<input type="submit" name= "submit" class="RightButtonTop2VolunteerDept" value="Scuttlebutt"></input>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div class = "row" id="DeptRowTwo">
+								<div class = "col" style = "padding-right: 0.05em;">
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept" value="Gold Key"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Sanitation"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Hearld"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Bank"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em;">
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept" value="Tear Down"></input>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+		<form method="POST">
+			<fieldset>
+				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -7em;">
+					<div class = "d-none d-lg-block d-xl-none">
+						<div class = "d-flex justify-content-center" style="margin-left: -20.8em;">
+							<div class = "row" id = "DeptRowOne">
+								<div class = "col" style="padding-right: 0.05em;">
+									<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept" value="Set-Up">
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Gate"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Parking"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="RightButtonTopVolunteerDept" value="Constab"></input>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex justify-content-center" style="margin-left: -19.9em;">
+							<div class = "row" id="DeptRowTwo">
+								<div class = "col" style = "padding-right: 0.05em">
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept" value="Medic"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Scuttlebutt"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Gold Key"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em">
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept" value="Sanitation"></input>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div class = "row" id="DeptRowTwo">
+								<div class = "col" style = "padding-right: 0.05em">
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept" value="Hearld"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept" value="Bank"></input>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em;">
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept" value="Tear Down"></input>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+		<?php endif; ?>
 	</body>
 
 </html>
