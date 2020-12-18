@@ -564,13 +564,33 @@
 
 		<!--Creates the tabs for all of the volunteering departments for the smallest screen-->
 
-		<!--<form method="POST">
+		<form method="POST">
 			<fieldset>
-				<select>
-					
-				</select>
+				<div class = "container">
+					<div class="d-lg-none">
+						<div class = "d-flex justify-content-center">
+							<div class = "row" style="margin-top: -7em;">
+								<div class = "col">
+									<div class="DepartmentDropDown">
+										<button class="DeptDropDown">Select Department:</button>
+										<div class="DeptContent">
+											<input type="submit" name="submit" value="Set-Up"></input>
+											<input type="submit" name="submit" value="Gate"></input>
+											<input type="submit" name="submit" value="Parking"></input>
+											<input type="submit" name="submit" value="Constab"></input>
+											<input type="submit" name="submit" value="Medic"></input>
+											<input type="submit" name="submit" value="Volunteer Check-In"></input>
+											<input type="submit" name="submit" value="Scuttlebutt"></input>
+											<input type="submit" name="submit" value="Gold Key"></input>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</fieldset>
-		</form>-->
+		</form>
 
 		<!--Creates Buttons inside of the other buttons-->
 		<?php

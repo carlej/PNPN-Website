@@ -800,8 +800,56 @@ padding:0px;
 }
 
 /* Dropdown CSS */
+.DepartmentDropDown {
+	position: relative;
+	display: inline-block;
+}
+.DeptDropDown {
+	border-radius: 0.4em 0.4em 0.4em 0.4em;
+	background: #000000;
+	border-color: transparent;
+	width: 9em;
+	height: 2em;
+	font-family: Pirates;
+	font-size: 1.5em;
+	color: white;
+}
 
+.DeptContent {
+	display: none;
+}
 
+.DeptDropDown:hover, .DeptDropDown:active {
+	border-radius: 0.4em 0.4em 0em 0em;
+	background: #000000;
+	border-color: transparent;
+	width: 9em;
+	height: 2em;
+	font-family: Pirates;
+	font-size: 1.5em;
+	color: white;
+}
+
+.DepartmentDropDown:hover, .DepartmentDropDown:active .DeptContent {
+	display: block;
+}
+
+.DeptContent input {
+  	color: black;
+  	text-decoration: none;
+  	display: block;
+  	background: #000000;
+  	border-color: transparent;
+	width: 10.4em;
+	height: 2em;
+	font-family: Pirates;
+	font-size: 1.3em;
+	color: white;
+}
+
+.DeptContent input:hover, input:active {
+	color: gray;
+}
 /*Buttons End Here*/
 
 
