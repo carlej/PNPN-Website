@@ -130,6 +130,7 @@
 	<body>
 		<form method="POST">
 			<fieldset>
+				<input type="hidden" name="submit" value="NULL">
 				<!-- Creates Port Nassau/Tortuga Selection  -->
 				<div class = "container-flow" id = "SwitchButtonsTwoLayered">
 					<div class="d-none d-xl-block">
@@ -137,28 +138,28 @@
 						<div class = "row" id ="ButtonsRow" style="margin-right: -20em; margin-top: -3em">
 						<div class = "col" style="padding-right: 0.05em">
 							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-								if ($_POST['submit'] == "Port Nassau") { ?>
-									<input type="submit" name= "submit" class="LeftButtonTwoPressed" value="Port Nassau"></input>
+								if ($_POST['event'] == "Port Nassau") { ?>
+									<input type="submit" name= "event" class="LeftButtonTwoPressed" value="Port Nassau"></input>
 								<?php }
 								else { ?>
-									<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
+									<input type="submit" name= "event" class="LeftButtonTwoUn" value="Port Nassau"></input>
 								<?php }
 							}
 							else{ ?>
-								<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
+								<input type="submit" name= "event" class="LeftButtonTwoUn" value="Port Nassau"></input>
 							<?php } ?>
 						</div>
 						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
 							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-								if ($_POST['submit'] == "Tortuga Nights") { ?>
-									<input type="submit" name= "submit" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
+								if ($_POST['event'] == "Tortuga Nights") { ?>
+									<input type="submit" name= "event" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
 								<?php }
 								else { ?>
-									<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+									<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
 								<?php }
 							}
 							else{ ?>
-								<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+								<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
 							<?php } ?>
 						</div>
 						</div>
@@ -173,28 +174,28 @@
 						<div class = "row" id ="ButtonsRow" style="margin-right: -22em; margin-top: 2em">
 						<div class = "col" style="padding-right: 0.05em">
 							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-								if ($_POST['submit'] == "Port Nassau") { ?>
-									<input type="submit" name= "submit" class="LeftButtonTwoPressed" value="Port Nassau"></input>
+								if ($_POST['event'] == "Port Nassau") { ?>
+									<input type="submit" name= "event" class="LeftButtonTwoPressed" value="Port Nassau"></input>
 								<?php }
 								else { ?>
-									<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
+									<input type="submit" name= "event" class="LeftButtonTwoUn" value="Port Nassau"></input>
 								<?php }
 							}
 							else{ ?>
-								<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
+								<input type="submit" name= "event" class="LeftButtonTwoUn" value="Port Nassau"></input>
 							<?php } ?>
 						</div>
 						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
 							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-								if ($_POST['submit'] == "Tortuga Nights") { ?>
-									<input type="submit" name= "submit" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
+								if ($_POST['event'] == "Tortuga Nights") { ?>
+									<input type="submit" name= "event" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
 								<?php }
 								else { ?>
-									<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+									<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
 								<?php }
 							}
 							else{ ?>
-								<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+								<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
 							<?php } ?>
 						</div>
 						</div>
@@ -209,28 +210,28 @@
 						<div class = "row" id ="ButtonsRow" style="margin-right: -40em; margin-top: -4em">
 						<div class = "col" style="padding-right: 0.05em">
 							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-								if ($_POST['submit'] == "Port Nassau") { ?>
-									<input type="submit" name= "submit" class="LeftButtonTwoPressed" value="Port Nassau"></input>
+								if ($_POST['event'] == "Port Nassau") { ?>
+									<input type="submit" name= "event" class="LeftButtonTwoPressed" value="Port Nassau"></input>
 								<?php }
 								else { ?>
-									<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
+									<input type="submit" name= "event" class="LeftButtonTwoUn" value="Port Nassau"></input>
 								<?php }
 							}
 							else{ ?>
-								<input type="submit" name= "submit" class="LeftButtonTwoUn" value="Port Nassau"></input>
+								<input type="submit" name= "event" class="LeftButtonTwoUn" value="Port Nassau"></input>
 							<?php } ?>
 						</div>
 						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
 							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-								if ($_POST['submit'] == "Tortuga Nights") { ?>
-									<input type="submit" name= "submit" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
+								if ($_POST['event'] == "Tortuga Nights") { ?>
+									<input type="submit" name= "event" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
 								<?php }
 								else { ?>
-									<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+									<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
 								<?php }
 							}
 							else{ ?>
-								<input type="submit" name= "submit" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+								<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
 							<?php } ?>
 						</div>
 						</div>
@@ -240,11 +241,12 @@
 			</fieldset>
 		</form>
 		<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			if ($_POST['submit'] == "Port Nassau") { ?>
+			if ($_POST['event'] == "Port Nassau") { ?>
 				<!--Creates the tabs for all of the Port Nassau volunteering departments-->
 				<form method="POST">
 					<fieldset>
 						<input type="hidden" name="event" value="Port Nassau">
+						<input type="hidden" name="job" value="NULL">
 						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
 							<div class = "d-none d-xl-block">
 								<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
@@ -305,6 +307,7 @@
 				<form method="POST">
 					<fieldset>
 						<input type="hidden" name="event" value="Port Nassau">
+						<input type="hidden" name="job" value="NULL">
 						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
 							<div class = "d-none d-lg-block d-xl-none">
 								<div class = "d-flex justify-content-center" style="margin-left: -19.0em;">
@@ -370,11 +373,12 @@
 			<?php }
 		} ?>
 		<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			if ($_POST['submit'] == "Tortuga Nights") { ?>
+			if ($_POST['event'] == "Tortuga Nights") { ?>
 				<!--Creates the tabs for all of the volunteering departments-->
 				<form method="POST">
 					<fieldset>
 						<input type="hidden" name="event" value="Tortuga Nights">
+						<input type="hidden" name="job" value="NULL">
 						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
 							<div class = "d-none d-xl-block">
 								<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
@@ -425,6 +429,7 @@
 				<form method="POST">
 					<fieldset>
 						<input type="hidden" name="event" value="Tortuga Nights">
+						<input type="hidden" name="job" value="NULL">
 						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
 							<div class = "d-none d-lg-block d-xl-none">
 								<div class = "d-flex justify-content-center" style="margin-left: -20.8em;">
