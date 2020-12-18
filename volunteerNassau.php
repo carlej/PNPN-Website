@@ -573,67 +573,200 @@
 		</form>-->
 
 		<!--Creates Buttons inside of the other buttons-->
-		<?php 
+		<?php
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			if ($_POST['submit'] == "Gate") { ?>
-
-			<!--Gate Sub Buttons-->
-			<form method="POST">
-				<fieldset>
-					<div class = "container-flow" id = "SwitchButtonsVolunteerSection" style="margin-top: 10em">
-						<div class="d-none d-xl-block">
-							<div class = "d-flex justify-content-center">
-								<div class = "row">
-									<div class="col" style="padding-right: 0.05em">
-										<input type="submit" name= "job" class="LeftButtonVolunteerSection" value="Pre-Registration"></input>
-									</div>
-									<div class="col" style="padding-right: 0.05em; padding-left: 0.05em">
-										<input type="submit" name= "job" class="LeftButtonVolunteerSection" value="Cash Registration"></input>
-									</div>
-									<div class="col" style="padding-left: 0.05em">
-										<input type="submit" name= "job" class="LeftButtonVolunteerSection" value="Cat Herder"></input>
-									</div>
-									<input type="hidden" name="submit" value="Gate"></input>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class = "container-flow" id = "SwitchButtonsVolunteerSection" style="margin-top: 10em">
-						<div class="d-none d-lg-block d-xl-none">
-							<div class = "d-flex justify-content-center">
-								<div class = "row">
-									<div class="col" style="padding-right: 0.05em">
-										<input type="submit" name= "job" class="LeftButtonVolunteerSection" value="Pre-Registration"></input>
-									</div>
-									<div class="col" style="padding-right: 0.05em; padding-left: 0.05em">
-										<input type="submit" name= "job" class="LeftButtonVolunteerSection" value="Cash Registration"></input>
-									</div>
-									<div class="col" style="padding-left: 0.05em">
-										<input type="submit" name= "job" class="LeftButtonVolunteerSection" value="Cat Herder"></input>
-									</div>
-									<input type="hidden" name="submit" value="Gate"></input>
-								</div>
-							</div>
-						</div>
-					</div>
-				</fieldset>
-			</form>
-
-			<?php
-				if ($_POST['job']=="Pre-Registration") {
-					echo "Pre-Registration";
-				}
-				else if ($_POST['job']=="Cash Registration") {
-					echo "Cash Registration";
-				}
-				else if ($_POST['job']=="Cat Herder") {
-					echo "Meow!";
-				}
-
+			if ($_POST['submit'] == "Add Shifts") {
+				include("Javascript/addshift.php");
 			}
+			if ($_POST['submit'] == "Set-Up") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Set-Up">
+						<!-- Buttons for all set-up go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Gate") {
+				?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Gate">
+						<!-- Buttons for all gate go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Parking") {
+				?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Parking">
+						<!-- Buttons for all Parking go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Constab") {
+				?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Constab">
+						<!-- Buttons for all Constab go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Medic") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Medic">
+						<!-- Buttons for all Medic go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Volunteer Check-In") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Volunteer Check-In">
+						<!-- Buttons for all Volunteer Check-In go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Scuttlebutt") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Scuttlebutt">
+						<!-- Buttons for all Scuttlebutt go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Gold Key") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Gold Key">
+						<!-- Buttons for all Gold Key go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Sanitation") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Sanitation">
+						<!-- Buttons for all Sanitation go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Hearld") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Hearld">
+						<!-- Buttons for all Hearld go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Bank") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Bank">
+						<!-- Buttons for all Bank go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Lost Cove") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Lost Cove">
+						<!-- Buttons for all Lost Cove go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Monkey Island") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Monkey Island">
+						<!-- Buttons for all Monkey Island go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Tear Down") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Tear Down">
+						<!-- Buttons for all Tear Down go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
 		}
-
-		mysqli_close($con); 
+		//$time = 1;
+		//$cenvertedTime = date('Y-m-d H:i:s',strtotime('+'.$time.' hour',strtotime($startTime)));//add time to datetime object
+		mysqli_close($con);
 		?>
 
 		<?php endif; ?>

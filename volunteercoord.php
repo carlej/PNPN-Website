@@ -741,148 +741,191 @@
 			if ($_POST['submit'] == "Add Shifts") {
 				include("Javascript/addshift.php");
 			}
-			if ($_POST['submit'] == "Gate") {
+			if ($_POST['submit'] == "Set-Up") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Set-Up">
+						<!-- Buttons for all set-up go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Gate") {
 				?>
 				<form method="POST">
 					<fieldset>
-						<div class = "container" id="SearchBy">
-							<div class = "d-flex-row">
-								<div class = "col">
-									<input type="submit" name= "job" value="Prereg" >
-									<input type="submit" name= "job" value="cathurder" >
-									<input type="submit" name= "job" value="other things" >
-									<input type="hidden" name="submit" value="Gate">
-									<input type="hidden" name= "add">
-								</div>
-							</div>
-						</div>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Gate">
+						<!-- Buttons for all gate go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
 					</fieldset>
 				</form>
-				<?php
-				if ($_POST['job']=="Prereg") {
-					if (!$_POST['add']) {
-						?>
-						<form method="POST">
-							<fieldset>
-								<input type="submit" name="add" value="Add">
-								<input type="hidden" name= "job" value="Prereg" >
-								<input type="hidden" name="submit" value="Gate">
-							</fieldset>
-						</form>
-						<input type="hidden" name="ID" value="'.$key.'">
-						<?php
-						$queryJob = "SELECT * FROM jobs WHERE job LIKE 'prereg' ";
-						$resultJob= mysqli_query($con,$queryJob);
-						if ($resultJob) {
-							if (mysqli_num_rows($resultJob)>0) {
-								$array = $resultJob->fetch_all(MYSQLI_NUM);
-								foreach ($array as $key => $value) {
-									echo '<form method="POST"><fieldset><p><li>pay '.$value[2].'</li>';
-									echo '<li>start '.$value[3].'</li>';
-									echo '<li>end '.$value[4].'</li>';
-									echo '<li>total hours '.$value[5].'<input type="hidden" name="ID" value="'.$key.'"><input type="submit" name= "submit" value="Delete" ><input type="submit" name= "submit" value="Edit" ></li></p></fieldset></form>';
-								}
-							}
-							else
-								echo mysqli_fetch_row($resultJob);
-						}
-					}
-					else{?>
-						<label style="margin-bottom: 0em;">Adding a new Prereg Shift</label>
-						<form method="POST">
-							<fieldset>
-								<li>
-									<label style="margin-bottom: 0em;">Start Date: </label>
-									<input type="date" name="start">
-								</li>
-								<li>
-									<label style="margin-bottom: 0em;">End Date: </label>
-									<input type="date" name="end">
-								</li>
-								<li>
-									<label style="margin-bottom: 0em;">Start Time: </label>
-									<input type="time" name="stime">
-								</li>
-								<li>
-									<label style="margin-bottom: 0em;">End Time: </label>
-									<input type="time" name="etime">
-								</li>
-								<li>
-									<label style="margin-bottom: 0em;">Shift Length: </label>
-									<input type="num" name="length" min="1">
-								</li>
-								<li>
-									<label style="margin-bottom: 0em;">Pay Per Hour: </label>
-									<input type="num" name="pay" min="1">
-								</li>
-								<input type="submit" name= "submit" value="Add Shifts">
-								<input type="hidden" name= "job" value="Prereg">
-							</fieldset>
-						</form><?php
-					}
-					
-				}
-				else if ($_POST['job']=="cathurder") {
-					echo "catzz";
-				}
-				else if ($_POST['job']=="other things") {
-					echo "idk what jobs there is";
-				}
-			}
+			<?php }
 			else if ($_POST['submit'] == "Parking") {
 				?>
 				<form method="POST">
 					<fieldset>
-						<div class = "container" id="SearchBy">
-							<div class = "d-flex-row">
-								<div class = "col">
-									<input type="submit" name= "job" value="Outer lot" >
-									<input type="submit" name= "job" value="Inner lot" >
-									<input type="submit" name= "job" value="other things" >
-									<input type="hidden" name="submit" value="Parking">
-								</div>
-							</div>
-						</div>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Parking">
+						<!-- Buttons for all Parking go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
 					</fieldset>
 				</form>
-				<?php
-				if ($_POST['job']=="Outer lot") {
-					echo "outer";
-				}
-				else if ($_POST['job']=="Inner lot") {
-					echo "inner";
-				}
-				else if ($_POST['job']=="other things") {
-					echo "idk what jobs there is";
-				}
-			}
+			<?php }
 			else if ($_POST['submit'] == "Constab") {
 				?>
 				<form method="POST">
 					<fieldset>
-						<div class = "container" id="SearchBy">
-							<div class = "d-flex-row">
-								<div class = "col">
-									<input type="submit" name= "job" value="Roming" >
-									<input type="submit" name= "job" value="Not roming" >
-									<input type="submit" name= "job" value="Much stabbs" >
-									<input type="hidden" name="submit" value="Constab">
-								</div>
-							</div>
-						</div>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Constab">
+						<!-- Buttons for all Constab go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
 					</fieldset>
 				</form>
-				<?php
-				if ($_POST['job']=="Roming") {
-					echo "walkzz";
-				}
-				else if ($_POST['job']=="Not roming") {
-					echo "stations";
-				}
-				else if ($_POST['job']=="Much stabbs") {
-					echo "knife";
-				}
-			}
+			<?php }
+			else if ($_POST['submit'] == "Medic") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Medic">
+						<!-- Buttons for all Medic go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Volunteer Check-In") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Volunteer Check-In">
+						<!-- Buttons for all Volunteer Check-In go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Scuttlebutt") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Scuttlebutt">
+						<!-- Buttons for all Scuttlebutt go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Gold Key") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Gold Key">
+						<!-- Buttons for all Gold Key go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Sanitation") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Sanitation">
+						<!-- Buttons for all Sanitation go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Hearld") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Hearld">
+						<!-- Buttons for all Hearld go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Bank") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Bank">
+						<!-- Buttons for all Bank go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Lost Cove") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Lost Cove">
+						<!-- Buttons for all Lost Cove go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Monkey Island") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Monkey Island">
+						<!-- Buttons for all Monkey Island go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
+			else if ($_POST['submit'] == "Tear Down") { ?>
+				<form method="POST">
+					<fieldset>
+						<?php 
+						$delim = $_POST['event'];
+						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
+						<input type="hidden" name="submit" value="Tear Down">
+						<!-- Buttons for all Tear Down go here -->
+						<!-- button example. they must use this format aka the name must be job-->
+						<input type="submit" name="job" value="job">
+					</fieldset>
+				</form>
+			<?php }
 		}
 		//$time = 1;
 		//$cenvertedTime = date('Y-m-d H:i:s',strtotime('+'.$time.' hour',strtotime($startTime)));//add time to datetime object
