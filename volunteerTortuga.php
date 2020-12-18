@@ -499,9 +499,6 @@
 			if ($_POST['submit'] == "Set-Up") { ?>
 				<form method="POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
 						<input type="hidden" name="submit" value="Set-Up">
 						<!-- Buttons for all set-up go here -->
 						<!-- button example. they must use this format aka the name must be job-->
@@ -513,9 +510,6 @@
 				?>
 				<form method="POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
 						<input type="hidden" name="submit" value="Gate">
 						<!-- Buttons for all gate go here -->
 						<!-- button example. they must use this format aka the name must be job-->
@@ -527,9 +521,6 @@
 				?>
 				<form method="POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
 						<input type="hidden" name="submit" value="Parking">
 						<!-- Buttons for all Parking go here -->
 						<!-- button example. they must use this format aka the name must be job-->
@@ -541,9 +532,6 @@
 				?>
 				<form method="POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
 						<input type="hidden" name="submit" value="Constab">
 						<!-- Buttons for all Constab go here -->
 						<!-- button example. they must use this format aka the name must be job-->
@@ -554,9 +542,6 @@
 			else if ($_POST['submit'] == "Medic") { ?>
 				<form method="POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
 						<input type="hidden" name="submit" value="Medic">
 						<!-- Buttons for all Medic go here -->
 						<!-- button example. they must use this format aka the name must be job-->
@@ -567,9 +552,6 @@
 			else if ($_POST['submit'] == "Scuttlebutt") { ?>
 				<form method="POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
 						<input type="hidden" name="submit" value="Scuttlebutt">
 						<!-- Buttons for all Scuttlebutt go here -->
 						<!-- button example. they must use this format aka the name must be job-->
@@ -580,9 +562,6 @@
 			else if ($_POST['submit'] == "Gold Key") { ?>
 				<form method="POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
 						<input type="hidden" name="submit" value="Gold Key">
 						<!-- Buttons for all Gold Key go here -->
 						<!-- button example. they must use this format aka the name must be job-->
@@ -593,9 +572,6 @@
 			else if ($_POST['submit'] == "Sanitation") { ?>
 				<form method="POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
 						<input type="hidden" name="submit" value="Sanitation">
 						<!-- Buttons for all Sanitation go here -->
 						<!-- button example. they must use this format aka the name must be job-->
@@ -606,9 +582,6 @@
 			else if ($_POST['submit'] == "Hearld") { ?>
 				<form method="POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
 						<input type="hidden" name="submit" value="Hearld">
 						<!-- Buttons for all Hearld go here -->
 						<!-- button example. they must use this format aka the name must be job-->
@@ -619,9 +592,6 @@
 			else if ($_POST['submit'] == "Bank") { ?>
 				<form method="POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
 						<input type="hidden" name="submit" value="Bank">
 						<!-- Buttons for all Bank go here -->
 						<!-- button example. they must use this format aka the name must be job-->
@@ -632,9 +602,6 @@
 			else if ($_POST['submit'] == "Tear Down") { ?>
 				<form method="POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
 						<input type="hidden" name="submit" value="Tear Down">
 						<!-- Buttons for all Tear Down go here -->
 						<!-- button example. they must use this format aka the name must be job-->
