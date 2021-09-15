@@ -1,0 +1,251 @@
+/*Pieces of Eight Font*/
+@font-face {
+	font-family:Pirates; 
+	src: url("Pieces of Eight Font/Pieces of Eight.ttf");
+}
+/*Treasure Map Deadhand Font*/
+@font-face {
+	font-family:TreasureMap ;
+	src: url("Treasure Map Font/TreasureMapDeadhand.ttf")
+}
+
+body {
+	background: 
+	url(styles/Dark_Wood.jfif);
+	background-size: 100%;
+
+}
+
+/*Navigation bar box*/
+#NavBar {
+	background-color: rgba(0,0,0,0.9);
+	max-height: auto;
+	max-width: auto;
+	height: 4em;
+}
+/*Navigation bar header*/
+#NavBarName {
+	font-family: Pirates;
+	font-size: 3.5em;
+	color: white;
+}
+
+/*Navigation bar links*/
+#NavBarLinks a{
+	font-family: Pirates;
+	font-size: 1.2em;
+	color: white;
+	text-decoration: none;
+	margin-top: 0.35em;
+	background-color: none;
+	margin-right: 1em;
+}
+#NavBarLinks a:hover {
+	color: gray;
+	text-decoration: none;
+}
+
+.navbar-nav > li > .dropdown-menu {
+	background-color: rgba(0,0,0,0.9);
+	color: white;
+}
+
+#NavigationBar {
+	background-color: rgba(0,0,0,0.9);
+}
+
+.icons {
+	color: white;
+}
+
+#nav-link2 a{
+	font-family: Pirates;
+	font-size: 1em;
+	color: white;
+	text-decoration: none;
+	margin-top: 0.35em;
+	background-color: rgba(0,0,0,0.9);
+	margin-right: 1em;
+	margin-top: 0em;
+}
+#nav-link2 a:hover{
+	color: gray;
+	text-decoration: none;
+}
+
+
+/*Picture gallery on home page*/
+#HomeCarousel {
+	padding-left: 1em; 
+	padding-right: 1em;
+}
+
+@media (max-width: 992px) {
+	#HomeCarousel {
+	padding-left: 1.2em; 
+	padding-right: 1em;
+	}
+}
+
+#CarouselControls {
+	max-width: 70%
+	max-height: auto;
+	margin-top: 1.5em;
+}
+
+/*About Box on Home Page*/
+#AboutBoxHome {
+	background-color: rgba(0,0,0,0.8);
+	margin-top: 1.5em;
+	max-height: auto;
+	padding-right: 1em;
+	padding-left: 1em;
+}
+
+@media (max-width: 1200px) {
+	#AboutBoxHome {
+	max-height: auto;
+	margin-left: 1.2em;
+	margin-right: 1em;
+	}
+}
+
+#AboutUs {
+	font-size: 1.2em;
+	font-family: Pirates;
+	color: white;
+}
+
+
+/*Event Pages*/
+#CarouselControlsEventPage {
+	margin-top: 1em;
+	width: 96%;
+	margin-left: -0.5em;
+}
+
+@media (max-width: 1200px) {
+	#CarouselControlsEventPage {
+		margin-left: 0em;
+	}
+}
+
+.Countdown {
+	font-family: Pirates;
+	font-size: 1.5em;
+	color: white;
+	margin-top: 0.2em;
+	margin-left: 2.4em;
+}
+
+@media (max-width: 1200px) {
+	.Countdown {
+		width: 90%;
+		margin-left: 1.5em;
+	}
+}
+
+#CountdownBox {
+	background-color: rgba(0,0,0,0.8);
+	width: 80%;
+	height: 2.5em;
+	font-size: 1.11em;
+	font-family: Pirates;
+	color: white;
+	border: 0.2em;
+	border-style: inset;
+	border-top-color: rgb(160,0,0);
+  	border-left-color: rgb(160,0,0);
+  	border-right-color: rgb(110,0,0);
+  	border-bottom-color: rgb(110,0,0);
+	padding-top: 0.25em;
+	margin-left: 1.8em;
+	text-align: center;
+	margin-bottom: 0em;
+
+}
+
+@media (max-width: 1200px) {
+	#CountdownBox {
+		width: 90%;
+		margin-left: 1.5em;
+	}
+}
+
+.EventNavigationTitle {
+	font-family: Pirates;
+	font-size: 1.5em;
+	color: white;
+	margin-top: 0.2em;
+	margin-left: 2.4em
+}
+
+@media (max-width: 1200px) {
+	.EventNavigationTitle {
+		width: 90%;
+		margin-left: 1.5em;
+	}
+}
+
+.EventNavigation {
+	font-family: Pirates;
+	font-size: 1.11em;
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+	width: 80%;
+	height: 28em;
+	border: 0.2em;
+	border-style: inset;
+	border-top-color: rgb(160,0,0);
+  	border-left-color: rgb(160,0,0);
+  	border-right-color: rgb(110,0,0);
+  	border-bottom-color: rgb(110,0,0);
+	padding-top: 0.3em;
+	margin-left: 2em;
+	
+}
+
+@media (max-width: 1200px) {
+	.EventNavigation {
+		width: 90%;
+		margin-left: 1.5em;
+	}
+}
+
+#DefenderofNassau {
+	background-color: rgba(0,0,0,0.8);
+	height: 10em;
+	border: 0.2em;
+	border-style: inset;
+	border-top-color: rgb(160,0,0);
+  	border-left-color: rgb(160,0,0);
+  	border-right-color: rgb(110,0,0);
+  	border-bottom-color: rgb(110,0,0);
+	width: 85%;
+	margin-top: 1em;
+	margin-left: 4em;
+	margin-right: 4em;
+}
+
+@media (max-width: 1200px) {
+	#DefenderofNassau {
+		width: 100%;
+	}
+}
+
+.Defender {
+	text-align: center;
+	font-family: Pirates;
+	font-size: 1.5em;
+	color: white;
+	padding-top: 0.3em;
+}
+
+.DefenderComp {
+	text-align: center;
+	font-family: Pirates;
+	font-size: 1em;
+	color: white;
+	padding-top: 0.3em;
+}
+
