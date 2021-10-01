@@ -1,4 +1,6 @@
-
+<?php
+	include("Javascript/Connections/reqMain.php");
+?>	
 <div class="container-flow">
 	<div class="header"></div>
 		<div class="d-none d-xl-block">

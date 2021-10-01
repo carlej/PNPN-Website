@@ -3,7 +3,7 @@
 	<head>
 		
 		<?php
-			include("Views/Partials/MainHeader.php");
+			include("Views/Partials/HeaderMain.php");
 		?>	
 		
 	</head>
