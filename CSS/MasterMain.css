@@ -26,7 +26,7 @@ body {
 /*Navigation bar header*/
 #NavBarName {
 	font-family: Pirates;
-	font-size: 3.5em;
+	font-size: 2.8em;
 	color: white;
 }
 
@@ -212,6 +212,11 @@ body {
 	}
 }
 
+#Pre-Reg:hover {
+	text-decoration: none;
+	color: gray;
+}
+
 #DefenderofNassau {
 	background-color: rgba(0,0,0,0.8);
 	height: 10em;
@@ -249,3 +254,76 @@ body {
 	padding-top: 0.3em;
 }
 
+#CrownTournament {
+	background-color: rgba(0,0,0,0.8);
+	height: 10em;
+	border: 0.2em;
+	border-style: inset;
+	border-top-color: rgb(160,0,0);
+  	border-left-color: rgb(160,0,0);
+  	border-right-color: rgb(110,0,0);
+  	border-bottom-color: rgb(110,0,0);
+	width: 85%;
+	margin-top: 1em;
+	margin-left: 4em;
+	margin-right: 4em;
+}
+
+@media (max-width: 1200px) {
+	#CrownTournament {
+		width: 100%;
+	}
+}
+
+.Crown {
+	text-align: center;
+	font-family: Pirates;
+	font-size: 1.5em;
+	color: white;
+	padding-top: 0.3em;
+}
+
+.CrownComp {
+	text-align: center;
+	font-family: Pirates;
+	font-size: 1em;
+	color: white;
+	padding-top: 0.3em;
+}
+
+#PirateOlympics {
+	background-color: rgba(0,0,0,0.8);
+	height: 10em;
+	border: 0.2em;
+	border-style: inset;
+	border-top-color: rgb(160,0,0);
+  	border-left-color: rgb(160,0,0);
+  	border-right-color: rgb(110,0,0);
+  	border-bottom-color: rgb(110,0,0);
+	width: 85%;
+	margin-top: 1em;
+	margin-left: 4em;
+	margin-right: 4em;
+}
+
+@media (max-width: 1200px) {
+	#PirateOlympics {
+		width: 100%;
+	}
+}
+
+.Olympics {
+	text-align: center;
+	font-family: Pirates;
+	font-size: 1.5em;
+	color: white;
+	padding-top: 0.3em;
+}
+
+.OlympicsComp {
+	text-align: center;
+	font-family: Pirates;
+	font-size: 1em;
+	color: white;
+	padding-top: 0.3em;
+}

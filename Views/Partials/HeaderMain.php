@@ -1,12 +1,10 @@
-<?php
-	include("Javascript/connections/reqMain.php");
-?>
+
 <div class="container-flow">
 	<div class="header"></div>
 		<div class="d-none d-xl-block">
 		<nav class="navbar navbar-expand-lg" id="NavBar">
 			<div class="container-fluid">
-				<a class="navbar-brand" id="NavBarName">Legacy Bay Events</a>
+				<a class="navbar-brand" id="NavBarName">Pacific Northwest Pirate Nation</a>
 				<ul class="navbar-nav" id="NavBarLinks">
 					<li class="nav-item">
 	  					<a class="nav-link" href="index.php">Home</a>
@@ -38,8 +36,9 @@
 	     		 			Command Center
 	      				</a>
 					    <div class="dropdown-menu">
-					    	<a class="dropdown-item" href="WhosLegacyBay.php">Who's Legacy Bay?</a>
+					    	<a class="dropdown-item" href="WhosLegacyBay.php">Who's P.N.P.N.?</a>
 					        <a class="dropdown-item" href="PortNassauStaff.php">Port Nassau Staff</a>
+					        <a class="dropdown-item" href="PortNassauStaff.php">Tortuga Staff</a>
 					        <a class="dropdown-item" href="FAQ.php">F.A.Q.</a>
 					        <a class="dropdown-item" href="Policies.php">Policies</a>
 					    </div>
@@ -56,7 +55,7 @@
 					    </div>
 	    			</li>
 	    			<li class="nav-item">
-	  					<a class="nav-link" href="bank.php">Triple Key</a>
+	  					<a class="nav-link" href="index.php">Triple Key</a>
 					</li>
 	    		</ul>
 	    	</div>
@@ -70,7 +69,7 @@
 	<div class="d-xl-none"> 
 		<nav class="navbar" id="NavigationBar">
 			<div class ="navbar-header" style="font-family:Pirates; font-size: 1.6em; color: white">
-				Legacy Bay Events
+				Pacific Northwest Pirate Nation
 			</div>
 
  		<!-- Toggler/collapsibe Button -->
@@ -106,8 +105,9 @@
 	      			<li class="nav-item dropdown" id="nav-link2">
 	        			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">Command Center</a>
 	        			<div class="dropdown-menu" aria-labelledby="collapsibleNavbar">
-	        				<a class="dropdown-item" href="WhosLegacyBay.php">Who's Legacy Bay?</a>
+	        				<a class="dropdown-item" href="WhosLegacyBay.php">Who's P.N.P.N.?</a>
 	        				<a class="dropdown-item" href="PortNassauStaff.php">Port Nassau Staff</a>
+	        				<a class="dropdown-item" href="PortNassauStaff.php">Tortuga Staff</a>
 	        				<a class="dropdown-item" href="FAQ.php">F.A.Q.</a>
 	        				<a class="dropdown-item" href="Policies.php">Policies</a>
 	        			</div>

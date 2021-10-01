@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="col-xl-4 d-flex" id="AboutBoxHome">
-					<div id="AboutUs">Legacy Bay</div>
+					<div id="AboutUs">P.N.P.N.</div>
 				</div>
 			</div>
 		</div>

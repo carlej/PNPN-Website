@@ -3,7 +3,7 @@
 	<head>
 		
 		<?php
-			include("Views/Partials/HeaderMain.php");
+			include("Views/Partials/MainHeader.php");
 		?>	
 		
 	</head>
@@ -70,21 +70,23 @@
 						<div class="col">
 							<div class = "EventNavigation">
 								<div style="font-size: 1.3em; padding-left: 0.6em; color: rgb(128,128,128);">Registration</div>
-								<div style="font-size: 1.1em; padding-left: 3em;">Pre-Registration</div>
-								<div style="font-size: 1.1em; padding-left: 3em;">Private Biffie</div>
-								<div style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em;">Merchants</div>
+								<div id="PreReg" style="font-size: 1.1em; padding-left: 3em; color: rgb(255,255,255);">Pre-Registration
+										<a href="PN-PreRegistration.php"></a>
+								</div>
+
+								<div style="font-size: 1.1em; padding-left: 3em;" href="PN-PrivateBiffie.php">Private Biffie</div>
+								<div style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em;" href="PN-Merchants.php">Merchants</div>
 
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);">Camping</div>
-								<div style="font-size: 1.1em; padding-left: 3em;">Map</div>
-								<div style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em;">Land Grants</div>
+								<div style="font-size: 1.1em; padding-left: 3em;" href="PN-Map.php">Map</div>
+								<div style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em;" href="LandGrants.php">Land Grants</div>
 
-								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);">Event Program</div>
+								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);" href="PN-EventProgram">Event Program</div>
 
-								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);">Volunteering</div>
+								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);" href="Volunteer.php">Volunteer</div>
 
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);">Accomodations</div>
-								<div style="font-size: 1.1em; padding-left: 3em;">Accessibility</div>
-
+								<div style="font-size: 1.1em; padding-left: 3em;" href="PN-Accessibility.php">Accessibility</div>
 							</div>
 						</div>
 					</div>
@@ -121,7 +123,7 @@
 				<!--Defender of Nassau and other stuff-->
 				<div class="col-md d-flex flex-column justify-content-center" id="DefenderofNassau">
 					<div class="Defender">Defender of Nassau</div>
-					<div class="DefenderComp">Contenders coming June 2022</div>
+					<div class="DefenderComp">Contenders coming June 2022!</div>
 				</div>
 			</div>
 		</div>
