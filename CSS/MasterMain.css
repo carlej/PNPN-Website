@@ -111,11 +111,50 @@ body {
 }
 
 #AboutUs {
-	font-size: 1.2em;
+	font-size: 2.9em;
 	font-family: Pirates;
 	color: white;
+	text-align: center;
+	margin-top: 1.1em;
+	margin-left: 0.8em;
+	margin-right: 0.8em;
 }
 
+@media (max-width: 1400px){
+	#AboutUs {
+		font-size: 2.3em;
+		font-family: Pirates;
+		color: white;
+		text-align: center;
+		margin-top: 1em;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+	}
+}
+
+@media (max-width: 1200px){
+	#AboutUs {
+		font-size: 2.3em;
+		font-family: Pirates;
+		color: white;
+		text-align: center;
+		margin-top: 0.8em;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+	}
+}
+
+@media (max-width: 800px){
+	#AboutUs {
+		font-size: 1.8em;
+		font-family: Pirates;
+		color: white;
+		text-align: center;
+		margin-top: 0.8em;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+	}
+}
 
 /*Event Pages*/
 #CarouselControlsEventPage {

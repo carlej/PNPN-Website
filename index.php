@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="col-xl-4 d-flex" id="AboutBoxHome">
-					<div id="AboutUs">P.N.P.N.</div>
+					<div id="AboutUs"><p>Welcome to the new site for the Pacific NW Pirate Nation!</p><p></p><p>Please bear with us. More information will be added soon!</p></div>
 				</div>
 			</div>
 		</div>
