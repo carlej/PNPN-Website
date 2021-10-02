@@ -31,7 +31,8 @@
 					</div>
 				</div>
 				<div class="col-xl-4 d-flex" id="AboutBoxHome">
-					<div id="AboutUs"><p>Welcome to the new site for the Pacific NW Pirate Nation!</p><p></p><p>Please bear with us. More information will be added soon!</p></div>
+					<div id="AboutUs"><p class="text-center">Welcome to the new site for the Pacific NW Pirate Nation!</p><p class="text-center">Our site is currently under development but we look forward to events in 2022!</p>
+						<p class="text-center">Registration for both events opens October 15th!</div>
 				</div>
 			</div>
 		</div>

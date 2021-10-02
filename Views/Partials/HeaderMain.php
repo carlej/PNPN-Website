@@ -38,9 +38,9 @@
 	     		 			Command Center
 	      				</a>
 					    <div class="dropdown-menu">
-					    	<a class="dropdown-item" href="WhosLegacyBay.php">Who's P.N.P.N.?</a>
+					    	<a class="dropdown-item" href="WhosPNPN.php">Who's P.N.P.N.?</a>
 					        <a class="dropdown-item" href="PortNassauStaff.php">Port Nassau Staff</a>
-					        <a class="dropdown-item" href="PortNassauStaff.php">Tortuga Staff</a>
+					        <a class="dropdown-item" href="TortugaStaff.php">Tortuga Staff</a>
 					        <a class="dropdown-item" href="FAQ.php">F.A.Q.</a>
 					        <a class="dropdown-item" href="Policies.php">Policies</a>
 					    </div>
@@ -107,9 +107,9 @@
 	      			<li class="nav-item dropdown" id="nav-link2">
 	        			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">Command Center</a>
 	        			<div class="dropdown-menu" aria-labelledby="collapsibleNavbar">
-	        				<a class="dropdown-item" href="WhosLegacyBay.php">Who's P.N.P.N.?</a>
+	        				<a class="dropdown-item" href="WhosPNPN.php">Who's P.N.P.N.?</a>
 	        				<a class="dropdown-item" href="PortNassauStaff.php">Port Nassau Staff</a>
-	        				<a class="dropdown-item" href="PortNassauStaff.php">Tortuga Staff</a>
+	        				<a class="dropdown-item" href="TortugaStaff.php">Tortuga Staff</a>
 	        				<a class="dropdown-item" href="FAQ.php">F.A.Q.</a>
 	        				<a class="dropdown-item" href="Policies.php">Policies</a>
 	        			</div>

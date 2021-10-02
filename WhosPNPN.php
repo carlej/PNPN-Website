@@ -14,7 +14,7 @@
 			<div class="row justify-content-center">
 				<div class="d-flex">
 					<div class="col-lg">
-						<div style="font-size: 3.8em; font-family: pirates; color: white; margin-top: 0.2em;" >Who's Legacy Bay?</div>
+						<div style="font-size: 3.8em; font-family: pirates; color: white; margin-top: 0.2em;" >Who's P.N.P.N.?</div>
 					</div>
 				</div>
 			</div>
