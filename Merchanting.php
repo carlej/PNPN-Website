@@ -20,18 +20,15 @@
 		</div>
 
 		<div class="container-flow">
-<<<<<<< Updated upstream
 			<div class="row justify-content-center">
 				<div class="d-flex">
 					<div class="col-lg">
 						<div style="font-size: 2.8em; font-family: TreasureMap; color: ghostwhite; margin-top: 0.1em;" >We are now accepting applications for Port Nassau and Tortuga Nights 2022!</div>
 					</div>
-=======
 			<div class = "row no-gutters">
 				<!--Application Link-->
 				<div class="col-md d-flex flex-column justify-content-center" id="MerchantApplicationLink">
 					<div class="MerchantApp">Apply Here for Port Nassau and Tortuga Nights</div>
->>>>>>> Stashed changes
 				</div>
 			</div>
 		</div>
