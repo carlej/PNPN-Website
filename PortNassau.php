@@ -128,7 +128,7 @@
 			</div>
 		</div>
 
-				</div>
+			</div>
 
 				<!--Blog-->
 				<div class="row no-gutters">
