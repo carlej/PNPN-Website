@@ -70,17 +70,23 @@
 						<div class="col">
 							<div class = "EventNavigation">
 								<div style="font-size: 1.3em; padding-left: 0.6em; color: rgb(128,128,128);">Registration</div>
-								<div id="PreReg" style="font-size: 1.1em; padding-left: 3em; color: rgb(255,255,255);">Pre-Registration
-										<a href="PN-PreRegistration.php"></a>
+								<div>
+									<a href="PN-PreRegistration.php"id="PreReg" style="font-size: 1.1em; padding-left: 3em; color: white;">Pre-Registration</a>
 								</div>
 
-								<div style="font-size: 1.1em; padding-left: 3em;" href="PN-PrivateBiffie.php">Private Biffie</div>
-								<div style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em;" href="PN-Merchants.php">Merchants</div>
-
+								<div>
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="PN-PrivateBiffie.php">Private Biffie</a>
+								</div>
+								<div> 
+									<a style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em; color: white" href="PN-Merchants.php">Merchants</a>
+								</div>
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);">Camping</div>
-								<div style="font-size: 1.1em; padding-left: 3em;" href="PN-Map.php">Map</div>
-								<div style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em;" href="LandGrants.php">Land Grants</div>
-
+								<div> 
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="PN-Map.php">Map</a>
+								</div>
+								<div>
+									<a style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em; color: white" href="LandGrants.php">Land Grants</a>
+								</div>
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);" href="PN-EventProgram">Event Program</div>
 
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);" href="Volunteer.php">Volunteer</div>
