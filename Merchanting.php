@@ -43,20 +43,20 @@
 								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Does not come with a camping nor merchant space</p>
 
 							<p style="color: antiquewhite; text-align: left; margin-left:3em; font-size: 0.8em;">Bazaar Space - <span style="font-family: Arial;">$</span>50</p>
-								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Includes: admission for merchantee and a small space in the merchanting pavillion</p>
+								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Includes: admission for merchantee and a small space in the bazaar pavillion</p>
 								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Does not come with a camping space.</p>
 
 							<p style="color: antiquewhite; text-align: left; margin-left:3em; font-size: 0.8em;">10 x 10 Space - <span style="font-family: Arial;">$</span>125</p>
-								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Includes: 10 ft by 10 ft merchanting space in Merchant Square, admission for merchantee and one helper, and a 20 ft camping space behind booth</p>
+								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Includes: 10 ft by 10 ft merchanting space in Merchant Square, admission for merchantee plus one helper, and a 20 ft camping space behind booth</p>
 
 							<p style="color: antiquewhite; text-align: left; margin-left:3em; font-size: 0.8em;">10 x 20 Space - <span style="font-family: Arial;">$</span>175</p>
-								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Includes: 10 ft by 20 ft merchanting space in Merchant Square, admission for merchantee and one helper, and a 20 ft camping space behind booth</p>
+								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Includes: 10 ft by 20 ft merchanting space in Merchant Square, admission for merchantee plus one helper, and a 20 ft camping space behind booth</p>
 
 							<p style="color: antiquewhite; text-align: left; margin-left:3em; font-size: 0.8em;">20 x 20 Space - <span style="font-family: Arial;">$</span>225</p>
-								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Includes: 20 ft by 20 ft merchanting space in Merchant Square, admission for merchantee and one helper, and a 20 ft camping space behind booth</p>
+								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Includes: 20 ft by 20 ft merchanting space in Merchant Square, admission for merchantee plus one helper, and a 20 ft camping space behind booth</p>
 
 							<p style="color: antiquewhite; text-align: left; margin-left:3em; font-size: 0.8em;">Food Vendor - Price of Booth Size Above</p>
-								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Includes: Booth size selected, admission for merchantee and one helper, and a 20 ft camping space behind booth</p>
+								<p style="color: lightgray; font-size:0.7em; text-align:left; margin-left: 6em;">Includes: Booth size selected, admission for merchantee plus one helper, and a 20 ft camping space behind booth</p>
 
 							<p style="color: antiquewhite; text-align: left; margin-left:3em; font-size: 0.8em;">Add Ons</p>
 								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">Power Access - <span style="font-family: Arial;">$</span>50 (Extension cords not provided)</p>
@@ -67,10 +67,10 @@
 						<p>&nbsp;</p>
 
 						<p style="color:white; text-align: left; margin-left: 1.1em;">Application Process</p>
-							<p style="color: antiquewhite; text-align: left; margin-left:3em; font-size: 0.8em;">We will are accepting only 75 merchants per event.</p>
-								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~Applications opened October 1st.</p>
-								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~If accepeted, a registration from will be sent vie email.</p>
-								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~Merchant registration will open November 1st, 2021.</p>
+							<p style="color: antiquewhite; text-align: left; margin-left:3em; font-size: 0.8em;">We are accepting only 75 merchants per event</p>
+								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~Applications opened October 1st</p>
+								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~If accepeted, a registration form will be sent via email</p>
+								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~Merchant registration will open November 1st, 2021. You will not be able to register until you are accepted.</p>
 								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~Merchant fees for Port Nassau MUST be paid in full by April 1, 2022. Fees for Tortuga Nights MUST be paid in full by July 1, 2022. </p>
 
 						<p>&nbsp;</p>

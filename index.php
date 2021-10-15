@@ -11,15 +11,41 @@
 
 	<body>
 
-		<div class="container-flow" style="max-width: 99%">
+		<div class="container-flow" style="max-width: 99%;">
 			<div class="row no-gutters">
 				<div class="col-xl-8 d-flex" id="HomeCarousel">
 					<div id="CarouselControls" class="carousel slide" data-ride="carousel">
 					  <div class="carousel-inner">
 					    <div class="carousel-item active">
-					      <img class="d-block w-100" src="CSS/styles/DSC_0763.jpg">
+					      <img class="d-block w-100" src="CSS/styles/Home Page/Scarlet Dove.jpg">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="CSS/styles/Home Page/The Nothing Duck Display.jpg" style="max-height: 55em;">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="CSS/styles/Home Page/Redemption in The Dark.jpg">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="CSS/styles/Home Page/Skelly in the Rigging.jpg">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="CSS/styles/Home Page/IMG_2238.jpg">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="CSS/styles/Home Page/Sunkn Norwegian Sign Dusk.jpg">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="CSS/styles/Home Page/DSC01305.jpg">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="CSS/styles/Home Page/Merry Gallows.jpg">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="CSS/styles/Home Page/The Nothing Day Shot.jpg">
 					    </div>
 					  </div>
+
+					  <!-- Slideshow Buttons-->
 					  <a class="carousel-control-prev" href="#CarouselControls" role="button" data-slide="prev">
 					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					    <span class="sr-only">Previous</span>
