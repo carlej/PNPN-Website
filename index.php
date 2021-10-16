@@ -23,7 +23,7 @@
 					      <img class="d-block w-100" src="CSS/styles/Home Page/The Nothing Duck Display.jpg" style="max-height: 55em;">
 					    </div>
 					    <div class="carousel-item">
-					      <img class="d-block w-100" src="CSS/styles/Home Page/Redemption in The Dark.jpg">
+					      <img class="d-block w-100" src="CSS/styles/Home Page/Redemption In The Dark.jpg">
 					    </div>
 					    <div class="carousel-item">
 					      <img class="d-block w-100" src="CSS/styles/Home Page/Skelly in the Rigging.jpg">
