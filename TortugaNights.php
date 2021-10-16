@@ -71,7 +71,7 @@
 							<div class = "EventNavigation">
 								<div style="font-size: 1.3em; padding-left: 0.6em; color: rgb(128,128,128);">Registration</div>
 								<div>
-									<a href="TN-PreReg.php"id="PreReg" style="font-size: 1.1em; padding-left: 3em; color: white;">Pre-Registration</a>
+									<a href="https://www.Port-Nassau.com"id="PreReg" style="font-size: 1.1em; padding-left: 3em; color: white;">Pre-Registration</a>
 								</div>
 								<div>
 									<a href="https://docs.google.com/forms/d/e/1FAIpQLSfN-qdAO5Rfm8ngGinxMhfzLbyTUPtUo9ExKdYBa-Hi6IPaxw/viewform" style="font-size: 1.1em; padding-left: 3em; color: white;">Pet-Registration</a>
