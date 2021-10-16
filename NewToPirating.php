@@ -9,5 +9,25 @@
 	</head>
 
 	<body>
+		<div class="container-flow">
+			<div class = "row no-gutters">
+				<div class="col-xl d-flex flex-column" id="EventBanner">
+
+					<!--Banner-->
+					<img class="mx-auto d-block" src="CSS/styles/NewToPirating.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">
+				</div>
+			</div>
+		</div>
+
+		<div class="container-flow">
+			<div class = "row no-gutters">
+				<div class="col-md d-flex flex-column justify-content-center" id="NewToPirating">
+					<div class="PiratingInfo">
+						<p>Looking to start eventing? Not sure where to start?</p>
+						<p>Coming soon: A guide for those new to pirating!</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

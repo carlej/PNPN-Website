@@ -13,7 +13,7 @@
 			<div class = "row no-gutters">
 				<div class="col-xl d-flex flex-column" id="EventBanner">
 
-					<!--Event Banner-->
+					<!--Banner-->
 					<img class="mx-auto d-block" src="CSS/styles/Merchanting Banner.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">
 				</div>
 			</div>

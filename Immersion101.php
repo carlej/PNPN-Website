@@ -9,5 +9,25 @@
 	</head>
 
 	<body>
+		<div class="container-flow">
+			<div class = "row no-gutters">
+				<div class="col-xl d-flex flex-column" id="EventBanner">
+
+					<!--Banner-->
+					<img class="mx-auto d-block" src="CSS/styles/Immersion101.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">
+				</div>
+			</div>
+		</div>
+
+		<div class="container-flow">
+			<div class = "row no-gutters">
+				<div class="col-md d-flex flex-column justify-content-center" id="Immersion101">
+					<div class="ImmersionInfo">
+						<p>Looking for crafts and ways to improve your encampment and style?</p>
+						<p>Guides coming soon!</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

@@ -71,28 +71,28 @@
 							<div class = "EventNavigation">
 								<div style="font-size: 1.3em; padding-left: 0.6em; color: rgb(128,128,128);">Registration</div>
 								<div>
-									<a href="PN-PreRegistration.php"id="PreReg" style="font-size: 1.1em; padding-left: 3em; color: white;">Pre-Registration</a>
+									<a href="PN-PreReg.php"id="PreReg" style="font-size: 1.1em; padding-left: 3em; color: white;">Pre-Registration</a>
 								</div>
-
 								<div>
-									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="PN-PrivateBiffie.php">Private Biffie</a>
+									<a href="https://docs.google.com/forms/d/e/1FAIpQLSfN-qdAO5Rfm8ngGinxMhfzLbyTUPtUo9ExKdYBa-Hi6IPaxw/viewform" style="font-size: 1.1em; padding-left: 3em; color: white;">Pet-Registration</a>
+								</div>
+								<div>
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Private Biffie</a>
 								</div>
 								<div> 
-									<a style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em; color: white" href="PN-Merchants.php">Merchants</a>
+									<a style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em; color: white" href="Merchanting.php">Merchants</a>
 								</div>
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);">Camping</div>
 								<div> 
-									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="PN-Map.php">Map</a>
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Map</a>
 								</div>
 								<div>
-									<a style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em; color: white" href="LandGrants.php">Land Grants</a>
+									<a style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em; color: white" href="">Land Grants</a>
 								</div>
-								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);" href="PN-EventProgram">Event Program</div>
+								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);" href="">Event Program</div>
 
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);" href="Volunteer.php">Volunteer</div>
 
-								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);">Accomodations</div>
-								<div style="font-size: 1.1em; padding-left: 3em;" href="PN-Accessibility.php">Accessibility</div>
 							</div>
 						</div>
 					</div>
@@ -106,7 +106,7 @@
 						<div id="CarouselControlsEventPage" class="carousel slide" data-ride="carousel">
 						  <div class="carousel-inner">
 						    <div class="carousel-item active">
-						      <img class="d-block w-100" src="CSS/styles/DSC_0763.jpg">
+						      <img class="d-block w-100" src="CSS/styles/Scarlet Dove.jpg">
 						    </div>
 						  </div>
 						  <a class="carousel-control-prev" href="#CarouselControls" role="button" data-slide="prev">

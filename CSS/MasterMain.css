@@ -461,3 +461,82 @@ body {
 	margin-left: 0.5em;
 }
 
+
+/*New To Pirating Page*/
+#NewToPirating {
+	background-color: rgba(0,0,0,0.8);
+	height: 10em;
+	border: 0.2em;
+	border-style: inset;
+	border-top-color: rgb(160,0,0);
+  	border-left-color: rgb(160,0,0);
+  	border-right-color: rgb(110,0,0);
+  	border-bottom-color: rgb(110,0,0);
+	width: 85%;
+	margin-top: 1em;
+	margin-left: 2em;
+	margin-right: 2em;
+
+}
+
+.PiratingInfo {
+	text-align: center;
+	font-family: Pirates;
+	font-size: 1.4em;
+	color: antiquewhite;
+	margin-top: 0.2em;
+}
+
+
+/*Etiquette Page*/
+#Etiquette {
+	background-color: rgba(0,0,0,0.8);
+	height: 10em;
+	border: 0.2em;
+	border-style: inset;
+	border-top-color: rgb(160,0,0);
+  	border-left-color: rgb(160,0,0);
+  	border-right-color: rgb(110,0,0);
+  	border-bottom-color: rgb(110,0,0);
+	width: 85%;
+	margin-top: 1em;
+	margin-left: 2em;
+	margin-right: 2em;
+
+}
+
+.EtiquetteInfo {
+	text-align: center;
+	font-family: Pirates;
+	font-size: 1.4em;
+	color: antiquewhite;
+	margin-top: 0.2em;
+}
+
+/*Immersion 101 Page*/
+#Immersion101 {
+	background-color: rgba(0,0,0,0.8);
+	height: 10em;
+	border: 0.2em;
+	border-style: inset;
+	border-top-color: rgb(160,0,0);
+  	border-left-color: rgb(160,0,0);
+  	border-right-color: rgb(110,0,0);
+  	border-bottom-color: rgb(110,0,0);
+	width: 85%;
+	margin-top: 1em;
+	margin-left: 2em;
+	margin-right: 2em;
+
+}
+
+.ImmersionInfo {
+	text-align: center;
+	font-family: Pirates;
+	font-size: 1.4em;
+	color: antiquewhite;
+	margin-top: 0.2em;
+}
+
+
+

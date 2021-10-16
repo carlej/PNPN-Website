@@ -14,7 +14,7 @@
 		<div class="container-flow" style="max-width: 99%;">
 			<div class="row no-gutters">
 				<div class="col-xl-8 d-flex" id="HomeCarousel">
-					<div id="CarouselControls" class="carousel slide" data-ride="carousel">
+					<div id="CarouselControls" class="carousel slide" data-ride="carousel" data-interval="10000" style="transition: transform 6s ease-in-out left;">
 					  <div class="carousel-inner">
 					    <div class="carousel-item active">
 					      <img class="d-block w-100" src="CSS/styles/Home Page/Scarlet Dove.jpg">
@@ -57,8 +57,12 @@
 					</div>
 				</div>
 				<div class="col-xl-4 d-flex" id="AboutBoxHome">
-					<div id="AboutUs"><p class="text-center">Welcome to the new site for the Pacific NW Pirate Nation!</p><p class="text-center">Our site is currently under development but we look forward to events in 2022!</p>
-						<p class="text-center">Registration for both events opens October 15th!</div>
+					<div id="AboutUs">
+						<p class="text-center">Welcome to the new site for the Pacific NW Pirate Nation!</p>
+						<p style="font-size: 0.2em;">&nbsp</p>
+						<p class="text-center">Our site is currently under development but we look forward to events in 2022!</p>
+						<p style="font-size: 0.2em;">&nbsp</p>
+						<p class="text-center">Registration for both of our 2022 events is open!</div>
 				</div>
 			</div>
 		</div>
