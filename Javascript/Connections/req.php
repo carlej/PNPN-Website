@@ -1,6 +1,6 @@
 
 <link href="CSS/Master.css" rel="stylesheet" type="text/css" />
-<link href="CSS/Menu.css" rel="stylesheet" type="text/css" />
+
 <meta charset="utf-8">	
 
 <!-- jQuery -->

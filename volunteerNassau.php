@@ -186,58 +186,58 @@
 								<div class = "row" id = "DeptRowOne">
 									<div class = "col" style="padding-right: 0.05em;">
 										<?php if ($_POST['submit'] == "Set-Up") { ?>
-										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDeptPressed" value="Set-Up"></input>
+										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept pressed" value="Set-Up"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDeptUn" value="Set-Up"></input>
+										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept unpressed" value="Set-Up"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Gate") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Gate"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Gate"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Gate"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gate"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Parking") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Parking"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Parking"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Parking"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Parking"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Constab") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Constab"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Constab"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Constab"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Constab"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Medic") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Medic"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Medic"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Medic"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Medic"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Volunteer Check-In") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Volunteer Check-In" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Volunteer Check-In" style="white-space: normal;"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Volunteer Check-In" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Volunteer Check-In" style="white-space: normal;"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em;">
 										<?php if ($_POST['submit'] == "Scuttlebutt") { ?>
-										<input type="submit" name= "submit" class="RightButtonTopVolunteerDeptPressed" value="Scuttlebutt"></input>
+										<input type="submit" name= "submit" class="RightButtonTopVolunteerDept pressed" value="Scuttlebutt"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="RightButtonTopVolunteerDeptUn" value="Scuttlebutt"></input>
+										<input type="submit" name= "submit" class="RightButtonTopVolunteerDept unpressed" value="Scuttlebutt"></input>
 									<?php } ?>
 									</div>
 								</div>
@@ -246,58 +246,58 @@
 								<div class = "row" id="DeptRowTwo">
 									<div class = "col" style = "padding-right: 0.05em;">
 										<?php if ($_POST['submit'] == "Gold Key") { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptPressed" value="Gold Key"></input>
+										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept pressed" value="Gold Key"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptUn" value="Gold Key"></input>
+										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Gold Key"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Sanitation") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Sanitation"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Sanitation"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Sanitation"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Sanitation"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Hearld") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Hearld"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Hearld"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Hearld"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Hearld"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Bank") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Bank"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Bank"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Bank"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Bank"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Lost Cove") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Lost Cove"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Lost Cove"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Lost Cove"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Monkey Island") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Monkey Island" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Monkey Island" style="white-space: normal;"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Monkey Island" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em;">
 										<?php if ($_POST['submit'] == "Tear Down") { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptPressed" value="Tear Down"></input>
+										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept pressed" value="Tear Down"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptUn" value="Tear Down"></input>
+										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
 									<?php } ?>
 									</div>
 								</div>
@@ -311,50 +311,50 @@
 							<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 								<div class = "row" id = "DeptRowOne">
 									<div class = "col" style="padding-right: 0.05em;">
-										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDeptUn" value="Set-Up">
+										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept unpressed" value="Set-Up">
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Gate"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gate"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Parking"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Parking"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Constab"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Constab"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Medic"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Medic"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Volunteer Check-In" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Volunteer Check-In" style="white-space: normal;"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em;">
-										<input type="submit" name= "submit" class="RightButtonTopVolunteerDeptUn" value="Scuttlebutt"></input>
+										<input type="submit" name= "submit" class="RightButtonTopVolunteerDept unpressed" value="Scuttlebutt"></input>
 									</div>
 								</div>
 							</div>
 							<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
 								<div class = "row" id="DeptRowTwo">
 									<div class = "col" style = "padding-right: 0.05em;">
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptUn" value="Gold Key"></input>
+										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Gold Key"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Sanitation"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Sanitation"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Hearld"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Hearld"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Bank"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Bank"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Lost Cove"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Monkey Island" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em;">
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptUn" value="Tear Down"></input>
+										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
 									</div>
 								</div>
 							</div>
@@ -374,42 +374,42 @@
 								<div class = "row" id = "DeptRowOne">
 									<div class = "col" style="padding-right: 0.05em;">
 										<?php if ($_POST['submit'] == "Set-Up") { ?>
-										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDeptPressed" value="Set-Up"></input>
+										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept pressed" value="Set-Up"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDeptUn" value="Set-Up"></input>
+										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept unpressed" value="Set-Up"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Gate") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Gate"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Gate"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Gate"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gate"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Parking") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Parking"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Parking"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Parking"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Parking"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Constab") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Constab"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Constab"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Constab"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Constab"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Medic") { ?>
-										<input type="submit" name= "submit" class="RightButtonTopVolunteerDeptPressed" value="Medic"></input>
+										<input type="submit" name= "submit" class="RightButtonTopVolunteerDept pressed" value="Medic"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="RightButtonTopVolunteerDeptUn" value="Medic"></input>
+										<input type="submit" name= "submit" class="RightButtonTopVolunteerDept unpressed" value="Medic"></input>
 									<?php } ?>
 									</div>
 								</div>
@@ -419,42 +419,42 @@
 									
 									<div class = "col" style = "padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Volunteer Check-In") { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptPressed" value="Volunteer Check-In" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept pressed" value="Volunteer Check-In" style="white-space: normal;"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptUn" value="Volunteer Check-In" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Volunteer Check-In" style="white-space: normal;"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Scuttlebutt") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Scuttlebutt"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Scuttlebutt"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Scuttlebutt"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Scuttlebutt"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
 										<?php if ($_POST['submit'] == "Gold Key") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Gold Key"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Gold Key"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Gold Key"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gold Key"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Sanitation") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Sanitation"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Sanitation"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Sanitation"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Sanitation"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<?php if ($_POST['submit'] == "Hearld") { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptPressed" value="Hearld"></input>
+										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept pressed" value="Hearld"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptUn" value="Hearld"></input>
+										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Hearld"></input>
 									<?php } ?>
 									</div>
 								</div>
@@ -463,34 +463,34 @@
 								<div class = "row" id = "DeptRowOne">
 									<div class = "col" style = "padding-right: 0.05em; margin-top: 0.05em">
 										<?php if ($_POST['submit'] == "Bank") { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptPressed" value="Bank"></input>
+										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept pressed" value="Bank"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptUn" value="Bank"></input>
+										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Bank"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
 										<?php if ($_POST['submit'] == "Lost Cove") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Lost Cove"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Lost Cove"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Lost Cove"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
 										<?php if ($_POST['submit'] == "Monkey Island") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptPressed" value="Monkey Island" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Monkey Island" style="white-space: normal;"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Monkey Island" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
 									<?php } ?>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
 										<?php if ($_POST['submit'] == "Tear Down") { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptPressed" value="Tear Down"></input>
+										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept pressed" value="Tear Down"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptUn" value="Tear Down"></input>
+										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
 									<?php } ?>
 									</div>
 								</div>
@@ -504,19 +504,19 @@
 							<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 								<div class = "row" id = "DeptRowOne">
 									<div class = "col" style="padding-right: 0.05em;">
-										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDeptUn" value="Set-Up">
+										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept unpressed" value="Set-Up">
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Gate"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gate"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Parking"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Parking"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Constab"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Constab"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="RightButtonTopVolunteerDeptUn" value="Medic"></input>
+										<input type="submit" name= "submit" class="RightButtonTopVolunteerDept unpressed" value="Medic"></input>
 									</div>
 								</div>
 							</div>
@@ -524,35 +524,35 @@
 								<div class = "row" id="DeptRowTwo">
 									
 									<div class = "col" style = "padding-right: 0.05em">
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptUn" value="Volunteer Check-In" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Volunteer Check-In" style="white-space: normal;"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Scuttlebutt"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Scuttlebutt"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Gold Key"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gold Key"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Sanitation"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Sanitation"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptUn" value="Hearld"></input>
+										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Hearld"></input>
 									</div>
 								</div>
 							</div>
 							<div class = "d-flex justify-content-center" style="margin-left: -20.2em; margin-top: 0.05em">
 								<div class = "row" id = "DeptRowOne">
 									<div class = "col" style = "padding-right: 0.05em; margin-top: 0.05em">
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDeptUn" value="Bank"></input>
+										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Bank"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Lost Cove"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDeptUn" value="Monkey Island" style="white-space: normal;"></input>
+										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDeptUn" value="Tear Down"></input>
+										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
 									</div>
 								</div>
 							</div>
@@ -564,16 +564,17 @@
 
 		<!--Creates the tabs for all of the volunteering departments for the smallest screen-->
 
-		<form method="POST">
-			<fieldset>
-				<div class = "container">
-					<div class="d-lg-none">
-						<div class = "d-flex justify-content-center">
-							<div class = "row" style="margin-top: -7em;">
-								<div class = "col">
-									<div class="DepartmentDropDown">
-										<button class="DeptDropDown">Select Department:</button>
-										<div class="DeptContent">
+		
+		<div class = "container">
+			<div class="d-lg-none">
+				<div class = "d-flex justify-content-center">
+					<div class = "row" style="margin-top: -7em;">
+						<div class = "col">
+							<div class="DepartmentDropDown">
+								<button class="DeptDropDown">Select Department:</button>
+								<div class="DeptContent">
+									<form method="POST">
+										<fieldset>
 											<input type="submit" name="submit" value="Set-Up"></input>
 											<input type="submit" name="submit" value="Gate"></input>
 											<input type="submit" name="submit" value="Parking"></input>
@@ -582,15 +583,16 @@
 											<input type="submit" name="submit" value="Volunteer Check-In"></input>
 											<input type="submit" name="submit" value="Scuttlebutt"></input>
 											<input type="submit" name="submit" value="Gold Key"></input>
-										</div>
-									</div>
+										</fieldset>
+									</form>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</fieldset>
-		</form>
+			</div>
+		</div>
+
 
 		<!--Creates Buttons inside of the other buttons-->
 		<?php
@@ -604,7 +606,11 @@
 						<input type="hidden" name="submit" value="Set-Up">
 						<!-- Buttons for all set-up go here -->
 						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
+						<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div class = "row" id="DeptRowTwo">
+								<input type="submit" class= "alone unpressed" name="job" value="job">
+							</div>
+						</div>
 					</fieldset>
 				</form>
 			<?php }
@@ -615,7 +621,28 @@
 						<input type="hidden" name="submit" value="Gate">
 						<!-- Buttons for all gate go here -->
 						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
+						<div class="d-flex justify-content-center" style="margin-left: -20.2em; margin-top: 1em;" >
+							<div class = "row" id="DeptRowTwo">
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
+									<input type="submit" class= "LeftButtonJob unpressed" name="job" value="job1">
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
+									<input type="submit" class= "MiddleButtonJob unpressed" name="job" value="job2">
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
+									<input type="submit" class= "MiddleButtonJob unpressed" name="job" value="job3">
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
+									<input type="submit" class= "MiddleButtonJob unpressed" name="job" value="job4">
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
+									<input type="submit" class= "MiddleButtonJob unpressed" name="job" value="job5">
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
+									<input type="submit" class= "RightButtonJob unpressed" name="job" value="job6">
+								</div>
+							</div>
+						</div>
 					</fieldset>
 				</form>
 			<?php }
