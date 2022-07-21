@@ -147,7 +147,7 @@
 								<option value="Pname">Pirate Name</option>
 								<option value="Fname">First Name</option>
 								<option value="Lname">Last Name</option>
-								<option value="Username">Email</option>
+								<option value="Username">Email</option> 
 								<option value="shipID" style="display:none;">shipID</option>
 								<option value="Ship">Ship/House</option>
 								<option value="fleetID" style="display:none;">fleetID</option>

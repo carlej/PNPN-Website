@@ -1371,7 +1371,7 @@ li {
 	text-decoration: none;
 }
 
-.LeftButtonTop2VolunteerDeptUn {
+.LeftButtonTop2VolunteerDept {
 	display: flex;
 	font-family: Pirates;
 	font-size: 1.2em;
@@ -1383,34 +1383,11 @@ li {
 	line-height: 1.4em;
 	border-radius: 0.4em 0em 0em 0.4em;
 	background: #000000;
-	color: white;
 	width: 5.5em;
 	height: 3em;
 }
 
-.LeftButtonTop2VolunteerDeptUn:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.LeftButtonTop2VolunteerDeptPressed {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.2em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0.4em 0em 0em 0.4em;
-	background: #000000;
-	color: red;
-	width: 5.5em;
-	height: 3em;
-}
-
-.LeftButtonTop2VolunteerDeptPressed:hover {
+.LeftButtonTop2VolunteerDept:hover {
 	color: grey;
 	text-decoration: none;
 }
@@ -1478,7 +1455,7 @@ li {
 	text-decoration: none;
 }
 
-.RightButtonTop2VolunteerDeptUn {
+.RightButtonTop2VolunteerDept {
 	display: flex;
 	font-family: Pirates;
 	font-size: 1.2em;
@@ -1490,34 +1467,11 @@ li {
 	line-height: 1.4em;
 	border-radius: 0em 0.4em 0.4em 0em;
 	background: #000000;
-	color: white;
 	width: 5.5em;
 	height: 3em;
 }
 
-.RightButtonTop2VolunteerDeptUn:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.RightButtonTop2VolunteerDeptPressed {
-	display: flex;
-	font-family: Pirates;
-	font-size: 1.2em;
-	text-decoration: none;
-	border: 0.01em;
-	border-color: transparent;
-	align-content: center;
-	justify-content: center;
-	line-height: 1.4em;
-	border-radius: 0em 0.4em 0.4em 0em;
-	background: #000000;
-	color: red;
-	width: 5.5em;
-	height: 3em;
-}
-
-.RightButtonTop2VolunteerDeptPressed:hover {
+.RightButtonTop2VolunteerDept:hover {
 	color: grey;
 	text-decoration: none;
 }
@@ -1557,7 +1511,6 @@ li {
 	line-height: 1.4em;
 	border-radius: 0.4em 0em 0em 0.4em;
 	background: #000000;
-	color: white;
 	width: 5.5em;
 	height: 1.5em;
 }
@@ -1578,7 +1531,6 @@ li {
 	justify-content: center;
 	line-height: 1.4em;
 	background: #000000;
-	color: white;
 	width: 5.5em;
 	height: 1.5em;
 }
@@ -1600,7 +1552,6 @@ li {
 	line-height: 1.4em;
 	border-radius: 0em 0.4em 0.4em 0em;
 	background: #000000;
-	color: white;
 	width: 5.5em;
 	height: 1.5em;
 }
@@ -1608,4 +1559,17 @@ li {
 .RightButtonJob:hover {
 	color: grey;
 	text-decoration: none;
+}
+
+.dataDis {
+	display: inline-block;
+	font-family: Pirates;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: 0.02em;
+	text-align: center;
+	border-color: transparent;
+	line-height: 1.4em;
+	background: #000000;
+	height: 1.5em;
 }
