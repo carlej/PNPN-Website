@@ -975,7 +975,7 @@
 					</fieldset>
 				</form>
 			<?php }
-			if (isset($_POST['submit'])) {
+			if (isset($_POST['submit']) && $_POST['submit'] != "Your Shifts") {
 				$tmpsub = $_POST['submit'];
 				if (isset($_POST['job'])) {
 					$tmpjob = $_POST['job'];
@@ -991,6 +991,7 @@
 
 								$update = "UPDATE jobs SET user = '$username' WHERE `jobs`.`ID` = '$key[0]'";
 	                            $temp=mysqli_query($con, $update);
+	                            $_POST['submit'] = "Your Shifts";
 	                            //echo("<meta http-equiv='refresh' content='0.01'>");
 	                        }
 						}
@@ -1014,14 +1015,16 @@
 		</form>
 		
 		<?php
-		if ($_POST['submit'] == "Your Shifts") {
-			$username = $_SESSION['username'];
-			$signShift = "SELECT * FROM `jobs` WHERE `user` = '$username'";
-			$temp=mysqli_query($con, $signShift);
-			if (mysqli_num_rows($temp)>0) {
-				$array = $temp->fetch_all(MYSQLI_NUM);
-				foreach ($array as $key => $value) {
-					print($value[0]);
+		if (isset($_POST['submit'])) {
+			if ($_POST['submit'] == "Your Shifts") {
+				$username = $_SESSION['username'];
+				$signShift = "SELECT * FROM `jobs` WHERE `user` = '$username'";
+				$temp=mysqli_query($con, $signShift);
+				if (mysqli_num_rows($temp)>0) {
+					$array = $temp->fetch_all(MYSQLI_NUM);
+					foreach ($array as $key => $value) {
+						print($value[0]);
+					}
 				}
 			}
 		}
