@@ -166,9 +166,7 @@
 			</div>
 		</div>
 		
-	</head>
-		
-		
+	</head>	
 	</head>
 	<body>
 
