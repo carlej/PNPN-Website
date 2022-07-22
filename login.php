@@ -35,8 +35,8 @@
 			echo '<div class="container" id = "NoneFound">
 							There are no accounts with that Email!
 					</div>';
-			//echo '<script type="text/javascript">alert("That email does not exist.");</script>';
-            //$msg = "<h2>Can't Add to Table</h2> That email does not exist. $Username<p>";
+			//echo '<script type="text/javascript">alert("That Email does not exist.");</script>';
+            //$msg = "<h2>Can't Add to Table</h2> That Email does not exist. $Email<p>";
 		}
 		if (mysqli_num_rows($resultIn)!=0) {
 			$row2 = mysqli_fetch_row($resultIn);
@@ -84,7 +84,7 @@
 			<div class = "col-12">
 			<form method="post" id="addForm">
     			<p>
-        			<label for="Username" style="font-family: pirates">Email:</label>
+        			<label for="Email" style="font-family: pirates">Email:</label>
 					<input type="text" class="required" name="Username" id="Username" style="width: 15em;">
 				</p>
 				<p>

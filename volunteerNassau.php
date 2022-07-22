@@ -1,5 +1,3 @@
-<?php //This is the volunteer page this is the next step after the bank functions are finished. It is not known at this time what this will look like but the base functions are that it will display all the shifts, allow users to sign up for a shift, it will allow checkin and check out of shifts, and it will auto pay on completion of shift ?>
-
 <!doctype html>
 <html>
 	<head>
@@ -174,7 +172,7 @@
 	</head>
 	<body>
 
-		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
 		<!--Creates the tabs for all of the volunteering departments-->
 		<form method="POST">
 			<fieldset>
@@ -1432,18 +1430,6 @@
 		?>
 
 		<?php endif; ?>
-		
-
-
-		<!--Creates coming soon message for non c and z users-->
-		<div class = "container-flow">
-			<div class = "d-flex justify-content-center">
-				<div class="row" id="ComingSoon">
-				<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
-				<div>Coming Soon!!</div>
-				<?php endif;?>
-			</div>
-		</div>
 
 	</body>
 </html>
