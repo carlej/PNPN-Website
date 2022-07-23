@@ -59,6 +59,7 @@
 				$_SESSION['nest']="hold";
 				$_SESSION['nstype']=NULL;
 				$_SESSION['clear']='NULL';
+				$_SESSION['shiftend']=NULL;
 				echo $perm[0];
 				header("Location: bank.php");
 			}

@@ -166,9 +166,7 @@
 			</div>
 		</div>
 		
-	</head>
-		
-		
+	</head>	
 	</head>
 	<body>
 
@@ -1196,25 +1194,33 @@
 										$array=NULL;
 										$array = $resultJob->fetch_all(MYSQLI_NUM);
 										if (mysqli_num_rows($resultJob)>0) {
+											$count = 1;
 											foreach ($array as $key => $value) { 
-												$temp = $value[0];
-												//$queryJob = "SELECT * FROM jobs WHERE ID = '$temp'";
-												//$resultJob = mysqli_query($con, $queryJob);
-												//$rowJob = mysqli_fetch_row($resultJob);
-												?>
-													<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;"><?php echo $value[3] ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
-													$date = date_create($value[4]);
-													echo date_format($date, "m/d/y") ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
-													$date = date_create($value[4]);
-													echo date_format($date, "h:i A") ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
-													$date = date_create($value[5]);
-													echo date_format($date, "h:i A") ?></label>
-													<br>
-											<?php } ?>
+												$date = date_create($value[4]);
+												if (date_format($date, "m") == date("m", strtotime("july"))){
+													$count = 0;
+													$temp = $value[0];
+													//$queryJob = "SELECT * FROM jobs WHERE ID = '$temp'";
+													//$resultJob = mysqli_query($con, $queryJob);
+													//$rowJob = mysqli_fetch_row($resultJob);
+													?>
+														<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;"><?php echo $value[3] ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
+														$date = date_create($value[4]);
+														echo date_format($date, "m/d/y") ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
+														$date = date_create($value[4]);
+														echo date_format($date, "h:i A") ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
+														$date = date_create($value[5]);
+														echo date_format($date, "h:i A") ?></label>
+														<br>
+												<?php } 
+											} 
+											if ($count) {
+												goto jobskiplarge;
+											} ?>
 											<div class = "col" style="font-family: pirates;">
 												<input type="hidden" name="job" value="<?php echo $_POST['job']; ?>">
 												<input type="hidden" name="submit" value="<?php echo $_POST['submit']; ?>">
@@ -1222,7 +1228,8 @@
 											</div>
 											<?php
 										}
-										else if (mysqli_num_rows($resultJob)<1) { ?>
+										else if (mysqli_num_rows($resultJob)<1) {
+										jobskiplarge: ?>
 											<label class= "dataDis pressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 20em;">There are no shifts that are free for this job</label>
 										<?php }
 										?>
@@ -1255,25 +1262,32 @@
 										$array=NULL;
 										$array = $resultJob->fetch_all(MYSQLI_NUM);
 										if (mysqli_num_rows($resultJob)>0) {
-											foreach ($array as $key => $value) { 
-												$temp = $value[0];
-												//$queryJob = "SELECT * FROM jobs WHERE ID = '$temp'";
-												//$resultJob = mysqli_query($con, $queryJob);
-												//$rowJob = mysqli_fetch_row($resultJob);
-												?>
-													<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;"><?php echo $value[3] ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
-													$date = date_create($value[4]);
-													echo date_format($date, "m/d/y") ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
-													$date = date_create($value[4]);
-													echo date_format($date, "h:i A") ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
-													$date = date_create($value[5]);
-													echo date_format($date, "h:i A") ?></label>
-													<br>
-											<?php } ?>
+											$count = 1;
+											foreach ($array as $key => $value) {
+											$date = date_create($value[4]);
+												if (date_format($date, "m") == date("m", strtotime("july"))){ 
+													$count = 0;
+													$temp = $value[0];
+													//$queryJob = "SELECT * FROM jobs WHERE ID = '$temp'";
+													//$resultJob = mysqli_query($con, $queryJob);
+													//$rowJob = mysqli_fetch_row($resultJob);
+													?>
+														<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;"><?php echo $value[3] ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
+														$date = date_create($value[4]);
+														echo date_format($date, "m/d/y") ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
+														echo date_format($date, "h:i A") ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
+														$date = date_create($value[5]);
+														echo date_format($date, "h:i A") ?></label>
+														<br>
+												<?php } 
+											} 
+											if ($count) {
+												goto jobskipsmall;
+											} ?>
 											<div class = "col" style="font-family: pirates;">
 												<input type="hidden" name="job">
 												<input type="hidden" name="submit">
@@ -1281,7 +1295,8 @@
 											</div>
 											<?php
 										}
-										else if (mysqli_num_rows($resultJob)<1) { ?>
+										else if (mysqli_num_rows($resultJob)<1) { 
+											jobskipsmall: ?>
 											<label class= "dataDis pressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 20em;">There are no shifts that are free for this job</label>
 										<?php }
 										?>
@@ -1299,33 +1314,33 @@
 					$tmpjob = NULL;
 					if ($_POST['Sign-Up'] == "Sign Up"){
 						if (isset($_POST['shift'])) {
+							$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+							if (!$con) {
+								die('Could not connect: ' . mysql_error());
+							}
 							foreach ($_POST['shift'] as $key) {
-								$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-								if (!$con) {
-									die('Could not connect: ' . mysql_error());
-								}
 								$method = $_POST['submit'];
 								$username = $_SESSION['username'];
 
 								$update = "UPDATE jobs SET user = '$username' WHERE `jobs`.`ID` = '$key'";
 	                            $temp = mysqli_query($con, $update);
+	                            $_POST['submit'] = "Your Shifts";
 	                        }
 						}
 					}
 					else if ($_POST['Sign-Up'] == "Remove Shift") {
 						if (isset($_POST['shift'])) {
+							$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+							if (!$con) {
+								die('Could not connect: ' . mysql_error());
+							}
 							foreach ($_POST['shift'] as $key) {
-								$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-								if (!$con) {
-									die('Could not connect: ' . mysql_error());
-								}
 								$method = $_POST['submit'];
 								$username = $_SESSION['username'];
 
 								$update = "UPDATE jobs SET user = NULL WHERE `jobs`.`ID` = '$key'";
 	                            $temp=mysqli_query($con, $update);
 	                            $_POST['submit'] = "Your Shifts";
-	                            //echo("<meta http-equiv='refresh' content='0.01'>");
 	                        }
 						}
 					}
@@ -1352,10 +1367,10 @@
 		if (isset($_POST['submit'])) {
 			if ($_POST['submit'] == "Your Shifts") {
 				$username = $_SESSION['username'];
-				$signShift = "SELECT * FROM `jobs` WHERE `user` = '$username'";
-				$temp=mysqli_query($con, $signShift);
-				if (mysqli_num_rows($temp)>0) {
-					$array = $temp->fetch_all(MYSQLI_NUM); ?>
+				$signShift = "SELECT * FROM jobs WHERE user = '$username' ORDER BY start ASC";
+				$tempshift=mysqli_query($con, $signShift);
+				if (mysqli_num_rows($tempshift)>0) {
+					$array = $tempshift->fetch_all(MYSQLI_NUM); ?>
 					<form method="POST">
 						<fieldset>
 							<div class = "d-none d-lg-block d-xl-block">
@@ -1373,53 +1388,105 @@
 											$input = $_POST['job']; ?>
 											<input type="hidden" name="job" value="<?php echo $input ?>">
 											<?php
-											$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-											if (!$con) {
-												die('Could not connect: ' . mysql_error());
-											}
 											$username = $_SESSION['username'];
-											$queryShift = "SELECT * FROM jobs WHERE user = '$username' ORDER BY start ASC";
-												$resultShift = mysqli_query($con, $queryShift);
-											$array=NULL;
-											$array = $resultShift->fetch_all(MYSQLI_NUM);
 											$num = 1;
-											if (mysqli_num_rows($resultShift)<0) { ?>
+											if (mysqli_num_rows($tempshift)<0) { ?>
 												<label class= "dataDis pressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 20em;">There are no shifts that are free for this job</label>
 											<?php }
+											$count = 1;
 											foreach ($array as $key => $value) { 
 												$temp = $value[0];
-												?>
-													<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 6em;"><?php echo $value[1] ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 9.4em;"><?php echo $value[2] ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;"><?php echo $value[3] ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
-													$date = date_create($value[4]);
-													echo date_format($date, "m/d/y") ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
-													$date = date_create($value[4]);
-													echo date_format($date, "h:i A") ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
-													$date = date_create($value[5]);
-													echo date_format($date, "h:i A") ?></label>
-													<br>
-											<?php } ?>
+												$date = date_create($value[4]);
+												if (date_format($date, "m") == date("m", strtotime("july"))){
+													$count = 0;
+													?>
+														<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 6em;"><?php echo $value[1] ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 9.4em;"><?php echo $value[2] ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;"><?php echo $value[3] ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
+														echo date_format($date, "m/d/y") ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
+														$date = date_create($value[4]);
+														echo date_format($date, "h:i A") ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
+														$date = date_create($value[5]);
+														echo date_format($date, "h:i A") ?></label>
+														<br>
+												<?php } 
+											} 
+											if ($count) {
+												goto shiftskips;
+											} ?>
 										</div>
 									</div>
 								</div>
+								<input type="hidden" name="job">
+								<input type="hidden" name="submit">
+								<div class = "col" style="font-family: pirates; margin-left: 14em;">
+									<input type="submit" name ="Sign-Up" value="Remove Shift">
+								</div>
 							</div>
-							<input type="hidden" name="job">
-							<input type="hidden" name="submit">
-							<div class = "col" style="font-family: pirates; margin-left: 14em;">
-								<input type="submit" name ="Sign-Up" value="Remove Shift">
+						</fieldset>
+					</form>
+					<form method="POST">
+						<fieldset>
+							<div class = "d-lg-none">
+								<div class="d-flex justify-content-center">
+									<div class = "row" id="DeptRowTwo">
+										<div class = "col" style="margin-left: 1em; margin-top: 2em;">
+											<label class= "dataDis unpressed" style="margin-left: 0.9em; padding-right: 0.2em; padding-left: 0.2em; width: 6em;">SECTION</label>
+											<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;">PAY</label>
+											<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;">DAY</label>
+											<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">START</label>
+											<br>
+											<?php
+											$input = $_POST['job']; ?>
+											<input type="hidden" name="job" value="<?php echo $input ?>">
+											<?php
+											$username = $_SESSION['username'];
+											$num = 1;
+											if (mysqli_num_rows($tempshift)<0) { ?>
+												<label class= "dataDis pressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 20em;">There are no shifts that are free for this job</label>
+											<?php }
+											$count = 1;
+											foreach ($array as $key => $value) { 
+												$temp = $value[0];
+												$date = date_create($value[4]);
+												if (date_format($date, "m") == date("m", strtotime("july"))){
+													$count = 0;
+													?>
+														<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 6em;"><?php echo $value[1] ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;"><?php echo $value[3] ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
+														echo date_format($date, "m/d/y") ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
+														$date = date_create($value[4]);
+														echo date_format($date, "h:i A") ?></label>
+														<br>
+												<?php } 
+											} 
+											if ($count) {
+												goto shiftskips;
+											} ?>
+										</div>
+									</div>
+								</div>
+								<input type="hidden" name="job">
+								<input type="hidden" name="submit">
+								<div class = "col" style="font-family: pirates; margin-left: 14em;">
+									<input type="submit" name ="Sign-Up" value="Remove Shift">
+								</div>
 							</div>
 						</fieldset>
 					</form>
 					<?php
 				}
-				else if (mysqli_num_rows($temp)<1) { ?>
+				else if (mysqli_num_rows($temp)<1) { 
+					shiftskips:?>
 					<div class="d-flex justify-content-center">
-						<label class= "dataDis pressed" style="margin-top: 1em; padding-right: 0.2em; padding-left: 0.2em; width: 20em;">You have no shifts your signed up for</label>
+						<label class= "dataDis pressed" style="margin-top: 1em; padding-right: 0.2em; padding-left: 0.2em; width: 20em;">You have no shifts your signed up for this event</label>
 					</div>
 				<?php }
 			}

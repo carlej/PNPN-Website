@@ -1,10 +1,8 @@
 <?php //This is the same as for fleet but for a new fleet there is no differnece between the two at this time
 include("Javascript/Connections/req.php");
-if ($_SESSION['perm']!="b" && !$_SESSION['perm']!="z") {
+if ($_SESSION['perm']!="b" && $_SESSION['perm']!="z") {
     ?><script type="text/javascript">window.location.href="bank.php"</script><?php
-}
-?>
-
+}?>
 
 <!doctype html>
 <html>
@@ -15,50 +13,49 @@ if ($_SESSION['perm']!="b" && !$_SESSION['perm']!="z") {
         <title>Add Fleet</title>
 
     </head>
-
     <body class = "AddFleetPage">
-        <div class = "container" id = "AddFleetAlliance">
+        <div class = "container" id = "AddFleetHouse">
             <div class = "d-flex justify-content-center">
                 <div class = "col-sm-5">
-                    <form method="post" name="Register" id="addfleetForm">
+                    <form method="post" name="Register" id="addFleetForm" >                                          
                         <fieldset>
-                            <legend>Add A Fleet or Alliance:</legend>
+                            <legend>Add A Fleet or Household:</legend>
                             <p>
                                 <label for="Name">Name:</label>
                                 <input type="text" name="groupName" style="width: 90%" required>
-                                    <?php
-                                    $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-                                    if (!$con) {
-                                        die('Could not connect: ' . mysql_error());
-                                    }
-                                    $method = $_SESSION['stype'];
-                                    $input = $_SESSION['hold'];
-                                    //echo $input;
-                                    //echo $method;
-                                    $queryIn = "SELECT * FROM users WHERE `$method` = '$input'";
-                                    $resultIn = mysqli_query($con, $queryIn);
+                                <?php
+                                $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+                                if (!$con) {
+                                    die('Could not connect: ' . mysql_error());
+                                }
+                                $method = $_SESSION['stype'];
+                                $input = $_SESSION['hold'];
+                                //echo $input;
+                                //echo $method;
+                                $queryIn = "SELECT * FROM users WHERE `$method` = '$input'";
+                                $resultIn = mysqli_query($con, $queryIn);
 
-                                    if (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
-                                        $searched=true;
-                                        $row = mysqli_fetch_row($resultIn);
-                                        $username=$row[0];
-                                        $nameUnedit=NULL;
-                                        $havefleet = $row[6];
-                                        if ($row[5]!=NULL) {
-                                            $nameUnedit=$row[5];
-                                        }
-                                        else{
-                                            $nameUnedit=$row[3].' '.$row[4];
-                                        }
-                                        $name=str_replace(' ', '&nbsp;', $nameUnedit);
-                                        mysqli_close($con);
+                                if (mysqli_num_rows($resultIn)==1) { //returns the one account that was found or selected
+                                    $searched=true;
+                                    $row = mysqli_fetch_row($resultIn);
+                                    $username=$row[0];
+                                    $nameUnedit=NULL;
+                                    $haveFleet = $row[7];
+                                    if ($row[5]!=NULL) {
+                                        $nameUnedit=$row[5];
                                     }
-                            //        echo '<input type="text" class="required" value="'.$_SESSION['stype'].'"name="name" id="name">';
-                            //        echo '<label for="Leader search">Leader:</label><input type="search" class="required" value="'.$_SESSION['hold'].'"name="input" id="input">';
-                                    ?>
+                                    else{
+                                        $nameUnedit=$row[3].' '.$row[4];
+                                    }
+                                    $name=str_replace(' ', '&nbsp;', $nameUnedit);
+                                    mysqli_close($con);
+                                }
+                        //        echo '<input type="text" class="required" value="'.$_SESSION['stype'].'"name="name" id="name">';
+                        //        echo '<label for="Leader search">Leader:</label><input type="search" class="required" value="'.$_SESSION['hold'].'"name="input" id="input">';
+                                ?>
                                 <label for="Name">Leader:</label>
                                 <input disabled style="width: 90%" value=<?php echo $name; ?>>
-                                <input type="hidden" name="learder" value=<?php echo $username; ?>> 
+                                <input type="hidden" name="learder" value=<?php echo $username; ?>>
                             </p>
                         </fieldset>
                         <p>
@@ -73,11 +70,10 @@ if ($_SESSION['perm']!="b" && !$_SESSION['perm']!="z") {
 </html>
 
 <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['groupName']){
-    if ($havefleet!=NULL) {
+    if ($haveFleet!=NULL) {
         echo "You already have a fleet";
     }
     else{
-        echo "here";
         include ("Javascript/makeFleet.php");
     }
 }

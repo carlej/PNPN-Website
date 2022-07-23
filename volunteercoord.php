@@ -250,179 +250,130 @@
 		<form method="POST">
 			<fieldset>
 				<input type="hidden" name="event" value="Port Nassau">
-				<input type="hidden" name="job">
 				<input type="hidden" name ="Sign-Up">
-				<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { ?>
-					<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: 8em;">
-						<div class = "d-none d-xl-block">
-							<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
-								<div class = "row" id = "DeptRowOne">
-									<div class = "col" style="padding-right: 0.05em;">
-										<?php if ($_POST['submit'] == "Set-Up") { ?>
-										<input type="submit" name= "submit" class="LeftButtonTop2VolunteerDept pressed" value="Set-Up"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="LeftButtonTop2VolunteerDept unpressed" value="Set-Up"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Gate") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Gate"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gate"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Parking") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Parking"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Parking"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Saftey") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Saftey"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Saftey"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Fire") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Fire"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Fire"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Bank") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Bank" style="white-space: normal;"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Bank" style="white-space: normal;"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em;">
-										<?php if ($_POST['submit'] == "Scuttlebutt") { ?>
-										<input type="submit" name= "submit" class="RightButtonTop2VolunteerDept pressed" value="Scuttlebutt"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="RightButtonTop2VolunteerDept unpressed" value="Scuttlebutt"></input>
-									<?php } ?>
-									</div>
+				<input type="hidden" name="job">
+				<input type="hidden" name="submit">
+				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -3em;">
+					<div class = "d-none d-xl-block">
+						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div style="margin-bottom: 1em; font-family: pirates;">
+								<input type="submit" name ="Sign-Up"  value="Add Shift">
+							</div>
+						</div>
+						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div class = "row" id = "DeptRowOne">
+								<div class = "col" style="padding-right: 0.05em;">
+									<?php if ($_POST['submit'] == "Set-Up") { ?>
+									<input type="submit" name= "submit" class="LeftButtonTop2VolunteerDept pressed" value="Set-Up"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="LeftButtonTop2VolunteerDept unpressed" value="Set-Up"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Gate") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Gate"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gate"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Parking") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Parking"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Parking"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Saftey") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Saftey"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Saftey"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Fire") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Fire"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Fire"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Bank") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Bank" style="white-space: normal;"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Bank" style="white-space: normal;"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em;">
+									<?php if ($_POST['submit'] == "Scuttlebutt") { ?>
+									<input type="submit" name= "submit" class="RightButtonTop2VolunteerDept pressed" value="Scuttlebutt"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="RightButtonTop2VolunteerDept unpressed" value="Scuttlebutt"></input>
+								<?php } ?>
 								</div>
 							</div>
-							<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
-								<div class = "row" id="DeptRowTwo">
-									<div class = "col" style = "padding-right: 0.05em;">
-										<?php if ($_POST['submit'] == "Titles") { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept pressed" value="Titles"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Titles"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Sanitation") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Sanitation"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Sanitation"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Hearld") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Hearld"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Hearld"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Lost Cove") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Lost Cove"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Monkey Island") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Monkey Island" style="white-space: normal;"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em;">
-										<?php if ($_POST['submit'] == "Tear Down") { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept pressed" value="Tear Down"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
-									<?php } ?>
-									</div>
+						</div>
+						<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div class = "row" id="DeptRowTwo">
+								<div class = "col" style = "padding-right: 0.05em;">
+									<?php if ($_POST['submit'] == "Titles") { ?>
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept pressed" value="Titles"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Titles"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Sanitation") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Sanitation"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Sanitation"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Hearld") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Hearld"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Hearld"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Lost Cove") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Lost Cove"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Monkey Island") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Monkey Island" style="white-space: normal;"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em;">
+									<?php if ($_POST['submit'] == "Tear Down") { ?>
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept pressed" value="Tear Down"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
+								<?php } ?>
 								</div>
 							</div>
 						</div>
 					</div>
-				<?php }
-				else { ?>
-					<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: 8em;">
-						<div class = "d-none d-xl-block">
-							<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
-								<div class = "row" id = "DeptRowOne">
-									<div class = "col" style="padding-right: 0.05em;">
-										<input type="submit" name= "submit" class="LeftButtonTop2VolunteerDept unpressed" value="Set-Up">
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gate"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Parking"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Saftey"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Fire"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Bank" style="white-space: normal;"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em;">
-										<input type="submit" name= "submit" class="RightButtonTop2VolunteerDept unpressed" value="Scuttlebutt"></input>
-									</div>
-								</div>
-							</div>
-							<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
-								<div class = "row" id="DeptRowTwo">
-									<div class = "col" style = "padding-right: 0.05em;">
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Titles"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Sanitation"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Hearld"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em;">
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				<?php } ?>
+				</div>
 			</fieldset>
 		</form>
 		<!--Creates the tabs for all of the volunteering departments for a smaller screen-->
@@ -431,187 +382,133 @@
 				<input type="hidden" name="event" value="Port Nassau">
 				<input type="hidden" name="job">
 				<input type="hidden" name ="Sign-Up">
-				<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { ?>
-					<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -7em;">
-						<div class = "d-none d-lg-block d-xl-none">
-							<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
-								<div class = "row" id = "DeptRowOne">
-									<div class = "col" style="padding-right: 0.05em;">
-										<?php if ($_POST['submit'] == "Set-Up") { ?>
-										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept pressed" value="Set-Up"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept unpressed" value="Set-Up"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Gate") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Gate"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gate"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Parking") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Parking"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Parking"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Saftey") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Saftey"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Saftey"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Fire") { ?>
-										<input type="submit" name= "submit" class="RightButtonTopVolunteerDept pressed" value="Fire"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="RightButtonTopVolunteerDept unpressed" value="Fire"></input>
-									<?php } ?>
-									</div>
+				<input type="hidden" name="submit">
+				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -3em;">
+					<div class = "d-none d-lg-block d-xl-none">
+						<div class = "d-flex justify-content-center" style="margin-left: -18.2em;">
+							<div style="margin-bottom: 1em; font-family: pirates;">
+								<input type="submit" name ="Sign-Up"  value="Add Shift">
+							</div>
+						</div>
+						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div class = "row" id = "DeptRowOne">
+								<div class = "col" style="padding-right: 0.05em;">
+									<?php if ($_POST['submit'] == "Set-Up") { ?>
+									<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept pressed" value="Set-Up"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept unpressed" value="Set-Up"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Gate") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Gate"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gate"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Parking") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Parking"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Parking"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Saftey") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Saftey"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Saftey"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Fire") { ?>
+									<input type="submit" name= "submit" class="RightButtonTopVolunteerDept pressed" value="Fire"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="RightButtonTopVolunteerDept unpressed" value="Fire"></input>
+								<?php } ?>
 								</div>
 							</div>
-							<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
-								<div class = "row" id="DeptRowTwo">
-									
-									<div class = "col" style = "padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Bank") { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept pressed" value="Bank" style="white-space: normal;"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Bank" style="white-space: normal;"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Scuttlebutt") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Scuttlebutt"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Scuttlebutt"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
-										<?php if ($_POST['submit'] == "Titles") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Titles"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Titles"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Sanitation") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Sanitation"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Sanitation"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Hearld") { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept pressed" value="Hearld"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Hearld"></input>
-									<?php } ?>
-									</div>
+						</div>
+						<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div class = "row" id="DeptRowTwo">
+								
+								<div class = "col" style = "padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Bank") { ?>
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept pressed" value="Bank" style="white-space: normal;"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Bank" style="white-space: normal;"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Scuttlebutt") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Scuttlebutt"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Scuttlebutt"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
+									<?php if ($_POST['submit'] == "Titles") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Titles"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Titles"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Sanitation") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Sanitation"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Sanitation"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
+									<?php if ($_POST['submit'] == "Hearld") { ?>
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept pressed" value="Hearld"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Hearld"></input>
+								<?php } ?>
 								</div>
 							</div>
-							<div class = "d-flex justify-content-center" style="margin-left: -20.2em; margin-top: 0.05em">
-								<div class = "row" id = "DeptRowOne">
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<?php if ($_POST['submit'] == "Lost Cove") { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept pressed" value="Lost Cove"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Lost Cove"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<?php if ($_POST['submit'] == "Monkey Island") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Monkey Island" style="white-space: normal;"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<?php if ($_POST['submit'] == "Tear Down") { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept pressed" value="Tear Down"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
-									<?php } ?>
-									</div>
+						</div>
+						<div class = "d-flex justify-content-center" style="margin-left: -20.2em; margin-top: 0.05em">
+							<div class = "row" id = "DeptRowOne">
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
+									<?php if ($_POST['submit'] == "Lost Cove") { ?>
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept pressed" value="Lost Cove"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Lost Cove"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
+									<?php if ($_POST['submit'] == "Monkey Island") { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Monkey Island" style="white-space: normal;"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
+								<?php } ?>
+								</div>
+								<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
+									<?php if ($_POST['submit'] == "Tear Down") { ?>
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept pressed" value="Tear Down"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
+								<?php } ?>
 								</div>
 							</div>
 						</div>
 					</div>
-				<?php }
-				else { ?>
-					<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -7em;">
-						<div class = "d-none d-lg-block d-xl-none">
-							<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
-								<div class = "row" id = "DeptRowOne">
-									<div class = "col" style="padding-right: 0.05em;">
-										<input type="submit" name= "submit" class="LeftButtonTopVolunteerDept unpressed" value="Set-Up">
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Gate"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Parking"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Saftey"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="RightButtonTopVolunteerDept unpressed" value="Fire"></input>
-									</div>
-								</div>
-							</div>
-							<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
-								<div class = "row" id="DeptRowTwo">
-									
-									<div class = "col" style = "padding-right: 0.05em">
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Bank" style="white-space: normal;"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Scuttlebutt"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em;">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Titles"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Sanitation"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Hearld"></input>
-									</div>
-								</div>
-							</div>
-							<div class = "d-flex justify-content-center" style="margin-left: -20.2em; margin-top: 0.05em">
-								<div class = "row" id = "DeptRowOne">
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				<?php } ?>
+				</div>
 			</fieldset>
 		</form>
 
@@ -621,7 +518,12 @@
 		<div class = "container">
 			<div class="d-lg-none">
 				<div class = "d-flex justify-content-center">
-					<div class = "row" style="margin-top: -7em;">
+					<div style="margin-bottom: 1em; font-family: pirates;">
+						<input type="submit" name ="Sign-Up"  value="Add Shift">
+					</div>
+				</div>
+				<div class = "d-flex justify-content-center">
+					<div class = "row">
 						<div class = "col">
 							<div class="DepartmentDropDown">
 								<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { ?>
@@ -636,6 +538,7 @@
 											<input type="hidden" name="event" value="Port Nassau">
 											<input type="hidden" name ="Sign-Up">
 											<input type="hidden" name ="job">
+											<input type="hidden" name="submit">
 											<input type="submit" name="submit" value="Set-Up"></input>
 											<input type="submit" name="submit" value="Gate"></input>
 											<input type="submit" name="submit" value="Parking"></input>
@@ -1261,10 +1164,92 @@
 				<form method="POST">
 					<fieldset>
 						<input type="hidden" name="event" value="Port Nassau">
-						<div class = "d-none d-lg-block d-xl-block">
+						<div class = "d-none d-lg-none d-xl-block">
 							<div class="d-flex justify-content-left">
 								<div class = "row" id="DeptRowTwo">
 									<div class = "col" style="margin-left: 14em; margin-top: 2em;">
+										<label class= "dataDis unpressed" style="margin-left: 0.9em; padding-right: 0.2em; padding-left: 0.2em; width: 4em;">PAY</label>
+										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;">DAY</label>
+										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">START</label>
+										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">END</label>
+										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;">Check In</label>
+										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.3em;">Check Out</label>
+										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">Email</label>
+										<br>
+										<?php
+										$input = $_POST['job']; 
+										$sect = $_POST['submit']?>
+										<input type="hidden" name="job" value="<?php echo $input ?>">
+										<?php
+										$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+										if (!$con) {
+											die('Could not connect: ' . mysql_error());
+										}
+										$method = $_POST['submit'];
+										$queryJob = "SELECT * FROM jobs WHERE section = '$sect' AND job = '$input'";
+										$resultJob= mysqli_query($con,$queryJob);
+										$array=NULL;
+										$array = $resultJob->fetch_all(MYSQLI_NUM);
+										if (mysqli_num_rows($resultJob)>0) {
+											$count = 1;
+											foreach ($array as $key => $value) { 
+												$date = date_create($value[4]);
+												if (date_format($date, "m") == date("m", strtotime("july"))){
+													$count = 0;
+													$temp = $value[0];
+													?>
+														<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
+														<input type="number" name="pay<?php echo $temp ?>" style="padding-right: 0.2em; padding-left: 0.2em; width: 5.3em;" value = "<?php echo $value[3] ?>">
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
+														$date = date_create($value[4]);
+														echo date_format($date, "m/d/y") ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
+														$date = date_create($value[4]);
+														echo date_format($date, "h:i A") ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
+														$date = date_create($value[5]);
+														echo date_format($date, "h:i A") ?></label>
+														<?php if ($value[8]) { ?>
+															<input type="checkbox" name="checkI<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 2.5em;" checked>
+														<?php }
+														else { ?>
+															<input type="checkbox" name="checkI<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 2.5em;" value="<?php echo $temp ?>">
+														<?php } ?>
+														<?php if ($value[9]) { ?>
+															<input type="checkbox" ame="checkO<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 4.5em;" checked>
+														<?php }
+														else { ?>
+															<input type="checkbox" name="checkO<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 4.5em;" value="<?php echo $temp ?>">
+														<?php } ?>
+														<input type="text" name="email<?php echo $temp?>" style="padding-right: 0.2em; padding-left: 0.2em; margin-left: 1.7em;" value="<?php echo $value[7]; ?>">
+														<br>
+												<?php }
+											} 
+											if ($count) {
+												goto jobskiplarge;
+											}
+											?>
+											<div class = "col" style="font-family: pirates;">
+												<input type="hidden" name="job" value="<?php echo $input; ?>">
+												<input type="hidden" name="submit" value="<?php echo $sect; ?>">
+												<input type="submit" name ="Sign-Up" value="Remove Shift">
+												<input type="submit" name ="Sign-Up" value="Edit Shift">
+											</div>
+											<?php
+										}
+										else if (mysqli_num_rows($resultJob)<1) {
+										jobskiplarge: ?>
+											<label class= "dataDis pressed" style="margin-left: 0.9em;padding-right: 0.2em; padding-left: 0.2em; width: 14em;">There are no shifts for this job</label>
+										<?php }
+										?>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="d-xl-none">
+							<div class="d-flex justify-content-center">
+								<div class = "row" id="DeptRowTwo">
+									<div class = "col" style="margin-top: 2em;">
 										<input type="hidden" name="submit" value="Gate">
 										<label class= "dataDis unpressed" style="margin-left: 0.9em; padding-right: 0.2em; padding-left: 0.2em; width: 4em;">PAY</label>
 										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;">DAY</label>
@@ -1286,93 +1271,38 @@
 										$array=NULL;
 										$array = $resultJob->fetch_all(MYSQLI_NUM);
 										if (mysqli_num_rows($resultJob)>0) {
-											foreach ($array as $key => $value) { 
-												$temp = $value[0];
-												//$queryJob = "SELECT * FROM jobs WHERE ID = '$temp'";
-												//$resultJob = mysqli_query($con, $queryJob);
-												//$rowJob = mysqli_fetch_row($resultJob);
-												?>
-													<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;"><?php echo $value[3] ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
-													$date = date_create($value[4]);
-													echo date_format($date, "m/d/y") ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
-													$date = date_create($value[4]);
-													echo date_format($date, "h:i A") ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
-													$date = date_create($value[5]);
-													echo date_format($date, "h:i A") ?></label>
-													<br>
-											<?php } ?>
-											<div class = "col" style="font-family: pirates;">
-												<input type="hidden" name="job" value="<?php echo $_POST['job']; ?>">
-												<input type="hidden" name="submit" value="<?php echo $_POST['submit']; ?>">
-												<input type="submit" name ="Sign-Up" value="Sign Up">
-											</div>
-											<?php
-										}
-										else if (mysqli_num_rows($resultJob)<1) { ?>
-											<label class= "dataDis pressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 20em;">There are no shifts that are free for this job</label>
-										<?php }
-										?>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="d-lg-none">
-							<div class="d-flex justify-content-center">
-								<div class = "row" id="DeptRowTwo">
-									<div class = "col" style="margin-top: 2em;">
-										<input type="hidden" name="submit" value="Gate">
-										<label class= "dataDis unpressed" style="margin-left: 0.9em; padding-right: 0.2em; padding-left: 0.2em; width: 4em;">PAY</label>
-										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;">DAY</label>
-										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">START</label>
-										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">END</label>
-										<br>
-										<?php
-										$input = $_POST['job']; 
-										$sect = $_POST['submit']?>
-										<input type="hidden" name="job" value="<?php echo $input ?>">
-										<?php
-										$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-										if (!$con) {
-											die('Could not connect: ' . mysql_error());
-										}
-										$method = $_POST['submit'];
-										$queryJob = "SELECT * FROM jobs WHERE section = '$sect' AND job = '$input' AND user IS NULL";
-										$resultJob= mysqli_query($con,$queryJob);
-										$array=NULL;
-										$array = $resultJob->fetch_all(MYSQLI_NUM);
-										if (mysqli_num_rows($resultJob)>0) {
-											foreach ($array as $key => $value) { 
-												$temp = $value[0];
-												//$queryJob = "SELECT * FROM jobs WHERE ID = '$temp'";
-												//$resultJob = mysqli_query($con, $queryJob);
-												//$rowJob = mysqli_fetch_row($resultJob);
-												?>
-													<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;"><?php echo $value[3] ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
-													$date = date_create($value[4]);
-													echo date_format($date, "m/d/y") ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
-													$date = date_create($value[4]);
-													echo date_format($date, "h:i A") ?></label>
-													<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
-													$date = date_create($value[5]);
-													echo date_format($date, "h:i A") ?></label>
-													<br>
-											<?php } ?>
+											$count = 1;
+											foreach ($array as $key => $value) {
+											$date = date_create($value[4]);
+												if (date_format($date, "m") == date("m", strtotime("july"))){ 
+													$count = 0;
+													$temp = $value[0];
+													?>
+														<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;"><?php echo $value[3] ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
+														$date = date_create($value[4]);
+														echo date_format($date, "m/d/y") ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
+														echo date_format($date, "h:i A") ?></label>
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php
+														$date = date_create($value[5]);
+														echo date_format($date, "h:i A") ?></label>
+														<br>
+												<?php } 
+											} 
+											if ($count) {
+												goto jobskipsmall;
+											} ?>
 											<div class = "col" style="font-family: pirates;">
 												<input type="hidden" name="job">
 												<input type="hidden" name="submit">
-												<input type="submit" name ="Sign-Up" value="Sign Up">
 											</div>
 											<?php
 										}
-										else if (mysqli_num_rows($resultJob)<1) { ?>
-											<label class= "dataDis pressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 20em;">There are no shifts that are free for this job</label>
+										else if (mysqli_num_rows($resultJob)<1) { 
+											jobskipsmall: ?>
+											<label class= "dataDis pressed" style="margin-left: 0.9em;padding-right: 0.2em; padding-left: 0.2em; width: 14em;">There are no shifts for this job</label>
 										<?php }
 										?>
 									</div>
@@ -1381,29 +1311,9 @@
 						</div>
 					</fieldset>
 				</form>
+				<form method="POST">
 			<?php }
 			//sign up for or remove sign up for a shift
-			if (isset($_POST['submit']) && $_POST['submit'] != "Your Shifts") {
-				$tmpsub = NULL;
-				if (isset($_POST['job'])) {
-					$tmpjob = NULL;
-					if ($_POST['Sign-Up'] == "Sign Up"){
-						if (isset($_POST['shift'])) {
-							foreach ($_POST['shift'] as $key) {
-								$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-								if (!$con) {
-									die('Could not connect: ' . mysql_error());
-								}
-								$method = $_POST['submit'];
-								$username = $_SESSION['username'];
-
-								$update = "UPDATE jobs SET user = '$username' WHERE `jobs`.`ID` = '$key'";
-	                            $temp = mysqli_query($con, $update);
-	                        }
-						}
-					}
-				}
-			}
 		}
 		$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		if (!$con) {
@@ -1414,13 +1324,14 @@
 		?>
 
 		<?php endif; ?>
-			<?php }
-		} ?>
+			<?php } ?> 
+		<?php } ?>
 		<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if ($_POST['event'] == "Tortuga Nights") { ?>
 				<!--Creates the tabs for all of the volunteering departments-->
 				<form method="POST">
 					<fieldset>
+						<input type="hidden" name="event" value="Port Nassau">
 						<input type="hidden" name="event" value="Tortuga Nights">
 						<input type="hidden" name="job" value="NULL">
 						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
@@ -1527,6 +1438,7 @@
 				</form>
 				<form method="POST">
 					<fieldset>
+						<input type="hidden" name="event" value="Port Nassau">
 						<input type="hidden" name="event" value="Tortuga Nights">
 						<input type="hidden" name="job" value="NULL">
 						<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -5em;">
@@ -1637,199 +1549,173 @@
 				</form>
 			<?php }
 		} ?>
-
-
-
 		<?php
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			if ($_POST['submit'] == "Add Shifts") {
-				include("Javascript/addshift.php");
+
+
+
+if (isset($_POST['submit']) && $_POST['submit'] != "Your Shifts") {
+	$tmpsub = NULL;
+	if (isset($_POST['job'])) {
+		$tmpjob = NULL;
+		if ($_POST['Sign-Up'] == "Sign Up"){
+			if (isset($_POST['shift'])) {
+				foreach ($_POST['shift'] as $key) {
+					$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+					if (!$con) {
+						die('Could not connect: ' . mysql_error());
+					}
+					$method = $_POST['submit'];
+					$username = $_SESSION['username'];
+
+					$update = "UPDATE jobs SET user = '$username' WHERE `jobs`.`ID` = '$key'";
+                    $temp = mysqli_query($con, $update);
+                    $_POST['submit'] = "Your Shifts";
+                }
 			}
-			if ($_POST['submit'] == "Set-Up") { ?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Set-Up">
-						<!-- Buttons for all set-up go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Gate") {
+		}
+		else if ($_POST['Sign-Up'] == "Remove Shift") {
+			if (isset($_POST['shift'])) {
+				foreach ($_POST['shift'] as $key) {
+					$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+					if (!$con) {
+						die('Could not connect: ' . mysql_error());
+					}
+					$method = $_POST['submit'];
+					$username = $_SESSION['username'];
+
+					$update = "UPDATE jobs SET user = NULL WHERE `jobs`.`ID` = '$key'";
+                    $temp=mysqli_query($con, $update);
+                    $_POST['submit'] = "Your Shifts";
+                }
+			}
+		}
+	}
+}
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			if (isset($_POST['confirm'])) {
+					print("arg");
+				}
+			if ($_POST['Sign-Up'] == "Add Shift") {
+				$event = $_POST['event'];
 				?>
-				<form method="POST">
+				<form method = "POST">
 					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Gate">
-						<!-- Buttons for all gate go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
+						<input type="hidden" name="event" value="<?php echo $event ?>">
+						<input type="hidden" name="Sign-Up">
+						<input type="hidden" name="submit">
+						<input type="hidden" name="job">
+						<div class = "container" style="margin-top: -3em;">
+				            <div class = "d-flex justify-content-center" id = "EditUser">
+				                <div class = "row">
+				                    <div class = "col-sm">
+				                    	<legend id="EditUserDisp">Add Shift Form:</legend>
+				                    	<label>Section:</label>
+				                    	<select name="sect" class="SearchBy3" style="margin-bottom: 0em">
+											<option value="Set-Up">Set-Up</option>
+											<option value="Gate">Gate</option>
+											<option value="Parking">Parking</option>
+											<option value="Saftey">Saftey</option>
+											<option value="Fire">Fire</option>
+											<option value="Bank">Bank</option>
+											<option value="Scuttlebutt">Scuttlebutt</option>
+											<option value="Titles">Titles</option>
+											<option value="Sanitation">Sanitation</option>
+											<option value="Hearld">Hearld</option>
+											<option value="Lost Cove">Lost Cove</option>
+											<option value="Monkey Island">Monkey Island</option>
+											<option value="Tear Down">Tear Down</option>
+										</select>
+				                    	<div>
+					                    	<label>Job:</label>
+					                    	<select name="jobAdd" class="SearchBy3" style="margin-bottom: 0em">
+											<option value="Set-Up">Set-Up</option>
+											<option value="Gate">Gate</option>
+											<option value="Parking">Parking</option>
+											<option value="Saftey">Saftey</option>
+											<option value="Fire">Fire</option>
+											<option value="Bank">Bank</option>
+											<option value="Scuttlebutt">Scuttlebutt</option>
+											<option value="Titles">Titles</option>
+											<option value="Sanitation">Sanitation</option>
+											<option value="Hearld">Hearld</option>
+											<option value="Lost Cove">Lost Cove</option>
+											<option value="Monkey Island">Monkey Island</option>
+											<option value="Tear Down">Tear Down</option>
+										</select>
+				                    	</div>
+				                    	<div>
+					                    	<label>Base Pay:</label>
+					                    	<input type="number"  name="pay" required>
+				                    	</div>
+				                    	<div>
+					                    	<label>Start:</label>
+					                    	<input type="date"  name="start" required>
+				                    	</div>
+				                    	<div>
+					                    	<label>Length:</label>
+					                    	<input type="number"  name="length" required>
+				                    	</div>
+				                    	<div>
+					                    	<label>Number of:</label>
+					                    	<input type="number"  name="number" required>
+				                    	</div>
+				                    	<div style="margin-bottom: 4em;">
+					                    	<input type="submit"  name="confirm" value="confirm">
+				                    	</div>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
 					</fieldset>
 				</form>
-			<?php }
-			else if ($_POST['submit'] == "Parking") {
-				?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Parking">
-						<!-- Buttons for all Parking go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Constab") {
-				?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Constab">
-						<!-- Buttons for all Constab go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Medic") { ?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Medic">
-						<!-- Buttons for all Medic go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Volunteer Check-In") { ?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Volunteer Check-In">
-						<!-- Buttons for all Volunteer Check-In go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Scuttlebutt") { ?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Scuttlebutt">
-						<!-- Buttons for all Scuttlebutt go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Gold Key") { ?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Gold Key">
-						<!-- Buttons for all Gold Key go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Sanitation") { ?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Sanitation">
-						<!-- Buttons for all Sanitation go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Hearld") { ?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Hearld">
-						<!-- Buttons for all Hearld go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Bank") { ?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Bank">
-						<!-- Buttons for all Bank go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Lost Cove") { ?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Lost Cove">
-						<!-- Buttons for all Lost Cove go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Monkey Island") { ?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Monkey Island">
-						<!-- Buttons for all Monkey Island go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Tear Down") { ?>
-				<form method="POST">
-					<fieldset>
-						<?php 
-						$delim = $_POST['event'];
-						echo '<input type="hidden" name="event" value="'.$delim.'">';?>
-						<input type="hidden" name="submit" value="Tear Down">
-						<!-- Buttons for all Tear Down go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<input type="submit" name="job" value="job">
-					</fieldset>
-				</form>
-			<?php }
+				<?php
+			}
+			else if ($_POST['Sign-Up'] == "Remove Shift") {
+				$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+				if (!$con) {
+					die('Could not connect: ' . mysql_error());
+				}
+				if (isset($_POST['shift'])) {
+					foreach ($_POST['shift'] as $key) {
+						$remove = "DELETE FROM jobs WHERE `jobs`.`ID` = $key";
+                    	$temp = mysqli_query($con, $remove);
+					}
+				}
+			}
+			else if ($_POST['Sign-Up'] == "Edit Shift") {
+				if (isset($_POST['shift'])) {
+					$tmpemail = NULL;
+					$tmpCI = NULL;
+					$tmpCO = NULL;
+					$tmppay = NULL;
+					$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+					if (!$con) {
+						die('Could not connect: ' . mysql_error());
+					}
+					foreach ($_POST['shift'] as $key) {
+						if (isset($_POST['checkI'.$key])) {
+							$tmpCI = 1;
+						}
+						else{
+							$tmpCI = 0;
+						}
+						if (isset($_POST['checkO'.$key])) {
+							$tmpCO = 1;
+						}
+						else{
+							$tmpCO = 0;
+						}
+						if (isset($_POST['email'.$key])) {
+							$tmpemail = $_POST['email'.$key];
+						}
+						if (isset($_POST['pay'.$key])) {
+							$tmppay = $_POST['pay'.$key];
+						}
+						$update = "UPDATE jobs SET pay = '$tmppay', user = '$tmpemail', checkI = '$tmpCI', checkO = '$tmpCO' WHERE `jobs`.`ID` = '$key'";
+                    	$temp=mysqli_query($con, $update);
+					}
+				}
+			}
 		}
 		//$time = 1;
 		//$cenvertedTime = date('Y-m-d H:i:s',strtotime('+'.$time.' hour',strtotime($startTime)));//add time to datetime object

@@ -18,6 +18,7 @@
 
 
         <title>Edit Ship/Fleet</title>
+        <?php include("Views/Partials/header.php");?>
 
     </head>
 
