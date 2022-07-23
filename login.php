@@ -43,15 +43,32 @@
 			$ackpass = $row2[1];
 			$salt = $row2[2];
 			$passwordhold = md5($salt.$Password);
-			$queryperm = "SELECT `AccountPerm` FROM Users WHERE username LIKE '$Username'";
-			$ackperm = mysqli_query($con, $queryperm);
-			$perm = mysqli_fetch_row($ackperm);
+			$perm = $row2[9];
 
 			if ($ackpass==$passwordhold) {
+				//add in search for teller shifts to chenge perm
+				//SELECT * FROM `jobs` WHERE `user` = 'shongesabbe' ORDER BY `start` ASC
+				$_SESSION['perm'] = NULL;
+				if ($perm[0] == 'a') {
+					$jobperm = "SELECT * FROM jobs WHERE user = '$Username' AND job ='Teller' ORDER BY start ASC";
+					$ackjob = mysqli_query($con, $jobperm);
+					$job = mysqli_fetch_row($ackjob);
+					$start = new DateTime($job[4]);
+					$now = new DateTime("now");
+					$end = new DateTime($job[5]);
+					if ($now > $start && $end > $now){
+						$_SESSION['perm'] = 'b';
+					}
+					else{
+						$_SESSION['perm'] = $perm[0];
+					}
+				}
+				else{
+					$_SESSION['perm'] = $perm[0];
+				}
 				$msg = "Log in successfull";
 				$_SESSION['loggedin'] = true;
 				$_SESSION['username'] = $Username;
-				$_SESSION['perm'] = $perm[0];
 				$_SESSION['hold']="hold";
 				$_SESSION['temp']="temp";
 				$_SESSION['multsearch']=array('1');
