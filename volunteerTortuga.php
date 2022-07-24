@@ -265,22 +265,6 @@
 										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Hearld"></input>
 									<?php } ?>
 									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Lost Cove") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Lost Cove"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<?php if ($_POST['submit'] == "Monkey Island") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Monkey Island" style="white-space: normal;"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
-									<?php } ?>
-									</div>
 									<div class = "col" style = "padding-left: 0.05em;">
 										<?php if ($_POST['submit'] == "Tear Down") { ?>
 										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept pressed" value="Tear Down"></input>
@@ -332,12 +316,6 @@
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Hearld"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em;">
 										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
@@ -449,27 +427,11 @@
 							<div class = "d-flex justify-content-center" style="margin-left: -20.2em; margin-top: 0.05em">
 								<div class = "row" id = "DeptRowOne">
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<?php if ($_POST['submit'] == "Lost Cove") { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept pressed" value="Lost Cove"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Lost Cove"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<?php if ($_POST['submit'] == "Monkey Island") { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept pressed" value="Monkey Island" style="white-space: normal;"></input>
-									<?php }
-									else { ?>
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
-									<?php } ?>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
 										<?php if ($_POST['submit'] == "Tear Down") { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept pressed" value="Tear Down"></input>
+										<input type="submit" name= "submit" style="display: flex; font-family: Pirates; font-size: 1.2em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0em 0em 0.4em 0.4em; background: #000000; width: 5.5em; height: 3em;" class="pressed" value="Tear Down"></input>
 									<?php }
 									else { ?>
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
+										<input type="submit" name= "submit" style="display: flex; font-family: Pirates; font-size: 1.2em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0em 0em 0.4em 0.4em; background: #000000; width: 5.5em; height: 3em;" class="unpressed" value="Tear Down"></input>
 									<?php } ?>
 									</div>
 								</div>
@@ -522,13 +484,7 @@
 							<div class = "d-flex justify-content-center" style="margin-left: -20.2em; margin-top: 0.05em">
 								<div class = "row" id = "DeptRowOne">
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
-									</div>
-									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<input type="submit" name= "submit" class="RightButtonBottomVolunteerDept unpressed" value="Tear Down"></input>
+										<input type="submit" name= "submit" style="display: flex; font-family: Pirates; font-size: 1.2em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0em 0em 0.4em 0.4em; background: #000000; width: 5.5em; height: 3em;" class="unpressed" value="Tear Down"></input>
 									</div>
 								</div>
 							</div>
@@ -568,8 +524,6 @@
 											<input type="submit" name="submit" value="Titles"></input>
 											<input type="submit" name="submit" value="Sanitation"></input>
 											<input type="submit" name="submit" value="Hearld"></input>
-											<input type="submit" name="submit" value="Lost Cove"></input>
-											<input type="submit" name="submit" value="Monkey Island"></input>
 											<input type="submit" name="submit" value="Tear Down"></input>
 										</fieldset>
 									</form>
@@ -1080,58 +1034,6 @@
 								<div class = "row" id="DeptRowTwo">
 									<input type="submit" style="width: 3.5em;" class= "alone pressed" name="job" value="Hearld">
 									<?php $_POST['job'] = "Hearld"; ?>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Lost Cove") { ?>
-				<form method="POST">
-					<fieldset>
-						<input type="hidden" name="submit" value="Lost Cove">
-						<input type="hidden" name ="Sign-Up">
-						<!-- Buttons for all set-up go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<div class = "d-none d-lg-block d-xl-block">
-							<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
-								<div class = "row" id="DeptRowTwo">
-									<input type="submit" style="width: 4.5em;" class= "alone pressed" name="job" value="Attendant">
-									<?php $_POST['job'] = "Attendant"; ?>
-								</div>
-							</div>
-						</div>
-						<div class="d-lg-none">
-							<div class="d-flex justify-content-center">
-								<div class = "row" id="DeptRowTwo">
-									<input type="submit" style="width: 4.5em;" class= "alone pressed" name="job" value="Attendant">
-									<?php $_POST['job'] = "Attendant"; ?>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-				</form>
-			<?php }
-			else if ($_POST['submit'] == "Monkey Island") { ?>
-				<form method="POST">
-					<fieldset>
-						<input type="hidden" name="submit" value="Monkey Island">
-						<input type="hidden" name ="Sign-Up">
-						<!-- Buttons for all set-up go here -->
-						<!-- button example. they must use this format aka the name must be job-->
-						<div class = "d-none d-lg-block d-xl-block">
-							<div class="d-flex justify-content-center" style="margin-left: -20.2em;">
-								<div class = "row" id="DeptRowTwo">
-									<input type="submit" style="width: 4.5em;" class= "alone pressed" name="job" value="Attendant">
-									<?php $_POST['job'] = "Attendant"; ?>
-								</div>
-							</div>
-						</div>
-						<div class="d-lg-none">
-							<div class="d-flex justify-content-center">
-								<div class = "row" id="DeptRowTwo">
-									<input type="submit" style="width: 4.5em;" class= "alone pressed" name="job" value="Attendant">
-									<?php $_POST['job'] = "Attendant"; ?>
 								</div>
 							</div>
 						</div>

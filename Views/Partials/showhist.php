@@ -91,6 +91,18 @@
 								echo $value[5];
 							}							
 						}
+						else if (count($value)==3) {
+							echo "~ ";
+							echo $key; //time and date that it happened
+							echo " ~ ";
+							echo $value[0];
+							echo " ";
+							echo $value[1];
+							echo " ";
+							echo "For vulunteering for a ";
+							echo $value[2];
+							echo " shift";
+						}
 						?></a></li>
 					
 					<?php endforeach; ?>

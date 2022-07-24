@@ -6,6 +6,39 @@
 		<?php include("Javascript/Connections/req.php");
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			$username = $_SESSION['username'];
+			include 'Javascript/Connections/convar.php';
+			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+			if (!$con) {
+				die('Could not connect: ' . mysql_error());
+			}
+			if ($_SESSION['perm'] == 'a') {
+				date_default_timezone_set('America/Los_Angeles');
+				$jobperm = "SELECT * FROM jobs WHERE checkO = 0 AND user = '$username' AND job ='Teller' ORDER BY start ASC";
+				$ackjob = mysqli_query($con, $jobperm);
+				$jobd = mysqli_fetch_row($ackjob);
+				$start = new DateTime($jobd[4]);
+				$start -> modify('-15 minutes');
+				$now = new DateTime("now");
+				$end = new DateTime($jobd[5]);
+				$end -> modify('+15 minutes');
+				if ($now > $start && $end > $now && mysqli_num_rows($ackjob) != 0){
+					$_SESSION['perm'] = 'b';
+				}
+			}
+			else if ($_SESSION['perm'] == 'b') {
+				date_default_timezone_set('America/Los_Angeles');
+				$jobperm = "SELECT * FROM jobs WHERE checkO = 0 AND user = '$username' AND job ='Teller' ORDER BY start ASC";
+				$ackjob = mysqli_query($con, $jobperm);
+				$jobd = mysqli_fetch_row($ackjob);
+				$start = new DateTime($jobd[4]);
+				$start -> modify('-15 minutes');
+				$now = new DateTime("now");
+				$end = new DateTime($jobd[5]);
+				$end -> modify('+15 minutes');
+				if ($now > $end || mysqli_num_rows($ackjob) == 0){
+					$_SESSION['perm'] = 'a';
+				}
+			}
 		}
 		else{
 			header ("location:login.php");
@@ -124,7 +157,7 @@
 	
 	<body class = "bankphp">
 		<?php
-		include 'Javascript/Connections/convar.php';
+		//include 'Javascript/Connections/convar.php';
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			
 			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);

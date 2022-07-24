@@ -5,11 +5,30 @@
 	<head>
 
 		<?php include("Javascript/Connections/req.php");
+		include 'Javascript/Connections/convar.php';
 		if ($_SESSION['perm']!="b" && $_SESSION['perm']!="z") {
 		    ?><script type="text/javascript">window.location.href="bank.php"</script><?php
 		}
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")) {
 			$usename = $_SESSION['username'];
+			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+			if (!$con) {
+				die('Could not connect: ' . mysql_error());
+			}
+			if ($_SESSION['perm'] != 'z') {
+				date_default_timezone_set('America/Los_Angeles');
+				$jobperm = "SELECT * FROM jobs WHERE checkO = 0 AND user = '$usename' AND job ='Teller' ORDER BY start ASC";
+				$ackjob = mysqli_query($con, $jobperm);
+				$jobd = mysqli_fetch_row($ackjob);
+				$start = new DateTime($jobd[4]);
+				$start -> modify('-15 minutes');
+				$now = new DateTime("now");
+				$end = new DateTime($jobd[5]);
+				$end -> modify('+15 minutes');
+				if ($now > $end || mysqli_num_rows($ackjob) == 0){ ?>
+					<script type="text/javascript">window.location.href="bank.php"</script> <?php
+				}
+			}
 		}
 		else{
 			echo "Please login to view this page.";
@@ -128,7 +147,7 @@
 	<body class = "TellerAccounts">
 		<?php
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-			include 'Javascript/Connections/convar.php';
+			//include 'Javascript/Connections/convar.php';
 			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			if (!$con) {
 				die('Could not connect: ' . mysql_error());
@@ -181,6 +200,22 @@
 		
 			include "Javascript/search.php";
 			if($_POST['ntype']){
+				$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+				if (!$con) {
+					die('Could not connect: ' . mysql_error());
+				}
+				date_default_timezone_set('America/Los_Angeles');
+				$jobperm = "SELECT * FROM jobs WHERE checkO = 0 AND user = '$usename' AND job ='Teller' ORDER BY start ASC";
+				$ackjob = mysqli_query($con, $jobperm);
+				$jobd = mysqli_fetch_row($ackjob);
+				$start = new DateTime($jobd[4]);
+				$start -> modify('-15 minutes');
+				$now = new DateTime("now");
+				$end = new DateTime($jobd[5]);
+				$end -> modify('+15 minutes');
+				if ($now > $end || mysqli_num_rows($ackjob) == 0){ ?>
+					<script type="text/javascript">window.location.href="bank.php"</script> <?php
+				}
 				include "Javascript/telltransearch.php";
 			}
 			//echo $_POST['input'];
