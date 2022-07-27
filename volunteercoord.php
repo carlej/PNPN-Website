@@ -2317,14 +2317,17 @@
 					$pay = $_POST['pay'];
 					$length = $_POST['length'];
 					$start = new DateTime($_POST['start']);
+					$startT = $start;
 					$startS = $start->format('Y-m-d H:i:s');
 					$end = $start -> modify('+'.$length.' hours');
 					$endS = $end;
 					$premiumE = DateTime::createFromFormat('Y-m-d H:i:s', $endS->format('Y-m-d').' 20:00:00');
 					$end = $end->format('Y-m-d H:i:s');
 					$premiumS = DateTime::createFromFormat('Y-m-d H:i:s', $start->format('Y-m-d').' 8:00:00');
+					$start = new DateTime($_POST['start']);
+					$startT = $start;
 					for ($i=0; $i < $loop; $i++) {
-						if ($premiumS >= $start  && $endS <= $premiumE) {
+						if (($premiumS >= $start || $endS > $premiumE)) {
 							$payD = $pay + $pay;
 							$insert = "INSERT INTO jobs (ID, section, job, pay, start, end, length, user, checkI, checkO) VALUES (NULL, '$section', '$job', '$payD', '$startS', '$end', '$length', NULL, '0', '0')";
 						}
@@ -2341,6 +2344,7 @@
 						$end = $start -> modify('+'.$length.' hours');
 						$endS = $end;
 						$end = $end->format('Y-m-d H:i:s');
+						//$start = new DateTime($_POST['start']);
 						$premiumE = DateTime::createFromFormat('Y-m-d H:i:s', $endS->format('Y-m-d').' 20:00:00');
 						$premiumS = DateTime::createFromFormat('Y-m-d H:i:s', $start->format('Y-m-d').' 8:00:00');
 					}
