@@ -35,12 +35,7 @@
 				</div>
 				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-					<a href="volunteercoord.php" class="MiddleButtonFourUn">Coordinator</a>
-					<?php endif;?>
-				</div>
-				<div class="col" style="padding-left: 0.05em" >
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="chartercoord.php" class="RightButtonFourUn">Charter/Land Grant</a>
+					<a href="volunteercoord.php" class="RightButtonFourUn">Coordinator</a>
 					<?php endif;?>
 				</div>
 				</div>
@@ -55,12 +50,12 @@
 				<div class = "row" id ="ButtonsRow" style="margin-right: -20.1em">
 				<div class = "col" style="padding-right: 0.05em">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerNassau.php" class="LeftButtonTopTwoPressed">Port Nassau</a>
+						<a href="volunteerNassau.php" style="display: flex; font-family: Pirates; font-size: 1.5em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0.4em 0em 0em 0.4em; background: #000000; color: red; width: 9em; height: 1.5em;">Port Nassau</a>
 					<?php endif;?>
 				</div>
 				<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerTortuga.php" class="RightButtonTopTwoUn">Tortuga Nights</a>
+						<a href="volunteerTortuga.php" style="display: flex; font-family: Pirates; font-size: 1.5em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0em 0.4em 0.4em 0em; background: #000000; color: white; width: 9em; height: 1.5em;">Tortuga Nights</a>
 					<?php endif;?>
 				</div>
 				</div>
@@ -70,15 +65,10 @@
 		<div class = "container-flow" id = "SwitchButtonsTwoLayered">
 			<div class="d-none d-lg-block d-xl-none">
 			<div class = "d-flex justify-content-center">
-				<div class = "row" id ="ButtonsRow" style="margin-right: -22em; margin-top: -5.9em">
+				<div class = "row" id ="ButtonsRow" style="margin-right: -22em; margin-top: -5.9em; margin-bottom: 8em;">
 				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-					<a href="volunteercoord.php" class="LeftButtonBottomTwoUn">Coordinator</a>
-					<?php endif;?>
-				</div>
-				<div class="col" style="padding-left: 0.05em" >
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="chartercoord.php" class="RightButtonBottomTwoUn">Charter/Land Grant</a>
+					<a href="volunteercoord.php" style="display: flex; font-family: Pirates; font-size: 1.5em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0em 0em 0.4em 0.4em; background: #000000; color: white; width: 9em; height: 1.5em;">Coordinator</a>
 					<?php endif;?>
 				</div>
 				</div>
@@ -106,11 +96,6 @@
 					<a href="volunteercoord.php" class="MenuButtonUn">Coordinator</a>
 					<?php endif;?>
 				</div>
-				<div class="col-xl">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="chartercoord.php" class="MenuButtonUn">Charter/Land Grant</a>
-					<?php endif;?>
-				</div>
 				</div>
 			</div>
 			</div>
@@ -128,22 +113,35 @@
 				</div>
 				<div class = "col" style="padding-right: 0.05em; padding-left: 0.05em">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
-						<a href="volunteerTortuga.php" class="MiddleButtonThreeUn">Tortuga Nights</a>
-					<?php endif;?>
-				</div>
-				<div class="col" style="padding-left: 0.05em" >
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
-						<a href="charter.php" class="RightButtonThreeUn">Charter/Land Grants</a>
+						<a href="volunteerTortuga.php" class="RightButtonThreeUn">Tortuga Nights</a>
 					<?php endif;?>
 				</div>
 				</div>
 			</div>
 			</div>
 		</div>
-		
 		<!-- Code for the Personal and Charter Buttons once the page is shrunk-->
+		<div class = "container-flow" id = "SwitchButtonsThree">
+			<div class="d-none d-lg-block d-xl-none">
+			<div class = "d-flex justify-content-center">
+				<div class = "row" style="; margin-top: -5em;" id ="ButtonsRow">
+				<div class = "col" style="padding-right: 0.05em;">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
+						<a href="volunteerNassau.php" class="LeftButtonThreePressed">Port Nassau</a>
+					<?php endif;?>
+				</div>
+				<div class = "col" style="padding-right: 0.05em; padding-left: 0.05em; margin-bottom: 8em;">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
+						<a href="volunteerTortuga.php" class="RightButtonThreeUn">Tortuga Nights</a>
+					<?php endif;?>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!-- Code for the Personal and Charter Buttons once the page is smallest-->
 		<div class = "container" id = "SwitchButtonsMenuTwoThree">
-			<div class="d-xl-none">
+			<div class="d-lg-none">
 			<div class = "d-flex justify-content-center">
 				<div class = "row" id ="ButtonsRow">
 				<div class = "col-lg">
@@ -156,18 +154,12 @@
 						<a href="volunteerTortuga.php" class="MenuButtonUn">Tortuga Nights</a>
 					<?php endif;?>
 				</div>
-				<div class="col-lg" style="padding-right: 0.05em" >
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="c" && $_SESSION['perm']!="z")): ?>
-						<a href="charter.php" class="MenuButtonUn">Charter/Land Grants</a>
-					<?php endif;?>
-				</div>
 				</div>
 			</div>
 			</div>
 		</div>
 		
 	</head>	
-	</head>
 	<body>
 
 		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
@@ -522,7 +514,7 @@
 							<div class = "d-flex justify-content-center" style="margin-left: -20.2em; margin-top: 0.05em">
 								<div class = "row" id = "DeptRowOne">
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
-										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Lost Cove"></input>
+										<input type="submit" name= "submit" class="LeftButtonBottomVolunteerDept unpressed" value="Lost Cove"></input>
 									</div>
 									<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em; margin-top: 0.05em">
 										<input type="submit" name= "submit" class="MiddleButtonVolunteerDept unpressed" value="Monkey Island" style="white-space: normal;"></input>
