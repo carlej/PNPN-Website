@@ -43,12 +43,7 @@
 				</div>
 				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-					<a href="volunteercoord.php" class="MiddleButtonFourPressed">Coordinator</a>
-					<?php endif;?>
-				</div>
-				<div class="col" style="padding-left: 0.05em" >
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="chartercoord.php" class="RightButtonFourUn">Charter/Land Grant</a>
+					<a href="volunteercoord.php" class="RightButtonFourPressed">Coordinator</a>
 					<?php endif;?>
 				</div>
 				</div>
@@ -60,15 +55,15 @@
 		<div class = "container-flow" id = "SwitchButtonsTwoLayered">
 			<div class="d-none d-lg-block d-xl-none">
 			<div class = "d-flex justify-content-center">
-				<div class = "row" id ="ButtonsRow" style="margin-right: -22.25em; margin-bottom: -1.90em">
+				<div class = "row" id ="ButtonsRow" style="margin-right: -20.1em">
 				<div class = "col" style="padding-right: 0.05em">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerNassau.php" class="LeftButtonTopTwoUn">Port Nassau</a>
+						<a href="volunteerNassau.php" style="display: flex; font-family: Pirates; font-size: 1.5em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0.4em 0em 0em 0.4em; background: #000000; color: white; width: 9em; height: 1.5em;">Port Nassau</a>
 					<?php endif;?>
 				</div>
 				<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerTortuga.php" class="RightButtonTopTwoUn">Tortuga Nights</a>
+						<a href="volunteerTortuga.php" style="display: flex; font-family: Pirates; font-size: 1.5em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0em 0.4em 0.4em 0em; background: #000000; color: white; width: 9em; height: 1.5em;">Tortuga Nights</a>
 					<?php endif;?>
 				</div>
 				</div>
@@ -78,15 +73,35 @@
 		<div class = "container-flow" id = "SwitchButtonsTwoLayered">
 			<div class="d-none d-lg-block d-xl-none">
 			<div class = "d-flex justify-content-center">
-				<div class = "row" id ="ButtonsRow" style="margin-right: -24em; margin-top: -4em">
+				<div class = "row" id ="ButtonsRow" style="margin-right: -22em; margin-top: -5.9em; margin-bottom: 8em;">
 				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-					<a href="volunteercoord.php" class="LeftButtonBottomTwoPressed">Coordinator</a>
+					<a href="volunteercoord.php" style="display: flex; font-family: Pirates; font-size: 1.5em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0em 0em 0.4em 0.4em; background: #000000; color: red; width: 9em; height: 1.5em;">Coordinator</a>
 					<?php endif;?>
 				</div>
-				<div class="col" style="padding-left: 0.05em" >
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		<!-- Code for the Personal, Coordinator, and Charter Buttons once the page is shrunk-->
+		<div class = "container" id = "SwitchButtonsMenuTwoThree">
+			<div class="d-lg-none">
+			<div class = "d-flex justify-content-center">
+				<div class = "row">
+				<div class = "col-xl">
 					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="chartercoord.php" class="RightButtonBottomTwoUn">Charter/Land Grant</a>
+						<a href="volunteerNassau.php" class="MenuButtonUn">Port Nassau</a>
+					<?php endif;?>
+				</div>
+				<div class = "col-xl">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+						<a href="volunteerTortuga.php" class="MenuButtonUn">Tortuga Nights</a>
+					<?php endif;?>
+				</div>
+				<div class = "col-xl">
+					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
+					<a href="volunteercoord.php" class="MenuButtonPressed">Coordinator</a>
 					<?php endif;?>
 				</div>
 				</div>
@@ -94,36 +109,6 @@
 			</div>
 		</div>
 
-		
-		<!-- Code for the Personal, Coordinator, and Charter Buttons once the page is shrunk-->
-		<div class = "container" id = "SwitchButtonsMenuTwoThree">
-			<div class="d-lg-none">
-			<div class = "d-flex justify-content-center">
-				<div class = "row">
-				<div class = "col-lg">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerNassau.php" class="MenuButtonUn">Port Nassau</a>
-					<?php endif;?>
-				</div>
-				<div class = "col-lg">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerTortuga.php" class="MenuButtonUn">Tortuga Nights</a>
-					<?php endif;?>
-				</div>
-				<div class = "col-lg">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-					<a href="volunteercoord.php" class="MenuButtonPressed">Coordinator</a>
-					<?php endif;?>
-				</div>
-				<div class="col-lg">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="chartercoord.php" class="MenuButtonUn">Charter/Land Grant</a>
-					<?php endif;?>
-				</div>
-				</div>
-			</div>
-			</div>
-		</div>
 		
 		
 	</head>
@@ -257,7 +242,7 @@
 					<div class = "d-none d-xl-block">
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 							<div style="margin-bottom: 1em; font-family: pirates;">
-								<input type="submit" name ="Sign-Up"  value="Add Shift">
+								<input type="submit"  class="alone unpressed" name ="Sign-Up"  value="Add Shift">
 							</div>
 						</div>
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
@@ -387,7 +372,7 @@
 					<div class = "d-none d-lg-block d-xl-none">
 						<div class = "d-flex justify-content-center" style="margin-left: -18.2em;">
 							<div style="margin-bottom: 1em; font-family: pirates;">
-								<input type="submit" name ="Sign-Up"  value="Add Shift">
+								<input type="submit"  class="alone unpressed" name ="Sign-Up"  value="Add Shift">
 							</div>
 						</div>
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
@@ -519,7 +504,7 @@
 			<div class="d-lg-none">
 				<div class = "d-flex justify-content-center">
 					<div style="margin-bottom: 1em; font-family: pirates;">
-						<input type="submit" name ="Sign-Up"  value="Add Shift">
+						<input type="submit"  class="alone unpressed" name ="Sign-Up"  value="Add Shift">
 					</div>
 				</div>
 				<div class = "d-flex justify-content-center">
@@ -2324,49 +2309,48 @@
 		<?php } ?>
 		<?php
 
-
-
-if (isset($_POST['submit']) && $_POST['submit'] != "Your Shifts") {
-	$tmpsub = NULL;
-	if (isset($_POST['job'])) {
-		$tmpjob = NULL;
-		if ($_POST['Sign-Up'] == "Sign Up"){
-			if (isset($_POST['shift'])) {
-				foreach ($_POST['shift'] as $key) {
-					$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-					if (!$con) {
-						die('Could not connect: ' . mysql_error());
-					}
-					$method = $_POST['submit'];
-					$username = $_SESSION['username'];
-
-					$update = "UPDATE jobs SET user = '$username' WHERE `jobs`.`ID` = '$key'";
-                    $temp = mysqli_query($con, $update);
-                    $_POST['submit'] = "Your Shifts";
-                }
-			}
-		}
-		else if ($_POST['Sign-Up'] == "Remove Shift") {
-			if (isset($_POST['shift'])) {
-				foreach ($_POST['shift'] as $key) {
-					$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-					if (!$con) {
-						die('Could not connect: ' . mysql_error());
-					}
-					$method = $_POST['submit'];
-					$username = $_SESSION['username'];
-
-					$update = "UPDATE jobs SET user = NULL WHERE `jobs`.`ID` = '$key'";
-                    $temp=mysqli_query($con, $update);
-                    $_POST['submit'] = "Your Shifts";
-                }
-			}
-		}
-	}
-}
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if (isset($_POST['confirm'])) {
-					print("arg");
+					$loop = intval($_POST['number']);
+					$section = $_POST['sect'];
+					$job = $_POST['jobAdd'];
+					$pay = $_POST['pay'];
+					$length = $_POST['length'];
+					$start = new DateTime($_POST['start']);
+					$startS = $start->format('Y-m-d H:i:s');
+					$end = $start -> modify('+'.$length.' hours');
+					$endS = $end;
+					$premiumE = DateTime::createFromFormat('Y-m-d H:i:s', $endS->format('Y-m-d').' 20:00:00');
+					$end = $end->format('Y-m-d H:i:s');
+					$premiumS = DateTime::createFromFormat('Y-m-d H:i:s', $start->format('Y-m-d').' 8:00:00');
+					for ($i=0; $i < $loop; $i++) {
+						if ($premiumS > $start  && $endS < $premiumE) {
+							$payD = $pay + $pay;
+							$insert = "INSERT INTO jobs (ID, section, job, pay, start, end, length, user, checkI, checkO) VALUES (NULL, '$section', '$job', '$payD', '$startS', '$end', '$length', NULL, '0', '0')";
+						}
+						else{
+							$insert = "INSERT INTO jobs (ID, section, job, pay, start, end, length, user, checkI, checkO) VALUES (NULL, '$section', '$job', '$pay', '$startS', '$end', '$length', NULL, '0', '0')";
+						}
+						$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+						if (!$con) {
+							die('Could not connect: ' . mysql_error());
+						}
+						$update=mysqli_query($con, $insert);
+						$start = new DateTime($end);
+						$startS = $start->format('Y-m-d H:i:s');
+						$end = $start -> modify('+'.$length.' hours');
+						$endS = $end;
+						$end = $end->format('Y-m-d H:i:s');
+						$premiumE = DateTime::createFromFormat('Y-m-d H:i:s', $endS->format('Y-m-d').' 20:00:00');
+						$premiumS = DateTime::createFromFormat('Y-m-d H:i:s', $start->format('Y-m-d').' 8:00:00');
+					}
+					?>
+					<div class = "d-flex justify-content-center" style="margin-left: -0.2em;">
+							<div style="margin-bottom: 1em; font-family: pirates;">
+								<label class="alone unpressed" style="width: 7em; color: red;">Shift/s Added</label>
+							</div>
+						</div>
+					<?php
 				}
 			if ($_POST['Sign-Up'] == "Add Shift") {
 				$event = $_POST['event'];
@@ -2422,7 +2406,7 @@ if (isset($_POST['submit']) && $_POST['submit'] != "Your Shifts") {
 				                    	</div>
 				                    	<div>
 					                    	<label>Start:</label>
-					                    	<input type="date"  name="start" required>
+					                    	<input type="datetime-local"  name="start" required>
 				                    	</div>
 				                    	<div>
 					                    	<label>Length:</label>
@@ -2527,7 +2511,8 @@ if (isset($_POST['submit']) && $_POST['submit'] != "Your Shifts") {
 
 		//easer way to add time maybe
 		//$datethis = new DateTime("now");
-		//$datethis -> modify('+15 minutes');
+		//print($datethis->format('Y-m-d H:i:s'));
+		//$datethis -> modify('+2 hours');
 		//print($datethis->format('Y-m-d H:i:s'));
 		mysqli_close($con);
 		?>
