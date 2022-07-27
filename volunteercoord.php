@@ -2324,7 +2324,7 @@
 					$end = $end->format('Y-m-d H:i:s');
 					$premiumS = DateTime::createFromFormat('Y-m-d H:i:s', $start->format('Y-m-d').' 8:00:00');
 					for ($i=0; $i < $loop; $i++) {
-						if ($premiumS > $start  && $endS < $premiumE) {
+						if ($premiumS >= $start  && $endS <= $premiumE) {
 							$payD = $pay + $pay;
 							$insert = "INSERT INTO jobs (ID, section, job, pay, start, end, length, user, checkI, checkO) VALUES (NULL, '$section', '$job', '$payD', '$startS', '$end', '$length', NULL, '0', '0')";
 						}
