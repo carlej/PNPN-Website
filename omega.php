@@ -9,25 +9,14 @@
 		if ($_SESSION['perm']!="b" && $_SESSION['perm']!="z") {
 		    ?><script type="text/javascript">window.location.href="bank.php"</script><?php
 		}
-		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="b" || $_SESSION['perm']=="z")) {
+		if ($_SESSION['perm'] != 'z') { ?>
+			<script type="text/javascript">window.location.href="bank.php"</script> <?php
+		}
+		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true || $_SESSION['perm'] =="z") {
 			$usename = $_SESSION['username'];
 			$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			if (!$con) {
 				die('Could not connect: ' . mysql_error());
-			}
-			if ($_SESSION['perm'] != 'z') {
-				date_default_timezone_set('America/Los_Angeles');
-				$jobperm = "SELECT * FROM jobs WHERE checkO = 0 AND user = '$usename' AND job ='Teller' ORDER BY start ASC";
-				$ackjob = mysqli_query($con, $jobperm);
-				$jobd = mysqli_fetch_row($ackjob);
-				$start = new DateTime($jobd[4]);
-				$start -> modify('-15 minutes');
-				$now = new DateTime("now");
-				$end = new DateTime($jobd[5]);
-				$end -> modify('+15 minutes');
-				if ($now > $end || mysqli_num_rows($ackjob) == 0){ ?>
-					<script type="text/javascript">window.location.href="bank.php"</script> <?php
-				}
 			}
 		}
 		else{
@@ -61,7 +50,7 @@
 				<div class = "container" id="SearchBy">
 					<div class = "d-flex-row">
 						<div calss = "col-2">
-							<div><label>Edit Account:</label></div>
+							<div><label>Edit Data Base from Search:</label></div>
 							<select name="type" style="margin-left: 1em; margin-bottom: 0.5em">
 								<option>Search By:</option>
 								<option value="Pname">Pirate Name</option>
@@ -85,6 +74,25 @@
 				</div>
 			</fieldset>
 		</form>
+		<?php if ($usename == 'shongesabbe') { ?>
+			<form method="POST">
+				<fieldset>
+					<div class = "container" id="SearchBy">
+						<div class = "d-flex-row">
+							<div calss = "col-2">
+								<div><label>Edit Data Base from Code:</label></div>
+							</div>
+							<div class = "col" style="margin-bottom: 0.5em;">
+								<input type="search" class="required" name="input" id= "SearchBox" minlength="3">
+							</div>
+							<div class = "col">
+								<input type="submit" name= "submit" value="Search" class="submit">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		<?php } ?>
 
 		<?php 
 		error_reporting(E_ERROR);
