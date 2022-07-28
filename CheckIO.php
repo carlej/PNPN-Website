@@ -3,7 +3,7 @@
 	<head>
 		<?php
 		include("Javascript/Connections/req.php"); 
-		if ($_SESSION['perm']!="c" && $_SESSION['perm']!="z") {
+		if ($_SESSION['username']!="CheckIO" && $_SESSION['perm']!="z") {
 		    ?><script type="text/javascript">window.location.href="bank.php"</script><?php
 		} 
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
@@ -18,99 +18,28 @@
 		if (!$con) {
 			die('Could not connect: ' . mysql_error());
 		}
-		else{
-			//$queryIn = "SELECT * FROM volunteering WHERE 1"
-		}
 		?>
 
-		<title>Volunteering</title>
-		<?php include("Views/Partials/header.php");?>
+		<title>Check In Out</title>
+		<?php  
+$url=NULL;  
+    $url= $_SERVER['REQUEST_URI'];
+  ?>
+<div class="container-flow">
+	<div class="header"></div>
+	<div class="d-none d-lg-block">
+	<div id="cssmenu" class="align-center">
+     		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm'] == 'b'): ?>
+     		<?php endif; ?>
 
-		<!-- Creates the Personal, Coordinator, and Charter Buttons and who has access to them-->
-		<div class = "container-flow" id = "SwitchButtonsFour">
-			<div class="d-none d-xl-block">
-			<div class = "d-flex justify-content-center">
-				<div class = "row" id ="ButtonsRow">
-				<div class = "col" style="padding-right: 0.05em">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerNassau.php" class="LeftButtonFourUn">Port Nassau</a>
-					<?php endif;?>
-				</div>
-				<div class = "col" style="padding-left: 0.05em; padding-right: 0.05em">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerTortuga.php" class="MiddleButtonFourUn">Tortuga Nights</a>
-					<?php endif;?>
-				</div>
-				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-					<a href="volunteercoord.php" class="RightButtonFourPressed">Coordinator</a>
-					<?php endif;?>
-				</div>
-				</div>
-			</div>
-			</div>
-		</div>
+				<div class="compRose"><img src="CSS\styles\Compass_Rose_2.png" alt="Compass_Rose"></div>
+		</ul>
 
-		<!-- Creates the Personal, Coordinator, and Charter Buttons with the page shrunk-->
-		<div class = "container-flow" id = "SwitchButtonsTwoLayered">
-			<div class="d-none d-lg-block d-xl-none">
-			<div class = "d-flex justify-content-center">
-				<div class = "row" id ="ButtonsRow" style="margin-right: -20.1em">
-				<div class = "col" style="padding-right: 0.05em">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerNassau.php" style="display: flex; font-family: Pirates; font-size: 1.5em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0.4em 0em 0em 0.4em; background: #000000; color: white; width: 9em; height: 1.5em;">Port Nassau</a>
-					<?php endif;?>
-				</div>
-				<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerTortuga.php" style="display: flex; font-family: Pirates; font-size: 1.5em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0em 0.4em 0.4em 0em; background: #000000; color: white; width: 9em; height: 1.5em;">Tortuga Nights</a>
-					<?php endif;?>
-				</div>
-				</div>
-			</div>
-			</div>
-		</div>
-		<div class = "container-flow" id = "SwitchButtonsTwoLayered">
-			<div class="d-none d-lg-block d-xl-none">
-			<div class = "d-flex justify-content-center">
-				<div class = "row" id ="ButtonsRow" style="margin-right: -22em; margin-top: -5.9em; margin-bottom: 8em;">
-				<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-					<a href="volunteercoord.php" style="display: flex; font-family: Pirates; font-size: 1.5em; text-decoration: none; border: 0.01em; border-color: transparent; align-content: center; justify-content: center; line-height: 1.4em; border-radius: 0em 0em 0.4em 0.4em; background: #000000; color: red; width: 9em; height: 1.5em;">Coordinator</a>
-					<?php endif;?>
-				</div>
-				</div>
-			</div>
-			</div>
-		</div>
-		
-		<!-- Code for the Personal, Coordinator, and Charter Buttons once the page is shrunk-->
-		<div class = "container" id = "SwitchButtonsMenuTwoThree">
-			<div class="d-lg-none">
-			<div class = "d-flex justify-content-center">
-				<div class = "row">
-				<div class = "col-xl">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerNassau.php" class="MenuButtonUn">Port Nassau</a>
-					<?php endif;?>
-				</div>
-				<div class = "col-xl">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-						<a href="volunteerTortuga.php" class="MenuButtonUn">Tortuga Nights</a>
-					<?php endif;?>
-				</div>
-				<div class = "col-xl">
-					<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="c" || $_SESSION['perm']=="z")): ?>
-					<a href="volunteercoord.php" class="MenuButtonPressed">Coordinator</a>
-					<?php endif;?>
-				</div>
-				</div>
-			</div>
-			</div>
-		</div>
+	</div>
+	</div>
+	</div>
 
-		
-		
+</div>
 	</head>
 	<body>
 		<form method="POST">
@@ -122,7 +51,7 @@
 				<div class = "container-flow" id = "SwitchButtonsTwoLayered">
 					<div class="d-none d-xl-block">
 					<div class = "d-flex justify-content-center">
-						<div class = "row" id ="ButtonsRow" style="margin-right: -20em; margin-top: -3em">
+						<div class = "row" id ="ButtonsRow" style="margin-right: -20em;">
 						<div class = "col" style="padding-right: 0.05em">
 							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								if ($_POST['event'] == "Port Nassau") { ?>
@@ -240,11 +169,6 @@
 				<input type="hidden" name="submit">
 				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -3em;">
 					<div class = "d-none d-xl-block">
-						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
-							<div style="margin-bottom: 1em; font-family: pirates;">
-								<input type="submit"  class="alone unpressed" name ="Sign-Up"  value="Add Shift">
-							</div>
-						</div>
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 							<div class = "row" id = "DeptRowOne">
 								<div class = "col" style="padding-right: 0.05em;">
@@ -370,11 +294,6 @@
 				<input type="hidden" name="submit">
 				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -3em;">
 					<div class = "d-none d-lg-block d-xl-none">
-						<div class = "d-flex justify-content-center" style="margin-left: -18.2em;">
-							<div style="margin-bottom: 1em; font-family: pirates;">
-								<input type="submit"  class="alone unpressed" name ="Sign-Up"  value="Add Shift">
-							</div>
-						</div>
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 							<div class = "row" id = "DeptRowOne">
 								<div class = "col" style="padding-right: 0.05em;">
@@ -502,11 +421,6 @@
 		
 		<div class = "container">
 			<div class="d-lg-none">
-				<div class = "d-flex justify-content-center">
-					<div style="margin-bottom: 1em; font-family: pirates;">
-						<input type="submit"  class="alone unpressed" name ="Sign-Up"  value="Add Shift">
-					</div>
-				</div>
 				<div class = "d-flex justify-content-center">
 					<div class = "row">
 						<div class = "col">
@@ -1184,7 +1098,7 @@
 													$temp = $value[0];
 													?>
 														<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
-														<input type="number" name="pay<?php echo $temp ?>" style="padding-right: 0.2em; padding-left: 0.2em; width: 5.3em;" value = "<?php echo $value[3] ?>">
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php echo $value[3] ?></label>
 														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
 														$date = date_create($value[4]);
 														echo date_format($date, "m/d/y") ?></label>
@@ -1195,18 +1109,25 @@
 														$date = date_create($value[5]);
 														echo date_format($date, "h:i A") ?></label>
 														<?php if ($value[8]) { ?>
-															<input type="checkbox" name="checkI<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 2.5em;" value=1 checked>
+															<input type="checkbox" name="checkI<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 2.5em;" value=1 disabled checked>
+															<input type="hidden" name="checkI<?php echo $temp ?>" value = 1>
 														<?php }
 														else { ?>
 															<input type="checkbox" name="checkI<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 2.5em;" value=0>
 														<?php } ?>
 														<?php if ($value[9]) { ?>
-															<input type="checkbox" name="checkO<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 4.5em;" value=1 checked>
+															<input type="checkbox" name="checkO<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 4.5em;" value=1 disabled checked>
+															<input type="hidden" name="checkO<?php echo $temp ?>" value = 1>
 														<?php }
 														else { ?>
 															<input type="checkbox" name="checkO<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 4.5em;" value=0>
+														<?php } 
+														if ($value[7] != NULL) { ?>
+															<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; margin-left: 1.2em;"><?php echo $value[7]; ?></label>
+														<?php }
+														else{ ?>
+															<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; margin-left: 1.2em;">EMPTY</label>
 														<?php } ?>
-														<input type="text" name="email<?php echo $temp?>" style="padding-right: 0.2em; padding-left: 0.2em; margin-left: 1.7em;" value="<?php echo $value[7]; ?>">
 														<br>
 												<?php }
 											} 
@@ -1217,8 +1138,7 @@
 											<div class = "col" style="font-family: pirates;">
 												<input type="hidden" name="job" value="<?php echo $input; ?>">
 												<input type="hidden" name="submit" value="<?php echo $sect; ?>">
-												<input type="submit" name ="Sign-Up" value="Remove Shift">
-												<input type="submit" name ="Sign-Up" value="Edit Shift">
+												<input type="submit" name ="Sign-Up" value="CheckIO">
 											</div>
 											<?php
 										}
@@ -1324,11 +1244,6 @@
 				<input type="hidden" name="submit">
 				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -3em;">
 					<div class = "d-none d-xl-block">
-						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
-							<div style="margin-bottom: 1em; font-family: pirates;">
-								<input type="submit" name ="Sign-Up"  value="Add Shift">
-							</div>
-						</div>
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 							<div class = "row" id = "DeptRowOne">
 								<div class = "col" style="padding-right: 0.05em;">
@@ -1438,11 +1353,6 @@
 				<input type="hidden" name="submit">
 				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -3em;">
 					<div class = "d-none d-lg-block d-xl-none">
-						<div class = "d-flex justify-content-center" style="margin-left: -18.2em;">
-							<div style="margin-bottom: 1em; font-family: pirates;">
-								<input type="submit" name ="Sign-Up"  value="Add Shift">
-							</div>
-						</div>
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 							<div class = "row" id = "DeptRowOne">
 								<div class = "col" style="padding-right: 0.05em;">
@@ -1554,11 +1464,6 @@
 		
 		<div class = "container">
 			<div class="d-lg-none">
-				<div class = "d-flex justify-content-center">
-					<div style="margin-bottom: 1em; font-family: pirates;">
-						<input type="submit" name ="Sign-Up"  value="Add Shift">
-					</div>
-				</div>
 				<div class = "d-flex justify-content-center">
 					<div class = "row">
 						<div class = "col">
@@ -2180,7 +2085,7 @@
 													$temp = $value[0];
 													?>
 														<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $temp ?>">
-														<input type="number" name="pay<?php echo $temp ?>" style="padding-right: 0.2em; padding-left: 0.2em; width: 5.3em;" value = "<?php echo $value[3] ?>">
+														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;"><?php echo $value[3]; ?></label>
 														<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;"><?php
 														$date = date_create($value[4]);
 														echo date_format($date, "m/d/y") ?></label>
@@ -2191,18 +2096,25 @@
 														$date = date_create($value[5]);
 														echo date_format($date, "h:i A") ?></label>
 														<?php if ($value[8]) { ?>
-															<input type="checkbox" name="checkI<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 2.5em;" value=1 checked>
+															<input type="checkbox" name="checkI<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 2.5em;" value=1 disabled checked>
+															<input type="hidden" name="checkI<?php echo $temp ?>" value = 1>
 														<?php }
 														else { ?>
 															<input type="checkbox" name="checkI<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 2.5em;" value=0>
 														<?php } ?>
 														<?php if ($value[9]) { ?>
-															<input type="checkbox" name="checkO<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 4.5em;" value=1 checked>
+															<input type="checkbox" name="checkO<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 4.5em;" value=1 disabled checked>
+															<input type="hidden" name="checkO<?php echo $temp ?>" value = 1>
 														<?php }
 														else { ?>
 															<input type="checkbox" name="checkO<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 4.5em;" value=0>
+														<?php }
+														if ($value[7] != NULL) { ?>
+															<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; margin-left: 1.2em;"><?php echo $value[7]; ?></label>
+														<?php }
+														else{ ?>
+															<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; margin-left: 1.2em;">EMPTY</label>
 														<?php } ?>
-														<input type="text" name="email<?php echo $temp?>" style="padding-right: 0.2em; padding-left: 0.2em; margin-left: 1.7em;" value="<?php echo $value[7]; ?>">
 														<br>
 												<?php }
 											} 
@@ -2213,8 +2125,7 @@
 											<div class = "col" style="font-family: pirates;">
 												<input type="hidden" name="job" value="<?php echo $input; ?>">
 												<input type="hidden" name="submit" value="<?php echo $sect; ?>">
-												<input type="submit" name ="Sign-Up" value="Remove Shift">
-												<input type="submit" name ="Sign-Up" value="Edit Shift">
+												<input type="submit" name ="Sign-Up" value="CheckIO">
 											</div>
 											<?php
 										}
@@ -2310,140 +2221,7 @@
 		<?php
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			if (isset($_POST['confirm'])) {
-					$loop = intval($_POST['number']);
-					$section = $_POST['sect'];
-					$job = $_POST['jobAdd'];
-					$pay = $_POST['pay'];
-					$length = $_POST['length'];
-					$start = new DateTime($_POST['start']);
-					$startT = $start;
-					$startS = $start->format('Y-m-d H:i:s');
-					$end = $start -> modify('+'.$length.' hours');
-					$endS = $end;
-					$premiumE = DateTime::createFromFormat('Y-m-d H:i:s', $endS->format('Y-m-d').' 20:00:00');
-					$end = $end->format('Y-m-d H:i:s');
-					$premiumS = DateTime::createFromFormat('Y-m-d H:i:s', $start->format('Y-m-d').' 8:00:00');
-					$start = new DateTime($_POST['start']);
-					$startT = $start;
-					for ($i=0; $i < $loop; $i++) {
-						if (($premiumS >= $start || $endS > $premiumE)) {
-							$payD = $pay + $pay;
-							$insert = "INSERT INTO jobs (ID, section, job, pay, start, end, length, user, checkI, checkO) VALUES (NULL, '$section', '$job', '$payD', '$startS', '$end', '$length', NULL, '0', '0')";
-						}
-						else{
-							$insert = "INSERT INTO jobs (ID, section, job, pay, start, end, length, user, checkI, checkO) VALUES (NULL, '$section', '$job', '$pay', '$startS', '$end', '$length', NULL, '0', '0')";
-						}
-						$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-						if (!$con) {
-							die('Could not connect: ' . mysql_error());
-						}
-						$update=mysqli_query($con, $insert);
-						$start = new DateTime($end);
-						$startS = $start->format('Y-m-d H:i:s');
-						$end = $start -> modify('+'.$length.' hours');
-						$endS = $end;
-						$end = $end->format('Y-m-d H:i:s');
-						//$start = new DateTime($_POST['start']);
-						$premiumE = DateTime::createFromFormat('Y-m-d H:i:s', $endS->format('Y-m-d').' 20:00:00');
-						$premiumS = DateTime::createFromFormat('Y-m-d H:i:s', $start->format('Y-m-d').' 8:00:00');
-					}
-					?>
-					<div class = "d-flex justify-content-center" style="margin-left: -0.2em;">
-							<div style="margin-bottom: 1em; font-family: pirates;">
-								<label class="alone unpressed" style="width: 7em; color: red;">Shift/s Added</label>
-							</div>
-						</div>
-					<?php
-				}
-			if ($_POST['Sign-Up'] == "Add Shift") {
-				$event = $_POST['event'];
-				?>
-				<form method = "POST">
-					<fieldset>
-						<input type="hidden" name="event" value="<?php echo $event ?>">
-						<input type="hidden" name="Sign-Up">
-						<input type="hidden" name="submit">
-						<input type="hidden" name="job">
-						<div class = "container" style="margin-top: -3em;">
-				            <div class = "d-flex justify-content-center" id = "EditUser">
-				                <div class = "row">
-				                    <div class = "col-sm">
-				                    	<legend id="EditUserDisp">Add Shift Form:</legend>
-				                    	<label>Section:</label>
-				                    	<select name="sect" class="SearchBy3" style="margin-bottom: 0em">
-											<option value="Set-Up">Set-Up</option>
-											<option value="Gate">Gate</option>
-											<option value="Parking">Parking</option>
-											<option value="Saftey">Saftey</option>
-											<option value="Fire">Fire</option>
-											<option value="Bank">Bank</option>
-											<option value="Scuttlebutt">Scuttlebutt</option>
-											<option value="Titles">Titles</option>
-											<option value="Sanitation">Sanitation</option>
-											<option value="Hearld">Hearld</option>
-											<option value="Lost Cove">Lost Cove</option>
-											<option value="Monkey Island">Monkey Island</option>
-											<option value="Tear Down">Tear Down</option>
-										</select>
-				                    	<div>
-					                    	<label>Job:</label>
-					                    	<select name="jobAdd" class="SearchBy3" style="margin-bottom: 0em">
-											<option value="Set Up">Set-Up</option>
-											<option value="Gate">Gate</option>
-											<option value="Parking">Parking</option>
-											<option value="Saftey">Saftey</option>
-											<option value="Fire">Fire</option>
-											<option value="Bank">Bank</option>
-											<option value="Scuttlebutt">Scuttlebutt</option>
-											<option value="Titles">Titles</option>
-											<option value="Sanitation">Sanitation</option>
-											<option value="Hearld">Hearld</option>
-											<option value="Lost Cove">Lost Cove</option>
-											<option value="Monkey Island">Monkey Island</option>
-											<option value="Tear Down">Tear Down</option>
-										</select>
-				                    	</div>
-				                    	<div>
-					                    	<label>Base Pay:</label>
-					                    	<input type="number"  name="pay" required>
-				                    	</div>
-				                    	<div>
-					                    	<label>Start:</label>
-					                    	<input type="datetime-local"  name="start" required>
-				                    	</div>
-				                    	<div>
-					                    	<label>Length:</label>
-					                    	<input type="number"  name="length" required>
-				                    	</div>
-				                    	<div>
-					                    	<label>Number of:</label>
-					                    	<input type="number"  name="number" required>
-				                    	</div>
-				                    	<div style="margin-bottom: 4em;">
-					                    	<input type="submit"  name="confirm" value="confirm">
-				                    	</div>
-				                    </div>
-				                </div>
-				            </div>
-				        </div>
-					</fieldset>
-				</form>
-				<?php
-			}
-			else if ($_POST['Sign-Up'] == "Remove Shift") {
-				$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-				if (!$con) {
-					die('Could not connect: ' . mysql_error());
-				}
-				if (isset($_POST['shift'])) {
-					foreach ($_POST['shift'] as $key) {
-						$remove = "DELETE FROM jobs WHERE `jobs`.`ID` = $key";
-                    	$temp = mysqli_query($con, $remove);
-					}
-				}
-			}
-			else if ($_POST['Sign-Up'] == "Edit Shift") {
+			if ($_POST['Sign-Up'] == "CheckIO") {
 				if (isset($_POST['shift'])) {
 					$tmpemail = NULL;
 					$tmpCI = NULL;
@@ -2498,26 +2276,12 @@
 						else{
 							$tmpCO = 0;
 						}
-						if (isset($_POST['email'.$key])) {
-							$tmpemail = $_POST['email'.$key];
-						}
-						if (isset($_POST['pay'.$key])) {
-							$tmppay = $_POST['pay'.$key];
-						}
-						$update = "UPDATE jobs SET pay = '$tmppay', user = '$tmpemail', checkI = '$tmpCI', checkO = '$tmpCO' WHERE `jobs`.`ID` = '$key'";
+						$update = "UPDATE jobs SET checkI = '$tmpCI', checkO = '$tmpCO' WHERE `jobs`.`ID` = '$key'";
                     	$temp=mysqli_query($con, $update);
 					}
 				}
 			}
 		}
-		//$time = 1;
-		//$cenvertedTime = date('Y-m-d H:i:s',strtotime('+'.$time.' hour',strtotime($startTime)));//add time to datetime object
-
-		//easer way to add time maybe
-		//$datethis = new DateTime("now");
-		//print($datethis->format('Y-m-d H:i:s'));
-		//$datethis -> modify('+2 hours');
-		//print($datethis->format('Y-m-d H:i:s'));
 		mysqli_close($con);
 		?>
 		
