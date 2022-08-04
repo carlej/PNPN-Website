@@ -72,18 +72,18 @@
 							<label>Select: </label>
 								<select name="input">';
 									<?php
-									if ($_SESSION['nstype']!="Pname") {
+//									if ($_SESSION['nstype']!="Pname") {
 								foreach ($_SESSION['multsearch'] as $key => $value) {
 								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
 								echo '<option value="'.$value[0].'">'.$value[3].' '.$value[4].'</option>';
 								}
-							}
-							else{
-								foreach ($_SESSION['multsearch'] as $key => $value) {
+//							}
+//							else{
+//								foreach ($_SESSION['multsearch'] as $key => $value) {
 								//echo '<p><input type="submit" name="submit" value="'.$value[0].'" /></p>';
-								echo '<option value="'.$value[0].'">'.$value[5].'</option>';
-								}
-							}
+//								echo '<option value="'.$value[0].'">'.$value[5].'</option>';
+//								}
+//							}
 									//echo '</form>';
 									$input2 = mysqli_real_escape_string($con, $_POST['input']);
 									echo '</select><label for="input">   </label><input type="submit" name= "submit" value="Search"><input type="hidden" name="type" value="Username"><input type="hidden" name="new" value="new"><input type="submit" name="submit" value="Clear" /></fieldset></form>'; ?>
