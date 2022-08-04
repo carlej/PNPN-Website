@@ -1,0 +1,30 @@
+to reset the auto incrument delete all the avalable jobs then turn on then off the auto incrument
+then it will be back to 1
+ALTER TABLE `jobs` CHANGE `ID` `ID` INT(6) UNSIGNED NOT NULL; turn off command
+ALTER TABLE `jobs` CHANGE `ID` `ID` INT(6) UNSIGNED NOT NULL AUTO_INCREMENT; turn on command
+
+clear table command
+DELETE FROM `jobs`;
+
+
+
+time lock still has one exploit if they prep a transaction when they still have access they will be able to submit it after their shift ends it will still track that they make this transaction though
+
+
+for land grant stuff
+have map of event on the page
+be able to check the ballance of accounts to see if they have enough to pay their due
+add withdraw function so that the land steward can withdraw the amount from their account with the note that its for land grant
+
+add a lock so that only people that are part of a land grant can register for volunteering shifts
+
+use the land grand tab of charter table to turn this on and off. have one that has a null set for part tab if that one has land grant true then allow everyone to register for volunteering shifts
+
+use question tab of users table to track if someone is part of a land grant to allow for less database pings
+
+
+the land steward will use the charter table part tab to track who is part of a land grant. If they say to add a ship to a particular land grant it will add the entire crew section same for fleet. They can also add individuals.
+
+do not track staff positions of royalty positions right now too much extra coding that is needed to make that work.
+
+add it in future

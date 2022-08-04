@@ -255,10 +255,9 @@
 			$name=NULL;
 			$fleetName=NULL;
 			$shipName=NULL;
-			
-			
-			
-			
+			//closes some loopholes with tellers
+			//if ($username == $_SESSION['username'])
+			//	?><script type="text/javascript">window.location.href="bank.php"</script><?php
 			if ($row[5]!=NULL) {
 				$name=$row[5];
 			}

@@ -268,7 +268,9 @@
 			//echo '<html><form name="addacc" method="POST" action="Javascript/makeacc.php"><p><input type="submit" name="Add Account" value="Add Account" /><input type="hidden" name="user" value="'.$searchUserName.'" /><input type="hidden" name="type" value="'."norm".'" /></p></form></html>';
 		}
 		else{
-			echo '<script type="text/javascript">alert("There are no accounts that match your search!");</script>';
+			echo '<div class="container" id = "NoneFound">
+						There are no accounts that match that search!
+				</div>';
 		}
 	}
 ?>
