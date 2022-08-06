@@ -1073,7 +1073,7 @@ $url=NULL;
 										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">END</label>
 										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;">Check In</label>
 										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.3em;">Check Out</label>
-										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">Email</label>
+										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">Name</label>
 										<br>
 										<?php
 										$input = $_POST['job']; 
@@ -1122,8 +1122,18 @@ $url=NULL;
 														else { ?>
 															<input type="checkbox" name="checkO<?php echo $temp ?>" style="transform: scale(1.6); margin-left: 4.5em;" value=0>
 														<?php } 
-														if ($value[7] != NULL) { ?>
-															<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; margin-left: 1.2em;"><?php echo $value[7]; ?></label>
+														if ($value[7] != NULL) { 
+															$queryIn = "SELECT * FROM users WHERE Username = '$value[7]'";
+															$resultIn = mysqli_query($con, $queryIn);
+															$row = mysqli_fetch_row($resultIn);
+															if ($row[5]!=NULL) {
+																$name=$row[5];
+															}
+															else{
+																$name=$row[3].' '.$row[4];
+															}
+															?>
+															<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; margin-left: 1.2em;"><?php echo $name; ?></label>
 														<?php }
 														else{ ?>
 															<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; margin-left: 1.2em;">EMPTY</label>
