@@ -213,8 +213,10 @@
 				$now = new DateTime("now");
 				$end = new DateTime($jobd[5]);
 				$end -> modify('+15 minutes');
-				if ($now > $end || mysqli_num_rows($ackjob) == 0){ ?>
-					<script type="text/javascript">window.location.href="bank.php"</script> <?php
+				if ($_SESSION['perm'] != "z") {
+					if ($now > $end || mysqli_num_rows($ackjob) == 0){ ?>
+						<script type="text/javascript">window.location.href="bank.php"</script> <?php
+					}
 				}
 				include "Javascript/telltransearch.php";
 			}

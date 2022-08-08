@@ -27,4 +27,18 @@ the land steward will use the charter table part tab to track who is part of a l
 
 do not track staff positions of royalty positions right now too much extra coding that is needed to make that work.
 
+
+add staff and royal job positions to pay them
+
 add it in future
+
+
+add in an export function to pull up all the shifts in case of internet outage
+
+
+put in error handling in account
+
+find the error in the teller page
+
+
+legacy bay events
