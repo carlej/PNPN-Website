@@ -22,12 +22,7 @@
 						</div>
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
-							<a href="landsteward.php" class="MiddleButtonThreeUn">Steward</a>
-							<?php endif;?>
-						</div>
-						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
-							<a href="landvolunteer.php" class="RightButtonThreeUn">Volunteer</a>
+							<a href="landsteward.php" class="RightButtonThreeUn">Steward</a>
 							<?php endif;?>
 						</div>
 					</div>
@@ -50,11 +45,6 @@
 							<a href="landsteward.php" class="MenuButtonUn">Steward</a>
 							<?php endif;?>
 						</div>
-						<div class = "col-lg">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
-							<a href="landvolunteer.php" class="MenuButtonUn">Volunteer</a>
-							<?php endif;?>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -64,10 +54,12 @@
 	<body>
 		<div class = "container-flow">
 			<div class = "d-flex justify-content-center">
-				<div class="row" id="ComingSoon">
-				<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']!="d" && $_SESSION['perm']!="z")): ?>
-					<div>Coming Soon!!</div>
-				<?php endif;?>
+				<div class="d-none d-lg-block">
+					<div style="padding-top: 6em; padding-right: 18em;">
+						<img src='Views\Photos\tmp.jpg' alt='photo' />
+					</div>
+				</div>
+				<div class="d-lg-none">
 				</div>
 			</div>
 		</div>

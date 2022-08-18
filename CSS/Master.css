@@ -356,6 +356,27 @@ padding:0px;
 	text-decoration: none;
 }
 
+.MiddleButtonTwo {
+	display: flex;
+	font-family: Pirates;
+	font-size: 1.5em;
+	text-decoration: none;
+	border: 0.01em;
+	border-color: transparent;
+	align-content: center;
+	justify-content: center;
+	line-height: 1.4em;
+	border-radius: 0em 0em 0em 0em;
+	background: #000000;
+	width: 9em;
+	height: 1.5em;
+}
+
+.MiddleButtonTwo:hover {
+	color: grey;
+	text-decoration: none;
+}
+
 .RightButtonTopTwoUn {
 	display: flex;
 	font-family: Pirates;

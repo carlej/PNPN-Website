@@ -26,12 +26,7 @@
 						</div>
 						<div class = "col" style = "padding-left: 0.05em; padding-right: 0.05em">
 							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
-								<a href="landsteward.php" class="MiddleButtonThreePressed">Steward</a>
-							<?php endif;?>
-						</div>
-						<div class = "col" style="padding-left: 0.05em;">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
-								<a href="landvolunteer.php" class="RightButtonThreeUn">Volunteer</a>
+								<a href="landsteward.php" class="RightButtonThreePressed">Steward</a>
 							<?php endif;?>
 						</div>
 					</div>
@@ -52,11 +47,6 @@
 						<div class = "col-lg">
 							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
 								<a href="landsteward.php" class="MenuButtonPressed">Steward</a>
-							<?php endif;?>
-						</div>
-						<div class = "col-lg">
-							<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && ($_SESSION['perm']=="d" || $_SESSION['perm']=="z")): ?>
-								<a href="landvolunteer.php" class="MenuButtonUn">Volunteer</a>
 							<?php endif;?>
 						</div>
 					</div>

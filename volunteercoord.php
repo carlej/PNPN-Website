@@ -113,6 +113,7 @@
 		
 	</head>
 	<body>
+		<!-- Creates Port Nassau/Tortuga Selection-->
 		<form method="POST">
 			<fieldset>
 				<input type="hidden" name="submit">
@@ -139,14 +140,27 @@
 						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
 							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								if ($_POST['event'] == "Tortuga Nights") { ?>
-									<input type="submit" name= "event" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
+									<input type="submit" name= "event" class="MiddleButtonTwo pressed" value="Tortuga Nights"></input>
 								<?php }
 								else { ?>
-									<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+									<input type="submit" name= "event" class="MiddleButtonTwo unpressed" value="Tortuga Nights"></input>
 								<?php }
 							}
 							else{ ?>
-								<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+								<input type="submit" name= "event" class="MiddleButtonTwo unpressed" value="Tortuga Nights"></input>
+							<?php } ?>
+						</div>
+						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
+							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+								if ($_POST['event'] == "Royal/Staff") { ?>
+									<input type="submit" name= "event" class="RightButtonTwoPressed" value="Royal/Staff"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "event" class="RightButtonTwoUn" value="Royal/Staff"></input>
+								<?php }
+							}
+							else{ ?>
+								<input type="submit" name= "event" class="RightButtonTwoUn" value="Royal/Staff"></input>
 							<?php } ?>
 						</div>
 						</div>
@@ -175,14 +189,27 @@
 						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
 							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								if ($_POST['event'] == "Tortuga Nights") { ?>
-									<input type="submit" name= "event" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
+									<input type="submit" name= "event" class="MiddleButtonTwo pressed" value="Tortuga Nights"></input>
 								<?php }
 								else { ?>
-									<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+									<input type="submit" name= "event" class="MiddleButtonTwo unpressed" value="Tortuga Nights"></input>
 								<?php }
 							}
 							else{ ?>
-								<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+								<input type="submit" name= "event" class="MiddleButtonTwo unpressed" value="Tortuga Nights"></input>
+							<?php } ?>
+						</div>
+						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
+							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+								if ($_POST['event'] == "Royal/Staff") { ?>
+									<input type="submit" name= "event" class="RightButtonTwoPressed" value="Royal/Staff"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "event" class="RightButtonTwoUn" value="Royal/Staff"></input>
+								<?php }
+							}
+							else{ ?>
+								<input type="submit" name= "event" class="RightButtonTwoUn" value="Royal/Staff"></input>
 							<?php } ?>
 						</div>
 						</div>
@@ -211,14 +238,27 @@
 						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
 							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								if ($_POST['event'] == "Tortuga Nights") { ?>
-									<input type="submit" name= "event" class="RightButtonTwoPressed" value="Tortuga Nights"></input>
+									<input type="submit" name= "event" class="MiddleButtonTwo pressed" value="Tortuga Nights"></input>
 								<?php }
 								else { ?>
-									<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+									<input type="submit" name= "event" class="MiddleButtonTwo unpressed" value="Tortuga Nights"></input>
 								<?php }
 							}
 							else{ ?>
-								<input type="submit" name= "event" class="RightButtonTwoUn" value="Tortuga Nights"></input>
+								<input type="submit" name= "event" class="MiddleButtonTwo unpressed" value="Tortuga Nights"></input>
+							<?php } ?>
+						</div>
+						<div class = "col" style="padding-left: 0.05em; padding-right: 0.0em">
+							<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+								if ($_POST['event'] == "Royal/Staff") { ?>
+									<input type="submit" name= "event" class="RightButtonTwoPressed" value="Royal/Staff"></input>
+								<?php }
+								else { ?>
+									<input type="submit" name= "event" class="RightButtonTwoUn" value="Royal/Staff"></input>
+								<?php }
+							}
+							else{ ?>
+								<input type="submit" name= "event" class="RightButtonTwoUn" value="Royal/Staff"></input>
 							<?php } ?>
 						</div>
 						</div>
@@ -1326,7 +1366,7 @@
 					<div class = "d-none d-xl-block">
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 							<div style="margin-bottom: 1em; font-family: pirates;">
-								<input type="submit" name ="Sign-Up"  value="Add Shift">
+								<input type="submit" class="alone unpressed" name ="Sign-Up"  value="Add Shift">
 							</div>
 						</div>
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
@@ -1440,7 +1480,7 @@
 					<div class = "d-none d-lg-block d-xl-none">
 						<div class = "d-flex justify-content-center" style="margin-left: -18.2em;">
 							<div style="margin-bottom: 1em; font-family: pirates;">
-								<input type="submit" name ="Sign-Up"  value="Add Shift">
+								<input type="submit" class="alone unpressed" name ="Sign-Up"  value="Add Shift">
 							</div>
 						</div>
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
@@ -1556,7 +1596,7 @@
 			<div class="d-lg-none">
 				<div class = "d-flex justify-content-center">
 					<div style="margin-bottom: 1em; font-family: pirates;">
-						<input type="submit" name ="Sign-Up"  value="Add Shift">
+						<input type="submit" class="alone unpressed" name ="Sign-Up"  value="Add Shift">
 					</div>
 				</div>
 				<div class = "d-flex justify-content-center">
@@ -2307,9 +2347,96 @@
 		<?php endif; ?>
 			<?php } ?> 
 		<?php } ?>
+		<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			if ($_POST['event'] == "Royal/Staff") { ?>
+				<!--Creates the tabs for all of the Port Nassau volunteering departments-->
+				<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){ ?>
+		<!--Creates the tabs for all of the Port Nassau volunteering departments-->
+		<form method="POST">
+			<fieldset>
+				<input type="hidden" name="event" value="Royal/Staff">
+				<input type="hidden" name ="Sign-Up">
+				<input type="hidden" name="job">
+				<input type="hidden" name="submit">
+				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -3em;">
+					<div class = "d-none d-xl-block">
+						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div style="margin-bottom: 1em; font-family: pirates;">
+								<input type="submit"  class="alone unpressed" name ="Sign-Up"  value="Add Position">
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+		<form method="POST">
+			<fieldset>
+				<input type="hidden" name="event" value="Royal/Staff">
+				<input type="hidden" name ="Sign-Up">
+				<input type="hidden" name="job">
+				<input type="hidden" name="submit">
+				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -3em;">
+					<div class = "d-none d-xl-block">
+						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
+							<div style="margin-bottom: 1em; font-family: pirates;">
+								<?php 
+								file_put_contents('file.txt', 'bar');
+								echo file_get_contents('file.txt'); // bar
+								file_put_contents('file.txt', 'foo');
+								echo file_get_contents('file.txt'); // foo
+
+								$input = "SELECT * FROM `jobs` WHERE `section` = 'staff'";
+								$query = mysqli_query($con,$input);
+								if (mysqli_num_rows($query) > 0) {
+									$array = $query->fetch_all(MYSQLI_NUM); ?>
+									<br>
+									<br>
+									<label class= "dataDis unpressed" style="margin-left: 1.9em; padding-right: 0.2em; padding-left: 0.2em; width: 5em;">POSITION</label>
+									<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.4em;">PAY</label>
+									<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 7em;">CHECK PAY</label>
+									<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">Email</label>
+									<br> <?php
+									foreach ($array as $key => $value) { ?>
+										<input type="checkbox" name="shift[]" style="transform: scale(1.6);" value="<?php echo $value[0] ?>">
+										<label class= "dataDis unpressed" style="margin-left: 0.9em; padding-right: 0.2em; padding-left: 0.2em; width: 5em;"><?php echo $value[2]; ?></label>
+										<input type="number" name="pay<?php echo $value[0] ?>" style="padding-right: 0.2em; padding-left: 0.2em; width: 5.8em;" value = "<?php echo $value[3] ?>">
+										<?php if ($value[9]) { ?>
+											<input type="checkbox" name="checkO<?php echo $value[0] ?>" style="transform: scale(1.6); margin-left: 4.5em;" value=1 checked>
+										<?php }
+										else { ?>
+											<input type="checkbox" name="checkO<?php echo $value[0] ?>" style="transform: scale(1.6); margin-left: 4.5em;" value=0>
+										<?php } ?>
+										<input type="text" name="email<?php echo $value[0] ?>" style="padding-right: 0.2em; padding-left: 0.2em; margin-left: 3.7em;" value="<?php echo $value[7]; ?>">
+										<br>
+
+									<?php }
+									?>
+									<input type="submit" name ="Sign-Up" value="Remove Post">
+									<input type="submit" name ="Sign-Up" value="Edit Post">
+									<input type="submit" name ="Sign-Up" value="Pay All">
+									<?php
+								}
+								?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	<?php }}} ?>
 		<?php
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			if (isset($_POST['staff'])) {
+				print("arg");
+				$loop = intval($_POST['number']);
+				$job = $_POST['name'];
+				$pay = $_POST['pay'];
+				for ($i=0; $i < $loop; $i++) {
+					$insert = "INSERT INTO jobs (section, job, pay, checkI, checkO) VALUES ('staff', '$job', '$pay', '0', '0')";
+					$update=mysqli_query($con, $insert);
+				}
+			}
 			if (isset($_POST['confirm'])) {
 					$loop = intval($_POST['number']);
 					$section = $_POST['sect'];
@@ -2390,17 +2517,27 @@
 					                    	<label>Job:</label>
 					                    	<select name="jobAdd" class="SearchBy3" style="margin-bottom: 0em">
 											<option value="Set Up">Set-Up</option>
-											<option value="Gate">Gate</option>
-											<option value="Parking">Parking</option>
-											<option value="Saftey">Saftey</option>
-											<option value="Fire">Fire</option>
-											<option value="Bank">Bank</option>
-											<option value="Scuttlebutt">Scuttlebutt</option>
-											<option value="Titles">Titles</option>
-											<option value="Sanitation">Sanitation</option>
+											<option value="Registration">Registration</option>
+											<option value="Cat Herder">Cat Herder</option>
+											<option value="Dragon Herder">Dragon Herder</option>
+											<option value="General Parking">General Parking</option>
+											<option value="Main Gate">Main Gate</option>
+											<option value="Rover">Rover</option>
+											<option value="Front Lot">Front Lot</option>
+											<option value="Front Line">Front Line</option>
+											<option value="Overnight Watch">Overnight Watch</option>
+											<option value="Rover">Rover</option>
+											<option value="Gate Sentry">Gate Sentry</option>
+											<option value="Station">Station</option>
+											<option value="Cigarette Butt Turn In">Cigarette Butt Turn In</option>
+											<option value="Butt Can Checks">Butt Can Checks</option>
+											<option value="Teller">Teller</option>
+											<option value="Skuttler">Skuttler</option>
+											<option value="Titler">Titler</option>
+											<option value="Biffy Checks">Biffy Checks</option>
+											<option value="Trash Checks">Trash Checks</option>
 											<option value="Hearld">Hearld</option>
-											<option value="Lost Cove">Lost Cove</option>
-											<option value="Monkey Island">Monkey Island</option>
+											<option value="Attendant">Attendant</option>
 											<option value="Tear Down">Tear Down</option>
 										</select>
 				                    	</div>
@@ -2431,7 +2568,7 @@
 				</form>
 				<?php
 			}
-			else if ($_POST['Sign-Up'] == "Remove Shift") {
+			else if ($_POST['Sign-Up'] == "Remove Shift" || $_POST['Sign-Up'] == "Remove Post") {
 				$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 				if (!$con) {
 					die('Could not connect: ' . mysql_error());
@@ -2509,6 +2646,112 @@
 					}
 				}
 			}
+			else if ($_POST['Sign-Up'] == "Edit Post" || $_POST['Sign-Up'] == "Pay All"){
+				if (isset($_POST['shift']) || $_POST['Sign-Up'] == "Pay All") {
+					$tmpemail = NULL;
+					$tmpCO = NULL;
+					$tmppay = NULL;
+					$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+					if (!$con) {
+						die('Could not connect: ' . mysql_error());
+					}
+					if ($_POST['Sign-Up'] == 'Edit Post') {
+						$array = $_POST['shift'];
+					}
+					else if ($_POST['Sign-Up'] == "Pay All") {
+						$pull = "SELECT ID FROM jobs WHERE section = 'staff'";
+						$query = mysqli_query($con,$pull);
+						$tmparray = $query->fetch_all(MYSQLI_NUM);
+						$array = array();
+						foreach($tmparray as $key){
+							array_push($array, $key[0]);
+						}
+					}
+					foreach ($array as $key) {
+						//SELECT * FROM `jobs` WHERE `ID` = 8
+						if (isset($_POST['checkO'.$key]) || $_POST['Sign-Up'] == "Pay All") {
+							$tmpCO = 1;
+							$pullmoney = "SELECT * FROM jobs WHERE `jobs`.`ID` = '$key'";
+                    		$moneytemp=mysqli_query($con, $pullmoney);
+                    		$jobinfo = mysqli_fetch_row($moneytemp);
+                    		$cash = $jobinfo[3];
+                    		$queryIn = "SELECT Accounts FROM users WHERE Username = '$jobinfo[7]'";
+							$resultIn = mysqli_query($con, $queryIn);
+							$row1=mysqli_fetch_row($resultIn);
+							$parsed_json = json_decode($row1[0], true);
+							$accnumss = $parsed_json['id'];
+							$queryIn = "SELECT Accounts FROM users WHERE Username = '$jobinfo[7]'";
+							$resultIn = mysqli_query($con, $queryIn);
+							$queryTo = "SELECT Ballance FROM accounts WHERE ID = '$accnumss[0]'";
+							$resultTo = mysqli_query($con, $queryTo);
+							$row3=mysqli_fetch_row($resultTo);
+							$addat = $row3[0] + $cash;
+							$updateto = "UPDATE accounts SET Ballance = '$addat' WHERE accounts.ID = '$accnumss[0]'";
+							$deduct = mysqli_query($con, $updateto); //sets the new ballance of the account being transftered into.
+							//creates a history of the transaction in the account to
+							$queryHistTo="SELECT history FROM accounts WHERE ID = '$accnumss[0]'";
+							$resultHistTo= mysqli_query($con, $queryHistTo);
+							$rowHistTo=mysqli_fetch_row($resultHistTo);
+							$parsed_jsonHistTo=json_decode($rowHistTo[0],true);
+							$dep=["Depoited",$cash, $jobinfo[1].": ".$jobinfo[2]];
+							date_default_timezone_set('Etc/GMT+8');
+							$timeStamp=date('Y/m/d H:i:s');
+							$parsed_jsonHistTo[$timeStamp]=$dep;
+							$enco_jsonHistTo=json_encode($parsed_jsonHistTo);
+							$NOSPECIALCHARACERSto = mysqli_real_escape_string($con, $enco_jsonHistTo);
+							$queryHistTo="UPDATE accounts SET history = '$NOSPECIALCHARACERSto' WHERE accounts.ID = '$accnumss[0]'";
+							$resultHistTo=mysqli_query($con,$queryHistTo);
+							//put pay them function here
+						}
+						else{
+							$tmpCO = 0;
+						}
+						if (isset($_POST['email'.$key])) {
+							$tmpemail = $_POST['email'.$key];
+						}
+						if (isset($_POST['pay'.$key])) {
+							$tmppay = $_POST['pay'.$key];
+						}
+						$update = "UPDATE jobs SET pay = '$tmppay', user = '$tmpemail', checkO = '$tmpCO' WHERE `jobs`.`ID` = '$key'";
+                    	$temp=mysqli_query($con, $update);
+					}
+				}
+			}
+			else if ($_POST['Sign-Up'] == "Add Position") { ?>
+				<form method = "POST">
+					<fieldset>
+						<input type="hidden" name="event">
+						<input type="hidden" name="Sign-Up">
+						<input type="hidden" name="submit">
+						<input type="hidden" name="job">
+						<div class = "container" style="margin-top: -3em;">
+				            <div class = "d-flex justify-content-center" id = "EditUser">
+				                <div class = "row">
+				                    <div class = "col-sm">
+				                    	<legend id="EditUserDisp">Add Shift Form:</legend>
+				                    	<label>Section:</label>
+				                    	<div>
+					                    	<label>Name:</label>
+					                    	<input type="text"  name="name" required>
+				                    	</div>
+				                    	<div>
+					                    	<label>Pay:</label>
+					                    	<input type="number"  name="pay" required>
+				                    	</div>
+				                    	<div>
+					                    	<label>Number of:</label>
+					                    	<input type="number"  name="number" required>
+				                    	</div>
+				                    	<div style="margin-bottom: 4em;">
+					                    	<input type="submit"  name="staff" value="confirm">
+				                    	</div>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+					</fieldset>
+				</form>
+			<?php }
 		}
 		//$time = 1;
 		//$cenvertedTime = date('Y-m-d H:i:s',strtotime('+'.$time.' hour',strtotime($startTime)));//add time to datetime object

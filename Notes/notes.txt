@@ -12,7 +12,7 @@ time lock still has one exploit if they prep a transaction when they still have 
 
 
 for land grant stuff
-have map of event on the page
+
 be able to check the ballance of accounts to see if they have enough to pay their due
 add withdraw function so that the land steward can withdraw the amount from their account with the note that its for land grant
 
@@ -25,20 +25,14 @@ use question tab of users table to track if someone is part of a land grant to a
 
 the land steward will use the charter table part tab to track who is part of a land grant. If they say to add a ship to a particular land grant it will add the entire crew section same for fleet. They can also add individuals.
 
-do not track staff positions of royalty positions right now too much extra coding that is needed to make that work.
-
-
-add staff and royal job positions to pay them
-
-add it in future
-
 
 add in an export function to pull up all the shifts in case of internet outage
 
+for this make a new simple page that when you go to the page it will pull everything from the data base and throw everything into a file
+It then has a download button that will then download the file that it just made.
+use file_put_contents('file.txt', 'bar'); to put the info into the file using this will delete everything in the file and replace it with the new stuff.
+use this for the first place at least to overwite the revious file
 
-put in error handling in account
-
-find the error in the teller page
 
 
 legacy bay events

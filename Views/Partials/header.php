@@ -6,6 +6,11 @@ $url=NULL;
 	<div class="header"></div>
 	<div class="d-none d-lg-block">
 	<div id="cssmenu" class="align-center">
+		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+		}
+		else{
+			header ("location:login.php");
+		} ?>
      		<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['perm'] == 'b'): ?>
      		<?php endif; ?>
 
@@ -49,7 +54,7 @@ $url=NULL;
 
 			<div class="tilda2"><img alt="~" src="CSS/styles/Scwig_2.png"></div>
 			
-
+			<?php //add in ability to remove this part if they remove land grants ?>
 			<?php if ($url=="/PNPN-Website/landsteward.php"):?>
 				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php elseif ($url=="/PNPN-Website/landgrant.php"):?>
