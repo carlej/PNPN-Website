@@ -57,7 +57,20 @@
 		
 	</head>
 	<body>
-		
+		<div class = "container-flow">
+			<div class = "d-flex justify-content-center">
+				<div class="d-none d-lg-block">
+					<div style="padding-top: 6em; padding-right: 18em;">
+						<img src='Views\Photos\tmp.jpg' alt='photo' />
+						<form action="upload.php" method="post" enctype="multipart/form-data">
+							Select image to upload:
+							<input type="file" name="fileToUpload" id="fileToUpload">
+							<input type="submit" value="Upload Image" name="submit">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 
 </html>
