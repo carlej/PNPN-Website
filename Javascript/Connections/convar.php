@@ -1,7 +1,7 @@
 <?php
   // Define database connection constants
-//$testing = true;
-$testing = false;
+$testing = true;
+//$testing = false;
 if ($testing) {
   define('DB_HOST', 'localhost');
   define('DB_USER', 'root');
