@@ -16,7 +16,7 @@
 					<!--Event Banner-->
 					<!--<img class="mx-auto d-block" src="CSS/styles/TortugaBanner.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">-->
 					<img class="mx-auto d-block" src="CSS/styles/Policies.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">
-					<img class="mx-auto d-block" src="CSS/styles/blank.png" style="width: 30em; margin-top: -8em; height: 3.6em; overflow: hidden;">
+					<img class="mx-auto d-block" src="CSS/styles/picture.png" style="width: 30em; margin-top: -8em; height: 3.6em; overflow: hidden;">
 					<p style="font-family:Pirates; text-color: black;text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 40px; margin-top: -2.1em; text-align: center;">Tortuga Nights</p>
 					<p style="font-family:Pirates; text-color: black;text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 40px; margin-top: -1.1em; text-align: center;">Returning September 1<sup>st</sup> - September 5<sup>th</sup>, 2022</p>
 					<p style="font-family:Pirates; text-color: black;text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 30px; margin-top: -1.2em; text-align: center;">Location</p>
