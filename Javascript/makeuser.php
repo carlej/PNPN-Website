@@ -17,8 +17,8 @@
         if (mysqli_num_rows($resultIn)>0) {
  //           echo "There is already a user with that email!";
            echo '<script type="text/javascript">alert("There is already a user with that email!");
-		   		window.location = "/PNPN-Website/register.php"
 		   </script>';
+           header("Location: register.php");
             $msg = "<h2>Can't Add to Table</h2> There is already a user with that email! $Username<p>";
 			
         }
@@ -85,7 +85,7 @@
                 $_SESSION['nest']="hold";
                 $_SESSION['nstype']=NULL;
                 $_SESSION['clear']='NULL';
-                header("Location: /PNPN-Website/bank.php");
+                header("Location: bank.php");
             }
             else
                 //echo $shipName;
