@@ -7,7 +7,7 @@
         include 'Javascript/Connections/convar.php';?>
 
         <title>Account</title>
-        <?php include("Views\Partials/header.php");?>
+        <?php include("Views/Partials/header.php");?>
 
     <!--This will allow Tellers to edit user information-->
 
