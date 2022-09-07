@@ -2070,7 +2070,7 @@ $url=NULL;
 										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">END</label>
 										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4em;">Check In</label>
 										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.3em;">Check Out</label>
-										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">Email</label>
+										<label class= "dataDis unpressed" style="padding-right: 0.2em; padding-left: 0.2em; width: 4.6em;">NAME</label>
 										<br>
 										<?php
 										$input = $_POST['job']; 

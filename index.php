@@ -58,7 +58,7 @@
 				</div>
 				<div class="col-xl-4 d-flex" id="AboutBoxHome">
 					<div id="AboutUs">
-						<p class="text-center">Welcome to the new site for the Pacific NW Pirate Nation!</p>
+						<p class="text-center">Welcome to the new site for the Legacy Bay Events!</p>
 						<p style="font-size: 0.2em;">&nbsp</p>
 						<p class="text-center">Our site is currently under development but we look forward to events in 2022!</p>
 						<p style="font-size: 0.2em;">&nbsp</p>

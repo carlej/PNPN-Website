@@ -51,19 +51,18 @@ $url=NULL;
 				<div class="volunteerButton"><a href="volunteerNassau.php"><img alt="Volunteering" src="CSS/styles/Volunteering_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
 			<?php endif;?>
 
-
-			<div class="tilda2"><img alt="~" src="CSS/styles/Scwig_2.png"></div>
+			<?php //remove comments to and comment out the account stuff under here to renabel land granting Note land granting is not finished ?>
+			<div class="tilda2"><img alt="~" src="CSS/styles/Scwig_2.png"></div><!--
 			
-			<?php //add in ability to remove this part if they remove land grants ?>
-			<?php if ($url=="/PNPN-Website/landsteward.php"):?>
+			<?php //if ($url=="/PNPN-Website/landsteward.php"):?>
+				 <div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
+			<?php //elseif ($url=="/PNPN-Website/landgrant.php"):?>
 				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url=="/PNPN-Website/landgrant.php"):?>
+			<?php //elseif ($url=="/PNPN-Website/landvolunteer.php"):?>
 				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php elseif ($url=="/PNPN-Website/landvolunteer.php"):?>
-				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Clicked.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php else: ?>
+			<?php //else: ?>
 				<div class="landgrantButton"><a href="landgrant.php"><img alt="landgrant" src="CSS/styles/Land_Un.png" onmouseover="this.style.cursor='pointer'"></a></div>
-			<?php endif;?>
+			<?php //endif;?> -->
 
 
 			<?php if ($url=="/PNPN-Website/account.php"):?>
@@ -121,11 +120,12 @@ $url=NULL;
         			<a class="nav-link" href="volunteerNassau.php" style="font-family: pirates; color: white">Volunteering</a>
       			</li>
       			<li class="nav-item">
-        			<a class="nav-link" href="landgrant.php" style="font-family: pirates; color: white">Land Grants</a>
+      				<a class="nav-link" href="account.php" style="font-family: pirates; color: white">Account</a>
+        			<!-- <a class="nav-link" href="landgrant.php" style="font-family: pirates; color: white">Land Grants</a> -->
       			</li>
-      			<li class="nav-item">
+      			<!--<li class="nav-item">
         			<a class="nav-link" href="account.php" style="font-family: pirates; color: white">Account</a>
-      			</li>
+      			</li> -->
     		</ul>
   		</div>
 		</nav> 

@@ -159,7 +159,7 @@ padding:0px;
 	top: 18.73em;
 	right: 8.45em;
 }
-
+/*change to top 20.45 right 2.7 if land grants get turned back on remove the transfrom as well*/
 .accountButton img{
 	display: block;
 	max-height: 3.9em;
@@ -167,8 +167,9 @@ padding:0px;
 	width: auto;
 	height: auto;
 	position: absolute;
-	top: 20.45em;
-	right: 2.7em;
+	top: 19.5em;
+	right: 11.0em;
+	transform: rotate(32deg);
 }
 
 #WelcomeMessage {

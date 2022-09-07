@@ -61,7 +61,7 @@
 								<option value="Ship">Ship/House</option>
 								<option value="FleetID">FleetID</option>
 								<option value="Fleet">Fleet/Alliance</option>
-								<option value="Account">Account Number</option>
+								<option value="Account" style="display:none;">Account Number</option>
 							</select>
 						</div>
 						<div class = "col" style="margin-bottom: 0.5em;">

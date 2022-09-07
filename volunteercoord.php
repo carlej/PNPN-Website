@@ -212,6 +212,7 @@
 								<input type="submit" name= "event" class="RightButtonTwoUn" value="Royal/Staff"></input>
 							<?php } ?>
 						</div>
+
 						</div>
 					</div>
 					</div>
@@ -2362,28 +2363,7 @@
 					<div class = "d-none d-xl-block">
 						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
 							<div style="margin-bottom: 1em; font-family: pirates;">
-								<input type="submit"  class="alone unpressed" name ="Sign-Up"  value="Add Position">
-							</div>
-						</div>
-					</div>
-				</div>
-			</fieldset>
-		</form>
-		<form method="POST">
-			<fieldset>
-				<input type="hidden" name="event" value="Royal/Staff">
-				<input type="hidden" name ="Sign-Up">
-				<input type="hidden" name="job">
-				<input type="hidden" name="submit">
-				<div class = "container-flow" id = "SwitchButtonsVolunteerDept" style="margin-top: -3em;">
-					<div class = "d-none d-xl-block">
-						<div class = "d-flex justify-content-center" style="margin-left: -20.2em;">
-							<div style="margin-bottom: 1em; font-family: pirates;">
 								<?php 
-								file_put_contents('file.txt', 'bar');
-								echo file_get_contents('file.txt'); // bar
-								file_put_contents('file.txt', 'foo');
-								echo file_get_contents('file.txt'); // foo
 
 								$input = "SELECT * FROM `jobs` WHERE `section` = 'staff'";
 								$query = mysqli_query($con,$input);
@@ -2414,6 +2394,7 @@
 									<input type="submit" name ="Sign-Up" value="Remove Post">
 									<input type="submit" name ="Sign-Up" value="Edit Post">
 									<input type="submit" name ="Sign-Up" value="Pay All">
+									<input type="submit"  class="alone unpressed" name ="Sign-Up"  value="Add Position">
 									<?php
 								}
 								?>

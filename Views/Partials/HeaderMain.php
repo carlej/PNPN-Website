@@ -6,7 +6,7 @@
 		<div class="d-none d-xl-block">
 		<nav class="navbar navbar-expand-lg" id="NavBar">
 			<div class="container-fluid">
-				<a class="navbar-brand" id="NavBarName">Pacific Northwest Pirate Nation</a>
+				<a class="navbar-brand" id="NavBarName">Legacy Bay Events</a>
 				<ul class="navbar-nav" id="NavBarLinks">
 					<li class="nav-item">
 	  					<a class="nav-link" href="index.php">Home</a>
@@ -38,7 +38,7 @@
 	     		 			Command Center
 	      				</a>
 					    <div class="dropdown-menu">
-					    	<a class="dropdown-item" href="WhosPNPN.php">Who's P.N.P.N.?</a>
+					    	<a class="dropdown-item" href="WhosLB.php">Who's Legacy Bay Events?</a>
 					        <a class="dropdown-item" href="PortNassauStaff.php">Port Nassau Staff</a>
 					        <a class="dropdown-item" href="TortugaStaff.php">Tortuga Staff</a>
 					        <a class="dropdown-item" href="FAQ.php">F.A.Q.</a>
@@ -57,7 +57,7 @@
 					    </div>
 	    			</li>
 	    			<li class="nav-item">
-	  					<a class="nav-link" href="bank.php">Triple Key</a>
+	  					<a class="nav-link" href="bank.php">Double Key</a>
 					</li>
 					
 	    		</ul>
@@ -72,7 +72,7 @@
 	<div class="d-xl-none"> 
 		<nav class="navbar" id="NavigationBar">
 			<div class ="navbar-header" style="font-family:Pirates; font-size: 1.6em; color: white">
-				Pacific Northwest Pirate Nation
+				Legacy Bay Events
 			</div>
 
  		<!-- Toggler/collapsibe Button -->
@@ -108,7 +108,7 @@
 	      			<li class="nav-item dropdown" id="nav-link2">
 	        			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">Command Center</a>
 	        			<div class="dropdown-menu" aria-labelledby="collapsibleNavbar">
-	        				<a class="dropdown-item" href="WhosPNPN.php">Who's P.N.P.N.?</a>
+	        				<a class="dropdown-item" href="WhosLB.php">Who's Legacy Bay Events?</a>
 	        				<a class="dropdown-item" href="PortNassauStaff.php">Port Nassau Staff</a>
 	        				<a class="dropdown-item" href="TortugaStaff.php">Tortuga Staff</a>
 	        				<a class="dropdown-item" href="FAQ.php">F.A.Q.</a>
@@ -125,7 +125,7 @@
 	        			</div>
 	      			</li>
 	      			<li class="nav-item active" id="nav-link2">
-	        			<a class="nav-link" href="index.php">Triple Key</a>
+	        			<a class="nav-link" href="index.php">Double Key</a>
 	      			</li>
 	    		</ul>
 	  		</div>

@@ -1,0 +1,73 @@
+
+Set-Up: Set Up
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+4  09/02/22  12:00 AM  02:00 AM    __        __     EMPTY
+
+4  09/02/22  02:00 AM  04:00 AM    __        __     Goric O'Carle
+
+Gate: Registration
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Gate: Cat Herder
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+4  09/02/22  05:41 AM  07:41 AM    __        __     EMPTY
+
+2  09/02/22  07:41 AM  09:41 AM    __        __     EMPTY
+
+Gate: Dragon Herder
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Parking: General Parking
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Parking: Main Gate
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Parking: Rover
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Parking: Front Lot
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Parking: Front Line
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Parking: Overnight Watch
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Saftey: Rover
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Saftey: Gate Sentry
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Saftey: Station
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Fire: Cigarette Butt Turn In
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Fire: Butt Can Checks
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Bank: Teller
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Scuttlebutt: Skuttler
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Titles: Titler
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Sanitation: Biffy Checks
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Sanitation: Trash Checks
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Hearld: Hearld
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Lost Cove: Attendant
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Monkey Island: Attendant
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+Tear Down: Tear Down
+PAY  DAY       START     END    CHECK IN  Check Out NAME
+4  09/02/22  12:00 AM  02:00 AM    __        __     EMPTY
+
+4  09/02/22  02:00 AM  04:00 AM    __        __     Goric O'Carle
+
+4  09/02/22  04:00 AM  06:00 AM    __        __     EMPTY
+
+4  09/02/22  06:00 AM  08:00 AM    __        __     EMPTY
+
+2  09/02/22  08:00 AM  10:00 AM    __        __     EMPTY
+
+2  09/02/22  10:00 AM  12:00 PM    __        __     EMPTY
+
+4  09/02/22  05:41 AM  07:41 AM    __        __     EMPTY
+
+2  09/02/22  07:41 AM  09:41 AM    __        __     EMPTY
+
