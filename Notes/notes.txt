@@ -31,10 +31,12 @@ legacy bay events
 
 change the image for WhosLB.php to change to legacy bay events
 
+remember to remove and rename files and extentions to reflect that I did not rewrite the codex and just copyed it completly
+
 needed short cp
 main heading
 <p id="SCOPE" style="font-size: 1.5em">STYLINGS</p>
 sub heading
-<p><u style="font-size: 1.5em">Responsibility</u></p>
+<p id="SCOPE"><u style="font-size: 1.5em">Responsibility</u></p>
 
 
