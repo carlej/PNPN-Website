@@ -9,6 +9,18 @@
 	src: url("Treasure Map Font/TreasureMapDeadhand.ttf")
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.roman {
+ list-style-type: lower-roman;
+}
+.square {
+ list-style-type: square;
+ margin-left: -2em;
+}
+
 body {
 	background: 
 	url(styles/Dark_Wood.jfif);
@@ -465,13 +477,11 @@ body {
 /*New To Pirating Page*/
 #NewToPirating {
 	background-color: rgba(0,0,0,0.8);
-	height: 10em;
-	border: 0.2em;
 	border-style: inset;
 	border-top-color: rgb(160,0,0);
-  	border-left-color: rgb(160,0,0);
-  	border-right-color: rgb(110,0,0);
-  	border-bottom-color: rgb(110,0,0);
+  border-left-color: rgb(160,0,0);
+  border-right-color: rgb(110,0,0);
+  border-bottom-color: rgb(110,0,0);
 	width: 85%;
 	margin-top: 1em;
 	margin-left: 2em;
@@ -480,11 +490,13 @@ body {
 }
 
 .PiratingInfo {
-	text-align: center;
+	text-align: left;
 	font-family: Pirates;
 	font-size: 1.4em;
 	color: antiquewhite;
 	margin-top: 0.2em;
+	margin-left: 2em;
+	text-indent: 1em;
 }
 
 

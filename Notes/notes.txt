@@ -31,4 +31,10 @@ legacy bay events
 
 change the image for WhosLB.php to change to legacy bay events
 
+needed short cp
+main heading
+<p id="SCOPE" style="font-size: 1.5em">STYLINGS</p>
+sub heading
+<p><u style="font-size: 1.5em">Responsibility</u></p>
+
 
