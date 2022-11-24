@@ -24,10 +24,10 @@
 
 					<li class="nav-item dropdown">
 	     		 		<a class="nav-link" id="navbardrop" data-toggle="dropdown">
-	     		 			Community
+	     		 			Guides
 	      				</a>
 					    <div class="dropdown-menu">
-					    	<a class="dropdown-item" href="NewToPirating.php">New to Pirating?</a>
+					    	<a class="dropdown-item" href="Codex-Pyratical.php">Codex-Pyratical</a>
 					    	<a class="dropdown-item" href="Etiquette.php">Etiquette</a>
 					        <a class="dropdown-item" href="Immersion101.php">Immersion 101</a>
 					    </div>
@@ -98,9 +98,9 @@
 	        			</div>
 	      			</li>
 	      			<li class="nav-item dropdown" id="nav-link2">
-	        			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">Community</a>
+	        			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">Guides</a>
 	        			<div class="dropdown-menu" aria-labelledby="collapsibleNavbar">
-	        				<a class="dropdown-item" href="NewToPirating.php">New to Pirating?</a>
+	        				<a class="dropdown-item" href="Codex-Pyratical.php">Codex-Pyratical</a>
 	        				<a class="dropdown-item" href="Etiquette.php">Etiquette</a>
 	        				<a class="dropdown-item" href="Immersion101.php">Immersion 101</a>
 	        			</div>
