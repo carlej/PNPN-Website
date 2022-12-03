@@ -33,10 +33,18 @@ change the image for WhosLB.php to change to legacy bay events
 
 remember to remove and rename files and extentions to reflect that I did not rewrite the codex and just copyed it completly
 
+make the other guide page "The Rules and Governance Regarding the Acquisition and Retention of Titles Denoting Honorifics, Peerage, and other Appellations within the Nation of Nassau"
+search this and you will find a link to it in the other guide
+and the other guides that are also linked below it
+
 needed short cp
+<p>&#x2022; </p>
+&#x2022; for bullet
+&#x2023; for arrow
 main heading
 <p id="SCOPE" style="font-size: 1.5em">STYLINGS</p>
 sub heading
 <p id="SCOPE"><u style="font-size: 1.5em">Responsibility</u></p>
 
 
+all new guides and pages arein notes folder

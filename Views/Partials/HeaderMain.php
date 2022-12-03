@@ -24,16 +24,18 @@
 
 					<li class="nav-item dropdown">
 	     		 		<a class="nav-link" id="navbardrop" data-toggle="dropdown">
-	     		 			Guides
+	     		 			Community Guides
 	      				</a>
 					    <div class="dropdown-menu">
 					    	<a class="dropdown-item" href="Codex-Pyratical.php">Codex-Pyratical</a>
-					    	<a class="dropdown-item" href="Etiquette.php">Etiquette</a>
-					        <a class="dropdown-item" href="Immersion101.php">Immersion 101</a>
+					    	<a class="dropdown-item" href="Titles.php">Titles</a>
+					        <a class="dropdown-item" href="Council.php">Council of Nassau</a>
+					        <a class="dropdown-item" href="DefenderOfNassau.php">Defender Of Nassau</a>
+					        <a class="dropdown-item" href="TavernRow.php">TavernRow</a>
 					    </div>
 	    			</li>
 
-	    			<li class="nav-item dropdown">
+	    			<!--<li class="nav-item dropdown">
 	     		 		<a class="nav-link" id="navbardrop" data-toggle="dropdown">
 	     		 			Command Center
 	      				</a>
@@ -44,7 +46,7 @@
 					        <a class="dropdown-item" href="FAQ.php">F.A.Q.</a>
 					        <a class="dropdown-item" href="Policies.php">Policies</a>
 					    </div>
-	    			</li>
+	    			</li>-->
 
 	    			<li class="nav-item dropdown">
 	     		 		<a class="nav-link" id="navbardrop" data-toggle="dropdown">
@@ -98,14 +100,16 @@
 	        			</div>
 	      			</li>
 	      			<li class="nav-item dropdown" id="nav-link2">
-	        			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">Guides</a>
+	        			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">Community Guides</a>
 	        			<div class="dropdown-menu" aria-labelledby="collapsibleNavbar">
 	        				<a class="dropdown-item" href="Codex-Pyratical.php">Codex-Pyratical</a>
-	        				<a class="dropdown-item" href="Etiquette.php">Etiquette</a>
-	        				<a class="dropdown-item" href="Immersion101.php">Immersion 101</a>
+	        				<a class="dropdown-item" href="Titles.php">Titles</a>
+	        				<a class="dropdown-item" href="Council.php">Council of Nassau</a>
+	        				<a class="dropdown-item" href="DefenderOfNassau.php">Defender Of Nassau</a>
+					        <a class="dropdown-item" href="TavernRow.php">TavernRow</a>
 	        			</div>
 	      			</li>
-	      			<li class="nav-item dropdown" id="nav-link2">
+	      			<!--<li class="nav-item dropdown" id="nav-link2">
 	        			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">Command Center</a>
 	        			<div class="dropdown-menu" aria-labelledby="collapsibleNavbar">
 	        				<a class="dropdown-item" href="WhosLB.php">Who's Legacy Bay Events?</a>
@@ -114,7 +118,7 @@
 	        				<a class="dropdown-item" href="FAQ.php">F.A.Q.</a>
 	        				<a class="dropdown-item" href="Policies.php">Policies</a>
 	        			</div>
-	      			</li>
+	      			</li>-->
 	      			</li>
 	      			<li class="nav-item dropdown" id="nav-link2">
 	        			<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">Get Involved</a>

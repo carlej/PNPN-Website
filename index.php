@@ -60,9 +60,9 @@
 					<div id="AboutUs">
 						<p class="text-center">Welcome to the new site for the Legacy Bay Events!</p>
 						<p style="font-size: 0.2em;">&nbsp</p>
-						<p class="text-center">Our site is currently under development but we look forward to events in 2022!</p>
+						<!--<p class="text-center">Our site is currently under development but we look forward to events in 2022!</p>
 						<p style="font-size: 0.2em;">&nbsp</p>
-						<p class="text-center">Registration for both of our 2022 events is open!</div>
+						<p class="text-center">Registration for both of our 2022 events is open!</div>-->
 				</div>
 			</div>
 		</div>
