@@ -47,4 +47,5 @@ sub heading
 <p id="SCOPE"><u style="font-size: 1.5em">Responsibility</u></p>
 
 
-all new guides and pages arein notes folder
+make sure that all the banners are full images not text over image
+
