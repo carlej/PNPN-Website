@@ -96,8 +96,15 @@
 									<a style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em; color: white" href="">Land Grants</a>
 								</div>-->
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);" href="">Event Program</div>
-
-								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);" href="Volunteer.php">Volunteer</div>
+								<div> 
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Pirate Olympics</a>
+								</div>
+								<div> 
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Council Games</a>
+								</div>
+								<div> 
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Official Schedule</a>
+								</div>
 
 							</div>
 						</div>
