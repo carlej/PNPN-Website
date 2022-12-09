@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		
+		<title>Titles Guide</title>
 		<?php
 			include("Views/Partials/HeaderMain.php");
 		?>	

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		
+		<title>Tavern Row Guide</title>
 		<?php
 			include("Views/Partials/HeaderMain.php");
 		?>	

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		
+		<title>Defender of Nassau</title>
 		<?php
 			include("Views/Partials/HeaderMain.php");
 		?>	

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		
+		<title>Codex Pyratical</title>
 		<?php
 			include("Views/Partials/HeaderMain.php");
 		?>	

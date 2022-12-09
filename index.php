@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 	<head>
-		
+		<title>Home</title>
 		<?php
 			include("Views/Partials/HeaderMain.php");
 		?>	

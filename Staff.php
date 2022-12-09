@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		
+		<title>Staff Info</title>
 		<?php
 			include("Views/Partials/HeaderMain.php");
 		?>	

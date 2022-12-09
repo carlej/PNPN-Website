@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		
+		<title>Port Nassau Event</title>
 		<?php
 			include("Views/Partials/HeaderMain.php");
 		?>	
@@ -88,14 +88,14 @@
 								</div>
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);">Camping</div>
 								<div> 
-									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Map</a>
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="MapNassau.php">Map</a>
 								</div>
 								<!--<div>
 									<a style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em; color: white" href="">Land Grants</a>
 								</div>-->
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);" href="">Event Program</div>
 								<div> 
-									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Official Schedule</a>
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="OfficialNassau.php">Official Schedule</a>
 								</div>
 
 							</div>

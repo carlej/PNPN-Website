@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		
+		<title>Tortuga Nights</title>
 		<?php
 			include("Views/Partials/HeaderMain.php");
 		?>	
@@ -90,20 +90,20 @@
 								</div>
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);">Camping</div>
 								<div> 
-									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Map</a>
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="MapTortuga.php">Map</a>
 								</div>
 								<!--<div>
 									<a style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em; color: white" href="">Land Grants</a>
 								</div>-->
 								<div style="font-size: 1.3em; padding-left: 0.6em; padding-top: 0.5em; color: rgb(128,128,128);" href="">Event Program</div>
 								<div> 
-									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Pirate Olympics</a>
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="PirateOlympics.php">Pirate Olympics</a>
 								</div>
 								<div> 
-									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Council Games</a>
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="CouncilGames.php">Council Games</a>
 								</div>
 								<div> 
-									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Official Schedule</a>
+									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="OfficialTortuga.php">Official Schedule</a>
 								</div>
 
 							</div>
