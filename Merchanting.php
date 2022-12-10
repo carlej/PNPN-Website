@@ -14,7 +14,12 @@
 				<div class="col-xl d-flex flex-column" id="EventBanner">
 
 					<!--Banner-->
-					<img class="mx-auto d-block" src="CSS/styles/Merchanting Banner.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">
+					<img class="mx-auto d-block" src="CSS/styles/Merchanting.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">
+					<!--<img class="mx-auto d-block" src="CSS/styles/Policies.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">
+					<img class="mx-auto d-block" src="CSS/styles/picture.png" style="width: 30em; margin-top: -8em; height: 3.6em; overflow: hidden;">
+					<p style="font-family:Pirates; color:black; text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 50px; margin-top: -1.6em; text-align: center;">Merchanting</p>
+					<p style="font-family:Pirates; color:black; text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 40px; margin-top: -1.1em; text-align: center;">Applications for Port Nassau and Tortuga Nights coming January, 2023</p>
+					<p style="font-family:Pirates; color:black; text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 30px; margin-top: -1.2em; text-align: center;">=</p>-->
 				</div>
 			</div>
 		</div>
@@ -68,10 +73,10 @@
 
 						<p style="color:white; text-align: left; margin-left: 1.1em;">Application Process</p>
 							<p style="color: antiquewhite; text-align: left; margin-left:3em; font-size: 0.8em;">We are accepting only 75 merchants per event</p>
-								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~Applications opened October 1st</p>
+								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~Applications opened January 15<sup>th</sup></p>
 								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~If accepeted, a registration form will be sent via email</p>
-								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~Merchant registration will open November 1st, 2021. You will not be able to register until you are accepted.</p>
-								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~Merchant fees for Port Nassau MUST be paid in full by April 1, 2022. Fees for Tortuga Nights MUST be paid in full by July 1, 2022. </p>
+								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~Merchant registration will open February 15<sup>th</sup>. You will not be able to register until you are accepted.</p>
+								<p style="color: lightgray; text-align: left; margin-left:6em; font-size: 0.7em">~Merchant fees for Port Nassau MUST be paid in full by April 1<sup>st</sup>. Fees for Tortuga Nights MUST be paid in full by July 1<sup>st</sup>. </p>
 
 						<p>&nbsp;</p>
 

@@ -14,12 +14,12 @@
 				<div class="col-xl d-flex flex-column" id="EventBanner">
 
 					<!--Event Banner-->
-					<!--<img class="mx-auto d-block" src="CSS/styles/PortNassauBanner.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">-->
-					<img class="mx-auto d-block" src="CSS/styles/Policies.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">
+					<img class="mx-auto d-block" src="CSS/styles/PNB.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">
+					<!--<img class="mx-auto d-block" src="CSS/styles/Policies.png" style="margin-top: 0.5em; width: 98%; height: auto; overflow: hidden;">
 					<img class="mx-auto d-block" src="CSS/styles/picture.png" style="width: 30em; margin-top: -8em; height: 3.6em; overflow: hidden;">
-					<p style="font-family:Pirates; color:black; text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 40px; margin-top: -2.1em; text-align: center;">Port Nassau</p>
-					<p style="font-family:Pirates; color:black; text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 40px; margin-top: -1.1em; text-align: center;">Returning July 21<sup>st</sup> - July 24<sup>th</sup>, 2022</p>
-					<p style="font-family:Pirates; color:black; text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 30px; margin-top: -1.2em; text-align: center;"> = </p>
+					<p style="font-family:Pirates; color:black; text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 50px; margin-top: -1.6em; text-align: center;">Port Nassau</p>
+					<p style="font-family:Pirates; color:black; text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 40px; margin-top: -1.1em; text-align: center;">Returning July 21<sup>st</sup> - July 23<sup>th</sup>, 2023</p>
+					<p style="font-family:Pirates; color:black; text-shadow: -.3px -.3px 0 #ff0000, .3px -.3px 0 #ff0000, -.3px .3px 0 #ff0000, .3px .3px 0 #ff0000; font-size: 30px; margin-top: -1.2em; text-align: center;"> = </p>-->
 				</div>
 			</div>
 		</div>
@@ -41,7 +41,7 @@
 						</div>
 						<script>
 							// Set the date we're counting down to
-							var countDownDate = new Date("July 21, 2022 08:00:").getTime();
+							var countDownDate = new Date("July 21, 2023 08:00:").getTime();
 
 							// Update the count down every 1 second
 							var x = setInterval(function() {
@@ -80,9 +80,9 @@
 								<div>
 									<a href="https://docs.google.com/forms/d/e/1FAIpQLSfN-qdAO5Rfm8ngGinxMhfzLbyTUPtUo9ExKdYBa-Hi6IPaxw/viewform" style="font-size: 1.1em; padding-left: 3em; color: white;">Pet-Registration</a>
 								</div>
-								<div>
+								<!--<div>
 									<a style="font-size: 1.1em; padding-left: 3em; color: white;" href="">Private Biffie</a>
-								</div>
+								</div>-->
 								<div> 
 									<a style="font-size: 1.1em; padding-left: 3em; padding-bottom: 0.5em; color: white" href="Merchanting.php">Merchants</a>
 								</div>
@@ -128,16 +128,15 @@
 			</div>
 		</div>
 
-		<div class="container-flow">
+		<!--Defender of Nassau and other stuff-->
+		<!--<div class="container-flow">
 			<div class = "row no-gutters">
-
-				<!--Defender of Nassau and other stuff-->
 				<div class="col-md d-flex flex-column justify-content-center" id="DefenderofNassau">
 					<div class="Defender">Defender of Nassau</div>
 					<div class="DefenderComp">Contenders coming June 2022!</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 
 			</div>
 

@@ -129,7 +129,7 @@
 	        			</div>
 	      			</li>
 	      			<li class="nav-item active" id="nav-link2">
-	        			<a class="nav-link" href="index.php">Double Key</a>
+	        			<a class="nav-link" href="bank.php">Double Key</a>
 	      			</li>
 	    		</ul>
 	  		</div>
